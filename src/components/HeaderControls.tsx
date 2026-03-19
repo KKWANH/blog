@@ -3,6 +3,7 @@
 import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import ThemeToggle from '@/components/ThemeToggle';
 import type { ContentNode } from '@/lib/content';
 
@@ -40,30 +41,28 @@ function DrawerTree({
 
 export default function HeaderControls({ tree }: { tree: ContentNode[] }) {
   const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    document.body.style.overflow = open ? 'hidden' : '';
+    const timer = window.setTimeout(() => {
+      setMounted(true);
+    }, 0);
 
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === 'Escape') {
+        setOpen(false);
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown);
     return () => {
-      document.body.style.overflow = '';
+      window.clearTimeout(timer);
+      window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [open]);
+  }, []);
 
-  return (
+  const drawer = (
     <>
-      <div className="header-controls">
-        <button
-          type="button"
-          className="menu-button"
-          aria-label={open ? 'Close navigation panel' : 'Open navigation panel'}
-          aria-expanded={open}
-          onClick={() => setOpen((value) => !value)}
-        >
-          {open ? <X size={20} strokeWidth={1.9} /> : <Menu size={20} strokeWidth={1.9} />}
-        </button>
-        <ThemeToggle />
-      </div>
-
       <div className={`drawer-backdrop${open ? ' is-open' : ''}`} onClick={() => setOpen(false)} />
       <aside className={`drawer-panel${open ? ' is-open' : ''}`} aria-hidden={!open}>
         <div className="drawer-panel__header">
@@ -84,6 +83,24 @@ export default function HeaderControls({ tree }: { tree: ContentNode[] }) {
           <DrawerTree nodes={tree} onNavigate={() => setOpen(false)} />
         </div>
       </aside>
+    </>
+  );
+
+  return (
+    <>
+      <div className="header-controls">
+        <button
+          type="button"
+          className="menu-button"
+          aria-label={open ? 'Close navigation panel' : 'Open navigation panel'}
+          aria-expanded={open}
+          onClick={() => setOpen((value) => !value)}
+        >
+          {open ? <X size={20} strokeWidth={1.9} /> : <Menu size={20} strokeWidth={1.9} />}
+        </button>
+        <ThemeToggle />
+      </div>
+      {mounted ? createPortal(drawer, document.body) : null}
     </>
   );
 }

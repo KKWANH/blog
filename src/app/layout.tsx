@@ -18,14 +18,13 @@ export default function RootLayout({
   const tree = readTree();
 
   return (
-    <html lang="en" className="h-full antialiased" suppressHydrationWarning>
+    <html lang="en" className="h-full antialiased dark" suppressHydrationWarning>
       <body className="min-h-full flex flex-col font-sans">
         <Script id="theme-init" strategy="beforeInteractive">
           {`
             try {
               var stored = localStorage.getItem('theme');
-              var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-              var isDark = stored ? stored === 'dark' : prefersDark;
+              var isDark = stored ? stored === 'dark' : true;
               document.documentElement.classList.toggle('dark', isDark);
             } catch {}
           `}

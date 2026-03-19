@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import SiteFooter from "@/components/SiteFooter";
 import { flattenPages, readPage, readTree, toPath } from "@/lib/content";
@@ -63,13 +64,18 @@ export default function Home() {
         <div className="home-hero__rule" />
         <div className="home-hero__copy">
           <p className="home-hero__meta">Vol. 1, No. 001 · Kwanho Kim&apos;s Blog · Notes and Work</p>
-          <h1 className="home-hero__title">Kwanho Kim</h1>
+          <h1 className="home-hero__title">
+            Kwanho
+            <br />
+            Kim
+          </h1>
           <p className="home-hero__role">Software Engineer &amp; Creative Technologist</p>
           <p className="home-hero__ledger">
             Wolfsburg / Seoul · Real-time systems · Robotics · Human-centered interfaces
           </p>
+          <p className="home-hero__attitude">I build systems that must work in reality.</p>
           <p className="home-hero__summary">
-            Building real-time systems, robotics, and human-centered interfaces with an engineering mindset that values clarity, performance, and form.
+            I design where code meets physical behavior, especially in real-time software, robotics, and interfaces people rely on.
           </p>
           <div className="hero-actions">
             {heroLinks.map((link) => (
@@ -86,9 +92,18 @@ export default function Home() {
           </div>
         </div>
         <div className="home-hero__aside">
-          <p className="section-eyebrow">Current Direction</p>
+          <Image
+            src="/profile3.jpg"
+            alt="Portrait of Kwanho Kim"
+            width={1556}
+            height={2594}
+            className="hero-portrait-image"
+            priority
+            unoptimized
+          />
+          <p className="section-eyebrow">Archive Note</p>
           <p className="home-hero__aside-text">
-            Professional at first glance, distinctive on second look. This is where I collect work, writing, and the reasoning behind both.
+            This site is a strong front for current work and a deeper archive for process, experiments, and writing.
           </p>
           <p className="home-hero__aside-note">
             Open the menu beside the theme toggle to browse the full journal tree.
@@ -120,10 +135,8 @@ export default function Home() {
             ))}
           </dl>
         </div>
-      </section>
-
-      <section className="home-section">
-        <div className="section-heading">
+        <div className="home-panel__divider" />
+        <div className="section-heading section-heading--dense">
           <p className="section-eyebrow">Featured Work</p>
           <h2 className="section-title">The themes I want my work to be known for.</h2>
         </div>
@@ -165,7 +178,7 @@ export default function Home() {
                   <h3 className="post-list__title">
                     <Link href={post.href}>{post.title}</Link>
                   </h3>
-                  <p className="post-list__slug">/{post.slug}</p>
+                  <p className="post-list__slug">/{post.slug} · editorial note</p>
                 </div>
               </li>
             ))}
