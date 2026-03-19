@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import SiteFooter from '@/components/SiteFooter';
 import { readTree, flattenPages, readPage } from '@/lib/content';
 import { markdownToHtml, rewriteRelativeMedia } from '@/lib/markdown';
 import Breadcrumbs from '@/components/Breadcrumbs';
@@ -27,12 +28,13 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
   const html = rewriteRelativeMedia(rawHtml, slug);
 
   return (
-    <div className="mx-auto max-w-3xl px-6 py-10">
+    <main className="page-shell page-shell--article">
       <Breadcrumbs slug={slug} />
-      <article className="prose prose-zinc dark:prose-invert max-w-none">
-        <h1 className="!mb-6 text-3xl font-semibold tracking-tight">{data.title}</h1>
+      <article className="prose article-body">
+        <h1 className="article-title">{data.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: html }} />
       </article>
-    </div>
+      <SiteFooter />
+    </main>
   );
 }
