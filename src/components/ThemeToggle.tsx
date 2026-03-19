@@ -1,38 +1,23 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
-
-function readTheme() {
-  if (typeof window === 'undefined') return false;
-  const stored = window.localStorage.getItem('theme');
-  if (stored === 'dark') return true;
-  if (stored === 'light') return false;
-  return window.matchMedia('(prefers-color-scheme: dark)').matches;
-}
-
 export default function ThemeToggle() {
-  const inputRef = useRef<HTMLInputElement>(null);
-
-  useEffect(() => {
-    if (inputRef.current) {
-      inputRef.current.checked = readTheme();
-    }
-  }, []);
-
-  function handleChange(next: boolean) {
+  function handleToggle() {
+    const next = !document.documentElement.classList.contains('dark');
     document.documentElement.classList.toggle('dark', next);
     window.localStorage.setItem('theme', next ? 'dark' : 'light');
   }
 
   return (
-    <label className="theme-switch" aria-label="Toggle theme">
-      <input
-        ref={inputRef}
-        type="checkbox"
-        defaultChecked={false}
-        onChange={(event) => handleChange(event.target.checked)}
-      />
-      <span className="theme-slider" />
-    </label>
+    <button
+      type="button"
+      className="theme-toggle"
+      aria-label="Toggle color theme"
+      onClick={handleToggle}
+    >
+      <span className="theme-toggle__frame" aria-hidden="true">
+        <span className="theme-toggle__icon theme-toggle__icon--sun" />
+        <span className="theme-toggle__icon theme-toggle__icon--moon" />
+      </span>
+    </button>
   );
 }

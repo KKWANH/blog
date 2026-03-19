@@ -6,19 +6,28 @@ import TreeList from "@/components/TreeList";
 export default function Home() {
   const tree = readTree();
   return (
-    <main className="page-shell">
-      <section className="hero-card">
-        <div className="hero-card__body">
-          <h1 className="hero-card__title">
-              A calm space to write and think.
-          </h1>
-          <p className="hero-card__copy">
-            Markdown-first notes, organized by folders. Minimal, clear, and stable across light and dark themes.
-          </p>
-          <div className="hero-card__actions">
-            <Link href="/hello-world" className="hero-card__button">
+    <main className="page-shell home-shell">
+      <section className="front-page">
+        <div className="front-page__rule" />
+        <p className="front-page__meta">Vol. 1, No. 001  *  KKim Journal  *  Markdown Edition</p>
+        <h1 className="front-page__masthead">The KKim Journal</h1>
+        <div className="front-page__rule" />
+        <div className="front-page__lead">
+          <div className="front-page__lead-copy">
+            <p className="front-page__kicker">Writing Desk</p>
+            <h2 className="front-page__headline">A calm space to write and think.</h2>
+            <p className="front-page__summary">
+              Markdown-first notes, folder-based archives, and a quieter reading surface inspired by old print.
+            </p>
+            <Link href="/hello-world" className="paper-button">
               Read the sample post
             </Link>
+          </div>
+          <div className="front-page__lead-panel">
+            <p className="front-page__panel-title">Editorial Structure</p>
+            <p>
+              Directories become routes. Underscore folders stay private for media. Posts remain plain Markdown, with optional HTML blocks for richer layouts.
+            </p>
           </div>
         </div>
       </section>

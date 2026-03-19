@@ -24,4 +24,24 @@ Style & layout
 - Pages use minimal, classic typography with good spacing.
 
 Notes
-- A tiny built-in Markdown renderer handles common syntax (headings, lists, links, images, code, blockquotes). Advanced extensions are intentionally out of scope for now.
+- A tiny built-in Markdown renderer handles common syntax (headings, lists, links, images, code, blockquotes).
+- Raw HTML blocks are also supported when separated as their own block. This is useful for custom image sizing, galleries, embeds, and figure layouts.
+
+Example HTML block
+
+```html
+<figure class="media-frame" style="--frame-width: 34rem;">
+  <img src="./_images/cover.jpg" alt="Cover image" />
+  <figcaption>A narrower framed image.</figcaption>
+</figure>
+```
+
+Scrollable gallery example
+
+```html
+<div class="gallery gallery--scroll">
+  <img src="./_images/one.jpg" alt="One" />
+  <img src="./_images/two.jpg" alt="Two" />
+  <img src="./_images/three.jpg" alt="Three" />
+</div>
+```

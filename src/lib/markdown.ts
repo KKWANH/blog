@@ -9,6 +9,42 @@ export function escapeHtml(str: string) {
     .replace(/'/g, '&#39;');
 }
 
+function tokenizeHtmlBlocks(src: string) {
+  const htmlBlocks: string[] = [];
+  const lines = src.split(/\r?\n/);
+  const out: string[] = [];
+  let i = 0;
+
+  const isHtmlStart = (line: string) =>
+    /^<(div|section|article|aside|figure|figcaption|picture|img|video|audio|iframe|details|summary|table|thead|tbody|tr|td|th|blockquote|hr|br)\b/i.test(
+      line.trim()
+    );
+
+  while (i < lines.length) {
+    const line = lines[i];
+    if (!isHtmlStart(line)) {
+      out.push(line);
+      i += 1;
+      continue;
+    }
+
+    const block: string[] = [line];
+    i += 1;
+
+    while (i < lines.length) {
+      const next = lines[i];
+      if (next.trim() === "") break;
+      block.push(next);
+      i += 1;
+    }
+
+    const idx = htmlBlocks.push(block.join("\n")) - 1;
+    out.push(`@@HTML_BLOCK_${idx}@@`);
+  }
+
+  return { out: out.join("\n"), htmlBlocks };
+}
+
 function tokenizeCodeBlocks(src: string) {
   const codeBlocks: string[] = [];
   const placeholder = (i: number) => `@@CODE_BLOCK_${i}@@`;
@@ -37,7 +73,8 @@ function renderInline(md: string) {
 }
 
 export function markdownToHtml(md: string) {
-  const { out, codeBlocks } = tokenizeCodeBlocks(md);
+  const { out: withHtmlPlaceholders, htmlBlocks } = tokenizeHtmlBlocks(md);
+  const { out, codeBlocks } = tokenizeCodeBlocks(withHtmlPlaceholders);
   const lines = out.split(/\r?\n/);
   const html: string[] = [];
   let i = 0;
@@ -66,6 +103,16 @@ export function markdownToHtml(md: string) {
       closeBlockquote();
       const idx = parseInt(codePh[1], 10);
       html.push(`<pre><code>${escapeHtml(codeBlocks[idx])}</code></pre>`);
+      i++;
+      continue;
+    }
+
+    const htmlPh = line.match(/^@@HTML_BLOCK_(\d+)@@$/);
+    if (htmlPh) {
+      closeList();
+      closeBlockquote();
+      const idx = parseInt(htmlPh[1], 10);
+      html.push(htmlBlocks[idx]);
       i++;
       continue;
     }
@@ -140,11 +187,14 @@ export function markdownToHtml(md: string) {
 }
 
 export function rewriteRelativeMedia(html: string, slug: string[]) {
-  // Rewrites <img src="./foo/bar.png"> to /media/<slug>/foo/bar.png
-  return html.replace(/<img([^>]+)src=\"(\.\.?\/[^\"]+)\"([^>]*)>/g, (_m, pre, src, post) => {
-    const base = '/' + slug.map(encodeURIComponent).join('/');
-    const clean = src.replace(/^\.\/?/, '');
-    const full = `/media${base}/${clean}`;
-    return `<img${pre}src=\"${full}\"${post}>`;
-  });
+  const base = '/' + slug.map(encodeURIComponent).join('/');
+
+  return html.replace(
+    /\b(src|href|poster)=["'](\.\.?\/[^"']+)["']/g,
+    (_match, attr, value) => {
+      const clean = value.replace(/^\.\/?/, '');
+      const full = `/media${base}/${clean}`;
+      return `${attr}="${full}"`;
+    }
+  );
 }

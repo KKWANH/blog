@@ -30,7 +30,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
   return (
     <main className="page-shell page-shell--article">
       <Breadcrumbs slug={slug} />
-      <article className="prose article-body">
+      <article className="prose article-body paper-sheet">
         <h1 className="article-title">{data.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: html }} />
       </article>

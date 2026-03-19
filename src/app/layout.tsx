@@ -29,7 +29,7 @@ export default function RootLayout({
         </Script>
         <header className="site-header">
           <div className="site-header__inner">
-            <Link href="/" className="site-logo">kwanho kim's blog.</Link>
+            <Link href="/" className="site-logo">kwanho kim&apos;s blog.</Link>
             <ThemeToggle />
           </div>
         </header>
