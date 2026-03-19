@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Script from "next/script";
-import ThemeToggle from "@/components/ThemeToggle";
+import HeaderControls from "@/components/HeaderControls";
+import { readTree } from "@/lib/content";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -14,6 +15,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const tree = readTree();
+
   return (
     <html lang="en" className="h-full antialiased" suppressHydrationWarning>
       <body className="min-h-full flex flex-col font-sans">
@@ -30,7 +33,7 @@ export default function RootLayout({
         <header className="site-header">
           <div className="site-header__inner">
             <Link href="/" className="site-logo">kwanho kim&apos;s blog.</Link>
-            <ThemeToggle />
+            <HeaderControls tree={tree} />
           </div>
         </header>
         <div className="site-body">{children}</div>

@@ -1,5 +1,7 @@
 'use client';
 
+import { MoonStar, SunMedium } from 'lucide-react';
+
 export default function ThemeToggle() {
   function handleToggle() {
     const next = !document.documentElement.classList.contains('dark');
@@ -15,8 +17,8 @@ export default function ThemeToggle() {
       onClick={handleToggle}
     >
       <span className="theme-toggle__frame" aria-hidden="true">
-        <span className="theme-toggle__icon theme-toggle__icon--sun" />
-        <span className="theme-toggle__icon theme-toggle__icon--moon" />
+        <SunMedium className="theme-toggle__glyph theme-toggle__glyph--sun" strokeWidth={1.7} />
+        <MoonStar className="theme-toggle__glyph theme-toggle__glyph--moon" strokeWidth={1.7} />
       </span>
     </button>
   );
