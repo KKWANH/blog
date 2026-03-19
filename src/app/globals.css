@@ -18,6 +18,8 @@
     12px 14px 28px rgba(118, 95, 73, 0.18);
   --quote-line: #b69d7d;
   --code-bg: rgba(92, 74, 58, 0.08);
+  --selection-bg: rgba(118, 109, 98, 0.24);
+  --selection-text: var(--ink);
   --noise: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.12'/%3E%3C/svg%3E");
 }
 
@@ -39,6 +41,8 @@ html.dark {
     12px 14px 28px rgba(0, 0, 0, 0.34);
   --quote-line: #7b634f;
   --code-bg: rgba(255, 240, 220, 0.06);
+  --selection-bg: rgba(111, 77, 49, 0.62);
+  --selection-text: var(--ink);
 }
 
 @theme inline {
@@ -80,7 +84,13 @@ a {
 }
 
 ::selection {
-  background: color-mix(in oklab, var(--accent) 24%, white);
+  background: var(--selection-bg);
+  color: var(--selection-text);
+}
+
+::-moz-selection {
+  background: var(--selection-bg);
+  color: var(--selection-text);
 }
 
 .site-body {
@@ -487,24 +497,21 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 3.25rem;
-  height: 3.25rem;
-  border: 1px solid var(--line);
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 0;
   border-radius: 999px;
-  background:
-    linear-gradient(180deg, var(--surface-strong), var(--surface)),
-    linear-gradient(180deg, var(--paper-2), var(--paper));
-  color: color-mix(in oklab, var(--accent) 80%, var(--ink));
-  box-shadow: var(--shadow-lift), var(--shadow-press);
+  background: transparent;
+  color: var(--ink);
   transition:
     transform 0.18s ease,
     color 0.2s ease,
-    box-shadow 0.2s ease,
-    background 0.2s ease;
+    opacity 0.2s ease;
 }
 
 .theme-toggle:hover {
   transform: translateY(-1px);
+  opacity: 0.82;
 }
 
 .theme-toggle:focus-visible {
@@ -518,8 +525,8 @@ a {
 
 .theme-toggle__frame {
   position: relative;
-  width: 1.45rem;
-  height: 1.45rem;
+  width: 1.7rem;
+  height: 1.7rem;
 }
 
 .theme-toggle__icon {
@@ -530,6 +537,9 @@ a {
   mask-repeat: no-repeat;
   mask-position: center;
   mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
   transition:
     opacity 0.22s ease,
     transform 0.28s ease;
@@ -537,21 +547,20 @@ a {
 
 .theme-toggle__icon--sun {
   mask-image: url("/sun-light-theme-svgrepo-com.svg");
+  -webkit-mask-image: url("/sun-light-theme-svgrepo-com.svg");
   opacity: 1;
   transform: scale(1) rotate(0deg);
 }
 
 .theme-toggle__icon--moon {
   mask-image: url("/moon-dark-theme-svgrepo-com.svg");
+  -webkit-mask-image: url("/moon-dark-theme-svgrepo-com.svg");
   opacity: 0;
   transform: scale(0.72) rotate(-22deg);
 }
 
 html.dark .theme-toggle {
-  color: color-mix(in oklab, var(--paper) 88%, white);
-  background:
-    linear-gradient(180deg, color-mix(in oklab, var(--surface-strong) 94%, black), var(--surface)),
-    linear-gradient(180deg, var(--paper-3), var(--paper-2));
+  color: var(--ink);
 }
 
 html.dark .theme-toggle .theme-toggle__icon--sun {
@@ -580,8 +589,8 @@ html.dark .theme-toggle .theme-toggle__icon--moon {
   }
 
   .theme-toggle {
-    width: 3rem;
-    height: 3rem;
+    width: 2.3rem;
+    height: 2.3rem;
   }
 
   .paper-sheet {
