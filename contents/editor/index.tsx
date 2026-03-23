@@ -30,9 +30,6 @@ export default function EditorIntroductionPage() {
 
         <figure className="space-y-3 border border-border bg-secondary/40 p-4">
           <img src="./_media/portrait.svg" alt="Abstract portrait illustration" className="w-full" />
-          <figcaption className="text-sm text-muted-foreground">
-            A local asset loaded from <code>contents/editor/_media</code>.
-          </figcaption>
         </figure>
       </section>
 

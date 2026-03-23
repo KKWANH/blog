@@ -1,8 +1,5 @@
 import Link from 'next/link'
-import { redirect } from 'next/navigation'
-import { getServerSession } from 'next-auth'
 import { Activity, LayoutDashboard, SearchCheck } from 'lucide-react'
-import { authOptions } from '@/lib/auth-options'
 import { AdminLogoutButton } from '@/components/admin-logout-button'
 
 const navItems = [
@@ -10,17 +7,16 @@ const navItems = [
   { href: '/admin/observability', label: 'Observability', icon: Activity },
 ]
 
-export default async function AdminProtectedLayout({
+export function AdminShell({
   children,
+  user,
 }: {
   children: React.ReactNode
-}) {
-  const session = await getServerSession(authOptions)
-
-  if (!session) {
-    redirect('/admin/login')
+  user?: {
+    name?: string | null
+    email?: string | null
   }
-
+}) {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <div className="mx-auto grid min-h-screen max-w-7xl lg:grid-cols-[17rem_minmax(0,1fr)]">
@@ -32,8 +28,8 @@ export default async function AdminProtectedLayout({
 
           <div className="mt-10">
             <p className="text-xs tracking-[0.16em] uppercase text-muted-foreground">Admin</p>
-            <p className="mt-3 text-lg font-semibold">{session.user?.name ?? 'Administrator'}</p>
-            <p className="mt-1 text-sm text-muted-foreground">{session.user?.email}</p>
+            <p className="mt-3 text-lg font-semibold">{user?.name ?? 'Administrator'}</p>
+            <p className="mt-1 text-sm text-muted-foreground">{user?.email}</p>
           </div>
 
           <nav className="mt-10 grid gap-2">
