@@ -24,7 +24,7 @@ export default async function AdminProtectedLayout({
   return (
     <div className="min-h-screen bg-background text-foreground">
       <div className="mx-auto grid min-h-screen max-w-7xl lg:grid-cols-[17rem_minmax(0,1fr)]">
-        <aside className="border-r border-border px-6 py-8">
+        <aside className="border-r border-border/80 bg-card/70 px-6 py-8 backdrop-blur">
           <Link href="/" className="inline-flex items-center gap-2 text-xs tracking-[0.18em] uppercase text-muted-foreground">
             <SearchCheck className="h-4 w-4" />
             <span>The KKIM Journal</span>
@@ -43,7 +43,7 @@ export default async function AdminProtectedLayout({
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="inline-flex items-center gap-3 border border-transparent px-3 py-3 text-sm text-muted-foreground transition-colors hover:border-border hover:text-foreground"
+                  className="inline-flex items-center gap-3 rounded-xl border border-transparent px-3 py-3 text-sm text-muted-foreground transition-colors hover:border-border hover:bg-secondary/40 hover:text-foreground"
                 >
                   <Icon className="h-4 w-4" />
                   <span>{item.label}</span>

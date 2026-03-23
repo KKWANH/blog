@@ -3,10 +3,11 @@
 import type { FormEvent } from 'react'
 import { useState } from 'react'
 import { signIn } from 'next-auth/react'
-import { useRouter } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 
 export function AdminLoginForm() {
   const router = useRouter()
+  const searchParams = useSearchParams()
   const [isPending, setIsPending] = useState(false)
   const [error, setError] = useState<string>()
 
@@ -16,11 +17,12 @@ export function AdminLoginForm() {
     setError(undefined)
 
     const formData = new FormData(event.currentTarget)
+    const callbackUrl = searchParams.get('callbackUrl') ?? '/admin'
     const result = await signIn('credentials', {
       username: formData.get('username'),
       password: formData.get('password'),
       redirect: false,
-      callbackUrl: '/admin',
+      callbackUrl,
     })
 
     setIsPending(false)
@@ -45,7 +47,8 @@ export function AdminLoginForm() {
           name="username"
           type="text"
           autoComplete="username"
-          className="h-12 border border-border bg-background px-4 outline-none transition-colors focus:border-foreground"
+          maxLength={64}
+          className="h-12 rounded-md border border-border bg-background/70 px-4 outline-none transition-colors focus:border-foreground"
           required
         />
       </div>
@@ -59,7 +62,9 @@ export function AdminLoginForm() {
           name="password"
           type="password"
           autoComplete="current-password"
-          className="h-12 border border-border bg-background px-4 outline-none transition-colors focus:border-foreground"
+          minLength={8}
+          maxLength={128}
+          className="h-12 rounded-md border border-border bg-background/70 px-4 outline-none transition-colors focus:border-foreground"
           required
         />
       </div>
@@ -71,7 +76,7 @@ export function AdminLoginForm() {
       <button
         type="submit"
         disabled={isPending}
-        className="mt-2 inline-flex h-12 items-center justify-center border border-foreground bg-foreground px-5 text-sm font-medium text-background transition-opacity disabled:cursor-not-allowed disabled:opacity-60"
+        className="mt-2 inline-flex h-12 items-center justify-center rounded-md border border-foreground bg-foreground px-5 text-sm font-medium text-background transition-opacity disabled:cursor-not-allowed disabled:opacity-60"
       >
         {isPending ? 'Signing In...' : 'Sign In'}
       </button>
