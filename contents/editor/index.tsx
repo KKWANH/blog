@@ -6,11 +6,6 @@ export const excerpt =
 export const date = '2026-03-23'
 export const readTime = '6 min'
 export const showToc = false
-export const toc = [
-  { id: 'editorial-introduction', label: "Editor's Introduction" },
-  { id: 'working-model', label: 'Working Model' },
-  { id: 'structure-rules', label: 'Structure Rules' },
-]
 
 export default function EditorIntroductionPage() {
   return (
@@ -28,8 +23,12 @@ export default function EditorIntroductionPage() {
           </p>
         </div>
 
-        <figure className="space-y-3 border border-border bg-secondary/40 p-4">
-          <img src="./_media/portrait.svg" alt="Abstract portrait illustration" className="w-full" />
+        <figure className="w-full max-w-md justify-self-end space-y-3 border border-border bg-secondary/40 p-4">
+          <img
+            src="./_media/profile4.jpg"
+            alt="Abstract portrait illustration"
+            className="aspect-[4/5] w-full object-cover object-center"
+          />
         </figure>
       </section>
 
@@ -82,6 +81,27 @@ export default function EditorIntroductionPage() {
             presentation, and a system that remains understandable when the site grows.
           </p>
         </div>
+      </section>
+
+      <section id="editorial-introduction" className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+        <figure className="w-full max-w-md justify-self-start space-y-3 border border-border bg-secondary/40 p-4">
+          <img
+            src="./_media/profile2.jpg"
+            alt="Abstract portrait illustration"
+            className="aspect-[4/5] w-full object-cover object-center"
+          />
+        </figure>
+
+        <div className="space-y-6">
+          <h2 className="font-serif text-4xl leading-tight tracking-tight md:text-6xl">
+            Any text with some fonts look very fancy and meaningful.
+          </h2>
+          <p className="max-w-2xl text-lg leading-8 text-muted-foreground">
+            Each page lives in its own folder, the folder can carry local media, and a page can
+            stay plain Markdown or become a custom TSX composition when the writing needs more
+            structure.
+          </p>
+        </div>        
       </section>
     </div>
   )
