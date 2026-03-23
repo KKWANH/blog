@@ -1,5 +1,7 @@
 // Very small Markdown to HTML converter (headings, paragraphs, lists, code, links, images)
 // Not a full spec implementation; good enough for writing posts without extra deps.
+import { toTocId } from "@/lib/toc";
+
 export function escapeHtml(str: string) {
   return str
     .replace(/&/g, '&amp;')
@@ -140,7 +142,9 @@ export function markdownToHtml(md: string) {
       closeList();
       closeBlockquote();
       const level = h[1].length;
-      html.push(`<h${level}>${renderInline(h[2].trim())}</h${level}>`);
+      const label = h[2].trim();
+      const id = toTocId(label);
+      html.push(`<h${level} id="${id}">${renderInline(label)}</h${level}>`);
       i++;
       continue;
     }

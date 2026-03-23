@@ -6,8 +6,8 @@ import { readTree } from "@/lib/content";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "KKim Blog",
-  description: "Markdown-first blog",
+  title: "The Kkim Journal",
+  description: "A markdown-first journal edited by Kwanho Kim",
 };
 
 export default function RootLayout({
@@ -31,7 +31,7 @@ export default function RootLayout({
         </Script>
         <header className="site-header">
           <div className="site-header__inner">
-            <Link href="/" className="site-logo">kwanho kim&apos;s blog.</Link>
+            <Link href="/" className="site-logo">the kkim journal.</Link>
             <HeaderControls tree={tree} />
           </div>
         </header>

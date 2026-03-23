@@ -30,8 +30,9 @@ export function readTree(dir = CONTENT_ROOT, baseSlug: string[] = []): ContentNo
       const subdir = path.join(dir, ent.name);
       const slug = [...baseSlug, ent.name];
       const indexMd = path.join(subdir, 'index.md');
+      const indexTsx = path.join(subdir, 'index.tsx');
       const children = readTree(subdir, slug);
-      const hasPage = fs.existsSync(indexMd);
+      const hasPage = fs.existsSync(indexMd) || fs.existsSync(indexTsx);
       if (hasPage) nodes.push({ name: ent.name, slug, type: 'page', children });
       else nodes.push({ name: ent.name, slug, type: 'folder', children });
     } else if (ent.isFile()) {
@@ -126,3 +127,15 @@ export function toPath(slug: string[]) {
   return '/' + slug.map(encodeURIComponent).join('/');
 }
 
+export function getPageSummary(data: PageData) {
+  const explicit = typeof data.frontmatter.summary === "string" ? data.frontmatter.summary : null;
+  if (explicit) return explicit;
+
+  const paragraph = data.content
+    .split(/\r?\n\r?\n/)
+    .map((chunk) => chunk.replace(/^#+\s+/gm, "").trim())
+    .find((chunk) => chunk.length > 0 && !chunk.startsWith("!"));
+
+  if (!paragraph) return null;
+  return paragraph.slice(0, 180);
+}
