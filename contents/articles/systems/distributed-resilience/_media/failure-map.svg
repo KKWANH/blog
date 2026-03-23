@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560">
+  <rect width="960" height="560" fill="#f6f1e8"/>
+  <rect x="86" y="82" width="788" height="396" fill="#fffdf8" stroke="#21302a" stroke-width="8"/>
+  <rect x="150" y="192" width="170" height="138" fill="#21302a"/>
+  <rect x="396" y="132" width="170" height="138" fill="#9a3d28"/>
+  <rect x="396" y="290" width="170" height="138" fill="#87653d"/>
+  <rect x="642" y="192" width="170" height="138" fill="#21302a"/>
+  <path d="M320 260h76M566 198h76M566 360h76" stroke="#41372d" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="602" cy="198" r="18" fill="#9a3d28"/>
+  <text x="235" y="268" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" fill="#fffdf8">Ingress</text>
+  <text x="481" y="208" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" fill="#fffdf8">Service A</text>
+  <text x="481" y="368" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" fill="#fffdf8">Queue</text>
+  <text x="727" y="268" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" fill="#fffdf8">Workers</text>
+  <text x="602" y="160" text-anchor="middle" font-family="Georgia, serif" font-size="24" fill="#5a4e43">Failure should stop here, not spread.</text>
+</svg>

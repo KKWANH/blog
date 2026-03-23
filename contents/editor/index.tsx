@@ -1,0 +1,91 @@
+export const title = "Editor's Introduction"
+export const subtitle = 'How this journal is structured after moving to a filesystem-first workflow.'
+export const description = 'An introduction to the writing system behind The KKIM Journal.'
+export const excerpt =
+  'The site now treats local folders as the publishing source of truth, keeping writing, assets, and structure in the repository.'
+export const date = '2026-03-23'
+export const readTime = '6 min'
+export const showToc = false
+export const toc = [
+  { id: 'editorial-introduction', label: "Editor's Introduction" },
+  { id: 'working-model', label: 'Working Model' },
+  { id: 'structure-rules', label: 'Structure Rules' },
+]
+
+export default function EditorIntroductionPage() {
+  return (
+    <div className="space-y-14">
+      <section id="editorial-introduction" className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
+        <div className="space-y-6">
+          <p className="text-xs tracking-[0.24em] uppercase text-muted-foreground">Editor&apos;s Introduction</p>
+          <h2 className="font-serif text-4xl leading-tight tracking-tight md:text-6xl">
+            The journal is now written directly from the repository.
+          </h2>
+          <p className="max-w-2xl text-lg leading-8 text-muted-foreground">
+            Each page lives in its own folder, the folder can carry local media, and a page can
+            stay plain Markdown or become a custom TSX composition when the writing needs more
+            structure.
+          </p>
+        </div>
+
+        <figure className="space-y-3 border border-border bg-secondary/40 p-4">
+          <img src="./_media/portrait.svg" alt="Abstract portrait illustration" className="w-full" />
+          <figcaption className="text-sm text-muted-foreground">
+            A local asset loaded from <code>contents/editor/_media</code>.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section id="working-model" className="grid gap-8 lg:grid-cols-3">
+        <article className="border-t border-border pt-5">
+          <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground">01</p>
+          <h3 className="mt-3 font-serif text-2xl">Markdown stays lightweight</h3>
+          <p className="mt-3 text-muted-foreground leading-7">
+            Most writing should remain close to text files. The site accepts inline HTML, so the
+            common case still feels simple.
+          </p>
+        </article>
+
+        <article className="border-t border-border pt-5">
+          <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground">02</p>
+          <h3 className="mt-3 font-serif text-2xl">TSX handles exceptions</h3>
+          <p className="mt-3 text-muted-foreground leading-7">
+            When a page needs a custom grid, notes, callouts, or a more deliberate visual sequence,
+            it can export a component instead.
+          </p>
+        </article>
+
+        <article className="border-t border-border pt-5">
+          <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground">03</p>
+          <h3 className="mt-3 font-serif text-2xl">Folders define navigation</h3>
+          <p className="mt-3 text-muted-foreground leading-7">
+            The header drawer reads the tree as-is, so content structure and site structure now stay
+            aligned by default.
+          </p>
+        </article>
+      </section>
+
+      <section id="structure-rules" className="grid gap-6 lg:grid-cols-[0.85fr_1.15fr]">
+        <div className="border-l-2 border-foreground pl-5 text-foreground">
+          <p className="text-sm uppercase tracking-[0.18em] text-muted-foreground">Working rule</p>
+          <p className="mt-3 text-xl leading-8">
+            If a thought belongs in the site, it should already live next to the code and assets
+            that explain it.
+          </p>
+        </div>
+
+        <div className="space-y-5 text-muted-foreground leading-8">
+          <p>
+            This makes the journal less like a separate publishing layer and more like a readable
+            extension of the working tree. Drafting, revising, and organizing are all grounded in
+            the same place.
+          </p>
+          <p>
+            The goal is not novelty. It is fewer moving parts, fewer mismatches between content and
+            presentation, and a system that remains understandable when the site grows.
+          </p>
+        </div>
+      </section>
+    </div>
+  )
+}
