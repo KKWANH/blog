@@ -5,10 +5,13 @@ export enum StayLevel {
   LivedThere = 'lived-there',
 }
 
+export type MapUnit = 'country' | 'city'
+
 export type TravelCity = {
   id: string
   city: string
   country: string
+  countryCode: string
   level: StayLevel
   lat: number
   lng: number

@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import dynamic from 'next/dynamic'
 import styles from '@/components/travel/travel-explorer.module.css'
-import { levelConfig, type StayLevel, type TravelCity } from '@/components/travel/travel-types'
+import { StayLevel, type MapUnit, levelConfig, type TravelCity } from '@/components/travel/travel-types'
 
 const TravelMap = dynamic(
   () => import('@/components/travel/travel-map').then((module) => module.TravelMap),
@@ -16,6 +16,7 @@ const TravelMap = dynamic(
 export function TravelExplorer({ cities }: { cities: TravelCity[] }) {
   const [selectedLevel, setSelectedLevel] = useState<StayLevel | 'all'>('all')
   const [activeCityId, setActiveCityId] = useState<string | null>(cities[0]?.id ?? null)
+  const [mapUnit, setMapUnit] = useState<MapUnit>('city')
 
   const filteredCities = useMemo(() => {
     const visible = selectedLevel === 'all'
@@ -40,9 +41,9 @@ export function TravelExplorer({ cities }: { cities: TravelCity[] }) {
     }
   }, [activeCityId, filteredCities])
 
-  const livedCount = cities.filter((city) => city.level === 'lived-there').length
+  const livedCount = cities.filter((city) => city.level === StayLevel.LivedThere).length
   const countries = new Set(cities.map((city) => city.country)).size
-  const levelOptions = Object.values(levelConfig)
+  const levelOptions = Object.entries(levelConfig)
 
   return (
     <div className={styles.shell}>
@@ -87,24 +88,34 @@ export function TravelExplorer({ cities }: { cities: TravelCity[] }) {
           <TravelMap
             activeCity={activeCity}
             cities={filteredCities}
+            mapUnit={mapUnit}
             onSelectCity={setActiveCityId}
           />
-
-          <div className={styles.mapLegend}>
-            <p className={styles.mapLegendTitle}>Stay Level</p>
-            {levelOptions.map((config) => (
-              <div key={config.label} className={styles.legendRow}>
-                <span className={styles.dot} style={{ backgroundColor: config.color }} />
-                <span>{config.label}</span>
-              </div>
-            ))}
-            <p className={styles.legendHint}>Scroll to zoom, drag to pan, or click a city from the list to jump.</p>
-          </div>
         </div>
 
         <aside className={styles.sidebar}>
           <section className={styles.panel}>
-            <p className={styles.panelTitle}>Filter</p>
+            <p className={styles.panelTitle}>Map Mode</p>
+            <div className={styles.mapModeSwitch}>
+              <button
+                type="button"
+                onClick={() => setMapUnit('country')}
+                className={`${styles.levelButton}${mapUnit === 'country' ? ` ${styles.levelButtonActive}` : ''}`}
+              >
+                <span>Country Fill</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => setMapUnit('city')}
+                className={`${styles.levelButton}${mapUnit === 'city' ? ` ${styles.levelButtonActive}` : ''}`}
+              >
+                <span>City Blobs</span>
+              </button>
+            </div>
+          </section>
+
+          <section className={styles.panel}>
+            <p className={styles.panelTitle}>Stay Level</p>
             <div className={styles.levelFilters}>
               <button
                 type="button"
@@ -113,7 +124,7 @@ export function TravelExplorer({ cities }: { cities: TravelCity[] }) {
               >
                 <span>All stays</span>
               </button>
-              {Object.entries(levelConfig).map(([level, config]) => (
+              {levelOptions.map(([level, config]) => (
                 <button
                   key={level}
                   type="button"
@@ -149,7 +160,7 @@ export function TravelExplorer({ cities }: { cities: TravelCity[] }) {
                         </div>
                         <span className={styles.dot} style={{ backgroundColor: config.color }} />
                       </div>
-                  <div className={styles.cityMeta}>
+                      <div className={styles.cityMeta}>
                         <span>{config.label}</span>
                         <span>·</span>
                         <span>{city.lat.toFixed(1)}, {city.lng.toFixed(1)}</span>

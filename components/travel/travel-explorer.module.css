@@ -92,6 +92,13 @@
   margin-top: 1rem;
 }
 
+.mapModeSwitch {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin-top: 1rem;
+}
+
 .levelButton {
   display: inline-flex;
   align-items: center;
@@ -202,43 +209,6 @@
   text-transform: uppercase;
 }
 
-.mapLegend {
-  position: absolute;
-  right: 1rem;
-  bottom: 1rem;
-  z-index: 500;
-  display: grid;
-  gap: 0.55rem;
-  min-width: 13rem;
-  padding: 0.9rem 1rem;
-  border: 1px solid color-mix(in srgb, var(--border) 80%, transparent);
-  background: color-mix(in srgb, var(--background) 86%, transparent);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
-}
-
-.mapLegendTitle {
-  font-size: 0.72rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--muted-foreground);
-}
-
-.legendRow {
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-  font-size: 0.84rem;
-  color: var(--foreground);
-}
-
-.legendHint {
-  margin-top: 0.1rem;
-  font-size: 0.78rem;
-  line-height: 1.5;
-  color: var(--muted-foreground);
-}
-
 .popup {
   display: grid;
   gap: 0.4rem;
@@ -257,45 +227,53 @@
   text-transform: uppercase;
 }
 
-.mapThemeLight :global(.leaflet-container) {
+.mapThemeLight :global(.maplibregl-map) {
   background: #dbe4ee;
 }
 
-.mapThemeDark :global(.leaflet-container) {
+.mapThemeDark :global(.maplibregl-map) {
   background: #0b1220;
 }
 
-.mapThemeLight :global(.leaflet-control-zoom a),
-.mapThemeDark :global(.leaflet-control-zoom a) {
-  border-bottom-color: transparent;
-}
-
-.mapThemeLight :global(.leaflet-bar),
-.mapThemeDark :global(.leaflet-bar) {
+.mapThemeLight :global(.maplibregl-ctrl-group),
+.mapThemeDark :global(.maplibregl-ctrl-group) {
   border: 1px solid color-mix(in srgb, var(--border) 80%, transparent);
   box-shadow: 0 12px 24px rgba(15, 23, 42, 0.16);
+  overflow: hidden;
 }
 
-.mapThemeLight :global(.leaflet-control-zoom a) {
+.mapThemeLight :global(.maplibregl-ctrl-group button) {
   background: rgba(255, 255, 255, 0.88);
   color: #111827;
 }
 
-.mapThemeDark :global(.leaflet-control-zoom a) {
+.mapThemeDark :global(.maplibregl-ctrl-group button) {
   background: rgba(15, 23, 42, 0.9);
   color: #f8fafc;
 }
 
-.mapThemeLight :global(.leaflet-popup-content-wrapper),
-.mapThemeLight :global(.leaflet-popup-tip) {
+.mapThemeLight :global(.maplibregl-popup-content) {
   background: rgba(255, 255, 255, 0.96);
   color: #111827;
+  border-radius: 0;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
 }
 
-.mapThemeDark :global(.leaflet-popup-content-wrapper),
-.mapThemeDark :global(.leaflet-popup-tip) {
+.mapThemeDark :global(.maplibregl-popup-content) {
   background: rgba(15, 23, 42, 0.94);
   color: #f8fafc;
+  border-radius: 0;
+  box-shadow: 0 18px 40px rgba(2, 6, 23, 0.28);
+}
+
+.mapThemeLight :global(.maplibregl-popup-tip) {
+  border-top-color: rgba(255, 255, 255, 0.96);
+  border-bottom-color: rgba(255, 255, 255, 0.96);
+}
+
+.mapThemeDark :global(.maplibregl-popup-tip) {
+  border-top-color: rgba(15, 23, 42, 0.94);
+  border-bottom-color: rgba(15, 23, 42, 0.94);
 }
 
 .cityList::-webkit-scrollbar {
