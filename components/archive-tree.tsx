@@ -29,9 +29,9 @@ function ArchiveTreeBranch({ nodes }: { nodes: ContentTreeNode[] }) {
 
         return (
           <ArchiveBranch key={node.href}>
-            <Link href={node.href} passHref legacyBehavior>
-              <ArchivePageLink>{node.label}</ArchivePageLink>
-            </Link>
+            <ArchivePageLink as={Link} href={node.href}>
+              {node.label}
+            </ArchivePageLink>
             {hasChildren ? (
               <ArchiveChildren>
                 <ArchiveTreeBranch nodes={node.children ?? []} />

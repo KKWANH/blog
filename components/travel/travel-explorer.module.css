@@ -1,0 +1,349 @@
+.shell {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.hero {
+  display: grid;
+  gap: 1rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.eyebrow {
+  color: var(--muted-foreground);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.heroGrid {
+  display: grid;
+  gap: 1rem;
+}
+
+.heroText {
+  max-width: 42rem;
+  color: var(--muted-foreground);
+  line-height: 1.9;
+}
+
+.stats {
+  display: grid;
+  gap: 0.85rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.statCard {
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--card) 85%, transparent);
+  padding: 1rem;
+}
+
+.statLabel {
+  color: var(--muted-foreground);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.statValue {
+  margin-top: 0.55rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.mapCard {
+  position: relative;
+  overflow: hidden;
+  min-height: 35rem;
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--card) 88%, transparent);
+}
+
+.sidebar {
+  display: grid;
+  gap: 1rem;
+}
+
+.panel {
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--card) 88%, transparent);
+  padding: 1rem;
+}
+
+.panelTitle {
+  font-size: 0.82rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+
+.levelFilters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1rem;
+}
+
+.levelButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-height: 2.35rem;
+  padding: 0 0.9rem;
+  border: 1px solid var(--border);
+  color: var(--muted-foreground);
+  transition:
+    border-color 160ms ease,
+    color 160ms ease,
+    background-color 160ms ease;
+}
+
+.levelButton:hover,
+.levelButtonActive {
+  color: var(--foreground);
+  background: color-mix(in srgb, var(--accent) 50%, transparent);
+  border-color: color-mix(in srgb, var(--foreground) 20%, var(--border));
+}
+
+.dot {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+
+.cityList {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  max-height: min(34rem, calc(100vh - 18rem));
+  overflow-y: auto;
+  padding-right: 0.3rem;
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--foreground) 16%, transparent) transparent;
+}
+
+.cityCard {
+  display: grid;
+  gap: 0.55rem;
+  width: 100%;
+  text-align: left;
+  padding: 0.95rem 1rem;
+  border: 1px solid var(--border);
+  transition:
+    border-color 160ms ease,
+    transform 160ms ease,
+    background-color 160ms ease;
+}
+
+.cityCard:hover,
+.cityCardActive {
+  transform: translateY(-1px);
+  border-color: color-mix(in srgb, var(--foreground) 18%, var(--border));
+  background: color-mix(in srgb, var(--accent) 44%, transparent);
+}
+
+.cityHeader {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.cityName {
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.cityCountry {
+  color: var(--muted-foreground);
+  font-size: 0.85rem;
+}
+
+.cityMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 0.78rem;
+  color: var(--muted-foreground);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.mapWrap {
+  position: absolute;
+  inset: 0;
+}
+
+.map {
+  width: 100%;
+  height: 100%;
+}
+
+.mapLoading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted-foreground);
+  font-size: 0.92rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.mapLegend {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 500;
+  display: grid;
+  gap: 0.55rem;
+  min-width: 13rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid color-mix(in srgb, var(--border) 80%, transparent);
+  background: color-mix(in srgb, var(--background) 86%, transparent);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
+}
+
+.mapLegendTitle {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+
+.legendRow {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.84rem;
+  color: var(--foreground);
+}
+
+.legendHint {
+  margin-top: 0.1rem;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: var(--muted-foreground);
+}
+
+.popup {
+  display: grid;
+  gap: 0.4rem;
+  min-width: 12rem;
+}
+
+.popupName {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.popupMeta {
+  color: var(--muted-foreground);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.mapThemeLight :global(.leaflet-container) {
+  background: #dbe4ee;
+}
+
+.mapThemeDark :global(.leaflet-container) {
+  background: #0b1220;
+}
+
+.mapThemeLight :global(.leaflet-control-zoom a),
+.mapThemeDark :global(.leaflet-control-zoom a) {
+  border-bottom-color: transparent;
+}
+
+.mapThemeLight :global(.leaflet-bar),
+.mapThemeDark :global(.leaflet-bar) {
+  border: 1px solid color-mix(in srgb, var(--border) 80%, transparent);
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.16);
+}
+
+.mapThemeLight :global(.leaflet-control-zoom a) {
+  background: rgba(255, 255, 255, 0.88);
+  color: #111827;
+}
+
+.mapThemeDark :global(.leaflet-control-zoom a) {
+  background: rgba(15, 23, 42, 0.9);
+  color: #f8fafc;
+}
+
+.mapThemeLight :global(.leaflet-popup-content-wrapper),
+.mapThemeLight :global(.leaflet-popup-tip) {
+  background: rgba(255, 255, 255, 0.96);
+  color: #111827;
+}
+
+.mapThemeDark :global(.leaflet-popup-content-wrapper),
+.mapThemeDark :global(.leaflet-popup-tip) {
+  background: rgba(15, 23, 42, 0.94);
+  color: #f8fafc;
+}
+
+.cityList::-webkit-scrollbar {
+  width: 0.55rem;
+}
+
+.cityList::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--foreground) 14%, transparent);
+  border-radius: 999px;
+}
+
+.cityList::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.empty {
+  margin-top: 1rem;
+  color: var(--muted-foreground);
+  font-size: 0.92rem;
+}
+
+@media (min-width: 1100px) {
+  .heroGrid {
+    grid-template-columns: minmax(0, 1.4fr) minmax(18rem, 0.8fr);
+    align-items: start;
+  }
+
+  .grid {
+    grid-template-columns: minmax(0, 1.5fr) minmax(20rem, 0.9fr);
+    align-items: start;
+  }
+
+  .sidebar {
+    position: sticky;
+    top: 1.5rem;
+  }
+}
+
+@media (max-width: 699px) {
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .mapCard {
+    min-height: 28rem;
+  }
+
+  .cityList {
+    max-height: 20rem;
+  }
+}

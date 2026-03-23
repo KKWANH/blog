@@ -4,6 +4,7 @@ import { createRequire } from 'node:module'
 import React from 'react'
 import ts from 'typescript'
 import type { Metadata } from 'next'
+import { getBundledContentModule } from '@/lib/content-component-registry'
 import { CONTENT_ROOT } from '@/lib/content-paths'
 import { markdownToHtml } from '@/lib/markdown'
 import type { TocItem } from '@/lib/toc'
@@ -223,7 +224,7 @@ function loadTsxModule(filePath: string, slug: string[]): TsxContentModule {
 }
 
 function buildTsxPage(slug: string[], filePath: string): ContentPage {
-  const module = loadTsxModule(filePath, slug)
+  const module = getBundledContentModule(slug) ?? loadTsxModule(filePath, slug)
   const title = module.title ?? formatTitleFromSlug(slug.at(-1) ?? 'untitled')
   const excerpt = module.excerpt ?? module.summary ?? module.description ?? ''
 

@@ -3,9 +3,9 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Menu, Moon, Sun } from 'lucide-react'
-import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
 import type { ContentTreeNode } from '@/lib/content'
+import { useTheme } from '@/components/theme-provider'
 import {
   Sheet,
   SheetClose,
