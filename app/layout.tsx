@@ -1,8 +1,10 @@
 import type { Metadata, Viewport } from 'next'
 import { Inter, Playfair_Display, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import { ThemeProvider } from '@/components/theme-provider'
 import { StyledComponentsRegistry } from '@/components/styled-components-registry'
+import { siteUrl } from '@/lib/site'
 import './globals.css'
 
 const inter = Inter({ 
@@ -27,6 +29,25 @@ export const metadata: Metadata = {
   title: 'The KKIM Journal',
   description: 'A publication of ideas, essays, and technical writings by Kwanho Kim',
   generator: 'v0.app',
+  metadataBase: new URL(siteUrl),
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    type: 'website',
+    url: siteUrl,
+    siteName: 'The KKIM Journal',
+    title: 'The KKIM Journal',
+    description: 'A publication of ideas, essays, and technical writings by Kwanho Kim',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'The KKIM Journal',
+    description: 'A publication of ideas, essays, and technical writings by Kwanho Kim',
+  },
+  verification: {
+    google: process.env.GOOGLE_SITE_VERIFICATION,
+  },
   icons: {
     icon: [
       {
@@ -72,6 +93,7 @@ export default function RootLayout({
           </ThemeProvider>
         </StyledComponentsRegistry>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
