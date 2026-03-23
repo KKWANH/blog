@@ -12,6 +12,7 @@ import {
   rewriteRelativeMediaInReactNode,
 } from '@/lib/content'
 import { categoryLabels } from '@/lib/articles'
+import { absoluteUrl } from '@/lib/site'
 import { extractTocItemsFromMarkdown, type TocItem } from '@/lib/toc'
 import {
   ArticleColumn,
@@ -55,9 +56,22 @@ export async function generateMetadata({
     return {}
   }
 
-  return page.metadata ?? {
+  const baseMetadata = page.metadata ?? {
     title: page.title,
     description: page.description ?? page.excerpt,
+  }
+
+  return {
+    ...baseMetadata,
+    alternates: {
+      canonical: page.href,
+    },
+    openGraph: {
+      url: absoluteUrl(page.href),
+      type: page.slug[0] === 'articles' ? 'article' : 'website',
+      title: baseMetadata.title ?? page.title,
+      description: baseMetadata.description ?? page.description ?? page.excerpt,
+    },
   }
 }
 
