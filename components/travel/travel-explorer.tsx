@@ -62,6 +62,10 @@ export function TravelExplorer({ cities }: { cities: TravelCity[] }) {
               that became actual base layers in memory. Use the filters, click a city card, or pan
               and zoom directly on the map.
             </p>
+            <p className={styles.heroText}>
+              This is not a map of places. It is a map of environments that changed how decisions
+              were made, what constraints mattered, and what kinds of systems felt necessary.
+            </p>
           </div>
 
           <div className={styles.stats}>
