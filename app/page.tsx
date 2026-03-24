@@ -1,18 +1,39 @@
 import { JournalHeader } from '@/components/journal-header'
 import { JournalFooter } from '@/components/journal-footer'
 import { FeaturedArticle } from '@/components/featured-article'
-import { ArticleList } from '@/components/article-list'
+import { ArchiveTree } from '@/components/archive-tree'
 import { getArticles, getFeaturedArticles } from '@/lib/articles'
+import { getContentTree } from '@/lib/content'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
+
+export const revalidate = 86400
+
+function getDailyFeaturedArticleIndex(length: number) {
+  if (length <= 1) {
+    return 0
+  }
+
+  const now = new Date()
+  const utcDayKey = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate())
+  const daysSinceEpoch = Math.floor(utcDayKey / 86_400_000)
+  return daysSinceEpoch % length
+}
 
 export default function HomePage() {
   const articles = getArticles()
   const featuredArticles = getFeaturedArticles()
-  const primaryFeatured = featuredArticles[0]
+  const dailyFeaturedIndex = getDailyFeaturedArticleIndex(featuredArticles.length)
+  const primaryFeatured = featuredArticles[dailyFeaturedIndex] ?? articles[0]
+  const remainingFeatured = featuredArticles.filter((article) => article.href !== primaryFeatured?.href)
   const nonPrimaryArticles = articles.filter((article) => article.href !== primaryFeatured?.href)
-  const frontPageStories = nonPrimaryArticles.slice(0, 3)
-  const recentArticles = nonPrimaryArticles.slice(3, 7)
+  const frontPageStories = [
+    ...remainingFeatured,
+    ...nonPrimaryArticles.filter((article) =>
+      !remainingFeatured.some((featured) => featured.href === article.href),
+    ),
+  ].slice(0, 3)
+  const articleTree = getContentTree().find((node) => node.slug[0] === 'articles')?.children ?? []
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -31,6 +52,11 @@ export default function HomePage() {
                 {primaryFeatured && (
                   <FeaturedArticle article={primaryFeatured} variant="primary" />
                 )}
+                {featuredArticles.length > 1 ? (
+                  <p className="mt-5 text-xs tracking-[0.16em] uppercase text-muted-foreground">
+                    Lead story rotates across featured articles every 24 hours.
+                  </p>
+                ) : null}
               </div>
 
               <aside className="lg:col-span-1 space-y-8">
@@ -62,17 +88,6 @@ export default function HomePage() {
                     A journal about systems that look correct in theory but fail under real
                     conditions.
                   </p>
-                </div>
-
-                <div className="border-t border-border pt-8 dark:border-transparent">
-                  <div className="text-xs tracking-widest text-muted-foreground uppercase mb-4">
-                    Reading Order
-                  </div>
-                  <ol className="space-y-3 text-sm text-muted-foreground leading-relaxed">
-                    <li>1. Start with the editor page.</li>
-                    <li>2. Read the lead essay on the front page.</li>
-                    <li>3. Move into the archive by category or question.</li>
-                  </ol>
                 </div>
               </aside>
             </div>
@@ -115,18 +130,28 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Table of Contents */}
         <section className="px-6 py-12 md:py-16">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
-              {/* Section header */}
               <div className="lg:col-span-1">
                 <h2 className="text-xs tracking-widest text-muted-foreground uppercase mb-4">
                   Table of Contents
                 </h2>
-                <p className="text-sm text-muted-foreground leading-relaxed hidden lg:block">
-                  Recent publications discovered directly from the <code>contents/</code> tree.
-                </p>
+                <div className="hidden lg:block space-y-5">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    This is the actual article tree, not a second front page. Folder structure and
+                    publication structure stay aligned, so the archive reads the same way the
+                    repository is organized.
+                  </p>
+                  <div className="space-y-2 text-sm text-muted-foreground">
+                    <p>{articles.length} published article{articles.length === 1 ? '' : 's'} currently indexed.</p>
+                    <p>{featuredArticles.length} featured article{featuredArticles.length === 1 ? '' : 's'} eligible for the lead slot.</p>
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    If you want the same structure with category filters and the full publication
+                    list, move into the archive.
+                  </p>
+                </div>
                 <Link
                   href="/archive"
                   className="hidden lg:inline-flex items-center gap-2 mt-6 text-sm hover:text-muted-foreground transition-colors group"
@@ -136,14 +161,22 @@ export default function HomePage() {
                 </Link>
               </div>
 
-              {/* Article listing */}
               <div className="lg:col-span-3">
-                <ArticleList articles={recentArticles} showExcerpt />
+                <div className="border border-border bg-secondary/20 p-6 md:p-8">
+                  {articleTree.length ? (
+                    <ArchiveTree nodes={articleTree} />
+                  ) : (
+                    <p className="text-sm text-muted-foreground">No article tree is available yet.</p>
+                  )}
+                </div>
               </div>
             </div>
 
-            {/* Mobile archive link */}
             <div className="mt-10 lg:hidden">
+              <p className="mb-4 text-sm text-muted-foreground leading-relaxed">
+                This section shows the actual article tree so the homepage reflects the same
+                structure that exists in <code>contents/</code>.
+              </p>
               <Link
                 href="/archive"
                 className="inline-flex items-center gap-2 text-sm hover:text-muted-foreground transition-colors group"

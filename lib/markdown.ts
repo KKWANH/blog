@@ -16,7 +16,7 @@ function tokenizeHtmlBlocks(source: string) {
   let index = 0
 
   const isHtmlStart = (line: string) =>
-    /^<(div|section|article|aside|figure|figcaption|picture|img|video|audio|iframe|details|summary|table|thead|tbody|tr|td|th|blockquote|hr|br|ul|ol|li|pre|code)\b/i.test(
+    /^<\/?(div|section|article|aside|main|header|footer|nav|figure|figcaption|picture|img|video|audio|iframe|details|summary|table|thead|tbody|tr|td|th|blockquote|hr|br|ul|ol|li|pre|code|h[1-6]|p|span|strong|em|small|mark|sub|sup)\b/i.test(
       line.trim(),
     )
 

@@ -15,18 +15,41 @@ export interface Article extends ContentPage {
   readTime: string
 }
 
+function normalizeArticleCategory(category: string | undefined): ArticleCategory | null {
+  if (!category) {
+    return null
+  }
+
+  const normalized = category.trim().toLowerCase()
+  const aliasMap: Record<string, ArticleCategory> = {
+    essay: 'essay',
+    essays: 'essay',
+    technical: 'technical',
+    technicals: 'technical',
+    opinion: 'opinion',
+    opinions: 'opinion',
+    research: 'research',
+  }
+
+  return aliasMap[normalized] ?? null
+}
+
 function isArticlePage(page: ContentPage): page is Article {
   return (
     page.slug[0] === 'articles' &&
     typeof page.date === 'string' &&
     typeof page.readTime === 'string' &&
-    typeof page.category === 'string' &&
-    ['essay', 'technical', 'opinion', 'research'].includes(page.category)
+    normalizeArticleCategory(page.category) !== null
   )
 }
 
 export function getArticles(): Article[] {
-  return getAllContentPages().filter(isArticlePage)
+  return getAllContentPages()
+    .filter(isArticlePage)
+    .map((page) => ({
+      ...page,
+      category: normalizeArticleCategory(page.category)!,
+    }))
 }
 
 export const articles = getArticles()

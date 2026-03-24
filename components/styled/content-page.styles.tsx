@@ -111,6 +111,7 @@ export const MarkdownBody = styled.div`
   font-size: 1.04rem;
   line-height: 1.95;
 
+  h1,
   h2,
   h3,
   h4 {
@@ -120,6 +121,11 @@ export const MarkdownBody = styled.div`
     font-family: var(--font-serif);
     letter-spacing: -0.03em;
     line-height: 1.15;
+  }
+
+  h1 {
+    font-size: clamp(2.2rem, 3.6vw, 3.4rem);
+    letter-spacing: -0.045em;
   }
 
   h2 {
@@ -140,6 +146,13 @@ export const MarkdownBody = styled.div`
   }
 
   p:first-child {
+    margin-top: 0;
+  }
+
+  h1:first-child,
+  h2:first-child,
+  h3:first-child,
+  h4:first-child {
     margin-top: 0;
   }
 
