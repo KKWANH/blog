@@ -83,7 +83,7 @@ export function TravelExplorer({ cities }: { cities: TravelCity[] }) {
         </div>
       </section>
 
-      <div className={styles.grid}>
+      <div className={styles.mapStage}>
         <div className={styles.mapCard}>
           <TravelMap
             activeCity={activeCity}
@@ -92,89 +92,92 @@ export function TravelExplorer({ cities }: { cities: TravelCity[] }) {
             onSelectCity={setActiveCityId}
           />
         </div>
-
-        <aside className={styles.sidebar}>
-          <section className={styles.panel}>
-            <p className={styles.panelTitle}>Map Mode</p>
-            <div className={styles.mapModeSwitch}>
-              <button
-                type="button"
-                onClick={() => setMapUnit('country')}
-                className={`${styles.levelButton}${mapUnit === 'country' ? ` ${styles.levelButtonActive}` : ''}`}
-              >
-                <span>Country Fill</span>
-              </button>
-              <button
-                type="button"
-                onClick={() => setMapUnit('city')}
-                className={`${styles.levelButton}${mapUnit === 'city' ? ` ${styles.levelButtonActive}` : ''}`}
-              >
-                <span>City Blobs</span>
-              </button>
-            </div>
-          </section>
-
-          <section className={styles.panel}>
-            <p className={styles.panelTitle}>Stay Level</p>
-            <div className={styles.levelFilters}>
-              <button
-                type="button"
-                onClick={() => setSelectedLevel('all')}
-                className={`${styles.levelButton}${selectedLevel === 'all' ? ` ${styles.levelButtonActive}` : ''}`}
-              >
-                <span>All stays</span>
-              </button>
-              {levelOptions.map(([level, config]) => (
-                <button
-                  key={level}
-                  type="button"
-                  onClick={() => setSelectedLevel(level as StayLevel)}
-                  className={`${styles.levelButton}${selectedLevel === level ? ` ${styles.levelButtonActive}` : ''}`}
-                >
-                  <span className={styles.dot} style={{ backgroundColor: config.color }} />
-                  <span>{config.label}</span>
-                </button>
-              ))}
-            </div>
-          </section>
-
-          <section className={styles.panel}>
-            <p className={styles.panelTitle}>Visited Cities</p>
-            {filteredCities.length ? (
-              <div className={styles.cityList}>
-                {filteredCities.map((city) => {
-                  const config = levelConfig[city.level]
-                  const isActive = city.id === activeCity?.id
-
-                  return (
-                    <button
-                      key={city.id}
-                      type="button"
-                      onClick={() => setActiveCityId(city.id)}
-                      className={`${styles.cityCard}${isActive ? ` ${styles.cityCardActive}` : ''}`}
-                    >
-                      <div className={styles.cityHeader}>
-                        <div>
-                          <p className={styles.cityName}>{city.city}</p>
-                          <p className={styles.cityCountry}>{city.country}</p>
-                        </div>
-                        <span className={styles.dot} style={{ backgroundColor: config.color }} />
-                      </div>
-                      <div className={styles.cityMeta}>
-                        <span>{config.label}</span>
-                        <span>·</span>
-                        <span>{city.lat.toFixed(1)}, {city.lng.toFixed(1)}</span>
-                      </div>
-                    </button>
-                  )
-                })}
-              </div>
-            ) : (
-              <p className={styles.empty}>No cities match the current level filter.</p>
-            )}
-          </section>
-        </aside>
       </div>
+
+      <aside className={styles.controlRail}>
+        <section className={styles.panel}>
+          <p className={styles.panelTitle}>Map Mode</p>
+          <div className={styles.mapModeSwitch}>
+            <button
+              type="button"
+              onClick={() => setMapUnit('country')}
+              className={`${styles.levelButton}${mapUnit === 'country' ? ` ${styles.levelButtonActive}` : ''}`}
+            >
+              <span>Country Fill</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => setMapUnit('city')}
+              className={`${styles.levelButton}${mapUnit === 'city' ? ` ${styles.levelButtonActive}` : ''}`}
+            >
+              <span>City Blobs</span>
+            </button>
+          </div>
+        </section>
+
+        <section className={styles.panel}>
+          <p className={styles.panelTitle}>Stay Level</p>
+          <div className={styles.levelFilters}>
+            <button
+              type="button"
+              onClick={() => setSelectedLevel('all')}
+              className={`${styles.levelButton}${selectedLevel === 'all' ? ` ${styles.levelButtonActive}` : ''}`}
+            >
+              <span>All stays</span>
+            </button>
+            {levelOptions.map(([level, config]) => (
+              <button
+                key={level}
+                type="button"
+                onClick={() => setSelectedLevel(level as StayLevel)}
+                className={`${styles.levelButton}${selectedLevel === level ? ` ${styles.levelButtonActive}` : ''}`}
+              >
+                <span className={styles.dot} style={{ backgroundColor: config.color }} />
+                <span>{config.label}</span>
+              </button>
+            ))}
+          </div>
+        </section>
+      </aside>
+
+      <section className={`${styles.panel} ${styles.cityPanel}`}>
+        <div className={styles.cityPanelHeader}>
+          <p className={styles.panelTitle}>Visited Cities</p>
+          <p className={styles.cityPanelMeta}>{filteredCities.length} visible</p>
+        </div>
+        {filteredCities.length ? (
+          <div className={styles.cityList}>
+            {filteredCities.map((city) => {
+              const config = levelConfig[city.level]
+              const isActive = city.id === activeCity?.id
+
+              return (
+                <button
+                  key={city.id}
+                  type="button"
+                  onClick={() => setActiveCityId(city.id)}
+                  className={`${styles.cityCard}${isActive ? ` ${styles.cityCardActive}` : ''}`}
+                >
+                  <div className={styles.cityHeader}>
+                    <div>
+                      <p className={styles.cityName}>{city.city}</p>
+                      <p className={styles.cityCountry}>{city.country}</p>
+                    </div>
+                    <span className={styles.dot} style={{ backgroundColor: config.color }} />
+                  </div>
+                  <div className={styles.cityMeta}>
+                    <span>{config.label}</span>
+                    <span>·</span>
+                    <span>{city.lat.toFixed(1)}, {city.lng.toFixed(1)}</span>
+                  </div>
+                </button>
+              )
+            })}
+          </div>
+        ) : (
+          <p className={styles.empty}>No cities match the current level filter.</p>
+        )}
+      </section>
     </div>
   )
 }

@@ -119,21 +119,25 @@ export function TravelMap({
   const countryGeoJson = useMemo(() => {
     return {
       type: 'FeatureCollection',
-      features: baseCountryFeatures.features.map((countryFeature) => {
+      features: baseCountryFeatures.features.flatMap((countryFeature) => {
         const numericId = String(countryFeature.id ?? '').padStart(3, '0')
         const countryCode = countries.numericToAlpha2(numericId) ?? ''
         const aggregate = countryAggregates.get(countryCode)
 
-        return {
+        if (!aggregate) {
+          return []
+        }
+
+        return [{
           ...countryFeature,
           properties: {
             ...countryFeature.properties,
             countryCode,
-            level: aggregate?.level ?? null,
-            count: aggregate?.count ?? 0,
-            fillColor: getLevelColor(aggregate?.level),
+            level: aggregate.level,
+            count: aggregate.count,
+            fillColor: getLevelColor(aggregate.level),
           },
-        }
+        }]
       }),
     }
   }, [countryAggregates])

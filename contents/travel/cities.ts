@@ -303,11 +303,11 @@ export const visitedCities = defineTravelCities([
     country: 'Morocco',
     level: StayLevel.TwoPlusDays,
   },
-  // {
-  //   city: 'Merzouga',
-  //   country: 'Morocco',
-  //   level: StayLevel.ShortVisit,
-  // },
+  {
+    city: 'Istanbul',
+    country: 'Turkey',
+    level: StayLevel.ShortVisit,
+  },
   {
     city: 'Tokyo',
     country: 'Japan',

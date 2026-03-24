@@ -2,6 +2,12 @@ import Link from 'next/link'
 import { HeaderControls } from '@/components/content-drawer'
 import { getContentTree } from '@/lib/content'
 
+const primaryNavItems = [
+  { href: '/editor', label: 'Editor' },
+  { href: '/travel', label: 'Travel' },
+  { href: '/archive', label: 'Archive' },
+] as const
+
 export function JournalHeader() {
   const currentDate = new Date().toLocaleDateString('en-US', {
     weekday: 'long',
@@ -18,12 +24,11 @@ export function JournalHeader() {
         <span className="uppercase">{currentDate}</span>
         <div className="flex items-center gap-6">
           <nav className="hidden md:flex items-center gap-6">
-            <Link href="/editor" className="hover:text-foreground transition-colors uppercase">
-              Editor
-            </Link>
-            <Link href="/archive" className="hover:text-foreground transition-colors uppercase">
-              Archive
-            </Link>
+            {primaryNavItems.map((item) => (
+              <Link key={item.href} href={item.href} className="hover:text-foreground transition-colors uppercase">
+                {item.label}
+              </Link>
+            ))}
           </nav>
           <HeaderControls tree={tree} />
         </div>
@@ -43,12 +48,11 @@ export function JournalHeader() {
 
       {/* Mobile navigation */}
       <nav className="md:hidden flex items-center justify-center gap-6 px-6 pb-4 text-xs tracking-wide text-muted-foreground border-b border-border">
-        <Link href="/editor" className="hover:text-foreground transition-colors uppercase">
-          Editor
-        </Link>
-        <Link href="/archive" className="hover:text-foreground transition-colors uppercase">
-          Archive
-        </Link>
+        {primaryNavItems.map((item) => (
+          <Link key={item.href} href={item.href} className="hover:text-foreground transition-colors uppercase">
+            {item.label}
+          </Link>
+        ))}
       </nav>
     </header>
   )
