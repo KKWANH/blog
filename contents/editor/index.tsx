@@ -83,6 +83,50 @@ export default function EditorIntroductionPage() {
         </div>
       </section>
 
+      <section id="curriculum-vitae" className="grid gap-8 border-y border-border py-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+        <div className="space-y-3">
+          <p className="text-xs tracking-[0.24em] uppercase text-muted-foreground">Curriculum Vitae</p>
+          <h2 className="font-serif text-3xl leading-tight tracking-tight md:text-5xl">
+            Download the current CV in the format that fits the context.
+          </h2>
+          <p className="max-w-xl text-lg leading-8 text-muted-foreground">
+            The industrial and academic versions live here as direct PDF downloads and can be updated independently.
+          </p>
+        </div>
+
+        <div className="grid gap-4 sm:grid-cols-2">
+          <a
+            href="/CV.industrial.pdf"
+            download
+            className="flex min-h-40 flex-col justify-between border border-border bg-secondary/35 p-5 transition-colors hover:bg-secondary/55"
+          >
+            <div className="space-y-2">
+              <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground">PDF / Industry</p>
+              <h3 className="font-serif text-2xl">Industrial CV</h3>
+              <p className="text-sm leading-6 text-muted-foreground">
+                Intended for product, engineering, and applied research roles.
+              </p>
+            </div>
+            <span className="text-sm uppercase tracking-[0.18em] text-foreground">Download</span>
+          </a>
+
+          <a
+            href="/CV.academic.pdf"
+            download
+            className="flex min-h-40 flex-col justify-between border border-border bg-secondary/35 p-5 transition-colors hover:bg-secondary/55"
+          >
+            <div className="space-y-2">
+              <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground">PDF / Academic</p>
+              <h3 className="font-serif text-2xl">Academic CV</h3>
+              <p className="text-sm leading-6 text-muted-foreground">
+                Intended for research, graduate study, and academic applications.
+              </p>
+            </div>
+            <span className="text-sm uppercase tracking-[0.18em] text-foreground">Download</span>
+          </a>
+        </div>
+      </section>
+
       <section id="editorial-introduction" className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
         <figure className="w-full max-w-md justify-self-start space-y-3 border border-border bg-secondary/40 p-4">
           <img
