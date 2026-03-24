@@ -32,8 +32,30 @@ export default function HomePage() {
 
               {/* Secondary featured */}
               <div className="lg:col-span-1">
+                <div className="border border-border bg-secondary/35 p-6 dark:bg-secondary/20">
+                  <div className="text-xs tracking-widest text-muted-foreground uppercase">
+                    Start Here
+                  </div>
+                  <h2 className="mt-3 font-serif text-2xl leading-tight dark:font-sans">
+                    Read the Editor&apos;s Introduction first.
+                  </h2>
+                  <p className="mt-3 text-sm leading-7 text-muted-foreground">
+                    A short overview of how the journal is structured, why the site reads directly
+                    from the repository, and where the writing workflow begins.
+                  </p>
+                  <Link
+                    href="/editor"
+                    className="inline-flex items-center gap-2 mt-5 text-sm hover:text-muted-foreground transition-colors group"
+                  >
+                    <span>Open Editor</span>
+                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
+
                 {secondaryFeatured && (
-                  <FeaturedArticle article={secondaryFeatured} variant="secondary" />
+                  <div className="mt-10">
+                    <FeaturedArticle article={secondaryFeatured} variant="secondary" />
+                  </div>
                 )}
 
                 {/* Issue information - newspaper style */}
