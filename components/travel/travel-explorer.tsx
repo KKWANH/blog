@@ -15,7 +15,7 @@ const TravelMap = dynamic(
 
 export function TravelExplorer({ cities }: { cities: TravelCity[] }) {
   const [selectedLevel, setSelectedLevel] = useState<StayLevel | 'all'>('all')
-  const [activeCityId, setActiveCityId] = useState<string | null>(cities[0]?.id ?? null)
+  const [activeCityId, setActiveCityId] = useState<string | null>(null)
   const [mapUnit, setMapUnit] = useState<MapUnit>('city')
 
   const filteredCities = useMemo(() => {
@@ -33,11 +33,13 @@ export function TravelExplorer({ cities }: { cities: TravelCity[] }) {
     })
   }, [cities, selectedLevel])
 
-  const activeCity = filteredCities.find((city) => city.id === activeCityId) ?? filteredCities[0] ?? null
+  const activeCity = activeCityId
+    ? filteredCities.find((city) => city.id === activeCityId) ?? null
+    : null
 
   useEffect(() => {
-    if (!filteredCities.some((city) => city.id === activeCityId)) {
-      setActiveCityId(filteredCities[0]?.id ?? null)
+    if (activeCityId && !filteredCities.some((city) => city.id === activeCityId)) {
+      setActiveCityId(null)
     }
   }, [activeCityId, filteredCities])
 

@@ -27,6 +27,12 @@ const cityAliases: Record<string, string> = {
   canter: 'Canterbury',
   frankfurt: 'Frankfurt am Main',
   'ha noi': 'Hanoi',
+  milyang: 'Miryang',
+  yeongduck: 'Yeongdeok',
+  donghae: 'Donghae City',
+  bucheon: 'Bucheon-si',
+  hwaseong: 'Hwaseong-si',
+  goisan: 'Goesan',
 }
 
 const cityOverrides: Record<
@@ -55,6 +61,108 @@ const cityOverrides: Record<
     countryCode: 'AT',
     lat: 47.5622,
     lng: 13.6493,
+  },
+  'geoje|KR': {
+    city: 'Geoje',
+    countryCode: 'KR',
+    lat: 34.880643,
+    lng: 128.621082,
+  },
+  'namhae|KR': {
+    city: 'Namhae',
+    countryCode: 'KR',
+    lat: 34.80433,
+    lng: 127.92708,
+  },
+  'namwon|KR': {
+    city: 'Namwon',
+    countryCode: 'KR',
+    lat: 35.41,
+    lng: 127.385833,
+  },
+  'sacheon|KR': {
+    city: 'Sacheon',
+    countryCode: 'KR',
+    lat: 35.00385,
+    lng: 128.06857,
+  },
+  'cheongdo|KR': {
+    city: 'Cheongdo',
+    countryCode: 'KR',
+    lat: 35.647271,
+    lng: 128.733911,
+  },
+  'cheongsong|KR': {
+    city: 'Cheongsong',
+    countryCode: 'KR',
+    lat: 36.436279,
+    lng: 129.057126,
+  },
+  'gachang|KR': {
+    city: 'Gachang',
+    countryCode: 'KR',
+    lat: 35.7778,
+    lng: 128.6477,
+  },
+  'gapyeong|KR': {
+    city: 'Gapyeong',
+    countryCode: 'KR',
+    lat: 37.831508,
+    lng: 127.509541,
+  },
+  'taeback|KR': {
+    city: 'Taeback',
+    countryCode: 'KR',
+    lat: 37.1652,
+    lng: 128.9857,
+  },
+  'haenam|KR': {
+    city: 'Haenam',
+    countryCode: 'KR',
+    lat: 34.573573,
+    lng: 126.598927,
+  },
+  'siheung|KR': {
+    city: 'Siheung',
+    countryCode: 'KR',
+    lat: 37.39067,
+    lng: 126.7888,
+  },
+  'yongin|KR': {
+    city: 'Yongin',
+    countryCode: 'KR',
+    lat: 37.23825,
+    lng: 127.17795,
+  },
+  'jecheon|KR': {
+    city: 'Jecheon',
+    countryCode: 'KR',
+    lat: 37.133333,
+    lng: 128.216667,
+  },
+  'cheorwon|KR': {
+    city: 'Cheorwon',
+    countryCode: 'KR',
+    lat: 38.146609,
+    lng: 127.313279,
+  },
+  'goesan|KR': {
+    city: 'Goesan',
+    countryCode: 'KR',
+    lat: 36.815669,
+    lng: 127.786579,
+  },
+  'yeongyang|KR': {
+    city: 'Yeongyang',
+    countryCode: 'KR',
+    lat: 36.666717,
+    lng: 129.112333,
+  },
+  'merzouga|MA': {
+    city: 'Merzouga',
+    countryCode: 'MA',
+    lat: 31.099167,
+    lng: -4.011667,
   },
 }
 

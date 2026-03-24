@@ -23,6 +23,176 @@ export const visitedCities = defineTravelCities([
     level: StayLevel.LivedThere,
   },
   {
+    city: 'Daegu',
+    country: 'South Korea',
+    level: StayLevel.FivePlusDays,
+  },
+  {
+    city: 'Busan',
+    country: 'South Korea',
+    level: StayLevel.TwoPlusDays,
+  },
+  // {
+  //   city: 'Geoje',
+  //   country: 'South Korea',
+  //   level: StayLevel.ShortVisit,
+  // },
+  // {
+  //   city: 'Namhae',
+  //   country: 'South Korea',
+  //   level: StayLevel.ShortVisit,
+  // },
+  {
+    city: 'Yeosu',
+    country: 'South Korea',
+    level: StayLevel.TwoPlusDays,
+  },
+  {
+    city: 'Gwangyang',
+    country: 'South Korea',
+    level: StayLevel.ShortVisit,
+  },
+  {
+    city: 'Haenam',
+    country: 'South Korea',
+    level: StayLevel.ShortVisit,
+  },
+  {
+    city: 'Namwon',
+    country: 'South Korea',
+    level: StayLevel.ShortVisit,
+  },
+  {
+    city: 'Sacheon',
+    country: 'South Korea',
+    level: StayLevel.ShortVisit,
+  },
+  {
+    city: 'Milyang',
+    country: 'South Korea',
+    level: StayLevel.ShortVisit,
+  },
+  {
+    city: 'Ulsan',
+    country: 'South Korea',
+    level: StayLevel.ShortVisit,
+  },
+  {
+    city: 'Cheongdo',
+    country: 'South Korea',
+    level: StayLevel.ShortVisit,
+  },
+  {
+    city: 'Pohang',
+    country: 'South Korea',
+    level: StayLevel.ShortVisit,
+  },
+  {
+    city: 'Gumi',
+    country: 'South Korea',
+    level: StayLevel.ShortVisit,
+  },
+  {
+    city: 'Yeongduck',
+    country: 'South Korea',
+    level: StayLevel.ShortVisit,
+  },
+  {
+    city: 'Cheongsong',
+    country: 'South Korea',
+    level: StayLevel.ShortVisit,
+  },
+  {
+    city: 'Yeongyang',
+    country: 'South Korea',
+    level: StayLevel.ShortVisit,
+  },
+  {
+    city: 'Taeback',
+    country: 'South Korea',
+    level: StayLevel.TwoPlusDays,
+  },
+  {
+    city: 'Donghae',
+    country: 'South Korea',
+    level: StayLevel.TwoPlusDays,
+  },
+  {
+    city: 'Gangneung',
+    country: 'South Korea',
+    level: StayLevel.TwoPlusDays,
+  },
+  {
+    city: 'Sokcho',
+    country: 'South Korea',
+    level: StayLevel.TwoPlusDays,
+  },
+  {
+    city: 'Chuncheon',
+    country: 'South Korea',
+    level: StayLevel.ShortVisit,
+  },
+  {
+    city: 'Gapyeong',
+    country: 'South Korea',
+    level: StayLevel.TwoPlusDays,
+  },
+  {
+    city: 'Cheorwon',
+    country: 'South Korea',
+    level: StayLevel.ShortVisit,
+  },
+  {
+    city: 'Namyangju',
+    country: 'South Korea',
+    level: StayLevel.FivePlusDays,
+  },
+  // {
+  //   city: 'Bucheon',
+  //   country: 'South Korea',
+  //   level: StayLevel.ShortVisit,
+  // },
+  {
+    city: 'Incheon',
+    country: 'South Korea',
+    level: StayLevel.FivePlusDays,
+  },
+  // {
+  //   city: 'Siheung',
+  //   country: 'South Korea',
+  //   level: StayLevel.ShortVisit,
+  // },
+  // {
+  //   city: 'Hwaseong',
+  //   country: 'South Korea',
+  //   level: StayLevel.ShortVisit,
+  // },
+  // {
+  //   city: 'Yongin',
+  //   country: 'South Korea',
+  //   level: StayLevel.TwoPlusDays,
+  // },
+  {
+    city: 'Wonju',
+    country: 'South Korea',
+    level: StayLevel.ShortVisit,
+  },
+  // {
+  //   city: 'Jecheon',
+  //   country: 'South Korea',
+  //   level: StayLevel.ShortVisit,
+  // },
+  {
+    city: 'Chungju',
+    country: 'South Korea',
+    level: StayLevel.ShortVisit,
+  },
+  // {
+  //   city: 'Goisan',
+  //   country: 'South Korea',
+  //   level: StayLevel.ShortVisit,
+  // },
+  {
     city: 'Leuven',
     country: 'Belgium',
     level: StayLevel.LivedThere,
@@ -303,6 +473,11 @@ export const visitedCities = defineTravelCities([
     country: 'Morocco',
     level: StayLevel.TwoPlusDays,
   },
+  // {
+  //   city: 'Merzouga',
+  //   country: 'Morocco',
+  //   level: StayLevel.ShortVisit,
+  // },
   {
     city: 'Istanbul',
     country: 'Turkey',

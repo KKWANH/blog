@@ -57,7 +57,7 @@ export function TravelMap({
   activeCity: TravelCity | null
   cities: TravelCity[]
   mapUnit: MapUnit
-  onSelectCity: (cityId: string) => void
+  onSelectCity: (cityId: string | null) => void
 }) {
   const { resolvedTheme } = useTheme()
   const isDark = resolvedTheme === 'dark'
@@ -66,7 +66,6 @@ export function TravelMap({
   const mapStyle = useMemo(
     () => ({
       version: 8,
-      glyphs: 'https://demotiles.maplibre.org/font/{fontstack}/{range}.pbf',
       sources: {
         carto: {
           type: 'raster',
@@ -245,28 +244,6 @@ export function TravelMap({
     [activeCity?.id, isDark, mapUnit],
   )
 
-  const cityLabelLayer = useMemo(
-    () => ({
-      id: 'city-labels',
-      type: 'symbol',
-      layout: {
-        'text-field': ['get', 'label'],
-        'text-font': ['Inter Regular'],
-        'text-size': ['interpolate', ['linear'], ['zoom'], 2.5, 0, 4.5, 11, 7, 14],
-        'text-variable-anchor': ['top', 'bottom', 'left', 'right'],
-        'text-radial-offset': 0.9,
-        'text-allow-overlap': false,
-      },
-      paint: {
-        'text-color': isDark ? '#f8fafc' : '#111827',
-        'text-halo-color': isDark ? 'rgba(2, 6, 23, 0.92)' : 'rgba(255, 255, 255, 0.94)',
-        'text-halo-width': 1.2,
-        'text-opacity': mapUnit === 'city' ? ['interpolate', ['linear'], ['zoom'], 3.5, 0, 5.5, 0.78, 7.5, 1] : 0,
-      },
-    }),
-    [isDark, mapUnit],
-  )
-
   useEffect(() => {
     const map = mapRef.current?.getMap()
     if (!map) {
@@ -301,6 +278,7 @@ export function TravelMap({
   function handleMapClick(event: MapLayerMouseEvent) {
     const clickedFeature = event.features?.[0]
     if (!clickedFeature) {
+      onSelectCity(null)
       return
     }
 
@@ -315,8 +293,11 @@ export function TravelMap({
       const firstCity = cities.find((city) => city.countryCode === clickedCountryCode)
       if (firstCity) {
         onSelectCity(firstCity.id)
+        return
       }
     }
+
+    onSelectCity(null)
   }
 
   return (
@@ -348,7 +329,6 @@ export function TravelMap({
         <Source id="cities" type="geojson" data={cityGeoJson as never}>
           <Layer {...(cityBlobGlowLayer as never)} />
           <Layer {...(cityBlobCoreLayer as never)} />
-          <Layer {...(cityLabelLayer as never)} />
         </Source>
 
         {activeCity ? (

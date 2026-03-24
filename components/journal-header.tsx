@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { HeaderControls } from '@/components/content-drawer'
 import { getContentTree } from '@/lib/content'
+import styles from '@/components/journal-header.module.css'
 
 const primaryNavItems = [
   { href: '/editor', label: 'Editor' },
@@ -35,15 +36,17 @@ export function JournalHeader() {
       </div>
 
       {/* Main masthead */}
-      <div className="py-8 md:py-12 px-6 text-center">
-        <Link href="/" className="inline-block">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight">
-            <span className="dark:font-sans font-serif">The KKIM Journal</span>
-          </h1>
-        </Link>
-        <p className="mt-3 text-sm md:text-base text-muted-foreground tracking-widest uppercase">
-          Ideas · Essays · Technical Writings
-        </p>
+      <div className={styles.masthead}>
+        <div className={`${styles.mastheadInner} py-8 md:py-12 px-6 text-center`}>
+          <Link href="/" className="inline-block">
+            <h1 className={`${styles.title} text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight`}>
+              <span className={`${styles.titleText} dark:font-sans font-serif`}>The KKIM Journal</span>
+            </h1>
+          </Link>
+          <p className={`${styles.subtitle} mt-3 text-sm md:text-base tracking-widest uppercase`}>
+            Ideas · Essays · Technical Writings
+          </p>
+        </div>
       </div>
 
       {/* Mobile navigation */}

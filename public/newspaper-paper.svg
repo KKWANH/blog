@@ -1,0 +1,29 @@
+<svg width="1600" height="520" viewBox="0 0 1600 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="520" fill="#EFE6D6"/>
+  <rect width="1600" height="520" fill="url(#paper-grain)" opacity="0.42"/>
+  <rect width="1600" height="520" fill="url(#vertical-fade)" opacity="0.28"/>
+  <ellipse cx="286" cy="132" rx="246" ry="92" fill="#B39363" opacity="0.08"/>
+  <ellipse cx="1290" cy="116" rx="228" ry="84" fill="#9B7649" opacity="0.06"/>
+  <ellipse cx="924" cy="392" rx="360" ry="124" fill="#C4A06C" opacity="0.05"/>
+  <path d="M0 74H1600" stroke="#7F6542" stroke-opacity="0.08"/>
+  <path d="M0 214H1600" stroke="#7F6542" stroke-opacity="0.05"/>
+  <path d="M0 378H1600" stroke="#7F6542" stroke-opacity="0.06"/>
+  <defs>
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.09"/>
+      </feComponentTransfer>
+    </filter>
+    <pattern id="paper-grain" width="1600" height="520" patternUnits="userSpaceOnUse">
+      <rect width="1600" height="520" filter="url(#noise)"/>
+    </pattern>
+    <linearGradient id="vertical-fade" x1="800" y1="0" x2="800" y2="520" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF8ED" stop-opacity="0.54"/>
+      <stop offset="0.18" stop-color="#F0E3CF" stop-opacity="0.12"/>
+      <stop offset="0.82" stop-color="#D8C2A0" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#FFF8ED" stop-opacity="0.48"/>
+    </linearGradient>
+  </defs>
+</svg>
