@@ -16,6 +16,7 @@ export type ContentPage = {
   slug: string[]
   slugPath: string
   href: string
+  lang?: string
   kind: ContentKind
   title: string
   subtitle?: string
@@ -39,6 +40,7 @@ export type ContentTreeNode = {
   type: 'folder' | 'page'
   name: string
   label: string
+  lang?: string
   slug: string[]
   href: string
   children?: ContentTreeNode[]
@@ -49,6 +51,7 @@ type FrontmatterValue = boolean | string
 type TsxContentModule = {
   default?: React.ComponentType
   metadata?: Metadata
+  lang?: string
   title?: string
   subtitle?: string
   description?: string
@@ -77,6 +80,16 @@ function isIgnoredDir(name: string) {
 
 function getHref(slug: string[]) {
   return `/${slug.map(encodeURIComponent).join('/')}`
+}
+
+function normalizeRouteSlug(slug: string[]) {
+  return slug.map((segment) => {
+    try {
+      return decodeURIComponent(segment)
+    } catch {
+      return segment
+    }
+  })
 }
 
 function getPageFiles(dir: string) {
@@ -152,6 +165,16 @@ function getBodyExcerpt(body: string) {
   return excerpt.slice(0, 220)
 }
 
+function inferContentLanguage(...values: Array<string | undefined>) {
+  const sample = values.filter(Boolean).join(' ')
+
+  if (/[가-힣ㄱ-ㅎㅏ-ㅣ]/.test(sample)) {
+    return 'ko'
+  }
+
+  return 'en'
+}
+
 function buildMarkdownPage(slug: string[], filePath: string): ContentPage {
   const raw = fs.readFileSync(filePath, 'utf8')
   const { body, frontmatter } = parseFrontmatter(raw)
@@ -169,6 +192,7 @@ function buildMarkdownPage(slug: string[], filePath: string): ContentPage {
     slug,
     slugPath: slug.join('/'),
     href: getHref(slug),
+    lang: typeof frontmatter.lang === 'string' ? frontmatter.lang : inferContentLanguage(title, frontmatter.subtitle as string | undefined, body),
     kind: 'markdown',
     title,
     subtitle: typeof frontmatter.subtitle === 'string' ? frontmatter.subtitle : undefined,
@@ -232,6 +256,7 @@ function buildTsxPage(slug: string[], filePath: string): ContentPage {
     slug,
     slugPath: slug.join('/'),
     href: getHref(slug),
+    lang: module.lang ?? inferContentLanguage(title, module.subtitle, module.description, excerpt),
     kind: 'tsx',
     title,
     subtitle: module.subtitle,
@@ -296,7 +321,8 @@ export function rewriteRelativeMediaInReactNode(node: React.ReactNode, slug: str
 }
 
 export function getContentPage(slug: string[]): ContentPage | null {
-  const dir = path.join(CONTENT_ROOT, ...slug)
+  const normalizedSlug = normalizeRouteSlug(slug)
+  const dir = path.join(CONTENT_ROOT, ...normalizedSlug)
   if (!fs.existsSync(dir) || !fs.statSync(dir).isDirectory()) {
     return null
   }
@@ -306,7 +332,9 @@ export function getContentPage(slug: string[]): ContentPage | null {
     return null
   }
 
-  return pageFile.kind === 'markdown' ? buildMarkdownPage(slug, pageFile.filePath) : buildTsxPage(slug, pageFile.filePath)
+  return pageFile.kind === 'markdown'
+    ? buildMarkdownPage(normalizedSlug, pageFile.filePath)
+    : buildTsxPage(normalizedSlug, pageFile.filePath)
 }
 
 function collectPages(dir: string, slug: string[] = []): ContentPage[] {
@@ -368,6 +396,7 @@ export function getContentTree(dir = CONTENT_ROOT, slug: string[] = []): Content
       type: page ? 'page' : 'folder',
       name: entry.name,
       label: page?.title ?? formatTitleFromSlug(entry.name),
+      lang: page?.lang,
       slug: nextSlug,
       href: getHref(nextSlug),
       children,

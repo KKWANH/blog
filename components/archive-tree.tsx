@@ -29,7 +29,7 @@ function ArchiveTreeBranch({ nodes }: { nodes: ContentTreeNode[] }) {
 
         return (
           <ArchiveBranch key={node.href}>
-            <ArchivePageLink as={Link} href={node.href}>
+            <ArchivePageLink as={Link} href={node.href} lang={node.lang}>
               {node.label}
             </ArchivePageLink>
             {hasChildren ? (

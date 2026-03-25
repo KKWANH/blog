@@ -122,6 +122,21 @@
   font-family: 'Inter', 'Geist', sans-serif;
 }
 
+.dark .font-serif,
+.dark .font-editorial {
+  font-family: var(--font-sans);
+}
+
+:lang(ko) {
+  word-break: keep-all;
+}
+
+:lang(ko) code,
+:lang(ko) pre,
+:lang(ko) .font-mono {
+  font-family: var(--font-mono);
+}
+
 /* Drop cap for article first paragraphs */
 .drop-cap::first-letter {
   float: left;

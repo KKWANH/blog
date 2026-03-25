@@ -1,5 +1,5 @@
 ---
-title: template
+title: template copy
 subtitle: template article
 date: 2026-03-24
 category: essay

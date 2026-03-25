@@ -25,17 +25,20 @@ export function FeaturedArticle({ article, variant = 'primary' }: FeaturedArticl
             </span>
           </div>
 
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight group-hover:text-muted-foreground transition-colors dark:font-sans font-serif text-balance">
+          <h2
+            lang={article.lang}
+            className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight group-hover:text-muted-foreground transition-colors font-serif text-balance"
+          >
             {article.title}
           </h2>
 
           {article.subtitle && (
-            <p className="mt-4 text-lg md:text-xl text-muted-foreground leading-relaxed">
+            <p lang={article.lang} className="mt-4 text-lg md:text-xl text-muted-foreground leading-relaxed font-serif">
               {article.subtitle}
             </p>
           )}
 
-          <p className="mt-6 text-base text-muted-foreground leading-relaxed max-w-2xl">
+          <p className="mt-6 text-base text-muted-foreground leading-relaxed max-w-2xl font-serif">
             {article.excerpt}
           </p>
 
@@ -62,12 +65,15 @@ export function FeaturedArticle({ article, variant = 'primary' }: FeaturedArticl
           </span>
         </div>
 
-        <h3 className="text-xl md:text-2xl font-semibold leading-tight group-hover:text-muted-foreground transition-colors dark:font-sans font-serif">
+        <h3
+          lang={article.lang}
+          className="text-xl md:text-2xl font-semibold leading-tight group-hover:text-muted-foreground transition-colors font-serif"
+        >
           {article.title}
         </h3>
 
         {article.subtitle && (
-          <p className="mt-2 text-sm text-muted-foreground">
+          <p lang={article.lang} className="mt-2 text-sm text-muted-foreground font-serif leading-6">
             {article.subtitle}
           </p>
         )}

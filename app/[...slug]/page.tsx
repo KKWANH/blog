@@ -39,6 +39,16 @@ import {
 
 export const dynamicParams = false
 
+function decodeSlug(slug: string[]) {
+  return slug.map((segment) => {
+    try {
+      return decodeURIComponent(segment)
+    } catch {
+      return segment
+    }
+  })
+}
+
 export async function generateStaticParams() {
   return getAllContentPages().map((page) => ({
     slug: page.slug,
@@ -51,7 +61,8 @@ export async function generateMetadata({
   params: Promise<{ slug: string[] }>
 }): Promise<Metadata> {
   const { slug } = await params
-  const page = getContentPage(slug)
+  const decodedSlug = decodeSlug(slug)
+  const page = getContentPage(decodedSlug)
   if (!page) {
     return {}
   }
@@ -104,7 +115,7 @@ function PageToc({
 
 function Breadcrumbs({ slug, title }: { slug: string[]; title: string }) {
   const parts = slug.map((segment, index) => ({
-    href: `/${slug.slice(0, index + 1).join('/')}`,
+    href: `/${slug.slice(0, index + 1).map(encodeURIComponent).join('/')}`,
     label: segment.replace(/[-_]/g, ' '),
   }))
 
@@ -134,7 +145,8 @@ export default async function ContentPage({
   params: Promise<{ slug: string[] }>
 }) {
   const { slug } = await params
-  const page = getContentPage(slug)
+  const decodedSlug = decodeSlug(slug)
+  const page = getContentPage(decodedSlug)
 
   if (!page) {
     notFound()
@@ -146,7 +158,7 @@ export default async function ContentPage({
   const useInlineToc = showToc && page.tocVariant === 'inline'
   const useRailToc = showToc && !useInlineToc
   const Component = page.Component
-  const html = page.kind === 'markdown' ? rewriteRelativeMedia(page.html ?? '', slug) : ''
+  const html = page.kind === 'markdown' ? rewriteRelativeMedia(page.html ?? '', decodedSlug) : ''
 
   return (
     <PageShell>
@@ -156,18 +168,18 @@ export default async function ContentPage({
         <BackRow>
           <BackInner>
             <Link
-              href={slug[0] === 'articles' ? '/archive' : '/'}
+              href={decodedSlug[0] === 'articles' ? '/archive' : '/'}
               className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors group"
             >
               <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform" />
-              <span>{slug[0] === 'articles' ? 'Back to Archive' : 'Back to Journal'}</span>
+              <span>{decodedSlug[0] === 'articles' ? 'Back to Archive' : 'Back to Journal'}</span>
             </Link>
           </BackInner>
         </BackRow>
 
         <ContentGrid $withToc={useRailToc}>
-          <ArticleColumn $withToc={useRailToc}>
-            <Breadcrumbs slug={slug} title={page.title} />
+          <ArticleColumn $withToc={useRailToc} lang={page.lang}>
+            <Breadcrumbs slug={decodedSlug} title={page.title} />
 
             <ArticleMeta>
               {page.category ? <span>{categoryLabels[page.category as keyof typeof categoryLabels] ?? page.category}</span> : null}
@@ -194,7 +206,7 @@ export default async function ContentPage({
               />
             ) : Component ? (
               <ComponentBody className={page.bodyClassName}>
-                {rewriteRelativeMediaInReactNode(<Component />, slug)}
+                {rewriteRelativeMediaInReactNode(<Component />, decodedSlug)}
               </ComponentBody>
             ) : null}
 

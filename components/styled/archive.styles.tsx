@@ -58,9 +58,14 @@ export const ArchiveChildren = styled.div`
 
 export const ArchivePageLink = styled.a`
   color: var(--foreground);
+  font-family: var(--font-serif);
   font-size: 0.92rem;
   line-height: 1.45;
   transition: color 160ms ease;
+
+  .dark & {
+    font-family: var(--font-sans);
+  }
 
   &:hover {
     color: var(--muted-foreground);

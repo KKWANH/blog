@@ -89,6 +89,11 @@ export const ArticleTitle = styled.h1`
   line-height: 0.98;
   letter-spacing: -0.05em;
   text-wrap: balance;
+
+  .dark & {
+    font-family: var(--font-sans);
+    letter-spacing: -0.035em;
+  }
 `
 
 export const ArticleSubtitle = styled.p`
@@ -134,6 +139,16 @@ export const MarkdownBody = styled.div`
 
   h3 {
     font-size: 1.4rem;
+  }
+
+  .dark & {
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: var(--font-sans);
+      letter-spacing: -0.025em;
+    }
   }
 
   p,

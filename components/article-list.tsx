@@ -38,18 +38,21 @@ export function ArticleList({ articles, showExcerpt = false }: ArticleListProps)
                     </span>
                   </div>
 
-                  <h3 className="text-lg md:text-xl font-semibold leading-tight group-hover:text-muted-foreground transition-colors dark:font-sans font-serif">
+                  <h3
+                    lang={article.lang}
+                    className="text-lg md:text-xl font-semibold leading-tight group-hover:text-muted-foreground transition-colors font-serif"
+                  >
                     {article.title}
                   </h3>
 
                   {article.subtitle && (
-                    <p className="mt-1 text-sm text-muted-foreground">
+                    <p lang={article.lang} className="mt-1 text-sm text-muted-foreground font-serif leading-6">
                       {article.subtitle}
                     </p>
                   )}
 
                   {showExcerpt && (
-                    <p className="mt-3 text-sm text-muted-foreground leading-relaxed line-clamp-2">
+                    <p className="mt-3 text-sm text-muted-foreground leading-relaxed line-clamp-2 font-serif">
                       {article.excerpt}
                     </p>
                   )}

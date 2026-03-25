@@ -2,39 +2,16 @@
   position: relative;
   overflow: hidden;
   background:
-    linear-gradient(115deg, rgba(118, 88, 49, 0.12), transparent 38%, rgba(83, 58, 32, 0.08)),
-    url('/news-background-3.jpg') center 80%/cover no-repeat;
+    linear-gradient(180deg, rgba(249, 235, 196, 0.24), rgba(244, 224, 177, 0.28)),
+    url('/newspaper.jpeg') center 48%/cover no-repeat;
 }
 
 .masthead::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background:
-    linear-gradient(90deg, rgba(83, 58, 32, 0.08), transparent 16%, transparent 84%, rgba(83, 58, 32, 0.07)),
-    linear-gradient(180deg, rgba(255, 250, 239, 0.48), transparent 24%, transparent 78%, rgba(91, 65, 36, 0.08)),
-    repeating-linear-gradient(
-      0deg,
-      rgba(91, 65, 36, 0.022) 0,
-      rgba(91, 65, 36, 0.022) 1px,
-      transparent 1px,
-      transparent 5px
-    );
-  mix-blend-mode: multiply;
+  display: none;
 }
 
 .masthead::after {
-  content: '';
-  position: absolute;
-  inset: -1.5rem;
-  pointer-events: none;
-  background: inherit;
-  background-position: center 30%;
-  background-size: cover;
-  filter: blur(12px) saturate(0.8);
-  opacity: 0.3;
-  transform: scale(1.04);
+  display: none;
 }
 
 .mastheadInner {
@@ -54,15 +31,17 @@
 .titleText {
   position: relative;
   color: rgba(30, 21, 12, 0.96);
-  text-shadow:
-    0 1px 0 rgba(255, 250, 241, 0.5),
-    0 2px 8px rgba(59, 41, 21, 0.08);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-shadow: none;
 }
 
 .subtitle {
-  color: rgba(88, 62, 31, 0.88);
-  text-shadow: 0 1px 0 rgba(255, 250, 240, 0.45);
-  letter-spacing: 0.28em;
+  font-family: var(--font-eb-garamond), 'Baskerville', 'Georgia', serif;
+  color: rgba(66, 47, 24, 0.92);
+  font-weight: 400;
+  text-shadow: none;
+  letter-spacing: 0.1em;
 }
 
 :global(.dark) .masthead {
@@ -90,13 +69,16 @@
 }
 
 :global(.dark) .titleText {
+  font-family: var(--font-sans);
   color: rgba(247, 241, 231, 0.96);
-  text-shadow:
-    0 1px 0 rgba(0, 0, 0, 0.3),
-    0 2px 8px rgba(0, 0, 0, 0.24);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-shadow: none;
 }
 
 :global(.dark) .subtitle {
+  font-family: var(--font-sans);
   color: rgba(231, 220, 203, 0.8);
-  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.18);
+  font-weight: 400;
+  text-shadow: none;
 }

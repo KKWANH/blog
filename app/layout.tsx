@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter, Playfair_Display, Geist_Mono } from 'next/font/google'
+import { EB_Garamond, Inter, Playfair_Display, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { ThemeProvider } from '@/components/theme-provider'
@@ -16,6 +16,12 @@ const inter = Inter({
 const playfair = Playfair_Display({ 
   subsets: ['latin'],
   variable: '--font-playfair',
+  display: 'swap',
+})
+
+const ebGaramond = EB_Garamond({
+  subsets: ['latin'],
+  variable: '--font-eb-garamond',
   display: 'swap',
 })
 
@@ -59,7 +65,7 @@ export const metadata: Metadata = {
         media: '(prefers-color-scheme: dark)',
       },
       {
-        url: '/icon.svg',
+        url: '/newspaper.svg',
         type: 'image/svg+xml',
       },
     ],
@@ -81,7 +87,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${playfair.variable} ${geistMono.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} ${playfair.variable} ${ebGaramond.variable} ${geistMono.variable} font-sans antialiased`}>
         <StyledComponentsRegistry>
           <ThemeProvider>
             {children}
