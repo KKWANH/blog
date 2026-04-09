@@ -158,3 +158,17 @@
 .rule-line-double {
   border-top: 3px double var(--foreground);
 }
+
+/* Editor page: show photos directly without inherited frame styling */
+.editor-profile-page [data-editor-photo-grid],
+.editor-profile-page [data-editor-photo-grid] img {
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.editor-profile-page [data-editor-photo-grid] img {
+  display: block;
+  padding: 0 !important;
+}
