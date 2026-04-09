@@ -91,30 +91,6 @@ export default function EditorIntroductionPage() {
           </p>
         </div>
 
-        <article className="grid gap-6 lg:grid-cols-2">
-          <div className="border border-border bg-secondary/15 p-5">
-            <p className="text-xs uppercase tracking-[0.18em] font-medium text-foreground">🔴 Failure Case</p>
-            <p className="mt-3 text-sm leading-7 text-muted-foreground">
-              During Pickit 3D deployment: system performed perfectly in lab, but failed on factory floor when packet loss spiked over WiFi and ROS nodes became desynchronized.
-            </p>
-            <p className="mt-2 text-xs text-muted-foreground italic">
-              <strong>Why it broke:</strong> Assumed reliable connectivity. Hidden assumption: "network behavior in controlled environment = production reality."
-            </p>
-          </div>
-          <div className="border border-border bg-secondary/15 p-5">
-            <p className="text-xs uppercase tracking-[0.18em] font-medium text-foreground">💡 What Changed</p>
-            <p className="mt-3 text-sm leading-7 text-muted-foreground">
-              <strong>Before:</strong> Optimized for elegance and minimal latency.
-            </p>
-            <p className="mt-2 text-sm leading-7 text-muted-foreground">
-              <strong>After:</strong> Optimize for survival under noise.
-            </p>
-            <p className="mt-2 text-xs text-muted-foreground italic">
-              Logs now include heartbeat validation, exponential backoff, and graceful degradation as first-class concerns.
-            </p>
-          </div>
-        </article>
-
         <p className="max-w-3xl text-muted-foreground leading-8">
           Every major section below cross-links narrative and data. If a statement matters, it appears as a timeline item, a row in a table, or an expandable detail block.
         </p>
@@ -136,7 +112,7 @@ export default function EditorIntroductionPage() {
               maintaining system shape under real constraints.
             </p>
             <p className="mt-4 text-muted-foreground leading-8">
-              Languages: Korean (native), English (professional), German (beginner).
+              Languages: Korean (native), English (professional).
             </p>
           </article>
 
@@ -250,9 +226,9 @@ export default function EditorIntroductionPage() {
                 <strong>Why here:</strong> Needed foundational rigor in systems thinking and C before anything else mattered.
               </p>
               <ul className="space-y-2 list-disc ml-4">
-                <li>Learned through peer-to-peer projects; criticism was direct and fast.</li>
-                <li>Built C, debugging, memory behavior as muscle memory.</li>
-                <li>Developed execution habit: test early, watch failure, iterate.</li>
+                <li>Built strong collaboration through peer evaluation, diverse team projects, and hackathon delivery cycles.</li>
+                <li>Strengthened C, debugging, and memory behavior through repeated team-based implementation.</li>
+                <li>Developed execution habit: test early, share feedback quickly, iterate as a team.</li>
               </ul>
             </div>
           </details>
@@ -312,7 +288,6 @@ export default function EditorIntroductionPage() {
               <ul className="space-y-2 list-disc ml-4">
                 <li>Worked on 3D vision-powered robotic picking in production settings.</li>
                 <li>Diagnosed real deployment failures (WebSocket instability, node desynchronization, log pipeline timezone normalization).</li>
-                <li>Implemented exponential backoff, heartbeat validation, graceful degradation.</li>
                 <li>Reduced on-site debugging cycles and prevented recurrence via validation checks.</li>
               </ul>
             </div>
