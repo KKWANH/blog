@@ -2,8 +2,9 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
 import { notFound } from 'next/navigation'
-import { JournalFooter } from '@/components/journal-footer'
-import { JournalHeader } from '@/components/journal-header'
+import { SiteFooter } from '@/components/site-footer'
+import { SiteHeader } from '@/components/site-header'
+import { Aurora } from '@/components/aurora'
 import {
   formatContentDate,
   getAllContentPages,
@@ -11,7 +12,6 @@ import {
   rewriteRelativeMedia,
   rewriteRelativeMediaInReactNode,
 } from '@/lib/content'
-import { categoryLabels } from '@/lib/articles'
 import { absoluteUrl } from '@/lib/site'
 import { extractTocItemsFromMarkdown, type TocItem } from '@/lib/toc'
 import {
@@ -79,7 +79,7 @@ export async function generateMetadata({
     },
     openGraph: {
       url: absoluteUrl(page.href),
-      type: page.slug[0] === 'articles' ? 'article' : 'website',
+      type: 'article',
       title: baseMetadata.title ?? page.title,
       description: baseMetadata.description ?? page.description ?? page.excerpt,
     },
@@ -162,17 +162,18 @@ export default async function ContentPage({
 
   return (
     <PageShell>
-      <JournalHeader />
+      <Aurora />
+      <SiteHeader />
 
       <PageMain>
         <BackRow>
           <BackInner>
             <Link
-              href={decodedSlug[0] === 'articles' ? '/archive' : '/'}
+              href="/"
               className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors group"
             >
               <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform" />
-              <span>{decodedSlug[0] === 'articles' ? 'Back to Archive' : 'Back to Journal'}</span>
+              <span>Back to kwanho.dev</span>
             </Link>
           </BackInner>
         </BackRow>
@@ -182,7 +183,7 @@ export default async function ContentPage({
             <Breadcrumbs slug={decodedSlug} title={page.title} />
 
             <ArticleMeta>
-              {page.category ? <span>{categoryLabels[page.category as keyof typeof categoryLabels] ?? page.category}</span> : null}
+              {page.category ? <span>{page.category}</span> : null}
               {page.date ? <time>{formatContentDate(page.date)}</time> : null}
               {page.readTime ? <span>{page.readTime}</span> : null}
               <span>{page.kind === 'markdown' ? 'Markdown' : 'TSX'}</span>
@@ -225,7 +226,7 @@ export default async function ContentPage({
         </ContentGrid>
       </PageMain>
 
-      <JournalFooter />
+      <SiteFooter />
     </PageShell>
   )
 }

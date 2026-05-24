@@ -7,13 +7,13 @@ import { StyledComponentsRegistry } from '@/components/styled-components-registr
 import { siteUrl } from '@/lib/site'
 import './globals.css'
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
   display: 'swap',
 })
 
-const playfair = Playfair_Display({ 
+const playfair = Playfair_Display({
   subsets: ['latin'],
   variable: '--font-playfair',
   display: 'swap',
@@ -25,16 +25,21 @@ const ebGaramond = EB_Garamond({
   display: 'swap',
 })
 
-const geistMono = Geist_Mono({ 
+const geistMono = Geist_Mono({
   subsets: ['latin'],
   variable: '--font-geist-mono',
   display: 'swap',
 })
 
+const description =
+  'Kwanho Kim — systems engineer working on robotics, computer vision, and automotive software. Index page for the demos that live on *.kwanho.dev.'
+
 export const metadata: Metadata = {
-  title: 'The KKIM Journal',
-  description: 'A publication of ideas, essays, and technical writings by Kwanho Kim',
-  generator: 'v0.app',
+  title: {
+    default: 'Kwanho Kim — kwanho.dev',
+    template: '%s · kwanho.dev',
+  },
+  description,
   metadataBase: new URL(siteUrl),
   alternates: {
     canonical: '/',
@@ -42,14 +47,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: siteUrl,
-    siteName: 'The KKIM Journal',
-    title: 'The KKIM Journal',
-    description: 'A publication of ideas, essays, and technical writings by Kwanho Kim',
+    siteName: 'kwanho.dev',
+    title: 'Kwanho Kim — kwanho.dev',
+    description,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'The KKIM Journal',
-    description: 'A publication of ideas, essays, and technical writings by Kwanho Kim',
+    title: 'Kwanho Kim — kwanho.dev',
+    description,
   },
   verification: {
     google: process.env.GOOGLE_SITE_VERIFICATION,
@@ -65,7 +70,7 @@ export const metadata: Metadata = {
         media: '(prefers-color-scheme: dark)',
       },
       {
-        url: '/newspaper.svg',
+        url: '/icon.svg',
         type: 'image/svg+xml',
       },
     ],
@@ -75,8 +80,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#f5f0e8' },
-    { media: '(prefers-color-scheme: dark)', color: '#1a1a1a' },
+    { media: '(prefers-color-scheme: light)', color: '#fafafa' },
+    { media: '(prefers-color-scheme: dark)', color: '#0a0c14' },
   ],
 }
 

@@ -4,73 +4,86 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* Light Mode: Retro Newspaper - warm paper tones */
+/* =====================================================================
+ * kwanho.dev — Playful Demo Lab palette
+ * Dark-first. Two brand accents (emerald / cyan) for the two projects.
+ * =====================================================================*/
+
 :root {
-  --background: oklch(0.97 0.01 85);
-  --foreground: oklch(0.15 0.01 45);
-  --card: oklch(0.95 0.015 80);
-  --card-foreground: oklch(0.15 0.01 45);
-  --popover: oklch(0.97 0.01 85);
-  --popover-foreground: oklch(0.15 0.01 45);
-  --primary: oklch(0.2 0.01 45);
-  --primary-foreground: oklch(0.97 0.01 85);
-  --secondary: oklch(0.92 0.015 75);
-  --secondary-foreground: oklch(0.2 0.01 45);
-  --muted: oklch(0.9 0.02 80);
-  --muted-foreground: oklch(0.45 0.01 45);
-  --accent: oklch(0.88 0.02 75);
-  --accent-foreground: oklch(0.2 0.01 45);
-  --destructive: oklch(0.5 0.2 25);
-  --destructive-foreground: oklch(0.97 0.01 85);
-  --border: oklch(0.75 0.02 70);
-  --input: oklch(0.85 0.015 80);
-  --ring: oklch(0.5 0.02 50);
-  --radius: 0rem;
-  --sidebar: oklch(0.95 0.015 80);
-  --sidebar-foreground: oklch(0.15 0.01 45);
-  --sidebar-primary: oklch(0.2 0.01 45);
-  --sidebar-primary-foreground: oklch(0.97 0.01 85);
-  --sidebar-accent: oklch(0.92 0.015 75);
-  --sidebar-accent-foreground: oklch(0.2 0.01 45);
-  --sidebar-border: oklch(0.75 0.02 70);
-  --sidebar-ring: oklch(0.5 0.02 50);
+  /* Surfaces */
+  --background: oklch(0.985 0.003 240);
+  --foreground: oklch(0.16 0.01 250);
+  --card: oklch(0.97 0.005 240);
+  --card-foreground: oklch(0.16 0.01 250);
+  --popover: oklch(0.99 0.003 240);
+  --popover-foreground: oklch(0.16 0.01 250);
+  --primary: oklch(0.18 0.01 250);
+  --primary-foreground: oklch(0.98 0.003 240);
+  --secondary: oklch(0.94 0.006 240);
+  --secondary-foreground: oklch(0.2 0.01 250);
+  --muted: oklch(0.92 0.006 240);
+  --muted-foreground: oklch(0.46 0.01 250);
+  --accent: oklch(0.93 0.008 230);
+  --accent-foreground: oklch(0.2 0.01 250);
+  --destructive: oklch(0.55 0.22 25);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.88 0.006 240);
+  --input: oklch(0.92 0.006 240);
+  --ring: oklch(0.5 0.04 230);
+  --radius: 0.875rem;
+
+  /* Brand accents (constant across themes) */
+  --brand-emerald: oklch(0.78 0.16 155);
+  --brand-cyan:    oklch(0.78 0.14 220);
+  --brand-violet:  oklch(0.72 0.18 290);
+  --brand-amber:   oklch(0.84 0.16 75);
+
+  --sidebar: oklch(0.97 0.005 240);
+  --sidebar-foreground: oklch(0.16 0.01 250);
+  --sidebar-primary: oklch(0.18 0.01 250);
+  --sidebar-primary-foreground: oklch(0.98 0.003 240);
+  --sidebar-accent: oklch(0.94 0.006 240);
+  --sidebar-accent-foreground: oklch(0.2 0.01 250);
+  --sidebar-border: oklch(0.88 0.006 240);
+  --sidebar-ring: oklch(0.5 0.04 230);
 }
 
-/* Dark Mode: Modern Digital Newspaper - high contrast, minimal */
 .dark {
-  --background: oklch(0.12 0 0);
-  --foreground: oklch(0.88 0 0);
-  --card: oklch(0.14 0 0);
-  --card-foreground: oklch(0.88 0 0);
-  --popover: oklch(0.12 0 0);
-  --popover-foreground: oklch(0.88 0 0);
-  --primary: oklch(0.92 0 0);
-  --primary-foreground: oklch(0.12 0 0);
-  --secondary: oklch(0.2 0 0);
-  --secondary-foreground: oklch(0.88 0 0);
-  --muted: oklch(0.22 0 0);
-  --muted-foreground: oklch(0.6 0 0);
-  --accent: oklch(0.18 0 0);
-  --accent-foreground: oklch(0.88 0 0);
-  --destructive: oklch(0.45 0.2 25);
-  --destructive-foreground: oklch(0.92 0 0);
-  --border: oklch(0.25 0 0);
-  --input: oklch(0.2 0 0);
-  --ring: oklch(0.5 0 0);
-  --sidebar: oklch(0.14 0 0);
-  --sidebar-foreground: oklch(0.88 0 0);
-  --sidebar-primary: oklch(0.92 0 0);
-  --sidebar-primary-foreground: oklch(0.12 0 0);
-  --sidebar-accent: oklch(0.2 0 0);
-  --sidebar-accent-foreground: oklch(0.88 0 0);
-  --sidebar-border: oklch(0.25 0 0);
-  --sidebar-ring: oklch(0.5 0 0);
+  --background: oklch(0.115 0.012 250);
+  --foreground: oklch(0.965 0.005 240);
+  --card: oklch(0.155 0.014 250);
+  --card-foreground: oklch(0.965 0.005 240);
+  --popover: oklch(0.14 0.014 250);
+  --popover-foreground: oklch(0.965 0.005 240);
+  --primary: oklch(0.96 0.005 240);
+  --primary-foreground: oklch(0.135 0.012 250);
+  --secondary: oklch(0.2 0.014 250);
+  --secondary-foreground: oklch(0.92 0.006 240);
+  --muted: oklch(0.22 0.012 250);
+  --muted-foreground: oklch(0.66 0.012 240);
+  --accent: oklch(0.21 0.016 250);
+  --accent-foreground: oklch(0.92 0.006 240);
+  --destructive: oklch(0.6 0.22 25);
+  --destructive-foreground: oklch(0.96 0.005 240);
+  --border: oklch(0.27 0.014 250);
+  --input: oklch(0.2 0.014 250);
+  --ring: oklch(0.55 0.04 230);
+
+  --sidebar: oklch(0.155 0.014 250);
+  --sidebar-foreground: oklch(0.965 0.005 240);
+  --sidebar-primary: oklch(0.96 0.005 240);
+  --sidebar-primary-foreground: oklch(0.135 0.012 250);
+  --sidebar-accent: oklch(0.2 0.014 250);
+  --sidebar-accent-foreground: oklch(0.92 0.006 240);
+  --sidebar-border: oklch(0.27 0.014 250);
+  --sidebar-ring: oklch(0.55 0.04 230);
 }
 
 @theme inline {
   --font-sans: 'Inter', 'Geist', sans-serif;
-  --font-serif: 'Playfair Display', 'Times New Roman', Georgia, serif;
-  --font-mono: 'Geist Mono', 'Geist Mono Fallback', monospace;
+  --font-serif: 'EB Garamond', 'Times New Roman', Georgia, serif;
+  --font-display: 'Playfair Display', 'Times New Roman', Georgia, serif;
+  --font-mono: 'Geist Mono', 'JetBrains Mono', 'SF Mono', monospace;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -90,10 +103,14 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --radius-sm: calc(var(--radius));
-  --radius-md: calc(var(--radius));
+  --color-brand-emerald: var(--brand-emerald);
+  --color-brand-cyan: var(--brand-cyan);
+  --color-brand-violet: var(--brand-violet);
+  --color-brand-amber: var(--brand-amber);
+  --radius-sm: calc(var(--radius) - 0.5rem);
+  --radius-md: calc(var(--radius) - 0.25rem);
   --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius));
+  --radius-xl: calc(var(--radius) + 0.25rem);
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
@@ -108,24 +125,23 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    color-scheme: light dark;
+  }
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: 'cv11', 'ss01';
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection {
+    background-color: color-mix(in oklab, var(--brand-cyan) 35%, transparent);
+    color: var(--foreground);
   }
 }
 
-/* Typography utilities for editorial design */
-.font-editorial {
-  font-family: 'Playfair Display', 'Times New Roman', Georgia, serif;
-}
-
-.font-technical {
-  font-family: 'Inter', 'Geist', sans-serif;
-}
-
-.dark .font-serif,
-.dark .font-editorial {
-  font-family: var(--font-sans);
-}
+/* =====================================================================
+ * Locale helpers
+ * =====================================================================*/
 
 :lang(ko) {
   word-break: keep-all;
@@ -137,29 +153,194 @@
   font-family: var(--font-mono);
 }
 
-/* Drop cap for article first paragraphs */
-.drop-cap::first-letter {
-  float: left;
-  font-size: 4.5rem;
-  line-height: 1;
-  padding-right: 0.5rem;
-  font-weight: 700;
+/* =====================================================================
+ * Aurora — animated background mesh
+ *
+ * Three large radial gradients drift independently; we keep the
+ * animation slow enough that it never distracts. A faint SVG grain
+ * sits on top so flat OLED panels do not band the gradient.
+ * =====================================================================*/
+
+.aurora {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  background-color: var(--background);
+  isolation: isolate;
 }
 
-/* Newspaper rule line */
-.rule-line {
-  border-top: 1px solid var(--border);
+.aurora__blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(80px);
+  opacity: 0.55;
+  mix-blend-mode: screen;
+  will-change: transform;
 }
 
-.rule-line-thick {
-  border-top: 2px solid var(--foreground);
+.dark .aurora__blob {
+  opacity: 0.45;
+  mix-blend-mode: screen;
 }
 
-.rule-line-double {
-  border-top: 3px double var(--foreground);
+.aurora__blob--a {
+  width: 56vmax;
+  height: 56vmax;
+  left: -10vmax;
+  top: -20vmax;
+  background: radial-gradient(circle at center, color-mix(in oklab, var(--brand-emerald) 70%, transparent), transparent 65%);
+  animation: aurora-a 28s ease-in-out infinite alternate;
 }
 
-/* Editor page: show photos directly without inherited frame styling */
+.aurora__blob--b {
+  width: 60vmax;
+  height: 60vmax;
+  right: -18vmax;
+  top: -12vmax;
+  background: radial-gradient(circle at center, color-mix(in oklab, var(--brand-cyan) 70%, transparent), transparent 65%);
+  animation: aurora-b 34s ease-in-out infinite alternate;
+}
+
+.aurora__blob--c {
+  width: 70vmax;
+  height: 70vmax;
+  left: 15vmax;
+  bottom: -35vmax;
+  background: radial-gradient(circle at center, color-mix(in oklab, var(--brand-violet) 70%, transparent), transparent 65%);
+  animation: aurora-c 40s ease-in-out infinite alternate;
+}
+
+.aurora__grain {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.4 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  opacity: 0.4;
+  mix-blend-mode: overlay;
+}
+
+.dark .aurora__grain {
+  opacity: 0.25;
+}
+
+@keyframes aurora-a {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to   { transform: translate3d(8vmax, 6vmax, 0) scale(1.15); }
+}
+@keyframes aurora-b {
+  from { transform: translate3d(0, 0, 0) scale(1.05); }
+  to   { transform: translate3d(-10vmax, 4vmax, 0) scale(0.95); }
+}
+@keyframes aurora-c {
+  from { transform: translate3d(0, 0, 0) scale(0.95); }
+  to   { transform: translate3d(-6vmax, -8vmax, 0) scale(1.12); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aurora__blob {
+    animation: none !important;
+  }
+}
+
+/* =====================================================================
+ * Mouse spotlight (used by hero + cards)
+ * Cards set --mx/--my from a pointer handler.
+ * =====================================================================*/
+
+.spotlight {
+  position: relative;
+  isolation: isolate;
+}
+
+.spotlight::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(
+    420px circle at var(--mx, 50%) var(--my, 50%),
+    color-mix(in oklab, var(--spotlight-color, var(--brand-cyan)) 22%, transparent),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 220ms ease;
+  z-index: 0;
+}
+
+.spotlight:hover::before,
+.spotlight:focus-within::before {
+  opacity: 1;
+}
+
+/* =====================================================================
+ * Project card border glow — single hairline that warms on hover.
+ * Uses a conic gradient masked to the perimeter.
+ * =====================================================================*/
+
+.card-glow {
+  position: relative;
+}
+
+.card-glow::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: conic-gradient(
+    from 90deg at 50% 50%,
+    color-mix(in oklab, var(--spotlight-color, var(--brand-cyan)) 65%, transparent),
+    transparent 30%,
+    color-mix(in oklab, var(--spotlight-color, var(--brand-cyan)) 35%, transparent) 60%,
+    transparent 80%
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 280ms ease;
+  pointer-events: none;
+  animation: card-glow-spin 8s linear infinite;
+  animation-play-state: paused;
+}
+
+.card-glow:hover::after,
+.card-glow:focus-within::after {
+  opacity: 1;
+  animation-play-state: running;
+}
+
+@keyframes card-glow-spin {
+  to { transform: rotate(1turn); }
+}
+
+/* =====================================================================
+ * Small utilities
+ * =====================================================================*/
+
+.glow-text {
+  text-shadow: 0 0 24px color-mix(in oklab, var(--spotlight-color, var(--brand-cyan)) 35%, transparent);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* Hairline separators / dot grid used in headers */
+.dotgrid {
+  background-image: radial-gradient(circle, color-mix(in oklab, var(--foreground) 30%, transparent) 1px, transparent 1px);
+  background-size: 22px 22px;
+  background-position: 0 0;
+}
+
+/* Editor page: photos render without inherited frame styling */
 .editor-profile-page [data-editor-photo-grid],
 .editor-profile-page [data-editor-photo-grid] img {
   border: 0 !important;
@@ -171,4 +352,13 @@
 .editor-profile-page [data-editor-photo-grid] img {
   display: block;
   padding: 0 !important;
+}
+
+/* Drop-cap retained for any future markdown article */
+.drop-cap::first-letter {
+  float: left;
+  font-size: 4.5rem;
+  line-height: 1;
+  padding-right: 0.5rem;
+  font-weight: 700;
 }
