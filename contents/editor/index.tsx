@@ -179,6 +179,16 @@ export default function EditorIntroductionPage() {
             it&apos;s a system failure. Those aren&apos;t edge cases — that&apos;s
             the actual work.
           </p>
+          <p className="mt-4 max-w-3xl text-base leading-8 text-foreground/75">
+            The work consistently demands range. The ROS node fails and the
+            symptom appears in the operator&apos;s browser. The UI reports one
+            thing and the message contract says another. Fixing it requires
+            reading the full path — from transport layer to JavaScript event
+            loop to hardware callback. In robotics and automotive, that range
+            is rarely optional. A specialist in one layer leaves the others as
+            blind spots. The systems that hold under pressure are usually
+            debugged by someone who can read all of them.
+          </p>
         </Panel>
       </section>
 
@@ -250,18 +260,30 @@ export default function EditorIntroductionPage() {
               Age 14 · Pol Math School
             </p>
             <div className="mt-5 space-y-4 text-base leading-7 text-foreground/80">
+              <p>
+                The school ran a specific kind of contest: not
+                &ldquo;solve this problem&rdquo; but &ldquo;explain this phenomenon
+                rigorously.&rdquo; The output was scored on clarity of reasoning,
+                not just correct answers. You could arrive at a wrong conclusion
+                elegantly and score higher than someone who got it right by accident.
+              </p>
               <p>Writing math and science essays forced me to:</p>
               <ul className="ml-4 list-disc space-y-1.5">
-                <li>Define assumptions explicitly</li>
-                <li>Prove relationships step by step</li>
-                <li>Test logic against edge cases</li>
+                <li>State every assumption before using it</li>
+                <li>Prove relationships step by step, no jumps</li>
+                <li>Test logic against edge cases before claiming it holds</li>
               </ul>
-              <p>That habit stayed. I still treat systems the same way:</p>
+              <p>
+                That discipline is the same one I apply to systems now. If I
+                can&apos;t explain why a system works, I don&apos;t trust it yet.
+                If a boundary condition isn&apos;t covered, the test suite is lying.
+              </p>
               <p className="font-mono text-sm text-foreground">
                 define → model → break → revise
               </p>
-              <p className="text-sm italic">
-                The difference now: I pressure-test against reality instead of paper.
+              <p className="text-sm leading-6 text-foreground/60 italic">
+                The scoring function changed — from a judge&apos;s pen to a
+                production incident. The discipline didn&apos;t.
               </p>
             </div>
           </Panel>
@@ -346,9 +368,12 @@ export default function EditorIntroductionPage() {
             stack="C · C++ · CARLA · ROS · Python"
             why="First time writing code that had to survive hardware variability and industrial deployment constraints, not just pass tests in a controlled environment."
             bullets={[
-              'Software engineering for automotive and mobility ecosystems, co-initiated with Volkswagen.',
-              'Connected embedded, communication, and product-level decisions in a single workflow.',
-              'First time managing trade-offs between elegance and industrial feasibility.',
+              'Four-module curriculum co-initiated with Volkswagen: embedded systems, autonomous driving, connected vehicles, and a capstone team project with automotive industry partners.',
+              'Embedded module: low-level C/C++ on ARM platforms (Raspberry Pi, Jetson), bare-metal drivers, sensor integration, and real-time constraints that the software stack has to respect — not negotiate around.',
+              'Autonomous driving module: ROS-based perception pipeline covering lane detection, sensor fusion, and path planning. The CNN lane-keeping project below ran here.',
+              'Connected vehicles module: CAN bus communication, AUTOSAR architecture fundamentals, and V2X protocol design — the vocabulary that made the Bosch V2X internship immediately legible.',
+              'First time engineering for reproducibility and certification, not just for demos: edge cases matter when the vehicle is moving; a fix that works 99% of the time is a 1% liability.',
+              'Learned the bridge language between software and systems engineering: message contracts become interface specifications, bugs become failure modes, latency becomes safety margin.',
             ]}
             accent="var(--brand-cyan)"
           />
@@ -360,9 +385,11 @@ export default function EditorIntroductionPage() {
             stack="C · Unix · algorithms · systems"
             why="Foundational rigor in systems thinking and C before anything else mattered."
             bullets={[
-              'Built collaboration habits through peer evaluation, mixed-team projects, and hackathon delivery cycles.',
-              'Strengthened C, debugging, and memory behaviour through repeated team-based implementation.',
-              'Developed an execution loop: test early, share feedback quickly, iterate as a team.',
+              'Built from scratch in C — custom libc (libft), printf, get_next_line, then progressively harder systems problems: process control, inter-process communication, file descriptor management, memory handling with no safety net.',
+              'Minishell: implemented a POSIX-compatible shell — lexer, parser, built-ins, pipe chains, redirections, signal handling. The project requires a precise model of what the kernel does on fork, exec, and dup. Anything vague in that model shows up as a bug.',
+              'Philosophers (dining concurrency): mutex-based and semaphore-based solutions under strict timing and resource constraints. Learned exactly where assumptions about thread scheduling order break in practice — and why race conditions in tests are worse than race conditions in production, because they hide.',
+              'CPP modules 00–09: moved from C to C++ through operator overloading, inheritance, templates, STL, and exception handling — each module reviewed by peers, not by an automated grader.',
+              'Peer evaluation model: every submission is reviewed by three peers from any level of the program. This trains the discipline of writing code that is readable and provably correct, not just functional — and of giving and receiving precise technical criticism under time pressure.',
             ]}
             accent="var(--brand-emerald)"
           />
@@ -429,8 +456,10 @@ export default function EditorIntroductionPage() {
             title="Autonomous Lane-Keeping-Assist · SEA:ME"
             stack="Python · CNN · CARLA"
             bullets={[
-              'Implemented CNN-based lane detection on the CARLA simulator.',
-              'Built a data-handling client to streamline dataset capture and evaluation.',
+              'Trained a CNN on camera frames captured from CARLA (Unreal Engine-based autonomous driving simulator) to detect lane boundaries and output a real-time steering correction signal.',
+              'Architecture: image preprocessing pipeline (resize, normalize, augment) → convolutional feature extractor → regression head outputting steering angle. Evaluated across CARLA test scenarios with varied road geometry, lighting conditions, and traffic.',
+              'Built the data pipeline from scratch: capture loop, annotation tooling, train/val/test split logic, and a client for batch export and evaluation — discovering early that model quality is bounded by data quality long before it is bounded by architecture choices.',
+              'Observed that the regression head amplified prediction noise at high speed, creating oscillation. Traced it to low-confidence frames under sharp curvature — a failure mode that only appears outside the training distribution.',
             ]}
             accent="var(--brand-amber)"
           />
@@ -441,8 +470,10 @@ export default function EditorIntroductionPage() {
             title="Rush03 · Rock band, keyboardist & leader at École 42 Seoul"
             stack="Community of 50 · 3 events · 200–300 attendees"
             bullets={[
-              'Led a 50-member student-club community and delivered three events for 200–300 attendees.',
-              'Established a repeatable planning / rehearsal / risk-response process the next leadership cohort still uses.',
+              'Founded and led Rush03, a rock band and student community at École 42 Seoul — 50 members mixing students from every stage of the program, from beginners to advanced core.',
+              'Delivered three live events for 200–300 attendees: performance sets, open stage sessions, a student band showcase. Managed venue, equipment, scheduling, and cross-team rehearsal logistics with no external support.',
+              'Built the planning process the next cohort inherited: timeline templates, equipment checklists, rehearsal schedules with contingency buffers, and a risk-response playbook for the three most common failure modes — equipment failure, no-show performers, venue changes.',
+              'Discovered something about coordination at scale: the bottleneck is almost never the work itself, it\'s the shared model of what "done" means. Every process built for Rush03 was an attempt to make that shared model explicit before the day of the event.',
             ]}
             accent="var(--brand-emerald)"
           />
@@ -560,19 +591,19 @@ export default function EditorIntroductionPage() {
           <ul className="mt-6 grid gap-4 md:grid-cols-2">
             <ThemeItem
               label="Invisible assumptions"
-              body="How systems pass all tests, then fail in production the moment an assumption is violated."
+              body="Every system that broke in unexpected ways had one thing in common: someone forgot to write down an assumption they were making. The type system didn't capture it. The tests didn't cover it. The documentation didn't mention it. Then a timezone changed, or a packet hit a size limit, or a new operator followed the UI literally instead of the way it was intended. Systems that hold under pressure are systems where the assumptions were found before production found them."
             />
             <ThemeItem
               label="Operator reality"
-              body="How software and hardware behave under human error, fatigue, and real-world constraints designers didn't anticipate."
+              body="Operators don't read manuals. They form a mental model from the first five interactions, then operate from memory. A UI that requires sequential steps will be used non-sequentially. A config field that should never be left blank will be left blank. Working at Pickit meant shipping code that real operators would use in front of a running robot arm — and that constraint changes every design decision. Error states become UX problems. Edge cases become SLA incidents."
             />
             <ThemeItem
               label="Interface clarity"
-              body="How systems die because two teams can't see the same problem. Clarity in interface design prevents that death."
+              body="Two teams, one interface: that's where most production systems quietly die. Not from bad engineering on either side, but because each team built to a different implicit spec. The data contract wasn't written down. The message format was 'understood.' The field order was 'obvious.' At Bosch, V2X interfaces fed into safety-critical scenarios — every field, every encoding, every edge case was defined upfront, not negotiated after integration. That discipline is transferable to every service boundary."
             />
             <ThemeItem
               label="Decisions over time"
-              body="How architecture choices made under pressure look different 18 months later, after three production incidents."
+              body="The architecture that seemed obvious under deadline pressure is the architecture that's hardest to change 18 months later. Not because it was wrong — but because it crystallised assumptions that were reasonable at the time and became constraints on every subsequent decision. The log pipeline built quickly for one site doesn't handle the third site's timezone. The reconnect logic written for one ROS version breaks silently on another. Tracking these patterns isn't pessimism — it's the discipline of building systems you'll still trust a year from now."
             />
           </ul>
         </Panel>
@@ -770,11 +801,11 @@ function Table({
 
 function ThemeItem({ label, body }: { label: string; body: string }) {
   return (
-    <li className="rounded-xl border border-border/40 bg-background/30 p-4">
+    <li className="rounded-xl border border-border/40 bg-background/30 p-5">
       <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-foreground">
         {label}
       </p>
-      <p className="mt-2 text-sm leading-7 text-muted-foreground">{body}</p>
+      <p className="mt-3 text-sm leading-7 text-foreground/75">{body}</p>
     </li>
   )
 }
