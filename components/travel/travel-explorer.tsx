@@ -59,16 +59,15 @@ export function TravelExplorer({ cities }: { cities: TravelCity[] }) {
       <section className="grid gap-8 lg:grid-cols-[1.35fr_0.85fr] lg:items-start">
         <div className="space-y-4">
           <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
-            How to read this
+            Depth over distance
           </p>
           <p className="max-w-2xl text-base md:text-lg leading-8 text-muted-foreground">
-            Not a generic pins-on-a-globe tracker. The map distinguishes between
-            places passed through quickly, places that required a few days of
-            living rhythm, and places that became actual base layers in memory.
+            A place shapes you differently at 24 hours than at 24 days. The
+            distinction matters — between passing through, adjusting, and
+            actually living somewhere. This map tracks which.
           </p>
           <p className="max-w-2xl text-sm leading-7 text-muted-foreground">
-            Use the filters on the right, click a city tile below, or pan and
-            zoom directly on the map.
+            Filter by stay depth, click any city, or pan directly on the map.
           </p>
         </div>
 

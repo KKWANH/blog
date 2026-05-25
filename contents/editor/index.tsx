@@ -1,18 +1,17 @@
 export const title = "Editor's Introduction"
 export const subtitle =
-  'A long-form profile — narrative, tables, and the engineering principles behind the projects on the rest of this domain.'
+  'The CV covers what was built. This page covers how and why.'
 export const description =
-  'Long-form profile combining narrative, structured data, and timelines to explain the path from early math/science writing into robotics, automotive, and industrial vision work.'
+  'Long-form profile combining narrative, structured data, and timelines to explain the path from early math/science writing into real-time distributed systems work across robotics and automotive.'
 export const excerpt =
-  'A long-form profile of how the early math/science essays became 42 Seoul, SEA:ME, Bosch, and Pickit 3D — and what the engineering principles look like in practice.'
-export const date = '2026-04-09'
+  'A long-form profile of how the early math/science essays became 42 Seoul, SEA:ME, Bosch, and Pickit 3D — and what shipping production code looks like in practice.'
+export const date = '2026-05-25'
 export const readTime = '14 min'
 export const showToc = false
 export const bodyClassName = 'editor-profile-page'
 
 /* -----------------------------------------------------------------
- * Visual primitives — small Tailwind-only helpers that recur enough
- * across this page that inlining them noisier than naming them.
+ * Visual primitives
  * ----------------------------------------------------------------- */
 
 function SectionEyebrow({ children }: { children: React.ReactNode }) {
@@ -80,36 +79,58 @@ export default function EditorIntroductionPage() {
           <div className="space-y-6">
             <SectionEyebrow>Thesis</SectionEyebrow>
             <h2 className="font-display text-3xl leading-[1.08] tracking-tight md:text-5xl">
-              From a 14-year-old writing math and science essays to shipping systems
-              in robotics, automotive, and industrial vision.
+              Full-stack engineer for real-time, distributed systems — from the
+              ROS graph to the operator screen, through every failure mode between them.
             </h2>
             <p className="max-w-2xl text-base md:text-lg leading-8 text-muted-foreground">
-              The page below is intentionally dense. It combines narrative with
-              structured data — timelines, evidence rows, certifications — so the
-              same story can be read, scanned, or verified depending on what you
-              need from it.
+              The short version is on the CV. This page carries what didn&apos;t fit
+              there: the decision logic behind each role, the side builds, and
+              the engineering patterns I keep running into.
+            </p>
+            <p className="max-w-2xl text-sm leading-7">
+              <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+                Currently
+              </span>{' '}
+              <span className="text-foreground">Leuven, Belgium</span>
+              <span className="text-muted-foreground">
+                {' '}— wrapped Pickit 3D in March 2026, now shipping{' '}
+                <a
+                  href="https://earprint.kwanho.dev"
+                  className="underline decoration-border underline-offset-4 hover:decoration-foreground"
+                >
+                  Earprint
+                </a>{' '}
+                and{' '}
+                <a
+                  href="https://ai.kwanho.dev"
+                  className="underline decoration-border underline-offset-4 hover:decoration-foreground"
+                >
+                  Ariadne
+                </a>
+                .
+              </span>
             </p>
 
             <div className="grid grid-cols-2 gap-3 pt-4 sm:grid-cols-2 xl:grid-cols-4">
               <StatCard
                 label="Started coding"
                 value="Age 14"
-                caption="While writing math/science essays."
+                caption="While writing math and science essays."
               />
               <StatCard
-                label="Core training"
+                label="Foundation"
                 value="42 Seoul"
                 caption="Peer learning, C, systems, project rigor."
               />
               <StatCard
                 label="Mobility track"
                 value="SEA:ME"
-                caption="Software engineering for automotive ecosystems."
+                caption="Master-level program in Wolfsburg."
               />
               <StatCard
                 label="Most recent role"
                 value="Pickit 3D"
-                caption="Industrial robotic picking. Aug 2025 — Mar 2026."
+                caption="3D vision · robotic picking. Aug 2025 — Mar 2026."
               />
             </div>
           </div>
@@ -150,57 +171,59 @@ export default function EditorIntroductionPage() {
             Stress reveals structure.
           </h3>
           <p className="mt-5 max-w-3xl text-base md:text-lg leading-8 text-muted-foreground">
-            Elegant systems in ideal conditions are easy to produce. Durable
-            systems under noise, delay, hardware limits, and real operators are
-            not.
-          </p>
-          <p className="mt-4 max-w-3xl text-sm leading-7 text-muted-foreground">
-            Every major section below cross-links narrative with data. If a
-            claim matters, it shows up as a timeline item, a row in a table, or
-            an expandable block — not as a single paragraph.
+            I&apos;ve diagnosed a port conflict that was silently killing field
+            communication. Built a log pipeline where timezone drift caused
+            incident timelines to diverge. Written reconnect logic that
+            determined whether a robot arm re-homed safely after a WiFi drop.
+            Those aren&apos;t edge cases — that&apos;s the actual work.
           </p>
         </Panel>
       </section>
 
-      {/* ===== 3 · Stack ===== */}
+      {/* ===== 3 · Skills (from CV) ===== */}
       <section id="working-language-and-tools" className="space-y-8">
         <header>
-          <SectionEyebrow>Tools</SectionEyebrow>
-          <SectionTitle>The stack I reach for, by what it has to survive.</SectionTitle>
+          <SectionEyebrow>Skills</SectionEyebrow>
+          <SectionTitle>What I reach for, grouped by what it has to survive.</SectionTitle>
         </header>
 
-        <div className="grid gap-5 lg:grid-cols-[1.05fr_0.95fr]">
+        <div className="grid gap-5 md:grid-cols-2">
           <Panel>
-            <p className="text-base leading-8 text-muted-foreground">
-              C, C++, Python, TypeScript, Assembly, React, ROS 1/2, Docker, Git,
-              GitHub, Figma, Qt, Flutter, and CARLA are used as tools — not
-              identity markers. The constant is keeping system shape under real
-              constraints.
-            </p>
-            <p className="mt-4 text-sm leading-7 text-muted-foreground">
-              Spoken languages: Korean (native), English (professional), beginner German.
-            </p>
+            <h3 className="font-display text-xl tracking-tight">Languages & frameworks</h3>
+            <ul className="mt-5 space-y-3 text-sm leading-7 text-muted-foreground">
+              <DomainRow label="Languages" value="C · C++ · Python · TypeScript / JavaScript" />
+              <DomainRow label="Frameworks" value="ROS1 / ROS2 · Node · React" />
+              <DomainRow label="Tools" value="Docker · Git · Linux / Bash · Cloudflare" />
+              <DomainRow
+                label="Spoken"
+                value="Korean (native) · English C1, IELTS 7.5 · German (basic) · Dutch (basic)"
+              />
+            </ul>
           </Panel>
 
           <Panel>
-            <h3 className="font-display text-xl tracking-tight">Stack by domain</h3>
-            <ul className="mt-5 space-y-3 text-sm leading-7 text-muted-foreground">
-              <DomainRow
-                label="Robotics & vision"
-                value="C++, Python, ROS, deployment debugging."
-              />
-              <DomainRow
-                label="Automotive & HMI"
-                value="TypeScript, React, V2X interfaces, safety-first UX."
-              />
-              <DomainRow
-                label="Embedded & prototyping"
-                value="Qt, Flutter, Raspberry Pi, Arduino."
-              />
-              <DomainRow
-                label="Workflow & delivery"
-                value="Docker, GitHub, CI habits, structured test loops."
-              />
+            <h3 className="font-display text-xl tracking-tight">Systems & performance</h3>
+            <ul className="mt-5 space-y-2 text-sm leading-7 text-muted-foreground">
+              <li className="flex gap-3">
+                <span className="select-none text-foreground/40">·</span>
+                <span>WebSocket / ROS reconnect and backoff logic built for field conditions</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="select-none text-foreground/40">·</span>
+                <span>Message validation and data contracts at service boundaries (C, Python, TypeScript)</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="select-none text-foreground/40">·</span>
+                <span>End-to-end log pipelines: timezone handling, upload/convert chains, triage tooling</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="select-none text-foreground/40">·</span>
+                <span>Configuration UI with safe defaults and input validation for system/network parameters</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="select-none text-foreground/40">·</span>
+                <span>Cross-layer debugging from application-layer symptoms down to port conflicts and network topology</span>
+              </li>
             </ul>
           </Panel>
         </div>
@@ -275,110 +298,158 @@ export default function EditorIntroductionPage() {
         </div>
       </section>
 
-      {/* ===== 5 · Journey timeline ===== */}
+      {/* ===== 5 · Experience ===== */}
       <section id="journey-timeline" className="space-y-8">
         <header>
-          <SectionEyebrow>Timeline</SectionEyebrow>
-          <SectionTitle>Each transition was intentional. Each closed a gap.</SectionTitle>
+          <SectionEyebrow>Experience</SectionEyebrow>
+          <SectionTitle>Each role added a constraint the previous one didn&apos;t have.</SectionTitle>
         </header>
 
         <div className="grid gap-4">
           <RoleCard
-            period="Sep 2020 — Aug 2022"
-            location="Seoul"
-            title="42 Seoul: common core, systems discipline"
-            why="Needed foundational rigor in systems thinking and C before anything else mattered."
+            tag="Role"
+            period="Aug 2025 — Mar 2026"
+            location="Leuven, Belgium"
+            title="Pickit 3D · Research & Software Engineer"
+            stack="C · C++ · Python · TypeScript · React · WebSocket · ROS1 · Docker · Git"
+            why="First production ownership with real operators. The system can't be paused between runs — everything has to work, recover, and report correctly while a robot arm is mid-pick."
             bullets={[
-              'Built strong collaboration habits through peer evaluation, mixed-team projects, and hackathon delivery cycles.',
-              'Strengthened C, debugging, and memory behavior through repeated team-based implementation.',
-              'Developed an execution loop: test early, share feedback quickly, iterate as a team.',
+              'Delivered production-support features across React UI + API + ROS / streaming layers to unblock on-site operations and shorten the troubleshooting cycle.',
+              'Built a reusable Python WebSocket client with reconnect/backoff and message validation; now used as the integration baseline across internal tools.',
+              'Built an internal log workflow — timezone-aware download → upload/convert pipeline → multilingual UI — that cut manual log handling and sped up incident triage.',
+              'Shipped a configuration UI for system/network settings with input validation and safe defaults, reducing misconfiguration-related support requests.',
+              'Diagnosed a field communication failure down to a port conflict and shipped the fix; restored stable connectivity and prevented recurrence with documentation and checks.',
             ]}
-            accent="var(--brand-emerald)"
+            accent="var(--brand-amber)"
           />
           <RoleCard
-            period="Jul 2023 — Jun 2024"
-            location="Wolfsburg"
-            title="SEA:ME: software meeting physical systems"
-            why="Moved from pure software to systems where code meets hardware, operators, and real-world constraints."
+            tag="Internship"
+            period="Jun 2024 — Nov 2024"
+            location="Hildesheim, Germany"
+            title="Robert Bosch · V2X Communication"
+            stack="C · Python · TypeScript · React · ROS2 · Docker · Git"
+            why="V2X is safety-critical automotive communication — an interface bug is not a ticket, it's an incident. First time my data contract decisions had formal consequences."
             bullets={[
-              'Software engineering in automotive and mobility contexts, with Volkswagen as co-initiator.',
-              'Connected embedded, communication, and product-level decisions in one workflow.',
+              'Implemented a V2X vehicle demonstrator for safety-critical scenarios, defining message/data interfaces and validating end-to-end behaviour in test runs.',
+              'Integrated communication modules and designed data contracts / interfaces to decouple components and accelerate iteration.',
+              'Built a React-based HMI for an eBike safety prototype with clear state modelling and operator-friendly interactions.',
+              'Performed data analysis and cross-layer troubleshooting in automotive systems.',
+            ]}
+            accent="var(--brand-violet)"
+          />
+          <RoleCard
+            tag="Program"
+            period="Jul 2023 — Jun 2024"
+            location="Wolfsburg, Germany"
+            title="SEA:ME · Master-level program in Automotive & Mobility"
+            stack="C · C++ · CARLA · ROS · Python"
+            why="First time writing code that had to survive hardware variability and industrial deployment constraints, not just pass tests in a controlled environment."
+            bullets={[
+              'Software engineering for automotive and mobility ecosystems, co-initiated with Volkswagen.',
+              'Connected embedded, communication, and product-level decisions in a single workflow.',
               'First time managing trade-offs between elegance and industrial feasibility.',
             ]}
             accent="var(--brand-cyan)"
           />
           <RoleCard
-            period="Jun 2024 — Nov 2024"
-            location="Stuttgart"
-            title="Robert Bosch: safety-critical systems in production"
-            why="Wanted to test the philosophy against safety-critical requirements where failures have real consequences."
+            tag="Program"
+            period="Sep 2020 — Present"
+            location="Seoul · Wolfsburg"
+            title="École 42 · Common Core and Advanced Core"
+            stack="C · Unix · algorithms · systems"
+            why="Foundational rigor in systems thinking and C before anything else mattered."
             bullets={[
-              'Built a V2X demonstrator for safety-critical automotive scenarios.',
-              'Integrated across communication, software, and HMI layers.',
-              'Learned what "shipped and reliable" actually means in automotive.',
+              'Built collaboration habits through peer evaluation, mixed-team projects, and hackathon delivery cycles.',
+              'Strengthened C, debugging, and memory behaviour through repeated team-based implementation.',
+              'Developed an execution loop: test early, share feedback quickly, iterate as a team.',
             ]}
-            accent="var(--brand-violet)"
-          />
-          <RoleCard
-            period="Aug 2025 — Mar 2026"
-            location="Leuven"
-            title="Pickit 3D: operationalizing systems under real noise"
-            why="Final test: does the philosophy hold when the system has to survive operator error, WiFi dropouts, and hardware variability all at once?"
-            bullets={[
-              '3D vision-powered robotic picking in production settings.',
-              'Diagnosed real deployment failures (WebSocket instability, ROS node desync, timezone normalization in the log pipeline).',
-              'Reduced on-site debugging cycles and prevented recurrence with validation checks.',
-            ]}
-            accent="var(--brand-amber)"
+            accent="var(--brand-emerald)"
           />
         </div>
       </section>
 
-      {/* ===== 6 · Evidence ===== */}
-      <section id="interactive-cv-map" className="space-y-8">
+      {/* ===== 6 · Projects ===== */}
+      <section id="projects" className="space-y-8">
         <header>
-          <SectionEyebrow>Evidence</SectionEyebrow>
-          <SectionTitle>Problem → approach → outcome.</SectionTitle>
+          <SectionEyebrow>Projects & leadership</SectionEyebrow>
+          <SectionTitle>The side work — what I build when there&apos;s no deadline, no spec, and no one else to debug it.</SectionTitle>
         </header>
 
-        <Panel className="p-0 md:p-0 overflow-hidden">
-          <Table
-            headers={['Domain', 'Problem diagnosed', 'Approach', 'Result']}
-            rows={[
-              [
-                'Industrial robotics',
-                'ROS nodes desynchronizing under packet loss; vision pipeline failing on noisy WiFi.',
-                'Exponential backoff, heartbeat validation, log pipeline with timezone-aware normalization.',
-                'Reduced on-site debugging cycles; recurrence blocked at validation.',
-              ],
-              [
-                'Automotive systems',
-                'V2X latency tolerance unclear; HMI interaction patterns untested for safety scenarios.',
-                'React HMI with an explicit state machine for safety transitions; communication layer with deterministic delivery guarantees.',
-                'Demonstrator delivered; ready for OEM validation.',
-              ],
-              [
-                'Applied AI & simulation',
-                'CNN lane detection overfitting to CARLA weather; poor transfer to real camera data.',
-                'Domain randomization in simulation; multi-condition training pipeline.',
-                'Model generalization improved; usable foundation for real-world deployment.',
-              ],
-              [
-                'Full-stack & product',
-                'Editorial content + deployment infra decoupled; hard to maintain and iterate.',
-                'Code-content co-location in TSX; per-page media folders; dynamic transpilation with path rewriting.',
-                'Editorial + engineering workflow unified — this site is the artifact.',
-              ],
+        <div className="grid gap-4">
+          <ProjectCard
+            tag="Side project"
+            period="2025 — present"
+            location="earprint.kwanho.dev"
+            title="Earprint · YouTube Music taste analyzer"
+            stack="Next.js · TypeScript · Neon pgvector · Cloudflare Workers · Chrome MV3 · Gemini"
+            bullets={[
+              'Chrome MV3 extension that scrapes the user’s YouTube Music likes; the web app enriches them through Deezer, Last.fm, and a Gemini analysis pass.',
+              'Renders a taste profile, an interactive artist map, and a five-mode recommender (song / genre / unheard genre / indie / mix) with Tinder-style rating.',
+              'Auth.js + Google OAuth, Neon Postgres with pgvector for embedding-based recommendations, Cloudflare Workers via OpenNext, with a separate Cron Worker for scheduled jobs.',
             ]}
+            href="https://earprint.kwanho.dev"
+            accent="var(--brand-emerald)"
           />
-        </Panel>
+          <ProjectCard
+            tag="Side project"
+            period="May 2026"
+            location="ai.kwanho.dev"
+            title="Ariadne · Local-first LLM workspace"
+            stack="TypeScript · Python · Fastify · React · SQLite · Anthropic / OpenAI / Gemini / Moonshot Kimi / Ollama · Docker · Cloudflare Tunnel"
+            bullets={[
+              'Multi-provider LLM application with one interface across Anthropic Claude, OpenAI, Gemini, Moonshot Kimi, and local Ollama; per-model token usage priced and reported as inference cost per run.',
+              'Agent mode that decomposes a task into steps, runs tools (web search, file reading, document analysis), and re-plans as results arrive — with a human approval step before actions execute.',
+              'Evidence engine that maps every generated claim to its source and flags unsupported claims; a built-in guardrail against hallucination.',
+              'Context-selection filter and a document ingestion pipeline (PDF + OCR fallback, DOCX, XLSX, Markdown, CSV) so only relevant content reaches the model.',
+              'Reusable prompt templates and run definitions; deployed over Cloudflare Tunnel with a local / remote access split and request-origin checks.',
+            ]}
+            href="https://ai.kwanho.dev"
+            accent="var(--brand-cyan)"
+          />
+          <ProjectCard
+            tag="Hackathon · 1st prize"
+            period="Feb 2024"
+            location="Berlin, Germany"
+            title="ColorSaveLife · Bosch ConnectedExperience (BCX) 2024"
+            stack="Python · gaze / eye-tracking · plugin architecture"
+            bullets={[
+              'Led and presented a cross-functional team that took 1st place at BCX 2024.',
+              'Integrated gaze / eye-tracking into a simulation pipeline and built a plugin-based Python client architecture for rapid experimentation.',
+            ]}
+            accent="var(--brand-violet)"
+          />
+          <ProjectCard
+            tag="Academic"
+            period="Aug 2023 — Dec 2023"
+            location="Wolfsburg, Germany"
+            title="Autonomous Lane-Keeping-Assist · SEA:ME"
+            stack="Python · CNN · CARLA"
+            bullets={[
+              'Implemented CNN-based lane detection on the CARLA simulator.',
+              'Built a data-handling client to streamline dataset capture and evaluation.',
+            ]}
+            accent="var(--brand-amber)"
+          />
+          <ProjectCard
+            tag="Leadership"
+            period="Aug 2022 — Jul 2023"
+            location="Seoul, South Korea"
+            title="Rush03 · Rock band, keyboardist & leader at École 42 Seoul"
+            stack="Community of 50 · 3 events · 200–300 attendees"
+            bullets={[
+              'Led a 50-member student-club community and delivered three events for 200–300 attendees.',
+              'Established a repeatable planning / rehearsal / risk-response process the next leadership cohort still uses.',
+            ]}
+            accent="var(--brand-emerald)"
+          />
+        </div>
       </section>
 
       {/* ===== 7 · Education + Credentials ===== */}
       <section id="education-and-certification" className="space-y-8">
         <header>
           <SectionEyebrow>Education & credentials</SectionEyebrow>
-          <SectionTitle>Parallel tracks, formal degrees, practical certs.</SectionTitle>
+          <SectionTitle>The formal record.</SectionTitle>
         </header>
 
         <div className="grid gap-5 lg:grid-cols-2">
@@ -387,14 +458,14 @@ export default function EditorIntroductionPage() {
               <h3 className="font-display text-xl tracking-tight">Degrees & training</h3>
             </div>
             <Table
-              headers={['Period', 'Program', 'Result']}
+              headers={['Period', 'Program', 'Institution / result']}
               rows={[
-                ['2026 — present', 'B.Sc. Mechatronics', 'In progress'],
-                ['2024 — 2025', 'B.Sc. Artificial Intelligence', 'GPA 3.44 / 4.5'],
-                ['2019 — 2020', 'B.Sc. Computer Engineering', 'GPA 4.24 / 4.5'],
-                ['2019 — 2022', 'B.Sc. Business Administration', 'GPA 3.77 / 4.5'],
-                ['2020 — 2022', '42 Seoul Common Core', 'Completed'],
-                ['2023 — 2025', '42 Wolfsburg Advanced Core', 'Transferred & continued'],
+                ['Feb 2026 — present', 'B.Sc. Mechatronics', 'Korea National Open University'],
+                ['Mar 2023 — Feb 2025', 'B.Sc. Artificial Intelligence', 'Korea National Open University · GPA 3.44 / 4.5'],
+                ['Apr 2019 — Aug 2020', 'B.Sc. Computer Engineering', 'Korea Academic Credit Bank · GPA 4.24 / 4.5'],
+                ['Apr 2019 — Aug 2022', 'B.Sc. Business Administration', 'Korea Academic Credit Bank · GPA 3.77 / 4.5'],
+                ['Sep 2020 — present', 'École 42 · Common & Advanced Core', 'Seoul / Wolfsburg'],
+                ['Jul 2023 — Jun 2024', 'SEA:ME · Master-level program', 'Wolfsburg · Automotive & Mobility'],
               ]}
             />
           </Panel>
@@ -404,14 +475,12 @@ export default function EditorIntroductionPage() {
               <h3 className="font-display text-xl tracking-tight">Selected certifications</h3>
             </div>
             <Table
-              headers={['Year', 'Credential', 'Issuer / level']}
+              headers={['Date', 'Credential', 'Issuer']}
               rows={[
-                ['2025', 'Network management certification', 'Professional qualification'],
-                ['2022', 'TOEIC Speaking 160', 'Advanced Low'],
-                ['2021', 'TOEIC 860', 'Language certification'],
-                ['2020', 'Engineer Information Processing', 'HRD Korea'],
-                ['2020', 'Craftsman Electronic Apparatus', 'HRD Korea'],
-                ['2019', 'Computer Specialist in Spreadsheet & DB · Level I', 'KCCI'],
+                ['Mar 2025', 'IELTS Academic 7.5 (C1)', 'British Council'],
+                ['Nov 2020', 'Engineer Information Processing', 'HRD Korea — system development / info processing / PM'],
+                ['Dec 2019', 'Computer Specialist in Spreadsheet & DB · Level I', 'KCCI — advanced productivity & data management'],
+                ['Oct 2019', 'Network Advisor · Level 2', 'ICQA — network administration'],
               ]}
             />
           </Panel>
@@ -423,12 +492,11 @@ export default function EditorIntroductionPage() {
         <div>
           <SectionEyebrow>Curriculum Vitae</SectionEyebrow>
           <SectionTitle>
-            PDF for formal use. This page for engineering context.
+            The CV is the two-page summary. This page is the context behind it.
           </SectionTitle>
           <p className="mt-5 max-w-xl text-base leading-8 text-muted-foreground">
-            The two CV files remain the official summary artifacts. This editor
-            page adds the missing context — decision style, system constraints,
-            and the actual evidence behind the bullets.
+            The PDF is for applications. This page is for anyone who wants to
+            understand how the decisions were made, not just what they were.
           </p>
         </div>
 
@@ -442,9 +510,9 @@ export default function EditorIntroductionPage() {
               <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted-foreground">
                 PDF · Industry
               </p>
-              <h3 className="font-display text-2xl tracking-tight">Industrial CV</h3>
+              <h3 className="font-display text-2xl tracking-tight">Industry CV</h3>
               <p className="text-sm leading-6 text-muted-foreground">
-                Product engineering, robotics deployment, software integration,
+                Software engineering, robotics deployment, real-time systems,
                 operations.
               </p>
             </div>
@@ -479,10 +547,10 @@ export default function EditorIntroductionPage() {
         <Panel>
           <SectionEyebrow>Recurring themes</SectionEyebrow>
           <h3 className="mt-3 font-display text-3xl md:text-4xl tracking-tight leading-[1.1]">
-            What I keep coming back to.
+            Four problems that show up everywhere, in different clothes.
           </h3>
           <p className="mt-3 text-sm italic text-muted-foreground">
-            The real engineering: what breaks, why it breaks, what we learn from it.
+            The stack changes. The failure modes don&apos;t.
           </p>
 
           <ul className="mt-6 grid gap-4 md:grid-cols-2">
@@ -515,7 +583,7 @@ export default function EditorIntroductionPage() {
 
 function DomainRow({ label, value }: { label: string; value: string }) {
   return (
-    <li className="grid gap-1 sm:grid-cols-[10.5rem_1fr] sm:gap-3">
+    <li className="grid gap-1 sm:grid-cols-[7rem_1fr] sm:gap-3">
       <span className="font-mono text-[11px] uppercase tracking-[0.16em] text-foreground/80">
         {label}
       </span>
@@ -525,16 +593,20 @@ function DomainRow({ label, value }: { label: string; value: string }) {
 }
 
 function RoleCard({
+  tag,
   period,
   location,
   title,
+  stack,
   why,
   bullets,
   accent,
 }: {
+  tag: string
   period: string
   location: string
   title: string
+  stack: string
   why: string
   bullets: string[]
   accent: string
@@ -543,9 +615,12 @@ function RoleCard({
     <article className="rounded-2xl border border-border/60 bg-card/40 backdrop-blur-sm p-6 md:p-7">
       <header className="flex flex-wrap items-baseline gap-x-4 gap-y-1.5">
         <span
-          className="font-mono text-[11px] uppercase tracking-[0.18em]"
-          style={{ color: accent }}
+          className="rounded-md border px-2 py-0.5 font-mono text-[10px] uppercase tracking-[0.18em]"
+          style={{ color: accent, borderColor: 'color-mix(in oklab, ' + accent + ' 40%, transparent)' }}
         >
+          {tag}
+        </span>
+        <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-foreground/80">
           {period}
         </span>
         <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
@@ -553,9 +628,73 @@ function RoleCard({
         </span>
       </header>
       <h3 className="mt-3 font-display text-2xl tracking-tight leading-tight">{title}</h3>
-      <p className="mt-4 max-w-3xl rounded-md border-l-2 border-border bg-background/40 px-4 py-2 text-sm italic leading-7 text-muted-foreground" style={{ borderLeftColor: accent }}>
+      <p className="mt-2 font-mono text-[11px] text-muted-foreground">{stack}</p>
+      <p
+        className="mt-4 max-w-3xl rounded-md border-l-2 bg-background/40 px-4 py-2 text-sm italic leading-7 text-muted-foreground"
+        style={{ borderLeftColor: accent }}
+      >
         <span className="font-medium not-italic text-foreground">Why here:</span> {why}
       </p>
+      <ul className="mt-5 ml-1 space-y-2 text-sm leading-7 text-muted-foreground">
+        {bullets.map((bullet, index) => (
+          <li key={index} className="flex gap-3">
+            <span className="select-none text-foreground/40">·</span>
+            <span>{bullet}</span>
+          </li>
+        ))}
+      </ul>
+    </article>
+  )
+}
+
+function ProjectCard({
+  tag,
+  period,
+  location,
+  title,
+  stack,
+  bullets,
+  href,
+  accent,
+}: {
+  tag: string
+  period: string
+  location: string
+  title: string
+  stack: string
+  bullets: string[]
+  href?: string
+  accent: string
+}) {
+  return (
+    <article className="rounded-2xl border border-border/60 bg-card/40 backdrop-blur-sm p-6 md:p-7">
+      <header className="flex flex-wrap items-baseline gap-x-4 gap-y-1.5">
+        <span
+          className="rounded-md border px-2 py-0.5 font-mono text-[10px] uppercase tracking-[0.18em]"
+          style={{ color: accent, borderColor: 'color-mix(in oklab, ' + accent + ' 40%, transparent)' }}
+        >
+          {tag}
+        </span>
+        <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-foreground/80">
+          {period}
+        </span>
+        {href ? (
+          <a
+            href={href}
+            target="_blank"
+            rel="noreferrer noopener"
+            className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground underline decoration-border underline-offset-4 hover:text-foreground hover:decoration-foreground"
+          >
+            {location} ↗
+          </a>
+        ) : (
+          <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+            {location}
+          </span>
+        )}
+      </header>
+      <h3 className="mt-3 font-display text-2xl tracking-tight leading-tight">{title}</h3>
+      <p className="mt-2 font-mono text-[11px] text-muted-foreground">{stack}</p>
       <ul className="mt-5 ml-1 space-y-2 text-sm leading-7 text-muted-foreground">
         {bullets.map((bullet, index) => (
           <li key={index} className="flex gap-3">
