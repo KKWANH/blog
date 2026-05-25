@@ -3,7 +3,6 @@ import { EB_Garamond, Inter, Playfair_Display, Geist_Mono } from 'next/font/goog
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { ThemeProvider } from '@/components/theme-provider'
-import { StyledComponentsRegistry } from '@/components/styled-components-registry'
 import { siteUrl } from '@/lib/site'
 import './globals.css'
 
@@ -59,23 +58,9 @@ export const metadata: Metadata = {
   verification: {
     google: process.env.GOOGLE_SITE_VERIFICATION,
   },
-  icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
-  },
+  // Favicon + apple-touch are auto-resolved from app/icon.svg, app/icon.png,
+  // and app/apple-icon.png via Next.js file conventions — no manual `icons`
+  // entries needed.
 }
 
 export const viewport: Viewport = {
@@ -93,11 +78,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} ${playfair.variable} ${ebGaramond.variable} ${geistMono.variable} font-sans antialiased`}>
-        <StyledComponentsRegistry>
-          <ThemeProvider>
-            {children}
-          </ThemeProvider>
-        </StyledComponentsRegistry>
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
         <Analytics />
         <SpeedInsights />
       </body>

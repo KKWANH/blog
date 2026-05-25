@@ -13,7 +13,7 @@ export function SiteLinkCard({ link }: { link: SiteLink }) {
     <Spotlight
       as="article"
       color={accent}
-      className="card-glow group relative flex flex-col gap-4 rounded-2xl border border-border bg-card/50 backdrop-blur-sm p-6 md:p-7 transition-transform duration-300 hover:-translate-y-1"
+      className="group relative flex flex-col gap-4 rounded-2xl border border-border bg-card/50 backdrop-blur-sm p-6 md:p-7 transition-all duration-300 hover:-translate-y-1 hover:border-foreground/30"
     >
       <div className="flex items-start justify-between gap-3">
         <div>

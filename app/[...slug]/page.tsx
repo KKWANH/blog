@@ -1,12 +1,15 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
-import { ArrowLeft } from 'lucide-react'
 import { notFound } from 'next/navigation'
 import { SiteFooter } from '@/components/site-footer'
 import { SiteHeader } from '@/components/site-header'
 import { Aurora } from '@/components/aurora'
 import {
-  formatContentDate,
+  ContentBackLink,
+  ContentFooterMeta,
+  ContentHero,
+} from '@/components/content-shell'
+import { MarkdownBody } from '@/components/markdown-body'
+import {
   getAllContentPages,
   getContentPage,
   rewriteRelativeMedia,
@@ -14,28 +17,6 @@ import {
 } from '@/lib/content'
 import { absoluteUrl } from '@/lib/site'
 import { extractTocItemsFromMarkdown, type TocItem } from '@/lib/toc'
-import {
-  ArticleColumn,
-  ArticleMeta,
-  ArticleRule,
-  ArticleSubtitle,
-  ArticleTitle,
-  BackInner,
-  BackRow,
-  BreadcrumbCurrent,
-  BreadcrumbsNav,
-  ComponentBody,
-  ContentGrid,
-  FooterMeta,
-  MarkdownBody,
-  PageMain,
-  PageShell,
-  TocEyebrow,
-  TocLink,
-  TocList,
-  TocNav,
-  TocWrap,
-} from '@/components/styled/content-page.styles'
 
 export const dynamicParams = false
 
@@ -50,9 +31,7 @@ function decodeSlug(slug: string[]) {
 }
 
 export async function generateStaticParams() {
-  return getAllContentPages().map((page) => ({
-    slug: page.slug,
-  }))
+  return getAllContentPages().map((page) => ({ slug: page.slug }))
 }
 
 export async function generateMetadata({
@@ -61,11 +40,8 @@ export async function generateMetadata({
   params: Promise<{ slug: string[] }>
 }): Promise<Metadata> {
   const { slug } = await params
-  const decodedSlug = decodeSlug(slug)
-  const page = getContentPage(decodedSlug)
-  if (!page) {
-    return {}
-  }
+  const page = getContentPage(decodeSlug(slug))
+  if (!page) return {}
 
   const baseMetadata = page.metadata ?? {
     title: page.title,
@@ -74,9 +50,7 @@ export async function generateMetadata({
 
   return {
     ...baseMetadata,
-    alternates: {
-      canonical: page.href,
-    },
+    alternates: { canonical: page.href },
     openGraph: {
       url: absoluteUrl(page.href),
       type: 'article',
@@ -86,59 +60,12 @@ export async function generateMetadata({
   }
 }
 
-function PageToc({
-  inline = false,
-  items,
-}: {
-  inline?: boolean
-  items: TocItem[]
-}) {
-  if (!items.length) {
-    return null
-  }
-
-  return (
-    <TocNav $inline={inline} aria-label="Table of contents">
-      <TocEyebrow>On This Page</TocEyebrow>
-      <TocList>
-        {items.map((item) => (
-          <li key={item.id}>
-            <TocLink href={`#${item.id}`} $nested={item.level === 3}>
-              {item.label}
-            </TocLink>
-          </li>
-        ))}
-      </TocList>
-    </TocNav>
-  )
-}
-
-function Breadcrumbs({ slug, title }: { slug: string[]; title: string }) {
-  const parts = slug.map((segment, index) => ({
-    href: `/${slug.slice(0, index + 1).map(encodeURIComponent).join('/')}`,
-    label: segment.replace(/[-_]/g, ' '),
-  }))
-
-  return (
-    <BreadcrumbsNav aria-label="Breadcrumb">
-      <Link href="/">Home</Link>
-      {parts.map((part, index) => {
-        const isLast = index === parts.length - 1
-        return (
-          <span key={part.href} className="contents">
-            <span>/</span>
-            {isLast ? (
-              <BreadcrumbCurrent>{title}</BreadcrumbCurrent>
-            ) : (
-              <Link href={part.href}>{part.label}</Link>
-            )}
-          </span>
-        )
-      })}
-    </BreadcrumbsNav>
-  )
-}
-
+/**
+ * Dynamic content route — renders any folder under `contents/` that
+ * carries an `index.md` or `index.tsx`. Uses the same shell as the
+ * homepage (aurora + site header + footer) so /editor and /travel
+ * read as kwanho.dev pages rather than journal articles.
+ */
 export default async function ContentPage({
   params,
 }: {
@@ -152,81 +79,72 @@ export default async function ContentPage({
     notFound()
   }
 
-  const markdownToc = page.kind === 'markdown' ? extractTocItemsFromMarkdown(page.content ?? '') : []
+  const markdownToc =
+    page.kind === 'markdown' ? extractTocItemsFromMarkdown(page.content ?? '') : []
   const tocItems = page.kind === 'tsx' ? page.toc ?? [] : markdownToc
-  const showToc = (page.showToc ?? tocItems.length > 0) && tocItems.length > 0
-  const useInlineToc = showToc && page.tocVariant === 'inline'
-  const useRailToc = showToc && !useInlineToc
+  const showInlineToc = (page.showToc ?? false) && tocItems.length > 0
   const Component = page.Component
-  const html = page.kind === 'markdown' ? rewriteRelativeMedia(page.html ?? '', decodedSlug) : ''
+  const html =
+    page.kind === 'markdown' ? rewriteRelativeMedia(page.html ?? '', decodedSlug) : ''
 
   return (
-    <PageShell>
+    <div className="relative min-h-screen flex flex-col">
       <Aurora />
       <SiteHeader />
 
-      <PageMain>
-        <BackRow>
-          <BackInner>
-            <Link
-              href="/"
-              className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors group"
-            >
-              <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform" />
-              <span>Back to kwanho.dev</span>
-            </Link>
-          </BackInner>
-        </BackRow>
+      <main className="flex-1">
+        <div className="max-w-6xl mx-auto px-5 md:px-8 pt-8 md:pt-10">
+          <ContentBackLink />
+        </div>
 
-        <ContentGrid $withToc={useRailToc}>
-          <ArticleColumn $withToc={useRailToc} lang={page.lang}>
-            <Breadcrumbs slug={decodedSlug} title={page.title} />
+        <div className="max-w-6xl mx-auto px-5 md:px-8 mt-6 md:mt-8">
+          <ContentHero page={page} decodedSlug={decodedSlug} />
+        </div>
 
-            <ArticleMeta>
-              {page.category ? <span>{page.category}</span> : null}
-              {page.date ? <time>{formatContentDate(page.date)}</time> : null}
-              {page.readTime ? <span>{page.readTime}</span> : null}
-              <span>{page.kind === 'markdown' ? 'Markdown' : 'TSX'}</span>
-            </ArticleMeta>
+        <article
+          lang={page.lang}
+          className={`max-w-6xl mx-auto px-5 md:px-8 mt-12 md:mt-16 ${page.bodyClassName ?? ''}`}
+        >
+          {showInlineToc ? <InlineToc items={tocItems} /> : null}
 
-            <ArticleTitle>{page.title}</ArticleTitle>
-            {page.subtitle ? <ArticleSubtitle>{page.subtitle}</ArticleSubtitle> : null}
-            <ArticleRule />
-
-            {useInlineToc ? <PageToc inline items={tocItems} /> : null}
-            {useRailToc ? (
-              <TocWrap $mobileOnly>
-                <PageToc inline items={tocItems} />
-              </TocWrap>
-            ) : null}
-
-            {page.kind === 'markdown' ? (
-              <MarkdownBody
-                className={page.bodyClassName}
-                dangerouslySetInnerHTML={{ __html: html }}
-              />
-            ) : Component ? (
-              <ComponentBody className={page.bodyClassName}>
-                {rewriteRelativeMediaInReactNode(<Component />, decodedSlug)}
-              </ComponentBody>
-            ) : null}
-
-            <FooterMeta>
-              {page.date ? <time>{formatContentDate(page.date)}</time> : null}
-              <span>{page.kind === 'markdown' ? 'Markdown article' : 'TSX article'}</span>
-              <span>{page.href}</span>
-            </FooterMeta>
-          </ArticleColumn>
-
-          {useRailToc ? (
-            <TocWrap>
-              <PageToc items={tocItems} />
-            </TocWrap>
+          {page.kind === 'markdown' ? (
+            <MarkdownBody html={html} />
+          ) : Component ? (
+            <div>{rewriteRelativeMediaInReactNode(<Component />, decodedSlug)}</div>
           ) : null}
-        </ContentGrid>
-      </PageMain>
+
+          <ContentFooterMeta page={page} />
+        </article>
+      </main>
 
       <SiteFooter />
-    </PageShell>
+    </div>
+  )
+}
+
+function InlineToc({ items }: { items: TocItem[] }) {
+  return (
+    <nav
+      aria-label="Table of contents"
+      className="mb-10 max-w-2xl rounded-xl border border-border/60 bg-card/40 backdrop-blur-sm p-5"
+    >
+      <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted-foreground">
+        On this page
+      </p>
+      <ul className="mt-3 grid gap-1.5">
+        {items.map((item) => (
+          <li key={item.id}>
+            <a
+              href={`#${item.id}`}
+              className={`block text-sm transition-colors hover:text-foreground ${
+                item.level === 3 ? 'pl-3 text-muted-foreground' : 'text-foreground/80'
+              }`}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
   )
 }

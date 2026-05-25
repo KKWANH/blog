@@ -275,53 +275,6 @@
 }
 
 /* =====================================================================
- * Project card border glow — single hairline that warms on hover.
- * Uses a conic gradient masked to the perimeter.
- * =====================================================================*/
-
-.card-glow {
-  position: relative;
-}
-
-.card-glow::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1px;
-  background: conic-gradient(
-    from 90deg at 50% 50%,
-    color-mix(in oklab, var(--spotlight-color, var(--brand-cyan)) 65%, transparent),
-    transparent 30%,
-    color-mix(in oklab, var(--spotlight-color, var(--brand-cyan)) 35%, transparent) 60%,
-    transparent 80%
-  );
-  -webkit-mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-  mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-  mask-composite: exclude;
-  opacity: 0;
-  transition: opacity 280ms ease;
-  pointer-events: none;
-  animation: card-glow-spin 8s linear infinite;
-  animation-play-state: paused;
-}
-
-.card-glow:hover::after,
-.card-glow:focus-within::after {
-  opacity: 1;
-  animation-play-state: running;
-}
-
-@keyframes card-glow-spin {
-  to { transform: rotate(1turn); }
-}
-
-/* =====================================================================
  * Status indicator — slow, calm breath instead of Tailwind's animate-ping
  * (which scales out every second and reads as distracting).
  * =====================================================================*/

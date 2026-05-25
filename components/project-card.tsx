@@ -22,7 +22,7 @@ export function ProjectCard({ project }: { project: Project }) {
     <Spotlight
       as="article"
       color={accent}
-      className="card-glow group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card/60 backdrop-blur-sm transition-transform duration-300 hover:-translate-y-1"
+      className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card/60 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-foreground/30"
     >
       {/* Project visual */}
       <div className="relative aspect-[16/9] w-full overflow-hidden border-b border-border/60">
