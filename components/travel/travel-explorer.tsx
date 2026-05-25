@@ -2,14 +2,20 @@
 
 import { useEffect, useMemo, useState } from 'react'
 import dynamic from 'next/dynamic'
-import styles from '@/components/travel/travel-explorer.module.css'
 import { StayLevel, type MapUnit, levelConfig, type TravelCity } from '@/components/travel/travel-types'
+
+// Map theme classes (maplibregl popup, ctrl group, etc.) live in the css
+// module, which is imported separately by TravelMap.
 
 const TravelMap = dynamic(
   () => import('@/components/travel/travel-map').then((module) => module.TravelMap),
   {
     ssr: false,
-    loading: () => <div className={styles.mapLoading}>Loading map...</div>,
+    loading: () => (
+      <div className="absolute inset-0 grid place-items-center font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">
+        Loading map…
+      </div>
+    ),
   },
 )
 
@@ -48,49 +54,38 @@ export function TravelExplorer({ cities }: { cities: TravelCity[] }) {
   const levelOptions = Object.entries(levelConfig)
 
   return (
-    <div className={styles.shell}>
-      <section className={styles.hero}>
-        <p className={styles.eyebrow}>Travel Atlas</p>
-        <div className={styles.heroGrid}>
-          <div>
-            <h2 className="font-serif text-4xl leading-tight tracking-tight md:text-6xl">
-              A personal geography of places that stayed long enough to matter.
-            </h2>
-            <p className={styles.heroText}>
-              This map is not a generic pins-on-a-globe tracker. It distinguishes between places
-              passed through quickly, places that required a few days of living rhythm, and places
-              that became actual base layers in memory. Use the filters, click a city card, or pan
-              and zoom directly on the map.
-            </p>
-            <p className={styles.heroText}>
-              This is not a map of places. It is a map of environments that changed how decisions
-              were made, what constraints mattered, and what kinds of systems felt necessary.
-            </p>
-          </div>
+    <div className="space-y-10">
+      {/* ===== Intro + stats ===== */}
+      <section className="grid gap-8 lg:grid-cols-[1.35fr_0.85fr] lg:items-start">
+        <div className="space-y-4">
+          <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
+            How to read this
+          </p>
+          <p className="max-w-2xl text-base md:text-lg leading-8 text-muted-foreground">
+            Not a generic pins-on-a-globe tracker. The map distinguishes between
+            places passed through quickly, places that required a few days of
+            living rhythm, and places that became actual base layers in memory.
+          </p>
+          <p className="max-w-2xl text-sm leading-7 text-muted-foreground">
+            Use the filters on the right, click a city tile below, or pan and
+            zoom directly on the map.
+          </p>
+        </div>
 
-          <div className={styles.stats}>
-            <div className={styles.statCard}>
-              <p className={styles.statLabel}>Cities</p>
-              <p className={styles.statValue}>{cities.length}</p>
-            </div>
-            <div className={styles.statCard}>
-              <p className={styles.statLabel}>Countries</p>
-              <p className={styles.statValue}>{countries}</p>
-            </div>
-            <div className={styles.statCard}>
-              <p className={styles.statLabel}>Lived There</p>
-              <p className={styles.statValue}>{livedCount}</p>
-            </div>
-            <div className={styles.statCard}>
-              <p className={styles.statLabel}>Current Focus</p>
-              <p className={styles.statValue}>{selectedLevel === 'all' ? 'All' : levelConfig[selectedLevel].label}</p>
-            </div>
-          </div>
+        <div className="grid grid-cols-2 gap-3">
+          <Stat label="Cities" value={cities.length} />
+          <Stat label="Countries" value={countries} />
+          <Stat label="Lived in" value={livedCount} />
+          <Stat
+            label="Filter"
+            value={selectedLevel === 'all' ? 'All' : levelConfig[selectedLevel].label}
+          />
         </div>
       </section>
 
-      <div className={styles.mapStage}>
-        <div className={styles.mapCard}>
+      {/* ===== Map + controls ===== */}
+      <section className="grid gap-5 lg:grid-cols-[1fr_15rem] lg:items-start">
+        <div className="relative min-h-[28rem] overflow-hidden rounded-2xl border border-border/60 bg-card/40 backdrop-blur-sm md:min-h-[34rem]">
           <TravelMap
             activeCity={activeCity}
             cities={filteredCities}
@@ -98,61 +93,58 @@ export function TravelExplorer({ cities }: { cities: TravelCity[] }) {
             onSelectCity={setActiveCityId}
           />
         </div>
-      </div>
 
-      <aside className={styles.controlRail}>
-        <section className={styles.panel}>
-          <p className={styles.panelTitle}>Map Mode</p>
-          <div className={styles.mapModeSwitch}>
-            <button
-              type="button"
-              onClick={() => setMapUnit('country')}
-              className={`${styles.levelButton}${mapUnit === 'country' ? ` ${styles.levelButtonActive}` : ''}`}
-            >
-              <span>Country Fill</span>
-            </button>
-            <button
-              type="button"
-              onClick={() => setMapUnit('city')}
-              className={`${styles.levelButton}${mapUnit === 'city' ? ` ${styles.levelButtonActive}` : ''}`}
-            >
-              <span>City Blobs</span>
-            </button>
-          </div>
-        </section>
+        <aside className="grid gap-4 lg:sticky lg:top-20">
+          <Panel title="Map mode">
+            <div className="grid grid-cols-2 gap-2">
+              <ToggleButton active={mapUnit === 'country'} onClick={() => setMapUnit('country')}>
+                Country fill
+              </ToggleButton>
+              <ToggleButton active={mapUnit === 'city'} onClick={() => setMapUnit('city')}>
+                City blobs
+              </ToggleButton>
+            </div>
+          </Panel>
 
-        <section className={styles.panel}>
-          <p className={styles.panelTitle}>Stay Level</p>
-          <div className={styles.levelFilters}>
-            <button
-              type="button"
-              onClick={() => setSelectedLevel('all')}
-              className={`${styles.levelButton}${selectedLevel === 'all' ? ` ${styles.levelButtonActive}` : ''}`}
-            >
-              <span>All stays</span>
-            </button>
-            {levelOptions.map(([level, config]) => (
-              <button
-                key={level}
-                type="button"
-                onClick={() => setSelectedLevel(level as StayLevel)}
-                className={`${styles.levelButton}${selectedLevel === level ? ` ${styles.levelButtonActive}` : ''}`}
+          <Panel title="Stay level">
+            <div className="flex flex-col gap-1.5">
+              <ToggleButton
+                active={selectedLevel === 'all'}
+                onClick={() => setSelectedLevel('all')}
               >
-                <span className={styles.dot} style={{ backgroundColor: config.color }} />
-                <span>{config.label}</span>
-              </button>
-            ))}
-          </div>
-        </section>
-      </aside>
+                All stays
+              </ToggleButton>
+              {levelOptions.map(([level, config]) => (
+                <ToggleButton
+                  key={level}
+                  active={selectedLevel === level}
+                  onClick={() => setSelectedLevel(level as StayLevel)}
+                >
+                  <span
+                    className="inline-block h-2 w-2 shrink-0 rounded-full"
+                    style={{ backgroundColor: config.color }}
+                  />
+                  <span>{config.label}</span>
+                </ToggleButton>
+              ))}
+            </div>
+          </Panel>
+        </aside>
+      </section>
 
-      <section className={`${styles.panel} ${styles.cityPanel}`}>
-        <div className={styles.cityPanelHeader}>
-          <p className={styles.panelTitle}>Visited Cities</p>
-          <p className={styles.cityPanelMeta}>{filteredCities.length} visible</p>
-        </div>
+      {/* ===== City list ===== */}
+      <section className="rounded-2xl border border-border/60 bg-card/40 backdrop-blur-sm p-5 md:p-6">
+        <header className="flex flex-wrap items-baseline justify-between gap-3 pb-3 border-b border-border/40">
+          <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
+            Visited cities
+          </p>
+          <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+            {filteredCities.length} visible
+          </p>
+        </header>
+
         {filteredCities.length ? (
-          <div className={styles.cityList}>
+          <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {filteredCities.map((city) => {
               const config = levelConfig[city.level]
               const isActive = city.id === activeCity?.id
@@ -162,28 +154,90 @@ export function TravelExplorer({ cities }: { cities: TravelCity[] }) {
                   key={city.id}
                   type="button"
                   onClick={() => setActiveCityId(city.id)}
-                  className={`${styles.cityCard}${isActive ? ` ${styles.cityCardActive}` : ''}`}
+                  className={`group rounded-xl border bg-card/30 p-4 text-left transition-all hover:-translate-y-0.5 hover:border-foreground/40 ${
+                    isActive
+                      ? 'border-foreground/50 bg-card/60'
+                      : 'border-border/50'
+                  }`}
                 >
-                  <div className={styles.cityHeader}>
-                    <div>
-                      <p className={styles.cityName}>{city.city}</p>
-                      <p className={styles.cityCountry}>{city.country}</p>
+                  <div className="flex items-start justify-between gap-3">
+                    <div className="min-w-0">
+                      <p className="truncate text-base font-medium tracking-tight text-foreground">
+                        {city.city}
+                      </p>
+                      <p className="mt-0.5 truncate text-sm text-muted-foreground">
+                        {city.country}
+                      </p>
                     </div>
-                    <span className={styles.dot} style={{ backgroundColor: config.color }} />
+                    <span
+                      className="mt-1.5 inline-block h-2 w-2 shrink-0 rounded-full"
+                      style={{ backgroundColor: config.color }}
+                    />
                   </div>
-                  <div className={styles.cityMeta}>
+                  <div className="mt-3 flex flex-wrap items-center gap-x-2 font-mono text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
                     <span>{config.label}</span>
                     <span>·</span>
-                    <span>{city.lat.toFixed(1)}, {city.lng.toFixed(1)}</span>
+                    <span>
+                      {city.lat.toFixed(1)}, {city.lng.toFixed(1)}
+                    </span>
                   </div>
                 </button>
               )
             })}
           </div>
         ) : (
-          <p className={styles.empty}>No cities match the current level filter.</p>
+          <p className="mt-4 text-sm text-muted-foreground">
+            No cities match the current level filter.
+          </p>
         )}
       </section>
+
     </div>
+  )
+}
+
+function Stat({ label, value }: { label: string; value: number | string }) {
+  return (
+    <div className="rounded-xl border border-border/60 bg-card/40 backdrop-blur-sm p-4">
+      <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted-foreground">
+        {label}
+      </p>
+      <p className="mt-2 font-display text-2xl tracking-tight md:text-3xl">{value}</p>
+    </div>
+  )
+}
+
+function Panel({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <section className="rounded-xl border border-border/60 bg-card/40 backdrop-blur-sm p-4">
+      <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted-foreground">
+        {title}
+      </p>
+      <div className="mt-3">{children}</div>
+    </section>
+  )
+}
+
+function ToggleButton({
+  active,
+  onClick,
+  children,
+}: {
+  active: boolean
+  onClick: () => void
+  children: React.ReactNode
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className={`inline-flex items-center gap-2 rounded-lg border px-3 py-2 text-xs transition-colors ${
+        active
+          ? 'border-foreground/40 bg-foreground/10 text-foreground'
+          : 'border-border/50 bg-background/30 text-muted-foreground hover:border-foreground/30 hover:text-foreground'
+      }`}
+    >
+      {children}
+    </button>
   )
 }
