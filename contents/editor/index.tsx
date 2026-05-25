@@ -170,12 +170,14 @@ export default function EditorIntroductionPage() {
           <h3 className="mt-4 font-display text-3xl md:text-5xl tracking-tight leading-[1.05]">
             Stress reveals structure.
           </h3>
-          <p className="mt-5 max-w-3xl text-base md:text-lg leading-8 text-muted-foreground">
-            I&apos;ve diagnosed a port conflict that was silently killing field
-            communication. Built a log pipeline where timezone drift caused
-            incident timelines to diverge. Written reconnect logic that
-            determined whether a robot arm re-homed safely after a WiFi drop.
-            Those aren&apos;t edge cases — that&apos;s the actual work.
+          <p className="mt-5 max-w-3xl text-base md:text-lg leading-8 text-foreground/80">
+            Written reconnect logic that determined whether a robot arm
+            re-homed safely after a WiFi drop. Built a log pipeline where
+            timezone drift caused incident timelines to diverge across sites.
+            Designed an evidence engine that traces every LLM output to its
+            source — because at scale, hallucination isn&apos;t a caveat,
+            it&apos;s a system failure. Those aren&apos;t edge cases — that&apos;s
+            the actual work.
           </p>
         </Panel>
       </section>
@@ -196,7 +198,7 @@ export default function EditorIntroductionPage() {
               <DomainRow label="Tools" value="Docker · Git · Linux / Bash · Cloudflare" />
               <DomainRow
                 label="Spoken"
-                value="Korean (native) · English C1, IELTS 7.5 · German (basic) · Dutch (basic)"
+                value="Korean (native) · English C1, IELTS 7.5 · Japanese A1"
               />
             </ul>
           </Panel>
@@ -222,7 +224,7 @@ export default function EditorIntroductionPage() {
               </li>
               <li className="flex gap-3">
                 <span className="select-none text-foreground/40">·</span>
-                <span>Cross-layer debugging from application-layer symptoms down to port conflicts and network topology</span>
+                <span>Cross-layer debugging from application errors through protocol and transport layers to hardware interfaces</span>
               </li>
             </ul>
           </Panel>
@@ -247,7 +249,7 @@ export default function EditorIntroductionPage() {
             <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted-foreground">
               Age 14 · Pol Math School
             </p>
-            <div className="mt-5 space-y-4 text-base leading-7 text-muted-foreground">
+            <div className="mt-5 space-y-4 text-base leading-7 text-foreground/80">
               <p>Writing math and science essays forced me to:</p>
               <ul className="ml-4 list-disc space-y-1.5">
                 <li>Define assumptions explicitly</li>
@@ -318,7 +320,6 @@ export default function EditorIntroductionPage() {
               'Built a reusable Python WebSocket client with reconnect/backoff and message validation; now used as the integration baseline across internal tools.',
               'Built an internal log workflow — timezone-aware download → upload/convert pipeline → multilingual UI — that cut manual log handling and sped up incident triage.',
               'Shipped a configuration UI for system/network settings with input validation and safe defaults, reducing misconfiguration-related support requests.',
-              'Diagnosed a field communication failure down to a port conflict and shipped the fix; restored stable connectivity and prevented recurrence with documentation and checks.',
             ]}
             accent="var(--brand-amber)"
           />
@@ -388,6 +389,7 @@ export default function EditorIntroductionPage() {
               'Auth.js + Google OAuth, Neon Postgres with pgvector for embedding-based recommendations, Cloudflare Workers via OpenNext, with a separate Cron Worker for scheduled jobs.',
             ]}
             href="https://earprint.kwanho.dev"
+            repo="https://github.com/KKWANH/earprint"
             accent="var(--brand-emerald)"
           />
           <ProjectCard
@@ -410,11 +412,13 @@ export default function EditorIntroductionPage() {
             tag="Hackathon · 1st prize"
             period="Feb 2024"
             location="Berlin, Germany"
-            title="ColorSaveLife · Bosch ConnectedExperience (BCX) 2024"
-            stack="Python · gaze / eye-tracking · plugin architecture"
+            title="ColorSavesLife · Bosch ConnectedExperience (BCX) 2024"
+            stack="Python · C++ · ROS2 · Gazebo · YOLOv5 · eye-tracking"
+            repo="https://github.com/KKWANH/ColorSavesLife"
             bullets={[
-              'Led and presented a cross-functional team that took 1st place at BCX 2024.',
-              'Integrated gaze / eye-tracking into a simulation pipeline and built a plugin-based Python client architecture for rapid experimentation.',
+              'Built an AR overlay system that recolors traffic signals and road markings in real time for colorblind drivers — transparent display output, camera input, YOLOv5 object detection, prototyped end-to-end in ROS2 / Gazebo.',
+              'Architected a plugin-based Python client so each new sensor modality (depth camera, eye-tracker) is a self-contained plugin, not a codebase change — eye-tracking was the first live plugin, feeding gaze data directly into the detection pipeline.',
+              'Led and presented the cross-functional team to 1st place at BCX 2024, competing against automotive and tech teams from Bosch, Mercedes-Benz, Volkswagen, and others across Europe.',
             ]}
             accent="var(--brand-violet)"
           />
@@ -635,7 +639,7 @@ function RoleCard({
       >
         <span className="font-medium not-italic text-foreground">Why here:</span> {why}
       </p>
-      <ul className="mt-5 ml-1 space-y-2 text-sm leading-7 text-muted-foreground">
+      <ul className="mt-5 ml-1 space-y-3 text-sm leading-7 text-foreground/80">
         {bullets.map((bullet, index) => (
           <li key={index} className="flex gap-3">
             <span className="select-none text-foreground/40">·</span>
@@ -655,6 +659,7 @@ function ProjectCard({
   stack,
   bullets,
   href,
+  repo,
   accent,
 }: {
   tag: string
@@ -664,6 +669,7 @@ function ProjectCard({
   stack: string
   bullets: string[]
   href?: string
+  repo?: string
   accent: string
 }) {
   return (
@@ -692,10 +698,20 @@ function ProjectCard({
             {location}
           </span>
         )}
+        {repo && (
+          <a
+            href={repo}
+            target="_blank"
+            rel="noreferrer noopener"
+            className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground underline decoration-border underline-offset-4 hover:text-foreground hover:decoration-foreground"
+          >
+            GitHub ↗
+          </a>
+        )}
       </header>
       <h3 className="mt-3 font-display text-2xl tracking-tight leading-tight">{title}</h3>
       <p className="mt-2 font-mono text-[11px] text-muted-foreground">{stack}</p>
-      <ul className="mt-5 ml-1 space-y-2 text-sm leading-7 text-muted-foreground">
+      <ul className="mt-5 ml-1 space-y-3 text-sm leading-7 text-foreground/80">
         {bullets.map((bullet, index) => (
           <li key={index} className="flex gap-3">
             <span className="select-none text-foreground/40">·</span>
@@ -735,10 +751,10 @@ function Table({
               {row.map((cell, cellIndex) => (
                 <td
                   key={cellIndex}
-                  className={`px-5 py-4 align-top leading-6 ${
+                  className={`px-5 py-4 align-top leading-7 text-sm ${
                     cellIndex === 0
                       ? 'text-foreground/90 font-medium'
-                      : 'text-muted-foreground'
+                      : 'text-foreground/75'
                   }`}
                 >
                   {cell}
