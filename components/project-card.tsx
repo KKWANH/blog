@@ -30,11 +30,9 @@ export function ProjectCard({ project }: { project: Project }) {
           <ProjectVisual visual={project.visual} />
         </div>
 
-        {/* Status pill */}
+        {/* Status pill — single calm dot, no expanding ring */}
         <div className="absolute right-3 top-3 inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-black/40 backdrop-blur-sm px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-white/85">
-          <span className={`relative inline-flex h-1.5 w-1.5 rounded-full ${statusDotClass[project.status]}`}>
-            <span className={`absolute inset-0 rounded-full ${statusDotClass[project.status]} animate-ping opacity-70`} />
-          </span>
+          <span className={`status-breath inline-flex h-1.5 w-1.5 rounded-full ${statusDotClass[project.status]}`} />
           {statusLabel[project.status]}
         </div>
 
@@ -61,17 +59,10 @@ export function ProjectCard({ project }: { project: Project }) {
               /{project.id}
             </span>
           </div>
-          <p lang="ko" className="text-sm leading-7 text-foreground/90">
-            {project.tagline.ko}
-          </p>
-          <p className="text-xs leading-6 text-muted-foreground">
-            {project.tagline.en}
-          </p>
+          <p className="text-sm leading-7 text-foreground/90">{project.tagline}</p>
         </header>
 
-        <p lang="ko" className="text-sm leading-7 text-muted-foreground">
-          {project.description.ko}
-        </p>
+        <p className="text-sm leading-7 text-muted-foreground">{project.description}</p>
 
         {/* Stack chips */}
         <ul className="flex flex-wrap gap-1.5">

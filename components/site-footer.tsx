@@ -27,8 +27,7 @@ export function SiteFooter() {
               <span className="font-mono text-sm">kwanho<span className="text-muted-foreground">.dev</span></span>
             </div>
             <p className="mt-4 text-sm leading-7 text-muted-foreground">
-              Systems engineer working on robotics, computer vision, and automotive software.
-              This site is the index page for the things I build under the kwanho.dev domain.
+              Kwanho Kim. Software for robots, vision, and cars.
             </p>
           </div>
 
@@ -63,7 +62,7 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-12 flex flex-col-reverse md:flex-row md:items-center md:justify-between gap-4 text-xs text-muted-foreground">
-          <p>© {year} Kwanho Kim. Built with Next.js on Vercel.</p>
+          <p>© {year} Kwanho Kim.</p>
           <p className="font-mono tracking-tight">
             kwanho.dev · earprint.kwanho.dev · ai.kwanho.dev
           </p>

@@ -11,9 +11,8 @@ export const revalidate = 86400
 /**
  * kwanho.dev — landing.
  *
- * Aurora background → hero panel → /projects grid → /more grid → footer.
- * Everything is server-rendered; only the spotlight pointer handler is
- * client-side, which keeps the page light.
+ * Aurora background → hero panel → projects grid → also-here grid →
+ * "now" strip → footer.
  */
 export default function HomePage() {
   return (
@@ -32,10 +31,9 @@ export default function HomePage() {
             eyebrow="Projects"
             title={
               <>
-                Live demos under <span className="font-mono">*.kwanho.dev</span>
+                Two side projects, two subdomains.
               </>
             }
-            description="Each subdomain runs its own stack. The cards below summarise what each one does and link straight to the running site."
           />
           <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-7">
             {projects.map((project) => (
@@ -47,9 +45,8 @@ export default function HomePage() {
         {/* Internal destinations */}
         <section id="more" className="max-w-6xl mx-auto px-5 md:px-8 mt-24 md:mt-32 scroll-mt-24">
           <SectionHeading
-            eyebrow="More"
-            title="Inside the index"
-            description="The two pages that stay on this domain — a long-form profile, and a map of cities I lived in long enough for them to matter."
+            eyebrow="Also on kwanho.dev"
+            title="Profile and travel map."
           />
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-7">
             {siteLinks.map((link) => (
@@ -58,23 +55,18 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* What I'm building / status strip */}
+        {/* Status strip */}
         <section className="max-w-6xl mx-auto px-5 md:px-8 mt-24 md:mt-32 scroll-mt-24">
-          <SectionHeading eyebrow="Now" title="What I'm working on" />
-          <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-3">
-            <StatusCell
-              tag="Day job"
-              title="Industrial robotic picking at Pickit 3D"
-              span="Aug 2025 — Mar 2026"
-            />
+          <SectionHeading eyebrow="Now" title="What I'm working on." />
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-3">
             <StatusCell
               tag="Side"
-              title="Earprint v0.2 — pgvector recs, taste-DNA exports"
+              title="Earprint v0.2 — pgvector recommendations, taste-DNA exports."
               span="Active"
             />
             <StatusCell
               tag="Side"
-              title="Ariadne v0.1 — local-first AI workspace, evidence-pack runs"
+              title="Ariadne v0.1 — evidence packs, agent mode, sandboxed TS dashboards."
               span="Active"
             />
           </div>

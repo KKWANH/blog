@@ -322,6 +322,26 @@
 }
 
 /* =====================================================================
+ * Status indicator — slow, calm breath instead of Tailwind's animate-ping
+ * (which scales out every second and reads as distracting).
+ * =====================================================================*/
+
+@keyframes status-breath {
+  0%, 100% { opacity: 0.55; transform: scale(1); }
+  50%      { opacity: 1;    transform: scale(1.08); }
+}
+
+.status-breath {
+  animation: status-breath 2.6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .status-breath {
+    animation: none;
+  }
+}
+
+/* =====================================================================
  * Small utilities
  * =====================================================================*/
 
