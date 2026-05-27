@@ -86,16 +86,26 @@ export function SiteHeader() {
 
       {/* Mobile inline nav */}
       <div className="md:hidden border-t border-border/50">
-        <nav className="max-w-6xl mx-auto flex items-center gap-1 px-5 py-1.5 overflow-x-auto">
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="px-2.5 py-1 text-[11px] uppercase tracking-[0.16em] text-muted-foreground hover:text-foreground transition-colors"
-            >
-              {item.label}
-            </Link>
-          ))}
+        <nav className="max-w-6xl mx-auto flex items-center gap-0.5 px-4 py-1.5 overflow-x-auto">
+          {navItems.map((item) => {
+            const isActive =
+              item.href === '/#projects'
+                ? pathname === '/'
+                : pathname.startsWith(item.href)
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`px-2.5 py-1 text-[11px] uppercase tracking-[0.16em] rounded-md transition-colors whitespace-nowrap ${
+                  isActive
+                    ? 'text-foreground bg-secondary/60'
+                    : 'text-muted-foreground hover:text-foreground hover:bg-secondary/40'
+                }`}
+              >
+                {item.label}
+              </Link>
+            )
+          })}
         </nav>
       </div>
     </header>

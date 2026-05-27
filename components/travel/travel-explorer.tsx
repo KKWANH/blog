@@ -12,8 +12,32 @@ const TravelMap = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div className="absolute inset-0 grid place-items-center font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">
-        Loading map…
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Shimmer base */}
+        <div className="skeleton-shimmer absolute inset-0 rounded-none border-0" />
+        {/* Faint grid lines to suggest a map */}
+        <svg
+          className="absolute inset-0 h-full w-full opacity-[0.06]"
+          aria-hidden
+        >
+          <defs>
+            <pattern id="map-grid" width="60" height="60" patternUnits="userSpaceOnUse">
+              <path d="M 60 0 L 0 0 0 60" fill="none" stroke="currentColor" strokeWidth="0.5" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#map-grid)" />
+        </svg>
+        {/* Label */}
+        <div className="absolute inset-0 flex items-end justify-start p-5">
+          <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted-foreground/60">
+            Loading map
+            <span className="inline-flex gap-0.5 ml-1.5">
+              <span className="animate-[bounce_1s_ease-in-out_0s_infinite] inline-block">·</span>
+              <span className="animate-[bounce_1s_ease-in-out_0.2s_infinite] inline-block">·</span>
+              <span className="animate-[bounce_1s_ease-in-out_0.4s_infinite] inline-block">·</span>
+            </span>
+          </p>
+        </div>
       </div>
     ),
   },

@@ -97,13 +97,13 @@ export default async function ContentPage({
           <ContentBackLink />
         </div>
 
-        <div className="max-w-6xl mx-auto px-5 md:px-8 mt-6 md:mt-8">
+        <div className="max-w-6xl mx-auto px-5 md:px-8 mt-6 md:mt-8 animate-content-appear">
           <ContentHero page={page} decodedSlug={decodedSlug} />
         </div>
 
         <article
           lang={page.lang}
-          className={`max-w-6xl mx-auto px-5 md:px-8 mt-12 md:mt-16 ${page.bodyClassName ?? ''}`}
+          className={`max-w-6xl mx-auto px-5 md:px-8 mt-12 md:mt-16 animate-content-appear-delayed ${page.bodyClassName ?? ''}`}
         >
           {showInlineToc ? <InlineToc items={tocItems} /> : null}
 
