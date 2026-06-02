@@ -103,25 +103,27 @@ export default function EditorIntroductionPage() {
             <div className="pt-2">
               <div className="flex items-stretch gap-0 overflow-x-auto pb-1">
                 {[
-                  { year: '14', label: 'Started coding', sub: 'Essays' },
-                  { year: '2020', label: '42 Seoul', sub: 'Systems, C' },
-                  { year: '2023', label: 'SEA:ME', sub: 'Automotive' },
-                  { year: '2024', label: 'Bosch', sub: 'V2X' },
-                  { year: '2025', label: 'Pickit 3D', sub: 'Robotics' },
-                  { year: 'Now', label: 'Independent', sub: 'Available' },
+                  { year: '14', label: 'Started coding', sub: 'Essays', accent: false },
+                  { year: '2020', label: '42 Seoul', sub: 'Systems, C', accent: false },
+                  { year: '2023', label: 'SEA:ME', sub: 'Automotive', accent: false },
+                  { year: '2024', label: 'Bosch', sub: 'V2X', accent: false },
+                  { year: '2025', label: 'Pickit 3D', sub: 'Robotics', accent: false },
+                  { year: '2026', label: 'Open to roles', sub: 'Leuven · BE', accent: true },
                 ].map((step, i) => (
                   <div key={i} className="flex items-center shrink-0">
-                    <div className="flex flex-col items-center px-3 py-2 first:pl-0">
-                      <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
+                    <div className={`flex flex-col items-center px-3 py-2 first:pl-0 rounded-lg ${step.accent ? 'bg-[color-mix(in_oklab,var(--brand-emerald)_10%,transparent)] border border-[color-mix(in_oklab,var(--brand-emerald)_25%,transparent)]' : ''}`}>
+                      <span className={`font-mono text-xs uppercase tracking-[0.14em] ${step.accent ? 'text-[var(--brand-emerald)]' : 'text-muted-foreground'}`}>
                         {step.year}
                       </span>
-                      <span className="mt-1 text-[11px] font-medium text-foreground/90">
+                      <span className={`mt-1 text-sm font-medium ${step.accent ? 'text-[var(--brand-emerald)]' : 'text-foreground/90'}`}>
                         {step.label}
                       </span>
-                      <span className="text-[10px] text-muted-foreground">{step.sub}</span>
+                      <span className={`text-[11px] ${step.accent ? 'text-[color-mix(in_oklab,var(--brand-emerald)_70%,var(--muted-foreground))]' : 'text-muted-foreground'}`}>
+                        {step.sub}
+                      </span>
                     </div>
                     {i < 5 && (
-                      <span className="shrink-0 text-muted-foreground/30 text-xs mx-1">→</span>
+                      <span className="shrink-0 text-muted-foreground/25 text-xs mx-1.5">→</span>
                     )}
                   </div>
                 ))}
@@ -190,16 +192,64 @@ export default function EditorIntroductionPage() {
 
         <div className="grid gap-5 md:grid-cols-2">
           <Panel>
-            <h3 className="font-display text-xl tracking-tight">Languages & frameworks</h3>
-            <ul className="mt-5 space-y-3 text-sm leading-7 text-muted-foreground">
-              <DomainRow label="Languages" value="C · C++ · Python · TypeScript / JavaScript" />
-              <DomainRow label="Frameworks" value="ROS1 / ROS2 · Node · React" />
-              <DomainRow label="Tools" value="Docker · Git · Linux / Bash · Cloudflare" />
-              <DomainRow
-                label="Spoken"
-                value="Korean (native) · English C1, IELTS 7.5 · Japanese A1"
-              />
-            </ul>
+            <h3 className="font-display text-xl tracking-tight mb-5">Stack</h3>
+            <div className="space-y-5">
+              {([
+                { label: 'Systems & Languages', color: 'var(--brand-amber)', skills: [
+                  { name: 'TypeScript / JS', lvl: 5 },
+                  { name: 'Python', lvl: 4 },
+                  { name: 'C', lvl: 4 },
+                  { name: 'C++', lvl: 3 },
+                  { name: 'Linux / Bash', lvl: 4 },
+                ]},
+                { label: 'Robotics & Infra', color: 'var(--brand-cyan)', skills: [
+                  { name: 'ROS 1 / ROS 2', lvl: 4 },
+                  { name: 'WebSocket', lvl: 5 },
+                  { name: 'Docker', lvl: 4 },
+                  { name: 'Git', lvl: 5 },
+                ]},
+                { label: 'Web & Product', color: 'var(--brand-violet)', skills: [
+                  { name: 'React', lvl: 5 },
+                  { name: 'Node / Fastify', lvl: 4 },
+                  { name: 'Next.js', lvl: 3 },
+                  { name: 'Cloudflare', lvl: 3 },
+                ]},
+              ] as Array<{label: string; color: string; skills: Array<{name: string; lvl: number}>}>).map(({ label, color, skills }) => (
+                <div key={label}>
+                  <p className="font-mono text-[10px] uppercase tracking-[0.2em] mb-2.5" style={{ color }}>
+                    {label}
+                  </p>
+                  <div className="space-y-2">
+                    {skills.map(({ name, lvl }) => (
+                      <div key={name} className="grid grid-cols-[7rem_1fr] items-center gap-3">
+                        <span className="text-xs text-foreground/70 text-right truncate">{name}</span>
+                        <div className="flex gap-1 items-center">
+                          {Array.from({ length: 5 }, (_, i) => (
+                            <span
+                              key={i}
+                              className="h-1.5 flex-1 rounded-full"
+                              style={{
+                                background: i < lvl
+                                  ? `color-mix(in oklab, ${color} 80%, transparent)`
+                                  : 'color-mix(in oklab, var(--border) 80%, transparent)',
+                              }}
+                            />
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+              <div className="pt-2 border-t border-border/30">
+                <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-2">
+                  Spoken languages
+                </p>
+                <p className="text-xs text-foreground/70 leading-6">
+                  Korean (native) · English C1, IELTS 7.5 · Japanese A1
+                </p>
+              </div>
+            </div>
           </Panel>
 
           <Panel>
@@ -300,14 +350,15 @@ export default function EditorIntroductionPage() {
       </section>
 
       {/* ===== Editorial photo break ===== */}
-      <div className="relative h-56 md:h-80 overflow-hidden rounded-2xl" data-editor-photo-grid>
+      <div className="relative h-72 md:h-[26rem] overflow-hidden rounded-2xl" data-editor-photo-grid>
         <img
           src="./_media/profile4.jpg"
           alt=""
           aria-hidden
-          className="w-full h-full object-cover object-[center_30%]"
+          className="w-full h-full object-cover object-[50%_60%]"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/60 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent" />
         <div className="absolute inset-0 flex items-end p-6 md:p-8">
           <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-foreground/50">
             Leuven · 2025
