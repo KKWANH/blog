@@ -85,6 +85,6 @@ export const externalLinks = {
   github: 'https://github.com/KKWANH',
   linkedin: 'https://www.linkedin.com/in/kwanho-kim-327152232/',
   instagram: 'https://instagram.com/kwanho._kim',
-  email: 'mailto:kwanho0096@gmail.com',
+  email: 'mailto:contact@kwanho.dev',
   cv: '/CV.pdf',
 } as const

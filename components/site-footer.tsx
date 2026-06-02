@@ -61,11 +61,27 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col-reverse md:flex-row md:items-center md:justify-between gap-4 text-xs text-muted-foreground">
-          <p>© {year} Kwanho Kim.</p>
-          <p className="font-mono tracking-tight">
-            kwanho.dev · earprint.kwanho.dev · ai.kwanho.dev
-          </p>
+        <div className="mt-12 pt-8 border-t border-border/40 flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
+          <div>
+            <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-2">
+              Contact
+            </p>
+            <a
+              href="mailto:contact@kwanho.dev"
+              className="text-sm text-foreground hover:text-muted-foreground transition-colors"
+            >
+              contact@kwanho.dev
+            </a>
+            <p className="mt-1.5 text-xs text-muted-foreground">
+              Open to collaborations, freelance, and full-time roles.
+            </p>
+          </div>
+          <div className="flex flex-col-reverse md:flex-row md:items-center gap-4 text-xs text-muted-foreground">
+            <p>© {year} Kwanho Kim.</p>
+            <p className="font-mono tracking-tight">
+              kwanho.dev · earprint.kwanho.dev · ai.kwanho.dev
+            </p>
+          </div>
         </div>
       </div>
     </footer>

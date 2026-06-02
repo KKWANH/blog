@@ -1,10 +1,10 @@
-export const title = "Editor's Introduction"
+export const title = 'Kwanho Kim — Engineering Profile'
 export const subtitle =
-  'The CV covers what was built. This page covers how and why.'
+  'Full-stack engineer for real-time systems in robotics and automotive.'
 export const description =
-  'Long-form profile combining narrative, structured data, and timelines to explain the path from early math/science writing into real-time distributed systems work across robotics and automotive.'
+  'Kwanho Kim — software engineer with production experience across ROS/robotics, V2X automotive communication, and full-stack systems. Background in 42 Seoul, SEA:ME, Bosch, and Pickit 3D. Currently building Earprint and Ariadne.'
 export const excerpt =
-  'A long-form profile of how the early math/science essays became 42 Seoul, SEA:ME, Bosch, and Pickit 3D — and what shipping production code looks like in practice.'
+  'From 42 Seoul and SEA:ME through a Bosch internship and a production role at Pickit 3D: the technical path, the decisions behind each role, and the engineering patterns that keep showing up.'
 export const date = '2026-05-25'
 export const readTime = '14 min'
 export const showToc = false
@@ -77,23 +77,26 @@ export default function EditorIntroductionPage() {
       <section id="editorial-introduction" className="space-y-10">
         <div className="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
           <div className="space-y-6">
-            <SectionEyebrow>Thesis</SectionEyebrow>
+            <SectionEyebrow>Profile</SectionEyebrow>
             <h2 className="font-display text-3xl leading-[1.08] tracking-tight md:text-5xl">
-              Full-stack engineer for real-time, distributed systems — from the
-              ROS graph to the operator screen, through every failure mode between them.
+              Systems fail at boundaries.
+              <br />
+              <span className="text-muted-foreground">I work on the boundaries.</span>
             </h2>
             <p className="max-w-2xl text-base md:text-lg leading-8 text-muted-foreground">
-              The short version is on the CV. This page carries what didn&apos;t fit
-              there: the decision logic behind each role, the side builds, and
-              the engineering patterns I keep running into.
+              Software engineer with production experience across robotics (ROS1/2,
+              WebSocket, embedded C), automotive (V2X, CAN, AUTOSAR), and
+              full-stack product work (React, TypeScript, Node). 42 Seoul for
+              systems fundamentals, SEA:ME for automotive depth, Bosch for
+              safety-critical constraints, Pickit 3D for operator-facing production reality.
             </p>
             <p className="max-w-2xl text-sm leading-7">
               <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
-                Currently
+                Status
               </span>{' '}
               <span className="text-foreground">Leuven, Belgium</span>
               <span className="text-muted-foreground">
-                {' '}— wrapped Pickit 3D in March 2026, now shipping{' '}
+                {' '}— building{' '}
                 <a
                   href="https://earprint.kwanho.dev"
                   className="underline decoration-border underline-offset-4 hover:decoration-foreground"
@@ -106,9 +109,10 @@ export default function EditorIntroductionPage() {
                   className="underline decoration-border underline-offset-4 hover:decoration-foreground"
                 >
                   Ariadne
-                </a>
-                .
+                </a>{' '}
+                as independent projects.{' '}
               </span>
+              <span className="font-medium text-foreground">Available for full-time roles.</span>
             </p>
 
             <div className="grid grid-cols-2 gap-3 pt-4 sm:grid-cols-3 xl:grid-cols-5">
@@ -173,26 +177,29 @@ export default function EditorIntroductionPage() {
         <Panel className="relative">
           <SectionEyebrow>Position</SectionEyebrow>
           <h3 className="mt-4 font-display text-3xl md:text-5xl tracking-tight leading-[1.05]">
-            Stress reveals structure.
+            The robot arm crashes. The operator sees an error.
+            <br />
+            <span className="text-muted-foreground">Six layers between them. I own all six.</span>
           </h3>
           <p className="mt-5 max-w-3xl text-base md:text-lg leading-8 text-foreground/80">
-            Written reconnect logic that determined whether a robot arm
-            re-homed safely after a WiFi drop. Built a log pipeline where
-            timezone drift caused incident timelines to diverge across sites.
-            Designed an evidence engine that traces every LLM output to its
-            source — because at scale, hallucination isn&apos;t a caveat,
-            it&apos;s a system failure. Those aren&apos;t edge cases — that&apos;s
-            the actual work.
+            The reconnect logic I wrote at Pickit determined whether a robot
+            arm re-homed safely after a WiFi drop — or kept trying until an
+            operator intervened. The log pipeline I built had to handle
+            timezone drift across sites or incident timelines silently
+            diverged. The V2X interface specification I wrote at Bosch wasn&apos;t
+            documentation — it was the only thing preventing a safety-scenario
+            mismatch from shipping as a test pass. None of that is edge-case
+            work. That&apos;s the actual job.
           </p>
           <p className="mt-4 max-w-3xl text-base leading-8 text-foreground/75">
-            The work consistently demands range. The ROS node fails and the
-            symptom appears in the operator&apos;s browser. The UI reports one
-            thing and the message contract says another. Fixing it requires
-            reading the full path — from transport layer to JavaScript event
-            loop to hardware callback. In robotics and automotive, that range
-            is rarely optional. A specialist in one layer leaves the others as
-            blind spots. The systems that hold under pressure are usually
-            debugged by someone who can read all of them.
+            Full-stack range in robotics and automotive isn&apos;t a résumé
+            category — it&apos;s the only way to close the bugs that span
+            layers. The ROS node fails and the symptom appears in the
+            operator&apos;s browser. The UI is correct and the message
+            contract isn&apos;t. Finding it requires reading the full path:
+            transport layer, API contract, JavaScript event loop, hardware
+            callback. A specialist in one layer leaves every other layer as
+            a blind spot. I don&apos;t leave blind spots.
           </p>
         </Panel>
       </section>
@@ -201,7 +208,7 @@ export default function EditorIntroductionPage() {
       <section id="working-language-and-tools" className="space-y-8">
         <header>
           <SectionEyebrow>Skills</SectionEyebrow>
-          <SectionTitle>What I reach for, grouped by what it has to survive.</SectionTitle>
+          <SectionTitle>Stack and capabilities.</SectionTitle>
         </header>
 
         <div className="grid gap-5 md:grid-cols-2">
@@ -219,27 +226,27 @@ export default function EditorIntroductionPage() {
           </Panel>
 
           <Panel>
-            <h3 className="font-display text-xl tracking-tight">Systems & performance</h3>
+            <h3 className="font-display text-xl tracking-tight">What I&apos;ve shipped</h3>
             <ul className="mt-5 space-y-2 text-sm leading-7 text-muted-foreground">
               <li className="flex gap-3">
                 <span className="select-none text-foreground/40">·</span>
-                <span>WebSocket / ROS reconnect and backoff logic built for field conditions</span>
+                <span><span className="text-foreground">Reconnect / backoff systems</span> — WebSocket and ROS clients that recover from network failure in the field without operator intervention</span>
               </li>
               <li className="flex gap-3">
                 <span className="select-none text-foreground/40">·</span>
-                <span>Message validation and data contracts at service boundaries (C, Python, TypeScript)</span>
+                <span><span className="text-foreground">Data contract design</span> — V2X and ROS2 interface specifications defining every field, encoding, and edge case before first integration, not after</span>
               </li>
               <li className="flex gap-3">
                 <span className="select-none text-foreground/40">·</span>
-                <span>End-to-end log pipelines: timezone handling, upload/convert chains, triage tooling</span>
+                <span><span className="text-foreground">Operator-facing UIs</span> — HMIs and configuration panels where error states and edge cases are first-class, not afterthoughts</span>
               </li>
               <li className="flex gap-3">
                 <span className="select-none text-foreground/40">·</span>
-                <span>Configuration UI with safe defaults and input validation for system/network parameters</span>
+                <span><span className="text-foreground">Log and observability tooling</span> — timezone-aware download / convert / triage pipelines for distributed field deployments</span>
               </li>
               <li className="flex gap-3">
                 <span className="select-none text-foreground/40">·</span>
-                <span>Cross-layer debugging from application errors through protocol and transport layers to hardware interfaces</span>
+                <span><span className="text-foreground">Cross-layer debugging</span> — tracing failures from protocol encoding and ROS topic contracts through to UI state and operator interaction</span>
               </li>
             </ul>
           </Panel>
@@ -331,7 +338,7 @@ export default function EditorIntroductionPage() {
       <section id="journey-timeline" className="space-y-8">
         <header>
           <SectionEyebrow>Experience</SectionEyebrow>
-          <SectionTitle>Each role added a constraint the previous one didn&apos;t have.</SectionTitle>
+          <SectionTitle>Each role added a constraint the previous one couldn&apos;t prepare you for.</SectionTitle>
         </header>
 
         <div className="grid gap-4">
@@ -341,12 +348,12 @@ export default function EditorIntroductionPage() {
             location="Leuven, Belgium"
             title="Pickit 3D · Research & Software Engineer"
             stack="C · C++ · Python · TypeScript · React · WebSocket · ROS1 · Docker · Git"
-            why="First production ownership with real operators. The system can't be paused between runs — everything has to work, recover, and report correctly while a robot arm is mid-pick."
+            why="First production ownership with real operators and no pause button. A robot arm mid-pick cannot wait for a developer to SSH in — everything had to work, recover, and report correctly under load."
             bullets={[
-              'Delivered production-support features across React UI + API + ROS / streaming layers to unblock on-site operations and shorten the troubleshooting cycle.',
-              'Built a reusable Python WebSocket client with reconnect/backoff and message validation; now used as the integration baseline across internal tools.',
-              'Built an internal log workflow — timezone-aware download → upload/convert pipeline → multilingual UI — that cut manual log handling and sped up incident triage.',
-              'Shipped a configuration UI for system/network settings with input validation and safe defaults, reducing misconfiguration-related support requests.',
+              'Owned the operator-facing feature cycle across React UI, WebSocket streaming, Fastify API, and ROS1 layers — shipped fixes and improvements that unblocked on-site robot operations within the same sprint they were reported.',
+              'Designed a Python WebSocket library with exponential backoff, reconnect logic, and message schema validation — robust enough for field network conditions, adopted as the integration baseline across multiple internal tools.',
+              'Built end-to-end log tooling for remote field operations: timezone-normalized download, cloud upload/convert pipeline, and a multilingual triage UI — eliminating a multi-hour manual handoff per incident.',
+              'Shipped a configuration panel covering system and network parameters with typed input validation and safe-value defaults — directly reducing support requests caused by misconfiguration in the field.',
             ]}
             accent="var(--brand-amber)"
           />
@@ -356,12 +363,12 @@ export default function EditorIntroductionPage() {
             location="Hildesheim, Germany"
             title="Robert Bosch · V2X Communication"
             stack="C · Python · TypeScript · React · ROS2 · Docker · Git"
-            why="V2X is safety-critical automotive communication — an interface bug is not a ticket, it's an incident. First time my data contract decisions had formal consequences."
+            why="V2X is safety-critical automotive communication — an interface bug isn't a ticket, it's a scenario failure. First time my data contract decisions had formal, documented consequences."
             bullets={[
-              'Implemented a V2X vehicle demonstrator for safety-critical scenarios, defining message/data interfaces and validating end-to-end behaviour in test runs.',
-              'Integrated communication modules and designed data contracts / interfaces to decouple components and accelerate iteration.',
-              'Built a React-based HMI for an eBike safety prototype with clear state modelling and operator-friendly interactions.',
-              'Performed data analysis and cross-layer troubleshooting in automotive systems.',
+              'Built a V2X vehicle demonstrator for safety-critical ITS-G5 scenarios: authored the message interface specification (every field, encoding, edge case) before implementation, then validated end-to-end behaviour across multiple test runs.',
+              'Designed the V2X ↔ vehicle software interface contracts upfront — decoupling the Bosch safety module from vehicle-side integrators and eliminating the integration-phase renegotiation that typically doubles debugging cycles.',
+              'Designed and implemented a React HMI for an eBike safety prototype: explicit state machine, operator-first interaction model, and clear visual separation of active / passive safety states.',
+              'Traced cross-layer failures in the V2X stack from ETSI message encoding through ROS2 topic contracts to UI state — learning to read the full automotive protocol chain in both directions under real test conditions.',
             ]}
             accent="var(--brand-violet)"
           />
@@ -384,11 +391,11 @@ export default function EditorIntroductionPage() {
           />
           <RoleCard
             tag="Program"
-            period="Sep 2020 — Present"
+            period="Sep 2020 — ongoing"
             location="Seoul · Wolfsburg"
             title="École 42 · Common Core and Advanced Core"
             stack="C · Unix · algorithms · systems"
-            why="Foundational rigor in systems thinking and C before anything else mattered."
+            why="42 is self-paced and peer-reviewed — no fixed graduation, no instructors, no hand-holding. The constraint forces you to build the mental model yourself rather than inherit someone else's abstraction."
             bullets={[
               'Built from scratch in C — custom libc (libft), printf, get_next_line, then progressively harder systems problems: process control, inter-process communication, file descriptor management, memory handling with no safety net.',
               'Minishell: implemented a POSIX-compatible shell — lexer, parser, built-ins, pipe chains, redirections, signal handling. The project requires a precise model of what the kernel does on fork, exec, and dup. Anything vague in that model shows up as a bug.',
@@ -405,7 +412,7 @@ export default function EditorIntroductionPage() {
       <section id="projects" className="space-y-8">
         <header>
           <SectionEyebrow>Projects & leadership</SectionEyebrow>
-          <SectionTitle>The side work — what I build when there&apos;s no deadline, no spec, and no one else to debug it.</SectionTitle>
+          <SectionTitle>Shipped independently — no spec, no team, no one else to debug it.</SectionTitle>
         </header>
 
         <div className="grid gap-4">
@@ -416,7 +423,7 @@ export default function EditorIntroductionPage() {
             title="Earprint · YouTube Music taste analyzer"
             stack="Next.js · TypeScript · Neon pgvector · Cloudflare Workers · Chrome MV3 · Gemini"
             bullets={[
-              'Chrome MV3 extension that scrapes the user’s YouTube Music likes; the web app enriches them through Deezer, Last.fm, and a Gemini analysis pass.',
+              ‘Chrome MV3 extension that reads the user’s YouTube Music liked tracks; the web app enriches them through Deezer, Last.fm, and a Gemini analysis pass.’,
               'Renders a taste profile, an interactive artist map, and a five-mode recommender (song / genre / unheard genre / indie / mix) with Tinder-style rating.',
               'Auth.js + Google OAuth, Neon Postgres with pgvector for embedding-based recommendations, Cloudflare Workers via OpenNext, with a separate Cron Worker for scheduled jobs.',
             ]}
@@ -489,7 +496,7 @@ export default function EditorIntroductionPage() {
       <section id="education-and-certification" className="space-y-8">
         <header>
           <SectionEyebrow>Education & credentials</SectionEyebrow>
-          <SectionTitle>The formal record.</SectionTitle>
+          <SectionTitle>Degrees, programs, and certifications.</SectionTitle>
         </header>
 
         <div className="grid gap-5 lg:grid-cols-2">
@@ -527,58 +534,45 @@ export default function EditorIntroductionPage() {
         </div>
       </section>
 
-      {/* ===== 8 · CV download ===== */}
+      {/* ===== 8 · CV download + CTA ===== */}
       <section id="curriculum-vitae" className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
         <div>
           <SectionEyebrow>Curriculum Vitae</SectionEyebrow>
           <SectionTitle>
-            The CV is the two-page summary. This page is the context behind it.
+            Download the CV, or reach out directly.
           </SectionTitle>
           <p className="mt-5 max-w-xl text-base leading-8 text-muted-foreground">
-            The PDF is for applications. This page is for anyone who wants to
-            understand how the decisions were made, not just what they were.
+            Open to full-time roles in robotics, automotive, and real-time
+            systems — especially where the stack spans hardware and product.
           </p>
+          <a
+            href="mailto:contact@kwanho.dev"
+            className="mt-5 inline-flex items-center gap-2 font-mono text-sm text-foreground underline decoration-border underline-offset-4 hover:decoration-foreground"
+          >
+            contact@kwanho.dev ↗
+          </a>
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid gap-4">
           <a
             href="/CV.pdf"
             download
-            className="group flex min-h-44 flex-col justify-between rounded-2xl border border-border/60 bg-card/40 backdrop-blur-sm p-5 transition-all hover:-translate-y-0.5 hover:border-foreground/40"
+            className="group flex min-h-36 flex-col justify-between rounded-2xl border border-border/60 bg-card/40 backdrop-blur-sm p-5 transition-all hover:-translate-y-0.5 hover:border-foreground/40"
           >
             <div className="space-y-2">
               <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted-foreground">
-                PDF · Industry
+                PDF · Two-page summary
               </p>
               <h3 className="font-display text-2xl tracking-tight">Industry CV</h3>
               <p className="text-sm leading-6 text-muted-foreground">
-                Software engineering, robotics deployment, real-time systems,
-                operations.
+                Software engineering, robotics, automotive systems, full-stack.
+                Updated June 2026.
               </p>
             </div>
             <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-foreground">
               Download ↓
             </span>
           </a>
-
-          <div
-            aria-disabled="true"
-            className="flex min-h-44 flex-col justify-between rounded-2xl border border-dashed border-border bg-card/20 p-5 opacity-60"
-          >
-            <div className="space-y-2">
-              <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted-foreground">
-                PDF · Academic
-              </p>
-              <h3 className="font-display text-2xl tracking-tight">Academic CV</h3>
-              <p className="text-sm leading-6 text-muted-foreground">
-                Graduate applications, research trajectory, formal educational
-                history.
-              </p>
-            </div>
-            <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
-              Coming soon
-            </span>
-          </div>
         </div>
       </section>
 
@@ -587,16 +581,16 @@ export default function EditorIntroductionPage() {
         <Panel>
           <SectionEyebrow>Recurring themes</SectionEyebrow>
           <h3 className="mt-3 font-display text-3xl md:text-4xl tracking-tight leading-[1.1]">
-            Four problems that show up everywhere, in different clothes.
+            Four failure modes that follow me across every stack.
           </h3>
           <p className="mt-3 text-sm italic text-muted-foreground">
-            The stack changes. The failure modes don&apos;t.
+            The languages change. The problems don&apos;t.
           </p>
 
           <ul className="mt-6 grid gap-4 md:grid-cols-2">
             <ThemeItem
-              label="Invisible assumptions"
-              body="Every system that broke in unexpected ways had one thing in common: someone forgot to write down an assumption they were making. The type system didn't capture it. The tests didn't cover it. The documentation didn't mention it. Then a timezone changed, or a packet hit a size limit, or a new operator followed the UI literally instead of the way it was intended. Systems that hold under pressure are systems where the assumptions were found before production found them."
+              label="Layer blindness"
+              body="Every system that broke in unexpected ways had one thing in common: someone forgot to write down an assumption they were making. The type system didn't capture it. The tests didn't cover it. The documentation didn't mention it. Then a timezone changed, or a packet hit a size limit, or a new operator followed the UI literally instead of the way it was intended. Systems that hold under pressure are systems where the assumptions were found before production found them — by someone who could read every layer."
             />
             <ThemeItem
               label="Operator reality"
@@ -612,6 +606,29 @@ export default function EditorIntroductionPage() {
             />
           </ul>
         </Panel>
+      </section>
+
+      {/* ===== 10 · Contact CTA ===== */}
+      <section id="contact" className="rounded-2xl border border-border/60 bg-card/40 backdrop-blur-sm p-8 md:p-10">
+        <div className="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
+          <div>
+            <SectionEyebrow>Available now</SectionEyebrow>
+            <h3 className="mt-3 font-display text-3xl md:text-4xl tracking-tight leading-[1.1]">
+              Open to full-time roles in robotics, automotive, and real-time systems.
+            </h3>
+            <p className="mt-4 max-w-xl text-base leading-8 text-muted-foreground">
+              Especially interested in roles where the stack spans more than one
+              layer — embedded to product, hardware to operator. Based in Leuven,
+              Belgium. Open to relocation or remote.
+            </p>
+          </div>
+          <a
+            href="mailto:contact@kwanho.dev"
+            className="inline-flex items-center gap-3 rounded-xl border border-foreground/30 bg-foreground/5 px-6 py-4 font-mono text-sm tracking-wide text-foreground transition-all hover:-translate-y-0.5 hover:border-foreground/60 hover:bg-foreground/10 whitespace-nowrap"
+          >
+            contact@kwanho.dev ↗
+          </a>
+        </div>
       </section>
     </div>
   )
