@@ -111,7 +111,7 @@ export default function EditorIntroductionPage() {
               </span>
             </p>
 
-            <div className="grid grid-cols-2 gap-3 pt-4 sm:grid-cols-2 xl:grid-cols-4">
+            <div className="grid grid-cols-2 gap-3 pt-4 sm:grid-cols-3 xl:grid-cols-5">
               <StatCard
                 label="Started coding"
                 value="Age 14"
@@ -126,6 +126,11 @@ export default function EditorIntroductionPage() {
                 label="Mobility track"
                 value="SEA:ME"
                 caption="Master-level program in Wolfsburg."
+              />
+              <StatCard
+                label="Internship"
+                value="Bosch"
+                caption="V2X communication. Hildesheim, Jun — Nov 2024."
               />
               <StatCard
                 label="Most recent role"
@@ -288,7 +293,7 @@ export default function EditorIntroductionPage() {
             </div>
           </Panel>
 
-          <Panel className="p-0 md:p-0 overflow-hidden">
+          <div className="rounded-2xl border border-border/60 bg-card/40 backdrop-blur-sm overflow-x-auto">
             <Table
               headers={['Essay / Study Topic', 'Domain', 'Method', 'Became this habit']}
               rows={[
@@ -318,7 +323,7 @@ export default function EditorIntroductionPage() {
                 ],
               ]}
             />
-          </Panel>
+          </div>
         </div>
       </section>
 
@@ -762,8 +767,8 @@ function Table({
   rows: string[][]
 }) {
   return (
-    <div className="overflow-x-auto">
-      <table className="w-full min-w-[640px] border-collapse text-sm">
+    <div>
+      <table className="w-full min-w-[700px] border-collapse text-sm">
         <thead>
           <tr>
             {headers.map((header) => (
