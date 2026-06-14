@@ -446,11 +446,11 @@ export default function EditorIntroductionPage() {
             period="2025 — present"
             location="earprint.kwanho.dev"
             title="Earprint · YouTube Music taste analyzer"
-            stack="Next.js · TypeScript · Neon pgvector · Cloudflare Workers · Chrome MV3 · Gemini"
+            stack="Next.js · TypeScript · Neon pgvector · Cloudflare Workers · Chrome MV3 · Gemini · Deezer · Last.fm"
             bullets={[
-              'Chrome MV3 extension that reads the user\'s YouTube Music liked tracks; web app enriches them through Deezer, Last.fm, and a Gemini analysis pass.',
-              'Renders a taste profile, interactive artist map, and five-mode recommender (song / genre / unheard / indie / mix) with Tinder-style rating.',
-              'Auth.js + Google OAuth, Neon Postgres with pgvector for embedding-based recommendations, Cloudflare Workers via OpenNext, Cron Worker for scheduled jobs.',
+              'Chrome MV3 extension with bulk playlist import — multiple YouTube Music playlists at once including private Recaps; artist cleanup pass via Gemini to recover real artist names from fan-uploaded videos.',
+              'Taste DNA profile: reminiscence-bump imprint scoring + familiarity↔novelty index; Music Zodiac (12 listening archetypes from top genres and moods); Gemini-written psychology profile generated once per analysis credit.',
+              'Worldcup bracket from full library (8–256 tracks, multiple modes); shareable profile pages /s/<id> with dynamic OG images; Auth.js + Neon pgvector embedding-based recommendations, Cloudflare Workers.',
             ]}
             href="https://earprint.kwanho.dev"
             repo="https://github.com/KKWANH/earprint"
@@ -461,11 +461,11 @@ export default function EditorIntroductionPage() {
             period="May 2026"
             location="ai.kwanho.dev"
             title="Ariadne · Local-first LLM workspace"
-            stack="TypeScript · Python · Fastify · React · SQLite · Anthropic / OpenAI / Gemini / Ollama · Docker · Cloudflare Tunnel"
+            stack="TypeScript · Python · Fastify · React · SQLite · Anthropic / OpenAI / Gemini / Kimi / Ollama · Docker · Cloudflare Tunnel"
             bullets={[
-              'Multi-provider LLM application (Claude, OpenAI, Gemini, Kimi, Ollama) with agent mode that decomposes tasks, runs tools, and re-plans as results arrive — with human approval before actions execute.',
-              'Evidence engine mapping every generated claim to its source; a built-in hallucination guardrail. Context filter and document ingestion pipeline (PDF, DOCX, XLSX, Markdown, CSV).',
-              'Reusable prompt templates and run definitions; deployed over Cloudflare Tunnel with local / remote access split and request-origin checks.',
+              'Four chat modes — Instant (<2 s TTFT), Standard (thinking + grounded, Sources footer), Agent (plan-execute ~38 s), Deep (orchestrate multi-step) — across Claude, OpenAI, Gemini, Kimi, and Ollama.',
+              'Hybrid search (BM25 + vector + symbol + RRF, Hit@1 82.4%); workspace memory injected into context; sandboxed TS/JS dashboards rendered per-query in the Surface panel.',
+              'Actions engine (actions.yaml), cron scheduler, and webhook triggers; templates and run definitions with staged diff; evidence engine tracing every claim to its source document.',
             ]}
             href="https://ai.kwanho.dev"
             accent="var(--brand-cyan)"
