@@ -397,3 +397,252 @@
   padding-right: 0.5rem;
   font-weight: 700;
 }
+
+/* =====================================================================
+ * Study-note theme (.note-doc)
+ *
+ * Rich, dense "study note" styling scoped to the long-form note pages
+ * under /notes. Theme-aware (uses blog surface tokens) but with the
+ * bordered-card density and accent colour of the original HTML notes.
+ * Each page sets --nt-accent on its root for a per-topic accent.
+ *
+ * Animations are CSS-only: scroll-driven reveals via animation-timeline
+ * (graceful no-op where unsupported), looping SVG micro-motion, and
+ * bar fills. All disabled under prefers-reduced-motion.
+ * =====================================================================*/
+
+.note-doc {
+  --nt-accent: var(--brand-cyan);
+  font-size: 1.0625rem;
+  line-height: 1.8;
+}
+
+.note-doc :lang(ko),
+.note-doc:lang(ko) {
+  word-break: keep-all;
+}
+
+/* Section rhythm + scroll-reveal */
+.note-doc .nt-section {
+  scroll-margin-top: 6rem;
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .note-doc .nt-reveal {
+      animation: nt-reveal-in linear both;
+      animation-timeline: view();
+      animation-range: entry 2% cover 18%;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .note-doc .nt-rise {
+    animation: nt-reveal-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+}
+
+@keyframes nt-reveal-in {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Numbered kicker badge — gentle accent glow */
+.note-doc .nt-num {
+  background: var(--nt-accent);
+  color: var(--background);
+  box-shadow: 0 0 0 0 color-mix(in oklab, var(--nt-accent) 60%, transparent);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .note-doc .nt-num {
+    animation: nt-badge-pulse 3.4s ease-in-out infinite;
+  }
+}
+
+@keyframes nt-badge-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 color-mix(in oklab, var(--nt-accent) 45%, transparent);
+  }
+  50% {
+    box-shadow: 0 0 0 6px color-mix(in oklab, var(--nt-accent) 0%, transparent);
+  }
+}
+
+/* Cards lift slightly on hover */
+.note-doc .nt-card,
+.note-doc .nt-box {
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.note-doc .nt-card:hover,
+.note-doc .nt-box:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in oklab, var(--nt-accent) 45%, var(--border));
+}
+
+/* Tables */
+.note-doc .nt-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  border: 1px solid color-mix(in oklab, var(--border) 80%, transparent);
+}
+.note-doc .nt-table th {
+  text-align: left;
+  padding: 0.7rem 0.9rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--foreground);
+  background: color-mix(in oklab, var(--foreground) 7%, transparent);
+}
+.note-doc .nt-table td {
+  padding: 0.7rem 0.9rem;
+  border-top: 1px solid color-mix(in oklab, var(--border) 70%, transparent);
+  color: var(--muted-foreground);
+  vertical-align: top;
+}
+.note-doc .nt-table tr {
+  transition: background-color 0.2s ease;
+}
+.note-doc .nt-table tbody tr:hover {
+  background: color-mix(in oklab, var(--nt-accent) 6%, transparent);
+}
+.note-doc .nt-table strong {
+  color: var(--foreground);
+}
+
+/* Quiz <details> chevron */
+.note-doc .nt-quiz summary {
+  list-style: none;
+}
+.note-doc .nt-quiz summary::-webkit-details-marker {
+  display: none;
+}
+.note-doc .nt-quiz summary .nt-chev {
+  transition: transform 0.2s ease;
+}
+.note-doc .nt-quiz[open] summary .nt-chev {
+  transform: rotate(90deg);
+}
+.note-doc .nt-quiz[open] summary .nt-q-label {
+  color: var(--foreground);
+}
+
+/* Flow connectors: marching dashed arrows */
+@media (prefers-reduced-motion: no-preference) {
+  .note-doc .nt-farrow {
+    animation: nt-arrow-nudge 1.8s ease-in-out infinite;
+  }
+}
+@keyframes nt-arrow-nudge {
+  0%,
+  100% {
+    transform: translateX(0);
+    opacity: 0.55;
+  }
+  50% {
+    transform: translateX(3px);
+    opacity: 1;
+  }
+}
+
+/* Horizontal bars (revenue / market share / nm ladder): fill on scroll */
+.note-doc .nt-bar-fill {
+  transform-origin: left center;
+}
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .note-doc .nt-bar-fill {
+      animation: nt-bar-grow linear both;
+      animation-timeline: view();
+      animation-range: entry 10% cover 28%;
+    }
+  }
+}
+@keyframes nt-bar-grow {
+  from {
+    transform: scaleX(0.02);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* SVG micro-motion helpers (used inline in diagrams) */
+@media (prefers-reduced-motion: no-preference) {
+  .note-doc .nt-svg-pulse {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: nt-svg-pulse 2.6s ease-in-out infinite;
+  }
+  .note-doc .nt-svg-dash {
+    stroke-dasharray: 6 5;
+    animation: nt-svg-march 0.9s linear infinite;
+  }
+  .note-doc .nt-svg-draw {
+    stroke-dasharray: var(--len, 600);
+    stroke-dashoffset: var(--len, 600);
+  }
+}
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .note-doc .nt-svg-draw {
+      animation: nt-svg-draw-in linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 25%;
+    }
+  }
+}
+@keyframes nt-svg-pulse {
+  0%,
+  100% {
+    opacity: 0.65;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.12);
+  }
+}
+@keyframes nt-svg-march {
+  to {
+    stroke-dashoffset: -22;
+  }
+}
+@keyframes nt-svg-draw-in {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Glossary term rows */
+.note-doc .nt-term {
+  display: grid;
+  grid-template-columns: minmax(0, 13rem) 1fr;
+  gap: 0.9rem 1.1rem;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid color-mix(in oklab, var(--border) 65%, transparent);
+}
+.note-doc .nt-term:last-child {
+  border-bottom: 0;
+}
+@media (max-width: 640px) {
+  .note-doc .nt-term {
+    grid-template-columns: 1fr;
+    gap: 0.1rem;
+  }
+}

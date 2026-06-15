@@ -27,10 +27,10 @@ const notes = [
   {
     href: '/notes/kla',
     label: 'KLA',
-    title: 'KLA 완전암기',
-    subtitle: 'KLA Corporation 핵심 수치·역사·전략 12섹션',
-    excerpt: 'KLA의 숫자, 역사, 사업부, 경쟁사, KLA Leuven까지 — 면접 전날 밤에도 완주할 수 있는 밀도.',
-    readTime: '25 min',
+    title: 'KLA Corporation',
+    subtitle: '반도체를 검사하는 세계 1위 회사, 한눈에',
+    excerpt: 'KLA의 숫자·역사·사업부·경쟁 구도·KLA Leuven까지 — 반도체 공정 제어의 사실상 독점 기업을 12섹션으로.',
+    readTime: '18 min',
     accent: 'var(--brand-emerald)',
   },
 ]

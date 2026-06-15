@@ -9,6 +9,17 @@ import TravelPage, {
   subtitle as travelSubtitle,
   title as travelTitle,
 } from '@/contents/travel/index'
+import KlaPage, {
+  category as klaCategory,
+  date as klaDate,
+  description as klaDescription,
+  excerpt as klaExcerpt,
+  readTime as klaReadTime,
+  showToc as klaShowToc,
+  subtitle as klaSubtitle,
+  title as klaTitle,
+  toc as klaToc,
+} from '@/contents/notes/kla/index'
 
 export type BundledContentModule = {
   default: React.ComponentType
@@ -39,6 +50,18 @@ const bundledContentModules: Record<string, BundledContentModule> = {
     readTime: travelReadTime,
     showToc: travelShowToc,
     bodyClassName: travelBodyClassName,
+  },
+  'notes/kla': {
+    default: KlaPage,
+    title: klaTitle,
+    subtitle: klaSubtitle,
+    description: klaDescription,
+    excerpt: klaExcerpt,
+    date: klaDate,
+    category: klaCategory,
+    readTime: klaReadTime,
+    showToc: klaShowToc,
+    toc: klaToc,
   },
 }
 
