@@ -11,6 +11,7 @@ const navItems = [
   { href: '/#projects', label: 'Projects' },
   { href: '/editor', label: 'Editor' },
   { href: '/travel', label: 'Travel' },
+  { href: '/notes', label: 'Notes' },
 ] as const
 
 export function SiteHeader() {
