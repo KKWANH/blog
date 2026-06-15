@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next'
-import { EB_Garamond, Inter, Playfair_Display, Geist_Mono } from 'next/font/google'
+import { EB_Garamond, Inter, Playfair_Display, Geist_Mono, Noto_Serif_KR, Noto_Sans_KR } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { ThemeProvider } from '@/components/theme-provider'
@@ -27,6 +27,20 @@ const ebGaramond = EB_Garamond({
 const geistMono = Geist_Mono({
   subsets: ['latin'],
   variable: '--font-geist-mono',
+  display: 'swap',
+})
+
+const notoSerifKR = Noto_Serif_KR({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-noto-serif-kr',
+  display: 'swap',
+})
+
+const notoSansKR = Noto_Sans_KR({
+  subsets: ['latin'],
+  weight: ['400', '500', '700'],
+  variable: '--font-noto-sans-kr',
   display: 'swap',
 })
 
@@ -77,7 +91,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${playfair.variable} ${ebGaramond.variable} ${geistMono.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} ${playfair.variable} ${ebGaramond.variable} ${geistMono.variable} ${notoSerifKR.variable} ${notoSansKR.variable} font-sans antialiased`}>
         <ThemeProvider>
           {children}
         </ThemeProvider>

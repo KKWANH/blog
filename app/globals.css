@@ -80,9 +80,9 @@
 }
 
 @theme inline {
-  --font-sans: 'Inter', 'Geist', sans-serif;
-  --font-serif: 'EB Garamond', 'Times New Roman', Georgia, serif;
-  --font-display: 'Playfair Display', 'Times New Roman', Georgia, serif;
+  --font-sans: 'Inter', 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
+  --font-serif: 'EB Garamond', 'Noto Serif KR', 'Times New Roman', Georgia, serif;
+  --font-display: 'Playfair Display', 'Noto Serif KR', 'Times New Roman', Georgia, serif;
   --font-mono: 'Geist Mono', 'JetBrains Mono', 'SF Mono', monospace;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
