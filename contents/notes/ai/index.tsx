@@ -64,6 +64,7 @@ export const toc = [
   { id: 'c17', label: '17. 효율·멀티모달', level: 2 },
   { id: 'c18', label: '18. AI와 반도체', level: 2 },
   { id: 'c19', label: '19. 한계와 리스크', level: 2 },
+  { id: 'trends', label: '＋ 최신 연구 동향 (2025–26)', level: 2 },
   { id: 'c20', label: '20. 용어 사전', level: 2 },
 ]
 
@@ -1276,6 +1277,142 @@ export default function AIPage() {
           "AI가 다 한다"도, "AI는 허상이다"도 둘 다 틀렸다. <B>특정 작업(패턴 인식·생성)에선 초인적이지만, 진짜 이해·상식·
           책임은 아직 사람의 몫</B>이다. 도구로서 강력하되 맹신은 금물 — 이 감각이 균형 잡힌 시각이다.
         </Callout>
+      </Section>
+
+      {/* 최신 연구 동향 */}
+      <Section id="trends">
+        <PartTag>PART 6 · 최신 연구 동향 (2025–2026)</PartTag>
+        <Kicker num="＋">지금 연구는 어디로 가나</Kicker>
+        <H2>사전학습 규모에서 "생각과 사후학습"으로</H2>
+        <Lead>
+          2025–2026년 AI 연구의 가장 큰 흐름은 무게중심 이동이다. "모델·데이터를 더 키우는 <B>사전학습 스케일링</B>"에서,{' '}
+          <B>답할 때 더 생각하게 하고(test-time compute) 사후학습(post-training)을 정교화하는</B> 쪽으로. 아래는 arXiv·주요
+          랩 자료를 교차검증해 추린 흐름이다(수치는 2026년 상반기 기준, 빠르게 바뀐다).
+        </Lead>
+
+        <H3>🧠 1. 추론 모델과 test-time compute 스케일링</H3>
+        <P>
+          프런티어 "추론 모델"(OpenAI o1·o3 계열)은 답하기 전 내부적으로 더 오래 "생각"할수록 어려운 문제를 더 잘 푼다 —
+          추론(inference) 때 연산을 더 쓰는 것이 새 스케일링 축이다(16장). 2025년의 분수령은 <B>DeepSeek-R1</B>(Nature 게재,
+          2025)로, <Hl>오픈(MIT 라이선스) 모델이 o1급 추론에 도달</Hl>했음을 보였다.
+        </P>
+        <NTable
+          head={['모델', 'AIME 2024 (pass@1)', '비고']}
+          rows={[
+            [<B>DeepSeek-R1-Zero</B>, <>15.6% → <B>77.9%</B> (다수결 86.7%)</>, '순수 RL ablation 모델'],
+            [<B>DeepSeek-R1</B>, <B>79.8%</B>, 'OpenAI o1-1217(79.2%)과 동급'],
+          ]}
+        />
+        <Deep title="석사 수준 · '창발(aha moment)'은 조심해서 읽기">
+          DeepSeek는 RL 학습 중 모델이 스스로 <Em>생각 시간을 늘리고</Em> 자기검토·검증 같은 행동을 보였다고 보고했다
+          (self-evolution, "aha moment"). 하지만 이 "스스로 창발" 서사는 학계에서 <B>논쟁 중</B>이다 — 후속 연구(Sea AI Lab,
+          COLM 2025)는 그런 반성 패턴이 RL <Em>이전</Em> 베이스 모델에도 이미 있었고, 응답 길이 증가의 일부는 GRPO 알고리즘의
+          최적화 편향(아래)일 뿐이라고 지적한다. 또 "오래 생각 = 항상 더 정확"도 아니다(ACL 2025). 정리: RL이 추론을 끌어올린
+          건 분명하나, 능력을 <B>새로 만드는지 vs 잠재된 걸 증폭하는지</B>는 아직 열린 문제다.
+        </Deep>
+
+        <H3>🎯 2. 검증 가능한 보상 RL (RLVR) — 새로운 사후학습 엔진</H3>
+        <P>
+          R1의 핵심 비결은 <B>검증 가능한 보상 강화학습(RLVR)</B>이다. 수학·코드처럼 정답을 자동 채점할 수 있는 문제에서{' '}
+          <Em>최종 답의 정답 여부만</Em>을 보상으로 줘 추론을 학습시킨다. 알고리즘은 <B>GRPO</B>(PPO 변종 — 가치/크리틱 신경망을
+          없애고 그룹 내 상대적 우열로 학습; 16장).
+        </P>
+        <Callout label="시험에서 헷갈리는 지점: ">
+          "SFT 없이 순수 RL만으로"라는 헤드라인은 연구용 ablation 모델 <B>R1-Zero</B>에 해당한다. 실제 출시된 <B>R1은 순수
+          RL이 아니다</B> — 가독성·언어 혼용 문제를 잡으려 소량의 <Em>콜드스타트 SFT + 거부 샘플링</Em>을 RL 앞뒤에 둔다.
+        </Callout>
+        <Deep title="석사 수준 · 이 분야는 이미 스스로 고치는 중">
+          ① <B>GRPO의 길이 편향</B> — 틀린 답일수록 응답을 길게 만드는 최적화 편향이 발견됐고, 이를 없앤 <B>Dr. GRPO</B>가
+          토큰 효율을 개선했다. ② 가치함수를 버리면 test-time 스케일링(Best-of-N·가중 투표)에 필요한 <Em>검증기</Em>가 사라진다
+          — <B>RL^V</B>는 한 모델을 추론기 겸 생성형 검증기("Yes/No")로 같이 학습해, 추가 생성 비용 없이 test-time 효율을 크게
+          끌어올린다고 보고했다(단, 단일 모델·벤치마크군 한정이라 일반화는 미지수).
+        </Deep>
+
+        <H3>🤖 3. 에이전트·도구 사용·컴퓨터 유즈</H3>
+        <P>
+          에이전트의 "행동 공간"이 다섯 갈래로 확장됐다(2026 서베이): ① <B>API 호출</B> ② <B>코드를 행동으로</B>(code-as-action)
+          ③ <B>에이전트 전용 셸/IDE</B>(ACI) ④ <B>네이티브 컴퓨터 유즈</B>(스크린샷+마우스/키보드로 일반 GUI 제어 — Claude
+          computer use, OpenAI Operator) ⑤ <B>체화형 VLA</B>(로봇). 컴퓨터 유즈는 앱 API 없이 아무 화면이나 다룰 수 있지만
+          지연·취약성·<Em>프롬프트 인젝션</Em> 위험이 크다(14·15장).
+        </P>
+        <Callout label="벤치마크 진척: ">
+          데스크톱 제어 벤치마크 <B>OSWorld</B>(검증판)에서 <B>CoAct-1</B>이 컴퓨터 유즈 + 코드 실행을 결합해 <Hl>60.76%</Hl>로
+          첫 60% 돌파(2026 초). 이제 평균 성공률뿐 아니라 <Em>실패 유형</Em>(위험 행동·재시도·grounding 오류)까지 보고하는
+          추세다.
+        </Callout>
+
+        <H3>⚙️ 4. 효율화 — MoE와 어텐션 대안</H3>
+        <P>
+          프런티어 오픈 모델은 <B>MoE(전문가 혼합)</B>가 표준이 됐다(17장). DeepSeek-V3는 총 <B>6,710억</B> 파라미터 중 토큰당{' '}
+          <B>370억</B>만 활성화하고, MLA(다중헤드 잠재 어텐션)·MTP(다중 토큰 예측)로 효율을 쌓는다 — R1도 이 V3 위에 올라탔다.
+        </P>
+        <Callout label="흔한 오해: ">
+          MoE의 효율은 <B>연산(FLOPs)이지 메모리가 아니다</B> — 전문가 전부가 VRAM에 올라가 있어야 한다(그래서 "활성
+          파라미터는 작지만 총 메모리는 큼"). MoE 배포 자체가 까다로워 모델·시스템·하드웨어 3단계 추론 최적화가 별도 연구
+          분야로 컸다(ACM Computing Surveys).
+        </Callout>
+        <Deep title="석사 수준 · 어텐션 대안이 어텐션과 '수렴'한다">
+          트랜스포머의 n² 비용(9장)을 피하려는 <B>상태공간모델(Mamba/S6)</B>·선형/희소 어텐션이 활발한데, 최근엔 경쟁을 넘어{' '}
+          <Em>수렴</Em>하는 결과가 나왔다 — Mamba의 S6 층을 어텐션으로 재정식화하면 그 안에 <B>"숨은 어텐션 행렬"</B>이 있음이
+          밝혀졌다(ACL 2025). SSM과 트랜스포머가 생각보다 가깝다는 뜻이고, 해석가능성에도 도움이 된다.
+        </Deep>
+
+        <H3>🌫️ 5. 더 빠르게 움직이는 영역 (방향만)</H3>
+        <P>
+          아래는 이번 교차검증에서 1차 출처로 단정하긴 일렀지만 분명한 흐름이라 방향만 짚는다(수치가 빠르게 변하니 직접 확인
+          권장):
+        </P>
+        <Card>
+          <ul className="space-y-2 text-sm leading-7 text-muted-foreground">
+            <li>
+              <B>멀티모달·world model·영상 생성</B> — 텍스트·이미지·음성·영상을 한 모델이 다루는 any-to-any, 확산 트랜스포머
+              기반 영상 생성(Sora·Veo 계열), 상호작용 가능한 세계 시뮬레이터(Genie 계열 world model)로 확장 중.
+            </li>
+            <li>
+              <B>데이터·스케일링</B> — 고품질 인간 텍스트가 고갈된다는 "데이터 월" 논쟁(Epoch AI), 합성 데이터에만 의존하면
+              품질이 무너지는 <Em>모델 붕괴(model collapse)</Em> 경고(Nature 2024). 그래서 "합성 데이터를 어떻게 안전하게
+              쓰나"가 쟁점.
+            </li>
+            <li>
+              <B>해석가능성·안전</B> — 신경망 내부를 사람이 읽을 특징으로 분해하는 <Em>희소 오토인코더(SAE)·기계적 해석가능성</Em>
+              (Anthropic 등), 그리고 능력이 오를수록 중요한 정렬·평가·가드레일(19장).
+            </li>
+          </ul>
+        </Card>
+        <Note label="이 섹션 읽는 법: ">
+          위 모델명·수치는 2026년 상반기 기준이고, 벤치마크 순위(OSWorld·AIME)와 모델 세대는 매우 빠르게 바뀐다. 그래도 큰
+          그림 — <B>"규모에서 → 추론·사후학습·에이전트·효율로"</B> — 은 당분간 이어질 흐름이다.
+        </Note>
+
+        <Card>
+          <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground mb-3">📎 주요 출처</p>
+          <ul className="space-y-1.5 text-sm leading-6">
+            {[
+              ['DeepSeek-R1 (Nature, 2025)', 'https://www.nature.com/articles/s41586-025-09422-z'],
+              ['DeepSeek-R1 (arXiv 2501.12948)', 'https://arxiv.org/abs/2501.12948'],
+              ['Dr. GRPO · 길이 편향 (arXiv 2503.20783)', 'https://arxiv.org/abs/2503.20783'],
+              ['RL^V · 추론기+검증기 (arXiv 2505.04842)', 'https://arxiv.org/abs/2505.04842'],
+              ['Agentic AI 서베이 (arXiv 2601.12560)', 'https://arxiv.org/abs/2601.12560'],
+              ['CoAct-1 · OSWorld (arXiv 2508.03923)', 'https://arxiv.org/abs/2508.03923'],
+              ['MoE 추론 최적화 (ACM Computing Surveys)', 'https://dl.acm.org/doi/10.1145/3794845'],
+              ['Hidden Attention of Mamba (ACL 2025)', 'https://aclanthology.org/2025.acl-long.76.pdf'],
+              ['데이터 월 (Epoch AI)', 'https://epoch.ai/publications/will-we-run-out-of-data-limits-of-llm-scaling-based-on-human-generated-data'],
+              ['모델 붕괴 (Nature, 2024)', 'https://www.nature.com/articles/s41586-024-07566-y'],
+            ].map(([label, url]) => (
+              <li key={url} className="flex gap-2">
+                <span className="text-muted-foreground/40 shrink-0">·</span>
+                <a
+                  href={url}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  style={{ color: 'var(--brand-violet)', textDecoration: 'underline', textUnderlineOffset: '3px' }}
+                >
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </Card>
       </Section>
 
       {/* 20 */}
