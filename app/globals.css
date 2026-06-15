@@ -866,7 +866,7 @@
     opacity: 1;
   }
   100% {
-    left: 100%;
+    left: calc(100% - 10px);
     opacity: 0;
   }
 }
@@ -1049,6 +1049,9 @@
 /* ── Traveling spark along Flow arrows ── */
 .note-doc .nt-flow-track {
   position: relative;
+  /* overflow-x is auto (Tailwind) for step scroll on mobile; pin the
+   * other axis so the moving spark can never toggle a scrollbar. */
+  overflow-y: hidden;
 }
 .note-doc .nt-flow-spark {
   position: absolute;
@@ -1084,7 +1087,7 @@
     opacity: 1;
   }
   100% {
-    left: 100%;
+    left: calc(100% - 16px);
     opacity: 0;
   }
 }
