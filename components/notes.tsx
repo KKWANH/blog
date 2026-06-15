@@ -216,7 +216,8 @@ export type FlowStep = { icon?: ReactNode; title: ReactNode; desc?: ReactNode }
 export function Flow({ steps, loop }: { steps: FlowStep[]; loop?: ReactNode }) {
   return (
     <Card>
-      <div className="flex items-stretch gap-2 overflow-x-auto pb-1">
+      <div className="nt-flow-track flex items-stretch gap-2 overflow-x-auto pb-1">
+        <span className="nt-flow-spark" aria-hidden />
         {steps.map((s, i) => (
           <div key={i} className="contents">
             <div className="flex-1 min-w-[7rem] rounded-xl border border-border/60 bg-card/50 p-3 text-center">
@@ -470,6 +471,110 @@ export function Glossary({ terms }: { terms: Array<{ w: ReactNode; en?: ReactNod
         </div>
       ))}
     </Card>
+  )
+}
+
+/* ───────────────────────── CSS-animated diagrams ─────────────────────────
+ * Built from plain HTML + CSS (no SVG, no JS) so they genuinely move and
+ * react to hover. Motion is defined in globals.css and disabled under
+ * prefers-reduced-motion. */
+
+function cssVars(vars: Record<string, string | number>): CSSProperties {
+  return vars as CSSProperties
+}
+
+/** Nucleus with electrons orbiting on two shells; valence shell in green. */
+export function Atom() {
+  return (
+    <Figure caption="원자 모형 — 안쪽 전자는 핵에 단단히 묶여 있고, 바깥(초록) 최외각 전자가 얼마나 자유로운지가 전기를 좌우한다. (마우스를 올리면 더 빨라진다)">
+      <div className="nt-atom" role="img" aria-label="핵 주위를 도는 전자 (원자 모형)">
+        <div className="nt-orbit nt-orbit--inner">
+          <i className="nt-e" style={cssVars({ '--a': '0deg' })} />
+          <i className="nt-e" style={cssVars({ '--a': '180deg' })} />
+        </div>
+        <div className="nt-orbit nt-orbit--outer">
+          <i className="nt-e nt-e--v" style={cssVars({ '--a': '0deg' })} />
+          <i className="nt-e nt-e--v" style={cssVars({ '--a': '90deg' })} />
+          <i className="nt-e nt-e--v" style={cssVars({ '--a': '180deg' })} />
+          <i className="nt-e nt-e--v" style={cssVars({ '--a': '270deg' })} />
+        </div>
+        <div className="nt-atom-core">핵 +</div>
+        <span className="nt-atom-tag">
+          최외각 전자
+          <br />
+          전기를 좌우
+        </span>
+      </div>
+    </Figure>
+  )
+}
+
+/** MOSFET cross-section with electrons streaming through the channel. */
+export function MosfetCurrent() {
+  return (
+    <Figure caption="MOSFET — 게이트에 +전압을 주면 소스↔드레인 사이에 채널이 열려 전자(파란 점)가 흐른다. 전압을 떼면 흐름이 끊긴다. (마우스를 올리면 전류가 빨라진다)">
+      <div className="nt-mos" role="img" aria-label="게이트 전압으로 채널이 열려 전자가 흐르는 MOSFET">
+        <div className="nt-mos-body">P형 기판 (몸체)</div>
+        <div className="nt-mos-sd nt-mos-src">소스 N+</div>
+        <div className="nt-mos-sd nt-mos-drn">드레인 N+</div>
+        <div className="nt-mos-oxide" />
+        <div className="nt-mos-gate">게이트 +V</div>
+        <div className="nt-mos-channel">
+          {[0, 1, 2, 3, 4, 5].map((i) => (
+            <i key={i} className="nt-mos-e" style={{ animationDelay: `${i * 0.33}s` }} />
+          ))}
+        </div>
+      </div>
+    </Figure>
+  )
+}
+
+/** A ball repeatedly rolling down a loss "valley" and settling at the minimum. */
+export function GradientDescent() {
+  return (
+    <Figure caption="경사하강법 — 손실 골짜기에서 가장 가파른 내리막을 따라 한 걸음씩 내려가, 출렁이다 최솟값에 안착한다. (마우스를 올리면 더 빨리 수렴한다)">
+      <div className="nt-gd" role="img" aria-label="손실 골짜기를 따라 내려가 최솟값에 안착하는 공">
+        <div className="nt-gd-bowl" />
+        <span className="nt-gd-label" style={{ left: '9%', top: '13%' }}>
+          시작 · 오차 큼
+        </span>
+        <span className="nt-gd-label" style={{ left: '43%', top: '92%' }}>
+          최소 (목표)
+        </span>
+        <div className="nt-gd-ball" />
+      </div>
+    </Figure>
+  )
+}
+
+/** Plan → Act → Observe cycle with a spark orbiting the loop. */
+export function AgentLoop() {
+  return (
+    <Figure caption="에이전트 루프 — 계획·실행·관찰을 목표 달성까지 반복한다. 불빛이 사이클을 따라 돈다. (마우스를 올리면 더 빨리 돈다)">
+      <div className="nt-loop" role="img" aria-label="계획→실행→관찰을 반복하는 에이전트 루프">
+        <div className="nt-loop-ring" />
+        <div className="nt-loop-node nt-loop-node--1">
+          계획
+          <b>Plan</b>
+        </div>
+        <div className="nt-loop-node nt-loop-node--2">
+          실행
+          <b>Act · 도구</b>
+        </div>
+        <div className="nt-loop-node nt-loop-node--3">
+          관찰
+          <b>Observe</b>
+        </div>
+        <div className="nt-loop-center">
+          목표까지
+          <br />
+          반복
+        </div>
+        <div className="nt-loop-orbit">
+          <span className="nt-loop-spark" />
+        </div>
+      </div>
+    </Figure>
   )
 }
 

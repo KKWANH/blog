@@ -19,6 +19,8 @@ import {
   Flow,
   NTable,
   Figure,
+  GradientDescent,
+  AgentLoop,
   Glossary,
   Hl,
   HlG,
@@ -398,19 +400,14 @@ export default function AIPage() {
           <B>지금 서 있는 자리에서 가장 가파르게 내려가는 방향으로 한 걸음 내딛기</B>. 이걸 반복하면 골짜기 바닥에 도달한다.
           이 "내려가는 방향"을 알려주는 게 <Em>기울기(gradient)</Em>다.
         </P>
-        <Figure caption="손실 지형에서 가장 가파른 내리막으로 조금씩 이동. '한 걸음 크기'가 학습률(learning rate)이다.">
-          <svg viewBox="0 0 700 200" role="img" aria-label="경사하강법: 골짜기를 내려가기">
-            <path d="M60 40 Q200 200 350 170 Q500 145 640 40" fill="none" stroke="var(--brand-violet)" strokeWidth="2.5" />
-            <circle cx="110" cy="78" r="9" fill="#f472b6" />
-            <circle cx="180" cy="135" r="9" fill="#f472b6" opacity="0.7" />
-            <circle cx="270" cy="166" r="9" fill="#f472b6" opacity="0.55" />
-            <circle className="nt-svg-pulse" cx="360" cy="170" r="11" fill="var(--brand-emerald)" />
-            <text x="110" y="60" fill="#f472b6" fontSize="12" textAnchor="middle">시작(오차 큼)</text>
-            <text x="360" y="195" fill="var(--brand-emerald)" fontSize="12" textAnchor="middle">목표(오차 최소)</text>
-            <text x="600" y="70" fill="var(--muted-foreground)" fontSize="11" textAnchor="middle">한 걸음씩</text>
-            <text x="600" y="86" fill="var(--muted-foreground)" fontSize="11" textAnchor="middle">내려간다</text>
-          </svg>
-        </Figure>
+        <GradientDescent />
+        <P>
+          한 가지 중요한 함정 — 이 골짜기는 매끈한 그릇 하나가 아니다. 실제 손실 지형은 수억 차원에 울퉁불퉁한 산맥이라,
+          공이 진짜 최저점이 아닌 <Em>국소 최저점(local minimum)</Em>이나 평평한 안장점에 갇힐 수 있다. 그래서 실무에선 한
+          번에 전체 데이터가 아니라 작은 묶음(<B>미니배치</B>)으로 기울기를 추정해 일부러 약간의 무작위성을 주거나(SGD),
+          관성을 더해(<B>모멘텀</B>) 얕은 웅덩이를 굴러 넘게 하고, 걸음 크기를 자동 조절하는 <B>Adam</B> 같은 최적화기를
+          쓴다. 다행히 거대 신경망에서는 나쁜 국소 최저점이 생각보다 드물다는 게 경험적으로 알려져 있다.
+        </P>
         <P>
           걸음이 너무 크면 골짜기를 건너뛰어 출렁대고, 너무 작으면 한없이 느리다. 이 걸음 크기 <B>학습률(learning rate)</B>{' '}
           조절이 학습의 핵심 기술 중 하나다.
@@ -905,28 +902,13 @@ export default function AIPage() {
           에이전트는 같은 사이클을 목표 달성까지 반복한다. <B>계획(Plan) → 실행(Act, 도구 사용) → 관찰(Observe, 결과 확인) →
           다시 계획</B>. 사람이 일을 처리하는 방식과 똑같다.
         </P>
-        <Figure caption="에이전트는 이 루프를 자율적으로 돌린다. 계획하고, 도구로 실행하고, 결과를 보고, 다시 조정한다.">
-          <svg viewBox="0 0 700 180" role="img" aria-label="에이전트 루프: 계획 실행 관찰 반복">
-            <defs>
-              <marker id="agent-arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-                <path d="M0 0 L6 3 L0 6 z" fill="var(--muted-foreground)" />
-              </marker>
-            </defs>
-            <circle cx="160" cy="90" r="42" fill="var(--brand-violet)" opacity="0.2" stroke="var(--brand-violet)" strokeWidth="2" />
-            <text x="160" y="86" fill="var(--brand-violet)" fontSize="13" fontWeight="bold" textAnchor="middle">계획</text>
-            <text x="160" y="103" fill="var(--muted-foreground)" fontSize="10" textAnchor="middle">Plan</text>
-            <circle cx="350" cy="90" r="42" fill="var(--brand-cyan)" opacity="0.15" stroke="var(--brand-cyan)" strokeWidth="2" />
-            <text x="350" y="86" fill="var(--brand-cyan)" fontSize="13" fontWeight="bold" textAnchor="middle">실행</text>
-            <text x="350" y="103" fill="var(--muted-foreground)" fontSize="10" textAnchor="middle">Act(도구)</text>
-            <circle cx="540" cy="90" r="42" fill="var(--brand-emerald)" opacity="0.15" stroke="var(--brand-emerald)" strokeWidth="2" />
-            <text x="540" y="86" fill="var(--brand-emerald)" fontSize="13" fontWeight="bold" textAnchor="middle">관찰</text>
-            <text x="540" y="103" fill="var(--muted-foreground)" fontSize="10" textAnchor="middle">Observe</text>
-            <path d="M202 90 L308 90" stroke="var(--muted-foreground)" strokeWidth="2" markerEnd="url(#agent-arrow)" />
-            <path d="M392 90 L498 90" stroke="var(--muted-foreground)" strokeWidth="2" markerEnd="url(#agent-arrow)" />
-            <path className="nt-svg-dash" d="M540 132 Q540 165 160 165 Q160 140 160 132" stroke="var(--brand-violet)" strokeWidth="2" fill="none" markerEnd="url(#agent-arrow)" />
-            <text x="350" y="158" fill="var(--muted-foreground)" fontSize="11" textAnchor="middle">목표 달성까지 반복</text>
-          </svg>
-        </Figure>
+        <AgentLoop />
+        <P>
+          이 단순한 루프가 강력한 이유는 <B>관찰 단계의 피드백</B> 때문이다. 한 번에 완벽한 계획을 세울 필요가 없다 — 일단
+          한 걸음 실행하고, 결과(도구 출력·에러·중간 산출물)를 보고, 그에 맞춰 다음 계획을 고친다. 막다른 길이면 되돌아가고,
+          정보가 부족하면 더 검색한다. 이 "실행하며 적응한다"가 단발 챗봇과 에이전트를 가르는 결정적 차이다. 다만 루프가 끝나지
+          않거나 같은 실수를 반복할 위험이 있어서, <Em>언제 멈출지</Em>를 정하는 장치가 반드시 필요하다 — 그게 다음의 하네스다.
+        </P>
         <H3>🏗️ 하네스(Harness): 모델을 감싸는 "골격"</H3>
         <P>
           똑똑한 모델 하나만으론 신뢰할 수 있는 에이전트가 안 된다. 모델은 실수하고, 무한 루프에 빠지고, 위험한 행동을 할 수

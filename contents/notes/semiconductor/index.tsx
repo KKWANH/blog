@@ -20,6 +20,8 @@ import {
   ProcessGrid,
   Ladder,
   Figure,
+  Atom,
+  MosfetCurrent,
   Glossary,
   Hl,
   HlG,
@@ -87,37 +89,13 @@ export default function SemiconductorPage() {
           결정한다. 반도체의 주인공 실리콘은 최외각 전자가 <B>4개</B>다. 이 "4"를 기억해두자.
         </P>
 
-        <Figure caption="원자 모형. 바깥 껍질(초록) 전자가 얼마나 자유롭게 움직이느냐가 '전기가 통하는 정도'를 결정한다.">
-          <svg viewBox="0 0 700 230" role="img" aria-label="원자 모형: 핵과 전자 껍질">
-            <ellipse cx="350" cy="115" rx="70" ry="70" fill="none" stroke="var(--border)" strokeWidth="1.5" />
-            <ellipse cx="350" cy="115" rx="120" ry="120" fill="none" stroke="var(--border)" strokeWidth="1.5" />
-            <circle cx="350" cy="115" r="26" fill="var(--brand-amber)" />
-            <text x="350" y="120" fill="var(--background)" fontSize="14" fontWeight="bold" textAnchor="middle">
-              핵 +
-            </text>
-            <circle cx="350" cy="45" r="8" fill="var(--brand-cyan)" />
-            <circle cx="420" cy="115" r="8" fill="var(--brand-cyan)" />
-            <circle className="nt-svg-pulse" cx="350" cy="-5" r="9" fill="var(--brand-emerald)" />
-            <circle className="nt-svg-pulse" cx="470" cy="115" r="9" fill="var(--brand-emerald)" />
-            <circle className="nt-svg-pulse" cx="350" cy="235" r="9" fill="var(--brand-emerald)" />
-            <circle className="nt-svg-pulse" cx="230" cy="115" r="9" fill="var(--brand-emerald)" />
-            <text x="600" y="44" fill="var(--brand-emerald)" fontSize="14" fontWeight="bold" textAnchor="middle">
-              최외각 전자
-            </text>
-            <text x="600" y="64" fill="var(--muted-foreground)" fontSize="12" textAnchor="middle">
-              (바깥 껍질)
-            </text>
-            <text x="600" y="84" fill="var(--muted-foreground)" fontSize="12" textAnchor="middle">
-              전기를 좌우
-            </text>
-            <text x="98" y="150" fill="var(--brand-cyan)" fontSize="13" textAnchor="middle">
-              안쪽 전자
-            </text>
-            <text x="98" y="170" fill="var(--muted-foreground)" fontSize="12" textAnchor="middle">
-              핵에 꽉 묶임
-            </text>
-          </svg>
-        </Figure>
+        <Atom />
+        <P>
+          왜 "가장 바깥 껍질"만 중요할까? 핵에 가까운 안쪽 전자는 +전하의 핵이 강하게 끌어당겨 거의 못 움직인다. 반면 바깥
+          껍질 전자는 핵에서 멀어 인력이 약하고, 그래서 작은 자극(열·빛·전압)만 받아도 풀려날 수 있다. 즉 <B>전기적 성질은
+          사실상 최외각 전자들의 사정</B>이다. 각 껍질이 담을 수 있는 전자 수도 정해져 있어(첫 껍질 2개, 다음 8개…), 실리콘은
+          전자 14개 중 안쪽 10개가 차고 <B>바깥에 4개</B>가 남는다 — 이 "4"가 3장의 공유결합으로 이어진다.
+        </P>
 
         <H3>💡 "전기가 흐른다"의 진짜 의미</H3>
         <P>
@@ -492,51 +470,13 @@ export default function SemiconductorPage() {
           <B>전계효과(Field Effect)</B>다.
         </P>
 
-        <Figure caption="MOSFET 단면. 게이트에 전압을 주면 소스-드레인 사이에 채널(파란 점선)이 생겨 전류가 흐른다.">
-          <svg viewBox="0 0 700 240" role="img" aria-label="MOSFET 단면 구조">
-            <defs>
-              <linearGradient id="mosfet-gate" x1="0" x2="1">
-                <stop offset="0" stopColor="#3b82f6" />
-                <stop offset="1" stopColor="var(--brand-cyan)" />
-              </linearGradient>
-            </defs>
-            <rect x="80" y="120" width="540" height="80" fill="var(--card)" stroke="var(--border)" />
-            <text x="350" y="185" fill="var(--muted-foreground)" fontSize="12" textAnchor="middle">
-              P형 기판 (몸체, Body)
-            </text>
-            <rect x="110" y="120" width="110" height="45" fill="var(--brand-emerald)" opacity="0.5" />
-            <text x="165" y="148" fill="var(--foreground)" fontSize="13" textAnchor="middle">
-              소스 N+
-            </text>
-            <rect x="480" y="120" width="110" height="45" fill="var(--brand-emerald)" opacity="0.5" />
-            <text x="535" y="148" fill="var(--foreground)" fontSize="13" textAnchor="middle">
-              드레인 N+
-            </text>
-            <rect x="230" y="106" width="240" height="14" fill="var(--brand-amber)" opacity="0.7" />
-            <text x="350" y="100" fill="var(--brand-amber)" fontSize="11" textAnchor="middle">
-              산화막(절연체)
-            </text>
-            <rect x="250" y="78" width="200" height="26" rx="4" fill="url(#mosfet-gate)" />
-            <text x="350" y="96" fill="var(--background)" fontSize="14" fontWeight="bold" textAnchor="middle">
-              게이트
-            </text>
-            <text x="350" y="64" fill="var(--brand-cyan)" fontSize="13" textAnchor="middle">
-              +전압 인가 시
-            </text>
-            <line
-              className="nt-svg-dash"
-              x1="225"
-              y1="128"
-              x2="475"
-              y2="128"
-              stroke="var(--brand-cyan)"
-              strokeWidth="3"
-            />
-            <text x="350" y="148" fill="var(--brand-cyan)" fontSize="11" textAnchor="middle">
-              → 채널(통로) 형성 → 전류 흐름
-            </text>
-          </svg>
-        </Figure>
+        <MosfetCurrent />
+        <P>
+          한 가지 짚어둘 것 — 게이트는 통로에 <B>직접 닿지 않는다</B>. 게이트와 채널 사이의 얇은 산화막이 둘을 갈라놓고 있어
+          게이트로는 전류가 (거의) 흐르지 않는다. 게이트는 오직 <Em>전기장</Em>으로 멀리서 채널을 "당겨" 만들 뿐이다. 이게
+          MOSFET이 전력을 거의 안 먹는 이유이고, 동시에 산화막을 극도로 얇게(요즘은 원자 몇 층 두께) 만들어야 하는 이유다 —
+          너무 얇으면 전자가 막을 뚫고 새는 <B>터널링 누설</B>이 생긴다(14장).
+        </P>
         <Analogy emoji="🚰">
           <B>수도꼭지 그 자체.</B> 소스=입수관, 드레인=배수관, 게이트=손잡이, 채널=물길. 손잡이(게이트 전압)를 돌리면
           물(전류)이 흐르거나 멈춘다. 트랜지스터는 결국 <Em>전기로 돌리는 수도꼭지</Em>다.

@@ -646,3 +646,445 @@
     gap: 0.1rem;
   }
 }
+
+/* =====================================================================
+ * CSS-built animated diagrams (.note-doc)
+ *
+ * Some figures are built from plain HTML + CSS instead of static SVG so
+ * they genuinely move and react. All looping animation is gated behind
+ * prefers-reduced-motion; the static fallback positions read correctly.
+ * Hover = "energize" (faster). nt-spin is the shared rotation keyframe.
+ * =====================================================================*/
+
+@keyframes nt-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes nt-glow-ring {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 color-mix(in oklab, var(--c, var(--brand-amber)) 50%, transparent);
+  }
+  50% {
+    box-shadow: 0 0 0 12px color-mix(in oklab, var(--c, var(--brand-amber)) 0%, transparent);
+  }
+}
+
+/* ── Atom: electrons orbiting a nucleus ── */
+.note-doc .nt-atom {
+  position: relative;
+  height: 250px;
+  max-width: 360px;
+  margin: 0 auto;
+}
+.note-doc .nt-atom-core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 56px;
+  height: 56px;
+  margin: -28px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--background);
+  background: var(--brand-amber);
+}
+.note-doc .nt-orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+}
+.note-doc .nt-orbit--inner {
+  width: 124px;
+  height: 124px;
+  margin: -62px;
+}
+.note-doc .nt-orbit--outer {
+  width: 220px;
+  height: 220px;
+  margin: -110px;
+  border-color: color-mix(in oklab, var(--brand-emerald) 35%, var(--border));
+}
+.note-doc .nt-e {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 13px;
+  height: 13px;
+  margin: -6.5px;
+  border-radius: 50%;
+  background: var(--brand-cyan);
+  box-shadow: 0 0 8px color-mix(in oklab, var(--brand-cyan) 65%, transparent);
+}
+.note-doc .nt-orbit--inner .nt-e {
+  transform: rotate(var(--a, 0deg)) translateX(62px);
+}
+.note-doc .nt-orbit--outer .nt-e {
+  transform: rotate(var(--a, 0deg)) translateX(110px);
+}
+.note-doc .nt-e--v {
+  background: var(--brand-emerald);
+  box-shadow: 0 0 11px color-mix(in oklab, var(--brand-emerald) 75%, transparent);
+  width: 15px;
+  height: 15px;
+  margin: -7.5px;
+}
+.note-doc .nt-atom-tag {
+  position: absolute;
+  right: 0;
+  top: 6px;
+  font-size: 11px;
+  color: var(--brand-emerald);
+  text-align: right;
+  line-height: 1.4;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .note-doc .nt-atom-core {
+    --c: var(--brand-amber);
+    animation: nt-glow-ring 2.6s ease-in-out infinite;
+  }
+  .note-doc .nt-orbit--inner {
+    animation: nt-spin 7s linear infinite;
+  }
+  .note-doc .nt-orbit--outer {
+    animation: nt-spin 13s linear infinite reverse;
+  }
+  .note-doc .nt-atom:hover .nt-orbit--inner {
+    animation-duration: 2.6s;
+  }
+  .note-doc .nt-atom:hover .nt-orbit--outer {
+    animation-duration: 5s;
+  }
+}
+
+/* ── MOSFET: current (electrons) flowing through the channel ── */
+.note-doc .nt-mos {
+  position: relative;
+  height: 210px;
+  max-width: 540px;
+  margin: 0 auto;
+  font-size: 11px;
+  color: var(--muted-foreground);
+}
+.note-doc .nt-mos-body {
+  position: absolute;
+  left: 4%;
+  right: 4%;
+  bottom: 14px;
+  height: 96px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  display: grid;
+  place-items: end center;
+  padding-bottom: 6px;
+}
+.note-doc .nt-mos-sd {
+  position: absolute;
+  bottom: 14px;
+  width: 19%;
+  height: 62px;
+  background: color-mix(in oklab, var(--brand-emerald) 45%, transparent);
+  display: grid;
+  place-items: center;
+  color: var(--foreground);
+  font-weight: 600;
+}
+.note-doc .nt-mos-src {
+  left: 4%;
+  border-radius: 5px 0 0 5px;
+}
+.note-doc .nt-mos-drn {
+  right: 4%;
+  border-radius: 0 5px 5px 0;
+}
+.note-doc .nt-mos-oxide {
+  position: absolute;
+  left: 30%;
+  right: 30%;
+  bottom: 100px;
+  height: 8px;
+  background: color-mix(in oklab, var(--brand-amber) 75%, transparent);
+}
+.note-doc .nt-mos-gate {
+  position: absolute;
+  left: 28%;
+  right: 28%;
+  bottom: 108px;
+  height: 24px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #3b82f6, var(--brand-cyan));
+  display: grid;
+  place-items: center;
+  color: var(--background);
+  font-weight: 700;
+}
+.note-doc .nt-mos-channel {
+  position: absolute;
+  left: 24%;
+  right: 24%;
+  bottom: 44px;
+  height: 10px;
+}
+.note-doc .nt-mos-e {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--brand-cyan);
+  box-shadow: 0 0 7px color-mix(in oklab, var(--brand-cyan) 65%, transparent);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .note-doc .nt-mos-gate {
+    --c: var(--brand-cyan);
+    animation: nt-glow-ring 2.4s ease-in-out infinite;
+  }
+  .note-doc .nt-mos-e {
+    animation: nt-mos-flow 2s linear infinite;
+  }
+  .note-doc .nt-mos:hover .nt-mos-e {
+    animation-duration: 0.9s;
+  }
+}
+@keyframes nt-mos-flow {
+  0% {
+    left: 0%;
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  88% {
+    opacity: 1;
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+/* ── Gradient descent: ball rolling into the valley ── */
+.note-doc .nt-gd {
+  position: relative;
+  height: 210px;
+  max-width: 540px;
+  margin: 0 auto;
+}
+.note-doc .nt-gd-bowl {
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  top: 18%;
+  bottom: 16%;
+  border: 0 solid var(--brand-violet);
+  border-bottom-width: 3px;
+  border-left-width: 3px;
+  border-right-width: 3px;
+  border-radius: 0 0 46% 46% / 0 0 90% 90%;
+  opacity: 0.75;
+}
+.note-doc .nt-gd-ball {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  margin: -9px;
+  border-radius: 50%;
+  background: var(--brand-emerald);
+  box-shadow: 0 0 13px color-mix(in oklab, var(--brand-emerald) 75%, transparent);
+  left: 50%;
+  top: 76%;
+}
+.note-doc .nt-gd-label {
+  position: absolute;
+  font-size: 11px;
+  color: var(--muted-foreground);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .note-doc .nt-gd-ball {
+    animation: nt-gd-roll 3.6s cubic-bezier(0.4, 0, 0.5, 1) infinite;
+  }
+  .note-doc .nt-gd:hover .nt-gd-ball {
+    animation-duration: 1.7s;
+  }
+}
+@keyframes nt-gd-roll {
+  0% {
+    opacity: 0;
+    left: 15%;
+    top: 26%;
+  }
+  8% {
+    opacity: 1;
+  }
+  42% {
+    left: 50%;
+    top: 80%;
+  }
+  55% {
+    left: 63%;
+    top: 62%;
+  }
+  68% {
+    left: 44%;
+    top: 78%;
+  }
+  80% {
+    left: 54%;
+    top: 73%;
+  }
+  92% {
+    left: 49%;
+    top: 76%;
+  }
+  100% {
+    opacity: 1;
+    left: 50%;
+    top: 76%;
+  }
+}
+
+/* ── Agent loop: indicator orbiting the Plan→Act→Observe cycle ── */
+.note-doc .nt-loop {
+  position: relative;
+  width: 244px;
+  height: 244px;
+  margin: 0 auto;
+}
+.note-doc .nt-loop-ring {
+  position: absolute;
+  inset: 26px;
+  border-radius: 50%;
+  border: 1.5px dashed color-mix(in oklab, var(--brand-violet) 50%, var(--border));
+}
+.note-doc .nt-loop-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  margin: -30px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 11px;
+  color: var(--muted-foreground);
+  border: 1px solid var(--border);
+  background: color-mix(in oklab, var(--card) 70%, transparent);
+}
+.note-doc .nt-loop-node {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 66px;
+  height: 66px;
+  margin: -33px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.note-doc .nt-loop-node b {
+  display: block;
+  font-size: 9px;
+  font-weight: 500;
+  color: var(--muted-foreground);
+}
+.note-doc .nt-loop-node--1 {
+  transform: translateY(-88px);
+  color: var(--brand-violet);
+  background: color-mix(in oklab, var(--brand-violet) 18%, transparent);
+  border: 1.5px solid color-mix(in oklab, var(--brand-violet) 55%, transparent);
+}
+.note-doc .nt-loop-node--2 {
+  transform: rotate(120deg) translateY(-88px) rotate(-120deg);
+  color: var(--brand-cyan);
+  background: color-mix(in oklab, var(--brand-cyan) 15%, transparent);
+  border: 1.5px solid color-mix(in oklab, var(--brand-cyan) 50%, transparent);
+}
+.note-doc .nt-loop-node--3 {
+  transform: rotate(240deg) translateY(-88px) rotate(-240deg);
+  color: var(--brand-emerald);
+  background: color-mix(in oklab, var(--brand-emerald) 15%, transparent);
+  border: 1.5px solid color-mix(in oklab, var(--brand-emerald) 50%, transparent);
+}
+.note-doc .nt-loop-orbit {
+  position: absolute;
+  inset: 0;
+}
+.note-doc .nt-loop-spark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  margin: -8px;
+  border-radius: 50%;
+  background: var(--brand-amber);
+  box-shadow: 0 0 14px var(--brand-amber);
+  transform: translateY(-88px);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .note-doc .nt-loop-ring {
+    animation: nt-spin 22s linear infinite;
+  }
+  .note-doc .nt-loop-orbit {
+    animation: nt-spin 4.5s linear infinite;
+  }
+  .note-doc .nt-loop:hover .nt-loop-orbit {
+    animation-duration: 1.6s;
+  }
+}
+
+/* ── Traveling spark along Flow arrows ── */
+.note-doc .nt-flow-track {
+  position: relative;
+}
+.note-doc .nt-flow-spark {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  margin-top: -5px;
+  border-radius: 50%;
+  background: var(--nt-accent);
+  box-shadow: 0 0 12px var(--nt-accent);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .note-doc .nt-flow-spark {
+    animation: nt-flow-run 3.4s ease-in-out infinite;
+  }
+  .note-doc .nt-card:hover .nt-flow-spark {
+    animation-duration: 1.7s;
+  }
+}
+@keyframes nt-flow-run {
+  0% {
+    left: 0%;
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  92% {
+    opacity: 1;
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
