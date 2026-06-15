@@ -578,6 +578,72 @@ export function AgentLoop() {
   )
 }
 
+/** A convolution filter window scanning across an image grid. */
+export function CnnFilter() {
+  return (
+    <Figure caption="합성곱 — 작은 필터(보라 창)가 이미지를 한 칸씩 훑으며 특징을 뽑아 특징 지도를 만들고, 층이 깊어질수록 추상적 개념으로. (마우스를 올리면 더 빨리 훑는다)">
+      <div className="nt-cnn" role="img" aria-label="필터가 이미지를 훑는 합성곱">
+        <div>
+          <div className="nt-cnn-grid">
+            {Array.from({ length: 25 }).map((_, i) => (
+              <div key={i} className="nt-cnn-cell" />
+            ))}
+            <div className="nt-cnn-win" />
+          </div>
+          <div className="text-center mt-1.5">입력 이미지(픽셀)</div>
+        </div>
+        <span style={{ color: 'var(--brand-violet)', fontSize: 22 }}>→</span>
+        <div>
+          <div className="nt-cnn-map">특징 지도</div>
+        </div>
+        <span style={{ color: 'var(--brand-violet)', fontSize: 22 }}>→</span>
+        <div className="nt-cnn-chip">"고양이"</div>
+      </div>
+    </Figure>
+  )
+}
+
+/** P–N junction with holes and electrons drifting to the junction (forward bias). */
+export function PnJunction() {
+  const holes = [22, 44, 64]
+  const elecs = [30, 52, 72]
+  return (
+    <Figure caption="PN 접합(순방향) — P의 정공(보라 고리)과 N의 전자(파란 점)가 경계로 밀려와 만나 사라진다(재결합). 한 방향으로만 전류가 흐르는 다이오드. (마우스를 올리면 빨라진다)">
+      <div className="nt-pn" role="img" aria-label="순방향 PN 접합에서 캐리어가 경계로 흘러 재결합">
+        <div className="nt-pn-p" />
+        <div className="nt-pn-n" />
+        <div className="nt-pn-dep" />
+        <span className="nt-pn-lab" style={{ left: '12%', top: '8px', color: 'var(--brand-violet)' }}>
+          P형 · 정공 +
+        </span>
+        <span className="nt-pn-lab" style={{ right: '12%', top: '8px', color: 'var(--brand-emerald)' }}>
+          N형 · 전자 −
+        </span>
+        <span
+          className="nt-pn-lab"
+          style={{ left: '50%', bottom: '8px', transform: 'translateX(-50%)', color: 'var(--muted-foreground)', fontWeight: 400 }}
+        >
+          공핍층(장벽)
+        </span>
+        {holes.map((top, i) => (
+          <i
+            key={`h${i}`}
+            className="nt-pn-carrier nt-pn-hole"
+            style={{ top: `${top}px`, animationDelay: `${i * 0.7}s` }}
+          />
+        ))}
+        {elecs.map((top, i) => (
+          <i
+            key={`e${i}`}
+            className="nt-pn-carrier nt-pn-elec"
+            style={{ top: `${top}px`, animationDelay: `${i * 0.7 + 0.35}s` }}
+          />
+        ))}
+      </div>
+    </Figure>
+  )
+}
+
 /* ───────────────────────── inline accent text ───────────────────────── */
 
 export function Hl({ children }: { children: ReactNode }) {

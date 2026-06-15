@@ -22,6 +22,7 @@ import {
   Figure,
   Atom,
   MosfetCurrent,
+  PnJunction,
   Glossary,
   Hl,
   HlG,
@@ -389,40 +390,14 @@ export default function SemiconductorPage() {
           </Box>
         </Grid2>
 
-        <Figure caption="PN 접합 = 다이오드. 한 방향으로만 전류를 통과시키는 '전기 밸브'.">
-          <svg viewBox="0 0 700 180" role="img" aria-label="PN 접합 다이오드">
-            <rect x="120" y="60" width="200" height="60" fill="var(--brand-violet)" opacity="0.35" />
-            <rect x="320" y="60" width="200" height="60" fill="var(--brand-emerald)" opacity="0.35" />
-            <rect x="305" y="60" width="30" height="60" fill="var(--muted)" />
-            <text x="220" y="96" fill="var(--brand-violet)" fontSize="16" fontWeight="bold" textAnchor="middle">
-              P형
-            </text>
-            <text x="420" y="96" fill="var(--brand-emerald)" fontSize="16" fontWeight="bold" textAnchor="middle">
-              N형
-            </text>
-            <text x="320" y="145" fill="var(--brand-violet)" fontSize="12" textAnchor="middle">
-              공핍층(장벽)
-            </text>
-            <text x="220" y="42" fill="var(--muted-foreground)" fontSize="12" textAnchor="middle">
-              정공(+) 많음
-            </text>
-            <text x="420" y="42" fill="var(--muted-foreground)" fontSize="12" textAnchor="middle">
-              전자(−) 많음
-            </text>
-            <text x="610" y="80" fill="var(--brand-emerald)" fontSize="13" fontWeight="bold" textAnchor="middle">
-              순방향 →
-            </text>
-            <text x="610" y="98" fill="var(--muted-foreground)" fontSize="11" textAnchor="middle">
-              흐름 O
-            </text>
-            <text x="610" y="125" fill="#f87171" fontSize="13" fontWeight="bold" textAnchor="middle">
-              ← 역방향
-            </text>
-            <text x="610" y="143" fill="var(--muted-foreground)" fontSize="11" textAnchor="middle">
-              흐름 X
-            </text>
-          </svg>
-        </Figure>
+        <PnJunction />
+        <P>
+          왜 한 방향으로만 흐를까? <B>순방향</B>(P에 +, N에 −)으로 걸면 양쪽 캐리어가 경계로 떠밀려 공핍층이 얇아지고 전류가
+          흐른다(위 그림). 반대로 <B>역방향</B>(P에 −, N에 +)으로 걸면 캐리어가 경계에서 멀어져 공핍층이 더 두꺼워지고
+          전류가 막힌다. 즉 다이오드는 전압 방향으로 장벽 두께를 조절하는 <Em>전기 밸브</Em>다. 단, 역방향 전압을 너무
+          높이면 어느 순간 장벽이 무너져 갑자기 통하는 <B>항복(breakdown)</B>이 일어난다 — 이걸 거꾸로 이용한 게 전압을
+          일정하게 잡아주는 제너 다이오드다.
+        </P>
         <Deep>
           <B>다이오드의 쓰임.</B> 한 방향만 통과시키는 성질로 교류를 직류로 바꾸는 정류, 역전류 방지 등에 쓴다.{' '}
           <Hl>LED</Hl>도 다이오드의 일종이다(전류가 흐를 때 빛을 냄, Light Emitting Diode). 그리고 PN 접합을{' '}

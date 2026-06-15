@@ -1088,3 +1088,196 @@
     opacity: 0;
   }
 }
+
+/* ── CNN: filter window scanning across the image grid ── */
+.note-doc .nt-cnn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 6px 0;
+  font-size: 11px;
+  color: var(--muted-foreground);
+}
+.note-doc .nt-cnn-grid {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  border: 1px solid var(--border);
+  background: var(--card);
+}
+.note-doc .nt-cnn-cell {
+  border: 0.5px solid color-mix(in oklab, var(--border) 55%, transparent);
+}
+.note-doc .nt-cnn-win {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  border: 2px solid var(--brand-violet);
+  background: color-mix(in oklab, var(--brand-violet) 14%, transparent);
+  box-shadow: 0 0 10px color-mix(in oklab, var(--brand-violet) 50%, transparent);
+}
+.note-doc .nt-cnn-map {
+  width: 92px;
+  height: 92px;
+  border-radius: 4px;
+  background: color-mix(in oklab, var(--brand-violet) 16%, transparent);
+  border: 1px solid color-mix(in oklab, var(--brand-violet) 45%, transparent);
+  display: grid;
+  place-items: center;
+}
+.note-doc .nt-cnn-chip {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid color-mix(in oklab, var(--brand-emerald) 50%, transparent);
+  background: color-mix(in oklab, var(--brand-emerald) 14%, transparent);
+  color: var(--foreground);
+  font-weight: 700;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .note-doc .nt-cnn-win {
+    animation: nt-cnn-scan 6s linear infinite;
+  }
+  .note-doc .nt-cnn-map {
+    animation: nt-glow-ring 1.5s ease-in-out infinite;
+    --c: var(--brand-violet);
+  }
+  .note-doc .nt-cnn:hover .nt-cnn-win {
+    animation-duration: 3s;
+  }
+}
+@keyframes nt-cnn-scan {
+  0%,
+  10% {
+    transform: translate(0, 0);
+  }
+  11%,
+  21% {
+    transform: translate(45px, 0);
+  }
+  22%,
+  32% {
+    transform: translate(90px, 0);
+  }
+  33%,
+  43% {
+    transform: translate(0, 45px);
+  }
+  44%,
+  54% {
+    transform: translate(45px, 45px);
+  }
+  55%,
+  65% {
+    transform: translate(90px, 45px);
+  }
+  66%,
+  76% {
+    transform: translate(0, 90px);
+  }
+  77%,
+  87% {
+    transform: translate(45px, 90px);
+  }
+  88%,
+  100% {
+    transform: translate(90px, 90px);
+  }
+}
+
+/* ── PN junction: carriers drifting to the junction (forward current) ── */
+.note-doc .nt-pn {
+  position: relative;
+  height: 150px;
+  max-width: 520px;
+  margin: 0 auto;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  font-size: 12px;
+}
+.note-doc .nt-pn-p {
+  position: absolute;
+  inset: 0 50% 0 0;
+  background: color-mix(in oklab, var(--brand-violet) 16%, transparent);
+}
+.note-doc .nt-pn-n {
+  position: absolute;
+  inset: 0 0 0 50%;
+  background: color-mix(in oklab, var(--brand-emerald) 16%, transparent);
+}
+.note-doc .nt-pn-dep {
+  position: absolute;
+  left: 45%;
+  right: 45%;
+  top: 0;
+  bottom: 0;
+  background: color-mix(in oklab, var(--muted) 55%, transparent);
+}
+.note-doc .nt-pn-lab {
+  position: absolute;
+  font-weight: 700;
+}
+.note-doc .nt-pn-carrier {
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+}
+.note-doc .nt-pn-hole {
+  border: 2px solid var(--brand-violet);
+  box-shadow: 0 0 6px color-mix(in oklab, var(--brand-violet) 50%, transparent);
+}
+.note-doc .nt-pn-elec {
+  background: var(--brand-cyan);
+  box-shadow: 0 0 7px color-mix(in oklab, var(--brand-cyan) 60%, transparent);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .note-doc .nt-pn-hole {
+    animation: nt-pn-hole 2.4s linear infinite;
+  }
+  .note-doc .nt-pn-elec {
+    animation: nt-pn-elec 2.4s linear infinite;
+  }
+  .note-doc .nt-pn:hover .nt-pn-carrier {
+    animation-duration: 1.1s;
+  }
+}
+@keyframes nt-pn-hole {
+  0% {
+    left: 6%;
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  82% {
+    opacity: 1;
+  }
+  100% {
+    left: 47%;
+    opacity: 0;
+  }
+}
+@keyframes nt-pn-elec {
+  0% {
+    left: 94%;
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  82% {
+    opacity: 1;
+  }
+  100% {
+    left: 53%;
+    opacity: 0;
+  }
+}

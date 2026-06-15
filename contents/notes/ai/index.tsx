@@ -19,6 +19,7 @@ import {
   Flow,
   NTable,
   Figure,
+  CnnFilter,
   GradientDescent,
   AgentLoop,
   Glossary,
@@ -536,31 +537,14 @@ export default function AIPage() {
           모서리", "둥근 곡선"에 반응한다. 같은 필터를 이미지 전체에 쓰기 때문에, <Em>물체가 어디에 있든</Em> 같은 특징을
           찾아낸다(위치 불변성).
         </P>
-        <Figure caption="필터로 특징을 뽑고(합성곱), 요약하고(풀링), 깊어질수록 추상적 개념으로. 마지막에 분류 결과를 낸다.">
-          <svg viewBox="0 0 700 200" role="img" aria-label="CNN 필터가 이미지를 훑는 모습">
-            <rect x="60" y="40" width="120" height="120" fill="var(--card)" stroke="var(--border)" />
-            <g stroke="var(--border)" strokeWidth="1">
-              <line x1="90" y1="40" x2="90" y2="160" />
-              <line x1="120" y1="40" x2="120" y2="160" />
-              <line x1="150" y1="40" x2="150" y2="160" />
-              <line x1="60" y1="70" x2="180" y2="70" />
-              <line x1="60" y1="100" x2="180" y2="100" />
-              <line x1="60" y1="130" x2="180" y2="130" />
-            </g>
-            <rect className="nt-svg-pulse" x="60" y="40" width="60" height="60" fill="none" stroke="#f472b6" strokeWidth="3" />
-            <text x="120" y="180" fill="var(--muted-foreground)" fontSize="11" textAnchor="middle">입력 이미지(픽셀)</text>
-            <text x="90" y="32" fill="#f472b6" fontSize="11" textAnchor="middle">필터(창)</text>
-            <text x="250" y="105" fill="var(--brand-violet)" fontSize="22" textAnchor="middle">→</text>
-            <rect x="300" y="55" width="90" height="90" fill="var(--brand-violet)" opacity="0.2" stroke="var(--brand-violet)" />
-            <text x="345" y="165" fill="var(--muted-foreground)" fontSize="11" textAnchor="middle">특징 지도</text>
-            <text x="430" y="105" fill="var(--brand-violet)" fontSize="22" textAnchor="middle">→</text>
-            <rect x="475" y="70" width="60" height="60" fill="var(--brand-emerald)" opacity="0.2" stroke="var(--brand-emerald)" />
-            <text x="505" y="150" fill="var(--muted-foreground)" fontSize="11" textAnchor="middle">더 추상적</text>
-            <text x="575" y="105" fill="var(--brand-violet)" fontSize="22" textAnchor="middle">→</text>
-            <rect x="615" y="88" width="50" height="24" rx="5" fill="var(--card)" stroke="var(--brand-emerald)" />
-            <text x="640" y="104" fill="var(--foreground)" fontSize="11" textAnchor="middle">"고양이"</text>
-          </svg>
-        </Figure>
+        <CnnFilter />
+        <P>
+          여기서 핵심은 <B>같은 필터를 이미지 전체에 재사용</B>한다는 점이다. 그래서 고양이가 사진의 왼쪽 위에 있든 오른쪽
+          아래에 있든 같은 "귀 탐지기"가 반응한다(위치 불변성). 또 흔한 신경망이라면 픽셀 하나마다 가중치를 따로 둬야 하지만,
+          CNN은 작은 필터(예: 3×3) 한 장의 가중치 9개를 전체에 공유하므로 <Em>파라미터가 극적으로 적다</Em>. 한 층에 필터가
+          수십~수백 장 있고(각자 다른 특징 담당), 이 필터들의 가중치가 곧 학습 대상이다 — 즉 CNN은 "어떤 특징을 봐야 하는지"
+          까지 데이터에서 스스로 배운다.
+        </P>
         <H3>🪜 풀링과 계층적 특징</H3>
         <P>
           합성곱 뒤엔 보통 <B>풀링(pooling)</B>으로 정보를 압축한다(예: 2×2 영역에서 가장 강한 값만 남기기). 이를 반복하면
