@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import { Aurora } from '@/components/aurora'
@@ -5,6 +6,8 @@ import { Hero } from '@/components/hero'
 import { ProjectCard } from '@/components/project-card'
 import { SiteLinkCard } from '@/components/site-link-card'
 import { projects, siteLinks } from '@/lib/projects'
+import { getAllContentPages } from '@/lib/content'
+import type { ContentPage } from '@/lib/content'
 
 export const revalidate = 86400
 
@@ -15,6 +18,8 @@ export const revalidate = 86400
  * "now" strip → footer.
  */
 export default function HomePage() {
+  const notes = getAllContentPages().filter((p) => p.category === '노트')
+
   return (
     <div className="relative min-h-screen flex flex-col">
       <Aurora />
@@ -51,6 +56,19 @@ export default function HomePage() {
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-7">
             {siteLinks.map((link) => (
               <SiteLinkCard key={link.id} link={link} />
+            ))}
+          </div>
+        </section>
+
+        {/* Notes */}
+        <section id="notes" className="max-w-6xl mx-auto px-5 md:px-8 mt-24 md:mt-32 scroll-mt-24">
+          <SectionHeading
+            eyebrow="Notes"
+            title="Study notes, open for reference."
+          />
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-7">
+            {notes.map((note) => (
+              <NoteCard key={note.slugPath} note={note} />
             ))}
           </div>
         </section>
@@ -101,6 +119,26 @@ function SectionHeading({
         <p className="max-w-md text-sm leading-7 text-muted-foreground">{description}</p>
       ) : null}
     </div>
+  )
+}
+
+function NoteCard({ note }: { note: ContentPage }) {
+  return (
+    <Link
+      href={note.href}
+      className="group relative flex flex-col gap-3 rounded-2xl border border-border/60 bg-card/40 backdrop-blur-sm p-6 transition-all hover:-translate-y-1 hover:border-foreground/30"
+    >
+      <div>
+        <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted-foreground">
+          {note.category} · {note.readTime}
+        </p>
+        <h3 className="mt-2 font-display text-xl tracking-tight leading-snug">{note.title}</h3>
+      </div>
+      <p className="text-sm leading-6 text-muted-foreground line-clamp-3">{note.excerpt}</p>
+      <span className="mt-auto font-mono text-[11px] text-muted-foreground transition-colors group-hover:text-foreground">
+        Read →
+      </span>
+    </Link>
   )
 }
 
