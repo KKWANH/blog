@@ -1357,25 +1357,75 @@ export default function AIPage() {
           밝혀졌다(ACL 2025). SSM과 트랜스포머가 생각보다 가깝다는 뜻이고, 해석가능성에도 도움이 된다.
         </Deep>
 
-        <H3>🌫️ 5. 더 빠르게 움직이는 영역 (방향만)</H3>
+        <H3>🎬 5. 멀티모달·World Model·영상 생성</H3>
         <P>
-          아래는 이번 교차검증에서 1차 출처로 단정하긴 일렀지만 분명한 흐름이라 방향만 짚는다(수치가 빠르게 변하니 직접 확인
-          권장):
+          텍스트를 넘어 한 모델이 이미지·음성·영상을 함께 다루는 방향이 빠르게 자리 잡았다. 세 갈래가 두드러진다.
+        </P>
+        <P>
+          ① <B>통합(unified) 모델</B> — 이해와 생성을 한 네트워크에 합치려는 흐름. 연구의 대표격은 Meta의 <B>Chameleon</B>
+          (early-fusion 토큰 기반으로 이미지와 텍스트를 한 모델에서 섞어 생성). 2025년 3월 <B>GPT-4o의 네이티브 이미지 생성</B>
+          이 기폭제가 되어 통합 모델 관심이 폭발했고, 한 서베이는 이를 <Em>확산 기반·자기회귀 기반·하이브리드</Em> 셋으로
+          분류한다(단, Chameleon은 이미지+텍스트 한정이라 "any-to-any"는 다소 과한 표현).
+        </P>
+        <P>
+          ② <B>영상 생성 = 확산 트랜스포머(DiT)</B> — OpenAI <B>Sora</B>는 영상을 시공간 패치(LLM의 토큰에 해당)로 쪼개 처리하는
+          확산 트랜스포머다. <B>Sora 2</B>(2025.9)는 동기화된 오디오·더 정확한 물리·사실감을 더했고, OpenAI는 이를 "물리 세계를
+          시뮬레이션하는 <Hl>world model</Hl>로 가는 한 걸음"으로 규정한다. Google Veo 3, Kling 등도 같은 DiT 계열.
+        </P>
+        <P>
+          ③ <B>World model</B> — DeepMind <B>Genie 3</B>(2025.8)는 텍스트 프롬프트로 <Em>실시간 조작 가능한 환경</Em>을
+          생성한다(24fps·720p, 수 분간 일관성, 약 1분의 시각 기억). 에이전트·로봇을 위한 "무한한 훈련 환경"으로서의 가능성이
+          주목된다.
+        </P>
+        <Callout label="단, '영상 모델 = 세계 모델'은 논쟁 중: ">
+          이 규정은 <B>주로 벤더(OpenAI·DeepMind)의 표현</B>이고 학계에서 뜨겁게 다툰다. Yann LeCun은 픽셀을 생성하는 방식의
+          world model에 회의적이며 픽셀 대신 추상 표현을 예측하는 <B>V-JEPA</B>를 주장하고, 독립 벤치마크(Physics-IQ·
+          PhyWorldBench)에서는 생성 영상의 <B>83~93%가 물리 법칙을 위반</B>한다고 보고됐다. 즉 "진짜 물리를 배웠나, 표면 통계를
+          흉내냈나"는 미해결이다(검증 과정에서 "규모만으로 물리가 창발한다"는 강한 주장은 기각됨). Genie 3도 일관성은 수 분,
+          행동은 이동 중심, 물리 오류가 있다는 한계가 명시돼 있다.
+        </Callout>
+
+        <H3>📉 6. 데이터·스케일링 — "데이터 월"과 합성 데이터</H3>
+        <P>
+          사전학습이 양질의 인간 텍스트를 거의 다 먹어간다는 우려가 구체화됐다.
+        </P>
+        <P>
+          <B>데이터 월:</B> Epoch AI는 학습에 쓸 만한 인간 공개 텍스트를 약 <B>300조(T) 토큰</B>(90% 신뢰구간 100T–1000T)으로
+          추정하고, 현 추세면 <Hl>2026~2032년 사이 소진</Hl>(과훈련을 공격적으로 하면 더 일찍)된다고 본다. 단 합성·멀티모달
+          데이터와 데이터 효율 개선이 이 벽을 미룰 수 있다.
+        </P>
+        <P>
+          <B>합성 데이터의 함정 — 모델 붕괴:</B> AI가 만든 데이터로 다시 AI를 재귀 학습시키면 품질이 점점 무너지는{' '}
+          <Em>모델 붕괴(model collapse)</Em>가 보고됐다(Nature 2024). 하지만 이는 기존 데이터를 합성으로 "<B>대체</B>"할 때의
+          이야기다 — 실제처럼 기존 데이터에 합성 데이터를 "<B>누적</B>"하면 붕괴를 피한다는 후속 연구가 잇따랐다. (2025년 스탠퍼드
+          논문은 "모델 붕괴"가 사실 <Em>8가지 서로 다른 정의</Em>로 쓰인다고 지적.) 정리: 붕괴는 필연이 아니지만,{' '}
+          <B>진짜 인간 데이터의 가치는 더 커진다.</B>
+        </P>
+        <P>
+          <B>Chinchilla 재검증:</B> Epoch의 재현 연구는 원조 Chinchilla 논문이 보고한 파라메트릭 적합이 데이터에 잘 안 맞았다고
+          지적했다 — 다만 오류를 바로잡으면 결론(대략 <B>파라미터당 토큰 ≈ 20</B>)은 유지된다. "compute-optimal 스케일링이
+          뒤집힌 것"은 아니다(11장 스케일링 법칙과 연결).
+        </P>
+
+        <H3>🔍 7. 해석가능성·안전·정렬 (가장 빠르게 크는 영역)</H3>
+        <P>
+          모델이 강해질수록 "안을 들여다보고, 통제하는" 연구가 중요해진다. (이 영역은 변화가 가장 빨라 1차 출처로 수치를
+          단정하긴 이르므로, 방향과 대표 작업만 짚는다.)
         </P>
         <Card>
           <ul className="space-y-2 text-sm leading-7 text-muted-foreground">
             <li>
-              <B>멀티모달·world model·영상 생성</B> — 텍스트·이미지·음성·영상을 한 모델이 다루는 any-to-any, 확산 트랜스포머
-              기반 영상 생성(Sora·Veo 계열), 상호작용 가능한 세계 시뮬레이터(Genie 계열 world model)로 확장 중.
+              <B>기계적 해석가능성·SAE</B> — 신경망 내부 활성을 사람이 읽을 수 있는 <Em>특징(feature)</Em>으로 분해하는 희소
+              오토인코더(SAE). Anthropic의 monosemanticity·attribution graph("모델의 생각 추적"), DeepMind의 Gemma Scope 등.
             </li>
             <li>
-              <B>데이터·스케일링</B> — 고품질 인간 텍스트가 고갈된다는 "데이터 월" 논쟁(Epoch AI), 합성 데이터에만 의존하면
-              품질이 무너지는 <Em>모델 붕괴(model collapse)</Em> 경고(Nature 2024). 그래서 "합성 데이터를 어떻게 안전하게
-              쓰나"가 쟁점.
+              <B>정렬의 균열</B> — 모델이 학습 중 의도를 숨기는 <Em>정렬 위장(alignment faking)</Em>(Anthropic), 평가 상황을
+              눈치채고 일부러 못하는 척하거나 책략을 꾸미는 <Em>scheming·sandbagging</Em>(Apollo Research, OpenAI)이 실험적으로
+              관찰됐다.
             </li>
             <li>
-              <B>해석가능성·안전</B> — 신경망 내부를 사람이 읽을 특징으로 분해하는 <Em>희소 오토인코더(SAE)·기계적 해석가능성</Em>
-              (Anthropic 등), 그리고 능력이 오를수록 중요한 정렬·평가·가드레일(19장).
+              <B>확장 가능한 감독(scalable oversight)</B> — 사람이 직접 채점하기 어려운 능력을 어떻게 검증·감독하나(토론,
+              weak-to-strong 일반화, 자동 정렬 연구원 등). 능력이 평가를 앞지를 때를 대비한 연구다(19장과 연결).
             </li>
           </ul>
         </Card>
@@ -1398,6 +1448,15 @@ export default function AIPage() {
               ['Hidden Attention of Mamba (ACL 2025)', 'https://aclanthology.org/2025.acl-long.76.pdf'],
               ['데이터 월 (Epoch AI)', 'https://epoch.ai/publications/will-we-run-out-of-data-limits-of-llm-scaling-based-on-human-generated-data'],
               ['모델 붕괴 (Nature, 2024)', 'https://www.nature.com/articles/s41586-024-07566-y'],
+              ['모델 붕괴 회피 · 누적 (arXiv 2404.01413)', 'https://arxiv.org/abs/2404.01413'],
+              ['Chinchilla 재현 (arXiv 2404.10102)', 'https://arxiv.org/abs/2404.10102'],
+              ['Sora 2 시스템 카드 (OpenAI, 2025)', 'https://openai.com/index/sora-2-system-card/'],
+              ['Genie 3 · world model (DeepMind, 2025)', 'https://deepmind.google/blog/genie-3-a-new-frontier-for-world-models/'],
+              ['Chameleon · mixed-modal (arXiv 2405.09818)', 'https://arxiv.org/abs/2405.09818'],
+              ['통합 멀티모달 서베이 (arXiv 2505.02567)', 'https://arxiv.org/abs/2505.02567'],
+              ['모델의 생각 추적 · 해석가능성 (Anthropic, 2025)', 'https://www.anthropic.com/research/tracing-thoughts-language-model'],
+              ['정렬 위장 alignment faking (Anthropic, 2024)', 'https://www.anthropic.com/research/alignment-faking'],
+              ['in-context scheming (Apollo Research, 2024)', 'https://www.apolloresearch.ai/research/frontier-models-are-capable-of-incontext-scheming/'],
             ].map(([label, url]) => (
               <li key={url} className="flex gap-2">
                 <span className="text-muted-foreground/40 shrink-0">·</span>
