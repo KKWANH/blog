@@ -415,6 +415,11 @@
   --nt-accent: var(--brand-cyan);
   font-size: 1.0625rem;
   line-height: 1.8;
+  /* Safety net: clip any horizontal overflow from animated diagrams so a
+   * moving element can never toggle a page scrollbar (the source of the
+   * "boxes grow/shrink on idle" jitter). Vertical stays visible; nested
+   * scroll areas (tables, flow tracks) keep their own overflow-x. */
+  overflow-x: clip;
 }
 
 .note-doc :lang(ko),
@@ -551,11 +556,9 @@
 @keyframes nt-arrow-nudge {
   0%,
   100% {
-    transform: translateX(0);
-    opacity: 0.55;
+    opacity: 0.5;
   }
   50% {
-    transform: translateX(3px);
     opacity: 1;
   }
 }

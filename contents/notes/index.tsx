@@ -71,6 +71,17 @@ export default function NotesIndexPage() {
           </a>
         ))}
       </div>
+
+      <aside className="mt-10 flex items-start gap-3 rounded-xl border border-border/50 bg-card/30 px-5 py-4 text-xs leading-6 text-muted-foreground">
+        <span aria-hidden className="mt-0.5 text-sm leading-none">
+          ⓘ
+        </span>
+        <span>
+          <span className="font-mono uppercase tracking-[0.18em] text-muted-foreground/80">AI-generated</span> · 이
+          노트들은 <strong className="font-semibold text-foreground">Claude(AI)</strong>로 작성·정리한 콘텐츠입니다. 사실
+          확인을 거쳤지만 오류가 있을 수 있으니, 중요한 내용은 원 출처로 다시 확인하시길 권합니다.
+        </span>
+      </aside>
     </div>
   )
 }
