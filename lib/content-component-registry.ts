@@ -31,6 +31,17 @@ import SemiconductorPage, {
   title as semiTitle,
   toc as semiToc,
 } from '@/contents/notes/semiconductor/index'
+import AiPage, {
+  category as aiCategory,
+  date as aiDate,
+  description as aiDescription,
+  excerpt as aiExcerpt,
+  readTime as aiReadTime,
+  showToc as aiShowToc,
+  subtitle as aiSubtitle,
+  title as aiTitle,
+  toc as aiToc,
+} from '@/contents/notes/ai/index'
 
 export type BundledContentModule = {
   default: React.ComponentType
@@ -85,6 +96,18 @@ const bundledContentModules: Record<string, BundledContentModule> = {
     readTime: semiReadTime,
     showToc: semiShowToc,
     toc: semiToc,
+  },
+  'notes/ai': {
+    default: AiPage,
+    title: aiTitle,
+    subtitle: aiSubtitle,
+    description: aiDescription,
+    excerpt: aiExcerpt,
+    date: aiDate,
+    category: aiCategory,
+    readTime: aiReadTime,
+    showToc: aiShowToc,
+    toc: aiToc,
   },
 }
 

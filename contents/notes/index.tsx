@@ -1,6 +1,6 @@
 export const title = 'Notes'
 export const description = '공부하면서 정리한 노트. 반도체, AI, 기업 분석.'
-export const excerpt = '반도체 기초, AI 완전정복, KLA 완전암기 — 직접 공부하며 쓴 정리 노트.'
+export const excerpt = '반도체 완전정복, AI 완전정복, KLA Corporation — 직접 공부하며 그림으로 정리한 노트.'
 export const date = '2026-06-15'
 export const category = '노트'
 export const showToc = false
@@ -19,9 +19,9 @@ const notes = [
     href: '/notes/ai',
     label: 'AI',
     title: 'AI 완전정복',
-    subtitle: '퍼셉트론부터 에이전트까지, 20장 완주',
-    excerpt: '퍼셉트론·CNN·Transformer·LLM·RAG·에이전트·추론 최적화까지 — 개념의 흐름을 따라 처음부터 끝까지.',
-    readTime: '35 min',
+    subtitle: '데이터로 배운다는 발상부터 에이전트까지, 20장',
+    excerpt: '뉴런·CNN·Transformer·LLM부터 RAG·도구/MCP·에이전트·추론 모델까지 — 개념의 흐름을 처음부터 끝까지.',
+    readTime: '40 min',
     accent: 'var(--brand-violet)',
   },
   {
