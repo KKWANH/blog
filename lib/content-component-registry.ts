@@ -20,6 +20,17 @@ import KlaPage, {
   title as klaTitle,
   toc as klaToc,
 } from '@/contents/notes/kla/index'
+import SemiconductorPage, {
+  category as semiCategory,
+  date as semiDate,
+  description as semiDescription,
+  excerpt as semiExcerpt,
+  readTime as semiReadTime,
+  showToc as semiShowToc,
+  subtitle as semiSubtitle,
+  title as semiTitle,
+  toc as semiToc,
+} from '@/contents/notes/semiconductor/index'
 
 export type BundledContentModule = {
   default: React.ComponentType
@@ -62,6 +73,18 @@ const bundledContentModules: Record<string, BundledContentModule> = {
     readTime: klaReadTime,
     showToc: klaShowToc,
     toc: klaToc,
+  },
+  'notes/semiconductor': {
+    default: SemiconductorPage,
+    title: semiTitle,
+    subtitle: semiSubtitle,
+    description: semiDescription,
+    excerpt: semiExcerpt,
+    date: semiDate,
+    category: semiCategory,
+    readTime: semiReadTime,
+    showToc: semiShowToc,
+    toc: semiToc,
   },
 }
 

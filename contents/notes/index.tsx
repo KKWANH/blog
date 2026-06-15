@@ -9,10 +9,10 @@ const notes = [
   {
     href: '/notes/semiconductor',
     label: '반도체',
-    title: '반도체 기초 강의',
-    subtitle: '모래 한 줌이 생각하는 기계가 되기까지',
-    excerpt: '트랜지스터에서 집적회로, 8대 공정, 검사까지 — 반도체를 처음부터 시각적으로 쌓아 올린다.',
-    readTime: '20 min',
+    title: '반도체 완전정복',
+    subtitle: '모래에서 인공지능까지, 18장',
+    excerpt: '원자 한 개부터 트랜지스터·CMOS·메모리·8대 공정·검사·패키징까지 — 비전공자를 위한 시각적 강의.',
+    readTime: '35 min',
     accent: 'var(--brand-cyan)',
   },
   {
