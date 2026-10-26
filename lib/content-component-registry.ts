@@ -1,15 +1,21 @@
+import AboutPage, {
+  title as aboutTitle,
+  description as aboutDescription,
+  excerpt as aboutExcerpt,
+  lang as aboutLang,
+  showToc as aboutShowToc,
+  bodyClassName as aboutBodyClassName,
+} from '@/contents/about/index'
 import TravelPage, {
   bodyClassName as travelBodyClassName,
-  category as travelCategory,
-  date as travelDate,
   description as travelDescription,
   excerpt as travelExcerpt,
-  readTime as travelReadTime,
   showToc as travelShowToc,
   subtitle as travelSubtitle,
   title as travelTitle,
 } from '@/contents/travel/index'
 import KlaPage, {
+  lang as klaLang,
   category as klaCategory,
   date as klaDate,
   description as klaDescription,
@@ -21,6 +27,7 @@ import KlaPage, {
   toc as klaToc,
 } from '@/contents/notes/kla/index'
 import SemiconductorPage, {
+  lang as semiLang,
   category as semiCategory,
   date as semiDate,
   description as semiDescription,
@@ -32,6 +39,7 @@ import SemiconductorPage, {
   toc as semiToc,
 } from '@/contents/notes/semiconductor/index'
 import AiPage, {
+  lang as aiLang,
   category as aiCategory,
   date as aiDate,
   description as aiDescription,
@@ -50,6 +58,8 @@ export type BundledContentModule = {
   subtitle?: string
   description?: string
   excerpt?: string
+  summary?: string
+  lang?: string
   date?: string
   category?: string
   featured?: boolean
@@ -61,19 +71,26 @@ export type BundledContentModule = {
 }
 
 const bundledContentModules: Record<string, BundledContentModule> = {
+  about: {
+    default: AboutPage,
+    title: aboutTitle,
+    description: aboutDescription,
+    excerpt: aboutExcerpt,
+    lang: aboutLang,
+    showToc: aboutShowToc,
+    bodyClassName: aboutBodyClassName,
+  },
   travel: {
     default: TravelPage,
     title: travelTitle,
     subtitle: travelSubtitle,
     description: travelDescription,
     excerpt: travelExcerpt,
-    date: travelDate,
-    category: travelCategory,
-    readTime: travelReadTime,
     showToc: travelShowToc,
     bodyClassName: travelBodyClassName,
   },
   'notes/kla': {
+    lang: klaLang,
     default: KlaPage,
     title: klaTitle,
     subtitle: klaSubtitle,
@@ -86,6 +103,7 @@ const bundledContentModules: Record<string, BundledContentModule> = {
     toc: klaToc,
   },
   'notes/semiconductor': {
+    lang: semiLang,
     default: SemiconductorPage,
     title: semiTitle,
     subtitle: semiSubtitle,
@@ -98,6 +116,7 @@ const bundledContentModules: Record<string, BundledContentModule> = {
     toc: semiToc,
   },
   'notes/ai': {
+    lang: aiLang,
     default: AiPage,
     title: aiTitle,
     subtitle: aiSubtitle,

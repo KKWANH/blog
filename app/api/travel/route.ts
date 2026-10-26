@@ -1,0 +1,72 @@
+import { revalidatePath } from 'next/cache'
+import { z } from 'zod'
+import { countryOptions, placeIdSchema, placeInputSchema, storedPlaceSchema, travelStore, TravelStoreError } from '@/lib/travel-store'
+import { localTravelEditor, travelEditorToken, travelWriteAllowed } from '@/lib/travel-editor-access'
+
+export const runtime = 'nodejs'
+export const dynamic = 'force-dynamic'
+
+const headers = { 'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff' }
+const revision = z.string().regex(/^[a-f0-9]{64}$/)
+const createSchema = z.union([
+  z.object({ revision, place: placeInputSchema }).strict(),
+  z.object({ revision, restore: storedPlaceSchema }).strict(),
+])
+const editSchema = z.object({ revision, id: placeIdSchema, place: placeInputSchema }).strict()
+const removeSchema = z.object({ revision, id: placeIdSchema }).strict()
+const json = (body: unknown, status = 200) => Response.json(body, { status, headers })
+
+export async function GET(request: Request) {
+  try {
+    const canEdit = localTravelEditor(request)
+    const query = new URL(request.url).searchParams.get('q')
+    if (query !== null) {
+      if (!canEdit) return json({ error: 'Location lookup is available in the local editor.' }, 403)
+      if (query.trim().length < 2 || query.length > 80) return json({ locations: [] })
+      const { searchTravelLocations } = await import('@/lib/travel')
+      return json({ locations: searchTravelLocations(query) })
+    }
+    return json({
+      ...travelStore().read(),
+      editor: canEdit ? { token: travelEditorToken(), countries: countryOptions() } : null,
+    })
+  } catch (error) {
+    console.error('Travel atlas read failed', error)
+    return json({ error: 'The atlas could not be loaded. The saved file has not been replaced.' }, 500)
+  }
+}
+
+async function mutate(request: Request, method: 'POST' | 'PATCH' | 'DELETE') {
+  if (!travelWriteAllowed(request)) return json({ error: 'Editing is available only in the opted-in local editor. Reload if your session expired.' }, 403)
+  try {
+    const raw = await request.text()
+    if (raw.length > 16_384) return json({ error: 'This request is too large.' }, 413)
+    let body: unknown
+    try { body = JSON.parse(raw) } catch { return json({ error: 'Send valid JSON place details.' }, 400) }
+    const store = travelStore()
+    let result
+    if (method === 'POST') {
+      const input = createSchema.parse(body)
+      result = 'restore' in input ? await store.restore(input.restore, input.revision) : await store.create(input.place, input.revision)
+    } else if (method === 'PATCH') {
+      const input = editSchema.parse(body)
+      result = await store.edit(input.id, input.place, input.revision)
+    } else {
+      const input = removeSchema.parse(body)
+      result = await store.remove(input.id, input.revision)
+    }
+    try { revalidatePath('/travel') } catch (error) {
+      console.warn('Travel data saved; page revalidation did not complete', error)
+    }
+    return json(result, method === 'POST' ? 201 : 200)
+  } catch (error) {
+    if (error instanceof z.ZodError) return json({ error: 'Check the place details.', fields: error.flatten().fieldErrors }, 422)
+    if (error instanceof TravelStoreError) return json({ error: error.message }, error.status)
+    console.error('Travel atlas save failed', error)
+    return json({ error: 'The change could not be saved. Your form is still available to try again.' }, 500)
+  }
+}
+
+export const POST = (request: Request) => mutate(request, 'POST')
+export const PATCH = (request: Request) => mutate(request, 'PATCH')
+export const DELETE = (request: Request) => mutate(request, 'DELETE')

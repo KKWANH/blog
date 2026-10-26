@@ -17,6 +17,19 @@ export type TravelCity = {
   lng: number
 }
 
+export type TravelSnapshot = {
+  places: TravelCity[]
+  revision: string
+  updatedAt: string | null
+}
+
+export type TravelEditorAccess = {
+  token: string
+  countries: Array<{ code: string; name: string }>
+}
+
+export type LocationSuggestion = Pick<TravelCity, 'city' | 'country' | 'countryCode' | 'lat' | 'lng'>
+
 export const levelConfig: Record<
   StayLevel,
   {

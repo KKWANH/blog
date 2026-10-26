@@ -33,18 +33,18 @@ import {
   Kbd,
 } from '@/components/notes'
 
-export const title = '반도체 완전정복'
+export const title = 'Semiconductor study guide'
 export const subtitle =
-  '모래에서 인공지능까지 — 원자 한 개부터 트랜지스터, CPU, 그리고 그것을 만드는 공정과 검사까지. 물리·전자공학 0에서 출발해 그림과 비유로 쌓아 올리는 18장.'
+  'Transistors, fabrication, inspection and packaging. An illustrated study guide, in Korean.'
 export const description =
-  '반도체 완전정복 — 전기·원자, 에너지 밴드, 도핑, PN접합, 트랜지스터(MOSFET), CMOS, 메모리, 미세화, 8대 공정, 검사·계측, 패키징, 산업 생태계, 그리고 소자·메모리·설계·전력 심화까지. 비전공자를 위한 시각적 강의.'
+  'An AI-assisted Korean study guide to semiconductor devices, manufacturing, inspection and packaging.'
 export const excerpt =
-  '"전기가 흐른다 = 전자가 움직인다" 한 문장에서 출발해, 트랜지스터·CMOS·메모리·8대 공정·검사·패키징까지 — 모래가 생각하는 기계가 되는 전 과정을 그림으로.'
+  'Illustrated notes on transistors, fabrication, memory, inspection and packaging.'
 export const date = '2026-06-15'
 export const readTime = '35 min'
 export const lang = 'ko'
 export const showToc = true
-export const category = '노트'
+export const category = 'Study archive'
 export const toc = [
   { id: 'c1', label: '1. 전기와 원자', level: 2 },
   { id: 'c2', label: '2. 에너지 밴드', level: 2 },
@@ -178,14 +178,14 @@ export default function SemiconductorPage() {
             </text>
             <rect x="510" y="185" width="140" height="30" fill="#3b82f6" opacity="0.5" />
             <rect x="510" y="55" width="140" height="30" fill="var(--brand-emerald)" opacity="0.5" />
-            <line x1="515" y1="135" x2="645" y2="135" stroke="#f87171" strokeWidth="2" strokeDasharray="4 4" />
-            <text x="580" y="140" fill="#f87171" fontSize="11" textAnchor="middle">
+            <line x1="515" y1="135" x2="645" y2="135" stroke="var(--note-red)" strokeWidth="2" strokeDasharray="4 4" />
+            <text x="580" y="140" fill="var(--note-red)" fontSize="11" textAnchor="middle">
               큰 밴드갭
             </text>
             <text x="580" y="240" fill="var(--muted-foreground)" fontSize="12" textAnchor="middle">
               점프 거의 불가
             </text>
-            <text x="580" y="257" fill="#f87171" fontSize="12" textAnchor="middle">
+            <text x="580" y="257" fill="var(--note-red)" fontSize="12" textAnchor="middle">
               → 안 통함
             </text>
           </svg>
@@ -420,7 +420,7 @@ export default function SemiconductorPage() {
           </Box>
           <Box title="역방향 (P에 −, N에 +)">
             장벽이 더 두꺼워져 캐리어가 멀어지고{' '}
-            <span style={{ color: '#f87171', fontWeight: 600 }}>전류가 막힌다.</span>
+            <span style={{ color: 'var(--note-red)', fontWeight: 600 }}>전류가 막힌다.</span>
           </Box>
         </Grid2>
 
@@ -602,7 +602,7 @@ export default function SemiconductorPage() {
             [
               <B>DRAM (램)</B>,
               <>
-                빠름. 전원 끄면 <span style={{ color: '#f87171', fontWeight: 600 }}>사라짐</span>(휘발성)
+                빠름. 전원 끄면 <span style={{ color: 'var(--note-red)', fontWeight: 600 }}>사라짐</span>(휘발성)
               </>,
               '트랜지스터 1 + 축전기 1',
               '작업용 단기기억 (책상 위)',
@@ -1040,7 +1040,7 @@ export default function SemiconductorPage() {
               게이트가 통로를 꽉 잡음
             </text>
 
-            <text x="530" y="26" fill="#f87171" fontSize="14" fontWeight="bold" textAnchor="middle">
+            <text x="530" y="26" fill="var(--note-red)" fontSize="14" fontWeight="bold" textAnchor="middle">
               짧은 채널 (미세화)
             </text>
             <rect x="450" y="80" width="160" height="40" fill="var(--card)" stroke="var(--border)" />
@@ -1050,11 +1050,11 @@ export default function SemiconductorPage() {
             <path
               className="nt-svg-dash"
               d="M505 105 Q530 118 555 105"
-              stroke="#f87171"
+              stroke="var(--note-red)"
               strokeWidth="2.5"
               fill="none"
             />
-            <text x="530" y="142" fill="#f87171" fontSize="11" textAnchor="middle">
+            <text x="530" y="142" fill="var(--note-red)" fontSize="11" textAnchor="middle">
               소스↔드레인 너무 가까움 → 누설
             </text>
           </svg>

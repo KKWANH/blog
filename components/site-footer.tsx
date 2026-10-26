@@ -1,87 +1,28 @@
-import Link from 'next/link'
-import { Github, Linkedin, Instagram, Mail, FileText } from 'lucide-react'
+import { CopyEmail } from '@/components/copy-email'
+import { profile } from '@/lib/profile'
 import { externalLinks } from '@/lib/projects'
-
-const socials = [
-  { label: 'GitHub', href: externalLinks.github, icon: Github, external: true },
-  { label: 'LinkedIn', href: externalLinks.linkedin, icon: Linkedin, external: true },
-  { label: 'Instagram', href: externalLinks.instagram, icon: Instagram, external: true },
-  { label: 'Email', href: externalLinks.email, icon: Mail, external: true },
-  { label: 'CV', href: externalLinks.cv, icon: FileText, external: false },
-] as const
+import { MotionControl } from '@/components/motion-provider'
 
 export function SiteFooter() {
-  const year = new Date().getFullYear()
   return (
-    <footer className="relative mt-32 border-t border-border/60">
-      <div className="max-w-6xl mx-auto px-5 md:px-8 py-12 md:py-16">
-        <div className="flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
-          <div className="max-w-md">
-            <div className="flex items-center gap-2.5">
-              <span
-                aria-hidden
-                className="relative inline-flex h-6 w-6 items-center justify-center rounded-md border border-border bg-card"
-              >
-                <span className="absolute inset-1 rounded-[4px] bg-[conic-gradient(from_220deg,var(--brand-emerald),var(--brand-cyan),var(--brand-violet),var(--brand-emerald))] opacity-90" />
-              </span>
-              <span className="font-mono text-sm">kwanho<span className="text-muted-foreground">.dev</span></span>
-            </div>
-            <p className="mt-4 text-sm leading-7 text-muted-foreground">
-              Kwanho Kim. Software for robots, vision, and cars.
-            </p>
-          </div>
-
-          <div className="flex flex-col gap-4">
-            <div className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground">Links</div>
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-2">
-              {socials.map(({ label, href, icon: Icon, external }) =>
-                external ? (
-                  <a
-                    key={label}
-                    href={href}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    className="group inline-flex items-center gap-2 px-3 py-2 rounded-md border border-border/70 bg-card/50 hover:border-foreground/40 hover:bg-card transition-colors text-sm"
-                  >
-                    <Icon className="h-3.5 w-3.5 text-muted-foreground group-hover:text-foreground" />
-                    <span>{label}</span>
-                  </a>
-                ) : (
-                  <Link
-                    key={label}
-                    href={href}
-                    className="group inline-flex items-center gap-2 px-3 py-2 rounded-md border border-border/70 bg-card/50 hover:border-foreground/40 hover:bg-card transition-colors text-sm"
-                  >
-                    <Icon className="h-3.5 w-3.5 text-muted-foreground group-hover:text-foreground" />
-                    <span>{label}</span>
-                  </Link>
-                ),
-              )}
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-12 pt-8 border-t border-border/40 flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
+    <footer className="notebook-footer">
+      <div className="site-width">
+        <div className="footer-main">
           <div>
-            <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-2">
-              Contact
-            </p>
-            <a
-              href="mailto:contact@kwanho.dev"
-              className="text-sm text-foreground hover:text-muted-foreground transition-colors"
-            >
-              contact@kwanho.dev
-            </a>
-            <p className="mt-1.5 text-xs text-muted-foreground">
-              Open to collaborations, freelance, and full-time roles.
-            </p>
+            <p className="footer-label">Get in touch</p>
+            <a className="footer-email" href={`mailto:${profile.contact}`}>{profile.contact}</a>
+            <CopyEmail email={profile.contact} />
           </div>
-          <div className="flex flex-col-reverse md:flex-row md:items-center gap-4 text-xs text-muted-foreground">
-            <p>© {year} Kwanho Kim.</p>
-            <p className="font-mono tracking-tight">
-              kwanho.dev · earprint.kwanho.dev · ai.kwanho.dev
-            </p>
-          </div>
+          <nav className="footer-links" aria-label="Elsewhere">
+            <a href={profile.github}>GitHub</a>
+            <a href={profile.linkedin}>LinkedIn</a>
+            <a href={externalLinks.instagram}>Instagram</a>
+            <a href={externalLinks.cv}>{externalLinks.cvLabel}</a>
+          </nav>
+        </div>
+        <div className="footer-bottom">
+          <p>© {new Date().getFullYear()} {profile.name}</p>
+          <MotionControl />
         </div>
       </div>
     </footer>

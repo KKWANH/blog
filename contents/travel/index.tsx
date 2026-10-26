@@ -1,18 +1,15 @@
 import { TravelExplorer } from '@/components/travel/travel-explorer'
-import { visitedCities } from '@/contents/travel/cities'
+import { travelStore } from '@/lib/travel-store'
 
-export const title = 'Travel Atlas'
-export const subtitle = 'Cities are contexts. What a place teaches you depends on how long you stay.'
+export const title = "Places I've been"
+export const subtitle = 'A map of short visits, longer stays and places I have lived.'
 export const description =
-  'An interactive world map that tracks cities by stay depth and treats them as contexts that shaped decisions rather than simple check-ins.'
+  'Cities visited by Kwanho Kim, with filters for short visits, longer stays and places lived.'
 export const excerpt =
-  'Cities mapped by depth of stay — short transits, multi-day adjustments, and the places that actually rewired how I think.'
-export const date = '2026-03-23'
-export const category = 'travel'
-export const readTime = '4 min'
+  'Cities I have visited, from short stops to places I have lived.'
 export const showToc = false
-export const bodyClassName = 'font-sans'
+export const bodyClassName = 'atlas-page'
 
 export default function TravelPage() {
-  return <TravelExplorer cities={[...visitedCities]} />
+  return <TravelExplorer initialSnapshot={travelStore().read()} />
 }

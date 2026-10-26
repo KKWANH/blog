@@ -26,18 +26,18 @@ import {
   Em,
 } from '@/components/notes'
 
-export const title = 'KLA Corporation'
+export const title = 'KLA: company and technology'
 export const subtitle =
-  '반도체를 만들지 않는다 — 만들어진 반도체가 제대로 만들어졌는지 검사·계측하는 세계 1위 회사. 역사, 사업 구조, 시장 지위, 그리고 KLA Leuven까지 한눈에 정리.'
+  'A public-source study guide to inspection, metrology and the company. Korean original, June 2026.'
 export const description =
-  'KLA Corporation 정리 — 한 줄 정체부터 핵심 숫자, 50년 역사, 3대 사업, 시장 점유율, 경쟁 구도, KLA Leuven(옛 ICOS)까지. 반도체 공정 제어(Process Control)의 사실상 독점 기업.'
+  'An AI-assisted Korean study guide to KLA, semiconductor inspection and metrology, based on public information collected in June 2026.'
 export const excerpt =
-  '1975년 창립, 본사 Milpitas, 매출 약 $12.2B, 광학 웨이퍼 검사 점유율 85%+. "ASML이 공장을 짓게 한다면 KLA는 그 공장이 제대로 돌아가게 한다."'
+  'Public company and technology notes. This study guide does not describe my work at KLA.'
 export const date = '2026-06-15'
 export const readTime = '18 min'
 export const lang = 'ko'
 export const showToc = true
-export const category = '노트'
+export const category = 'Study archive'
 export const toc = [
   { id: 's1', label: '1. 한 줄 정체', level: 2 },
   { id: 's2', label: '2. 핵심 숫자', level: 2 },

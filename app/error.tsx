@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect } from 'react'
-import { Aurora } from '@/components/aurora'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 
@@ -18,11 +17,10 @@ export default function GlobalError({
 
   return (
     <div className="relative min-h-screen flex flex-col">
-      <Aurora />
       <SiteHeader />
 
-      <main className="flex-1 flex items-center justify-center px-5">
-        <div className="animate-content-appear text-center space-y-7 max-w-md">
+      <main id="main-content" className="site-width notebook-error">
+        <div>
           <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-muted-foreground">
             Error
           </p>
@@ -30,26 +28,19 @@ export default function GlobalError({
             Something broke.
           </h1>
           <p className="text-sm leading-7 text-muted-foreground">
-            {error?.message
-              ? error.message
-              : 'An unexpected error occurred. Try reloading the page.'}
+            The page could not be loaded. Try again, or head back to the home page.
           </p>
-          {error?.digest && (
-            <p className="font-mono text-[10px] text-muted-foreground/50">
-              {error.digest}
-            </p>
-          )}
           <div className="flex items-center justify-center gap-3">
             <button
               type="button"
               onClick={reset}
-              className="inline-flex items-center gap-2 rounded-xl border border-border/60 bg-card/40 backdrop-blur-sm px-5 py-2.5 text-sm transition-all hover:-translate-y-0.5 hover:border-foreground/40"
+              className="text-link"
             >
               Try again
             </button>
             <a
               href="/"
-              className="inline-flex items-center gap-2 rounded-xl border border-border/40 px-5 py-2.5 text-sm text-muted-foreground transition-all hover:text-foreground hover:-translate-y-0.5"
+              className="text-link"
             >
               Go home
             </a>

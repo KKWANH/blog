@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { getAllContentPages } from '@/lib/content'
 import { absoluteUrl } from '@/lib/site'
+import { photographyPublished } from '@/lib/photographs'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
@@ -19,5 +20,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }))
 
-  return [...staticRoutes, ...contentRoutes]
+  return [...staticRoutes, ...contentRoutes, ...(photographyPublished ? [{ url: absoluteUrl('/photography'), changeFrequency: 'monthly' as const, priority: .6 }] : [])]
 }

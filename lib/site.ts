@@ -1,4 +1,4 @@
-const FALLBACK_SITE_URL = 'http://localhost:3000'
+const FALLBACK_SITE_URL = 'https://www.kwanho.dev'
 
 function normalizeUrl(value: string | undefined) {
   if (!value) {
@@ -12,9 +12,7 @@ function normalizeUrl(value: string | undefined) {
   return `https://${value}`
 }
 
-export const siteUrl = normalizeUrl(
-  process.env.NEXT_PUBLIC_SITE_URL ?? process.env.VERCEL_PROJECT_PRODUCTION_URL,
-)
+export const siteUrl = normalizeUrl(process.env.NEXT_PUBLIC_SITE_URL)
 
 export function absoluteUrl(path = '/') {
   return new URL(path, siteUrl).toString()

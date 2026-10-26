@@ -38,14 +38,13 @@ export function NoteRoot({
 /** Disclosure that the note was AI-authored/organized. */
 export function AiNotice() {
   return (
-    <aside className="flex items-start gap-3 rounded-xl border border-border/50 bg-card/30 px-5 py-4 text-xs leading-6 text-muted-foreground">
+    <aside lang="en" className="flex items-start gap-3 rounded border border-border px-5 py-4 text-sm leading-6 text-muted-foreground">
       <span aria-hidden className="mt-0.5 text-sm leading-none">
         ⓘ
       </span>
       <span>
-        <span className="font-mono uppercase tracking-[0.18em] text-muted-foreground/80">AI-generated</span> · 이 노트는{' '}
-        <strong className="font-semibold text-foreground">Claude(AI)</strong>로 작성·정리한 콘텐츠입니다. 사실 확인을
-        거쳤지만 오류가 있을 수 있으니, 중요한 내용은 원 출처로 다시 확인하시길 권합니다.
+        This study guide was originally written and organised with AI assistance
+        in June 2026. It is kept here as reference material in its original language.
       </span>
     </aside>
   )
@@ -61,7 +60,7 @@ export function Section({ id, children }: { id: string; children: ReactNode }) {
 
 export function PartTag({ children }: { children: ReactNode }) {
   return (
-    <p className="font-mono text-[11px] uppercase tracking-[0.28em] text-muted-foreground/70">
+    <p className="font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">
       {children}
     </p>
   )

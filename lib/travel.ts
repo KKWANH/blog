@@ -312,3 +312,27 @@ export function defineTravelCities(entries: TravelCityInput[]) {
     }
   })
 }
+
+export function searchTravelLocations(query: string) {
+  const term = normalizeValue(query)
+  if (term.length < 2) return []
+  const seen = new Set<string>()
+  const matches = []
+  for (const city of worldCities) {
+    if (!normalizeValue(city.name).startsWith(term)) continue
+    const key = `${normalizeValue(city.name)}|${city.country}`
+    if (seen.has(key)) continue
+    const lat = Number(city.lat), lng = Number(city.lng)
+    if (!Number.isFinite(lat) || !Number.isFinite(lng)) continue
+    seen.add(key)
+    matches.push({
+      city: city.name,
+      countryCode: city.country,
+      country: countries.getName(city.country, 'en') ?? city.country,
+      lat,
+      lng,
+    })
+    if (matches.length === 12) break
+  }
+  return matches
+}

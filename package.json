@@ -4,7 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:edit": "node scripts/dev-editor.mjs",
+    "photos:add": "node scripts/add-photo.mjs",
     "build": "next build",
+    "typecheck": "tsc --noEmit",
+    "test:content": "node scripts/check-content.mjs",
     "start": "next start",
     "lint": "eslint ."
   },

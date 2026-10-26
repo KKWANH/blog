@@ -1,155 +1,97 @@
 import Link from 'next/link'
+import { ArrowUpRight } from 'lucide-react'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
-import { Aurora } from '@/components/aurora'
 import { Hero } from '@/components/hero'
 import { ProjectCard } from '@/components/project-card'
-import { SiteLinkCard } from '@/components/site-link-card'
-import { projects, siteLinks } from '@/lib/projects'
+import { projects } from '@/lib/projects'
+import { experience } from '@/lib/profile'
 import { getAllContentPages } from '@/lib/content'
-import type { ContentPage } from '@/lib/content'
 
-export const revalidate = 86400
-
-/**
- * kwanho.dev — landing.
- *
- * Aurora background → hero panel → projects grid → also-here grid →
- * "now" strip → footer.
- */
 export default function HomePage() {
-  const notes = getAllContentPages().filter((p) => p.category === '노트')
+  const notes = getAllContentPages().filter((page) => page.slug[0] === 'notes' && page.slug.length > 1)
+  const featured = notes.find((page) => page.slugPath === 'notes/device-readback')
+  const archive = notes.filter((page) => page.category === 'Study archive')
+  const selectedProjects = projects.filter((project) => project.category !== 'AI-built experiment')
+    .sort((left, right) => Number(right.id === 'color-saves-life') - Number(left.id === 'color-saves-life'))
 
   return (
-    <div className="relative min-h-screen flex flex-col">
-      <Aurora />
+    <>
       <SiteHeader />
+      <main id="main-content" className="site-width">
+        <Hero />
 
-      <main className="flex-1">
-        <div className="max-w-6xl mx-auto px-5 md:px-8 pt-10 md:pt-16">
-          <Hero />
-        </div>
-
-        {/* Projects */}
-        <section id="projects" className="max-w-6xl mx-auto px-5 md:px-8 mt-24 md:mt-32 scroll-mt-24">
-          <SectionHeading
-            eyebrow="Projects"
-            title={
-              <>
-                Two side projects, two subdomains.
-              </>
-            }
-          />
-          <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-7">
-            {projects.map((project) => (
-              <ProjectCard key={project.id} project={project} />
+        <section id="work" className="home-section" aria-labelledby="work-title">
+          <div className="section-heading">
+            <h2 id="work-title">Work, so far.</h2>
+            <span className="section-note">C++, integration and error handling</span>
+          </div>
+          <ol className="work-list">
+            {experience.map((job, index) => (
+              <li key={job.company}>
+                <p className="work-period">
+                  {index === 0 ? <span className="current-dot" aria-hidden="true" /> : null}
+                  {job.period}
+                </p>
+                <h3>{job.company}</h3>
+                <p className="work-field">{job.field}</p>
+                <p className="work-description">{job.description}</p>
+              </li>
             ))}
+          </ol>
+          <Link className="text-link work-more" href="/about">My card &amp; work notes <ArrowUpRight aria-hidden="true" /></Link>
+        </section>
+
+        <section id="projects" className="home-section" aria-labelledby="projects-title">
+          <div className="section-heading">
+            <h2 id="projects-title">Selected work.</h2>
+            <Link className="text-link" href="/projects">Projects &amp; experiments <ArrowUpRight aria-hidden="true" /></Link>
+          </div>
+          <div className="project-list">
+            {selectedProjects.map((project, index) => <ProjectCard key={project.id} project={project} index={index} />)}
           </div>
         </section>
 
-        {/* Internal destinations */}
-        <section id="more" className="max-w-6xl mx-auto px-5 md:px-8 mt-24 md:mt-32 scroll-mt-24">
-          <SectionHeading
-            eyebrow="Also on kwanho.dev"
-            title="Profile and travel map."
-          />
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-7">
-            {siteLinks.map((link) => (
-              <SiteLinkCard key={link.id} link={link} />
-            ))}
+        <section id="notes" className="home-section" aria-labelledby="notes-title">
+          <div className="section-heading">
+            <h2 id="notes-title">From the notebook.</h2>
+            <Link className="text-link" href="/notes">All notes <ArrowUpRight aria-hidden="true" /></Link>
+          </div>
+          <div className="writing-layout">
+            {featured ? (
+              <article className="featured-note">
+                <div className="note-meta">Engineering · English · {featured.readTime}</div>
+                <h3><Link href={featured.href}>{featured.title}</Link></h3>
+                <p>{featured.excerpt}</p>
+                <Link className="text-link" href={featured.href}>Read the note <ArrowUpRight aria-hidden="true" /></Link>
+              </article>
+            ) : null}
+            <div>
+              <h3 className="archive-heading">Study archive</h3>
+              <ul className="archive-list">
+                {archive.map((note) => (
+                  <li key={note.href}>
+                    <Link href={note.href}>
+                      <span>{note.title}{note.slugPath === 'notes/kla' ? <small className="archive-provenance">Public-source study guide</small> : null}</span>
+                      <span>Korean</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <p className="archive-caption">Longer study guides, prepared with AI assistance. Kept in their original language.</p>
+            </div>
           </div>
         </section>
 
-        {/* Notes */}
-        <section id="notes" className="max-w-6xl mx-auto px-5 md:px-8 mt-24 md:mt-32 scroll-mt-24">
-          <SectionHeading
-            eyebrow="Notes"
-            title="Study notes, open for reference."
-          />
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-7">
-            {notes.map((note) => (
-              <NoteCard key={note.slugPath} note={note} />
-            ))}
+        <aside className="travel-aside" aria-label="Travel">
+          <div>
+            <p className="handwritten">Away from the keyboard</p>
+            <p>A map of places I&apos;ve visited and lived.</p>
           </div>
-        </section>
-
-        {/* Status strip */}
-        <section className="max-w-6xl mx-auto px-5 md:px-8 mt-24 md:mt-32 scroll-mt-24">
-          <SectionHeading eyebrow="Now" title="What I'm working on." />
-          <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-3">
-            <StatusCell
-              tag="Side"
-              title="Earprint v0.2 — pgvector recommendations, taste-DNA exports."
-              span="Active"
-            />
-            <StatusCell
-              tag="Side"
-              title="Ariadne v0.1 — evidence packs, agent mode, sandboxed TS dashboards."
-              span="Active"
-            />
-          </div>
-        </section>
+          <Link className="text-link" href="/travel">Explore the map <ArrowUpRight aria-hidden="true" /></Link>
+        </aside>
       </main>
-
       <SiteFooter />
-    </div>
-  )
-}
-
-function SectionHeading({
-  eyebrow,
-  title,
-  description,
-}: {
-  eyebrow: string
-  title: React.ReactNode
-  description?: string
-}) {
-  return (
-    <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between md:gap-10">
-      <div className="max-w-2xl">
-        <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
-          {eyebrow}
-        </p>
-        <h2 className="mt-3 font-display text-3xl md:text-4xl tracking-tight">
-          {title}
-        </h2>
-      </div>
-      {description ? (
-        <p className="max-w-md text-sm leading-7 text-muted-foreground">{description}</p>
-      ) : null}
-    </div>
-  )
-}
-
-function NoteCard({ note }: { note: ContentPage }) {
-  return (
-    <Link
-      href={note.href}
-      className="group relative flex flex-col gap-3 rounded-2xl border border-border/60 bg-card/40 backdrop-blur-sm p-6 transition-all hover:-translate-y-1 hover:border-foreground/30"
-    >
-      <div>
-        <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted-foreground">
-          {note.category} · {note.readTime}
-        </p>
-        <h3 className="mt-2 font-display text-xl tracking-tight leading-snug">{note.title}</h3>
-      </div>
-      <p className="text-sm leading-6 text-muted-foreground line-clamp-3">{note.excerpt}</p>
-      <span className="mt-auto font-mono text-[11px] text-muted-foreground transition-colors group-hover:text-foreground">
-        Read →
-      </span>
-    </Link>
-  )
-}
-
-function StatusCell({ tag, title, span }: { tag: string; title: string; span: string }) {
-  return (
-    <div className="rounded-xl border border-border/70 bg-card/50 backdrop-blur-sm p-5">
-      <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted-foreground">
-        {tag}
-      </p>
-      <p className="mt-3 text-base leading-7">{title}</p>
-      <p className="mt-2 font-mono text-[11px] text-muted-foreground">{span}</p>
-    </div>
+    </>
   )
 }

@@ -1,49 +1,20 @@
 # Kwanho Kim
 
-Systems engineer working on robotics, computer vision, and automotive software.
+C++ Software Engineer at KLA, ICOS Division / Zeta team, Leuven.
+Previously at Pickit 3D in robotic vision and Bosch in vehicle communication.
 
----
+## Selected work
 
-## Quick Overview
+- [Ariadne](https://kwanho.dev/projects/ariadne): an AI-built workspace I configured; development is on hold.
+- [Earprint](https://kwanho.dev/projects/earprint): a project about music listening data.
+- [Color Saves Life](https://kwanho.dev/projects/color-saves-life): an eye-tracking and simulation team project from BCX 2024.
 
-**Started at 14** writing math and science essays. Now building systems that survive real-world constraints.
+## Links
 
-**Path:** 42 Seoul → SEA:ME → Bosch → Pickit 3D
+- [Website and notes](https://kwanho.dev)
+- [Contact card and recruiter brief](https://kwanho.dev/about)
+- [GitHub](https://github.com/KKWANH)
+- [LinkedIn](https://www.linkedin.com/in/kwanhokim)
+- Email: contact@kwanho.dev
 
----
-
-## Technical Stack
-
-**Languages & Core Tools**
-C · C++ · Python · TypeScript · Assembly
-
-**Frameworks & Platforms**
-React · ROS 1/2 · Docker · Qt · Flutter · Figma · CARLA
-
-**Human Languages**
-Korean (native) · English (professional)
-
-### **→ [Read the full editorial profile](https://www.kkim.life/editor)**
-
----
-
-## Stack
-**Languages:** C, C++, Python, TypeScript, Assembly
-**Frameworks & tools:** React, ROS 1/2, Docker, Qt, Flutter, Figma, CARLA
-**Human languages:** Korean, English
-
----
-
-## Connect
-- GitHub: https://github.com/KKWANH
-- LinkedIn: https://www.linkedin.com/in/kwanho-kim-327152232/
-- Instagram: https://instagram.com/kwanho._kim
-- Website: https://www.kkim.life
-
----
-
-## Full Profile & Story
-
-For complete timeline, CV map, system thinking, and engineering philosophy:
-
-### [→ Read the full editorial profile](https://www.kkim.life/editor)
+The historical material in `profile.md` is source material, not current publication copy.

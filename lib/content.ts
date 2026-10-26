@@ -121,6 +121,7 @@ function formatTitleFromSlug(value: string) {
 }
 
 function parseFrontmatter(raw: string): { frontmatter: Record<string, FrontmatterValue>; body: string } {
+  raw = raw.replace(/^\uFEFF/, '').replace(/\r\n?/g, '\n')
   if (!raw.startsWith('---\n')) {
     return { body: raw, frontmatter: {} }
   }
@@ -302,7 +303,7 @@ export function rewriteRelativeMediaInReactNode(node: React.ReactNode, slug: str
     return node
   }
 
-  const props = { ...node.props } as Record<string, unknown>
+  const props = { ...(node.props as Record<string, unknown>) }
 
   for (const key of ['src', 'href', 'poster']) {
     const value = props[key]

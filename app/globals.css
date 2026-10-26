@@ -1,20 +1,25 @@
-@import 'maplibre-gl/dist/maplibre-gl.css';
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
 /* =====================================================================
- * kwanho.dev — Playful Demo Lab palette
- * Dark-first. Two brand accents (emerald / cyan) for the two projects.
+ * kwanho.dev — paper, ink and a restrained pen-blue accent.
+ * The brand aliases also support the existing study illustrations.
  * =====================================================================*/
 
 :root {
   /* Surfaces */
-  --background: oklch(0.985 0.003 240);
-  --foreground: oklch(0.16 0.01 250);
-  --card: oklch(0.97 0.005 240);
-  --card-foreground: oklch(0.16 0.01 250);
+  --background: #f4f5ee;
+  --foreground: #202c25;
+  --paper: #fffef8;
+  --sketch-surface: #e9eee1;
+  --ink-accent: #20543e;
+  --ink-blue: var(--ink-accent);
+  --warm-accent: #8d5425;
+  --border-strong: #849c87;
+  --card: #fffef8;
+  --card-foreground: #202c25;
   --popover: oklch(0.99 0.003 240);
   --popover-foreground: oklch(0.16 0.01 250);
   --primary: oklch(0.18 0.01 250);
@@ -22,21 +27,23 @@
   --secondary: oklch(0.94 0.006 240);
   --secondary-foreground: oklch(0.2 0.01 250);
   --muted: oklch(0.92 0.006 240);
-  --muted-foreground: oklch(0.46 0.01 250);
+  --muted-foreground: #526156;
   --accent: oklch(0.93 0.008 230);
   --accent-foreground: oklch(0.2 0.01 250);
   --destructive: oklch(0.55 0.22 25);
   --destructive-foreground: oklch(0.99 0 0);
-  --border: oklch(0.88 0.006 240);
+  --border: #d0d9c9;
   --input: oklch(0.92 0.006 240);
   --ring: oklch(0.5 0.04 230);
-  --radius: 0.875rem;
+  --radius: 0.35rem;
 
   /* Brand accents (constant across themes) */
-  --brand-emerald: oklch(0.78 0.16 155);
-  --brand-cyan:    oklch(0.78 0.14 220);
-  --brand-violet:  oklch(0.72 0.18 290);
-  --brand-amber:   oklch(0.84 0.16 75);
+  --brand-emerald: #356d56;
+  --brand-cyan: #2b4fb0;
+  --brand-violet: #74509b;
+  --brand-amber: #875f19;
+  --note-red: #b42318;
+  --note-pink: #a12067;
 
   --sidebar: oklch(0.97 0.005 240);
   --sidebar-foreground: oklch(0.16 0.01 250);
@@ -49,10 +56,15 @@
 }
 
 .dark {
-  --background: oklch(0.115 0.012 250);
-  --foreground: oklch(0.965 0.005 240);
-  --card: oklch(0.155 0.014 250);
-  --card-foreground: oklch(0.965 0.005 240);
+  --background: #111d17;
+  --foreground: #e9efe5;
+  --paper: #1b2b22;
+  --sketch-surface: #203829;
+  --ink-accent: #b2d8b7;
+  --warm-accent: #e9b67f;
+  --border-strong: #819b85;
+  --card: #1b2b22;
+  --card-foreground: #e9efe5;
   --popover: oklch(0.14 0.014 250);
   --popover-foreground: oklch(0.965 0.005 240);
   --primary: oklch(0.96 0.005 240);
@@ -60,12 +72,12 @@
   --secondary: oklch(0.2 0.014 250);
   --secondary-foreground: oklch(0.92 0.006 240);
   --muted: oklch(0.22 0.012 250);
-  --muted-foreground: oklch(0.66 0.012 240);
+  --muted-foreground: #b4c5b5;
   --accent: oklch(0.21 0.016 250);
   --accent-foreground: oklch(0.92 0.006 240);
   --destructive: oklch(0.6 0.22 25);
   --destructive-foreground: oklch(0.96 0.005 240);
-  --border: oklch(0.27 0.014 250);
+  --border: #394d3e;
   --input: oklch(0.2 0.014 250);
   --ring: oklch(0.55 0.04 230);
 
@@ -77,13 +89,19 @@
   --sidebar-accent-foreground: oklch(0.92 0.006 240);
   --sidebar-border: oklch(0.27 0.014 250);
   --sidebar-ring: oklch(0.55 0.04 230);
+  --brand-emerald: #8dcbb0;
+  --brand-cyan: #a7bfff;
+  --brand-violet: #c7aff0;
+  --brand-amber: #dfbd78;
+  --note-red: #fda29b;
+  --note-pink: #f9a8d4;
 }
 
 @theme inline {
-  --font-sans: 'Inter', 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
-  --font-serif: 'EB Garamond', 'Noto Serif KR', 'Times New Roman', Georgia, serif;
-  --font-display: 'Playfair Display', 'Noto Serif KR', 'Times New Roman', Georgia, serif;
-  --font-mono: 'Geist Mono', 'JetBrains Mono', 'SF Mono', monospace;
+  --font-sans: var(--font-figtree), 'Spoqa Han Sans Neo', 'Malgun Gothic', sans-serif;
+  --font-serif: var(--font-figtree), 'Spoqa Han Sans Neo', sans-serif;
+  --font-display: var(--font-figtree), 'Spoqa Han Sans Neo', sans-serif;
+  --font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -107,10 +125,10 @@
   --color-brand-cyan: var(--brand-cyan);
   --color-brand-violet: var(--brand-violet);
   --color-brand-amber: var(--brand-amber);
-  --radius-sm: calc(var(--radius) - 0.5rem);
-  --radius-md: calc(var(--radius) - 0.25rem);
+  --radius-sm: 0.2rem;
+  --radius-md: 0.3rem;
   --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 0.25rem);
+  --radius-xl: 0.55rem;
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
@@ -126,17 +144,27 @@
     @apply border-border outline-ring/50;
   }
   html {
-    color-scheme: light dark;
+    color-scheme: light;
   }
+  html.dark { color-scheme: dark; }
   body {
     @apply bg-background text-foreground;
-    font-feature-settings: 'cv11', 'ss01';
+    font-feature-settings: 'kern';
     -webkit-font-smoothing: antialiased;
   }
   ::selection {
     background-color: color-mix(in oklab, var(--brand-cyan) 35%, transparent);
     color: var(--foreground);
   }
+}
+
+@font-face {
+  font-family: 'Spoqa Han Sans Neo';
+  src: url('/font/SpoqaHanSansNeo_OTF_subset/SpoqaHanSansNeo-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+1100-11FF, U+3130-318F, U+AC00-D7A3;
 }
 
 /* =====================================================================
@@ -151,127 +179,6 @@
 :lang(ko) pre,
 :lang(ko) .font-mono {
   font-family: var(--font-mono);
-}
-
-/* =====================================================================
- * Aurora — animated background mesh
- *
- * Three large radial gradients drift independently; we keep the
- * animation slow enough that it never distracts. A faint SVG grain
- * sits on top so flat OLED panels do not band the gradient.
- * =====================================================================*/
-
-.aurora {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  overflow: hidden;
-  pointer-events: none;
-  background-color: var(--background);
-  isolation: isolate;
-}
-
-.aurora__blob {
-  position: absolute;
-  border-radius: 9999px;
-  filter: blur(80px);
-  opacity: 0.55;
-  mix-blend-mode: screen;
-  will-change: transform;
-}
-
-.dark .aurora__blob {
-  opacity: 0.45;
-  mix-blend-mode: screen;
-}
-
-.aurora__blob--a {
-  width: 56vmax;
-  height: 56vmax;
-  left: -10vmax;
-  top: -20vmax;
-  background: radial-gradient(circle at center, color-mix(in oklab, var(--brand-emerald) 70%, transparent), transparent 65%);
-  animation: aurora-a 28s ease-in-out infinite alternate;
-}
-
-.aurora__blob--b {
-  width: 60vmax;
-  height: 60vmax;
-  right: -18vmax;
-  top: -12vmax;
-  background: radial-gradient(circle at center, color-mix(in oklab, var(--brand-cyan) 70%, transparent), transparent 65%);
-  animation: aurora-b 34s ease-in-out infinite alternate;
-}
-
-.aurora__blob--c {
-  width: 70vmax;
-  height: 70vmax;
-  left: 15vmax;
-  bottom: -35vmax;
-  background: radial-gradient(circle at center, color-mix(in oklab, var(--brand-violet) 70%, transparent), transparent 65%);
-  animation: aurora-c 40s ease-in-out infinite alternate;
-}
-
-.aurora__grain {
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.4 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
-  opacity: 0.4;
-  mix-blend-mode: overlay;
-}
-
-.dark .aurora__grain {
-  opacity: 0.25;
-}
-
-@keyframes aurora-a {
-  from { transform: translate3d(0, 0, 0) scale(1); }
-  to   { transform: translate3d(8vmax, 6vmax, 0) scale(1.15); }
-}
-@keyframes aurora-b {
-  from { transform: translate3d(0, 0, 0) scale(1.05); }
-  to   { transform: translate3d(-10vmax, 4vmax, 0) scale(0.95); }
-}
-@keyframes aurora-c {
-  from { transform: translate3d(0, 0, 0) scale(0.95); }
-  to   { transform: translate3d(-6vmax, -8vmax, 0) scale(1.12); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .aurora__blob {
-    animation: none !important;
-  }
-}
-
-/* =====================================================================
- * Mouse spotlight (used by hero + cards)
- * Cards set --mx/--my from a pointer handler.
- * =====================================================================*/
-
-.spotlight {
-  position: relative;
-  isolation: isolate;
-}
-
-.spotlight::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  pointer-events: none;
-  background: radial-gradient(
-    420px circle at var(--mx, 50%) var(--my, 50%),
-    color-mix(in oklab, var(--spotlight-color, var(--brand-cyan)) 22%, transparent),
-    transparent 60%
-  );
-  opacity: 0;
-  transition: opacity 220ms ease;
-  z-index: 0;
-}
-
-.spotlight:hover::before,
-.spotlight:focus-within::before {
-  opacity: 1;
 }
 
 /* =====================================================================

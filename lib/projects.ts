@@ -1,90 +1,71 @@
-/**
- * Project catalog used on the homepage and anywhere else the site
- * enumerates the demos that live under *.kwanho.dev. Visual identity
- * lives in the card component, not here.
- */
-
-export type ProjectStatus = 'live' | 'beta' | 'wip'
+/** Selected project copy for the homepage. */
 
 export type Project = {
   id: string
   name: string
-  tagline: string
   description: string
+  details: string
+  category: 'Personal project' | 'Team project' | 'AI-built experiment'
+  year?: string
+  status?: string
   href: string
-  source: string
+  source?: string
   stack: string[]
-  status: ProjectStatus
-  /** CSS variable (without `var(...)`) for the project accent color. */
-  accentVar: '--brand-emerald' | '--brand-cyan' | '--brand-violet' | '--brand-amber'
   /** Identity visual rendered as the card's hero block. */
-  visual: 'earprint' | 'ariadne'
+  visual: 'earprint' | 'ariadne' | 'color-saves-life'
 }
 
 export const projects: Project[] = [
   {
+    id: 'ariadne',
+    name: 'Ariadne',
+    description:
+      'An AI-built document workspace I configured. Kept here as an experiment, with development on hold.',
+    details:
+      'I directed the AI and assembled the configuration. The implementation was generated with AI; this project is not a claim of retrieval-system or RAG expertise.',
+    category: 'AI-built experiment',
+    year: '2026',
+    status: 'On hold',
+    href: '/projects/ariadne',
+    source: 'https://github.com/KKWANH/ai-assistant',
+    stack: ['AI-directed build', 'Configuration'],
+    visual: 'ariadne',
+  },
+  {
     id: 'earprint',
     name: 'Earprint',
-    tagline: 'What you actually listen to, mapped.',
     description:
-      'A YouTube Music taste analyzer. The Chrome extension scrapes your liked tracks; the web app pulls them through Deezer and Last.fm, runs Gemini analysis, and renders a taste profile, an artist map, and a five-mode recommender.',
-    href: 'https://earprint.kwanho.dev',
-    source: 'https://github.com/KKWANH/playlist-analyzer',
-    stack: ['Next.js', 'TypeScript', 'Neon · pgvector', 'Cloudflare Workers', 'Chrome MV3', 'Gemini'],
-    status: 'live',
-    accentVar: '--brand-emerald',
+      'Explore a YouTube Music library through artists, listening patterns and recommendations.',
+    details:
+      'A Chrome extension imports music-library data. The Next.js application combines it with music metadata and recommendations for exploring related artists.',
+    category: 'Personal project',
+    status: 'On hold',
+    href: '/projects/earprint',
+    stack: ['TypeScript', 'Next.js', 'PostgreSQL', 'Chrome extension'],
     visual: 'earprint',
   },
   {
-    id: 'ariadne',
-    name: 'Ariadne',
-    tagline: 'Local-first AI workspace where every answer cites its source files.',
+    id: 'color-saves-life',
+    name: 'Color Saves Life',
     description:
-      'Point it at a folder. Each run produces an evidence pack tying every claim back to the file it came from. Custom action pipelines, an agent mode, and sandboxed TypeScript dashboards that render inside the app. BYO API key, or run keyless against local Ollama.',
-    href: 'https://ai.kwanho.dev',
-    source: 'https://github.com/KKWANH/ai-assistant',
-    stack: ['Fastify', 'React · Vite', 'SQLite', 'Tailwind v4', 'Multi-provider AI', 'Cloudflare Tunnel'],
-    status: 'live',
-    accentVar: '--brand-cyan',
-    visual: 'ariadne',
-  },
-]
-
-export type SiteLink = {
-  id: string
-  name: string
-  description: string
-  href: string
-  accentVar: Project['accentVar']
-}
-
-/**
- * Secondary destinations under kwanho.dev — rendered as a quieter row
- * below the main project grid.
- */
-export const siteLinks: SiteLink[] = [
-  {
-    id: 'editor',
-    name: 'Editor',
-    description:
-      'The long-form profile. Started writing math and science essays at 14; got here via 42 Seoul, SEA:ME, Bosch, and Pickit 3D.',
-    href: '/editor',
-    accentVar: '--brand-amber',
-  },
-  {
-    id: 'travel',
-    name: 'Travel atlas',
-    description:
-      'An interactive map of the cities I stayed in long enough for them to change how I think.',
-    href: '/travel',
-    accentVar: '--brand-violet',
+      'First place in the digital.auto & mobility challenge at BCX 2024. A team prototype using eye-tracking and simulation.',
+    details:
+      'The team used ROS 2 and Gazebo as the simulation environment. Separate Python plugins handled image-processing features in the client.',
+    category: 'Team project',
+    year: 'BCX 2024',
+    status: 'Track winner',
+    href: '/projects/color-saves-life',
+    source: 'https://github.com/KKWANH/ColorSavesLife',
+    stack: ['Python', 'ROS 2', 'Gazebo'],
+    visual: 'color-saves-life',
   },
 ]
 
 export const externalLinks = {
   github: 'https://github.com/KKWANH',
-  linkedin: 'https://www.linkedin.com/in/kwanho-kim-327152232/',
+  linkedin: 'https://www.linkedin.com/in/kwanhokim',
   instagram: 'https://instagram.com/kwanho._kim',
   email: 'mailto:contact@kwanho.dev',
   cv: '/CV.pdf',
+  cvLabel: 'CV (PDF)',
 } as const

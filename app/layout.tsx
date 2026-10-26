@@ -1,51 +1,32 @@
 import type { Metadata, Viewport } from 'next'
-import { EB_Garamond, Inter, Playfair_Display, Geist_Mono, Noto_Serif_KR, Noto_Sans_KR } from 'next/font/google'
+import localFont from 'next/font/local'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
-import { ThemeProvider } from '@/components/theme-provider'
+import { MotionProvider } from '@/components/motion-provider'
+import { Atmosphere } from '@/components/atmosphere'
 import { siteUrl } from '@/lib/site'
 import './globals.css'
+import '../styles/notebook.css'
+import '../styles/fieldbook.css'
+import '../styles/cinema.css'
 
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
+const figtree = localFont({
+  src: '../public/font/Figtree.woff2',
+  variable: '--font-figtree',
+  weight: '300 900',
   display: 'swap',
 })
 
-const playfair = Playfair_Display({
-  subsets: ['latin'],
-  variable: '--font-playfair',
-  display: 'swap',
-})
-
-const ebGaramond = EB_Garamond({
-  subsets: ['latin'],
-  variable: '--font-eb-garamond',
-  display: 'swap',
-})
-
-const geistMono = Geist_Mono({
-  subsets: ['latin'],
-  variable: '--font-geist-mono',
-  display: 'swap',
-})
-
-const notoSerifKR = Noto_Serif_KR({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-noto-serif-kr',
-  display: 'swap',
-})
-
-const notoSansKR = Noto_Sans_KR({
-  subsets: ['latin'],
-  weight: ['400', '500', '700'],
-  variable: '--font-noto-sans-kr',
+const caveat = localFont({
+  src: '../public/font/Caveat-500.woff2',
+  variable: '--font-hand',
+  weight: '500',
+  preload: false,
   display: 'swap',
 })
 
 const description =
-  'Kwanho Kim — systems engineer working on robotics, computer vision, and automotive software. Index page for the demos that live on *.kwanho.dev.'
+  'Kwanho Kim, C++ Software Engineer at KLA in Leuven. Work, projects, technical notes and a contact card.'
 
 export const metadata: Metadata = {
   title: {
@@ -63,25 +44,22 @@ export const metadata: Metadata = {
     siteName: 'kwanho.dev',
     title: 'Kwanho Kim — kwanho.dev',
     description,
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Kwanho Kim, software engineer at KLA' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Kwanho Kim — kwanho.dev',
     description,
+    images: ['/og-image.png'],
   },
   verification: {
     google: process.env.GOOGLE_SITE_VERIFICATION,
   },
-  // Favicon + apple-touch are auto-resolved from app/icon.svg, app/icon.png,
-  // and app/apple-icon.png via Next.js file conventions — no manual `icons`
-  // entries needed.
+  // Photo-crop favicon/apple-touch variants use Next.js file conventions.
 }
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#fafafa' },
-    { media: '(prefers-color-scheme: dark)', color: '#0a0c14' },
-  ],
+  themeColor: '#071b13',
 }
 
 export default function RootLayout({
@@ -90,11 +68,13 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${playfair.variable} ${ebGaramond.variable} ${geistMono.variable} ${notoSerifKR.variable} ${notoSansKR.variable} font-sans antialiased`}>
-        <ThemeProvider>
+    <html lang="en" className="dark" data-motion="off">
+      <body className={`${figtree.variable} ${caveat.variable} font-sans antialiased`}>
+        <a className="skip-link" href="#main-content">Skip to content</a>
+        <MotionProvider>
+          <Atmosphere />
           {children}
-        </ThemeProvider>
+        </MotionProvider>
         <Analytics />
         <SpeedInsights />
       </body>

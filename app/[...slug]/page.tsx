@@ -2,9 +2,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { SiteFooter } from '@/components/site-footer'
 import { SiteHeader } from '@/components/site-header'
-import { Aurora } from '@/components/aurora'
 import {
-  ContentBackLink,
   ContentFooterMeta,
   ContentHero,
 } from '@/components/content-shell'
@@ -56,16 +54,12 @@ export async function generateMetadata({
       type: 'article',
       title: baseMetadata.title ?? page.title,
       description: baseMetadata.description ?? page.description ?? page.excerpt,
+      images: [{ url: absoluteUrl('/og-image.png'), width: 1200, height: 630, alt: 'Kwanho Kim' }],
     },
   }
 }
 
-/**
- * Dynamic content route — renders any folder under `contents/` that
- * carries an `index.md` or `index.tsx`. Uses the same shell as the
- * homepage (aurora + site header + footer) so /editor and /travel
- * read as kwanho.dev pages rather than journal articles.
- */
+/** Content keeps one shared reading layout across Markdown and interactive pages. */
 export default async function ContentPage({
   params,
 }: {
@@ -88,24 +82,17 @@ export default async function ContentPage({
     page.kind === 'markdown' ? rewriteRelativeMedia(page.html ?? '', decodedSlug) : ''
 
   return (
-    <div className="relative min-h-screen flex flex-col">
-      <Aurora />
+    <div>
       <SiteHeader />
 
-      <main className="flex-1">
-        <div className="max-w-6xl mx-auto px-5 md:px-8 pt-8 md:pt-10">
-          <ContentBackLink />
-        </div>
-
-        <div className="max-w-6xl mx-auto px-5 md:px-8 mt-6 md:mt-8 animate-content-appear">
-          <ContentHero page={page} decodedSlug={decodedSlug} />
-        </div>
+      <main id="main-content" className="site-width">
+        <ContentHero page={page} decodedSlug={decodedSlug} />
 
         <article
           lang={page.lang}
-          className={`max-w-6xl mx-auto px-5 md:px-8 mt-12 md:mt-16 animate-content-appear-delayed ${page.bodyClassName ?? ''}`}
+          className={`content-body ${page.bodyClassName ?? ''}`}
         >
-          {showInlineToc ? <InlineToc items={tocItems} /> : null}
+          {showInlineToc ? <InlineToc items={tocItems} lang={page.lang} /> : null}
 
           {page.kind === 'markdown' ? (
             <MarkdownBody html={html} />
@@ -113,7 +100,7 @@ export default async function ContentPage({
             <div>{rewriteRelativeMediaInReactNode(<Component />, decodedSlug)}</div>
           ) : null}
 
-          <ContentFooterMeta page={page} />
+          {!['contact-page', 'atlas-page'].includes(page.bodyClassName ?? '') ? <ContentFooterMeta page={page} /> : null}
         </article>
       </main>
 
@@ -122,29 +109,24 @@ export default async function ContentPage({
   )
 }
 
-function InlineToc({ items }: { items: TocItem[] }) {
+function InlineToc({ items, lang }: { items: TocItem[]; lang?: string }) {
   return (
-    <nav
-      aria-label="Table of contents"
-      className="mb-10 max-w-2xl rounded-xl border border-border/60 bg-card/40 backdrop-blur-sm p-5"
-    >
-      <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted-foreground">
-        On this page
-      </p>
-      <ul className="mt-3 grid gap-1.5">
+    <details className="reading-toc" lang="en">
+      <summary>On this page</summary>
+      <nav aria-label="Table of contents">
+      <ul lang={lang}>
         {items.map((item) => (
           <li key={item.id}>
             <a
               href={`#${item.id}`}
-              className={`block text-sm transition-colors hover:text-foreground ${
-                item.level === 3 ? 'pl-3 text-muted-foreground' : 'text-foreground/80'
-              }`}
+              className={item.level === 3 ? 'toc-nested' : undefined}
             >
               {item.label}
             </a>
           </li>
         ))}
       </ul>
-    </nav>
+      </nav>
+    </details>
   )
 }

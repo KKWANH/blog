@@ -32,18 +32,18 @@ import {
   Kbd,
 } from '@/components/notes'
 
-export const title = 'AI 완전정복'
+export const title = 'AI study guide'
 export const subtitle =
-  '데이터로 배운다는 한 가지 발상에서 출발해 신경망, 트랜스포머, LLM, 그리고 RAG·도구·에이전트·추론 모델까지. 수학도 코딩도 없이 그림과 비유로 쌓아 올리는 20장.'
+  'Neural networks, language models, retrieval and tool use. An illustrated study guide, in Korean.'
 export const description =
-  'AI 완전정복 — 머신러닝의 기초 발상부터 뉴런·신경망·경사하강·역전파, CNN·어텐션·트랜스포머·LLM, 그리고 컨텍스트·RAG·도구/MCP·에이전트·하네스·추론 모델·MoE·멀티모달, AI와 반도체, 한계와 용어사전까지.'
+  'An AI-assisted Korean study guide to neural networks, language models, retrieval, tools and agents.'
 export const excerpt =
-  '"사람이 규칙을 짜는 대신 기계가 데이터에서 규칙을 찾게 한다." 이 한 발상에서 ChatGPT와 AI 에이전트까지, 개념의 흐름을 처음부터 끝까지.'
+  'Notes on neural networks, language models, retrieval and tool-using systems.'
 export const date = '2026-06-15'
 export const readTime = '40 min'
 export const lang = 'ko'
 export const showToc = true
-export const category = '노트'
+export const category = 'Study archive'
 export const toc = [
   { id: 'c1', label: '1. AI란 무엇인가', level: 2 },
   { id: 'c2', label: '2. 머신러닝의 핵심', level: 2 },
@@ -180,7 +180,7 @@ export default function AIPage() {
         <H3>📏 "얼마나 틀렸나"를 재는 손실(Loss)</H3>
         <P>
           손잡이를 어느 쪽으로 돌릴지 알려면, 먼저 <B>지금 얼마나 틀렸는지</B>를 숫자로 재야 한다. 이 "틀린 정도"가{' '}
-          <span style={{ color: '#f472b6', fontWeight: 600 }}>손실(loss)</span> 또는 오차다. 예측과 정답의 차이를 모아
+          <span style={{ color: 'var(--note-pink)', fontWeight: 600 }}>손실(loss)</span> 또는 오차다. 예측과 정답의 차이를 모아
           하나의 숫자로 만든 것. 학습의 목표는 단 하나, <Em>이 손실을 가장 작게 만드는 손잡이 값을 찾는 것</Em>이다.
         </P>
         <Deep title="한 걸음 더 · '특징'을 누가 고르나 (딥러닝의 진짜 도약)">
@@ -482,14 +482,14 @@ export default function AIPage() {
         </P>
         <Figure caption="왼쪽은 너무 단순(과소적합), 오른쪽은 잡음까지 외운 과적합. 가운데처럼 '핵심 패턴만' 잡는 게 목표.">
           <svg viewBox="0 0 700 200" role="img" aria-label="과소적합 적정 과적합 비교">
-            <text x="120" y="24" fill="#f87171" fontSize="13" fontWeight="bold" textAnchor="middle">과소적합</text>
+            <text x="120" y="24" fill="var(--note-red)" fontSize="13" fontWeight="bold" textAnchor="middle">과소적합</text>
             <g fill="var(--brand-cyan)">
               <circle cx="70" cy="120" r="4" />
               <circle cx="100" cy="90" r="4" />
               <circle cx="130" cy="110" r="4" />
               <circle cx="160" cy="70" r="4" />
             </g>
-            <line x1="65" y1="125" x2="170" y2="85" stroke="#f87171" strokeWidth="2.5" />
+            <line x1="65" y1="125" x2="170" y2="85" stroke="var(--note-red)" strokeWidth="2.5" />
             <text x="120" y="165" fill="var(--muted-foreground)" fontSize="11" textAnchor="middle">너무 단순</text>
 
             <text x="350" y="24" fill="var(--brand-emerald)" fontSize="13" fontWeight="bold" textAnchor="middle">적정</text>

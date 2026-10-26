@@ -1,11 +1,15 @@
 'use client'
 
-import { useEffect, useMemo, useRef } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import countries from 'i18n-iso-countries'
 import countryNames from 'i18n-iso-countries/langs/en.json'
 import maplibregl from 'maplibre-gl'
+import 'maplibre-gl/dist/maplibre-gl.css'
 import countriesAtlas from 'world-atlas/countries-110m.json'
 import { feature } from 'topojson-client'
+import type { GeometryCollection, Topology } from 'topojson-specification'
+import type { FeatureCollection, Point } from 'geojson'
+import type { StyleSpecification } from 'maplibre-gl'
 import MapView, {
   Layer,
   NavigationControl,
@@ -13,17 +17,18 @@ import MapView, {
   Source,
   type MapLayerMouseEvent,
   type MapRef,
+  type LayerProps,
 } from 'react-map-gl/maplibre'
 import styles from '@/components/travel/travel-explorer.module.css'
 import { StayLevel, levelConfig, type MapUnit, type TravelCity } from '@/components/travel/travel-types'
-import { useTheme } from '@/components/theme-provider'
+import { useMotion } from '@/components/motion-provider'
 
 countries.registerLocale(countryNames)
 
-const baseCountryFeatures = feature(
-  countriesAtlas as never,
-  (countriesAtlas as typeof countriesAtlas).objects.countries,
-)
+const worldTopology = countriesAtlas as unknown as Topology<{
+  countries: GeometryCollection<{ name: string }>
+}>
+const baseCountryFeatures = feature(worldTopology, worldTopology.objects.countries)
 
 function getLevelColor(level?: string | null) {
   if (!level) {
@@ -59,34 +64,54 @@ export function TravelMap({
   mapUnit: MapUnit
   onSelectCity: (cityId: string | null) => void
 }) {
-  const { resolvedTheme } = useTheme()
-  const isDark = resolvedTheme === 'dark'
+  const isDark = true
+  const { enabled: motionEnabled } = useMotion()
   const mapRef = useRef<MapRef | null>(null)
-  const tileVariant = isDark ? 'dark_all' : 'light_all'
-  const mapStyle = useMemo(
+  const [ready, setReady] = useState(false)
+  const [mapStyle] = useState<StyleSpecification>(
     () => ({
       version: 8,
       sources: {
-        carto: {
-          type: 'raster',
-          tiles: ['a', 'b', 'c', 'd'].map(
-            (subdomain) => `https://${subdomain}.basemaps.cartocdn.com/${tileVariant}/{z}/{x}/{y}.png`,
-          ),
-          tileSize: 256,
-          attribution:
-            '&copy; OpenStreetMap contributors &copy; CARTO',
+        world: {
+          type: 'geojson',
+          data: baseCountryFeatures,
+          attribution: '<a href="https://www.naturalearthdata.com/" target="_blank" rel="noopener noreferrer">Natural Earth</a>',
         },
       },
       layers: [
         {
-          id: 'carto-base',
-          type: 'raster',
-          source: 'carto',
+          id: 'paper',
+          type: 'background',
+          paint: { 'background-color': isDark ? '#111d17' : '#e8eddf' },
+        },
+        {
+          id: 'land',
+          type: 'fill',
+          source: 'world',
+          paint: { 'fill-color': isDark ? '#23382b' : '#f4f5ee' },
+        },
+        {
+          id: 'boundaries',
+          type: 'line',
+          source: 'world',
+          paint: {
+            'line-color': isDark ? '#526a59' : '#aebda7',
+            'line-width': 0.7,
+          },
         },
       ],
     }),
-    [tileVariant],
   )
+
+  // Keep source identity stable while filters and the editor update their data.
+  // Recolouring a loaded style avoids rebuilding its sources on a theme change.
+  useEffect(() => {
+    const map = mapRef.current?.getMap()
+    if (!map || !ready || !map.getLayer('paper')) return
+    map.setPaintProperty('paper', 'background-color', isDark ? '#111d17' : '#e8eddf')
+    map.setPaintProperty('land', 'fill-color', isDark ? '#23382b' : '#f4f5ee')
+    map.setPaintProperty('boundaries', 'line-color', isDark ? '#526a59' : '#aebda7')
+  }, [isDark, ready])
 
   const countryAggregates = useMemo(() => {
     const aggregates = new globalThis.Map<string, { level: StayLevel; count: number; cities: TravelCity[] }>()
@@ -115,7 +140,7 @@ export function TravelMap({
     return aggregates
   }, [cities])
 
-  const countryGeoJson = useMemo(() => {
+  const countryGeoJson = useMemo<FeatureCollection>(() => {
     return {
       type: 'FeatureCollection',
       features: baseCountryFeatures.features.flatMap((countryFeature) => {
@@ -141,7 +166,7 @@ export function TravelMap({
     }
   }, [countryAggregates])
 
-  const cityGeoJson = useMemo(() => {
+  const cityGeoJson = useMemo<FeatureCollection<Point>>(() => {
     return {
       type: 'FeatureCollection',
       features: cities.map((city) => ({
@@ -165,7 +190,7 @@ export function TravelMap({
     }
   }, [cities])
 
-  const countryFillLayer = useMemo(
+  const countryFillLayer = useMemo<LayerProps>(
     () => ({
       id: 'country-fill',
       type: 'fill',
@@ -177,19 +202,19 @@ export function TravelMap({
     [mapUnit],
   )
 
-  const countryOutlineLayer = useMemo(
+  const countryOutlineLayer = useMemo<LayerProps>(
     () => ({
       id: 'country-outline',
       type: 'line',
       paint: {
-        'line-color': isDark ? 'rgba(226, 232, 240, 0.28)' : 'rgba(15, 23, 42, 0.18)',
-        'line-width': mapUnit === 'country' ? 1 : 0.8,
+        'line-color': isDark ? 'rgba(237, 240, 243, 0.65)' : 'rgba(35, 41, 44, 0.65)',
+        'line-width': mapUnit === 'country' ? 1.3 : 0.8,
       },
     }),
     [isDark, mapUnit],
   )
 
-  const cityBlobGlowLayer = useMemo(
+  const cityBlobGlowLayer = useMemo<LayerProps>(
     () => ({
       id: 'city-blob-glow',
       type: 'circle',
@@ -213,7 +238,7 @@ export function TravelMap({
     [isDark, mapUnit],
   )
 
-  const cityBlobCoreLayer = useMemo(
+  const cityBlobCoreLayer = useMemo<LayerProps>(
     () => ({
       id: 'city-blob-core',
       type: 'circle',
@@ -246,7 +271,7 @@ export function TravelMap({
 
   useEffect(() => {
     const map = mapRef.current?.getMap()
-    if (!map) {
+    if (!map || !ready) {
       return
     }
 
@@ -254,7 +279,7 @@ export function TravelMap({
       map.flyTo({
         center: [activeCity.lng, activeCity.lat],
         zoom: Math.max(map.getZoom(), 5.5),
-        duration: 1200,
+        duration: motionEnabled ? 900 : 0,
       })
       return
     }
@@ -269,11 +294,11 @@ export function TravelMap({
     )
 
     map.fitBounds(bounds, {
-      padding: 72,
-      duration: 1000,
+      padding: Math.min(56, map.getContainer().clientWidth * 0.1),
+      duration: 0,
       maxZoom: 4.8,
     })
-  }, [activeCity, cities])
+  }, [activeCity, cities, ready, motionEnabled])
 
   function handleMapClick(event: MapLayerMouseEvent) {
     const clickedFeature = event.features?.[0]
@@ -301,7 +326,7 @@ export function TravelMap({
   }
 
   return (
-    <div className={`${styles.mapWrap} ${isDark ? styles.mapThemeDark : styles.mapThemeLight}`}>
+    <div className={`${styles.mapWrap} ${isDark ? styles.mapThemeDark : styles.mapThemeLight}`} role="group" aria-label="Visited places map" aria-busy={!ready}>
       <MapView
         ref={mapRef}
         mapLib={maplibregl}
@@ -310,25 +335,27 @@ export function TravelMap({
           latitude: 30,
           zoom: 1.8,
         }}
-        minZoom={1.6}
-        maxZoom={11}
+        minZoom={0}
+        maxZoom={7}
         dragRotate={false}
+        cooperativeGestures
         doubleClickZoom
-        interactiveLayerIds={['country-fill', 'city-blob-core']}
-        mapStyle={mapStyle as never}
+        interactiveLayerIds={mapUnit === 'country' ? ['country-fill'] : ['city-blob-core']}
+        mapStyle={mapStyle}
         onClick={handleMapClick}
-        className={styles.map}
+        onIdle={() => setReady(true)}
+        style={{ width: '100%', height: '100%' }}
       >
         <NavigationControl position="top-right" />
 
-        <Source id="countries" type="geojson" data={countryGeoJson as never}>
-          <Layer {...(countryFillLayer as never)} />
-          <Layer {...(countryOutlineLayer as never)} />
+        <Source id="countries" type="geojson" data={countryGeoJson}>
+          <Layer {...countryFillLayer} />
+          <Layer {...countryOutlineLayer} />
         </Source>
 
-        <Source id="cities" type="geojson" data={cityGeoJson as never}>
-          <Layer {...(cityBlobGlowLayer as never)} />
-          <Layer {...(cityBlobCoreLayer as never)} />
+        <Source id="cities" type="geojson" data={cityGeoJson}>
+          <Layer {...cityBlobGlowLayer} />
+          <Layer {...cityBlobCoreLayer} />
         </Source>
 
         {activeCity ? (
