@@ -22,7 +22,12 @@ For production metadata, set `NEXT_PUBLIC_SITE_URL` to the preferred public orig
 
 - `contents/about/index.tsx` and `components/profile-overview.tsx`: open experience, education and skill-linked work. `/editor` redirects to `/about`.
 - `components/career-timeline.tsx` and `components/career-evidence.tsx`: dated overview and the selected work-scope view.
-- `components/skill-explorer.tsx`: the same CV/work skills as a compact icon list or an accessible family map.
+- `components/skill-explorer.tsx`: icon list, interactive map and repository catalogue entry points.
+- `components/skill-mind-map.tsx`: native pan/zoom/pinch, node/branch movement, folding, search and expanded-view controls.
+- `contents/about/repositories.generated.json`: individual repository/source records with contribution context.
+- `/about/manage` and `contents/about/skill-profile.json`: owner-entered familiarity and profile/repository/hidden visibility, shared by the icon list and map.
+- `npm run skills:sync`: refreshes repository evidence while preserving owner preferences; see `docs/skills-editor.md`.
+- `lib/skill-projects.ts`: source-backed project contexts for the expanded skills; see `docs/skill-evidence.md`.
 - `components/project-evidence.tsx`: actual team-project images with source attribution.
 - `contents/projects/`: selected project notes.
 - `contents/notes/index.md`: English writing index.

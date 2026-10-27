@@ -3,6 +3,7 @@ import fs from 'node:fs'
 import os from 'node:os'
 import path from 'node:path'
 import { createRequire } from 'node:module'
+import { createHash } from 'node:crypto'
 import { fileURLToPath } from 'node:url'
 import ts from 'typescript'
 
@@ -221,6 +222,134 @@ try {
   const corruptRemote = createGitHubTravelStore('fixture-token-not-a-credential', async () => Response.json({ type: 'file', encoding: 'base64', sha: 'fixture', content: Buffer.from('{broken').toString('base64') }))
   await assert.rejects(corruptRemote.read())
   console.log('repository storage: durable payload, fixed target, revision/remote conflicts and failure handling passed (mock HTTP only)')
+
+  const { skillProfileSchema, skillDefinitionsSchema, preferenceFor } = loadSource(path.join(root, 'lib/skill-preferences.ts'))
+  const definitions = skillDefinitionsSchema.parse(JSON.parse(fs.readFileSync(path.join(root, 'contents/about/skill-definitions.json'), 'utf8')))
+  skillProfileSchema.parse(JSON.parse(fs.readFileSync(path.join(root, 'contents/about/skill-profile.json'), 'utf8')))
+  assert.equal(new Set(definitions.skills.map((skill) => skill.id)).size, definitions.skills.length)
+  const { createSkillStore } = loadSource(path.join(root, 'lib/skill-store.ts'))
+  const skillSeed = { version: 1, updatedAt: null, entries: {} }
+  const skillFile = path.join(fixtures, 'skills.json'), skills = createSkillStore(skillFile, skillSeed)
+  const initialSkills = skills.read()
+  assert.deepEqual(preferenceFor(initialSkills.profile, 'cpp', true), { level: null, visibility: 'profile' })
+  const levelled = await skills.save(initialSkills.revision, { cpp: { level: 'comfortable', visibility: 'profile' }, mne: { level: 'used', visibility: 'hidden' } })
+  assert.equal(createSkillStore(skillFile, skillSeed).read().profile.entries.cpp.level, 'comfortable')
+  assert.equal(preferenceFor(levelled.profile, 'mne', true).visibility, 'hidden')
+  assert.equal((await skills.save(levelled.revision, { cpp: { level: 'comfortable', visibility: 'profile' } })).revision, levelled.revision, 'no-op level save keeps its revision')
+  await assert.rejects(skills.save(initialSkills.revision, { cpp: { level: 'strong', visibility: 'profile' } }), (error) => error.status === 409)
+  await assert.rejects(skills.save(levelled.revision, { cpp: { level: 'expert-100', visibility: 'profile' } }))
+  assert.equal(skills.read().revision, levelled.revision, 'invalid or stale settings cannot overwrite the file')
+  const reset = await skills.save(levelled.revision, { cpp: null })
+  assert.equal(reset.profile.entries.cpp, undefined)
+  const races = await Promise.allSettled([
+    skills.save(reset.revision, { java: { level: 'used', visibility: 'profile' } }),
+    createSkillStore(skillFile, skillSeed).save(reset.revision, { java: { level: 'learning', visibility: 'hidden' } }),
+  ])
+  assert.equal(races.filter((entry) => entry.status === 'fulfilled').length, 1)
+  assert.equal(races.filter((entry) => entry.status === 'rejected' && entry.reason.status === 409).length, 1)
+  const revisionBeforeExternalEdit = skills.read().revision
+  const originalWriteFile = fs.promises.writeFile
+  const externalSkillEdit = { version: 1, updatedAt: null, entries: { qt: { level: 'used', visibility: 'hidden' } } }
+  try {
+    fs.promises.writeFile = async (...args) => {
+      await originalWriteFile(...args)
+      if (String(args[0]).startsWith(`${skillFile}.`) && String(args[0]).endsWith('.tmp')) fs.writeFileSync(skillFile, JSON.stringify(externalSkillEdit))
+    }
+    await assert.rejects(skills.save(revisionBeforeExternalEdit, { java: { level: 'strong', visibility: 'profile' } }), (error) => error.status === 409)
+    assert.deepEqual(skills.read().profile, externalSkillEdit, 'an external edit during staging is preserved')
+  } finally { fs.promises.writeFile = originalWriteFile }
+  fs.writeFileSync(skillFile, '{broken')
+  assert.throws(() => skills.read())
+  assert.equal(fs.readFileSync(skillFile, 'utf8'), '{broken', 'corrupt skill settings are not replaced by defaults')
+  assert.equal(fs.readdirSync(fixtures).filter((name) => name.endsWith('.tmp')).length, 0)
+  const { skillOwner } = loadSource(path.join(root, 'lib/skill-owner.ts'))
+  const skillsOwnerRequest = (headers = {}) => new Request('https://www.kwanho.dev/api/skills', {
+    method: 'POST', headers: { cookie: `__Secure-next-auth.session-token=${encoded}`, origin: 'https://www.kwanho.dev', 'content-type': 'application/json', 'x-skills-editor-token': ownerCsrfToken(claims, testSecret, 'skills'), ...headers },
+  })
+  assert.equal((await skillOwner(skillsOwnerRequest(), authEnv))?.canWrite, true)
+  assert.equal((await skillOwner(skillsOwnerRequest({ 'x-skills-editor-token': ownerCsrfToken(claims, testSecret) }), authEnv))?.canWrite, false, 'travel CSRF cannot be used for skills')
+  assert.equal((await skillOwner(skillsOwnerRequest({ origin: 'https://elsewhere.example' }), authEnv))?.canWrite, false)
+  assert.equal(await skillOwner(skillsOwnerRequest({ cookie: '', authorization: `Bearer ${encoded}` }), authEnv), null)
+  assert.equal(await skillOwner(skillsOwnerRequest({ cookie: `__Secure-next-auth.session-token=${stranger}` }), authEnv), null)
+  assert.equal(await skillOwner(skillsOwnerRequest({ cookie: `__Secure-next-auth.session-token=${expired}` }), authEnv), null)
+  const { createGitHubSkillStore } = loadSource(path.join(root, 'lib/skill-github-store.ts'))
+  let remoteSkills = skillSeed, skillPuts = 0, skillConflict = false
+  const skillRemote = createGitHubSkillStore('fixture-token-not-a-credential', async (url, options) => {
+    assert.ok(String(url).startsWith('https://api.github.com/repos/KKWANH/blog/contents/contents/about/skill-profile.json'))
+    if (options.method !== 'PUT') return Response.json({ type: 'file', encoding: 'base64', sha: 'skill-blob', content: Buffer.from(JSON.stringify(remoteSkills)).toString('base64') })
+    skillPuts++
+    const body = JSON.parse(options.body)
+    assert.equal(body.sha, 'skill-blob'); assert.equal(body.branch, 'main')
+    if (skillConflict) return Response.json({}, { status: 409 })
+    remoteSkills = JSON.parse(Buffer.from(body.content, 'base64').toString('utf8'))
+    return Response.json({ commit: { sha: 'fixture-skill-commit' } })
+  })
+  const remoteSkillsInitial = await skillRemote.read()
+  const remoteSkillsSaved = await skillRemote.save(remoteSkillsInitial.revision, { figma: { level: 'used', visibility: 'profile' } })
+  assert.equal(remoteSkillsSaved.profile.entries.figma.level, 'used')
+  assert.equal(remoteSkillsSaved.publication.commit, 'fixture-skill-commit')
+  await assert.rejects(skillRemote.save(remoteSkillsInitial.revision, { figma: { level: null, visibility: 'hidden' } }), (error) => error.status === 409)
+  assert.equal(skillPuts, 1, 'stale skill revision never reaches GitHub PUT')
+  skillConflict = true
+  await assert.rejects(skillRemote.save(remoteSkillsSaved.revision, { figma: { level: null, visibility: 'hidden' } }), (error) => error.status === 409)
+  const envBackup = Object.fromEntries(['NODE_ENV', 'TRAVEL_EDITOR_ENABLED', 'SKILL_PROFILE_PATH'].map((key) => [key, process.env[key]]))
+  try {
+    process.env.NODE_ENV = 'development'; process.env.TRAVEL_EDITOR_ENABLED = '1'; process.env.SKILL_PROFILE_PATH = path.join(fixtures, 'api-skills.json')
+    const route = loadSource(path.join(root, 'app/api/skills/route.ts'))
+    const read = await route.GET(new Request('http://localhost:3100/api/skills', { headers: { host: 'localhost:3100' } }))
+    const payload = await read.json(); assert.equal(payload.editor.mode, 'local')
+    const apiRequest = (body, headers = {}) => new Request('http://localhost:3100/api/skills', { method: 'POST', headers: { host: 'localhost:3100', origin: 'http://localhost:3100', 'content-type': 'application/json', 'x-skills-editor-token': payload.editor.token, ...headers }, body: JSON.stringify(body) })
+    const apiSave = await route.POST(apiRequest({ revision: payload.revision, changes: { cpp: { level: 'comfortable', visibility: 'profile' } } }))
+    assert.equal(apiSave.status, 200)
+    assert.equal((await apiSave.json()).profile.entries.cpp.level, 'comfortable')
+    assert.equal((await route.POST(apiRequest({ revision: payload.revision, changes: { cpp: { level: null, visibility: 'hidden' } } }))).status, 409)
+    assert.equal((await route.POST(apiRequest({}, { origin: 'http://localhost:9999' }))).status, 403)
+    assert.equal((await route.POST(apiRequest({}, { 'x-skills-editor-token': '' }))).status, 403)
+    process.env.NODE_ENV = 'production'
+    assert.equal((await route.POST(apiRequest({}))).status, 403)
+  } finally {
+    for (const [key, value] of Object.entries(envBackup)) { if (value === undefined) delete process.env[key]; else process.env[key] = value }
+  }
+  console.log('skills: persistent levels/visibility, reset, conflict/corruption, scoped owner/CSRF and fixed GitHub path passed')
+
+  const { synchronizeRepositories, writeCatalogueAtomically, validateRepositoryOverrides } = await import('./sync-repositories.mjs')
+  validateRepositoryOverrides(JSON.parse(fs.readFileSync(path.join(root, 'contents/about/repository-overrides.json'), 'utf8')))
+  assert.throws(() => validateRepositoryOverrides({ version: 1, repositories: { sample: { scope: 'expert' } } }))
+  const reviewSeed = {
+    reviewedAt: '2026-10-27T00:00:00Z', count: 1, inspectedFiles: 1,
+    repositories: [{ name: 'sample', url: 'https://github.com/KKWANH/sample', description: '', scope: 'learning', scopeNote: 'Fixture project', status: 'reviewed', commit: 'a'.repeat(40), updatedAt: 'old', sources: [{ path: 'package.json', url: 'https://github.com/KKWANH/sample/blob/old/package.json' }], limitations: [], technologies: [] }],
+  }
+  const settingsBeforeSync = fs.readFileSync(path.join(root, 'contents/about/skill-profile.json'))
+  const syncRequests = []
+  const synced = await synchronizeRepositories({
+    previous: reviewSeed, overrides: { repositories: { sample: { scope: 'ai-directed', scopeNote: 'AI-directed fixture' } } },
+    request: async (url, options) => {
+      syncRequests.push(String(url)); assert.ok(!options.method || options.method === 'GET', 'sync only reads GitHub')
+      if (String(url).includes('/users/')) return Response.json([{ name: 'sample', owner: { login: 'KKWANH' }, html_url: 'https://github.com/KKWANH/sample', default_branch: 'main', pushed_at: 'new', size: 1, fork: false }])
+      if (String(url).includes('/commits/')) return Response.json({ sha: 'b'.repeat(40) })
+      if (String(url).includes('/git/trees/')) return Response.json({ tree: [{ type: 'blob', path: 'package.json' }, { type: 'blob', path: 'src/private.py' }], truncated: false })
+      if (String(url).endsWith('/package.json')) return new Response(JSON.stringify({ dependencies: { react: '19', typescript: '5' } }))
+      throw new Error(`Unexpected fixture request ${url}`)
+    },
+    now: '2026-10-28T00:00:00Z',
+  })
+  assert.equal(synced.catalogue.repositories[0].status, 'needs-review')
+  assert.equal(synced.catalogue.repositories[0].scope, 'ai-directed')
+  assert.ok(synced.catalogue.repositories[0].technologies.some((tech) => tech.id === 'react'))
+  assert.ok(!syncRequests.some((url) => url.endsWith('.py')), 'restricted Python source is not fetched by an alternate path')
+  assert.deepEqual(fs.readFileSync(path.join(root, 'contents/about/skill-profile.json')), settingsBeforeSync)
+  const reused = await synchronizeRepositories({ previous: synced.catalogue, overrides: { repositories: {} }, request: async (url) => {
+    assert.ok(String(url).includes('/users/'), 'unchanged repositories do not trigger tree/source reads')
+    return Response.json([{ name: 'sample', owner: { login: 'KKWANH' }, html_url: 'https://github.com/KKWANH/sample', default_branch: 'main', pushed_at: 'new', size: 1 }])
+  } })
+  assert.equal(reused.report.reused.length, 1)
+  await assert.rejects(synchronizeRepositories({ previous: reviewSeed, overrides: { repositories: {} }, request: async () => Response.json({}, { status: 403 }) }))
+  const syncFile = path.join(fixtures, 'generated.json'); fs.writeFileSync(syncFile, '{"old":true}')
+  const expectedHash = createHash('sha256').update(fs.readFileSync(syncFile)).digest('hex')
+  fs.writeFileSync(syncFile, '{"other-agent":true}')
+  await assert.rejects(writeCatalogueAtomically(syncFile, '{}', expectedHash))
+  assert.equal(fs.readFileSync(syncFile, 'utf8'), '{"other-agent":true}')
+  console.log('repository sync: incremental read-only updates, review boundaries, owner-setting preservation and write conflicts passed')
 
   const gallery = JSON.parse(fs.readFileSync(path.join(root, 'contents/photography/photos.json'), 'utf8'))
   assert.equal(typeof gallery.published, 'boolean')

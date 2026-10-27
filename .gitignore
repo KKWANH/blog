@@ -44,6 +44,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 contents/travel/*.tmp
+contents/about/*.tmp
 contents/photography/*.tmp
 contents/photography/*.lock
 /public/maplibre-worker.mjs

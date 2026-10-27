@@ -43,7 +43,11 @@ Project cards preserve the live site's pointer highlight, 4px lift and artwork m
 
 The card's printed face contains identity and native email/website links, each with an adequate hit area. A decorative C++ impression, fibre grain and a fine inset rule add print detail. CV, email, vCard, LinkedIn and copy-summary controls also remain outside the paper.
 
-Work and education stay open. The Skills section has a compact icon list and an optional mind map of the same four skill families. Its native buttons select work/project context or an explicitly identified CV entry. CV-only languages/protocols are not assigned to an employer without supporting context. The diagram represents categories, not proficiency.
+Work and education stay open. Skills offers an icon list, a real interactive map and the complete repository catalogue. The map has a camera with pan/zoom/pinch, draggable nodes and branches, folding, search, an overview navigator and an expanded dialog. A skill connects to actual work or source-linked repositories; repository stacks carry their own contribution context.
+
+The center represents Kwanho with a neutral identity icon. Clicking empty background steps out to the overview; double-click/tap zooms at the pointer and Shift-double-click zooms out. Familiarity badges are owner-entered labels shared with the icon list. Hidden skills leave those views while historical repository facts remain in their records.
+
+Normal wheel scrolling passes through the embedded map. Modifier-wheel/pinch and explicit controls zoom it. Offscreen nodes leave the tab order; search, keyboard camera controls and the normal list provide access. Optional camera transitions follow the shared motion preference.
 
 Company-mark buttons lead to the corresponding record and focus it. The full timeline row can be activated. Selecting a skill itself does not unexpectedly scroll the page.
 

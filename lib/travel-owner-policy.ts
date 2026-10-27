@@ -14,14 +14,14 @@ export function validOwnerClaims(value: Record<string, unknown> | null, ownerId:
     typeof value.travelCsrfKey === 'string' && value.travelCsrfKey.length >= 20
 }
 
-export function ownerCsrfToken(claims: OwnerClaims, secret: string) {
-  return createHmac('sha256', secret).update(`travel:${claims.ownerId}:${claims.travelCsrfKey}`).digest('base64url')
+export function ownerCsrfToken(claims: OwnerClaims, secret: string, purpose = 'travel') {
+  return createHmac('sha256', secret).update(`${purpose}:${claims.ownerId}:${claims.travelCsrfKey}`).digest('base64url')
 }
 
-export function ownerWriteAllowed(request: Request, expectedOrigin: string, expectedToken: string) {
+export function ownerWriteAllowed(request: Request, expectedOrigin: string, expectedToken: string, headerName = 'x-travel-editor-token') {
   if (request.headers.get('origin') !== expectedOrigin) return false
   if (!request.headers.get('content-type')?.toLowerCase().startsWith('application/json')) return false
-  const supplied = Buffer.from(request.headers.get('x-travel-editor-token') ?? '')
+  const supplied = Buffer.from(request.headers.get(headerName) ?? '')
   const expected = Buffer.from(expectedToken)
   return supplied.length === expected.length && timingSafeEqual(supplied, expected)
 }

@@ -17,6 +17,11 @@ Downloaded and inspected on 27 October 2026. Assets are served locally; visitors
 | `git.svg` | https://cdn.jsdelivr.net/npm/simple-icons@16.36.0/icons/git.svg | Paths unchanged; explicit fill. |
 | `docker.svg` | https://cdn.jsdelivr.net/npm/simple-icons@16.36.0/icons/docker.svg | Paths unchanged; explicit fill. |
 | `linux.svg` | https://cdn.jsdelivr.net/npm/simple-icons@16.36.0/icons/linux.svg | Paths unchanged; single-colour silhouette. |
+| `figma.svg` | https://cdn.jsdelivr.net/npm/simple-icons@16.36.0/icons/figma.svg | Paths unchanged; explicit fill. Owner-stated working familiarity. |
+| `qt.svg` | https://cdn.jsdelivr.net/npm/simple-icons@16.36.0/icons/qt.svg | Paths unchanged; explicit fill, displayed on a dark surface. |
+| `nginx.svg` | https://cdn.jsdelivr.net/npm/simple-icons@16.36.0/icons/nginx.svg | Paths unchanged; explicit fill. |
+| `django.svg`, `numpy.svg`, `pandas.svg`, `scikitlearn.svg` | Corresponding icon paths in https://cdn.jsdelivr.net/npm/simple-icons@16.36.0/icons/ | Paths unchanged; explicit single-colour fills. |
+| `unity.svg`, `html5.svg`, `css.svg`, `raspberrypi.svg`, `gnubash.svg` | Corresponding icon paths in https://cdn.jsdelivr.net/npm/simple-icons@16.36.0/icons/ | Paths unchanged; explicit single-colour fills. |
 
 The Simple Icons CC0 license is retained at `public/brands/simple-icons-LICENSE.md`. Employer marks remain their owners' trademarks and identify the stated employment context. They are not presented as endorsements or as personal branding.
 

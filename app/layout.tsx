@@ -10,6 +10,8 @@ import '../styles/notebook.css'
 import '../styles/fieldbook.css'
 import '../styles/cinema.css'
 import '../styles/profile.css'
+import '../styles/mind-map.css'
+import '../styles/skill-editor.css'
 import '../styles/stationery.css'
 
 const figtree = localFont({

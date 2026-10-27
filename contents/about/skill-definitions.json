@@ -1,0 +1,299 @@
+{
+  "version": 1,
+  "groups": [
+    {
+      "id": "languages",
+      "label": "Languages"
+    },
+    {
+      "id": "web",
+      "label": "UI & web"
+    },
+    {
+      "id": "systems",
+      "label": "Interfaces & recovery"
+    },
+    {
+      "id": "tools",
+      "label": "Tools & platforms"
+    },
+    {
+      "id": "practice",
+      "label": "C/C++ project practice"
+    },
+    {
+      "id": "design",
+      "label": "Design & prototyping"
+    },
+    {
+      "id": "data",
+      "label": "Data-science coursework"
+    }
+  ],
+  "skills": [
+    {
+      "id": "cpp",
+      "label": "C++",
+      "detail": "Application and device software",
+      "group": "languages"
+    },
+    {
+      "id": "c",
+      "label": "C",
+      "detail": "Shell and pthreads coursework",
+      "group": "languages"
+    },
+    {
+      "id": "python",
+      "label": "Python",
+      "detail": "Communication clients and prototypes",
+      "group": "languages"
+    },
+    {
+      "id": "asm",
+      "label": "x86-64 ASM",
+      "detail": "42 assembly exercises",
+      "group": "languages"
+    },
+    {
+      "id": "csharp",
+      "label": "C#",
+      "detail": "Earlier Unity project practice",
+      "group": "languages"
+    },
+    {
+      "id": "java",
+      "label": "Java",
+      "detail": "Algorithm exercises and small Java programs",
+      "group": "languages"
+    },
+    {
+      "id": "shell",
+      "label": "Shell",
+      "detail": "Setup scripts and shell configuration",
+      "group": "languages"
+    },
+    {
+      "id": "javascript",
+      "label": "JavaScript",
+      "detail": "Programming language listed in the CV",
+      "group": "web"
+    },
+    {
+      "id": "typescript",
+      "label": "TypeScript",
+      "detail": "Programming language listed in the CV",
+      "group": "web"
+    },
+    {
+      "id": "react",
+      "label": "React",
+      "detail": "Operator and configuration interfaces",
+      "group": "web"
+    },
+    {
+      "id": "qt",
+      "label": "Qt / QML",
+      "detail": "SEA:ME instrument-cluster prototype",
+      "group": "web"
+    },
+    {
+      "id": "html",
+      "label": "HTML",
+      "detail": "Web and Django coursework",
+      "group": "web"
+    },
+    {
+      "id": "css",
+      "label": "CSS",
+      "detail": "Web and Django coursework",
+      "group": "web"
+    },
+    {
+      "id": "django",
+      "label": "Django",
+      "detail": "42 Django course projects and declared dependencies",
+      "group": "web"
+    },
+    {
+      "id": "interfaces",
+      "label": "Interfaces",
+      "detail": "Messages, devices and integration",
+      "group": "systems"
+    },
+    {
+      "id": "recovery",
+      "label": "Recovery",
+      "detail": "Fault handling and reconnect behaviour",
+      "group": "systems"
+    },
+    {
+      "id": "websocket",
+      "label": "WebSocket",
+      "detail": "Pickit communication client",
+      "group": "systems"
+    },
+    {
+      "id": "rest",
+      "label": "REST",
+      "detail": "Interface technology listed in the CV",
+      "group": "systems"
+    },
+    {
+      "id": "can",
+      "label": "CAN bus",
+      "detail": "SEA:ME team-project context",
+      "group": "systems"
+    },
+    {
+      "id": "dbus",
+      "label": "D-Bus",
+      "detail": "Qt instrument-cluster signal receiver",
+      "group": "systems"
+    },
+    {
+      "id": "raspberrypi",
+      "label": "Raspberry Pi",
+      "detail": "SEA:ME PiRacer assembly and instrument projects",
+      "group": "systems"
+    },
+    {
+      "id": "carla",
+      "label": "CARLA",
+      "detail": "SEA:ME lane-keeping simulation project",
+      "group": "systems"
+    },
+    {
+      "id": "git",
+      "label": "Git",
+      "detail": "Version control and public project source",
+      "group": "tools"
+    },
+    {
+      "id": "docker",
+      "label": "Docker",
+      "detail": "Documented team-prototype environment",
+      "group": "tools"
+    },
+    {
+      "id": "linux",
+      "label": "Linux",
+      "detail": "Documented team-prototype environment",
+      "group": "tools"
+    },
+    {
+      "id": "ros",
+      "label": "ROS 2",
+      "detail": "The BCX team simulation prototype",
+      "group": "tools"
+    },
+    {
+      "id": "compose",
+      "label": "Docker Compose",
+      "detail": "42 Inception service configuration",
+      "group": "tools"
+    },
+    {
+      "id": "nginx",
+      "label": "NGINX",
+      "detail": "42 Inception service configuration",
+      "group": "tools"
+    },
+    {
+      "id": "make",
+      "label": "Make",
+      "detail": "C/C++ project build files",
+      "group": "tools"
+    },
+    {
+      "id": "qmake",
+      "label": "qmake",
+      "detail": "Qt project build configuration",
+      "group": "tools"
+    },
+    {
+      "id": "containers",
+      "label": "C++ containers",
+      "detail": "Vector, stack, AVL-backed map and iterators",
+      "group": "practice"
+    },
+    {
+      "id": "processes",
+      "label": "Unix processes",
+      "detail": "Minishell: fork, exec, pipes and signals",
+      "group": "practice"
+    },
+    {
+      "id": "threads",
+      "label": "Threads & mutexes",
+      "detail": "C/pthreads coursework",
+      "group": "practice"
+    },
+    {
+      "id": "http",
+      "label": "HTTP / sockets",
+      "detail": "C++ webserv team project",
+      "group": "practice"
+    },
+    {
+      "id": "raycasting",
+      "label": "Raycasting",
+      "detail": "C cub3D graphics coursework",
+      "group": "practice"
+    },
+    {
+      "id": "minilibx",
+      "label": "MiniLibX",
+      "detail": "Authored cub3D drawing and initialization code",
+      "group": "practice"
+    },
+    {
+      "id": "figma",
+      "label": "Figma",
+      "detail": "Working familiarity, owner stated",
+      "group": "design"
+    },
+    {
+      "id": "ui-design",
+      "label": "UI design",
+      "detail": "Basic design familiarity, owner stated",
+      "group": "design"
+    },
+    {
+      "id": "unity",
+      "label": "Unity",
+      "detail": "Earlier C# game/prototype practice",
+      "group": "design"
+    },
+    {
+      "id": "numpy",
+      "label": "NumPy",
+      "detail": "Declared data-science course dependencies",
+      "group": "data"
+    },
+    {
+      "id": "pandas",
+      "label": "Pandas",
+      "detail": "Declared data-science course dependencies",
+      "group": "data"
+    },
+    {
+      "id": "matplotlib",
+      "label": "Matplotlib",
+      "detail": "Plotting dependencies in data-science coursework",
+      "group": "data"
+    },
+    {
+      "id": "sklearn",
+      "label": "scikit-learn",
+      "detail": "Declared regression/BCI course dependencies",
+      "group": "data"
+    },
+    {
+      "id": "mne",
+      "label": "MNE",
+      "detail": "BCI coursework README and setup dependencies",
+      "group": "data"
+    }
+  ]
+}

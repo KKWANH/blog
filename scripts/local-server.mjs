@@ -41,6 +41,7 @@ export async function startLocalServer({ editor = false, production = false } = 
   console.log(`Profile: ${localUrl}/about`)
   if (env.DEV_STUDIO_DIR) console.log(`Design studio: ${localUrl}/studio/`)
   if (editor) console.log(`Local atlas editor: ${localUrl}/travel/manage`)
+  if (editor) console.log(`Local skill editor: ${localUrl}/about/manage`)
 
   const child = spawn(process.execPath, [
     path.join(root, 'node_modules/next/dist/bin/next'), production ? 'start' : 'dev',

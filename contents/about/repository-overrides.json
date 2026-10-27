@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "repositories": {
+    "ai-assistant": {
+      "scope": "ai-directed",
+      "scopeNote": "AI-directed/configured project; implementation expertise is not inferred."
+    },
+    "blog": {
+      "scope": "profile",
+      "scopeNote": "Owner-directed portfolio with AI-assisted implementation."
+    },
+    "ColorSavesLife": {
+      "scope": "project",
+      "scopeNote": "Owner-confirmed team project; challenge award and bounded contribution."
+    },
+    "MarioThread": {
+      "scope": "learning",
+      "scopeNote": "Learning/team adaptation of a credited upstream Qt racing project."
+    },
+    "QuantumPang": {
+      "scope": "learning",
+      "scopeNote": "Earlier Unity/C# project practice."
+    },
+    "QuantumPang2": {
+      "scope": "learning",
+      "scopeNote": "Early Unity menu/scene prototype; broad gameplay implementation is not established."
+    }
+  }
+}

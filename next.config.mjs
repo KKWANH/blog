@@ -6,13 +6,13 @@ const nextConfig = {
   },
   async headers() {
     return process.env.NODE_ENV === 'production'
-      ? [{
-          source: '/travel/manage',
+      ? ['/travel/manage', '/about/manage'].map((source) => ({
+          source,
           headers: [
             { key: 'X-Frame-Options', value: 'DENY' },
             { key: 'Content-Security-Policy', value: "frame-ancestors 'none'" },
           ],
-        }]
+        }))
       : []
   },
   images: {

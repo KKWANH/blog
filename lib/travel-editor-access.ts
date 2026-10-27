@@ -21,9 +21,9 @@ export function travelEditorToken() {
   return runtime.__kwanhoTravelEditorToken ??= randomBytes(32).toString('base64url')
 }
 
-export function travelWriteAllowed(request: Request, env: NodeJS.ProcessEnv = process.env) {
+export function travelWriteAllowed(request: Request, env: NodeJS.ProcessEnv = process.env, headerName = 'x-travel-editor-token') {
   if (!localTravelEditor(request, env) || !localHost(request.headers.get('origin'))) return false
-  const supplied = request.headers.get('x-travel-editor-token') ?? ''
+  const supplied = request.headers.get(headerName) ?? ''
   const expected = travelEditorToken()
   const left = Buffer.from(supplied), right = Buffer.from(expected)
   return left.length === right.length && timingSafeEqual(left, right)

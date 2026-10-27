@@ -1,3 +1,6 @@
+import definitions from '@/contents/about/skill-definitions.json'
+import { skillDefinitionsSchema } from '@/lib/skill-preferences'
+
 export const profile = {
   name: 'Kwanho Kim',
   role: 'C++ Software Engineer',
@@ -73,32 +76,13 @@ export const education = [
   { id: 'business-degree', start: '2019-04', end: '2022-08', subject: 'Business Administration', institution: 'Academic Credit Bank System', period: '2019–2022', status: "Bachelor's degree awarded" },
 ] as const
 
-export const careerSkills = [
-  { id: 'cpp', label: 'C++', detail: 'Application and device software', group: 'languages' },
-  { id: 'c', label: 'C', detail: 'Programming language listed in the CV', group: 'languages' },
-  { id: 'python', label: 'Python', detail: 'Communication clients and prototypes', group: 'languages' },
-  { id: 'javascript', label: 'JavaScript', detail: 'Programming language listed in the CV', group: 'web' },
-  { id: 'typescript', label: 'TypeScript', detail: 'Programming language listed in the CV', group: 'web' },
-  { id: 'react', label: 'React', detail: 'Operator and configuration interfaces', group: 'web' },
-  { id: 'interfaces', label: 'Interfaces', detail: 'Messages, devices and integration', group: 'systems' },
-  { id: 'recovery', label: 'Recovery', detail: 'Fault handling and reconnect behaviour', group: 'systems' },
-  { id: 'websocket', label: 'WebSocket', detail: 'Pickit communication client', group: 'systems' },
-  { id: 'rest', label: 'REST', detail: 'Interface technology listed in the CV', group: 'systems' },
-  { id: 'git', label: 'Git', detail: 'Version control and public project source', group: 'tools' },
-  { id: 'docker', label: 'Docker', detail: 'Documented team-prototype environment', group: 'tools' },
-  { id: 'linux', label: 'Linux', detail: 'Documented team-prototype environment', group: 'tools' },
-  { id: 'ros', label: 'ROS 2', detail: 'The BCX team simulation prototype', group: 'tools' },
-] as const
+const parsedDefinitions = skillDefinitionsSchema.parse(definitions)
+export const careerSkills = parsedDefinitions.skills
 
 export type CareerSkill = typeof careerSkills[number]['id']
 export type CareerSkillGroup = typeof careerSkills[number]['group']
 
-export const careerSkillGroups: Array<{ id: CareerSkillGroup; label: string }> = [
-  { id: 'languages', label: 'Languages' },
-  { id: 'web', label: 'UI & web' },
-  { id: 'systems', label: 'Interfaces & recovery' },
-  { id: 'tools', label: 'Tools & platforms' },
-]
+export const careerSkillGroups = parsedDefinitions.groups
 
 export const projectSkillIds: readonly CareerSkill[] = ['python', 'interfaces', 'ros', 'git', 'docker', 'linux']
 
