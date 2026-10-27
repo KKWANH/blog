@@ -14,12 +14,16 @@ npm run test:content
 npm run build
 ```
 
+The fixed local address is **http://localhost:3100**. `npm run dev:edit` uses the same address with local Travel editing enabled. `npm run preview` reviews a completed production build on that address. A busy port fails clearly instead of selecting another one. See `docs/local-preview.md`.
+
 For production metadata, set `NEXT_PUBLIC_SITE_URL` to the preferred public origin, including `https://`.
 
 ## Content
 
-- `contents/about/index.tsx` and `components/contact-card.tsx`: contact card and recruiter brief. `/editor` redirects to `/about`.
-- `components/collectible-card.tsx`: the portrait/field-note object, with independent tilt, light and flip layers.
+- `contents/about/index.tsx` and `components/profile-overview.tsx`: open experience, education and skill-linked work. `/editor` redirects to `/about`.
+- `components/career-timeline.tsx` and `components/career-evidence.tsx`: dated overview and the selected work-scope view.
+- `components/skill-explorer.tsx`: the same CV/work skills as a compact icon list or an accessible family map.
+- `components/project-evidence.tsx`: actual team-project images with source attribution.
 - `contents/projects/`: selected project notes.
 - `contents/notes/index.md`: English writing index.
 - `contents/notes/device-readback/index.md`: an English engineering note using a generic example.
@@ -40,7 +44,9 @@ See `docs/design.md` for the type, colour, interaction and responsive decisions.
 
 The site uses one forest/ivory treatment, a plain name wordmark and the owner's photographs. There is no light/dark toggle or separate K monogram. Motion can be paused in the header/footer and follows the system's reduced-motion preference.
 
-Fonts are self-hosted Google Fonts subsets with OFL notices in `public/font/`. The small browser icons use a crop of the window photograph. Regenerate them with:
+Technology and employer marks use locally served SVG/PNG artwork with documented sources in `docs/brand-assets.md`. On About, they connect to supported work/project context or the CV entry. The paper introduction includes active contact links and three equally weighted portraits, led by the camera photograph.
+
+Figtree and Caveat are self-hosted Google Fonts subsets with OFL notices in `public/font/`. The paper introduction uses Georgia with system-serif fallbacks for the name. The small browser icons use a crop of the window photograph. Regenerate them with:
 
 ```sh
 node scripts/generate-icons.mjs
@@ -48,7 +54,9 @@ node scripts/generate-icons.mjs
 
 The travel map uses the bundled Natural Earth country geometry and existing visited-city data. It provides country/city overview and selection, without an external raster tile API. It does not provide street-level mapping.
 
-For local add/edit/remove/undo, run `npm run dev:edit` and choose Manage places on `/travel`. Saves update `contents/travel/places.json`; publication remains a separate action. Production editing is disabled. See `docs/travel-editor.md`.
+Choose **Edit atlas** on `/travel` to open `/travel/manage`. Local editing uses `npm run dev:edit` and writes `contents/travel/places.json`. Published-site editing requires the owner's GitHub sign-in and a repository-scoped GitHub App; it is disabled until configured. See `docs/travel-owner.md` for setup and `docs/travel-editor.md` for the data workflow.
+
+MapLibre's worker is self-hosted. `postinstall`, `prebuild` and the local launcher prepare the matching worker/license from the installed package. A direct `next build` invocation should first run `node scripts/prepare-map-worker.mjs`.
 
 The photo gallery supports collections, a full-image viewer and keyboard navigation. Use `npm run photos:add -- --file ... --title ... --alt ... --collection ...` to prepare a real collection locally. The development-only portrait sample is not published as the owner's photography. See `docs/photography.md`.
 

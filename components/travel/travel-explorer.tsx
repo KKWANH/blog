@@ -2,7 +2,8 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import dynamic from 'next/dynamic'
-import { Search, Pencil, Plus, LocateFixed, Undo2 } from 'lucide-react'
+import Link from 'next/link'
+import { Search, Pencil, Plus, LocateFixed, Undo2, LockKeyhole } from 'lucide-react'
 import { MapBoundary } from './map-boundary'
 import { StayLevel, levelConfig, type MapUnit, type TravelCity, type TravelEditorAccess, type TravelSnapshot } from './travel-types'
 
@@ -14,6 +15,10 @@ const TravelEditor = dynamic(() => import('./travel-editor').then((module) => mo
   ssr: false,
   loading: () => <span className="sr-only" role="status">Opening place editor…</span>,
 })
+const TravelOwnerPanel = dynamic(() => import('./travel-owner-panel').then((module) => module.TravelOwnerPanel), {
+  ssr: false,
+  loading: () => <div className="owner-panel" role="status">Checking owner access…</div>,
+})
 const normalize = (value: string) => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim()
 function matchesFilters(place: TravelCity, query: string, country: string, level: StayLevel | 'all') {
   const term = normalize(query)
@@ -22,7 +27,7 @@ function matchesFilters(place: TravelCity, query: string, country: string, level
     (!term || normalize(`${place.city} ${place.country} ${place.countryCode}`).includes(term))
 }
 
-export function TravelExplorer({ initialSnapshot }: { initialSnapshot: TravelSnapshot }) {
+export function TravelExplorer({ initialSnapshot, ownerMode = false }: { initialSnapshot: TravelSnapshot; ownerMode?: boolean }) {
   const [snapshot, setSnapshot] = useState(initialSnapshot)
   const [access, setAccess] = useState<TravelEditorAccess | null>(null)
   const [query, setQuery] = useState('')
@@ -30,7 +35,8 @@ export function TravelExplorer({ initialSnapshot }: { initialSnapshot: TravelSna
   const [level, setLevel] = useState<StayLevel | 'all'>('all')
   const [mapUnit, setMapUnit] = useState<MapUnit>('city')
   const [activeId, setActiveId] = useState<string | null>(null)
-  const [managing, setManaging] = useState(false)
+  const [accessLoading, setAccessLoading] = useState(true)
+  const [signInAvailable, setSignInAvailable] = useState(false)
   const [editorOpen, setEditorOpen] = useState(false)
   const [editingPlace, setEditingPlace] = useState<TravelCity | null>(null)
   const [notice, setNotice] = useState('')
@@ -45,13 +51,16 @@ export function TravelExplorer({ initialSnapshot }: { initialSnapshot: TravelSna
     try {
       const response = await fetch('/api/travel', { cache: 'no-store', signal })
       const data = await response.json()
-      if (!response.ok) throw new Error(data.error ?? 'The atlas could not be refreshed.')
       if (signal?.aborted) return
+      setSignInAvailable(Boolean(data.ownerSignInAvailable))
+      setAccess(data.editor ?? null)
+      if (!response.ok) throw new Error(data.error ?? 'The atlas could not be refreshed.')
       setSnapshot((current) => current.revision === data.revision ? current : { places: data.places, revision: data.revision, updatedAt: data.updatedAt })
-      setAccess(data.editor)
       setLoadError('')
     } catch (error) {
       if (!signal?.aborted) setLoadError(error instanceof Error ? error.message : 'Could not refresh the atlas.')
+    } finally {
+      if (!signal?.aborted) setAccessLoading(false)
     }
   }, [])
 
@@ -70,6 +79,7 @@ export function TravelExplorer({ initialSnapshot }: { initialSnapshot: TravelSna
   const activeCity = places.find((place) => place.id === activeId) ?? null
   const filtered = Boolean(query || country !== 'all' || level !== 'all')
   const lived = snapshot.places.filter((place) => place.level === StayLevel.LivedThere).length
+  const managing = ownerMode && Boolean(access) && !loadError && !accessLoading
 
   useEffect(() => {
     if (activeId && !places.some((place) => place.id === activeId)) setActiveId(null)
@@ -126,19 +136,20 @@ export function TravelExplorer({ initialSnapshot }: { initialSnapshot: TravelSna
 
   return (
     <div className="atlas">
+      {ownerMode ? <TravelOwnerPanel access={access} configured={signInAvailable} loading={accessLoading} error={loadError} /> : null}
       <div className="atlas-topline">
         <p className="atlas-counts"><strong>{snapshot.places.length}</strong> places <span>/</span> <strong>{countries.length}</strong> countries <span>/</span> <strong>{lived}</strong> lived in</p>
-        {access ? <button type="button" className="action-button" aria-pressed={managing} onClick={() => setManaging(!managing)}><Pencil aria-hidden="true" />{managing ? 'Done editing' : 'Manage places'}</button> : null}
+        {!ownerMode ? <Link className="action-button" href="/travel/manage"><LockKeyhole aria-hidden="true" />Edit atlas</Link> : null}
       </div>
       {access && managing ? (
         <div className="atlas-owner-bar">
-          <div><strong>Local editor</strong><p>Changes are saved here and included in the next publish.</p></div>
+          <div><strong>Manage places</strong><p>{access.mode === 'github' ? 'Saved changes are published through the blog repository.' : 'Changes are saved here and included in the next publish.'}</p></div>
           <button ref={addButton} type="button" className="action-button action-primary" onClick={() => edit(null)}><Plus aria-hidden="true" />Add place</button>
         </div>
       ) : null}
       {loadError ? <div className="atlas-message atlas-error" role="alert"><span>{loadError}</span><button type="button" onClick={() => void refresh()}>Reload atlas</button></div> : null}
       <div className="atlas-live" role="status" aria-live="polite">
-        {notice ? <span>{notice} <small>Saved locally.</small></span> : null}
+        {notice ? <span>{notice} <small>{access?.mode === 'github' ? 'Saved to GitHub. Deployment may take a moment.' : 'Saved locally.'}</small></span> : null}
         {undo && access ? <button type="button" onClick={() => void restore()} aria-disabled={undoing}><Undo2 aria-hidden="true" />{undoing ? 'Restoring…' : `Undo removal of ${undo.city}`}</button> : null}
       </div>
       <div className="atlas-filters">

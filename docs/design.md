@@ -1,6 +1,6 @@
 # Design: window light
 
-The site uses a single forest environment with ivory type and warm reflected light. The owner's window photograph provides a physical source for the colour and movement. Identity, career facts and contact actions remain readable while the photographic objects respond.
+The site uses a single forest environment with ivory type and warm reflected light. The owner's window photograph supplies the atmosphere. The profile now gives its visual weight to open chronology, linked skills and actual work material rather than a portrait-card effect.
 
 ## Identity and type
 
@@ -30,30 +30,41 @@ The `.dark` class also supplies semantic colours to the older study guides. It d
 - `motion-provider.tsx`: system reduced-motion preference, pause persistence, page visibility and shared availability.
 - `atmosphere.tsx`: pointer/scroll response of the preblurred photographic environment and light. No animated blur.
 - `tilt-surface.tsx`: stable hit area; frame-scheduled CSS-variable updates; touch direction threshold; offscreen reset.
-- `collectible-card.tsx`: independent tilt/turn/material state, inactive-face inertness and explicit keyboard control.
+- `profile-overview.tsx`: open career/education records; skill selection focuses related evidence without hiding the other entries.
+- `career-timeline.tsx`: parallel work/study periods. Undated completed programs stay outside the scaled chart.
 
 The environment moves up to 12/8px with the pointer. The separate light direction moves up to 48/24px; scroll reduces atmospheric intensity and shifts it by 24px. A slow light plane adds 8–16px drift. The foreground photograph has a smaller tilt than the contact object.
 
-The contact card uses 1000px perspective, ±12° yaw/±9° pitch and up to 10px lift. Tracking uses about 90ms damping, with a softer approximately 420ms return. The inner face turns 180° over 640ms. Light is retained while orientation flattens; the edge and opposing shadow communicate thickness.
+The former portrait flip and field-note reverse have been removed. The introduction now uses a landscape 85:55 paper calling card, with a serif name, dark green ink, static grain and a fine edge. Three supplied portraits appear as separate prints. Skill icons still highlight supported role/project relationships; there are no proficiency scores or invented metrics.
 
 Project cards preserve the live site's pointer highlight, 4px lift and artwork movement. Button lift eases over 170ms; pressed feedback is faster. Work sections translate slightly on entry where scroll timelines are supported; text is never faded away.
 
 ## Reading and input
 
-CV, email, vCard and recruiter brief remain outside the moving faces. Mobile uses an in-flow action row that can stick below the measured header while the card is handled. It does not overlay the bottom of the viewport. Short screens or enlarged type use normal flow.
+The card's printed face contains identity and native email/website links, each with an adequate hit area. A decorative C++ impression, fibre grain and a fine inset rule add print detail. CV, email, vCard, LinkedIn and copy-summary controls also remain outside the paper.
 
-Turn is a native button, logically before the active face, with state announcement and stable focus. Forward Tab reaches the revealed note link. The inactive side is inert and hidden from accessibility APIs. Escape returns to the portrait. Touch supports a deliberate horizontal drag while preserving vertical scrolling and pinch zoom.
+Work and education stay open. The Skills section has a compact icon list and an optional mind map of the same four skill families. Its native buttons select work/project context or an explicitly identified CV entry. CV-only languages/protocols are not assigned to an employer without supporting context. The diagram represents categories, not proficiency.
 
-Pause is available in the header and footer. Reduced motion or manual pause removes spatial effects and travelling light, and switches faces immediately. Content and native links remain available.
+Company-mark buttons lead to the corresponding record and focus it. The full timeline row can be activated. Selecting a skill itself does not unexpectedly scroll the page.
+
+Normal mobile cards retain the landscape ratio. At enlarged type, the card can grow vertically, the name/email have meaningful break points and contact buttons stack. Paper movement is limited to 3° pitch, 4° yaw and 3px lift, governed by the shared motion controls.
+
+The narrow timeline starts with recent work, retains sticky labels and exposes a horizontal-scroll cue. The complete record follows in ordinary text. Public project artifacts have useful alternative text, intrinsic image proportions and visible full-size links.
+
+Pause is available in the header and footer. Reduced motion or manual pause removes spatial effects and travelling light. Content and native links remain available.
 
 Dialogs retain opaque text/background during entry; only a small scale transition remains. Focus is contained and returned to the opener. Controls target at least 44px.
 
 ## Photography and content
 
-The main window photograph and professional portrait are separate roles. Facial details were not generated. The professional portrait is confined to the contact card.
+The supplied camera portrait leads About's three equally sized prints. The formal and window portraits retain comparable visual weight. On phones, a horizontal strip keeps each picture large rather than reducing three faces to tiny thumbnails. Small derivatives reduce page weight. Normal activation opens a keyboard-operable viewer with focus return; modified clicks and no-JS use retain native image links.
+
+Actual C++, Python, React and ROS SVG marks and employer SVG/PNG artwork are served locally. See `brand-assets.md` for sources. Generic interfaces/recovery concepts keep ordinary UI symbols.
+
+Color Saves Life uses actual team screenshots and a silent demonstration with deliberate playback. The film is not preloaded merely by opening the page. See `project-media.md` for source and attribution.
 
 The future gallery uses a contact sheet, collection filters and a keyboard-operable image viewer. A clearly labelled local preview does not become a public empty gallery. See `photography.md`.
 
 English is the default for current copy/UI. Korean study archives retain their language and AI/public-source provenance. Career descriptions distinguish contribution, current stage and validation limits. Ariadne is an AI-built/configured experiment, not evidence of retrieval-system expertise.
 
-Travel retains the local-data editor, validation, conflict handling and production write restrictions described in `travel-editor.md`.
+Travel has a visible owner entrance. Local editing and authenticated repository editing share validation/conflict handling. Published writes require the configured owner's encrypted GitHub session, origin and CSRF checks; see `travel-owner.md`. Public visitors retain read-only access.

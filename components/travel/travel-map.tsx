@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import countries from 'i18n-iso-countries'
 import countryNames from 'i18n-iso-countries/langs/en.json'
-import maplibregl from 'maplibre-gl'
+import * as maplibregl from 'maplibre-gl'
 import 'maplibre-gl/dist/maplibre-gl.css'
 import countriesAtlas from 'world-atlas/countries-110m.json'
 import { feature } from 'topojson-client'
@@ -24,6 +24,7 @@ import { StayLevel, levelConfig, type MapUnit, type TravelCity } from '@/compone
 import { useMotion } from '@/components/motion-provider'
 
 countries.registerLocale(countryNames)
+maplibregl.setWorkerUrl('/maplibre-worker.mjs')
 
 const worldTopology = countriesAtlas as unknown as Topology<{
   countries: GeometryCollection<{ name: string }>

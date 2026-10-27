@@ -11,22 +11,23 @@ const labels: Record<string, string> = {
 }
 
 export function ContentHero({ page, decodedSlug }: { page: ContentPage; decodedSlug: string[] }) {
+  const isProfile = page.slugPath === 'about'
   return (
-    <header className={page.bodyClassName === 'contact-page' ? 'contact-path' : 'content-hero'}>
+    <header className={isProfile ? 'profile-path' : 'content-hero'}>
       <nav className="breadcrumbs" aria-label="Breadcrumb">
         <Link href="/">Home</Link>
         {decodedSlug.map((segment, index) => (
           <span key={segment} className="contents">
             <span aria-hidden="true">/</span>
             {index === decodedSlug.length - 1
-              ? <span aria-current="page">{page.bodyClassName === 'contact-page' ? 'Contact card' : page.title}</span>
+              ? <span aria-current="page">{isProfile ? 'About' : page.title}</span>
               : <Link href={`/${decodedSlug.slice(0, index + 1).map(encodeURIComponent).join('/')}`}>{labels[segment] ?? segment}</Link>}
           </span>
         ))}
       </nav>
-      {page.bodyClassName !== 'contact-page' ? <h1>{page.title}</h1> : null}
+      {!isProfile ? <h1>{page.title}</h1> : null}
       {page.subtitle ? <p className="content-subtitle">{page.subtitle}</p> : null}
-      {page.bodyClassName !== 'contact-page' ? <div className="content-meta">
+      {!isProfile ? <div className="content-meta">
         {page.date ? <time dateTime={page.date}>{page.slugPath === 'editor' ? 'Updated ' : ''}{formatContentDate(page.date)}</time> : null}
         {page.readTime ? <span>{page.readTime} read</span> : null}
         {page.category ? <span>{page.category}</span> : null}

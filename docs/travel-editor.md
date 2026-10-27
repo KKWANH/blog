@@ -1,6 +1,6 @@
 # Travel editor
 
-The atlas is public to read. Editing is an opted-in **local development** feature; it is not an unauthenticated public admin API.
+The atlas is public to read. **Edit atlas** opens `/travel/manage`. Editing requires either the opted-in local development session or the configured site owner's GitHub session; it is not an unauthenticated public API.
 
 ## Open the editor
 
@@ -8,7 +8,7 @@ The atlas is public to read. Editing is an opted-in **local development** featur
 npm run dev:edit
 ```
 
-This binds Next.js to `127.0.0.1:3100` and enables the local editor. Open `/travel`, choose **Manage places**, then use **Add place** or an entry's **Edit** action.
+This binds Next.js to loopback at `http://localhost:3100` and enables the local editor. Open `/travel`, choose **Edit atlas**, then use **Add place** or an entry's **Edit** action.
 
 The editor provides:
 
@@ -26,13 +26,13 @@ The canonical data is `contents/travel/places.json`. The initial snapshot preser
 
 Each successful mutation validates the document, writes a temporary file in the same directory, then atomically renames it. A content revision prevents an old form overwriting a newer update. Writes are serialized within the editing process; run one local editing server for a given file.
 
-Changes survive refresh/restart and are included in the next normal site build/publish. Saving does not itself deploy or push to GitHub.
+Local changes survive refresh/restart and are included in the next normal build/publish. Local saving does not deploy. In GitHub mode, **Save & publish** updates the fixed repository file and the normal Git deployment publishes it; see `travel-owner.md`.
 
 `TRAVEL_STORE_PATH` can point to a separate test file. It is a server-only setting. Tests use that override rather than changing the live atlas.
 
 ## Request boundary
 
-All writes require:
+Local writes require:
 
 1. `TRAVEL_EDITOR_ENABLED=1`;
 2. development mode, outside Vercel;
@@ -40,9 +40,9 @@ All writes require:
 4. a loopback Origin;
 5. the current editor request token, obtained through the same-origin bootstrap.
 
-No CORS permission is granted for external origins. The token is generated at runtime and is not embedded in public build output. Production remains read-only even if the enable flag is accidentally supplied.
+No CORS permission is granted for external origins. The local token is generated at runtime and is not embedded in public build output. The local-enable flag never grants production write access.
 
-This is a local-machine editing boundary, not an account/login system. Remote editing would need owner authentication and durable hosted storage. The current interface does not promise that capability.
+Remote writes use GitHub owner authentication and blob-revision checks, with no writable serverless-file fallback. They stay disabled until the GitHub App and deployment settings are configured. The owner session/token is verified on every mutation.
 
 ## Data and failure behaviour
 

@@ -100,7 +100,7 @@ export default async function ContentPage({
             <div>{rewriteRelativeMediaInReactNode(<Component />, decodedSlug)}</div>
           ) : null}
 
-          {!['contact-page', 'atlas-page'].includes(page.bodyClassName ?? '') ? <ContentFooterMeta page={page} /> : null}
+          {!['profile-page', 'atlas-page'].includes(page.bodyClassName ?? '') ? <ContentFooterMeta page={page} /> : null}
         </article>
       </main>
 

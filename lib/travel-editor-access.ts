@@ -8,10 +8,13 @@ function localHost(value: string | null) {
   try { return loopback.has(new URL(value.includes('://') ? value : `http://${value}`).hostname) } catch { return false }
 }
 
-export function localTravelEditor(request: Request, env: NodeJS.ProcessEnv = process.env) {
-  return env.TRAVEL_EDITOR_ENABLED === '1' &&
-    env.NODE_ENV === 'development' && !env.VERCEL &&
+export function localDevelopmentRequest(request: Request, env: NodeJS.ProcessEnv = process.env) {
+  return env.NODE_ENV === 'development' && !env.VERCEL &&
     localHost(request.url) && localHost(request.headers.get('host'))
+}
+
+export function localTravelEditor(request: Request, env: NodeJS.ProcessEnv = process.env) {
+  return env.TRAVEL_EDITOR_ENABLED === '1' && localDevelopmentRequest(request, env)
 }
 
 export function travelEditorToken() {

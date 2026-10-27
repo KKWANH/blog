@@ -26,6 +26,7 @@ export type TravelSnapshot = {
 export type TravelEditorAccess = {
   token: string
   countries: Array<{ code: string; name: string }>
+  mode: 'local' | 'github'
 }
 
 export type LocationSuggestion = Pick<TravelCity, 'city' | 'country' | 'countryCode' | 'lat' | 'lng'>

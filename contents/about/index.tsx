@@ -1,12 +1,12 @@
-import { ContactCard } from '@/components/contact-card'
+import { ProfileOverview } from '@/components/profile-overview'
 
-export const title = 'Kwanho Kim — Contact card'
-export const description = 'C++ Software Engineer at KLA in Leuven. Career facts, CV and contact details.'
-export const excerpt = 'A contact card, a recruiter brief and selected work.'
+export const title = 'About Kwanho Kim'
+export const description = 'C++ Software Engineer at KLA in Leuven. Open experience, education, linked skills and public project work.'
+export const excerpt = 'Experience, education and the work behind the skill names.'
 export const lang = 'en'
 export const showToc = false
-export const bodyClassName = 'contact-page'
+export const bodyClassName = 'profile-page'
 
 export default function AboutPage() {
-  return <ContactCard />
+  return <ProfileOverview />
 }

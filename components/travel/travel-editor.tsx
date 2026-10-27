@@ -102,7 +102,7 @@ export function TravelEditor({
       const data = await response.json()
       if (!response.ok) {
         setError(data.error ?? 'The change could not be saved.')
-        setReloadNeeded([403, 404, 409].includes(response.status))
+        setReloadNeeded([403, 404, 409, 500, 503].includes(response.status))
         return
       }
       removed.current = remove
@@ -126,14 +126,14 @@ export function TravelEditor({
         if (removed.current) { event.preventDefault(); returnFocus() }
       }}>
         <DialogTitle>{place ? `Edit ${place.city}` : 'Add a place'}</DialogTitle>
-        <DialogDescription>Saved locally and included in the next publish.</DialogDescription>
+        <DialogDescription>{access.mode === 'github' ? 'Saving updates the repository and publishes the atlas after deployment.' : 'Saved locally and included in the next publish.'}</DialogDescription>
         {confirmRemoval ? (
           <div className="place-remove-confirm">
             <h3>Remove {place?.city}?</h3>
             <p>This removes the entry from the atlas. You can undo the removal after saving.</p>
             <div className="form-actions">
               <button type="button" className="action-button" onClick={() => { if (!busy) setConfirmRemoval(false) }} aria-disabled={busy}>Keep place</button>
-              <button type="button" className="action-button action-danger" onClick={() => void save(true)} aria-disabled={busy}>{busy ? 'Removing…' : 'Remove place'}</button>
+              <button type="button" className="action-button action-danger" onClick={() => void save(true)} aria-disabled={busy}>{busy ? 'Removing…' : access.mode === 'github' ? 'Remove & publish' : 'Remove place'}</button>
             </div>
           </div>
         ) : (
@@ -166,7 +166,7 @@ export function TravelEditor({
               <label>Longitude<input name="lng" type="number" min="-180" max="180" step="any" value={values.lng} onChange={(event) => setValues({ ...values, lng: event.target.value })} required readOnly={busy} /></label>
             </div>
             <div className="form-actions">
-              <button type="submit" className="action-button action-primary" aria-disabled={busy || reloadNeeded}>{busy ? 'Saving…' : 'Save place'}</button>
+              <button type="submit" className="action-button action-primary" aria-disabled={busy || reloadNeeded}>{busy ? 'Saving…' : access.mode === 'github' ? 'Save & publish' : 'Save place'}</button>
               <button type="button" className="action-button" onClick={() => { if (!busy) onOpenChange(false) }} aria-disabled={busy}>Cancel</button>
               {place ? <button type="button" className="remove-link" onClick={() => { if (!busy && !reloadNeeded) setConfirmRemoval(true) }} aria-disabled={busy || reloadNeeded}>Remove this place</button> : null}
             </div>

@@ -121,6 +121,107 @@ try {
   assert.equal(localTravelEditor(request(), { NODE_ENV: 'development' }), false)
   console.log('travel access: opt-in local development only; origin/token/production guards passed')
 
+  const { localDevelopmentRequest } = loadSource(path.join(root, 'lib/travel-editor-access.ts'))
+  const { readStudioFile } = loadSource(path.join(root, 'lib/local-studio.ts'))
+  const studioDirectory = path.join(fixtures, 'studio')
+  const outsideDirectory = path.join(fixtures, 'outside-studio')
+  fs.mkdirSync(studioDirectory); fs.mkdirSync(outsideDirectory)
+  fs.writeFileSync(path.join(studioDirectory, 'index.html'), '<h1>Local design fixture</h1>')
+  fs.writeFileSync(path.join(outsideDirectory, 'private.html'), 'outside the design root')
+  assert.equal((await readStudioFile(studioDirectory, ['index.html'])).type, 'text/html; charset=utf-8')
+  assert.equal(await readStudioFile(studioDirectory, ['..', 'outside-studio', 'private.html']), null)
+  assert.equal(await readStudioFile(studioDirectory, ['..\\outside-studio', 'private.html']), null)
+  assert.equal(await readStudioFile(studioDirectory, ['.env']), null)
+  assert.equal(await readStudioFile(studioDirectory, ['C:', 'private.html']), null)
+  try {
+    fs.symlinkSync(outsideDirectory, path.join(studioDirectory, 'escape'), process.platform === 'win32' ? 'junction' : 'dir')
+    assert.equal(await readStudioFile(studioDirectory, ['escape', 'private.html']), null)
+  } catch (error) {
+    if (!['EPERM', 'ENOTSUP'].includes(error.code)) throw error
+    console.log(`studio symlink fixture skipped: ${error.code}; traversal/host/production checks still execute`)
+  }
+  const localStudioRequest = new Request('http://localhost:3100/studio/index.html', { headers: { host: 'localhost:3100' } })
+  assert.equal(localDevelopmentRequest(localStudioRequest, { NODE_ENV: 'development' }), true)
+  assert.equal(localDevelopmentRequest(localStudioRequest, { NODE_ENV: 'production' }), false)
+  assert.equal(localDevelopmentRequest(localStudioRequest, { NODE_ENV: 'development', VERCEL: '1' }), false)
+  assert.equal(localDevelopmentRequest(new Request('http://elsewhere.example/studio', { headers: { host: 'elsewhere.example' } }), { NODE_ENV: 'development' }), false)
+  console.log('local studio: localhost-only development access, file types, traversal and real-path containment passed')
+
+  const { travelOwner } = loadSource(path.join(root, 'lib/travel-owner.ts'))
+  const { ownerAuthOptions, OWNER_GITHUB_ID } = loadSource(path.join(root, 'lib/owner-auth.ts'))
+  const { ownerCsrfToken } = loadSource(path.join(root, 'lib/travel-owner-policy.ts'))
+  const { createGitHubTravelStore } = loadSource(path.join(root, 'lib/travel-github-store.ts'))
+  const { travelSnapshot } = loadSource(path.join(root, 'lib/travel-data.ts'))
+  const { encode } = require('next-auth/jwt')
+  const testSecret = 'fixture-only-secret-not-for-deployment-0123456789'
+  const authEnv = { NODE_ENV: 'production', NEXTAUTH_URL: 'https://www.kwanho.dev', NEXTAUTH_SECRET: testSecret, GITHUB_ID: 'fixture-client', GITHUB_SECRET: 'fixture-client-secret' }
+  const claims = { ownerId: OWNER_GITHUB_ID, githubAccessToken: 'fixture-token-not-a-credential', accessTokenExpires: Date.now() + 60_000, travelCsrfKey: 'fixture-session-csrf-key-0123456789' }
+  const encoded = await encode({ token: claims, secret: testSecret, maxAge: 60 })
+  const ownerRequest = (changes = {}) => new Request('https://www.kwanho.dev/api/travel', {
+    method: 'POST',
+    headers: {
+      cookie: `__Secure-next-auth.session-token=${encoded}`,
+      origin: 'https://www.kwanho.dev',
+      'content-type': 'application/json',
+      'x-travel-editor-token': ownerCsrfToken(claims, testSecret),
+      ...changes,
+    },
+  })
+  const owner = await travelOwner(ownerRequest(), authEnv)
+  assert.equal(owner?.mode, 'github')
+  assert.equal(owner?.canWrite, true)
+  assert.equal((await travelOwner(ownerRequest({ origin: 'https://elsewhere.example' }), authEnv))?.canWrite, false)
+  assert.equal((await travelOwner(ownerRequest({ 'x-travel-editor-token': 'invalid' }), authEnv))?.canWrite, false)
+  assert.equal((await travelOwner(ownerRequest({ 'content-type': 'text/plain' }), authEnv))?.canWrite, false)
+  assert.equal(await travelOwner(ownerRequest({ cookie: '', authorization: `Bearer ${encoded}` }), authEnv), null)
+  const stranger = await encode({ token: { ...claims, ownerId: '42' }, secret: testSecret, maxAge: 60 })
+  assert.equal(await travelOwner(ownerRequest({ cookie: `__Secure-next-auth.session-token=${stranger}` }), authEnv), null)
+  const expired = await encode({ token: { ...claims, accessTokenExpires: 1 }, secret: testSecret, maxAge: 60 })
+  assert.equal(await travelOwner(ownerRequest({ cookie: `__Secure-next-auth.session-token=${expired}` }), authEnv), null)
+  const expiredSession = await encode({ token: claims, secret: testSecret, maxAge: -60 })
+  assert.equal(await travelOwner(ownerRequest({ cookie: `__Secure-next-auth.session-token=${expiredSession}` }), authEnv), null)
+  const wrongKey = await encode({ token: claims, secret: 'other-fixture-secret-not-for-deployment-0123456789', maxAge: 60 })
+  assert.equal(await travelOwner(ownerRequest({ cookie: `__Secure-next-auth.session-token=${wrongKey}` }), authEnv), null)
+  assert.equal(await travelOwner(ownerRequest(), { ...authEnv, NEXTAUTH_URL: '' }), null)
+  const publicSession = await ownerAuthOptions.callbacks.session({ session: { user: {}, expires: 'fixture' }, token: claims })
+  assert.ok(!JSON.stringify(publicSession).includes(claims.githubAccessToken))
+  assert.ok(!JSON.stringify(publicSession).includes(claims.travelCsrfKey))
+  assert.equal(await ownerAuthOptions.callbacks.signIn({ account: { provider: 'github' }, profile: { id: Number(OWNER_GITHUB_ID) } }), true)
+  assert.equal(await ownerAuthOptions.callbacks.signIn({ account: { provider: 'github' }, profile: { id: 42 } }), false)
+  console.log('owner access: encrypted sessions, owner ID, token expiry, origin/CSRF and session redaction passed')
+
+  let remoteDocument = { version: 1, updatedAt: null, places: [] }
+  let remoteSha = 'blob-1'
+  let puts = 0, collision = false
+  const remote = createGitHubTravelStore('fixture-token-not-a-credential', async (url, options) => {
+    assert.ok(String(url).startsWith('https://api.github.com/repos/KKWANH/blog/contents/contents/travel/places.json'))
+    if (options.method !== 'PUT') return Response.json({ type: 'file', encoding: 'base64', sha: remoteSha, content: Buffer.from(JSON.stringify(remoteDocument)).toString('base64') })
+    puts++
+    const body = JSON.parse(options.body)
+    assert.equal(body.sha, remoteSha)
+    assert.equal(body.branch, 'main')
+    if (collision) return Response.json({ message: 'conflict' }, { status: 409 })
+    remoteDocument = JSON.parse(Buffer.from(body.content, 'base64').toString('utf8'))
+    remoteSha = `blob-${puts + 1}`
+    return Response.json({ commit: { sha: 'fixture-commit', html_url: 'https://github.com/KKWANH/blog/commit/fixture' } })
+  })
+  const remoteInitial = await remote.read()
+  const remoteSaved = await remote.create(place, remoteInitial.revision)
+  assert.equal(remoteSaved.places.length, 1)
+  assert.equal(remoteSaved.publication.commit, 'fixture-commit')
+  assert.deepEqual((await remote.read()).places, remoteSaved.places)
+  const beforePut = puts
+  await assert.rejects(remote.create({ ...place, city: 'Stale input' }, remoteInitial.revision), (error) => error.status === 409)
+  assert.equal(puts, beforePut, 'stale content must never reach the repository write')
+  collision = true
+  await assert.rejects(remote.edit(remoteSaved.places[0].id, { ...place, city: 'Concurrent input' }, remoteSaved.revision), (error) => error.status === 409)
+  assert.equal((await remote.read()).revision, travelSnapshot(remoteDocument).revision)
+  const unavailable = createGitHubTravelStore('fixture-token-not-a-credential', async () => Response.json({}, { status: 403 }))
+  await assert.rejects(unavailable.read(), (error) => error.status === 503)
+  const corruptRemote = createGitHubTravelStore('fixture-token-not-a-credential', async () => Response.json({ type: 'file', encoding: 'base64', sha: 'fixture', content: Buffer.from('{broken').toString('base64') }))
+  await assert.rejects(corruptRemote.read())
+  console.log('repository storage: durable payload, fixed target, revision/remote conflicts and failure handling passed (mock HTTP only)')
+
   const gallery = JSON.parse(fs.readFileSync(path.join(root, 'contents/photography/photos.json'), 'utf8'))
   assert.equal(typeof gallery.published, 'boolean')
   assert.ok(Array.isArray(gallery.items))

@@ -1,113 +1,1041 @@
 {
   "version": 1,
-  "updatedAt": null,
+  "updatedAt": "2026-10-27T10:12:57.775Z",
   "places": [
-    {"id":"seoul-south-korea","city":"Seoul","country":"South Korea","countryCode":"KR","level":"5-plus-days","lat":37.566,"lng":126.9784},
-    {"id":"anyang-south-korea","city":"Anyang","country":"South Korea","countryCode":"KR","level":"lived-there","lat":37.3925,"lng":126.9269},
-    {"id":"suwon-south-korea","city":"Suwon","country":"South Korea","countryCode":"KR","level":"lived-there","lat":37.29111,"lng":127.00889},
-    {"id":"jeungpyeong-south-korea","city":"Jeungpyeong","country":"South Korea","countryCode":"KR","level":"lived-there","lat":36.7853,"lng":127.5815},
-    {"id":"daegu-south-korea","city":"Daegu","country":"South Korea","countryCode":"KR","level":"5-plus-days","lat":35.87028,"lng":128.59111},
-    {"id":"busan-south-korea","city":"Busan","country":"South Korea","countryCode":"KR","level":"2-plus-days","lat":35.10168,"lng":129.03004},
-    {"id":"yeosu-south-korea","city":"Yeosu","country":"South Korea","countryCode":"KR","level":"2-plus-days","lat":34.76062,"lng":127.66215},
-    {"id":"gwangyang-south-korea","city":"Gwangyang","country":"South Korea","countryCode":"KR","level":"short-visit","lat":34.9414,"lng":127.69569},
-    {"id":"haenam-south-korea","city":"Haenam","country":"South Korea","countryCode":"KR","level":"short-visit","lat":34.573573,"lng":126.598927},
-    {"id":"namwon-south-korea","city":"Namwon","country":"South Korea","countryCode":"KR","level":"short-visit","lat":35.41,"lng":127.385833},
-    {"id":"sacheon-south-korea","city":"Sacheon","country":"South Korea","countryCode":"KR","level":"short-visit","lat":35.00385,"lng":128.06857},
-    {"id":"miryang-south-korea","city":"Miryang","country":"South Korea","countryCode":"KR","level":"short-visit","lat":35.49333,"lng":128.74889},
-    {"id":"ulsan-south-korea","city":"Ulsan","country":"South Korea","countryCode":"KR","level":"short-visit","lat":35.53722,"lng":129.31667},
-    {"id":"cheongdo-south-korea","city":"Cheongdo","country":"South Korea","countryCode":"KR","level":"short-visit","lat":35.647271,"lng":128.733911},
-    {"id":"pohang-south-korea","city":"Pohang","country":"South Korea","countryCode":"KR","level":"short-visit","lat":36.02917,"lng":129.36481},
-    {"id":"gumi-south-korea","city":"Gumi","country":"South Korea","countryCode":"KR","level":"short-visit","lat":36.1136,"lng":128.336},
-    {"id":"yeongdeok-south-korea","city":"Yeongdeok","country":"South Korea","countryCode":"KR","level":"short-visit","lat":36.41366,"lng":129.37},
-    {"id":"cheongsong-south-korea","city":"Cheongsong","country":"South Korea","countryCode":"KR","level":"short-visit","lat":36.436279,"lng":129.057126},
-    {"id":"yeongyang-south-korea","city":"Yeongyang","country":"South Korea","countryCode":"KR","level":"short-visit","lat":36.666717,"lng":129.112333},
-    {"id":"taeback-south-korea","city":"Taeback","country":"South Korea","countryCode":"KR","level":"2-plus-days","lat":37.1652,"lng":128.9857},
-    {"id":"donghae-city-south-korea","city":"Donghae City","country":"South Korea","countryCode":"KR","level":"2-plus-days","lat":37.54389,"lng":129.10694},
-    {"id":"gangneung-south-korea","city":"Gangneung","country":"South Korea","countryCode":"KR","level":"2-plus-days","lat":37.75266,"lng":128.87239},
-    {"id":"sokcho-south-korea","city":"Sokcho","country":"South Korea","countryCode":"KR","level":"2-plus-days","lat":38.20701,"lng":128.59181},
-    {"id":"chuncheon-south-korea","city":"Chuncheon","country":"South Korea","countryCode":"KR","level":"short-visit","lat":37.87472,"lng":127.73417},
-    {"id":"gapyeong-south-korea","city":"Gapyeong","country":"South Korea","countryCode":"KR","level":"2-plus-days","lat":37.831508,"lng":127.509541},
-    {"id":"cheorwon-south-korea","city":"Cheorwon","country":"South Korea","countryCode":"KR","level":"short-visit","lat":38.146609,"lng":127.313279},
-    {"id":"namyangju-south-korea","city":"Namyangju","country":"South Korea","countryCode":"KR","level":"5-plus-days","lat":37.63667,"lng":127.21417},
-    {"id":"incheon-south-korea","city":"Incheon","country":"South Korea","countryCode":"KR","level":"5-plus-days","lat":37.45646,"lng":126.70515},
-    {"id":"wonju-south-korea","city":"Wŏnju","country":"South Korea","countryCode":"KR","level":"short-visit","lat":37.35139,"lng":127.94528},
-    {"id":"chungju-south-korea","city":"Chungju","country":"South Korea","countryCode":"KR","level":"short-visit","lat":36.97666,"lng":127.9287},
-    {"id":"leuven-belgium","city":"Leuven","country":"Belgium","countryCode":"BE","level":"lived-there","lat":50.87959,"lng":4.70093},
-    {"id":"brugge-belgium","city":"Brugge","country":"Belgium","countryCode":"BE","level":"short-visit","lat":51.20892,"lng":3.22424},
-    {"id":"gent-belgium","city":"Gent","country":"Belgium","countryCode":"BE","level":"2-plus-days","lat":51.05,"lng":3.71667},
-    {"id":"brussels-belgium","city":"Brussels","country":"Belgium","countryCode":"BE","level":"2-plus-days","lat":50.85045,"lng":4.34878},
-    {"id":"antwerpen-belgium","city":"Antwerpen","country":"Belgium","countryCode":"BE","level":"short-visit","lat":51.22047,"lng":4.40026},
-    {"id":"paris-france","city":"Paris","country":"France","countryCode":"FR","level":"5-plus-days","lat":48.85341,"lng":2.3488},
-    {"id":"colmar-france","city":"Colmar","country":"France","countryCode":"FR","level":"5-plus-days","lat":48.08078,"lng":7.35584},
-    {"id":"strasbourg-france","city":"Strasbourg","country":"France","countryCode":"FR","level":"5-plus-days","lat":48.58392,"lng":7.74553},
-    {"id":"luxembourg-luxembourg","city":"Luxembourg","country":"Luxembourg","countryCode":"LU","level":"5-plus-days","lat":49.61167,"lng":6.13},
-    {"id":"edinburgh-united-kingdom","city":"Edinburgh","country":"United Kingdom","countryCode":"GB","level":"2-plus-days","lat":55.95206,"lng":-3.19648},
-    {"id":"london-united-kingdom","city":"London","country":"United Kingdom","countryCode":"GB","level":"2-plus-days","lat":51.50853,"lng":-0.12574},
-    {"id":"brighton-united-kingdom","city":"Brighton","country":"United Kingdom","countryCode":"GB","level":"2-plus-days","lat":50.82838,"lng":-0.13947},
-    {"id":"canterbury-united-kingdom","city":"Canterbury","country":"United Kingdom","countryCode":"GB","level":"2-plus-days","lat":51.27904,"lng":1.07992},
-    {"id":"sandwich-united-kingdom","city":"Sandwich","country":"United Kingdom","countryCode":"GB","level":"short-visit","lat":51.27223,"lng":1.33776},
-    {"id":"amsterdam-netherlands","city":"Amsterdam","country":"Netherlands","countryCode":"NL","level":"2-plus-days","lat":52.37403,"lng":4.88969},
-    {"id":"rotterdam-netherlands","city":"Rotterdam","country":"Netherlands","countryCode":"NL","level":"short-visit","lat":51.9225,"lng":4.47917},
-    {"id":"berlin-germany","city":"Berlin","country":"Germany","countryCode":"DE","level":"5-plus-days","lat":52.52437,"lng":13.41053},
-    {"id":"wolfsburg-germany","city":"Wolfsburg","country":"Germany","countryCode":"DE","level":"lived-there","lat":52.42452,"lng":10.7815},
-    {"id":"cuxhaven-germany","city":"Cuxhaven","country":"Germany","countryCode":"DE","level":"short-visit","lat":53.86828,"lng":8.69902},
-    {"id":"hannover-germany","city":"Hannover","country":"Germany","countryCode":"DE","level":"2-plus-days","lat":52.37052,"lng":9.73322},
-    {"id":"hildesheim-germany","city":"Hildesheim","country":"Germany","countryCode":"DE","level":"lived-there","lat":52.15077,"lng":9.95112},
-    {"id":"gifhorn-germany","city":"Gifhorn","country":"Germany","countryCode":"DE","level":"5-plus-days","lat":52.47774,"lng":10.5511},
-    {"id":"rust-germany","city":"Rust","country":"Germany","countryCode":"DE","level":"short-visit","lat":48.26667,"lng":7.73333},
-    {"id":"braunschweig-germany","city":"Braunschweig","country":"Germany","countryCode":"DE","level":"2-plus-days","lat":52.26594,"lng":10.52673},
-    {"id":"goslar-germany","city":"Goslar","country":"Germany","countryCode":"DE","level":"2-plus-days","lat":51.90425,"lng":10.42766},
-    {"id":"wernigerode-germany","city":"Wernigerode","country":"Germany","countryCode":"DE","level":"short-visit","lat":51.83652,"lng":10.78216},
-    {"id":"quedlinburg-germany","city":"Quedlinburg","country":"Germany","countryCode":"DE","level":"short-visit","lat":51.78843,"lng":11.15006},
-    {"id":"l-neburg-germany","city":"Lüneburg","country":"Germany","countryCode":"DE","level":"short-visit","lat":53.2509,"lng":10.41409},
-    {"id":"hamburg-germany","city":"Hamburg","country":"Germany","countryCode":"DE","level":"2-plus-days","lat":53.55073,"lng":9.99302},
-    {"id":"potsdam-germany","city":"Potsdam","country":"Germany","countryCode":"DE","level":"short-visit","lat":52.39886,"lng":13.06566},
-    {"id":"dortmund-germany","city":"Dortmund","country":"Germany","countryCode":"DE","level":"short-visit","lat":51.51494,"lng":7.466},
-    {"id":"k-ln-germany","city":"Köln","country":"Germany","countryCode":"DE","level":"5-plus-days","lat":50.93333,"lng":6.95},
-    {"id":"frankfurt-am-main-germany","city":"Frankfurt am Main","country":"Germany","countryCode":"DE","level":"2-plus-days","lat":50.11552,"lng":8.68417},
-    {"id":"w-rzburg-germany","city":"Würzburg","country":"Germany","countryCode":"DE","level":"short-visit","lat":49.79391,"lng":9.95121},
-    {"id":"stuttgart-germany","city":"Stuttgart","country":"Germany","countryCode":"DE","level":"2-plus-days","lat":48.78232,"lng":9.17702},
-    {"id":"baden-baden-germany","city":"Baden-Baden","country":"Germany","countryCode":"DE","level":"short-visit","lat":48.7606,"lng":8.23975},
-    {"id":"freiburg-germany","city":"Freiburg","country":"Germany","countryCode":"DE","level":"short-visit","lat":47.9959,"lng":7.85222},
-    {"id":"hinterzarten-germany","city":"Hinterzarten","country":"Germany","countryCode":"DE","level":"2-plus-days","lat":47.90276,"lng":8.10701},
-    {"id":"f-ssen-germany","city":"Füssen","country":"Germany","countryCode":"DE","level":"short-visit","lat":47.57143,"lng":10.70171},
-    {"id":"munich-germany","city":"Munich","country":"Germany","countryCode":"DE","level":"short-visit","lat":48.13743,"lng":11.57549},
-    {"id":"prague-czech-republic","city":"Prague","country":"Czech Republic","countryCode":"CZ","level":"5-plus-days","lat":50.08804,"lng":14.42076},
-    {"id":"kutn-hora-czech-republic","city":"Kutná Hora","country":"Czech Republic","countryCode":"CZ","level":"short-visit","lat":49.94839,"lng":15.26816},
-    {"id":"velk-popovice-czech-republic","city":"Velké Popovice","country":"Czech Republic","countryCode":"CZ","level":"short-visit","lat":49.92252,"lng":14.63934},
-    {"id":"cesky-krumlov-czech-republic","city":"Český Krumlov","country":"Czech Republic","countryCode":"CZ","level":"2-plus-days","lat":48.81091,"lng":14.31521},
-    {"id":"vienna-austria","city":"Vienna","country":"Austria","countryCode":"AT","level":"2-plus-days","lat":48.20849,"lng":16.37208},
-    {"id":"salzburg-austria","city":"Salzburg","country":"Austria","countryCode":"AT","level":"2-plus-days","lat":47.79941,"lng":13.04399},
-    {"id":"hallstatt-austria","city":"Hallstatt","country":"Austria","countryCode":"AT","level":"5-plus-days","lat":47.5622,"lng":13.6493},
-    {"id":"venice-italy","city":"Venice","country":"Italy","countryCode":"IT","level":"2-plus-days","lat":45.43713,"lng":12.33265},
-    {"id":"rome-italy","city":"Rome","country":"Italy","countryCode":"IT","level":"2-plus-days","lat":41.89193,"lng":12.51133},
-    {"id":"pisa-italy","city":"Pisa","country":"Italy","countryCode":"IT","level":"short-visit","lat":43.70853,"lng":10.4036},
-    {"id":"florence-italy","city":"Florence","country":"Italy","countryCode":"IT","level":"short-visit","lat":43.77925,"lng":11.24626},
-    {"id":"pompei-italy","city":"Pompei","country":"Italy","countryCode":"IT","level":"short-visit","lat":40.74574,"lng":14.49698},
-    {"id":"budapest-hungary","city":"Budapest","country":"Hungary","countryCode":"HU","level":"short-visit","lat":47.49835,"lng":19.04045},
-    {"id":"barcelona-spain","city":"Barcelona","country":"Spain","countryCode":"ES","level":"2-plus-days","lat":41.38879,"lng":2.15899},
-    {"id":"bilbao-spain","city":"Bilbao","country":"Spain","countryCode":"ES","level":"short-visit","lat":43.26271,"lng":-2.92528},
-    {"id":"marrakesh-morocco","city":"Marrakesh","country":"Morocco","countryCode":"MA","level":"2-plus-days","lat":31.63416,"lng":-7.99994},
-    {"id":"istanbul-turkey","city":"Istanbul","country":"Turkey","countryCode":"TR","level":"short-visit","lat":41.01384,"lng":28.94966},
-    {"id":"tokyo-japan","city":"Tokyo","country":"Japan","countryCode":"JP","level":"2-plus-days","lat":35.6895,"lng":139.69171},
-    {"id":"fujinomiya-japan","city":"Fujinomiya","country":"Japan","countryCode":"JP","level":"short-visit","lat":35.21667,"lng":138.61667},
-    {"id":"osaka-japan","city":"Osaka","country":"Japan","countryCode":"JP","level":"2-plus-days","lat":34.69379,"lng":135.50107},
-    {"id":"jinan-china","city":"Jinan","country":"China","countryCode":"CN","level":"5-plus-days","lat":36.66833,"lng":116.99722},
-    {"id":"chengdu-china","city":"Chengdu","country":"China","countryCode":"CN","level":"5-plus-days","lat":30.66667,"lng":104.06667},
-    {"id":"hanoi-vietnam","city":"Hanoi","country":"Vietnam","countryCode":"VN","level":"2-plus-days","lat":21.0245,"lng":105.84117},
-    {"id":"ha-long-vietnam","city":"Hạ Long","country":"Vietnam","countryCode":"VN","level":"short-visit","lat":20.95045,"lng":107.07336},
-    {"id":"phnom-penh-cambodia","city":"Phnom Penh","country":"Cambodia","countryCode":"KH","level":"short-visit","lat":11.56245,"lng":104.91601},
-    {"id":"siem-reap-cambodia","city":"Siem Reap","country":"Cambodia","countryCode":"KH","level":"2-plus-days","lat":13.36179,"lng":103.86056},
-    {"id":"chiang-mai-thailand","city":"Chiang Mai","country":"Thailand","countryCode":"TH","level":"5-plus-days","lat":18.79038,"lng":98.98468},
-    {"id":"chiang-rai-thailand","city":"Chiang Rai","country":"Thailand","countryCode":"TH","level":"2-plus-days","lat":19.90858,"lng":99.8325},
-    {"id":"fang-thailand","city":"Fang","country":"Thailand","countryCode":"TH","level":"short-visit","lat":19.91689,"lng":99.2145},
-    {"id":"chiang-dao-thailand","city":"Chiang Dao","country":"Thailand","countryCode":"TH","level":"short-visit","lat":19.36542,"lng":98.96453},
-    {"id":"pai-thailand","city":"Pai","country":"Thailand","countryCode":"TH","level":"2-plus-days","lat":19.36168,"lng":98.43973},
-    {"id":"pagudpud-philippines","city":"Pagudpud","country":"Philippines","countryCode":"PH","level":"2-plus-days","lat":18.5616,"lng":120.7868},
-    {"id":"pagudpud-philippines-2","city":"Pagudpud","country":"Philippines","countryCode":"PH","level":"2-plus-days","lat":18.5616,"lng":120.7868},
-    {"id":"baguio-philippines","city":"Baguio","country":"Philippines","countryCode":"PH","level":"lived-there","lat":16.41639,"lng":120.59306},
-    {"id":"angeles-city-philippines","city":"Angeles City","country":"Philippines","countryCode":"PH","level":"lived-there","lat":15.15,"lng":120.58333},
-    {"id":"manila-philippines","city":"Manila","country":"Philippines","countryCode":"PH","level":"2-plus-days","lat":14.6042,"lng":120.9822},
-    {"id":"cebu-city-philippines","city":"Cebu City","country":"Philippines","countryCode":"PH","level":"lived-there","lat":10.31672,"lng":123.89071}
+    {
+      "city": "Seoul",
+      "countryCode": "KR",
+      "level": "5-plus-days",
+      "lat": 37.566,
+      "lng": 126.9784,
+      "id": "seoul-south-korea",
+      "country": "South Korea"
+    },
+    {
+      "city": "Anyang",
+      "countryCode": "KR",
+      "level": "lived-there",
+      "lat": 37.3925,
+      "lng": 126.9269,
+      "id": "anyang-south-korea",
+      "country": "South Korea"
+    },
+    {
+      "city": "Suwon",
+      "countryCode": "KR",
+      "level": "lived-there",
+      "lat": 37.29111,
+      "lng": 127.00889,
+      "id": "suwon-south-korea",
+      "country": "South Korea"
+    },
+    {
+      "city": "Jeungpyeong",
+      "countryCode": "KR",
+      "level": "lived-there",
+      "lat": 36.7853,
+      "lng": 127.5815,
+      "id": "jeungpyeong-south-korea",
+      "country": "South Korea"
+    },
+    {
+      "city": "Daegu",
+      "countryCode": "KR",
+      "level": "5-plus-days",
+      "lat": 35.87028,
+      "lng": 128.59111,
+      "id": "daegu-south-korea",
+      "country": "South Korea"
+    },
+    {
+      "city": "Busan",
+      "countryCode": "KR",
+      "level": "2-plus-days",
+      "lat": 35.10168,
+      "lng": 129.03004,
+      "id": "busan-south-korea",
+      "country": "South Korea"
+    },
+    {
+      "city": "Yeosu",
+      "countryCode": "KR",
+      "level": "2-plus-days",
+      "lat": 34.76062,
+      "lng": 127.66215,
+      "id": "yeosu-south-korea",
+      "country": "South Korea"
+    },
+    {
+      "city": "Gwangyang",
+      "countryCode": "KR",
+      "level": "short-visit",
+      "lat": 34.9414,
+      "lng": 127.69569,
+      "id": "gwangyang-south-korea",
+      "country": "South Korea"
+    },
+    {
+      "city": "Haenam",
+      "countryCode": "KR",
+      "level": "short-visit",
+      "lat": 34.573573,
+      "lng": 126.598927,
+      "id": "haenam-south-korea",
+      "country": "South Korea"
+    },
+    {
+      "city": "Namwon",
+      "countryCode": "KR",
+      "level": "short-visit",
+      "lat": 35.41,
+      "lng": 127.385833,
+      "id": "namwon-south-korea",
+      "country": "South Korea"
+    },
+    {
+      "city": "Sacheon",
+      "countryCode": "KR",
+      "level": "short-visit",
+      "lat": 35.00385,
+      "lng": 128.06857,
+      "id": "sacheon-south-korea",
+      "country": "South Korea"
+    },
+    {
+      "city": "Miryang",
+      "countryCode": "KR",
+      "level": "short-visit",
+      "lat": 35.49333,
+      "lng": 128.74889,
+      "id": "miryang-south-korea",
+      "country": "South Korea"
+    },
+    {
+      "city": "Ulsan",
+      "countryCode": "KR",
+      "level": "short-visit",
+      "lat": 35.53722,
+      "lng": 129.31667,
+      "id": "ulsan-south-korea",
+      "country": "South Korea"
+    },
+    {
+      "city": "Cheongdo",
+      "countryCode": "KR",
+      "level": "short-visit",
+      "lat": 35.647271,
+      "lng": 128.733911,
+      "id": "cheongdo-south-korea",
+      "country": "South Korea"
+    },
+    {
+      "city": "Pohang",
+      "countryCode": "KR",
+      "level": "short-visit",
+      "lat": 36.02917,
+      "lng": 129.36481,
+      "id": "pohang-south-korea",
+      "country": "South Korea"
+    },
+    {
+      "city": "Gumi",
+      "countryCode": "KR",
+      "level": "short-visit",
+      "lat": 36.1136,
+      "lng": 128.336,
+      "id": "gumi-south-korea",
+      "country": "South Korea"
+    },
+    {
+      "city": "Yeongdeok",
+      "countryCode": "KR",
+      "level": "short-visit",
+      "lat": 36.41366,
+      "lng": 129.37,
+      "id": "yeongdeok-south-korea",
+      "country": "South Korea"
+    },
+    {
+      "city": "Cheongsong",
+      "countryCode": "KR",
+      "level": "short-visit",
+      "lat": 36.436279,
+      "lng": 129.057126,
+      "id": "cheongsong-south-korea",
+      "country": "South Korea"
+    },
+    {
+      "city": "Yeongyang",
+      "countryCode": "KR",
+      "level": "short-visit",
+      "lat": 36.666717,
+      "lng": 129.112333,
+      "id": "yeongyang-south-korea",
+      "country": "South Korea"
+    },
+    {
+      "city": "Taeback",
+      "countryCode": "KR",
+      "level": "2-plus-days",
+      "lat": 37.1652,
+      "lng": 128.9857,
+      "id": "taeback-south-korea",
+      "country": "South Korea"
+    },
+    {
+      "city": "Donghae City",
+      "countryCode": "KR",
+      "level": "2-plus-days",
+      "lat": 37.54389,
+      "lng": 129.10694,
+      "id": "donghae-city-south-korea",
+      "country": "South Korea"
+    },
+    {
+      "city": "Gangneung",
+      "countryCode": "KR",
+      "level": "2-plus-days",
+      "lat": 37.75266,
+      "lng": 128.87239,
+      "id": "gangneung-south-korea",
+      "country": "South Korea"
+    },
+    {
+      "city": "Sokcho",
+      "countryCode": "KR",
+      "level": "2-plus-days",
+      "lat": 38.20701,
+      "lng": 128.59181,
+      "id": "sokcho-south-korea",
+      "country": "South Korea"
+    },
+    {
+      "city": "Chuncheon",
+      "countryCode": "KR",
+      "level": "short-visit",
+      "lat": 37.87472,
+      "lng": 127.73417,
+      "id": "chuncheon-south-korea",
+      "country": "South Korea"
+    },
+    {
+      "city": "Gapyeong",
+      "countryCode": "KR",
+      "level": "2-plus-days",
+      "lat": 37.831508,
+      "lng": 127.509541,
+      "id": "gapyeong-south-korea",
+      "country": "South Korea"
+    },
+    {
+      "city": "Cheorwon",
+      "countryCode": "KR",
+      "level": "short-visit",
+      "lat": 38.146609,
+      "lng": 127.313279,
+      "id": "cheorwon-south-korea",
+      "country": "South Korea"
+    },
+    {
+      "city": "Namyangju",
+      "countryCode": "KR",
+      "level": "5-plus-days",
+      "lat": 37.63667,
+      "lng": 127.21417,
+      "id": "namyangju-south-korea",
+      "country": "South Korea"
+    },
+    {
+      "city": "Incheon",
+      "countryCode": "KR",
+      "level": "5-plus-days",
+      "lat": 37.45646,
+      "lng": 126.70515,
+      "id": "incheon-south-korea",
+      "country": "South Korea"
+    },
+    {
+      "city": "Wŏnju",
+      "countryCode": "KR",
+      "level": "short-visit",
+      "lat": 37.35139,
+      "lng": 127.94528,
+      "id": "wonju-south-korea",
+      "country": "South Korea"
+    },
+    {
+      "city": "Chungju",
+      "countryCode": "KR",
+      "level": "short-visit",
+      "lat": 36.97666,
+      "lng": 127.9287,
+      "id": "chungju-south-korea",
+      "country": "South Korea"
+    },
+    {
+      "city": "Leuven",
+      "countryCode": "BE",
+      "level": "lived-there",
+      "lat": 50.87959,
+      "lng": 4.70093,
+      "id": "leuven-belgium",
+      "country": "Belgium"
+    },
+    {
+      "city": "Brugge",
+      "countryCode": "BE",
+      "level": "short-visit",
+      "lat": 51.20892,
+      "lng": 3.22424,
+      "id": "brugge-belgium",
+      "country": "Belgium"
+    },
+    {
+      "city": "Gent",
+      "countryCode": "BE",
+      "level": "5-plus-days",
+      "lat": 51.05,
+      "lng": 3.71667,
+      "id": "gent-belgium",
+      "country": "Belgium"
+    },
+    {
+      "city": "Brussels",
+      "countryCode": "BE",
+      "level": "5-plus-days",
+      "lat": 50.85045,
+      "lng": 4.34878,
+      "id": "brussels-belgium",
+      "country": "Belgium"
+    },
+    {
+      "city": "Antwerpen",
+      "countryCode": "BE",
+      "level": "short-visit",
+      "lat": 51.22047,
+      "lng": 4.40026,
+      "id": "antwerpen-belgium",
+      "country": "Belgium"
+    },
+    {
+      "city": "Paris",
+      "countryCode": "FR",
+      "level": "5-plus-days",
+      "lat": 48.85341,
+      "lng": 2.3488,
+      "id": "paris-france",
+      "country": "France"
+    },
+    {
+      "city": "Colmar",
+      "countryCode": "FR",
+      "level": "5-plus-days",
+      "lat": 48.08078,
+      "lng": 7.35584,
+      "id": "colmar-france",
+      "country": "France"
+    },
+    {
+      "city": "Strasbourg",
+      "countryCode": "FR",
+      "level": "5-plus-days",
+      "lat": 48.58392,
+      "lng": 7.74553,
+      "id": "strasbourg-france",
+      "country": "France"
+    },
+    {
+      "city": "Luxembourg",
+      "countryCode": "LU",
+      "level": "5-plus-days",
+      "lat": 49.61167,
+      "lng": 6.13,
+      "id": "luxembourg-luxembourg",
+      "country": "Luxembourg"
+    },
+    {
+      "city": "Edinburgh",
+      "countryCode": "GB",
+      "level": "2-plus-days",
+      "lat": 55.95206,
+      "lng": -3.19648,
+      "id": "edinburgh-united-kingdom",
+      "country": "United Kingdom"
+    },
+    {
+      "city": "London",
+      "countryCode": "GB",
+      "level": "2-plus-days",
+      "lat": 51.50853,
+      "lng": -0.12574,
+      "id": "london-united-kingdom",
+      "country": "United Kingdom"
+    },
+    {
+      "city": "Brighton",
+      "countryCode": "GB",
+      "level": "2-plus-days",
+      "lat": 50.82838,
+      "lng": -0.13947,
+      "id": "brighton-united-kingdom",
+      "country": "United Kingdom"
+    },
+    {
+      "city": "Canterbury",
+      "countryCode": "GB",
+      "level": "2-plus-days",
+      "lat": 51.27904,
+      "lng": 1.07992,
+      "id": "canterbury-united-kingdom",
+      "country": "United Kingdom"
+    },
+    {
+      "city": "Sandwich",
+      "countryCode": "GB",
+      "level": "short-visit",
+      "lat": 51.27223,
+      "lng": 1.33776,
+      "id": "sandwich-united-kingdom",
+      "country": "United Kingdom"
+    },
+    {
+      "city": "Amsterdam",
+      "countryCode": "NL",
+      "level": "5-plus-days",
+      "lat": 52.37403,
+      "lng": 4.88969,
+      "id": "amsterdam-netherlands",
+      "country": "Netherlands"
+    },
+    {
+      "city": "Rotterdam",
+      "countryCode": "NL",
+      "level": "short-visit",
+      "lat": 51.9225,
+      "lng": 4.47917,
+      "id": "rotterdam-netherlands",
+      "country": "Netherlands"
+    },
+    {
+      "city": "Berlin",
+      "countryCode": "DE",
+      "level": "5-plus-days",
+      "lat": 52.52437,
+      "lng": 13.41053,
+      "id": "berlin-germany",
+      "country": "Germany"
+    },
+    {
+      "city": "Wolfsburg",
+      "countryCode": "DE",
+      "level": "lived-there",
+      "lat": 52.42452,
+      "lng": 10.7815,
+      "id": "wolfsburg-germany",
+      "country": "Germany"
+    },
+    {
+      "city": "Cuxhaven",
+      "countryCode": "DE",
+      "level": "short-visit",
+      "lat": 53.86828,
+      "lng": 8.69902,
+      "id": "cuxhaven-germany",
+      "country": "Germany"
+    },
+    {
+      "city": "Hannover",
+      "countryCode": "DE",
+      "level": "2-plus-days",
+      "lat": 52.37052,
+      "lng": 9.73322,
+      "id": "hannover-germany",
+      "country": "Germany"
+    },
+    {
+      "city": "Hildesheim",
+      "countryCode": "DE",
+      "level": "lived-there",
+      "lat": 52.15077,
+      "lng": 9.95112,
+      "id": "hildesheim-germany",
+      "country": "Germany"
+    },
+    {
+      "city": "Gifhorn",
+      "countryCode": "DE",
+      "level": "5-plus-days",
+      "lat": 52.47774,
+      "lng": 10.5511,
+      "id": "gifhorn-germany",
+      "country": "Germany"
+    },
+    {
+      "city": "Rust",
+      "countryCode": "DE",
+      "level": "short-visit",
+      "lat": 48.26667,
+      "lng": 7.73333,
+      "id": "rust-germany",
+      "country": "Germany"
+    },
+    {
+      "city": "Braunschweig",
+      "countryCode": "DE",
+      "level": "2-plus-days",
+      "lat": 52.26594,
+      "lng": 10.52673,
+      "id": "braunschweig-germany",
+      "country": "Germany"
+    },
+    {
+      "city": "Goslar",
+      "countryCode": "DE",
+      "level": "2-plus-days",
+      "lat": 51.90425,
+      "lng": 10.42766,
+      "id": "goslar-germany",
+      "country": "Germany"
+    },
+    {
+      "city": "Wernigerode",
+      "countryCode": "DE",
+      "level": "short-visit",
+      "lat": 51.83652,
+      "lng": 10.78216,
+      "id": "wernigerode-germany",
+      "country": "Germany"
+    },
+    {
+      "city": "Quedlinburg",
+      "countryCode": "DE",
+      "level": "short-visit",
+      "lat": 51.78843,
+      "lng": 11.15006,
+      "id": "quedlinburg-germany",
+      "country": "Germany"
+    },
+    {
+      "city": "Lüneburg",
+      "countryCode": "DE",
+      "level": "short-visit",
+      "lat": 53.2509,
+      "lng": 10.41409,
+      "id": "l-neburg-germany",
+      "country": "Germany"
+    },
+    {
+      "city": "Hamburg",
+      "countryCode": "DE",
+      "level": "2-plus-days",
+      "lat": 53.55073,
+      "lng": 9.99302,
+      "id": "hamburg-germany",
+      "country": "Germany"
+    },
+    {
+      "city": "Potsdam",
+      "countryCode": "DE",
+      "level": "short-visit",
+      "lat": 52.39886,
+      "lng": 13.06566,
+      "id": "potsdam-germany",
+      "country": "Germany"
+    },
+    {
+      "city": "Dortmund",
+      "countryCode": "DE",
+      "level": "short-visit",
+      "lat": 51.51494,
+      "lng": 7.466,
+      "id": "dortmund-germany",
+      "country": "Germany"
+    },
+    {
+      "city": "Köln",
+      "countryCode": "DE",
+      "level": "5-plus-days",
+      "lat": 50.93333,
+      "lng": 6.95,
+      "id": "k-ln-germany",
+      "country": "Germany"
+    },
+    {
+      "city": "Frankfurt am Main",
+      "countryCode": "DE",
+      "level": "2-plus-days",
+      "lat": 50.11552,
+      "lng": 8.68417,
+      "id": "frankfurt-am-main-germany",
+      "country": "Germany"
+    },
+    {
+      "city": "Würzburg",
+      "countryCode": "DE",
+      "level": "short-visit",
+      "lat": 49.79391,
+      "lng": 9.95121,
+      "id": "w-rzburg-germany",
+      "country": "Germany"
+    },
+    {
+      "city": "Stuttgart",
+      "countryCode": "DE",
+      "level": "2-plus-days",
+      "lat": 48.78232,
+      "lng": 9.17702,
+      "id": "stuttgart-germany",
+      "country": "Germany"
+    },
+    {
+      "city": "Baden-Baden",
+      "countryCode": "DE",
+      "level": "short-visit",
+      "lat": 48.7606,
+      "lng": 8.23975,
+      "id": "baden-baden-germany",
+      "country": "Germany"
+    },
+    {
+      "city": "Freiburg",
+      "countryCode": "DE",
+      "level": "short-visit",
+      "lat": 47.9959,
+      "lng": 7.85222,
+      "id": "freiburg-germany",
+      "country": "Germany"
+    },
+    {
+      "city": "Hinterzarten",
+      "countryCode": "DE",
+      "level": "2-plus-days",
+      "lat": 47.90276,
+      "lng": 8.10701,
+      "id": "hinterzarten-germany",
+      "country": "Germany"
+    },
+    {
+      "city": "Füssen",
+      "countryCode": "DE",
+      "level": "short-visit",
+      "lat": 47.57143,
+      "lng": 10.70171,
+      "id": "f-ssen-germany",
+      "country": "Germany"
+    },
+    {
+      "city": "Munich",
+      "countryCode": "DE",
+      "level": "short-visit",
+      "lat": 48.13743,
+      "lng": 11.57549,
+      "id": "munich-germany",
+      "country": "Germany"
+    },
+    {
+      "city": "Prague",
+      "countryCode": "CZ",
+      "level": "5-plus-days",
+      "lat": 50.08804,
+      "lng": 14.42076,
+      "id": "prague-czech-republic",
+      "country": "Czech Republic"
+    },
+    {
+      "city": "Kutná Hora",
+      "countryCode": "CZ",
+      "level": "short-visit",
+      "lat": 49.94839,
+      "lng": 15.26816,
+      "id": "kutn-hora-czech-republic",
+      "country": "Czech Republic"
+    },
+    {
+      "city": "Velké Popovice",
+      "countryCode": "CZ",
+      "level": "short-visit",
+      "lat": 49.92252,
+      "lng": 14.63934,
+      "id": "velk-popovice-czech-republic",
+      "country": "Czech Republic"
+    },
+    {
+      "city": "Český Krumlov",
+      "countryCode": "CZ",
+      "level": "2-plus-days",
+      "lat": 48.81091,
+      "lng": 14.31521,
+      "id": "cesky-krumlov-czech-republic",
+      "country": "Czech Republic"
+    },
+    {
+      "city": "Vienna",
+      "countryCode": "AT",
+      "level": "2-plus-days",
+      "lat": 48.20849,
+      "lng": 16.37208,
+      "id": "vienna-austria",
+      "country": "Austria"
+    },
+    {
+      "city": "Salzburg",
+      "countryCode": "AT",
+      "level": "2-plus-days",
+      "lat": 47.79941,
+      "lng": 13.04399,
+      "id": "salzburg-austria",
+      "country": "Austria"
+    },
+    {
+      "city": "Hallstatt",
+      "countryCode": "AT",
+      "level": "5-plus-days",
+      "lat": 47.5622,
+      "lng": 13.6493,
+      "id": "hallstatt-austria",
+      "country": "Austria"
+    },
+    {
+      "city": "Venice",
+      "countryCode": "IT",
+      "level": "2-plus-days",
+      "lat": 45.43713,
+      "lng": 12.33265,
+      "id": "venice-italy",
+      "country": "Italy"
+    },
+    {
+      "city": "Rome",
+      "countryCode": "IT",
+      "level": "2-plus-days",
+      "lat": 41.89193,
+      "lng": 12.51133,
+      "id": "rome-italy",
+      "country": "Italy"
+    },
+    {
+      "city": "Pisa",
+      "countryCode": "IT",
+      "level": "short-visit",
+      "lat": 43.70853,
+      "lng": 10.4036,
+      "id": "pisa-italy",
+      "country": "Italy"
+    },
+    {
+      "city": "Florence",
+      "countryCode": "IT",
+      "level": "short-visit",
+      "lat": 43.77925,
+      "lng": 11.24626,
+      "id": "florence-italy",
+      "country": "Italy"
+    },
+    {
+      "city": "Pompei",
+      "countryCode": "IT",
+      "level": "short-visit",
+      "lat": 40.74574,
+      "lng": 14.49698,
+      "id": "pompei-italy",
+      "country": "Italy"
+    },
+    {
+      "city": "Budapest",
+      "countryCode": "HU",
+      "level": "short-visit",
+      "lat": 47.49835,
+      "lng": 19.04045,
+      "id": "budapest-hungary",
+      "country": "Hungary"
+    },
+    {
+      "city": "Barcelona",
+      "countryCode": "ES",
+      "level": "2-plus-days",
+      "lat": 41.38879,
+      "lng": 2.15899,
+      "id": "barcelona-spain",
+      "country": "Spain"
+    },
+    {
+      "city": "Bilbao",
+      "countryCode": "ES",
+      "level": "short-visit",
+      "lat": 43.26271,
+      "lng": -2.92528,
+      "id": "bilbao-spain",
+      "country": "Spain"
+    },
+    {
+      "city": "Marrakesh",
+      "countryCode": "MA",
+      "level": "2-plus-days",
+      "lat": 31.63416,
+      "lng": -7.99994,
+      "id": "marrakesh-morocco",
+      "country": "Morocco"
+    },
+    {
+      "city": "Istanbul",
+      "countryCode": "TR",
+      "level": "short-visit",
+      "lat": 41.01384,
+      "lng": 28.94966,
+      "id": "istanbul-turkey",
+      "country": "Turkey"
+    },
+    {
+      "city": "Tokyo",
+      "countryCode": "JP",
+      "level": "2-plus-days",
+      "lat": 35.6895,
+      "lng": 139.69171,
+      "id": "tokyo-japan",
+      "country": "Japan"
+    },
+    {
+      "city": "Fujinomiya",
+      "countryCode": "JP",
+      "level": "short-visit",
+      "lat": 35.21667,
+      "lng": 138.61667,
+      "id": "fujinomiya-japan",
+      "country": "Japan"
+    },
+    {
+      "city": "Osaka",
+      "countryCode": "JP",
+      "level": "2-plus-days",
+      "lat": 34.69379,
+      "lng": 135.50107,
+      "id": "osaka-japan",
+      "country": "Japan"
+    },
+    {
+      "city": "Jinan",
+      "countryCode": "CN",
+      "level": "5-plus-days",
+      "lat": 36.66833,
+      "lng": 116.99722,
+      "id": "jinan-china",
+      "country": "China"
+    },
+    {
+      "city": "Chengdu",
+      "countryCode": "CN",
+      "level": "5-plus-days",
+      "lat": 30.66667,
+      "lng": 104.06667,
+      "id": "chengdu-china",
+      "country": "China"
+    },
+    {
+      "city": "Hanoi",
+      "countryCode": "VN",
+      "level": "2-plus-days",
+      "lat": 21.0245,
+      "lng": 105.84117,
+      "id": "hanoi-vietnam",
+      "country": "Vietnam"
+    },
+    {
+      "city": "Hạ Long",
+      "countryCode": "VN",
+      "level": "short-visit",
+      "lat": 20.95045,
+      "lng": 107.07336,
+      "id": "ha-long-vietnam",
+      "country": "Vietnam"
+    },
+    {
+      "city": "Phnom Penh",
+      "countryCode": "KH",
+      "level": "short-visit",
+      "lat": 11.56245,
+      "lng": 104.91601,
+      "id": "phnom-penh-cambodia",
+      "country": "Cambodia"
+    },
+    {
+      "city": "Siem Reap",
+      "countryCode": "KH",
+      "level": "2-plus-days",
+      "lat": 13.36179,
+      "lng": 103.86056,
+      "id": "siem-reap-cambodia",
+      "country": "Cambodia"
+    },
+    {
+      "city": "Chiang Mai",
+      "countryCode": "TH",
+      "level": "5-plus-days",
+      "lat": 18.79038,
+      "lng": 98.98468,
+      "id": "chiang-mai-thailand",
+      "country": "Thailand"
+    },
+    {
+      "city": "Chiang Rai",
+      "countryCode": "TH",
+      "level": "2-plus-days",
+      "lat": 19.90858,
+      "lng": 99.8325,
+      "id": "chiang-rai-thailand",
+      "country": "Thailand"
+    },
+    {
+      "city": "Fang",
+      "countryCode": "TH",
+      "level": "short-visit",
+      "lat": 19.91689,
+      "lng": 99.2145,
+      "id": "fang-thailand",
+      "country": "Thailand"
+    },
+    {
+      "city": "Chiang Dao",
+      "countryCode": "TH",
+      "level": "short-visit",
+      "lat": 19.36542,
+      "lng": 98.96453,
+      "id": "chiang-dao-thailand",
+      "country": "Thailand"
+    },
+    {
+      "city": "Pai",
+      "countryCode": "TH",
+      "level": "2-plus-days",
+      "lat": 19.36168,
+      "lng": 98.43973,
+      "id": "pai-thailand",
+      "country": "Thailand"
+    },
+    {
+      "city": "Pagudpud",
+      "countryCode": "PH",
+      "level": "2-plus-days",
+      "lat": 18.5616,
+      "lng": 120.7868,
+      "id": "pagudpud-philippines",
+      "country": "Philippines"
+    },
+    {
+      "city": "Pagudpud",
+      "countryCode": "PH",
+      "level": "2-plus-days",
+      "lat": 18.5616,
+      "lng": 120.7868,
+      "id": "pagudpud-philippines-2",
+      "country": "Philippines"
+    },
+    {
+      "city": "Baguio",
+      "countryCode": "PH",
+      "level": "lived-there",
+      "lat": 16.41639,
+      "lng": 120.59306,
+      "id": "baguio-philippines",
+      "country": "Philippines"
+    },
+    {
+      "city": "Angeles City",
+      "countryCode": "PH",
+      "level": "lived-there",
+      "lat": 15.15,
+      "lng": 120.58333,
+      "id": "angeles-city-philippines",
+      "country": "Philippines"
+    },
+    {
+      "city": "Manila",
+      "countryCode": "PH",
+      "level": "2-plus-days",
+      "lat": 14.6042,
+      "lng": 120.9822,
+      "id": "manila-philippines",
+      "country": "Philippines"
+    },
+    {
+      "city": "Cebu City",
+      "countryCode": "PH",
+      "level": "lived-there",
+      "lat": 10.31672,
+      "lng": 123.89071,
+      "id": "cebu-city-philippines",
+      "country": "Philippines"
+    },
+    {
+      "city": "Breda",
+      "countryCode": "NL",
+      "level": "short-visit",
+      "lat": 51.58656,
+      "lng": 4.77596,
+      "id": "place-f198dbb0-4b2c-471f-81d5-8d67a0acc21b",
+      "country": "Netherlands"
+    },
+    {
+      "city": "Efteling",
+      "countryCode": "NL",
+      "level": "short-visit",
+      "lat": 51.650654,
+      "lng": 5.049746,
+      "id": "place-c87b82f8-3d90-4668-8b8d-f11e2d867da5",
+      "country": "Netherlands"
+    },
+    {
+      "city": "Oostende",
+      "countryCode": "NL",
+      "level": "short-visit",
+      "lat": 51.2154,
+      "lng": 2.9287,
+      "id": "place-7202a7c9-4919-4151-baca-29e14b8fb16f",
+      "country": "Netherlands"
+    },
+    {
+      "city": "Kortrijk",
+      "countryCode": "BE",
+      "level": "short-visit",
+      "lat": 50.82803,
+      "lng": 3.26487,
+      "id": "place-5bf21059-d126-4963-9de4-ac6cf3f442a1",
+      "country": "Belgium"
+    },
+    {
+      "city": "Dinant",
+      "countryCode": "BE",
+      "level": "short-visit",
+      "lat": 50.25807,
+      "lng": 4.91166,
+      "id": "place-e4bcd9be-27cb-4e30-93ef-a43b150373e7",
+      "country": "Belgium"
+    },
+    {
+      "city": "Bonn",
+      "countryCode": "DE",
+      "level": "short-visit",
+      "lat": 50.7374,
+      "lng": 7.0982,
+      "id": "place-c7c5efd8-0951-4228-92d2-60249a69a5a4",
+      "country": "Germany"
+    },
+    {
+      "city": "Bremen",
+      "countryCode": "DE",
+      "level": "short-visit",
+      "lat": 53.07582,
+      "lng": 8.80717,
+      "id": "place-e4ad759e-acd9-41ff-9de7-ffd4cd2fdd9e",
+      "country": "Germany"
+    },
+    {
+      "city": "Merzouga",
+      "countryCode": "MA",
+      "level": "short-visit",
+      "lat": 31.0802,
+      "lng": -4.0134,
+      "id": "place-0230e25a-18bf-43bd-99ab-dd81ea112170",
+      "country": "Morocco"
+    }
   ]
 }

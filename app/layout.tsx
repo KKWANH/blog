@@ -9,6 +9,8 @@ import './globals.css'
 import '../styles/notebook.css'
 import '../styles/fieldbook.css'
 import '../styles/cinema.css'
+import '../styles/profile.css'
+import '../styles/stationery.css'
 
 const figtree = localFont({
   src: '../public/font/Figtree.woff2',
@@ -26,7 +28,7 @@ const caveat = localFont({
 })
 
 const description =
-  'Kwanho Kim, C++ Software Engineer at KLA in Leuven. Work, projects, technical notes and a contact card.'
+  'Kwanho Kim, C++ Software Engineer at KLA in Leuven. Experience, education, projects and technical notes.'
 
 export const metadata: Metadata = {
   title: {

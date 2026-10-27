@@ -1,7 +1,8 @@
 import { revalidatePath } from 'next/cache'
 import { z } from 'zod'
 import { countryOptions, placeIdSchema, placeInputSchema, storedPlaceSchema, travelStore, TravelStoreError } from '@/lib/travel-store'
-import { localTravelEditor, travelEditorToken, travelWriteAllowed } from '@/lib/travel-editor-access'
+import { travelOwner } from '@/lib/travel-owner'
+import { ownerAuthConfigured } from '@/lib/owner-auth'
 
 export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
@@ -17,33 +18,40 @@ const removeSchema = z.object({ revision, id: placeIdSchema }).strict()
 const json = (body: unknown, status = 200) => Response.json(body, { status, headers })
 
 export async function GET(request: Request) {
+  let owner: Awaited<ReturnType<typeof travelOwner>> = null
   try {
-    const canEdit = localTravelEditor(request)
+    owner = await travelOwner(request)
     const query = new URL(request.url).searchParams.get('q')
     if (query !== null) {
-      if (!canEdit) return json({ error: 'Location lookup is available in the local editor.' }, 403)
+      if (!owner) return json({ error: 'Sign in as the site owner to look up locations.' }, 403)
       if (query.trim().length < 2 || query.length > 80) return json({ locations: [] })
       const { searchTravelLocations } = await import('@/lib/travel')
       return json({ locations: searchTravelLocations(query) })
     }
     return json({
-      ...travelStore().read(),
-      editor: canEdit ? { token: travelEditorToken(), countries: countryOptions() } : null,
+      ...(owner ? await owner.store.read() : travelStore().read()),
+      editor: owner ? { token: owner.token, countries: countryOptions(), mode: owner.mode } : null,
+      ownerSignInAvailable: ownerAuthConfigured(),
     })
   } catch (error) {
     console.error('Travel atlas read failed', error)
-    return json({ error: 'The atlas could not be loaded. The saved file has not been replaced.' }, 500)
+    return json({
+      error: error instanceof TravelStoreError ? error.message : 'The atlas could not be loaded. No saved data was replaced.',
+      editor: owner ? { token: owner.token, countries: countryOptions(), mode: owner.mode } : null,
+      ownerSignInAvailable: ownerAuthConfigured(),
+    }, 500)
   }
 }
 
 async function mutate(request: Request, method: 'POST' | 'PATCH' | 'DELETE') {
-  if (!travelWriteAllowed(request)) return json({ error: 'Editing is available only in the opted-in local editor. Reload if your session expired.' }, 403)
+  const owner = await travelOwner(request)
+  if (!owner?.canWrite) return json({ error: 'Owner access is required. Sign in again if your session expired.' }, 403)
   try {
     const raw = await request.text()
     if (raw.length > 16_384) return json({ error: 'This request is too large.' }, 413)
     let body: unknown
     try { body = JSON.parse(raw) } catch { return json({ error: 'Send valid JSON place details.' }, 400) }
-    const store = travelStore()
+    const store = owner.store
     let result
     if (method === 'POST') {
       const input = createSchema.parse(body)
@@ -63,7 +71,7 @@ async function mutate(request: Request, method: 'POST' | 'PATCH' | 'DELETE') {
     if (error instanceof z.ZodError) return json({ error: 'Check the place details.', fields: error.flatten().fieldErrors }, 422)
     if (error instanceof TravelStoreError) return json({ error: error.message }, error.status)
     console.error('Travel atlas save failed', error)
-    return json({ error: 'The change could not be saved. Your form is still available to try again.' }, 500)
+    return json({ error: 'The save could not be confirmed. Reload the atlas before trying again.' }, 500)
   }
 }
 

@@ -15,7 +15,7 @@ export function Hero() {
           Working on device software, interfaces and error recovery.
         </p>
         <div className="cinema-intro-actions">
-          <Link className="action-button action-primary" href="/about">Open my card <ArrowUpRight aria-hidden="true" /></Link>
+          <Link className="action-button action-primary" href="/about">Meet Kwanho <ArrowUpRight aria-hidden="true" /></Link>
           <a className="text-link" href={externalLinks.cv}>{externalLinks.cvLabel} <ArrowUpRight aria-hidden="true" /></a>
         </div>
         <a href="#work" className="scene-scroll"><span aria-hidden="true">↓</span> Work, notes &amp; the rest</a>
