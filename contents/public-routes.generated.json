@@ -3,6 +3,7 @@
   "paths": [
     "/",
     "/about",
+    "/cv",
     "/notes",
     "/notes/ai",
     "/notes/device-readback",

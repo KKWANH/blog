@@ -16,7 +16,7 @@ export function Hero() {
         </p>
         <div className="cinema-intro-actions">
           <Link prefetch={false} className="action-button action-primary" href="/about">Meet Kwanho <ArrowUpRight aria-hidden="true" /></Link>
-          <a className="text-link" href={externalLinks.cv}>{externalLinks.cvLabel} <ArrowUpRight aria-hidden="true" /></a>
+          <Link prefetch={false} className="text-link" href="/cv">Read the CV <ArrowUpRight aria-hidden="true" /></Link>
         </div>
         <a href="#work" className="scene-scroll"><span aria-hidden="true">↓</span> Work, notes &amp; the rest</a>
       </div>

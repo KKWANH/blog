@@ -12,6 +12,7 @@ export function ensurePublicRoutes() {
   }
   visit(content)
   routes.delete('/projects')
+  routes.add('/cv')
   const photos = JSON.parse(fs.readFileSync(path.join(content, 'photography/photos.json'), 'utf8'))
   if (photos.published && photos.items.length) routes.add('/photography')
   else routes.delete('/photography')

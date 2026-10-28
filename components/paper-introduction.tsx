@@ -1,6 +1,7 @@
 'use client'
 
 import { useRef, useState } from 'react'
+import Link from 'next/link'
 import { ArrowDown, ArrowDownToLine, ArrowUpRight, ContactRound, Mail, ArrowLeft, ArrowRight, Expand } from 'lucide-react'
 import { TiltSurface } from '@/components/tilt-surface'
 import { CopyText } from '@/components/copy-email'
@@ -42,7 +43,7 @@ export function PaperIntroduction() {
         </div>
         <p className="paper-mobile-focus">{profile.focus}</p>
         <div className="paper-card-actions">
-          <a className="action-button action-primary" href="/CV.pdf"><ArrowDownToLine aria-hidden="true" />Read the CV</a>
+          <Link prefetch={false} className="action-button action-primary" href="/cv"><ArrowDownToLine aria-hidden="true" />Read the CV</Link>
           <a className="action-button" href={`mailto:${profile.contact}`}><Mail aria-hidden="true" />Email Kwanho</a>
         </div>
         <div className="paper-card-links">

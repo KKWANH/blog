@@ -116,18 +116,18 @@ function ProfileContent() {
                 </div>
                 <ul className="contribution-list">{job.details.map((detail) => <li key={detail}>{detail}</li>)}</ul>
                 <div className="record-skill-links">{job.skills.filter((item) => preference(item).visibility !== 'hidden').map((item) => <button type="button" key={item} aria-pressed={skill === item} onClick={() => chooseSkill(skill === item ? null : item as CareerSkill)}><CareerIcon skill={item as CareerSkill} size={18} />{careerSkills.find((value) => value.id === item)?.label}</button>)}</div>
-                <button type="button" className="scope-jump" onClick={() => { selectRole(job.id); requestAnimationFrame(viewScope) }}>View this work scope ↓</button>
+                <button type="button" className="scope-jump" onClick={() => { selectRole(job.id); requestAnimationFrame(viewScope) }}>View this work scope <span className="scope-arrow" aria-hidden="true">→</span></button>
               </li>
             })}
           </ol>
-          {currentRepository || selected === 'design' ? <RepositoryEvidence project={currentRepository} skill={skill} /> : currentReviewedRepository ? <aside id="career-evidence" className="career-evidence" tabIndex={-1} aria-label={`${currentReviewedRepository.name} repository review`}><RepositoryInspector key={currentReviewedRepository.name} repository={currentReviewedRepository} /></aside> : selected === 'bcx' ? <aside id="career-evidence" className="career-evidence project-companion" tabIndex={-1} aria-label="Color Saves Life project material">
+          {currentRepository || selected === 'design' ? <RepositoryEvidence project={currentRepository} skill={skill} /> : currentReviewedRepository ? <div role="region" id="career-evidence" className="career-evidence" tabIndex={-1} aria-label={`${currentReviewedRepository.name} repository review`}><RepositoryInspector key={currentReviewedRepository.name} repository={currentReviewedRepository} /></div> : selected === 'bcx' ? <div role="region" id="career-evidence" className="career-evidence project-companion" tabIndex={-1} aria-label="Color Saves Life project material">
             {skill && ['git', 'docker', 'linux'].includes(skill) ? <div className="project-tool-context"><CareerIcon skill={skill} /><p><strong>{currentSkill?.label} · Project environment</strong><span>{skill === 'git' ? 'Public team source and repository history.' : skill === 'docker' ? 'The public project includes Docker run instructions.' : 'The documented prototype environment uses Ubuntu 20.04.'}</span></p></div> : null}
             <ProjectEvidence compact />
-          </aside> : selected === 'cv' && currentSkill ? <aside id="career-evidence" className="career-evidence cv-skill-context" tabIndex={-1} aria-labelledby="cv-skill-title">
+          </div> : selected === 'cv' && currentSkill ? <div role="region" id="career-evidence" className="career-evidence cv-skill-context" tabIndex={-1} aria-labelledby="cv-skill-title">
             <CareerIcon skill={currentSkill.id} /><h3 id="cv-skill-title">{currentSkill.label}</h3>
             <p>{careerSkillGroups.find((group) => group.id === currentSkill.group)?.label}</p>
-            <p>Included in the CV&apos;s technical skills.</p><a className="text-link" href="/CV.pdf">Read the CV <ArrowUpRight aria-hidden="true" /></a>
-          </aside> : <CareerEvidence selected={selected} skill={skill} />}
+            <p>Included in the CV&apos;s technical skills.</p><Link prefetch={false} className="text-link" href="/cv">Read the CV <ArrowUpRight aria-hidden="true" /></Link>
+          </div> : <CareerEvidence selected={selected} skill={skill} />}
         </div>
         <p className="sr-only" role="status">Showing {currentRepository?.title ?? currentReviewedRepository?.name ?? (selected === 'design' ? 'Figma and UI design practice' : selected === 'bcx' ? 'Color Saves Life project material' : selected === 'cv' ? `${currentSkill?.label} CV entry` : `${experience.find((job) => job.id === selected)?.company ?? 'KLA'} work scope`)}. All career entries remain visible.</p>
       </section>
@@ -149,8 +149,6 @@ function ProfileContent() {
         </div>
       </section>
 
-      <SelectedWork />
-
       <section className="skill-connections" id="skills" aria-labelledby="skill-connections-title">
         <div className="profile-section-heading">
           <h2 id="skill-connections-title">Skills &amp; practice</h2>
@@ -171,6 +169,8 @@ function ProfileContent() {
           <button type="button" className="scope-jump" onClick={viewScope}>View matching {selected === 'bcx' || currentRepository || currentReviewedRepository ? 'project' : selected === 'design' ? 'design practice' : selected === 'cv' ? 'CV entry' : 'work scope'} ↑</button>
         </div> : null}
       </section>
+
+      <SelectedWork />
 
       <nav className="profile-exits" aria-label="Explore more">
         <Link href="/travel">Travel atlas <ArrowUpRight aria-hidden="true" /></Link>

@@ -20,13 +20,19 @@ export function SiteFooter() {
             <a href={profile.linkedin}>LinkedIn</a>
             <a href={externalLinks.instagram}>Instagram</a>
             <a href={externalLinks.cv}>{externalLinks.cvLabel}</a>
+            <a href="/admin">Owner tools</a>
           </nav>
         </div>
         <div className="footer-bottom">
-          <p>© {new Date().getFullYear()} {profile.name} · <span className="footer-last-updated">Last updated {buildMeta.lastUpdated}</span></p>
-          <MotionControl />
-          <StatisticsPreference />
-          <a href="/admin">Owner tools</a>
+          <div className="footer-info">
+            <p>© {new Date().getFullYear()} {profile.name}</p>
+            <span className="footer-dot" aria-hidden="true">·</span>
+            <p className="footer-last-updated">Last updated: <time dateTime={buildMeta.timestamp}>{buildMeta.lastUpdatedTime}</time></p>
+          </div>
+          <div className="footer-actions">
+            <StatisticsPreference />
+            <MotionControl />
+          </div>
         </div>
       </div>
     </footer>

@@ -21,7 +21,7 @@
 .skill-family .skill-lenses { display: grid; grid-template-columns: 1fr; gap: 0; }
 .skill-lenses button { display: flex; width: 100%; min-width: 0; max-width: 100%; align-items: center; justify-content: flex-start; gap: .8rem; min-height: 52px; border: 0; border-radius: 3px; border-bottom: 1px solid #c5d8ac15; background: transparent; box-shadow: none; padding: .7rem .3rem; text-align: left; transform: none; }
 .skill-lenses button:hover, .skill-lenses button[aria-pressed="true"] { border-color: #b9d49748; background: linear-gradient(90deg,#adc78e16,transparent); box-shadow: none; transform: none; }
-.skill-lenses button > .career-icon { flex: 0 0 27px; width: 27px; height: 27px; border: 0; border-radius: 0; background: none; box-shadow: none; padding: 2px; }
+.skill-lenses button > .career-icon { flex: 0 0 28px; width: 28px; height: 28px; border-radius: 5px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); padding: 3px; }
 .skill-lenses .skill-item-copy { flex: 1; min-width: 0; display: block; }
 .skill-item-heading { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .35rem .65rem; width: 100%; font-size: .9rem; }
 .skill-lenses button .skill-item-copy > small { display: block; color: #b4c7b8; font-size: .7rem; margin-top: .2rem; font-weight: 400; line-height: 1.5; }
@@ -144,11 +144,11 @@
 .experience-role { font-size: 1.45rem; font-weight: 650; line-height: 1.25; letter-spacing: -.025em; color: #f2f5ec; margin: 0; }
 .experience-period { font-size: .88rem; font-weight: 500; color: #d8e8c1; font-variant-numeric: tabular-nums; padding: .2rem .6rem; background: rgba(216, 232, 193, 0.08); border: 1px solid rgba(216, 232, 193, 0.18); border-radius: 4px; max-width: 100%; }
 .experience-secondary-row { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: .5rem 1rem; }
-.experience-secondary-row h3 { margin: 0; }
-.experience-secondary-row h3 button { display: inline-flex; align-items: center; gap: .65rem; min-height: 44px; text-align: left; }
-.company-name { font-size: 1.15rem; font-weight: 600; color: #dce7d4; }
+.company-select { display: inline-flex; align-items: center; gap: .65rem; min-height: 44px; background: transparent; border: none; padding: 0; color: inherit; cursor: pointer; max-width: 100%; }
+.company-select .company-mark { flex-shrink: 0; }
+.company-name { font-size: 1.15rem; font-weight: 600; color: #dce7d4; line-height: 1; }
 .company-select[aria-pressed="true"] .company-mark { box-shadow: 0 0 0 2px #d0b47b; }
-.company-select svg { width: 16px; height: 16px; color: var(--muted-foreground); transition: transform 160ms; }
+.company-select svg { width: 16px; height: 16px; flex-shrink: 0; color: var(--muted-foreground); transition: transform 160ms ease, color 160ms ease; }
 .company-select:hover svg { transform: translate(2px, -2px); color: var(--warm-accent); }
 .experience-place { font-size: .82rem; color: var(--muted-foreground); margin: 0; }
 .contribution-list { list-style: disc; padding-left: 1.15rem; font-size: .96rem; line-height: 1.75; color: #dfe8df; }
@@ -158,6 +158,8 @@
 .record-skill-links .career-icon { width: 20px; height: 20px; flex: 0 0 20px; border-radius: 4px; padding: 2px; }
 .record-skill-links button[aria-pressed="true"] { color: var(--warm-accent); border-color: var(--warm-accent); background: #d6bf7f14; }
 .scope-jump { display: inline-flex; align-items: center; min-height: 44px; font-size: .78rem; color: var(--warm-accent); text-decoration: underline; text-underline-offset: .25rem; margin-top: .5rem; }
+.scope-arrow { display: inline-block; transition: transform 160ms ease; margin-left: .25rem; }
+@media(max-width:63.99rem) { .scope-arrow { transform: rotate(90deg); } }
 .skill-selection-status .scope-jump { margin-top: 0; }
 .career-evidence { position: sticky; top: calc(var(--site-header-height, 5rem) + 1.4rem); background: #102b1f; border: 1px solid var(--border); border-radius: 5px; padding: 1.5rem; min-width: 0; }
 .career-evidence { scroll-margin-top: calc(var(--site-header-height, 5rem) + 1.4rem); }
@@ -322,7 +324,7 @@ html[data-motion="off"] .skill-lenses button > .career-icon { transform: none; t
   .timeline-group-label { position: sticky; left: 0; width: fit-content; background: #0a2118; z-index: 2; padding-right: .5rem; }
   .timeline-mobile-cue { display: flex; align-items: center; gap: .5rem; color: var(--muted-foreground); font-size: .7rem; line-height: 1.6; margin-bottom: .7rem; }
   .timeline-mobile-cue svg { width: 16px; height: 16px; flex: 0 0 16px; }
-  .experience-records > li { padding-left: .7rem; }
+  .experience-records > li { padding-left: .5rem; }
   .experience-role { font-size: 1.25rem; }
   .experience-period { font-size: .8rem; }
   .contribution-list { font-size: .88rem; }

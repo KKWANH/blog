@@ -62,8 +62,10 @@ export function TiltSurface({
       if (remaining > .002) frame = requestAnimationFrame(draw)
       else { current.x = target.x; current.y = target.y; current.amount = target.amount; write(); frame = 0 }
     }
+    let resetTimeout: NodeJS.Timeout | null = null
     const request = () => { if (!frame) { last = 0; frame = requestAnimationFrame(draw) } }
     const reset = () => {
+      if (resetTimeout) { clearTimeout(resetTimeout); resetTimeout = null }
       active = false
       gesture = null
       target.x = target.y = target.amount = 0
@@ -71,6 +73,7 @@ export function TiltSurface({
       request()
     }
     const locate = (event: PointerEvent, limit: number) => {
+      if (resetTimeout) { clearTimeout(resetTimeout); resetTimeout = null }
       const box = bounds ??= element.getBoundingClientRect()
       target.x = Math.max(-limit, Math.min(limit, ((event.clientX - box.left) / box.width - .5) * 2))
       target.y = Math.max(-limit, Math.min(limit, ((event.clientY - box.top) / box.height - .5) * 2))
@@ -81,20 +84,42 @@ export function TiltSurface({
       bounds = element.getBoundingClientRect()
       if ((event.pointerType === 'touch' || event.pointerType === 'pen') && !(event.target as HTMLElement).closest('a,button,input,select,textarea')) {
         gesture = { x: event.clientX, y: event.clientY, horizontal: false }
-        locate(event, .9)
-        if (Math.abs(target.x) + Math.abs(target.y) < .12) { target.x = .14; target.y = -.12 }
+        locate(event, 1)
+        if (Math.abs(target.x) + Math.abs(target.y) < .15) { target.x = .25; target.y = -.2 }
       }
     }
     const move = (event: PointerEvent) => {
       if (event.pointerType !== 'mouse') {
         if (!gesture) return
         const dx = Math.abs(event.clientX - gesture.x), dy = Math.abs(event.clientY - gesture.y)
-        if (dy > 9 && dy > dx * 1.2) { reset(); return }
-        if (!gesture.horizontal && dx > 7 && dx > dy * 1.3) gesture.horizontal = true
-        if (!gesture.horizontal && Math.max(dx, dy) > 9) return
+        if (dy > 14 && dy > dx * 1.5) { reset(); return }
       }
       if (element.matches(':focus-within')) return
-      locate(event, event.pointerType === 'mouse' ? 1 : .9)
+      locate(event, event.pointerType === 'mouse' ? 1 : 1)
+    }
+    const up = (event: PointerEvent) => {
+      if (event.pointerType === 'touch' || event.pointerType === 'pen') {
+        // Keep the tactile tilt visible for 600ms after lifting touch before gently settling
+        resetTimeout = setTimeout(reset, 600)
+      } else {
+        reset()
+      }
+    }
+    const onOrientation = (event: DeviceOrientationEvent) => {
+      if (event.gamma === null || event.beta === null) return
+      if (active && gesture) return // Touch interaction takes precedence
+      // gamma: left-right tilt [-90, 90], beta: forward-back tilt [-180, 180]
+      // Typical holding posture is around 40-50 deg pitch
+      const gx = Math.max(-1, Math.min(1, event.gamma / 22))
+      const gy = Math.max(-1, Math.min(1, (event.beta - 45) / 25))
+      if (Math.abs(gx) > 0.05 || Math.abs(gy) > 0.05) {
+        target.x = gx * 0.9
+        target.y = gy * 0.8
+        target.amount = Math.min(1, Math.hypot(gx, gy) * 1.1)
+        active = true
+        element.dataset.active = 'true'
+        request()
+      }
     }
     const invalidate = () => { bounds = null }
     const visibility = () => {
@@ -106,11 +131,12 @@ export function TiltSurface({
     element.addEventListener('pointerdown', down, { passive: true })
     element.addEventListener('pointermove', move, { passive: true })
     element.addEventListener('pointerleave', reset)
-    element.addEventListener('pointerup', reset)
+    element.addEventListener('pointerup', up)
     element.addEventListener('pointercancel', reset)
     element.addEventListener('focusin', reset)
     window.addEventListener('scroll', invalidate, { passive: true })
     window.addEventListener('resize', invalidate)
+    window.addEventListener('deviceorientation', onOrientation, { passive: true })
     document.addEventListener('visibilitychange', visibility)
     const observer = new IntersectionObserver(([entry]) => {
       element.dataset.inView = String(entry.isIntersecting)
@@ -119,15 +145,17 @@ export function TiltSurface({
     observer.observe(element)
     return () => {
       cancelAnimationFrame(frame)
+      if (resetTimeout) clearTimeout(resetTimeout)
       observer.disconnect()
       element.removeEventListener('pointerdown', down)
       element.removeEventListener('pointermove', move)
       element.removeEventListener('pointerleave', reset)
-      element.removeEventListener('pointerup', reset)
+      element.removeEventListener('pointerup', up)
       element.removeEventListener('pointercancel', reset)
       element.removeEventListener('focusin', reset)
       window.removeEventListener('scroll', invalidate)
       window.removeEventListener('resize', invalidate)
+      window.removeEventListener('deviceorientation', onOrientation)
       document.removeEventListener('visibilitychange', visibility)
     }
   }, [enabled, disabled, pitch, yaw, lift, scale, resetKey])

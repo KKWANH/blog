@@ -29,10 +29,10 @@ const caveat = localFont({
   display: 'swap',
 })
 
-const dancingScript = localFont({
-  src: '../public/font/DancingScript-Medium.woff2',
+const amsterdam = localFont({
+  src: '../public/font/Amsterdam.woff',
   variable: '--font-signature',
-  weight: '500 700',
+  weight: '400',
   display: 'swap',
 })
 
@@ -80,7 +80,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark" data-motion="off">
-      <body className={`${figtree.variable} ${caveat.variable} ${dancingScript.variable} font-sans antialiased`}>
+      <body className={`${figtree.variable} ${caveat.variable} ${amsterdam.variable} font-sans antialiased`}>
         <a className="skip-link" href="#main-content">Skip to content</a>
         <MotionProvider>
           <VisitStatisticsProvider possible={process.env.NODE_ENV !== 'production' || process.env.ANALYTICS_ENABLED === '1'}>

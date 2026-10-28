@@ -46,7 +46,6 @@ export function SiteHeader() {
     <header ref={header} className="notebook-header">
       <div className="site-width header-inner">
         <Link href="/" className="wordmark" aria-label="Kwanho Kim, home" onClick={() => setOpen(false)}>
-          <span className="site-mark" aria-hidden="true" />
           <span className="wordmark-name">kwanho<span className="wordmark-domain">.dev</span></span>
         </Link>
         <div className="header-controls">
@@ -63,15 +62,16 @@ export function SiteHeader() {
           </button>
           <nav id="main-navigation" className="main-nav" aria-label="Main navigation" data-open={open}>
             {navigation.map(({ href, label }) => {
+              const targetHref = href === '/#work' && pathname === '/about' ? '#work' : href
               const active = pathname === href || pathname.startsWith(`${href}/`)
               return (
-                <Link prefetch={false} key={href} href={href} aria-current={active ? pathname === href ? 'page' : 'location' : undefined} onClick={() => setOpen(false)}>
+                <Link prefetch={false} key={href} href={targetHref} aria-current={active ? pathname === href ? 'page' : 'location' : undefined} onClick={() => setOpen(false)}>
                   {label}
                 </Link>
               )
             })}
           </nav>
-          <a href="/CV.pdf" className="header-cv">CV <ArrowUpRight aria-hidden="true" /></a>
+          <Link prefetch={false} href="/cv" className="header-cv">CV <ArrowUpRight aria-hidden="true" /></Link>
           <MotionControl compact />
         </div>
       </div>
