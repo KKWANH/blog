@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kwanho Kim · Business Card</title>
+<style>
+@font-face {
+  font-family: 'Bastliga';
+  src: url('/font/Bastliga-One.woff') format('woff');
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #071b13;
+  color: #edf2e8;
+  font-family: system-ui, -apple-system, sans-serif;
+  padding: 24px;
+}
+.stage {
+  max-width: 520px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.card {
+  aspect-ratio: 85/55;
+  width: 100%;
+  background: linear-gradient(112deg, #f7f3e6, #eae4d3);
+  padding: 24px 28px;
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+  color: #173726;
+  box-shadow: 0 1px 0 #fffdf0, 0 3px 0 #bdc2a8, 0 5px 0 #294630, 0 20px 40px -12px rgba(0,0,0,0.7);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+}
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('/paper-fibres.webp') 0 0/260px, url('/paper-grain.webp') 0 0/120px;
+  opacity: .55;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border: 1px solid #45644724;
+  box-shadow: inset 0 1px 0 #fffdf588;
+  opacity: .7;
+  pointer-events: none;
+}
+.debossed {
+  text-shadow: 0 1px 0.8px #ffffff, 0 -1px 0.8px rgba(18, 42, 28, 0.45), -1px 0 0.8px rgba(18, 42, 28, 0.35);
+}
+.role {
+  font-size: 11.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #355344;
+}
+.name {
+  font-family: 'Bastliga', cursive;
+  font-size: 44px;
+  line-height: 1.1;
+  margin: 4px 0 2px;
+  color: #173726;
+}
+.focus {
+  font-size: 12px;
+  color: #3a5b44;
+  letter-spacing: 0.02em;
+}
+.location {
+  font-size: 11px;
+  color: #55725e;
+  margin-top: 2px;
+}
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(85, 118, 76, 0.25);
+  box-shadow: inset 0 1px 0 #fffdf5c9;
+  padding-top: 8px;
+  font-size: 11.5px;
+  color: #21432e;
+}
+.footer a {
+  color: inherit;
+  text-decoration: none;
+}
+.qr {
+  width: 26px;
+  height: 26px;
+  display: block;
+  opacity: 0.85;
+}
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+.toolbar button, .toolbar a {
+  background: #102d1d;
+  color: #dce5cf;
+  border: 1px solid #3c654b;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 160ms ease;
+}
+.toolbar button:hover, .toolbar a:hover {
+  border-color: #e6bf7d;
+  color: #e6bf7d;
+  background: #183d2a;
+}
+@media print {
+  body { background: white; padding: 0; }
+  .toolbar { display: none; }
+  .card { box-shadow: none; border: 1px solid #ccc; width: 85mm; height: 55mm; }
+}
+</style>
+</head>
+<body>
+<main class="stage">
+  <div class="card" id="card">
+    <div class="role debossed">Software Engineer</div>
+    <div>
+      <div class="name debossed">Kwanho Kim</div>
+      <div class="focus debossed">C++ device software &amp; integration</div>
+      <div class="location">Leuven, Belgium</div>
+    </div>
+    <div class="footer">
+      <a href="mailto:kwanho0096@gmail.com">kwanho0096@gmail.com</a>
+      <a href="https://kwanho.dev" target="_blank" rel="noopener"><img class="qr" src="/kwanho-qr.svg" alt="kwanho.dev QR"></a>
+      <a href="https://kwanho.dev" target="_blank" rel="noopener">kwanho.dev</a>
+    </div>
+  </div>
+
+  <nav class="toolbar" aria-label="Card actions">
+    <button type="button" onclick="window.print()">Print Card / Save PDF</button>
+    <a href="/" target="_self">Return to portfolio</a>
+  </nav>
+</main>
+</body>
+</html>

@@ -2,7 +2,7 @@
 
 import { useRef, useState } from 'react'
 import Link from 'next/link'
-import { ArrowDown, ArrowDownToLine, ArrowUpRight, ContactRound, Mail, ArrowLeft, ArrowRight, Expand } from 'lucide-react'
+import { ArrowDown, ArrowDownToLine, ArrowUpRight, ContactRound, Mail, ArrowLeft, ArrowRight, Expand, QrCode } from 'lucide-react'
 import { TiltSurface } from '@/components/tilt-surface'
 import { CopyText } from '@/components/copy-email'
 import { profile, recruiterBrief } from '@/lib/profile'
@@ -28,14 +28,19 @@ export function PaperIntroduction() {
       <div className="paper-introduction-main">
         <div className="business-card-holder">
           <TiltSurface className="business-card-tilt" pitch={7} yaw={9} lift={6} scale={1.012}>
-            <div className="paper-business-card">
+            <div className="paper-business-card paper-card-centered">
               <span className="paper-light" aria-hidden="true" />
               <div className="paper-card-topline"><p className="paper-card-role">{profile.role}</p></div>
-              <h1 id="profile-name">{profile.name}</h1>
-              <p className="paper-card-focus">{profile.focus}</p>
-              <p className="paper-card-location">{profile.location}</p>
+              <div className="paper-card-core">
+                <h1 id="profile-name">{profile.name}</h1>
+                <p className="paper-card-focus">{profile.focus}</p>
+                <p className="paper-card-location">{profile.location}</p>
+              </div>
               <div className="paper-card-footer">
                 <a className="paper-contact-link" href={`mailto:${profile.contact}`} aria-label={`Email ${profile.contact}`}><span>{mailbox}@<wbr />{domain}</span></a>
+                <span className="paper-card-qr-wrap" aria-hidden="true">
+                  <img src="/kwanho-qr.svg" alt="" className="paper-card-qr" />
+                </span>
                 <a className="paper-contact-link paper-site-link" href="/" aria-label="Kwanho website home">kwanho.dev<ArrowUpRight aria-hidden="true" /></a>
               </div>
             </div>
@@ -48,6 +53,7 @@ export function PaperIntroduction() {
         </div>
         <div className="paper-card-links">
           <a href="/contact.vcf" download="Kwanho_Kim.vcf"><ContactRound aria-hidden="true" />Save contact</a>
+          <a href="/business-card.html" target="_blank"><QrCode aria-hidden="true" />Standalone card &amp; QR</a>
           <a href={profile.linkedin}>LinkedIn <ArrowUpRight aria-hidden="true" /></a>
           <a href="#experience-kla">Current work at KLA <ArrowDown aria-hidden="true" /></a>
         </div>

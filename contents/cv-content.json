@@ -75,7 +75,7 @@
       "includeInCV": true,
       "link": "https://github.com/KKWANH/ColorSavesLife",
       "dates": "Feb 2024",
-      "award": {"rank": "1st", "credit": "Team", "scope": "digital.auto & mobility challenge", "event": "BCX 2024"},
+      "award": {"rank": "1st", "credit": "Winner", "scope": "digital.auto & mobility challenge", "event": "BCX 2024"},
       "emphasis": [],
       "description": "Built the Python client for a driver visual-assistance prototype, integrated eye tracking with simulation and presented the team’s demo."
     }
@@ -90,5 +90,5 @@
     {"id": "42", "name": "42", "program": "Software engineering", "location": "Seoul / Wolfsburg", "period": null, "status": "Completed"},
     {"id": "sea-me", "name": "SEA:ME", "program": "Automotive & Mobility", "location": "Wolfsburg", "period": "Jul 2023–Jun 2024", "status": "Completed"}
   ],
-  "languages": "Korean (Native) · English: IELTS 7.5 (2025) · Japanese: Conversational (Learning)"
+  "languages": "Korean: Native · English: Fluent (IELTS 7.5, 2025) · Japanese: Learner"
 }

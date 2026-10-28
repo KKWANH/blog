@@ -339,7 +339,19 @@
 .html-cv-paper strong { font-weight: 600; }
 .html-cv-paper .cv-header { padding-bottom: 3mm; border-bottom: .6pt solid var(--rule); }
 .html-cv-paper .identity-row { display: flex; justify-content: space-between; align-items: start; gap: 12mm; }
-.html-cv-paper .cv-name { font: 700 30pt/1.08 Manrope, system-ui, sans-serif; letter-spacing: -.035em; color: var(--ink); }
+@font-face {
+  font-family: 'Syne';
+  src: url('/font/Syne.woff2') format('woff2');
+  font-weight: 700 800;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('/font/PlayfairDisplay.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+.html-cv-paper .cv-name { font-family: 'Syne', 'Playfair Display', Georgia, sans-serif; font-size: 30pt; font-weight: 800; line-height: 1.05; letter-spacing: -.025em; color: var(--ink); }
 .html-cv-paper .cv-role { font-size: 13.5pt; font-weight: 500; line-height: 18pt; color: #416E50; margin-top: 2mm !important; }
 .html-cv-paper .identity-context { display: flex; align-items: center; gap: 4mm; font-size: 9pt; line-height: 12pt; color: var(--muted); text-align: right; }
 .html-cv-paper .identity-context span { display: block; }

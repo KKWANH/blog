@@ -111,7 +111,7 @@ export function HtmlCv() {
                 <article key={project.name} className="award-project">
                   {award ? (
                     <div className="award-result">
-                      <span>{award.credit}</span>
+                      <span>Winner</span>
                       <strong>{award.rank}</strong>
                     </div>
                   ) : null}

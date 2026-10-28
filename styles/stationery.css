@@ -33,6 +33,77 @@
 .paper-business-card::after { inset: 6px; border: 1px solid #45644724; box-shadow: inset 0 1px 0 #fffdf588; opacity: .7; }
 .paper-business-card > * { position: relative; z-index: 1; flex-shrink: 0; min-inline-size: 0; }
 .paper-business-card * { overflow-wrap: anywhere; }
+.paper-card-centered {
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+}
+.paper-card-centered .paper-card-topline {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.paper-card-centered .paper-card-role {
+  font-size: max(.74rem, 2.9cqi);
+  line-height: 1.3;
+  font-weight: 500;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: #355344;
+  text-shadow: 0 1px 0.6px #ffffff, 0 -0.8px 0.6px rgba(18, 42, 28, 0.35);
+}
+.paper-card-centered .paper-card-core {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.paper-card-centered h1 {
+  font-family: var(--font-signature), 'Bastliga One', cursive;
+  font-size: max(2.2rem, 11.8cqi);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+  margin-block: max(.12rem, .8cqi) max(.2rem, 1.2cqi);
+  color: #173726;
+  text-shadow: 0 1px 0.8px #ffffff, 0 -1px 0.8px rgba(18, 42, 28, 0.45), -1px 0 0.8px rgba(18, 42, 28, 0.35);
+  overflow-wrap: normal;
+  user-select: text;
+}
+.paper-card-centered .paper-card-focus {
+  font-size: max(.73rem, 2.7cqi);
+  line-height: 1.45;
+  color: #31533c;
+  text-shadow: 0 1px 0.6px #ffffff, 0 -0.8px 0.6px rgba(18, 42, 28, 0.35);
+}
+.paper-card-centered .paper-card-location {
+  font-size: max(.7rem, 2.5cqi);
+  line-height: 1.4;
+  margin-top: max(2px, .8cqi);
+  color: #55725e;
+}
+.paper-card-centered .paper-card-footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(98, 117, 87, 0.25);
+  box-shadow: inset 0 1px 0 #fffdf5c9;
+  padding-top: max(.25rem, 1.4cqi);
+  margin-top: auto;
+}
+.paper-card-qr-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.paper-card-qr {
+  width: max(20px, 5.2cqi);
+  height: max(20px, 5.2cqi);
+  display: block;
+  opacity: .82;
+  filter: drop-shadow(0 0.5px 0.3px #ffffff);
+}
 .paper-card-topline { display: flex; align-items: center; justify-content: space-between; gap: .8rem; }
 .paper-card-role { font-size: max(.76rem, 3cqi); line-height: 1.3; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: #355344; text-shadow: 0 1px 0.6px #ffffff, 0 -0.8px 0.6px rgba(18, 42, 28, 0.35); }
 .paper-business-card > .paper-light { position: absolute; inset: 0; z-index: 0; pointer-events: none; background: radial-gradient(ellipse at 35% 30%,#fffef5ad,transparent 60%); transform: translate3d(calc(var(--px,0)*18px),calc(var(--py,0)*12px),0); opacity: calc(.4 + var(--shine,0)*.25); }
@@ -74,8 +145,8 @@
 .paper-card-links svg { width: 15px; height: 15px; }
 .paper-card-links a:hover { color: var(--warm-accent); }
 .paper-card-links a:hover svg { transform: translate(1px, -1px); }
-.portrait-companion { min-width: 0; width: 100%; max-width: 300px; justify-self: end; overflow: hidden; }
-.portrait-contact-sheet { display: flex; flex-direction: column; gap: 0; width: 100%; max-width: 100%; position: relative; padding-top: 6px; }
+.portrait-companion { min-width: 0; width: 100%; max-width: 320px; justify-self: end; overflow: visible; }
+.portrait-contact-sheet { display: flex; flex-direction: column; gap: 0; width: 100%; max-width: 100%; position: relative; padding: 12px 18px 24px; }
 .portrait-contact-sheet a { display: block; position: relative; padding: 8px 8px 16px; background: #f1efe4; border: 1px solid #d8dbc6; box-shadow: 0 10px 24px -10px rgba(0, 0, 0, 0.65), 0 2px 6px rgba(0, 0, 0, 0.2); transition: transform 260ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 260ms ease, z-index 0s; min-width: 0; }
 .portrait-contact-sheet a:first-child { transform: rotate(-3.2deg) translateX(-10px); z-index: 1; }
 .portrait-contact-sheet a:nth-child(2) { transform: rotate(2.6deg) translateX(12px); margin-top: -36px; z-index: 2; }
@@ -101,7 +172,7 @@ html[data-motion="off"] .portrait-contact-sheet a { transform: none; transition:
   .paper-card-actions .action-button { flex: 1 1 8rem; font-size: .85rem; padding-inline: .7rem; }
   .paper-card-links { gap: .2rem 1rem; }
   .paper-card-links a { font-size: .76rem; }
-  .portrait-companion { max-width: 100%; min-width: 0; overflow: hidden; justify-self: stretch; margin-top: 1.5rem; }
+  .portrait-companion { max-width: 100%; min-width: 0; overflow: visible; justify-self: stretch; margin-top: 1.5rem; }
 }
 @media (prefers-reduced-motion: reduce) {
   .portrait-contact-sheet a { transform: none; transition: none; margin-top: 1rem; }
@@ -114,7 +185,7 @@ html[data-motion="off"] .portrait-contact-sheet a { transform: none; transition:
    after viewport rules so the readable stacked arrangement remains authoritative. */
 @container (max-width: 45rem) {
   .paper-introduction { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
-  .portrait-companion { max-width: 100%; min-width: 0; overflow: hidden; justify-self: stretch; }
+  .portrait-companion { max-width: 100%; min-width: 0; overflow: visible; justify-self: stretch; }
 }
 @media (max-width: 47.99rem) {
   .portrait-contact-sheet { display: flex; flex-direction: row; gap: .8rem; overflow-x: auto; padding: 7px 5px 14px; scroll-snap-type: x proximity; scroll-padding-inline: 5px; }
