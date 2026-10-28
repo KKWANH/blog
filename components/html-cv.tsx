@@ -54,14 +54,6 @@ export function HtmlCv() {
                 <h1 className="cv-name">{content.name}</h1>
                 <p className="cv-role">{content.role}</p>
               </div>
-              <div className="identity-context">
-                <p>
-                  {content.domains.map((domain) => (
-                    <span key={domain}>{domain} </span>
-                  ))}
-                </p>
-                <span className="identity-rule" aria-hidden="true" />
-              </div>
             </div>
             <p className="cv-contact">
               <span>{content.location}</span>
@@ -75,6 +67,8 @@ export function HtmlCv() {
               <a href={content.github} target="_blank" rel="noopener noreferrer">github.com/KKWANH</a>
             </p>
           </header>
+
+          <p className="cv-summary">{(content as { summary?: string }).summary}</p>
 
           <section className="cv-section">
             <h2 className="section-title">Experience</h2>

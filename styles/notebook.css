@@ -349,7 +349,7 @@
   margin: auto;
   background: #ffffff;
   color: var(--ink);
-  font: 400 11pt/15.5pt 'Inter CV', system-ui, sans-serif;
+  font: 400 11pt/15.5pt var(--font-figtree), 'Figtree', system-ui, sans-serif;
   font-optical-sizing: auto;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
   display: flex;
@@ -364,17 +364,8 @@
 .html-cv-paper strong { font-weight: 600; }
 .html-cv-paper .cv-header { padding-bottom: 7.75pt; border-bottom: var(--hair) solid var(--rule); }
 .html-cv-paper .identity-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 12mm; }
-/* Inter (OFL, self-hosted) with its optical-size axis: text sizes get Inter Text,
-   the 30pt name automatically gets the tighter Inter Display cut. Loaded here so
-   the CV renders the same on every machine and in the printed PDF. */
-@font-face {
-  font-family: 'Inter CV';
-  src: url('/font/Inter.woff2') format('woff2');
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: block;
-}
-.html-cv-paper .cv-name { font-size: 30pt; font-weight: 600; line-height: 31pt; letter-spacing: -.022em; color: var(--ink); }
+/* Figtree, the site's own face (loaded by app/layout.tsx), so CV, site and card share one sans. */
+.html-cv-paper .cv-name { font-size: 30pt; font-weight: 750; line-height: 31pt; letter-spacing: -.02em; color: var(--ink); }
 .html-cv-paper .cv-role { font-size: 12.5pt; font-weight: 400; line-height: 15.5pt; color: var(--accent); margin-top: 3.875pt !important; }
 .html-cv-paper .identity-context { display: flex; align-items: stretch; gap: 4mm; padding-top: 3pt; font-size: 9.5pt; line-height: 12.4pt; color: var(--muted); text-align: right; }
 .html-cv-paper .identity-context span { display: block; }
@@ -382,8 +373,9 @@
 .html-cv-paper .cv-contact { margin-top: 7.75pt; white-space: nowrap; font-size: 9.5pt; line-height: 12.4pt; color: var(--muted); }
 .html-cv-paper .cv-contact .cv-sep { color: var(--rule); word-spacing: -.12em; }
 .html-cv-paper .cv-contact a { color: var(--ink); }
+.html-cv-paper .cv-summary { margin-top: 9pt; max-width: 160mm; }
 .html-cv-paper .cv-section { margin-top: 17pt; }
-.html-cv-paper .section-title { font: 600 9.5pt/12.4pt 'Inter CV', system-ui, sans-serif; color: var(--accent); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 3.875pt !important; }
+.html-cv-paper .section-title { font: 600 9.5pt/12.4pt var(--font-figtree), 'Figtree', system-ui, sans-serif; color: var(--accent); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 3.875pt !important; }
 .html-cv-paper .cv-job + .cv-job { margin-top: 7.75pt; }
 .html-cv-paper .job-linear-heading { display: flex; gap: 3mm; align-items: baseline; }
 .html-cv-paper .job-linear-heading h3 { font-size: 12.5pt; line-height: 15.5pt; font-weight: 600; color: var(--ink); }

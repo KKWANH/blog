@@ -1,6 +1,7 @@
 {
   "name": "Kwanho Kim",
   "role": "Software Engineer",
+  "summary": "C++ engineer working on semiconductor inspection equipment at KLA, with earlier robotics software at Pickit 3D and V2X work at Bosch. Focused on device control and communication interfaces, system integration and fault recovery.",
   "domains": ["Semiconductor inspection", "Robotics", "Mobility"],
   "focusLine": "Systems & interfaces · Integration · C++",
   "focusLines": ["Systems & interfaces", "Integration · C++"],
@@ -14,7 +15,7 @@
     {
       "company": "KLA",
       "role": "C++ Engineer",
-      "dates": "Aug 2026–Present",
+      "dates": "Aug 2026 – Present",
       "context": "ICOS Division · Zeta team · Leuven, Belgium",
       "location": "Leuven, Belgium",
       "domain": "Semiconductor inspection",
@@ -29,7 +30,7 @@
     {
       "company": "Pickit 3D",
       "role": "Research & Software Engineer",
-      "dates": "Aug 2025–Mar 2026",
+      "dates": "Aug 2025 – Mar 2026",
       "context": "Leuven, Belgium",
       "location": "Leuven, Belgium",
       "domain": "Robotics & 3D vision",
@@ -44,7 +45,7 @@
     {
       "company": "Bosch",
       "role": "V2X Communication Intern",
-      "dates": "Jun–Nov 2024",
+      "dates": "Jun 2024 – Nov 2024",
       "context": "Hildesheim, Germany",
       "location": "Hildesheim, Germany",
       "domain": "Mobility prototypes",
@@ -57,9 +58,9 @@
     }
   ],
   "skills": [
-    {"label": "Languages", "text": "C++, C, Python; TypeScript, JavaScript", "lines": ["C++, C, Python;", "TypeScript, JavaScript"]},
-    {"label": "Systems & tools", "text": "Linux, Git, Docker; WebSocket / REST; ROS 1/2", "lines": ["Linux, Git, Docker;", "WebSocket / REST; ROS 1/2"]},
-    {"label": "Interfaces", "text": "React, Qt/QML; Figma (basic UI)", "lines": ["React, Qt/QML;", "Figma (basic UI)"]}
+    {"label": "Languages", "text": "C++, C, Python; TypeScript, JavaScript, Bash", "lines": ["C++, C, Python;", "TypeScript, JavaScript, Bash"]},
+    {"label": "Systems & integration", "text": "Linux, Docker, Git, Make; Serial, CAN, D-Bus; REST, WebSocket", "lines": ["Linux, Docker, Git, Make;", "Serial, CAN, D-Bus;", "REST, WebSocket"]},
+    {"label": "Robotics & interfaces", "text": "ROS 1/2, CARLA, OpenCV; React, Qt/QML, Figma", "lines": ["ROS 1/2, CARLA, OpenCV;", "React, Qt/QML, Figma"]}
   ],
   "projects": [
     {
@@ -81,14 +82,14 @@
     }
   ],
   "education": [
-    {"name": "Mechatronics", "detail": "Bachelor’s in progress · KNOU Prime College", "date": "2026–Present"},
+    {"name": "Mechatronics", "detail": "Bachelor’s in progress · KNOU Prime College", "date": "2026 – Present"},
     {"name": "Artificial Intelligence", "detail": "Bachelor’s degree awarded · Korea National Open University", "date": "2025"},
     {"name": "Business Administration", "detail": "Bachelor’s degree awarded · Academic Credit Bank System", "date": "2022"},
     {"name": "Computer Engineering", "detail": "Bachelor’s degree awarded · Academic Credit Bank System", "date": "2020"}
   ],
   "training": [
     {"id": "42", "name": "42", "program": "Software engineering", "location": "Seoul / Wolfsburg", "period": null, "status": "Completed"},
-    {"id": "sea-me", "name": "SEA:ME", "program": "Automotive & Mobility", "location": "Wolfsburg", "period": "Jul 2023–Jun 2024", "status": "Completed"}
+    {"id": "sea-me", "name": "SEA:ME", "program": "Automotive & Mobility", "location": "Wolfsburg", "period": "Jul 2023 – Jun 2024", "status": "Completed"}
   ],
   "languages": "Korean: Native · English: Fluent (IELTS 7.5, 2025) · Japanese: Learner"
 }
