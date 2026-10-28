@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { ArrowDown, ArrowDownToLine, ArrowUpRight, ContactRound, Mail, ArrowLeft, ArrowRight, Expand, QrCode } from 'lucide-react'
 import { TiltSurface } from '@/components/tilt-surface'
 import { CopyText } from '@/components/copy-email'
+import { trackAction } from '@/components/visit-statistics'
 import { profile, recruiterBrief } from '@/lib/profile'
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from '@/components/ui/dialog'
 
@@ -28,7 +29,7 @@ export function PaperIntroduction() {
       <div className="paper-introduction-main">
         <div className="business-card-holder">
           <TiltSurface className="business-card-tilt" pitch={7} yaw={9} lift={6} scale={1.012}>
-            <div className="paper-business-card paper-card-centered">
+            <div className="paper-business-card paper-card-hybrid" id="business-card-face">
               <span className="paper-light" aria-hidden="true" />
               <div className="paper-card-topline"><p className="paper-card-role">{profile.role}</p></div>
               <div className="paper-card-core">
@@ -48,13 +49,13 @@ export function PaperIntroduction() {
         </div>
         <p className="paper-mobile-focus">{profile.focus}</p>
         <div className="paper-card-actions">
-          <Link prefetch={false} className="action-button action-primary" href="/cv"><ArrowDownToLine aria-hidden="true" />Read the CV</Link>
-          <a className="action-button" href={`mailto:${profile.contact}`}><Mail aria-hidden="true" />Email Kwanho</a>
+          <Link prefetch={false} className="action-button action-primary" href="/cv" onClick={() => trackAction('cta_read_cv')}><ArrowDownToLine aria-hidden="true" />Read the CV</Link>
+          <a className="action-button" href={`mailto:${profile.contact}`} onClick={() => trackAction('cta_email')}><Mail aria-hidden="true" />Email Kwanho</a>
         </div>
         <div className="paper-card-links">
-          <a href="/contact.vcf" download="Kwanho_Kim.vcf"><ContactRound aria-hidden="true" />Save contact</a>
-          <a href="/business-card.html" target="_blank"><QrCode aria-hidden="true" />Standalone card &amp; QR</a>
-          <a href={profile.linkedin}>LinkedIn <ArrowUpRight aria-hidden="true" /></a>
+          <a href="/contact.vcf" download="Kwanho_Kim.vcf" onClick={() => trackAction('cta_save_vcf')}><ContactRound aria-hidden="true" />Save contact</a>
+          <a href="/business-card.html" target="_blank" onClick={() => trackAction('cta_standalone_card')}><QrCode aria-hidden="true" />Standalone card &amp; QR</a>
+          <a href={profile.linkedin} onClick={() => trackAction('outbound_linkedin')}>LinkedIn <ArrowUpRight aria-hidden="true" /></a>
           <a href="#experience-kla">Current work at KLA <ArrowDown aria-hidden="true" /></a>
         </div>
         <CopyText text={recruiterBrief} label="Copy profile summary" success="Profile summary copied." />

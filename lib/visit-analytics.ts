@@ -108,11 +108,23 @@ export function analyticsConfiguration() {
   if (!config?.analyticsEnabled) return null
   return { config, store: adminStore(config) }
 }
-export function analyticsEvent(path: string, previous: string | null, referral: string, visitor: VisitorContext | null, config: AdminConfiguration, now = Date.now(), country = 'ZZ'): { event: AnalyticsEvent; cookie: VisitorCookie | null } {
+export function analyticsEvent(
+  path: string,
+  previous: string | null,
+  referral: string,
+  visitor: VisitorContext | null,
+  config: AdminConfiguration,
+  now = Date.now(),
+  country = 'ZZ',
+  device = 'Desktop',
+  browser = 'Other',
+  hour = '00',
+  action: string | null = null,
+): { event: AnalyticsEvent; cookie: VisitorCookie | null } {
   const date = new Date(now).toISOString().slice(0, 10)
   const digest = (purpose: string, id: string) => createHmac('sha256', Buffer.from(config.sessionSecret, 'base64url')).update(`${purpose}:${date}:${id}`).digest('hex')
   return { event: {
-    date, path, previous, referral, country,
+    date, path, previous, referral, country, device, browser, hour, action,
     visitor: visitor ? digest('visitor', visitor.cookie.visitor) : null,
     session: visitor && new Date(visitor.record.startedAt).toISOString().slice(0, 10) === date ? digest('session', `${visitor.cookie.visitor}:${visitor.record.generation}`) : null,
   }, cookie: visitor?.cookie ?? null }
@@ -121,13 +133,26 @@ export function reportDates(count: number, now = Date.now()) {
   return Array.from({ length: count }, (_, index) => new Date(now - (count - index - 1) * 86_400_000).toISOString().slice(0, 10))
 }
 export function analyticsReport(days: AnalyticsDay[]): AnalyticsReport {
-  const totals = { views: 0, entries: 0, visitors: 0, sessions: 0 }, pages = new Map<string, number>(), referrals = new Map<string, number>(), flows = new Map<string, number>(), countries = new Map<string, number>()
+  const totals = { views: 0, entries: 0, visitors: 0, sessions: 0 },
+    pages = new Map<string, number>(),
+    referrals = new Map<string, number>(),
+    flows = new Map<string, number>(),
+    countries = new Map<string, number>(),
+    devices = new Map<string, number>(),
+    browsers = new Map<string, number>(),
+    hours = new Map<string, number>(),
+    conversions = new Map<string, number>()
+
   for (const day of days) {
     for (const key of ['views', 'entries', 'visitors', 'sessions'] as const) totals[key] += day[key]
     for (const [key, value] of Object.entries(day.pages)) pages.set(key, (pages.get(key) ?? 0) + value)
     for (const [key, value] of Object.entries(day.referrals)) { const category = coarseReferral(key); referrals.set(category, (referrals.get(category) ?? 0) + value) }
     for (const [key, value] of Object.entries(day.flows)) flows.set(key, (flows.get(key) ?? 0) + value)
     for (const [key, value] of Object.entries(day.countries || {})) countries.set(key, (countries.get(key) ?? 0) + value)
+    for (const [key, value] of Object.entries(day.devices || {})) devices.set(key, (devices.get(key) ?? 0) + value)
+    for (const [key, value] of Object.entries(day.browsers || {})) browsers.set(key, (browsers.get(key) ?? 0) + value)
+    for (const [key, value] of Object.entries(day.hours || {})) hours.set(key, (hours.get(key) ?? 0) + value)
+    for (const [key, value] of Object.entries(day.conversions || {})) conversions.set(key, (conversions.get(key) ?? 0) + value)
   }
   const ranked = (value: Map<string, number>) => [...value].sort((a, b) => b[1] - a[1]).slice(0, 50).map(([name, count]) => ({ name, count }))
   const safeDays = days.map((day) => {
@@ -142,5 +167,9 @@ export function analyticsReport(days: AnalyticsDay[]): AnalyticsReport {
     referrals: ranked(referrals).map((row) => ({ ...row, name: referralLabels[row.name] ?? 'Other external' })),
     flows: ranked(flows).map(({ name, count }) => ({ from: name.split('\t')[0], to: name.split('\t')[1], count })),
     countries: ranked(countries),
+    devices: ranked(devices),
+    browsers: ranked(browsers),
+    hours: [...hours].sort((a, b) => a[0].localeCompare(b[0])).map(([name, count]) => ({ name: `${name}:00 UTC`, count })),
+    conversions: ranked(conversions),
   }
 }

@@ -88,13 +88,30 @@ export function AdminDashboard() {
     {error ? <p role="alert" className="admin-error">{error}</p> : null}
     {!report ? <p role="status">Loading statistics…</p> : <>
       {!report.analyticsEnabled ? <p className="admin-notice">Collection is disabled. Stored statistics remain available.</p> : null}
-      <div className="admin-totals"><article><span>Page views · range</span><strong>{report.totals.views.toLocaleString()}</strong></article><article><span>Entrances · range</span><strong>{report.totals.entries.toLocaleString()}</strong></article><article><span>Visitors today · opt-in</span><strong>{latest?.visitors.toLocaleString() ?? 0}</strong></article><article><span>Sessions · opt-in</span><strong>{report.totals.sessions.toLocaleString()}</strong></article></div>
+      <div className="admin-totals">
+        <article><span>Page views · range</span><strong>{report.totals.views.toLocaleString()}</strong></article>
+        <article><span>Entrances · range</span><strong>{report.totals.entries.toLocaleString()}</strong></article>
+        <article><span>Visitors today · opt-in</span><strong>{latest?.visitors.toLocaleString() ?? 0}</strong></article>
+        <article><span>Sessions · opt-in</span><strong>{report.totals.sessions.toLocaleString()}</strong></article>
+        <article><span>Avg views / session</span><strong>{(report.totals.views / Math.max(1, report.totals.sessions)).toFixed(1)}</strong></article>
+      </div>
       <section className="admin-section"><h2>Daily traffic</h2><div className="traffic-chart" aria-label="Daily page views">{report.days.map((day) => <div key={day.date} title={`${day.date}: ${day.views} views, ${day.visitors} opted-in visitors`}><span className="traffic-bar" style={{ height: `${Math.max(2, day.views / maximum * 100)}%` }} /><small>{day.date.slice(5)}</small><span className="sr-only">{day.views} views, {day.visitors} visitors</span></div>)}</div></section>
       <div className="admin-data-grid admin-three-grid">
         <DataTable title="Entry referrals" rows={report.referrals} empty="No entry referrals recorded." />
         <DataTable title="Pages viewed" rows={report.pages} empty="No page views recorded." />
         <DataTable title="Visitor countries" rows={report.countries || []} empty="No country records yet (active in Vercel deployment)." />
       </div>
+      <div className="admin-data-grid admin-three-grid" style={{ marginTop: '1.5rem' }}>
+        <DataTable title="Device types" rows={report.devices || []} empty="No device telemetry yet." />
+        <DataTable title="Browser family" rows={report.browsers || []} empty="No browser telemetry yet." />
+        <DataTable title="Activity by hour (UTC)" rows={report.hours || []} empty="No hourly data yet." />
+      </div>
+      {(report.conversions && report.conversions.length > 0) ? (
+        <section className="admin-section">
+          <h2>CTA conversions &amp; interactions</h2>
+          <table><thead><tr><th>Action</th><th>Clicks / Interactions</th></tr></thead><tbody>{report.conversions.map((conv) => <tr key={conv.name}><td>{conv.name}</td><td>{conv.count}</td></tr>)}</tbody></table>
+        </section>
+      ) : null}
       <section className="admin-section"><h2>Page flows</h2>{report.flows.length ? <table><thead><tr><th>From</th><th>To</th><th>Transitions</th></tr></thead><tbody>{report.flows.map((flow) => <tr key={`${flow.from}:${flow.to}`}><td>{flow.from}</td><td>{flow.to}</td><td>{flow.count}</td></tr>)}</tbody></table> : <p>No page-to-page transitions recorded.</p>}</section>
       <p className="admin-muted">Views, entrances and flows are client-reported aggregate counts. Visitor/session figures cover optional cookies only; visitors are deduplicated per UTC day, not identified people. The sum across days is not a count of distinct people. Admin visits and browser privacy signals are excluded. Statistics retain up to 90 days.</p>
     </>}

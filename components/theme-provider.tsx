@@ -1,0 +1,59 @@
+'use client'
+
+import { createContext, useContext, useEffect, useState, type ReactNode } from 'react'
+import { Sun, Moon } from 'lucide-react'
+
+type Theme = 'dark' | 'light'
+type ThemeContextValue = { theme: Theme; toggle: () => void }
+const ThemeContext = createContext<ThemeContextValue>({ theme: 'dark', toggle: () => {} })
+
+export function ThemeProvider({ children }: { children: ReactNode }) {
+  const [theme, setTheme] = useState<Theme>('dark')
+
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem('kwanho-theme') as Theme | null
+      if (saved === 'light' || saved === 'dark') {
+        setTheme(saved)
+        document.documentElement.dataset.theme = saved
+      } else {
+        document.documentElement.dataset.theme = 'dark'
+      }
+    } catch {}
+  }, [])
+
+  const toggle = () => {
+    const next = theme === 'dark' ? 'light' : 'dark'
+    setTheme(next)
+    document.documentElement.dataset.theme = next
+    try { localStorage.setItem('kwanho-theme', next) } catch {}
+  }
+
+  return (
+    <ThemeContext.Provider value={{ theme, toggle }}>
+      {children}
+    </ThemeContext.Provider>
+  )
+}
+
+export function useTheme() {
+  return useContext(ThemeContext)
+}
+
+export function ThemeToggle({ compact = false }: { compact?: boolean }) {
+  const { theme, toggle } = useTheme()
+  const isLight = theme === 'light'
+  const label = isLight ? 'Switch to dark mode' : 'Switch to light mode'
+  return (
+    <button
+      type="button"
+      className={`theme-toggle ${compact ? 'theme-compact' : ''}`}
+      onClick={toggle}
+      aria-label={label}
+      title={label}
+    >
+      {isLight ? <Moon aria-hidden="true" /> : <Sun aria-hidden="true" />}
+      <span className={compact ? 'sr-only' : undefined}>{isLight ? 'Dark' : 'Light'}</span>
+    </button>
+  )
+}

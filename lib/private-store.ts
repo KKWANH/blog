@@ -25,7 +25,11 @@ const shared = globalThis as typeof globalThis & { __portfolioPrivateWrites?: Ma
 const writes = shared.__portfolioPrivateWrites ??= new Map()
 const DAY = 86_400_000
 const digest = (text: string) => createHash('sha256').update(text).digest('hex')
-const emptyDay = (date: string): AnalyticsDay => ({ date, views: 0, entries: 0, visitors: 0, sessions: 0, pages: {}, referrals: {}, flows: {}, countries: {} })
+const emptyDay = (date: string): AnalyticsDay => ({
+  date, views: 0, entries: 0, visitors: 0, sessions: 0,
+  pages: {}, referrals: {}, flows: {}, countries: {},
+  devices: {}, browsers: {}, hours: {}, conversions: {},
+})
 function publicDay(day: LocalDay): AnalyticsDay {
   const { seenVisitors: _visitors, seenSessions: _sessions, ...result } = day
   return result
@@ -163,6 +167,18 @@ export function createLocalPrivateStore(filePath: string, clock = () => Date.now
         if (event.country && /^[A-Z]{2}$/.test(event.country)) {
           day.countries[event.country] = (day.countries[event.country] ?? 0) + 1
         }
+        if (event.device) {
+          day.devices[event.device] = (day.devices[event.device] ?? 0) + 1
+        }
+        if (event.browser) {
+          day.browsers[event.browser] = (day.browsers[event.browser] ?? 0) + 1
+        }
+        if (event.hour) {
+          day.hours[event.hour] = (day.hours[event.hour] ?? 0) + 1
+        }
+        if (event.action) {
+          day.conversions[event.action] = (day.conversions[event.action] ?? 0) + 1
+        }
         if (event.visitor && !day.seenVisitors.includes(event.visitor) && day.seenVisitors.length < 50_000) { day.seenVisitors.push(event.visitor); day.visitors++ }
         if (event.session && !day.seenSessions.includes(event.session) && day.seenSessions.length < 50_000) { day.seenSessions.push(event.session); day.sessions++ }
       })
@@ -262,6 +278,10 @@ export function createRedisPrivateStore(url: string, token: string, request: typ
           else if (key.startsWith('r|')) day.referrals[key.slice(2)] = count
           else if (key.startsWith('f|')) day.flows[key.slice(2)] = count
           else if (key.startsWith('c|')) day.countries[key.slice(2)] = count
+          else if (key.startsWith('d|')) day.devices[key.slice(2)] = count
+          else if (key.startsWith('b|')) day.browsers[key.slice(2)] = count
+          else if (key.startsWith('h|')) day.hours[key.slice(2)] = count
+          else if (key.startsWith('a|')) day.conversions[key.slice(2)] = count
         }
         return day
       })

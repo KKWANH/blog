@@ -92,6 +92,25 @@ export function VisitStatisticsProvider({ children, possible = true }: { childre
   )
 }
 
+export function trackAction(actionName: string) {
+  if (typeof window === 'undefined') return
+  try {
+    const body = JSON.stringify({
+      path: window.location.pathname,
+      previous: null,
+      referral: '',
+      action: actionName.slice(0, 32),
+    })
+    fetch('/api/analytics/event', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body,
+      credentials: 'same-origin',
+      keepalive: true,
+    }).catch(() => {})
+  } catch {}
+}
+
 export function CookieConsentBanner() {
   const { status, prepare, save, saving } = useContext(StatisticsContext)
   const [dismissed, setDismissed] = useState(false)

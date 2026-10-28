@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import localFont from 'next/font/local'
 import { MotionProvider } from '@/components/motion-provider'
+import { ThemeProvider } from '@/components/theme-provider'
 import { Atmosphere } from '@/components/atmosphere'
 import { VisitStatisticsProvider } from '@/components/visit-statistics'
 import { siteUrl } from '@/lib/site'
@@ -82,12 +83,14 @@ export default function RootLayout({
     <html lang="en" className="dark" data-motion="off">
       <body className={`${figtree.variable} ${caveat.variable} ${bastliga.variable} font-sans antialiased`}>
         <a className="skip-link" href="#main-content">Skip to content</a>
-        <MotionProvider>
-          <VisitStatisticsProvider possible={process.env.NODE_ENV !== 'production' || process.env.ANALYTICS_ENABLED === '1'}>
-          <Atmosphere />
-          {children}
-          </VisitStatisticsProvider>
-        </MotionProvider>
+        <ThemeProvider>
+          <MotionProvider>
+            <VisitStatisticsProvider possible={process.env.NODE_ENV !== 'production' || process.env.ANALYTICS_ENABLED === '1'}>
+              <Atmosphere />
+              {children}
+            </VisitStatisticsProvider>
+          </MotionProvider>
+        </ThemeProvider>
       </body>
     </html>
   )

@@ -33,17 +33,17 @@
 .paper-business-card::after { inset: 6px; border: 1px solid #45644724; box-shadow: inset 0 1px 0 #fffdf588; opacity: .7; }
 .paper-business-card > * { position: relative; z-index: 1; flex-shrink: 0; min-inline-size: 0; }
 .paper-business-card * { overflow-wrap: anywhere; }
-.paper-card-centered {
+.paper-card-hybrid, .paper-card-centered {
   text-align: center;
   align-items: center;
   justify-content: space-between;
 }
-.paper-card-centered .paper-card-topline {
+.paper-card-hybrid .paper-card-topline, .paper-card-centered .paper-card-topline {
   width: 100%;
   display: flex;
   justify-content: center;
 }
-.paper-card-centered .paper-card-role {
+.paper-card-hybrid .paper-card-role, .paper-card-centered .paper-card-role {
   font-size: max(.74rem, 2.9cqi);
   line-height: 1.3;
   font-weight: 500;
@@ -52,13 +52,13 @@
   color: #355344;
   text-shadow: 0 1px 0.6px #ffffff, 0 -0.8px 0.6px rgba(18, 42, 28, 0.35);
 }
-.paper-card-centered .paper-card-core {
+.paper-card-hybrid .paper-card-core, .paper-card-centered .paper-card-core {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.paper-card-centered h1 {
+.paper-card-hybrid h1, .paper-card-centered h1 {
   font-family: var(--font-signature), 'Bastliga One', cursive;
   font-size: max(2.2rem, 11.8cqi);
   font-weight: 400;
@@ -70,27 +70,58 @@
   overflow-wrap: normal;
   user-select: text;
 }
-.paper-card-centered .paper-card-focus {
+.paper-card-hybrid .paper-card-focus, .paper-card-centered .paper-card-focus {
   font-size: max(.73rem, 2.7cqi);
   line-height: 1.45;
   color: #31533c;
   text-shadow: 0 1px 0.6px #ffffff, 0 -0.8px 0.6px rgba(18, 42, 28, 0.35);
 }
-.paper-card-centered .paper-card-location {
+.paper-card-hybrid .paper-card-location, .paper-card-centered .paper-card-location {
   font-size: max(.7rem, 2.5cqi);
   line-height: 1.4;
   margin-top: max(2px, .8cqi);
   color: #55725e;
 }
-.paper-card-centered .paper-card-footer {
+.paper-card-footer-split {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
   border-top: 1px solid rgba(98, 117, 87, 0.25);
   box-shadow: inset 0 1px 0 #fffdf5c9;
-  padding-top: max(.25rem, 1.4cqi);
+  padding-top: max(.2rem, 1.1cqi);
   margin-top: auto;
+}
+.paper-contact-stacked {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1px;
+  text-align: left;
+}
+.paper-contact-stacked .paper-contact-link {
+  font-size: max(.72rem, 2.5cqi);
+  line-height: 1.35;
+  color: #1f422e;
+}
+.paper-card-qr-corner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  text-decoration: none;
+  opacity: .88;
+  transition: opacity 160ms, transform 160ms;
+}
+.paper-card-qr-corner:hover {
+  opacity: 1;
+  transform: scale(1.08);
+}
+.paper-card-qr-corner .paper-card-qr {
+  width: max(24px, 6.2cqi);
+  height: max(24px, 6.2cqi);
+  display: block;
+  filter: drop-shadow(0 0.5px 0.3px #ffffff);
 }
 .paper-card-qr-wrap {
   display: flex;
@@ -193,4 +224,45 @@ html[data-motion="off"] .portrait-contact-sheet a { transform: none; transition:
   .portrait-contact-sheet a:focus-visible { outline-offset: 3px; }
   .portrait-contact-sheet a .portrait-open span { display: inline; }
   .portrait-strip-hint { display: block; color: var(--muted-foreground); font-size: .72rem; margin-top: .45rem; }
+}
+
+/* Studio 02 Forest Edge Card Treatment in Light Mode */
+html[data-theme="light"] .paper-business-card {
+  background: linear-gradient(135deg, #103320, #092316);
+  border-color: #2b5638;
+  color: #f7f6ed;
+  box-shadow: 0 1px 0 #3a6845, 0 3px 0 #1b3d27, 0 5px 0 #0d2215, 0 20px 40px -10px rgba(0, 0, 0, 0.35);
+}
+html[data-theme="light"] .paper-business-card::before {
+  mix-blend-mode: overlay;
+  opacity: .35;
+}
+html[data-theme="light"] .paper-business-card::after {
+  border-color: #55876044;
+  box-shadow: inset 0 1px 0 #85b89033;
+}
+html[data-theme="light"] .paper-card-role {
+  color: #c4dec1;
+  text-shadow: 0 1px 0.6px #05140b, 0 -0.8px 0.6px rgba(135, 185, 145, 0.4);
+}
+html[data-theme="light"] .paper-business-card h1 {
+  color: #fcfbf5;
+  text-shadow: 0 1px 0.8px #05140b, 0 -1px 0.8px rgba(165, 215, 175, 0.5), -1px 0 0.8px rgba(165, 215, 175, 0.4);
+}
+html[data-theme="light"] .paper-card-focus {
+  color: #d8ead4;
+  text-shadow: 0 1px 0.6px #05140b;
+}
+html[data-theme="light"] .paper-card-location {
+  color: #9cb89c;
+}
+html[data-theme="light"] .paper-card-footer-split {
+  border-top-color: #2e593c;
+  box-shadow: inset 0 1px 0 #3b6b49;
+}
+html[data-theme="light"] .paper-contact-stacked .paper-contact-link {
+  color: #edf5eb;
+}
+html[data-theme="light"] .paper-card-qr {
+  filter: invert(1) hue-rotate(95deg) brightness(1.2) drop-shadow(0 0.5px 0.3px #05140b);
 }

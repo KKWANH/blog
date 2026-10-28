@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation'
 import { Menu, X, ArrowUpRight } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import { MotionControl } from '@/components/motion-provider'
+import { ThemeToggle } from '@/components/theme-provider'
 import { photographyPublished } from '@/lib/photographs'
 
 const navigation = [
@@ -73,6 +74,7 @@ export function SiteHeader() {
           </nav>
           <Link prefetch={false} href="/cv" className="header-cv">CV <ArrowUpRight aria-hidden="true" /></Link>
           <MotionControl compact />
+          <ThemeToggle compact />
         </div>
       </div>
     </header>
