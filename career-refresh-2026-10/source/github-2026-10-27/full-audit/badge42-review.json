@@ -1,0 +1,117 @@
+{
+  "name": "badge42",
+  "url": "https://github.com/KKWANH/badge42",
+  "fork": true,
+  "scope": "reference",
+  "scopeNote": "Fork/reference; personal implementation is not established by the fork.",
+  "description": "🚀 Dynamically generated 42 badge for your git readmes.",
+  "updatedAt": "2022-06-25T03:55:04Z",
+  "defaultBranch": "main",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/badge42/blob/97e79a798e81ef3a9bb2e79f99200128c3cb0dd5/README.md",
+      "bytes": 5624,
+      "sha256": "cc65282f7136e6ef783bbb97dd7ac37e8622113de6ca0f7e200077b98593f7a7"
+    },
+    {
+      "path": "package.json",
+      "url": "https://github.com/KKWANH/badge42/blob/97e79a798e81ef3a9bb2e79f99200128c3cb0dd5/package.json",
+      "bytes": 1919,
+      "sha256": "a4145e1012bfd894c9bac4f11e5a547554fef036eb6fd9dd553cd8709016e06e"
+    }
+  ],
+  "limitations": [],
+  "technologies": [
+    {
+      "id": "javascript",
+      "label": "JavaScript",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "next.config.js",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "postcss.config.js",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "tailwind.config.js",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "nextjs",
+      "label": "Next.js",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "package.json",
+          "basis": "direct dependency"
+        }
+      ]
+    },
+    {
+      "id": "prisma",
+      "label": "Prisma",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "package.json",
+          "basis": "direct dependency"
+        }
+      ]
+    },
+    {
+      "id": "react",
+      "label": "React",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "package.json",
+          "basis": "direct dependency"
+        },
+        {
+          "path": "package.json",
+          "basis": "manifest/configuration"
+        }
+      ]
+    },
+    {
+      "id": "tailwind",
+      "label": "Tailwind CSS",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "package.json",
+          "basis": "direct dependency"
+        },
+        {
+          "path": "package.json",
+          "basis": "manifest/configuration"
+        }
+      ]
+    },
+    {
+      "id": "typescript",
+      "label": "TypeScript",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "next-env.d.ts",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "package.json",
+          "basis": "direct dependency"
+        }
+      ]
+    }
+  ],
+  "commit": "97e79a798e81ef3a9bb2e79f99200128c3cb0dd5",
+  "fileCount": 13,
+  "treeDepth": "root",
+  "status": "reviewed"
+}

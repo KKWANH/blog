@@ -1,0 +1,15 @@
+# Requirement: License Card Validation (PI-6628)
+
+## Source
+Jira PI-6628
+
+## Problem
+New license file fields (max_version, PI-UPGRADES) need validation display in Settings > License cards.
+
+## Scope
+- Show PI-UPGRADES license status in Settings > Upgrade Pickit version
+- Warning if no PI-UPGRADES license
+- Show expires and max_version when PI-UPGRADES exists
+
+## Status
+In progress. Test license files in projects/PI-6628/.

@@ -1,0 +1,13 @@
+{
+  "checks": {
+    "visible_ids_match": true,
+    "saved_level_labels_match": true,
+    "actual_saved_level_in_map": true
+  },
+  "passed": true,
+  "owner_entries": 44,
+  "visible_profile_skills": 40,
+  "rated_profile_skills": 39,
+  "source_updated_at": "2026-10-27T15:02:14.756Z",
+  "mode": "Read-only actual owner preference readback; no fixture ratings or writes"
+}

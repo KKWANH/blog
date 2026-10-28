@@ -1,0 +1,99 @@
+{
+  "visible_skills": 39,
+  "family_borders": [
+    "0px",
+    "0px",
+    "0px",
+    "0px",
+    "0px",
+    "0px"
+  ],
+  "selected_project_summaries": 3,
+  "bcx_collapsed": true,
+  "bcx_opens_on_request": true,
+  "bcx_unmounts_on_close": true,
+  "paper": [
+    {
+      "width": 350,
+      "height": 227.921875,
+      "ratio": 1.5356139027901556,
+      "children": [
+        {
+          "tag": "paper-light",
+          "height": 338.859375,
+          "margin": "0px"
+        },
+        {
+          "tag": "paper-card-topline",
+          "height": 26.25,
+          "margin": "0px"
+        },
+        {
+          "tag": "",
+          "height": 39.640625,
+          "margin": "14.7px 0px"
+        },
+        {
+          "tag": "paper-card-focus",
+          "height": 16.6875,
+          "margin": "6px 0px"
+        },
+        {
+          "tag": "paper-card-location",
+          "height": 16.796875,
+          "margin": "4px 7.2px"
+        },
+        {
+          "tag": "paper-card-footer",
+          "height": 51.296875,
+          "margin": "0px"
+        }
+      ]
+    },
+    {
+      "width": 280,
+      "height": 205.140625,
+      "ratio": 1.3649173585193084,
+      "children": [
+        {
+          "tag": "paper-light",
+          "height": 304.703125,
+          "margin": "0px"
+        },
+        {
+          "tag": "paper-card-topline",
+          "height": 24,
+          "margin": "0px"
+        },
+        {
+          "tag": "",
+          "height": 31.71875,
+          "margin": "12px 0px"
+        },
+        {
+          "tag": "paper-card-focus",
+          "height": 16.6875,
+          "margin": "6px 0px"
+        },
+        {
+          "tag": "paper-card-location",
+          "height": 16.796875,
+          "margin": "4px 7.2px"
+        },
+        {
+          "tag": "paper-card-footer",
+          "height": 50.03125,
+          "margin": "0px"
+        }
+      ]
+    }
+  ],
+  "mobile_no_overflow": true,
+  "admin_status": {
+    "configured": false,
+    "authenticated": false,
+    "setupAvailable": true
+  },
+  "errors": [],
+  "owner_settings_preserved": false
+}

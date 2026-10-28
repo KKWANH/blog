@@ -1,0 +1,47 @@
+{
+  "name": "cpython",
+  "url": "https://github.com/KKWANH/cpython",
+  "fork": true,
+  "scope": "reference",
+  "scopeNote": "Fork/reference; personal implementation is not established by the fork.",
+  "description": "The Python programming language",
+  "updatedAt": "2022-11-30T13:23:10Z",
+  "defaultBranch": "main",
+  "sources": [
+    {
+      "path": "README.rst",
+      "url": "https://github.com/KKWANH/cpython/blob/ac12e3941f9c584c24b33d05beee95457e9d06a3/README.rst",
+      "bytes": 10309,
+      "sha256": "9189e3a25fde0396424154489e2f8a871ec0cf35e682cbd90f263c9a470b7068"
+    }
+  ],
+  "limitations": [],
+  "technologies": [
+    {
+      "id": "azure",
+      "label": "Azure",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "README.rst",
+          "basis": "README declaration"
+        }
+      ]
+    },
+    {
+      "id": "linux",
+      "label": "Linux",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "README.rst",
+          "basis": "README declaration"
+        }
+      ]
+    }
+  ],
+  "commit": "ac12e3941f9c584c24b33d05beee95457e9d06a3",
+  "fileCount": 13,
+  "treeDepth": "root",
+  "status": "reviewed"
+}

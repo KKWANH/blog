@@ -1,0 +1,18 @@
+Open the profile with paper identity, linked skills and owner tools
+
+Replace the portrait flip and folded career sections with a landscape paper
+introduction, equally weighted portraits, open experience/education and
+icon-list/mind-map skill navigation. Use sourced brand artwork and actual
+team-project footage with bounded contribution labels.
+
+Add a visible atlas-management entrance, retain local file editing, and
+prepare GitHub App owner-only repository saves with session, origin, CSRF
+and revision checks. Published writes fail closed until the app is configured.
+Include the owner's saved atlas updates.
+
+Use a fixed localhost preview, development-only design studies, patched
+framework/map/validation dependencies and a same-origin map worker.
+
+Validate production build/TypeScript, content and storage checks, owner
+session/conflict fixtures, keyboard/touch/reflow, paper geometry and media
+behaviour. External OAuth and real repository saves require owner app setup.

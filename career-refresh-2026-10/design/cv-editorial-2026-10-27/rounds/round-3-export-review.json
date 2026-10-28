@@ -1,0 +1,9 @@
+{
+  "round": 3,
+  "font_types": [
+    "Type3"
+  ],
+  "name_after_experience": true,
+  "source_pdf_sha256": "22890a1ee976f2a7450090f402f37abe5dc6b0a513b3a2bba58e3a751d1eaf4c",
+  "resolution": "Round 4 uses static font instances and a non-positioned header accent."
+}

@@ -1,0 +1,24 @@
+# Requirement: Timezone Conversion - Upload and Convert
+
+## Source
+Follow-up to PI-7319 (timezone conversion for log downloads). Separate PR.
+
+## Problem
+Users have existing log files collected in one timezone and need to convert them to another.
+
+## Scope
+- Upload existing Pickit log file (.csv, .log, .zip)
+- Auto-detect source timezone from file content
+- Convert all timestamps to chosen target timezone
+- Download converted file with original filename
+
+## Deliverables
+- POST /logs/convert_log endpoint (multer, multipart upload)
+- logTimezoneConverter.tsx popup component (drag-and-drop)
+- Shared timezone utils extracted to utils/timezoneOptions.ts
+- i18n keys (7 new, 4 languages)
+
+## Constraints
+- Source timezone auto-detected (no manual input)
+- Target timezone always required (no "no conversion" option)
+- Builds on top of the download timezone conversion PR

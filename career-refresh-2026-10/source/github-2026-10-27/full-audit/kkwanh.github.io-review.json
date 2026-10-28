@@ -1,0 +1,42 @@
+{
+  "name": "kkwanh.github.io",
+  "url": "https://github.com/KKWANH/kkwanh.github.io",
+  "fork": true,
+  "scope": "reference",
+  "scopeNote": "Fork/reference; personal implementation is not established by the fork.",
+  "description": "ArnaudValensi's website",
+  "updatedAt": "2023-08-18T22:43:22Z",
+  "defaultBranch": "master",
+  "sources": [
+    {
+      "path": "_config.yml",
+      "url": "https://github.com/KKWANH/kkwanh.github.io/blob/620980db93d22ccd399e5cf968c15bc15c27f8a3/_config.yml",
+      "bytes": 27,
+      "sha256": "e4aaaffc6245c7b7c067648548cab09df53b23626f58a44f275974d3e3492b2b"
+    },
+    {
+      "path": "index.html",
+      "url": "https://github.com/KKWANH/kkwanh.github.io/blob/620980db93d22ccd399e5cf968c15bc15c27f8a3/index.html",
+      "bytes": 219,
+      "sha256": "2b295ee9076c5124d5962181888f445333bac40a2dc0057508f1d73649218180"
+    }
+  ],
+  "limitations": [],
+  "technologies": [
+    {
+      "id": "html",
+      "label": "HTML",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "index.html",
+          "basis": "source-file presence"
+        }
+      ]
+    }
+  ],
+  "commit": "620980db93d22ccd399e5cf968c15bc15c27f8a3",
+  "fileCount": 3,
+  "treeDepth": "root",
+  "status": "reviewed"
+}

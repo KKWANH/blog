@@ -1,0 +1,315 @@
+{
+  "name": "azure-todo-app",
+  "url": "https://github.com/KKWANH/azure-todo-app",
+  "fork": false,
+  "scope": "learning",
+  "scopeNote": "Learning/team project; inspect the stated contribution and source.",
+  "description": "",
+  "updatedAt": "2024-01-11T13:25:02Z",
+  "defaultBranch": "main",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/azure-todo-app/blob/2a8be2109ce2afe950639d70c8f7847021ffa2fc/README.md",
+      "bytes": 7972,
+      "sha256": "afb696158a3263ecc485f5d443b56a6e86e74f0675a98eabf2cdbe5fe3ff5437"
+    },
+    {
+      "path": "src/api/package.json",
+      "url": "https://github.com/KKWANH/azure-todo-app/blob/2a8be2109ce2afe950639d70c8f7847021ffa2fc/src/api/package.json",
+      "bytes": 1657,
+      "sha256": "d516fc282d6b9823e2d1064eaac519e6b671130cf09721d868a130a48b6dce5f"
+    },
+    {
+      "path": "src/web/package.json",
+      "url": "https://github.com/KKWANH/azure-todo-app/blob/2a8be2109ce2afe950639d70c8f7847021ffa2fc/src/web/package.json",
+      "bytes": 2121,
+      "sha256": "0ed562354115aeccc11c12a5bab6a22f1f0f6c554152ea09c58967b772e6f641"
+    },
+    {
+      "path": "tests/package.json",
+      "url": "https://github.com/KKWANH/azure-todo-app/blob/2a8be2109ce2afe950639d70c8f7847021ffa2fc/tests/package.json",
+      "bytes": 167,
+      "sha256": "5df6447a4c6bbb8c1a7c7f62c3a528a25aad98ecce4d34cf4381125008291e9a"
+    },
+    {
+      "path": "infra/main.bicep",
+      "url": "https://github.com/KKWANH/azure-todo-app/blob/2a8be2109ce2afe950639d70c8f7847021ffa2fc/infra/main.bicep",
+      "bytes": 7063,
+      "sha256": "e19b7ebc6d735b887f4486c8d7e4ffcb96d2a6c6a1d500936ef4b78798bf5ae2"
+    },
+    {
+      "path": "infra/app/db.bicep",
+      "url": "https://github.com/KKWANH/azure-todo-app/blob/2a8be2109ce2afe950639d70c8f7847021ffa2fc/infra/app/db.bicep",
+      "bytes": 1071,
+      "sha256": "0062a024658ff5f1981dc9e2e7664320c9375413ec1222ba279d984bb9fb82e6"
+    },
+    {
+      "path": "src/api/Dockerfile",
+      "url": "https://github.com/KKWANH/azure-todo-app/blob/2a8be2109ce2afe950639d70c8f7847021ffa2fc/src/api/Dockerfile",
+      "bytes": 123,
+      "sha256": "ec1f565cb950edfed82b89c6dc9912c8d94591a101ec3e32a3c4a017de4795ce"
+    },
+    {
+      "path": "src/web/Dockerfile",
+      "url": "https://github.com/KKWANH/azure-todo-app/blob/2a8be2109ce2afe950639d70c8f7847021ffa2fc/src/web/Dockerfile",
+      "bytes": 697,
+      "sha256": "e96845b9eea22103eefdc6fc981cec04ee7abe50d8438922dd20e243de64ddc3"
+    },
+    {
+      "path": "infra/app/api.bicep",
+      "url": "https://github.com/KKWANH/azure-todo-app/blob/2a8be2109ce2afe950639d70c8f7847021ffa2fc/infra/app/api.bicep",
+      "bytes": 1046,
+      "sha256": "b1f2b5727ba46d9337715a75debfc519fdcaa66202c004aae4383f5a8d844867"
+    },
+    {
+      "path": "src/api/src/app.ts",
+      "url": "https://github.com/KKWANH/azure-todo-app/blob/2a8be2109ce2afe950639d70c8f7847021ffa2fc/src/api/src/app.ts",
+      "bytes": 1977,
+      "sha256": "bd0de81ec4e2d09da4859fc2584fb5ebeab24e5be5751dc32a71816733f8a65d"
+    },
+    {
+      "path": "src/web/src/App.tsx",
+      "url": "https://github.com/KKWANH/azure-todo-app/blob/2a8be2109ce2afe950639d70c8f7847021ffa2fc/src/web/src/App.tsx",
+      "bytes": 1167,
+      "sha256": "7ea5ea5109ecef7fdd93193bfd967d17b8e5057bbb3db089f3e4ff5a4fdba45d"
+    },
+    {
+      "path": "src/api/src/index.ts",
+      "url": "https://github.com/KKWANH/azure-todo-app/blob/2a8be2109ce2afe950639d70c8f7847021ffa2fc/src/api/src/index.ts",
+      "bytes": 341,
+      "sha256": "acfcf8073409fc28e5e63e606cf99c7801ec0de9c91d1628bced5a0ff68cafef"
+    }
+  ],
+  "limitations": [],
+  "technologies": [
+    {
+      "id": "azure",
+      "label": "Azure",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        },
+        {
+          "path": "src/api/package.json",
+          "basis": "manifest/configuration"
+        },
+        {
+          "path": "infra/main.bicep",
+          "basis": "inspected source"
+        }
+      ]
+    },
+    {
+      "id": "bicep",
+      "label": "Bicep",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "infra/app/api.bicep",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "infra/app/apim-api.bicep",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "infra/app/db.bicep",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "css",
+      "label": "CSS",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "src/web/src/App.css",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "src/web/src/index.css",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "docker",
+      "label": "Docker",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "src/api/Dockerfile",
+          "basis": "container configuration"
+        },
+        {
+          "path": "src/web/Dockerfile",
+          "basis": "container configuration"
+        }
+      ]
+    },
+    {
+      "id": "express",
+      "label": "Express",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "src/api/package.json",
+          "basis": "direct dependency"
+        }
+      ]
+    },
+    {
+      "id": "github-actions",
+      "label": "GitHub Actions",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": ".github/workflows/azure-dev.yml",
+          "basis": "workflow file"
+        }
+      ]
+    },
+    {
+      "id": "html",
+      "label": "HTML",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "src/web/public/index.html",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "javascript",
+      "label": "JavaScript",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "src/api/babel.config.js",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "src/web/entrypoint.js",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "jest",
+      "label": "Jest",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "src/api/package.json",
+          "basis": "direct dependency"
+        }
+      ]
+    },
+    {
+      "id": "linux",
+      "label": "Linux",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "src/api/Dockerfile",
+          "basis": "manifest/configuration"
+        },
+        {
+          "path": "src/web/Dockerfile",
+          "basis": "manifest/configuration"
+        }
+      ]
+    },
+    {
+      "id": "nginx",
+      "label": "NGINX",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "src/web/Dockerfile",
+          "basis": "manifest/configuration"
+        }
+      ]
+    },
+    {
+      "id": "playwright",
+      "label": "Playwright",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "tests/package.json",
+          "basis": "direct dependency"
+        }
+      ]
+    },
+    {
+      "id": "react",
+      "label": "React",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        },
+        {
+          "path": "src/web/package.json",
+          "basis": "direct dependency"
+        },
+        {
+          "path": "src/web/package.json",
+          "basis": "manifest/configuration"
+        }
+      ]
+    },
+    {
+      "id": "rest",
+      "label": "REST",
+      "group": "systems",
+      "evidence": [
+        {
+          "path": "src/api/package.json",
+          "basis": "manifest/configuration"
+        }
+      ]
+    },
+    {
+      "id": "shell",
+      "label": "Shell",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "src/web/entrypoint.sh",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "typescript",
+      "label": "TypeScript",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "azd-template-react/src/api/src/config/index.ts",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "azd-template-react/src/api/src/routes/items.ts",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "azd-template-react/src/api/src/routes/lists.ts",
+          "basis": "source-file presence"
+        }
+      ]
+    }
+  ],
+  "commit": "2a8be2109ce2afe950639d70c8f7847021ffa2fc",
+  "fileCount": 1084,
+  "treeDepth": "recursive",
+  "status": "reviewed"
+}

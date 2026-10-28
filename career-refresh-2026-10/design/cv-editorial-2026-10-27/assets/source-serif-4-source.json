@@ -1,0 +1,11 @@
+{
+  "family": "Source Serif 4",
+  "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/sourceserif4/SourceSerif4%5Bopsz,wght%5D.ttf",
+  "license": "https://raw.githubusercontent.com/google/fonts/main/ofl/sourceserif4/OFL.txt",
+  "weight": 400,
+  "optical_size": 20,
+  "bytes": 47704,
+  "sha256": "ff83102dade6eb2d9e56892c8c8c3b907d8352316aa796d21754a7d3055c6fe9",
+  "postscript": "SourceSerif4Roman-Regular",
+  "fsType": 0
+}

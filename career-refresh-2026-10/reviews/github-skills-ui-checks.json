@@ -1,0 +1,25 @@
+{
+  "checks": {
+    "26_skills": true,
+    "Figma": true,
+    "Qt / QML": true,
+    "C++ containers": true,
+    "Unix processes": true,
+    "Threads & mutexes": true,
+    "HTTP / sockets": true,
+    "x86-64 ASM": true,
+    "Docker Compose": true,
+    "six_families": true,
+    "all_skill_images_loaded": true,
+    "reflow_320_False": true,
+    "reflow_320_True": true,
+    "reflow_390_False": true,
+    "reflow_390_True": true,
+    "reflow_768_False": true,
+    "reflow_768_True": true,
+    "reflow_1440_False": true,
+    "reflow_1440_True": true
+  },
+  "errors": [],
+  "passed": true
+}

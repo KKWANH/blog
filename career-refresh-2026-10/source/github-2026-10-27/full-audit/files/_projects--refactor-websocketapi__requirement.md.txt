@@ -1,0 +1,14 @@
+# Requirement: Refactor Websocket API
+
+## Source
+PR review comments.
+
+## Problem
+pickit_websocket_api examples have config coupling issues. Importing main module pulls heavy deps (cv2).
+
+## Scope
+- Extract config (PICKIT_IP, PICKIT_PORT) into lightweight dedicated module
+- Decouple examples from runtime dependencies
+
+## Status
+PR review comments captured in projects/refactor-websocketapi/comments.1.copilot.md.

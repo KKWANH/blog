@@ -1,0 +1,108 @@
+{
+  "name": "git_for_test",
+  "url": "https://github.com/KKWANH/git_for_test",
+  "fork": false,
+  "scope": "project",
+  "scopeNote": "Repository project; listed technologies describe its code, not a proficiency rating.",
+  "description": "",
+  "updatedAt": "2021-08-13T09:35:16Z",
+  "defaultBranch": "main",
+  "sources": [
+    {
+      "path": "requirement.txt",
+      "url": "https://github.com/KKWANH/git_for_test/blob/72ee882500ef968424d659fa95ca82da2bd1472f/requirement.txt",
+      "bytes": 102,
+      "sha256": "a8c15d78e5da52b60059f94e8a74c413ab2fcf97030039947f87e0a8a9918ce2"
+    },
+    {
+      "path": "run.sh",
+      "url": "https://github.com/KKWANH/git_for_test/blob/72ee882500ef968424d659fa95ca82da2bd1472f/run.sh",
+      "bytes": 36,
+      "sha256": "be8b2bfed1f55c14a2bc545324549774ae85fb57fd6f554d3edc0b49eb819541"
+    }
+  ],
+  "limitations": [
+    "Raw .py downloads are restricted by the corporate security gateway; accessible documentation/manifests are reviewed instead."
+  ],
+  "technologies": [
+    {
+      "id": "css",
+      "label": "CSS",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "moviemon/static/css/style.css",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "django",
+      "label": "Django",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "requirement.txt",
+          "basis": "declared Python dependency"
+        },
+        {
+          "path": "requirement.txt",
+          "basis": "inspected source"
+        }
+      ]
+    },
+    {
+      "id": "html",
+      "label": "HTML",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "moviemon/static/templates/base.html",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "moviemon/static/templates/battle.html",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "moviemon/static/templates/detail.html",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "python",
+      "label": "Python",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "moviemon/game/__init__.py",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "moviemon/game/admin.py",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "moviemon/game/api.py",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "shell",
+      "label": "Shell",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "run.sh",
+          "basis": "source-file presence"
+        }
+      ]
+    }
+  ],
+  "commit": "72ee882500ef968424d659fa95ca82da2bd1472f",
+  "fileCount": 45,
+  "treeDepth": "recursive",
+  "status": "reviewed-limited"
+}

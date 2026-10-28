@@ -1,0 +1,15 @@
+[
+  {
+    "opening": {
+      "opacity": "1",
+      "enterOpacity": "1"
+    }
+  },
+  {
+    "violations": [],
+    "incomplete": [
+      "aria-hidden-focus",
+      "color-contrast"
+    ]
+  }
+]

@@ -1,0 +1,38 @@
+{
+  "name": "cloud_quest_macro",
+  "url": "https://github.com/KKWANH/cloud_quest_macro",
+  "fork": false,
+  "scope": "project",
+  "scopeNote": "Repository project; listed technologies describe its code, not a proficiency rating.",
+  "description": "",
+  "updatedAt": "2022-11-06T12:40:52Z",
+  "defaultBranch": "main",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/cloud_quest_macro/blob/5eed148f9c830a9236749e4225d44598551427de/README.md",
+      "bytes": 19,
+      "sha256": "3233e3485cabd97bcb769aaad9161801efa489a16709c53423c43ed46f8a64b2"
+    }
+  ],
+  "limitations": [
+    "Raw .py downloads are restricted by the corporate security gateway; accessible documentation/manifests are reviewed instead."
+  ],
+  "technologies": [
+    {
+      "id": "python",
+      "label": "Python",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "mouse_macro.py",
+          "basis": "source-file presence"
+        }
+      ]
+    }
+  ],
+  "commit": "5eed148f9c830a9236749e4225d44598551427de",
+  "fileCount": 8,
+  "treeDepth": "recursive",
+  "status": "reviewed-limited"
+}

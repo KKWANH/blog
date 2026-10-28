@@ -1,0 +1,63 @@
+{
+  "checks": {
+    "no_guessed_initial_levels": true,
+    "save_blocks_new_edits_in_flight": true,
+    "save_payload_scoped": true,
+    "reload_preferences": true,
+    "icon_list_level_visible": true,
+    "hidden_skill_absent_from_list": true,
+    "neutral_person_center": true,
+    "map_level_matches_list": true,
+    "hidden_skill_absent_from_search": true,
+    "background_click_steps_out": true,
+    "background_double_click_zooms": true,
+    "shift_double_click_zooms_out": true,
+    "cross_tab_refresh": true,
+    "level_survives_view_switch": true,
+    "conflict_preserves_unsaved_choice": true,
+    "conflict_disables_save": true,
+    "explicit_conflict_reload": true,
+    "editor_reflow_320_False": true,
+    "editor_reflow_320_True": true,
+    "editor_reflow_390_False": true,
+    "editor_reflow_390_True": true,
+    "editor_reflow_768_False": true,
+    "editor_reflow_768_True": true,
+    "editor_reflow_1440_False": true,
+    "editor_reflow_1440_True": true,
+    "readonly_page_has_no_edit_controls": true
+  },
+  "errors": [],
+  "audits": [
+    {
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    }
+  ],
+  "fixture_saves": [
+    {
+      "cpp": {
+        "level": "comfortable",
+        "visibility": "profile"
+      },
+      "mne": {
+        "level": null,
+        "visibility": "hidden"
+      }
+    },
+    {
+      "cpp": {
+        "level": "strong",
+        "visibility": "profile"
+      }
+    }
+  ],
+  "real_file_observation": {
+    "unchanged": true,
+    "test_writes": "All browser skill writes intercepted by fixture API. Real filesystem/API persistence checked separately by native tests."
+  },
+  "passed": true
+}

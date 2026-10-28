@@ -1,0 +1,110 @@
+{
+  "name": "42Philosopher",
+  "url": "https://github.com/KKWANH/42Philosopher",
+  "fork": false,
+  "scope": "learning",
+  "scopeNote": "Learning/team project; inspect the stated contribution and source.",
+  "description": "",
+  "updatedAt": "2021-07-24T12:02:07Z",
+  "defaultBranch": "main",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/42Philosopher/blob/4b44ab65bb5eb96bad96d8ca8b0f8ce494a50504/README.md",
+      "bytes": 15,
+      "sha256": "00f8dc15d15c3feaf9cb42fc97532091a68368e2d9690e0d27cc87f708012f6d"
+    },
+    {
+      "path": "Makefile",
+      "url": "https://github.com/KKWANH/42Philosopher/blob/4b44ab65bb5eb96bad96d8ca8b0f8ce494a50504/Makefile",
+      "bytes": 1846,
+      "sha256": "afb591d5d0d3e36319c098f441d69c980032730f21dad45f7d436da45e4ccf9c"
+    },
+    {
+      "path": "srcs/msg.c",
+      "url": "https://github.com/KKWANH/42Philosopher/blob/4b44ab65bb5eb96bad96d8ca8b0f8ce494a50504/srcs/msg.c",
+      "bytes": 2572,
+      "sha256": "b29df42c1e850fefbc91e5fc31341085ed838cf71b81c99d8f58cb7e7970f3b5"
+    },
+    {
+      "path": "srcs/exit.c",
+      "url": "https://github.com/KKWANH/42Philosopher/blob/4b44ab65bb5eb96bad96d8ca8b0f8ce494a50504/srcs/exit.c",
+      "bytes": 2157,
+      "sha256": "34d42a02d2510e3753bbc6e5f37f477468d000cf943d02694cabf62b0972ae62"
+    },
+    {
+      "path": "srcs/init.c",
+      "url": "https://github.com/KKWANH/42Philosopher/blob/4b44ab65bb5eb96bad96d8ca8b0f8ce494a50504/srcs/init.c",
+      "bytes": 2769,
+      "sha256": "2a3c7aa89f65a31227e03fbb0540691327de12d6c5628483e154664fc3dc062a"
+    },
+    {
+      "path": "srcs/main.c",
+      "url": "https://github.com/KKWANH/42Philosopher/blob/4b44ab65bb5eb96bad96d8ca8b0f8ce494a50504/srcs/main.c",
+      "bytes": 1974,
+      "sha256": "4562557445403aa529f93c378d92c037d929a8e16b27c9b2cd1e2ff062bc4b16"
+    },
+    {
+      "path": "srcs/start.c",
+      "url": "https://github.com/KKWANH/42Philosopher/blob/4b44ab65bb5eb96bad96d8ca8b0f8ce494a50504/srcs/start.c",
+      "bytes": 2211,
+      "sha256": "8e3213c0db6ec5b78f2da2b91a48f0641c7137e609caaeb174fa622ddebf389d"
+    }
+  ],
+  "limitations": [],
+  "technologies": [
+    {
+      "id": "c",
+      "label": "C",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "srcs/check.c",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "srcs/exit.c",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "srcs/init.c",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "make",
+      "label": "Make",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "Makefile",
+          "basis": "build file"
+        }
+      ]
+    },
+    {
+      "id": "pthreads",
+      "label": "Pthreads",
+      "group": "systems",
+      "evidence": [
+        {
+          "path": "srcs/msg.c",
+          "basis": "inspected source"
+        },
+        {
+          "path": "srcs/exit.c",
+          "basis": "inspected source"
+        },
+        {
+          "path": "srcs/init.c",
+          "basis": "inspected source"
+        }
+      ]
+    }
+  ],
+  "commit": "4b44ab65bb5eb96bad96d8ca8b0f8ce494a50504",
+  "fileCount": 13,
+  "treeDepth": "cached-recursive",
+  "status": "reviewed"
+}

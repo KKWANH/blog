@@ -1,0 +1,234 @@
+{
+  "name": "game",
+  "url": "https://github.com/KKWANH/game",
+  "fork": false,
+  "scope": "project",
+  "scopeNote": "Repository project; listed technologies describe its code, not a proficiency rating.",
+  "description": "",
+  "updatedAt": "2026-07-01T16:37:53Z",
+  "defaultBranch": "main",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/game/blob/2c6fb4ba8f483d11123f3af11195c91c7eca3f73/README.md",
+      "bytes": 4678,
+      "sha256": "b943abbbc78aa3bc96240b38ac8fa3c0f659840d9bb13ee62f8974f840e0d8ae"
+    },
+    {
+      "path": "package.json",
+      "url": "https://github.com/KKWANH/game/blob/2c6fb4ba8f483d11123f3af11195c91c7eca3f73/package.json",
+      "bytes": 1457,
+      "sha256": "a0754144ea616dd3606159e0cf9110e5c18a3d4300c5f814d6e6a5a25aa63726"
+    },
+    {
+      "path": "lib/blackjack/index.ts",
+      "url": "https://github.com/KKWANH/game/blob/2c6fb4ba8f483d11123f3af11195c91c7eca3f73/lib/blackjack/index.ts",
+      "bytes": 341,
+      "sha256": "585d51a81ce7fa30555f14c93992de02db5cab8d0e54a2129af2fccdc19f9069"
+    },
+    {
+      "path": "scripts/qa/adversary.ts",
+      "url": "https://github.com/KKWANH/game/blob/2c6fb4ba8f483d11123f3af11195c91c7eca3f73/scripts/qa/adversary.ts",
+      "bytes": 10018,
+      "sha256": "24942be62fe5bf4c95f563fedbc119344c287ec443c3a816d37a384e9547a04d"
+    },
+    {
+      "path": "scripts/qa/scenarios.ts",
+      "url": "https://github.com/KKWANH/game/blob/2c6fb4ba8f483d11123f3af11195c91c7eca3f73/scripts/qa/scenarios.ts",
+      "bytes": 9370,
+      "sha256": "0c36d235c33ed68f08a3d3fa5946c0e82adb9d563d39d63504c2315e42166353"
+    },
+    {
+      "path": "proxy.ts",
+      "url": "https://github.com/KKWANH/game/blob/2c6fb4ba8f483d11123f3af11195c91c7eca3f73/proxy.ts",
+      "bytes": 1248,
+      "sha256": "33e4871e2c0acfa3df6d1bf7049d3d865ae9e0f17eb9035db352dc3ca7f2e368"
+    }
+  ],
+  "limitations": [],
+  "technologies": [
+    {
+      "id": "can",
+      "label": "CAN bus",
+      "group": "systems",
+      "evidence": [
+        {
+          "path": "scripts/qa/adversary.ts",
+          "basis": "inspected source"
+        }
+      ]
+    },
+    {
+      "id": "css",
+      "label": "CSS",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "app/globals.css",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "motion",
+      "label": "Motion",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "package.json",
+          "basis": "direct dependency"
+        }
+      ]
+    },
+    {
+      "id": "nextjs",
+      "label": "Next.js",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        },
+        {
+          "path": "package.json",
+          "basis": "direct dependency"
+        }
+      ]
+    },
+    {
+      "id": "oauth",
+      "label": "OAuth",
+      "group": "systems",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        }
+      ]
+    },
+    {
+      "id": "postgres",
+      "label": "PostgreSQL",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        }
+      ]
+    },
+    {
+      "id": "react",
+      "label": "React",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        },
+        {
+          "path": "package.json",
+          "basis": "direct dependency"
+        },
+        {
+          "path": "package.json",
+          "basis": "manifest/configuration"
+        }
+      ]
+    },
+    {
+      "id": "supabase",
+      "label": "Supabase",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        },
+        {
+          "path": "package.json",
+          "basis": "direct dependency"
+        },
+        {
+          "path": "package.json",
+          "basis": "manifest/configuration"
+        }
+      ]
+    },
+    {
+      "id": "tailwind",
+      "label": "Tailwind CSS",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        },
+        {
+          "path": "package.json",
+          "basis": "direct dependency"
+        },
+        {
+          "path": "package.json",
+          "basis": "manifest/configuration"
+        }
+      ]
+    },
+    {
+      "id": "typescript",
+      "label": "TypeScript",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "actions/admin-actions.ts",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "actions/auth-actions.ts",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "actions/game-actions.ts",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "vitest",
+      "label": "Vitest",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "package.json",
+          "basis": "direct dependency"
+        }
+      ]
+    },
+    {
+      "id": "zod",
+      "label": "Zod",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "package.json",
+          "basis": "direct dependency"
+        }
+      ]
+    },
+    {
+      "id": "zustand",
+      "label": "Zustand",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "package.json",
+          "basis": "direct dependency"
+        }
+      ]
+    }
+  ],
+  "commit": "2c6fb4ba8f483d11123f3af11195c91c7eca3f73",
+  "fileCount": 109,
+  "treeDepth": "cached-recursive",
+  "status": "reviewed"
+}

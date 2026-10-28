@@ -1,0 +1,182 @@
+{
+  "version": 1,
+  "updatedAt": "2026-10-27T15:02:14.756Z",
+  "entries": {
+    "asm": {
+      "level": null,
+      "visibility": "repository"
+    },
+    "c": {
+      "level": "strong",
+      "visibility": "profile"
+    },
+    "can": {
+      "level": "used",
+      "visibility": "profile"
+    },
+    "carla": {
+      "level": "comfortable",
+      "visibility": "profile"
+    },
+    "compose": {
+      "level": "comfortable",
+      "visibility": "profile"
+    },
+    "cpp": {
+      "level": "strong",
+      "visibility": "profile"
+    },
+    "csharp": {
+      "level": "learning",
+      "visibility": "profile"
+    },
+    "css": {
+      "level": "comfortable",
+      "visibility": "profile"
+    },
+    "dbus": {
+      "level": "used",
+      "visibility": "profile"
+    },
+    "django": {
+      "level": null,
+      "visibility": "repository"
+    },
+    "docker": {
+      "level": "comfortable",
+      "visibility": "profile"
+    },
+    "figma": {
+      "level": "comfortable",
+      "visibility": "profile"
+    },
+    "git": {
+      "level": "strong",
+      "visibility": "profile"
+    },
+    "html": {
+      "level": "comfortable",
+      "visibility": "profile"
+    },
+    "http": {
+      "level": "comfortable",
+      "visibility": "profile"
+    },
+    "interfaces": {
+      "level": "comfortable",
+      "visibility": "profile"
+    },
+    "java": {
+      "level": "learning",
+      "visibility": "profile"
+    },
+    "javascript": {
+      "level": "comfortable",
+      "visibility": "profile"
+    },
+    "linux": {
+      "level": "comfortable",
+      "visibility": "profile"
+    },
+    "make": {
+      "level": "used",
+      "visibility": "profile"
+    },
+    "matplotlib": {
+      "level": "learning",
+      "visibility": "profile"
+    },
+    "minilibx": {
+      "level": "used",
+      "visibility": "repository"
+    },
+    "mne": {
+      "level": "learning",
+      "visibility": "profile"
+    },
+    "nginx": {
+      "level": "learning",
+      "visibility": "profile"
+    },
+    "numpy": {
+      "level": "used",
+      "visibility": "profile"
+    },
+    "opencv": {
+      "level": "used",
+      "visibility": "profile"
+    },
+    "pandas": {
+      "level": "used",
+      "visibility": "profile"
+    },
+    "processes": {
+      "level": "comfortable",
+      "visibility": "profile"
+    },
+    "python": {
+      "level": "strong",
+      "visibility": "profile"
+    },
+    "qmake": {
+      "level": null,
+      "visibility": "repository"
+    },
+    "qt": {
+      "level": "used",
+      "visibility": "profile"
+    },
+    "raspberrypi": {
+      "level": "used",
+      "visibility": "profile"
+    },
+    "raycasting": {
+      "level": "used",
+      "visibility": "profile"
+    },
+    "react": {
+      "level": "comfortable",
+      "visibility": "profile"
+    },
+    "recovery": {
+      "level": "comfortable",
+      "visibility": "profile"
+    },
+    "rest": {
+      "level": "used",
+      "visibility": "profile"
+    },
+    "ros": {
+      "level": "used",
+      "visibility": "profile"
+    },
+    "shell": {
+      "level": "comfortable",
+      "visibility": "profile"
+    },
+    "sklearn": {
+      "level": null,
+      "visibility": "repository"
+    },
+    "threads": {
+      "level": "used",
+      "visibility": "profile"
+    },
+    "typescript": {
+      "level": "comfortable",
+      "visibility": "profile"
+    },
+    "ui-design": {
+      "level": "comfortable",
+      "visibility": "profile"
+    },
+    "unity": {
+      "level": "learning",
+      "visibility": "profile"
+    },
+    "websocket": {
+      "level": "used",
+      "visibility": "profile"
+    }
+  }
+}

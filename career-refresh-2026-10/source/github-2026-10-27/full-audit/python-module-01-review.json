@@ -1,0 +1,24 @@
+{
+  "name": "python-module-01",
+  "url": "https://github.com/KKWANH/python-module-01",
+  "fork": false,
+  "scope": "learning",
+  "scopeNote": "Learning/team project; inspect the stated contribution and source.",
+  "description": "",
+  "updatedAt": "2023-02-21T15:04:28Z",
+  "defaultBranch": "main",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/python-module-01/blob/75cdb56fe180cf4453a6622a851420439d1f7113/README.md",
+      "bytes": 18,
+      "sha256": "0814fca5ec015570925747d4f68811933759ac36647326f2efc079bc708b04f4"
+    }
+  ],
+  "limitations": [],
+  "technologies": [],
+  "commit": "75cdb56fe180cf4453a6622a851420439d1f7113",
+  "fileCount": 2,
+  "treeDepth": "recursive",
+  "status": "reviewed"
+}

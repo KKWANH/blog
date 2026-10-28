@@ -1,0 +1,1716 @@
+{
+  "version": "round-1",
+  "purpose": "First CV design example; not a formal evaluation round or approval.",
+  "generated_at_utc": "2026-10-26T12:23:34.313936+00:00",
+  "automated_build_checks_passed": true,
+  "factual_approval": false,
+  "geometry": {
+    "page_mm": [
+      210,
+      297
+    ],
+    "margin_mm": 18,
+    "text_width_mm": 174,
+    "body_font_pt": 10.5,
+    "body_leading_pt": 14.5,
+    "metadata_font_pt": 9.25,
+    "bullet_indent_mm": 4,
+    "body_frame_top_pt": 51.024,
+    "body_frame_bottom_pt_top_origin": 756.866,
+    "footer_rule_pt_top_origin": 768.866,
+    "bbox_tolerance_pt": 0.05
+  },
+  "source_content_sha256": "116e87bee0a436abadc03aaf282271f35abe1faf10889d2b276a2a54d11bed15",
+  "build_script_sha256": "9efe551142e2b5f41246387d23f66cea5a64651c3a8f83030ef6140c4c4a2263",
+  "style_specifications_pt": {
+    "Normal": {
+      "size": 10.5,
+      "leading": 14.5,
+      "before": 0,
+      "after": 0,
+      "color": "202725",
+      "bold": false,
+      "italic": false,
+      "keep_next": false,
+      "left": 0,
+      "first_line": 0
+    },
+    "Title": {
+      "size": 31,
+      "leading": 34,
+      "before": 0,
+      "after": 1,
+      "color": "202725",
+      "bold": true,
+      "italic": false,
+      "keep_next": true,
+      "left": 0,
+      "first_line": 0
+    },
+    "Subtitle": {
+      "size": 12,
+      "leading": 16,
+      "before": 0,
+      "after": 5,
+      "color": "294FA8",
+      "bold": false,
+      "italic": false,
+      "keep_next": true,
+      "left": 0,
+      "first_line": 0
+    },
+    "CV Contact": {
+      "size": 9.5,
+      "leading": 13,
+      "before": 0,
+      "after": 0,
+      "color": "294FA8",
+      "bold": false,
+      "italic": false,
+      "keep_next": true,
+      "left": 0,
+      "first_line": 0
+    },
+    "CV Draft": {
+      "size": 9.25,
+      "leading": 12,
+      "before": 7,
+      "after": 1,
+      "color": "294FA8",
+      "bold": true,
+      "italic": false,
+      "keep_next": true,
+      "left": 0,
+      "first_line": 0
+    },
+    "CV Note": {
+      "size": 9.25,
+      "leading": 12,
+      "before": 0,
+      "after": 0,
+      "color": "515A57",
+      "bold": false,
+      "italic": true,
+      "keep_next": false,
+      "left": 0,
+      "first_line": 0
+    },
+    "Heading 1": {
+      "size": 10.5,
+      "leading": 14.5,
+      "before": 12,
+      "after": 5,
+      "color": "294FA8",
+      "bold": true,
+      "italic": false,
+      "keep_next": true,
+      "left": 0,
+      "first_line": 0
+    },
+    "Heading 2": {
+      "size": 11.25,
+      "leading": 14.5,
+      "before": 8,
+      "after": 1,
+      "color": "202725",
+      "bold": false,
+      "italic": false,
+      "keep_next": true,
+      "left": 0,
+      "first_line": 0
+    },
+    "CV Metadata": {
+      "size": 9.25,
+      "leading": 12.5,
+      "before": 0,
+      "after": 3,
+      "color": "515A57",
+      "bold": false,
+      "italic": false,
+      "keep_next": true,
+      "left": 0,
+      "first_line": 0
+    },
+    "CV Bullet": {
+      "size": 10.5,
+      "leading": 14.5,
+      "before": 0,
+      "after": 2.5,
+      "color": "202725",
+      "bold": false,
+      "italic": false,
+      "keep_next": false,
+      "left": 11.338582677165356,
+      "first_line": -11.338582677165356
+    },
+    "CV Skill": {
+      "size": 10.5,
+      "leading": 14.5,
+      "before": 0,
+      "after": 3,
+      "color": "202725",
+      "bold": false,
+      "italic": false,
+      "keep_next": false,
+      "left": 0,
+      "first_line": 0
+    },
+    "CV Continuation": {
+      "size": 12,
+      "leading": 16,
+      "before": 0,
+      "after": 2,
+      "color": "202725",
+      "bold": false,
+      "italic": false,
+      "keep_next": true,
+      "left": 0,
+      "first_line": 0
+    },
+    "CV Record": {
+      "size": 10.5,
+      "leading": 14.5,
+      "before": 6,
+      "after": 1,
+      "color": "202725",
+      "bold": false,
+      "italic": false,
+      "keep_next": true,
+      "left": 0,
+      "first_line": 0
+    },
+    "CV Record Metadata": {
+      "size": 9.25,
+      "leading": 12.5,
+      "before": 0,
+      "after": 0,
+      "color": "515A57",
+      "bold": false,
+      "italic": false,
+      "keep_next": false,
+      "left": 0,
+      "first_line": 0
+    },
+    "CV Footer": {
+      "size": 9.25,
+      "leading": 12,
+      "before": 0,
+      "after": 0,
+      "color": "294FA8",
+      "bold": false,
+      "italic": false,
+      "keep_next": false,
+      "left": 0,
+      "first_line": 0
+    }
+  },
+  "environment": {
+    "python": "3.13.15",
+    "reportlab": "5.1.0",
+    "python-docx": "1.2.0",
+    "pymupdf": "1.28.2",
+    "Pillow": "13.0.0",
+    "fonttools": "4.67.0"
+  },
+  "source_fonts": [
+    {
+      "file": "fonts\\Lato-Regular.ttf",
+      "bytes": 656568,
+      "sha256": "d636e4683231f931eda222d588e944d082bfd3bdba02f928bee461c0f185b251",
+      "embedding_fsType": 0,
+      "missing_required_codepoints": []
+    },
+    {
+      "file": "fonts\\Lato-Bold.ttf",
+      "bytes": 656544,
+      "sha256": "8a0aace75d33794eece4b28187bfc1df0bbd2888b5d8a56e01788c8d65d16be1",
+      "embedding_fsType": 0,
+      "missing_required_codepoints": []
+    },
+    {
+      "file": "fonts\\Lato-Italic.ttf",
+      "bytes": 722900,
+      "sha256": "e399c44efe1387100531d26c7e4800c5d12251b890d6654a3098c7c679cb1786",
+      "embedding_fsType": 0,
+      "missing_required_codepoints": []
+    }
+  ],
+  "text_contrast_against_white": {
+    "#202725": 15.24,
+    "#515A57": 7.12,
+    "#294FA8": 7.56
+  },
+  "pdf": {
+    "checks": {
+      "two_pages": true,
+      "all_pages_a4": true,
+      "all_text_within_18mm_margins": true,
+      "rules_and_underlines_within_margins": true,
+      "all_expected_text_in_linear_order": true,
+      "flowable_order_matches_planned_pages": true,
+      "footers_follow_body_in_extraction": true,
+      "no_unicode_replacement_character": true,
+      "nonempty_embedded_font_programs": true,
+      "all_fonts_have_unicode_maps": true,
+      "expected_hyperlink_annotations": true,
+      "link_rectangles_within_margins": true,
+      "title_metadata": true
+    },
+    "page_count": 2,
+    "pages": [
+      {
+        "page": 1,
+        "size_pt": [
+          595.276,
+          841.89
+        ],
+        "a4": true,
+        "text_span_count": 51,
+        "glyph_bbox_union_pt": [
+          51.024,
+          51.427,
+          544.252,
+          789.336
+        ],
+        "out_of_margin_spans": [],
+        "out_of_margin_drawing_boxes": [],
+        "content_ink_bottom_pt": 654.76,
+        "gap_from_content_ink_to_footer_rule_pt": 114.106,
+        "reading_order_passed": true,
+        "block_matches": [
+          {
+            "id": "name",
+            "found_at": 0
+          },
+          {
+            "id": "headline",
+            "found_at": 11
+          },
+          {
+            "id": "contacts-1",
+            "found_at": 29
+          },
+          {
+            "id": "contacts-2",
+            "found_at": 63
+          },
+          {
+            "id": "draft-label",
+            "found_at": 109
+          },
+          {
+            "id": "draft-note",
+            "found_at": 140
+          },
+          {
+            "id": "summary-heading",
+            "found_at": 187
+          },
+          {
+            "id": "summary",
+            "found_at": 195
+          },
+          {
+            "id": "experience-heading",
+            "found_at": 373
+          },
+          {
+            "id": "job-1",
+            "found_at": 384
+          },
+          {
+            "id": "job-1-metadata",
+            "found_at": 411
+          },
+          {
+            "id": "job-1-bullet-1",
+            "found_at": 458
+          },
+          {
+            "id": "job-1-bullet-2",
+            "found_at": 615
+          },
+          {
+            "id": "job-1-bullet-3",
+            "found_at": 717
+          },
+          {
+            "id": "job-2",
+            "found_at": 815
+          },
+          {
+            "id": "job-2-metadata",
+            "found_at": 856
+          },
+          {
+            "id": "job-2-bullet-1",
+            "found_at": 894
+          },
+          {
+            "id": "job-2-bullet-2",
+            "found_at": 977
+          },
+          {
+            "id": "job-2-bullet-3",
+            "found_at": 1078
+          },
+          {
+            "id": "job-2-bullet-4",
+            "found_at": 1173
+          },
+          {
+            "id": "job-3",
+            "found_at": 1247
+          },
+          {
+            "id": "job-3-metadata",
+            "found_at": 1280
+          },
+          {
+            "id": "job-3-bullet-1",
+            "found_at": 1322
+          },
+          {
+            "id": "job-3-bullet-2",
+            "found_at": 1448
+          },
+          {
+            "id": "skills-heading",
+            "found_at": 1544
+          },
+          {
+            "id": "skill-1",
+            "found_at": 1551
+          },
+          {
+            "id": "skill-2",
+            "found_at": 1604
+          },
+          {
+            "id": "skill-3",
+            "found_at": 1724
+          },
+          {
+            "id": "skill-4",
+            "found_at": 1799
+          }
+        ],
+        "footer_after_body": true,
+        "replacement_character_absent": true,
+        "links": [
+          {
+            "uri": "mailto:kwanho0096@gmail.com",
+            "bbox_pt": [
+              51.02362060546875,
+              107.023681640625,
+              155.98440551757812,
+              118.42364501953125
+            ],
+            "within_margins": true
+          },
+          {
+            "uri": "https://kwanho.dev",
+            "bbox_pt": [
+              163.3184051513672,
+              107.023681640625,
+              213.79660034179688,
+              118.42364501953125
+            ],
+            "within_margins": true
+          },
+          {
+            "uri": "https://linkedin.com/in/kwanhokim",
+            "bbox_pt": [
+              51.02362060546875,
+              120.023681640625,
+              167.6551055908203,
+              131.42364501953125
+            ],
+            "within_margins": true
+          },
+          {
+            "uri": "https://github.com/KKWANH",
+            "bbox_pt": [
+              174.98910522460938,
+              120.023681640625,
+              269.1673889160156,
+              131.42364501953125
+            ],
+            "within_margins": true
+          }
+        ]
+      },
+      {
+        "page": 2,
+        "size_pt": [
+          595.276,
+          841.89
+        ],
+        "a4": true,
+        "text_span_count": 55,
+        "glyph_bbox_union_pt": [
+          51.024,
+          51.18,
+          544.252,
+          789.336
+        ],
+        "out_of_margin_spans": [],
+        "out_of_margin_drawing_boxes": [],
+        "content_ink_bottom_pt": 710.76,
+        "gap_from_content_ink_to_footer_rule_pt": 58.106,
+        "reading_order_passed": true,
+        "block_matches": [
+          {
+            "id": "continuation",
+            "found_at": 0
+          },
+          {
+            "id": "projects-heading",
+            "found_at": 31
+          },
+          {
+            "id": "project-1",
+            "found_at": 49
+          },
+          {
+            "id": "project-1-metadata",
+            "found_at": 84
+          },
+          {
+            "id": "project-1-bullet-1",
+            "found_at": 143
+          },
+          {
+            "id": "project-1-bullet-2",
+            "found_at": 284
+          },
+          {
+            "id": "project-2",
+            "found_at": 367
+          },
+          {
+            "id": "project-2-metadata",
+            "found_at": 409
+          },
+          {
+            "id": "project-2-bullet-1",
+            "found_at": 438
+          },
+          {
+            "id": "project-3",
+            "found_at": 565
+          },
+          {
+            "id": "project-3-metadata",
+            "found_at": 605
+          },
+          {
+            "id": "project-3-bullet-1",
+            "found_at": 641
+          },
+          {
+            "id": "education-heading",
+            "found_at": 741
+          },
+          {
+            "id": "education-note",
+            "found_at": 751
+          },
+          {
+            "id": "education-1",
+            "found_at": 809
+          },
+          {
+            "id": "education-1-metadata",
+            "found_at": 855
+          },
+          {
+            "id": "education-2",
+            "found_at": 872
+          },
+          {
+            "id": "education-2-metadata",
+            "found_at": 929
+          },
+          {
+            "id": "education-3",
+            "found_at": 947
+          },
+          {
+            "id": "education-3-metadata",
+            "found_at": 1001
+          },
+          {
+            "id": "education-4",
+            "found_at": 1019
+          },
+          {
+            "id": "education-4-metadata",
+            "found_at": 1070
+          },
+          {
+            "id": "training-heading",
+            "found_at": 1088
+          },
+          {
+            "id": "training-1",
+            "found_at": 1097
+          },
+          {
+            "id": "training-1-metadata",
+            "found_at": 1136
+          },
+          {
+            "id": "training-2",
+            "found_at": 1175
+          },
+          {
+            "id": "training-2-metadata",
+            "found_at": 1209
+          },
+          {
+            "id": "credential-heading",
+            "found_at": 1246
+          },
+          {
+            "id": "credential",
+            "found_at": 1266
+          },
+          {
+            "id": "credential-metadata",
+            "found_at": 1298
+          },
+          {
+            "id": "leadership-heading",
+            "found_at": 1366
+          },
+          {
+            "id": "leadership",
+            "found_at": 1377
+          },
+          {
+            "id": "leadership-metadata",
+            "found_at": 1407
+          },
+          {
+            "id": "leadership-bullet",
+            "found_at": 1466
+          }
+        ],
+        "footer_after_body": true,
+        "replacement_character_absent": true,
+        "links": [
+          {
+            "uri": "https://github.com/KKWANH/ai-assistant",
+            "bbox_pt": [
+              152.764404296875,
+              117.023681640625,
+              294.1228942871094,
+              128.1236572265625
+            ],
+            "within_margins": true
+          }
+        ]
+      }
+    ],
+    "fonts": [
+      {
+        "xref": 12,
+        "name": "AAAAAA+Lato-Bold",
+        "extension": "ttf",
+        "type": "TrueType",
+        "embedded_bytes": 25812,
+        "embedded_sha256": "50cfe7e3a86c5cd838b998f17bb725fae3a140535b8d3679eac6ed9a6b58d7a6",
+        "to_unicode": {
+          "type": "xref",
+          "value": "9 0 R"
+        }
+      },
+      {
+        "xref": 16,
+        "name": "AAAAAA+Lato-Regular",
+        "extension": "ttf",
+        "type": "TrueType",
+        "embedded_bytes": 25556,
+        "embedded_sha256": "070be3e24eb3fb940fc59b1c20eb7b886e97cbf596d51e7a20cc3bcd623e02b5",
+        "to_unicode": {
+          "type": "xref",
+          "value": "13 0 R"
+        }
+      },
+      {
+        "xref": 20,
+        "name": "AAAAAA+Lato-Italic",
+        "extension": "ttf",
+        "type": "TrueType",
+        "embedded_bytes": 25360,
+        "embedded_sha256": "a6933a31fd81e88beb9ef702c661aa743c3b7267d7369adcdfe83b55a420daf6",
+        "to_unicode": {
+          "type": "xref",
+          "value": "17 0 R"
+        }
+      }
+    ],
+    "expected_link_uris": [
+      "https://github.com/KKWANH",
+      "https://github.com/KKWANH/ai-assistant",
+      "https://kwanho.dev",
+      "https://linkedin.com/in/kwanhokim",
+      "mailto:kwanho0096@gmail.com"
+    ],
+    "metadata": {
+      "format": "PDF 1.4",
+      "title": "Kwanho Kim — CV design example — Working draft",
+      "author": "Kwanho Kim",
+      "subject": "First CV design example. Role and education details await confirmation.",
+      "keywords": "CV, Software Engineer, Working draft, Design example",
+      "creator": "build_cv.py · ReportLab",
+      "producer": "ReportLab PDF Library - (opensource)",
+      "creationDate": "D:20000101000000+00'00'",
+      "modDate": "D:20000101000000+00'00'",
+      "trapped": "",
+      "encryption": null
+    },
+    "placements": [
+      {
+        "id": "name",
+        "page": 1,
+        "style": "Title",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          51.024,
+          544.252,
+          85.024
+        ],
+        "line_count": 1,
+        "text": "Kwanho Kim"
+      },
+      {
+        "id": "headline",
+        "page": 1,
+        "style": "Subtitle",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          86.024,
+          544.252,
+          102.024
+        ],
+        "line_count": 1,
+        "text": "Software Engineer"
+      },
+      {
+        "id": "contacts-1",
+        "page": 1,
+        "style": "CV Contact",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          107.024,
+          544.252,
+          120.024
+        ],
+        "line_count": 1,
+        "text": "kwanho0096@gmail.com · kwanho.dev"
+      },
+      {
+        "id": "contacts-2",
+        "page": 1,
+        "style": "CV Contact",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          120.024,
+          544.252,
+          133.024
+        ],
+        "line_count": 1,
+        "text": "linkedin.com/in/kwanhokim · github.com/KKWANH"
+      },
+      {
+        "id": "draft-label",
+        "page": 1,
+        "style": "CV Draft",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          140.024,
+          544.252,
+          152.024
+        ],
+        "line_count": 1,
+        "text": "WORKING DRAFT · DESIGN EXAMPLE"
+      },
+      {
+        "id": "draft-note",
+        "page": 1,
+        "style": "CV Note",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          153.024,
+          544.252,
+          165.024
+        ],
+        "line_count": 1,
+        "text": "Role and education details await confirmation."
+      },
+      {
+        "id": "summary-heading",
+        "page": 1,
+        "style": "Heading 1",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          177.024,
+          544.252,
+          191.524
+        ],
+        "line_count": 1,
+        "text": "SUMMARY"
+      },
+      {
+        "id": "summary",
+        "page": 1,
+        "style": "Normal",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          196.524,
+          544.252,
+          225.524
+        ],
+        "line_count": 2,
+        "text": "Software engineer working on semiconductor inspection equipment at KLA. Earlier work at Pickit 3D and Bosch spans robotic vision, communication software and operator interfaces."
+      },
+      {
+        "id": "experience-heading",
+        "page": 1,
+        "style": "Heading 1",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          237.524,
+          544.252,
+          252.024
+        ],
+        "line_count": 1,
+        "text": "EXPERIENCE"
+      },
+      {
+        "id": "job-1",
+        "page": 1,
+        "style": "Heading 2",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          260.024,
+          544.252,
+          274.524
+        ],
+        "line_count": 1,
+        "text": "KLA — Software engineering"
+      },
+      {
+        "id": "job-1-metadata",
+        "page": 1,
+        "style": "CV Metadata",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          275.524,
+          544.252,
+          288.024
+        ],
+        "line_count": 1,
+        "text": "Current · Semiconductor inspection equipment"
+      },
+      {
+        "id": "job-1-bullet-1",
+        "page": 1,
+        "style": "CV Bullet",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          291.024,
+          544.252,
+          320.024
+        ],
+        "line_count": 2,
+        "text": "Work includes lifter control and recovery across application and controller software, including response to an axis error. Hardware validation is pending."
+      },
+      {
+        "id": "job-1-bullet-2",
+        "page": 1,
+        "style": "CV Bullet",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          322.524,
+          544.252,
+          337.024
+        ],
+        "line_count": 1,
+        "text": "Work includes camera white-balance settings, device readback and the values shown in the interface."
+      },
+      {
+        "id": "job-1-bullet-3",
+        "page": 1,
+        "style": "CV Bullet",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          339.524,
+          544.252,
+          354.024
+        ],
+        "line_count": 1,
+        "text": "Work includes moving serial device-control code into a shared layer and updating its integration."
+      },
+      {
+        "id": "job-2",
+        "page": 1,
+        "style": "Heading 2",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          362.024,
+          544.252,
+          376.524
+        ],
+        "line_count": 1,
+        "text": "Pickit 3D — Research & Software Engineer"
+      },
+      {
+        "id": "job-2-metadata",
+        "page": 1,
+        "style": "CV Metadata",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          377.524,
+          544.252,
+          390.024
+        ],
+        "line_count": 1,
+        "text": "Aug 2025–Mar 2026 · Leuven, Belgium"
+      },
+      {
+        "id": "job-2-bullet-1",
+        "page": 1,
+        "style": "CV Bullet",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          393.024,
+          544.252,
+          407.524
+        ],
+        "line_count": 1,
+        "text": "Traced a field communication failure to a port conflict and implemented the fix."
+      },
+      {
+        "id": "job-2-bullet-2",
+        "page": 1,
+        "style": "CV Bullet",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          410.024,
+          544.252,
+          424.524
+        ],
+        "line_count": 1,
+        "text": "Built a Python WebSocket client with reconnect, backoff and message validation for internal tools."
+      },
+      {
+        "id": "job-2-bullet-3",
+        "page": 1,
+        "style": "CV Bullet",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          427.024,
+          544.252,
+          441.524
+        ],
+        "line_count": 1,
+        "text": "Built log-download and conversion tools with timezone handling and a multilingual interface."
+      },
+      {
+        "id": "job-2-bullet-4",
+        "page": 1,
+        "style": "CV Bullet",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          444.024,
+          544.252,
+          458.524
+        ],
+        "line_count": 1,
+        "text": "Developed system and network configuration screens with input validation."
+      },
+      {
+        "id": "job-3",
+        "page": 1,
+        "style": "Heading 2",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          466.524,
+          544.252,
+          481.024
+        ],
+        "line_count": 1,
+        "text": "Bosch — V2X Communication Intern"
+      },
+      {
+        "id": "job-3-metadata",
+        "page": 1,
+        "style": "CV Metadata",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          482.024,
+          544.252,
+          494.524
+        ],
+        "line_count": 1,
+        "text": "Jun 2024–Nov 2024 · Hildesheim, Germany"
+      },
+      {
+        "id": "job-3-bullet-1",
+        "page": 1,
+        "style": "CV Bullet",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          497.524,
+          544.252,
+          526.524
+        ],
+        "line_count": 2,
+        "text": "Built a vehicle-to-everything (V2X) demonstrator, defined message interfaces and checked end-to-end behaviour in test runs."
+      },
+      {
+        "id": "job-3-bullet-2",
+        "page": 1,
+        "style": "CV Bullet",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          529.024,
+          544.252,
+          543.524
+        ],
+        "line_count": 1,
+        "text": "Integrated communication modules and developed a React interface for an eBike safety prototype."
+      },
+      {
+        "id": "skills-heading",
+        "page": 1,
+        "style": "Heading 1",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          555.524,
+          544.252,
+          570.024
+        ],
+        "line_count": 1,
+        "text": "SKILLS"
+      },
+      {
+        "id": "skill-1",
+        "page": 1,
+        "style": "CV Skill",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          575.024,
+          544.252,
+          589.524
+        ],
+        "line_count": 1,
+        "text": "Programming: C++, C, Python, TypeScript, JavaScript."
+      },
+      {
+        "id": "skill-2",
+        "page": 1,
+        "style": "CV Skill",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          592.524,
+          544.252,
+          621.524
+        ],
+        "line_count": 2,
+        "text": "Equipment & integration: Device-control software, serial communication, camera configuration, WebSocket, REST, ROS 1/2."
+      },
+      {
+        "id": "skill-3",
+        "page": 1,
+        "style": "CV Skill",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          624.524,
+          544.252,
+          639.024
+        ],
+        "line_count": 1,
+        "text": "Applications & tools: React, Node.js, Fastify, SQLite; Git, Docker, Linux."
+      },
+      {
+        "id": "skill-4",
+        "page": 1,
+        "style": "CV Skill",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          642.024,
+          544.252,
+          656.524
+        ],
+        "line_count": 1,
+        "text": "Spoken languages: Korean (native); English (IELTS Academic 7.5, Mar 2025)."
+      },
+      {
+        "id": "continuation",
+        "page": 2,
+        "style": "CV Continuation",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          51.024,
+          544.252,
+          67.024
+        ],
+        "line_count": 1,
+        "text": "Kwanho Kim — Software Engineer"
+      },
+      {
+        "id": "projects-heading",
+        "page": 2,
+        "style": "Heading 1",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          79.024,
+          544.252,
+          93.524
+        ],
+        "line_count": 1,
+        "text": "SELECTED PROJECTS"
+      },
+      {
+        "id": "project-1",
+        "page": 2,
+        "style": "Heading 2",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          101.524,
+          544.252,
+          116.024
+        ],
+        "line_count": 1,
+        "text": "Ariadne — Local-document workspace"
+      },
+      {
+        "id": "project-1-metadata",
+        "page": 2,
+        "style": "CV Metadata",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          117.024,
+          544.252,
+          129.524
+        ],
+        "line_count": 1,
+        "text": "2026 · Personal project · github.com/KKWANH/ai-assistant"
+      },
+      {
+        "id": "project-1-bullet-1",
+        "page": 2,
+        "style": "CV Bullet",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          132.524,
+          544.252,
+          161.524
+        ],
+        "line_count": 2,
+        "text": "Built a workspace for using language models with local documents, including source references and a review step for proposed file changes."
+      },
+      {
+        "id": "project-1-bullet-2",
+        "page": 2,
+        "style": "CV Bullet",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          164.024,
+          544.252,
+          178.524
+        ],
+        "line_count": 1,
+        "text": "Developed the application in TypeScript and Python with Fastify, React and SQLite."
+      },
+      {
+        "id": "project-2",
+        "page": 2,
+        "style": "Heading 2",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          186.524,
+          544.252,
+          201.024
+        ],
+        "line_count": 1,
+        "text": "ColorSaveLife — Bosch ConnectedExperience"
+      },
+      {
+        "id": "project-2-metadata",
+        "page": 2,
+        "style": "CV Metadata",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          202.024,
+          544.252,
+          214.524
+        ],
+        "line_count": 1,
+        "text": "Feb 2024 · Berlin, Germany"
+      },
+      {
+        "id": "project-2-bullet-1",
+        "page": 2,
+        "style": "CV Bullet",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          217.524,
+          544.252,
+          246.524
+        ],
+        "line_count": 2,
+        "text": "Led and presented a hackathon team; integrated eye-tracking with a simulation pipeline and built a plugin-based Python client."
+      },
+      {
+        "id": "project-3",
+        "page": 2,
+        "style": "Heading 2",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          254.524,
+          544.252,
+          269.024
+        ],
+        "line_count": 1,
+        "text": "Autonomous Lane-Keeping Assist — SEA:ME"
+      },
+      {
+        "id": "project-3-metadata",
+        "page": 2,
+        "style": "CV Metadata",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          270.024,
+          544.252,
+          282.524
+        ],
+        "line_count": 1,
+        "text": "Aug–Dec 2023 · Wolfsburg, Germany"
+      },
+      {
+        "id": "project-3-bullet-1",
+        "page": 2,
+        "style": "CV Bullet",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          285.524,
+          544.252,
+          300.024
+        ],
+        "line_count": 1,
+        "text": "Implemented CNN-based lane detection in CARLA and a client to collect and evaluate simulation data."
+      },
+      {
+        "id": "education-heading",
+        "page": 2,
+        "style": "Heading 1",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          312.024,
+          544.252,
+          326.524
+        ],
+        "line_count": 1,
+        "text": "EDUCATION"
+      },
+      {
+        "id": "education-note",
+        "page": 2,
+        "style": "CV Note",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          331.524,
+          544.252,
+          343.524
+        ],
+        "line_count": 1,
+        "text": "Subjects and dates as supplied; degree status to confirm."
+      },
+      {
+        "id": "education-1",
+        "page": 2,
+        "style": "CV Record",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          349.524,
+          544.252,
+          364.024
+        ],
+        "line_count": 1,
+        "text": "Mechatronics — Korea National Open University"
+      },
+      {
+        "id": "education-1-metadata",
+        "page": 2,
+        "style": "CV Record Metadata",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          365.024,
+          544.252,
+          377.524
+        ],
+        "line_count": 1,
+        "text": "Feb 2026–Present"
+      },
+      {
+        "id": "education-2",
+        "page": 2,
+        "style": "CV Record",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          383.524,
+          544.252,
+          398.024
+        ],
+        "line_count": 1,
+        "text": "Artificial Intelligence — Korea National Open University"
+      },
+      {
+        "id": "education-2-metadata",
+        "page": 2,
+        "style": "CV Record Metadata",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          399.024,
+          544.252,
+          411.524
+        ],
+        "line_count": 1,
+        "text": "Mar 2023–Feb 2025"
+      },
+      {
+        "id": "education-3",
+        "page": 2,
+        "style": "CV Record",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          417.524,
+          544.252,
+          432.024
+        ],
+        "line_count": 1,
+        "text": "Business Administration — Academic Credit Bank System"
+      },
+      {
+        "id": "education-3-metadata",
+        "page": 2,
+        "style": "CV Record Metadata",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          433.024,
+          544.252,
+          445.524
+        ],
+        "line_count": 1,
+        "text": "Apr 2019–Aug 2022"
+      },
+      {
+        "id": "education-4",
+        "page": 2,
+        "style": "CV Record",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          451.524,
+          544.252,
+          466.024
+        ],
+        "line_count": 1,
+        "text": "Computer Engineering — Academic Credit Bank System"
+      },
+      {
+        "id": "education-4-metadata",
+        "page": 2,
+        "style": "CV Record Metadata",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          467.024,
+          544.252,
+          479.524
+        ],
+        "line_count": 1,
+        "text": "Apr 2019–Aug 2020"
+      },
+      {
+        "id": "training-heading",
+        "page": 2,
+        "style": "Heading 1",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          491.524,
+          544.252,
+          506.024
+        ],
+        "line_count": 1,
+        "text": "TRAINING"
+      },
+      {
+        "id": "training-1",
+        "page": 2,
+        "style": "CV Record",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          512.024,
+          544.252,
+          526.524
+        ],
+        "line_count": 1,
+        "text": "SEA:ME — Automotive & Mobility program"
+      },
+      {
+        "id": "training-1-metadata",
+        "page": 2,
+        "style": "CV Record Metadata",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          527.524,
+          544.252,
+          540.024
+        ],
+        "line_count": 1,
+        "text": "Jul 2023–Jun 2024 · Wolfsburg, Germany"
+      },
+      {
+        "id": "training-2",
+        "page": 2,
+        "style": "CV Record",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          546.024,
+          544.252,
+          560.524
+        ],
+        "line_count": 1,
+        "text": "42 — Software engineering program"
+      },
+      {
+        "id": "training-2-metadata",
+        "page": 2,
+        "style": "CV Record Metadata",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          561.524,
+          544.252,
+          574.024
+        ],
+        "line_count": 1,
+        "text": "Started Sep 2020 · Seoul / Wolfsburg"
+      },
+      {
+        "id": "credential-heading",
+        "page": 2,
+        "style": "Heading 1",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          586.024,
+          544.252,
+          600.524
+        ],
+        "line_count": 1,
+        "text": "SELECTED CREDENTIAL"
+      },
+      {
+        "id": "credential",
+        "page": 2,
+        "style": "CV Record",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          606.524,
+          544.252,
+          621.024
+        ],
+        "line_count": 1,
+        "text": "Engineer Information Processing"
+      },
+      {
+        "id": "credential-metadata",
+        "page": 2,
+        "style": "CV Record Metadata",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          622.024,
+          544.252,
+          634.524
+        ],
+        "line_count": 1,
+        "text": "Nov 2020 · Human Resources Development Service of Korea (HRD Korea)"
+      },
+      {
+        "id": "leadership-heading",
+        "page": 2,
+        "style": "Heading 1",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          646.524,
+          544.252,
+          661.024
+        ],
+        "line_count": 1,
+        "text": "LEADERSHIP"
+      },
+      {
+        "id": "leadership",
+        "page": 2,
+        "style": "CV Record",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          667.024,
+          544.252,
+          681.524
+        ],
+        "line_count": 1,
+        "text": "Rush03 — Keyboardist & leader"
+      },
+      {
+        "id": "leadership-metadata",
+        "page": 2,
+        "style": "CV Metadata",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          682.524,
+          544.252,
+          695.024
+        ],
+        "line_count": 1,
+        "text": "Aug 2022–Jul 2023 · 42 student club · Seoul, South Korea"
+      },
+      {
+        "id": "leadership-bullet",
+        "page": 2,
+        "style": "CV Bullet",
+        "paragraph_bbox_pt_top_origin": [
+          51.024,
+          698.024,
+          544.252,
+          712.524
+        ],
+        "line_count": 1,
+        "text": "Led a 50-member community and delivered three events for 200–300 attendees."
+      }
+    ],
+    "errors": []
+  },
+  "docx": {
+    "checks": {
+      "a4_geometry": true,
+      "18mm_margins": true,
+      "one_deliberate_page_break": true,
+      "editable_paragraph_text_matches_copy": true,
+      "all_named_styles_present": true,
+      "lato_in_all_styles": true,
+      "exact_line_spacing_in_all_styles": true,
+      "widow_control_in_all_styles": true,
+      "headings_keep_with_next": true,
+      "real_numbered_bullet_paragraphs": true,
+      "real_4mm_hanging_bullets": true,
+      "no_tables_or_text_boxes_or_drawings": true,
+      "expected_external_hyperlinks": true,
+      "draft_footer": true,
+      "page_number_fields": true,
+      "update_fields_requested": true
+    },
+    "body_paragraph_count": 63,
+    "bullet_paragraph_count": 14,
+    "explicit_page_break_count": 1,
+    "external_hyperlink_count": 5,
+    "styles": {
+      "Normal": {
+        "present": true,
+        "font": "Lato",
+        "line_spacing_twips": "290",
+        "line_spacing_rule": "exact",
+        "widow_control": true,
+        "keep_with_next": false
+      },
+      "Title": {
+        "present": true,
+        "font": "Lato",
+        "line_spacing_twips": "680",
+        "line_spacing_rule": "exact",
+        "widow_control": true,
+        "keep_with_next": true
+      },
+      "Subtitle": {
+        "present": true,
+        "font": "Lato",
+        "line_spacing_twips": "320",
+        "line_spacing_rule": "exact",
+        "widow_control": true,
+        "keep_with_next": true
+      },
+      "CV Contact": {
+        "present": true,
+        "font": "Lato",
+        "line_spacing_twips": "260",
+        "line_spacing_rule": "exact",
+        "widow_control": true,
+        "keep_with_next": true
+      },
+      "CV Draft": {
+        "present": true,
+        "font": "Lato",
+        "line_spacing_twips": "240",
+        "line_spacing_rule": "exact",
+        "widow_control": true,
+        "keep_with_next": true
+      },
+      "CV Note": {
+        "present": true,
+        "font": "Lato",
+        "line_spacing_twips": "240",
+        "line_spacing_rule": "exact",
+        "widow_control": true,
+        "keep_with_next": false
+      },
+      "Heading 1": {
+        "present": true,
+        "font": "Lato",
+        "line_spacing_twips": "290",
+        "line_spacing_rule": "exact",
+        "widow_control": true,
+        "keep_with_next": true
+      },
+      "Heading 2": {
+        "present": true,
+        "font": "Lato",
+        "line_spacing_twips": "290",
+        "line_spacing_rule": "exact",
+        "widow_control": true,
+        "keep_with_next": true
+      },
+      "CV Metadata": {
+        "present": true,
+        "font": "Lato",
+        "line_spacing_twips": "250",
+        "line_spacing_rule": "exact",
+        "widow_control": true,
+        "keep_with_next": true
+      },
+      "CV Bullet": {
+        "present": true,
+        "font": "Lato",
+        "line_spacing_twips": "290",
+        "line_spacing_rule": "exact",
+        "widow_control": true,
+        "keep_with_next": false
+      },
+      "CV Skill": {
+        "present": true,
+        "font": "Lato",
+        "line_spacing_twips": "290",
+        "line_spacing_rule": "exact",
+        "widow_control": true,
+        "keep_with_next": false
+      },
+      "CV Continuation": {
+        "present": true,
+        "font": "Lato",
+        "line_spacing_twips": "320",
+        "line_spacing_rule": "exact",
+        "widow_control": true,
+        "keep_with_next": true
+      },
+      "CV Record": {
+        "present": true,
+        "font": "Lato",
+        "line_spacing_twips": "290",
+        "line_spacing_rule": "exact",
+        "widow_control": true,
+        "keep_with_next": true
+      },
+      "CV Record Metadata": {
+        "present": true,
+        "font": "Lato",
+        "line_spacing_twips": "250",
+        "line_spacing_rule": "exact",
+        "widow_control": true,
+        "keep_with_next": false
+      },
+      "CV Footer": {
+        "present": true,
+        "font": "Lato",
+        "line_spacing_twips": "240",
+        "line_spacing_rule": "exact",
+        "widow_control": true,
+        "keep_with_next": false
+      }
+    },
+    "rendered_page_count": null,
+    "pagination_status": "Not rendered in Word or Google Docs; two pages are planned, not independently verified.",
+    "font_embedding": "DOCX references Lato; font files are supplied separately, not embedded in this DOCX."
+  },
+  "artifacts": [
+    {
+      "file": "round-1.pdf",
+      "bytes": 59437,
+      "sha256": "a140bb855e5df28630b12827dd2091d97ac03b92b4d41701e39bfd0e3c7f9186"
+    },
+    {
+      "file": "round-1.docx",
+      "bytes": 40533,
+      "sha256": "e72bb7f0a4599944568f8ae69398e90dae323c9218d4186bb4e19356a8ba8130"
+    },
+    {
+      "file": "round-1.md",
+      "bytes": 4099,
+      "sha256": "07feadbe203eaed4bab85e4b9a42f22102230e0601ff0f2cc66a5f8b4b9b1677"
+    },
+    {
+      "file": "round-1.txt",
+      "bytes": 3790,
+      "sha256": "e1ab5f9f043826e2c7e750baa5d1b990252bb084ed6f49f9785bbd6b330bbc1b"
+    },
+    {
+      "file": "round-1-extracted.txt",
+      "bytes": 3698,
+      "sha256": "d23e38bbbbae97afc5e9e283e6f9eb0cbaf1b1300b87fb9cac0d3b25bb94dd2b"
+    },
+    {
+      "file": "round-1-page-1.png",
+      "bytes": 206123,
+      "sha256": "4e986e5d31ba0c9af35a1f507b033c997f0a837cec6e7363e26f09de1879d649",
+      "pixel_size": [
+        1191,
+        1684
+      ],
+      "render_dpi": 144
+    },
+    {
+      "file": "round-1-page-2.png",
+      "bytes": 191574,
+      "sha256": "a108f9d5a90f48f68dd4fd68962cbc0d37ca56d1f9955252eed07acfd4e7215e",
+      "pixel_size": [
+        1191,
+        1684
+      ],
+      "render_dpi": 144
+    }
+  ],
+  "repeatability": {
+    "performed": true,
+    "method": "Two consecutive local builds; SHA-256 comparison of each generated artifact.",
+    "artifact_hash_matches": {
+      "round-1.pdf": true,
+      "round-1.docx": true,
+      "round-1.md": true,
+      "round-1.txt": true,
+      "round-1-extracted.txt": true,
+      "round-1-page-1.png": true,
+      "round-1-page-2.png": true
+    },
+    "note": "Verification JSON intentionally includes the current build time and is not compared."
+  },
+  "limitations": [
+    "No authenticated Google Docs session, font-menu check, import or export test.",
+    "No Word/LibreOffice rendering: DOCX page count and visual parity are not verified.",
+    "No real ATS ingestion or recruiter-system test; extraction is a local PyMuPDF check only.",
+    "The PDF contains selectable Unicode text but is not a tagged PDF/UA document.",
+    "Hyperlink annotation targets are checked; remote availability is not tested.",
+    "Role details, personal contribution, education, award scope and project status remain unresolved.",
+    "No formal design evaluation round has been performed by this build."
+  ]
+}

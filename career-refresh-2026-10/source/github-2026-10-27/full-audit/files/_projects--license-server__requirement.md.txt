@@ -1,0 +1,12 @@
+# Requirement: License Server Updates
+
+## Source
+Jira PI-6823, PI-6824, PI-6845
+
+## Sub-tasks
+1. PI-6823: Configure and test new license.pickit3d.com (PI-UPGRADES module, max_version field)
+2. PI-6824: Create JSON fixture for local testing of license server Django database
+3. PI-6845: Update license type dropdown values and handle 3.x vs 4.x differently
+
+## Status
+Multiple sub-tasks. See projects/license-server-nov10/ for details per ticket.

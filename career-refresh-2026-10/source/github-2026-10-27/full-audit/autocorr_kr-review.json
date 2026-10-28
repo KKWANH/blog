@@ -1,0 +1,36 @@
+{
+  "name": "autocorr_kr",
+  "url": "https://github.com/KKWANH/autocorr_kr",
+  "fork": true,
+  "scope": "reference",
+  "scopeNote": "Fork/reference; personal implementation is not established by the fork.",
+  "description": "리브레오피스(LibreOffice) 자동 교정(Autocorrect)기능에 대한 말모이 저장소",
+  "updatedAt": "2022-10-08T16:19:14Z",
+  "defaultBranch": "master",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/autocorr_kr/blob/eccbdac82d516eae012b5d7fe2730142f841ce84/README.md",
+      "bytes": 8039,
+      "sha256": "babca55e7fd5f68b5b56febc192ed2429d3e2add64794c216e0ff58f82173e83"
+    }
+  ],
+  "limitations": [],
+  "technologies": [
+    {
+      "id": "github-actions",
+      "label": "GitHub Actions",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": ".github/workflows/xmllint.yml",
+          "basis": "workflow file"
+        }
+      ]
+    }
+  ],
+  "commit": "eccbdac82d516eae012b5d7fe2730142f841ce84",
+  "fileCount": 4,
+  "treeDepth": "recursive",
+  "status": "reviewed"
+}

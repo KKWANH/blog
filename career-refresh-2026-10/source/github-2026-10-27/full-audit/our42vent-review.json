@@ -1,0 +1,113 @@
+{
+  "name": "our42vent",
+  "url": "https://github.com/KKWANH/our42vent",
+  "fork": true,
+  "scope": "reference",
+  "scopeNote": "Fork/reference; personal implementation is not established by the fork.",
+  "description": "슬랙에 마구잡이로 올라오는 42 이벤트들을 한 눈에 볼 수 있는 캘린더 웹사이트",
+  "updatedAt": "2022-02-09T05:53:18Z",
+  "defaultBranch": "develop",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/our42vent/blob/7e01219076339868270ca20ae3d697ab0ec67776/README.md",
+      "bytes": 121,
+      "sha256": "7d2a367eceda2444c51a2b8d61adc3df494e54ab90da72178e627a58365eb497"
+    },
+    {
+      "path": "package.json",
+      "url": "https://github.com/KKWANH/our42vent/blob/7e01219076339868270ca20ae3d697ab0ec67776/package.json",
+      "bytes": 1664,
+      "sha256": "9875d47681f90d5767daba86ab11b117668c7ebb7898b216401e5f71b09c8fb6"
+    }
+  ],
+  "limitations": [],
+  "technologies": [
+    {
+      "id": "css",
+      "label": "CSS",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "public/stylesheets/components/contents/event_list.css",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "public/stylesheets/components/contents/main.css",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "public/stylesheets/components/contents/month_calendar.css",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "express",
+      "label": "Express",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "package.json",
+          "basis": "direct dependency"
+        }
+      ]
+    },
+    {
+      "id": "javascript",
+      "label": "JavaScript",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "app.js",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "config/createMySQLPool.js",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "config/createRedisClient.js",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "react",
+      "label": "React",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "package.json",
+          "basis": "manifest/configuration"
+        }
+      ]
+    },
+    {
+      "id": "redis",
+      "label": "Redis",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "package.json",
+          "basis": "direct dependency"
+        }
+      ]
+    },
+    {
+      "id": "shell",
+      "label": "Shell",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "db/init/init_sql.sh",
+          "basis": "source-file presence"
+        }
+      ]
+    }
+  ],
+  "commit": "7e01219076339868270ca20ae3d697ab0ec67776",
+  "fileCount": 137,
+  "treeDepth": "recursive",
+  "status": "reviewed"
+}

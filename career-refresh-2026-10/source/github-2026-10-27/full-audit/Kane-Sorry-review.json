@@ -1,0 +1,81 @@
+{
+  "name": "Kane-Sorry",
+  "url": "https://github.com/KKWANH/Kane-Sorry",
+  "fork": false,
+  "scope": "project",
+  "scopeNote": "Repository project; listed technologies describe its code, not a proficiency rating.",
+  "description": "[케인]죄송합니다",
+  "updatedAt": "2021-06-16T04:56:42Z",
+  "defaultBranch": "main",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/Kane-Sorry/blob/f872e75544ce1f6a6150f01d1e326a2f47a0524f/README.md",
+      "bytes": 783,
+      "sha256": "1eb3e4f6c228752dd3a7b23328f7a25b3aa7a6c02ebf94f50ba2a471268bba0d"
+    },
+    {
+      "path": "Makefile",
+      "url": "https://github.com/KKWANH/Kane-Sorry/blob/f872e75544ce1f6a6150f01d1e326a2f47a0524f/Makefile",
+      "bytes": 64,
+      "sha256": "35e574d0755f161aea055bb166041c76347468418bb9bfef18b4be457eeba8ff"
+    },
+    {
+      "path": "srcs/mygif.c",
+      "url": "https://github.com/KKWANH/Kane-Sorry/blob/f872e75544ce1f6a6150f01d1e326a2f47a0524f/srcs/mygif.c",
+      "bytes": 1533,
+      "sha256": "e65575fdc39f55a3e143cec4add1a6aeb4c9e1bb2a405e2823138b572af8fad0"
+    }
+  ],
+  "limitations": [],
+  "technologies": [
+    {
+      "id": "c",
+      "label": "C",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "srcs/mygif.c",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "git",
+      "label": "Git",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        }
+      ]
+    },
+    {
+      "id": "linux",
+      "label": "Linux",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        }
+      ]
+    },
+    {
+      "id": "make",
+      "label": "Make",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "Makefile",
+          "basis": "build file"
+        }
+      ]
+    }
+  ],
+  "commit": "f872e75544ce1f6a6150f01d1e326a2f47a0524f",
+  "fileCount": 23,
+  "treeDepth": "recursive",
+  "status": "reviewed"
+}

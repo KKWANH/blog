@@ -1,0 +1,18 @@
+Rebuild portfolio around cinematic motion and an accurate C++ profile
+
+Replace the former presentation with a single forest colour treatment,
+photographic atmosphere and a tactile portrait/field-note card. Preserve
+live-site hover feedback and keep contact actions, keyboard navigation and
+reduced-motion operation available.
+
+Update career facts and scope, remove Ariadne from the CV and attribute it
+as an AI-built/configured experiment. Keep the Korean study material with
+explicit language and provenance.
+
+Add validated local Travel editing with atomic persistence, conflict
+handling and production write restrictions. Prepare a photo gallery and
+local image importer without publishing an empty/demo collection.
+
+Validated: production Next.js build and TypeScript; content/store/access
+and photo-manifest checks; browser motion, focus, touch, reduced-motion,
+gallery and reflow checks; isolated photo-import failure/persistence tests.

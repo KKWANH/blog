@@ -1,0 +1,179 @@
+{
+  "name": "KKWANH",
+  "url": "https://github.com/KKWANH/KKWANH",
+  "fork": false,
+  "scope": "profile",
+  "scopeNote": "Profile/project index.",
+  "description": "",
+  "updatedAt": "2026-05-25T17:26:56Z",
+  "defaultBranch": "main",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/KKWANH/blob/22d726fb2ff8fbef268c2e981aa606d89d53bc8e/README.md",
+      "bytes": 10798,
+      "sha256": "4a3917fbf2f28223c685246d043e0adac2dc4ee18eaf0aee18104e5f380609d0"
+    }
+  ],
+  "limitations": [],
+  "technologies": [
+    {
+      "id": "can",
+      "label": "CAN bus",
+      "group": "systems",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        }
+      ]
+    },
+    {
+      "id": "carla",
+      "label": "CARLA",
+      "group": "systems",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        }
+      ]
+    },
+    {
+      "id": "docker",
+      "label": "Docker",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        }
+      ]
+    },
+    {
+      "id": "linux",
+      "label": "Linux",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        }
+      ]
+    },
+    {
+      "id": "nextjs",
+      "label": "Next.js",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        }
+      ]
+    },
+    {
+      "id": "oauth",
+      "label": "OAuth",
+      "group": "systems",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        }
+      ]
+    },
+    {
+      "id": "postgres",
+      "label": "PostgreSQL",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        }
+      ]
+    },
+    {
+      "id": "qt",
+      "label": "Qt / QML",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        }
+      ]
+    },
+    {
+      "id": "raspberrypi",
+      "label": "Raspberry Pi",
+      "group": "systems",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        }
+      ]
+    },
+    {
+      "id": "react",
+      "label": "React",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        }
+      ]
+    },
+    {
+      "id": "ros",
+      "label": "ROS",
+      "group": "systems",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        }
+      ]
+    },
+    {
+      "id": "sqlite",
+      "label": "SQLite",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        }
+      ]
+    },
+    {
+      "id": "websocket",
+      "label": "WebSocket",
+      "group": "systems",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        }
+      ]
+    },
+    {
+      "id": "yolo",
+      "label": "YOLO",
+      "group": "data",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        }
+      ]
+    }
+  ],
+  "commit": "22d726fb2ff8fbef268c2e981aa606d89d53bc8e",
+  "fileCount": 4,
+  "treeDepth": "recursive",
+  "status": "reviewed"
+}

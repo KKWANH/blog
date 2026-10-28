@@ -1,0 +1,88 @@
+{
+  "name": "DES02-PiRacer-instrument",
+  "url": "https://github.com/KKWANH/DES02-PiRacer-instrument",
+  "fork": false,
+  "scope": "learning",
+  "scopeNote": "Learning/team project; inspect the stated contribution and source.",
+  "description": "The PiRacer instrument cluster Qt application project is aimed at creating a real-time speedometer for a racing car",
+  "updatedAt": "2023-09-07T14:04:34Z",
+  "defaultBranch": "main",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/DES02-PiRacer-instrument/blob/96706c8e55594ec3161c958a1a572592447c7e1b/README.md",
+      "bytes": 1434,
+      "sha256": "315d2b4f79fbaebaa40dd615289064b53ff3464d5a2bd518bda7c07d1020e68c"
+    },
+    {
+      "path": "examples/rpm-calc/rpm-calculator-example.cpp",
+      "url": "https://github.com/KKWANH/DES02-PiRacer-instrument/blob/96706c8e55594ec3161c958a1a572592447c7e1b/examples/rpm-calc/rpm-calculator-example.cpp",
+      "bytes": 1596,
+      "sha256": "cdad09b2278a4493b36a60f0450ea017ba29ca7148460ec2e19a4aac665f6d99"
+    }
+  ],
+  "limitations": [
+    "Raw .py downloads are restricted by the corporate security gateway; accessible documentation/manifests are reviewed instead."
+  ],
+  "technologies": [
+    {
+      "id": "can",
+      "label": "CAN bus",
+      "group": "systems",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        }
+      ]
+    },
+    {
+      "id": "cpp",
+      "label": "C++",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "examples/rpm-calc/rpm-calculator-example.cpp",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "dbus",
+      "label": "D-Bus",
+      "group": "systems",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        }
+      ]
+    },
+    {
+      "id": "python",
+      "label": "Python",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "examples/can/receiver/receiver.py",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "qt",
+      "label": "Qt / QML",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        }
+      ]
+    }
+  ],
+  "commit": "96706c8e55594ec3161c958a1a572592447c7e1b",
+  "fileCount": 41,
+  "treeDepth": "recursive",
+  "status": "reviewed-limited"
+}

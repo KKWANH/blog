@@ -1,0 +1,44 @@
+[
+  {
+    "file": "c.svg",
+    "source": "https://cdn.jsdelivr.net/npm/simple-icons@16.36.0/icons/c.svg",
+    "license": "CC0-1.0",
+    "change": "Explicit fill #A8B9CC; paths unchanged.",
+    "sha256": "cafe43fbeedf09e13c80d029b0bf698ce37006d79018c151cf45631c227f5deb"
+  },
+  {
+    "file": "git.svg",
+    "source": "https://cdn.jsdelivr.net/npm/simple-icons@16.36.0/icons/git.svg",
+    "license": "CC0-1.0",
+    "change": "Explicit fill #F05032; paths unchanged.",
+    "sha256": "c29116b40a88b66649234cafac16368389a72f7c8ebdcc43e7df5225eaa257e9"
+  },
+  {
+    "file": "docker.svg",
+    "source": "https://cdn.jsdelivr.net/npm/simple-icons@16.36.0/icons/docker.svg",
+    "license": "CC0-1.0",
+    "change": "Explicit fill #2496ED; paths unchanged.",
+    "sha256": "ba1fb157870b2ec02e054aed42154ac7418e25af91ec321fd328d17cad4023cd"
+  },
+  {
+    "file": "linux.svg",
+    "source": "https://cdn.jsdelivr.net/npm/simple-icons@16.36.0/icons/linux.svg",
+    "license": "CC0-1.0",
+    "change": "Explicit fill #17271C; paths unchanged.",
+    "sha256": "34deff01637361dc14dd13998f4c49538952cb91723f8f7e55d323d00231fde3"
+  },
+  {
+    "file": "typescript.svg",
+    "source": "https://cdn.jsdelivr.net/npm/simple-icons@16.36.0/icons/typescript.svg",
+    "license": "CC0-1.0",
+    "change": "Explicit fill #3178C6; paths unchanged.",
+    "sha256": "662b9b049a06df067089cacc32c8a40e14b08e13b5874f397ccf3e70ef15872c"
+  },
+  {
+    "file": "javascript.svg",
+    "source": "https://cdn.jsdelivr.net/npm/simple-icons@16.36.0/icons/javascript.svg",
+    "license": "CC0-1.0",
+    "change": "Explicit fill #F7DF1E; paths unchanged.",
+    "sha256": "673a6f54d0788fccd0f0b024cc4372c98a9f1c1f43859ec6227a599630f236c7"
+  }
+]

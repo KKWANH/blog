@@ -1,0 +1,75 @@
+from pathlib import Path
+from html import escape
+from collections import Counter
+import json, hashlib, subprocess
+
+CAREER=Path(r'C:\Projects\career-refresh-2026-10')
+REPO=Path(r'C:\Projects\blog')
+OUT=CAREER/'design/portfolio-review-2026-10-27'
+BASE='e332b7fdbcf655f893c2ea29b0de05ba0da111e5'
+def read(path): return json.loads(path.read_text(encoding='utf-8-sig'))
+def original(path): return json.loads(subprocess.check_output(['git','show',f'{BASE}:{path}'],cwd=REPO).decode('utf-8'))
+defs=read(REPO/'contents/about/skill-definitions.json')
+profile=read(REPO/'contents/about/skill-profile.json')
+previous=original('contents/about/skill-profile.json')
+old_defs=original('contents/about/skill-definitions.json')
+perf=read(OUT/'production-performance-security.json')
+assert perf['passed'] and 'checks' in perf, 'Use the final production report.'
+admin=read(OUT/'admin-browser-checks.json');cv=read(OUT/'cv/verification.json')
+assert admin['passed'] and cv['passed']
+preserved=all(profile['entries'].get(key)==value for key,value in previous['entries'].items())
+baseline=read(OUT/'baseline.json')
+travel_hash=hashlib.sha256((REPO/'contents/travel/places.json').read_bytes()).hexdigest()
+travel_data=read(REPO/'contents/travel/places.json')
+travel_count=len(travel_data['places'])
+current_ids={skill['id'] for skill in defs['skills']}
+audit={
+    'baseline':BASE,'curated_count':len(defs['skills']),
+    'kinds':dict(Counter(skill['kind'] for skill in defs['skills'])),
+    'original_ids_retained':{skill['id'] for skill in old_defs['skills']}.issubset(current_ids),
+    'all_previous_overrides_retained':preserved,
+    'newer_override_ids':sorted(set(profile['entries'])-set(previous['entries'])),
+    'current_override_count':len(profile['entries']),
+    'current_updated_at':profile['updatedAt'],
+    'travel_records':travel_count,
+    'travel_matches_intake':travel_hash==baseline['files']['contents/travel/places.json'],
+    'definitions':defs['skills'],
+}
+assert audit['original_ids_retained'] and preserved and audit['travel_matches_intake']
+(OUT/'taxonomy-preservation.json').write_text(json.dumps(audit,ensure_ascii=False,indent=2),encoding='utf-8')
+rows=['# Skill taxonomy review','',f"{len(defs['skills'])} curated definitions; original IDs and owner grades retained.",'',
+      'OpenCV was already explicitly shown/rated by the owner. It now has a library definition, with BCX/SEA:ME repository context rather than an invented implementation claim.','',
+      '| ID | Public label | Kind | Group | Related IDs |','| --- | --- | --- | --- | --- |']
+for skill in defs['skills']: rows.append('| '+' | '.join([skill['id'],skill['label'],skill['kind'],skill['group'],', '.join(skill.get('related',[]))])+' |')
+rows+=['',f"All {len(previous['entries'])} previous overrides are unchanged; the newer containers/repository choice is retained. Current override count: {len(profile['entries'])}.",f"Travel: {travel_count} records; the intake hash is unchanged."]
+(OUT/'taxonomy-review.md').write_text('\n'.join(rows)+'\n',encoding='utf-8')
+archive=read(OUT/'asset-archive.json')
+performance_rows=''
+for route,values in perf['comparison'].items():
+    reduction=(1-values['js_after']/values['js_before'])*100
+    performance_rows+=f"<tr><th>{escape(route)}</th><td>{values['js_before']/1000:.1f} kB</td><td>{values['js_after']/1000:.1f} kB</td><td>−{reduction:.1f}%</td></tr>"
+checks=[]
+for name,path in [
+    ('Interactive map',CAREER/'reviews/interactive-map-checks.json'),
+    ('Skill editor',CAREER/'reviews/skill-preferences-ui-checks.json'),
+    ('Paper / portraits / film / touch',CAREER/'reviews/stationery-checks.json'),
+    ('Admin and privacy browser flow',OUT/'admin-browser-checks.json'),
+    ('CV export',OUT/'cv/verification.json'),
+]:
+    value=read(path);assert value['passed'],name
+    checks.append(f"<li><strong>{escape(name)}</strong> · {len(value['checks'])} checks passed</li>")
+html=f"""<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Portfolio · review and evidence</title>
+<style>
+*{{box-sizing:border-box}}body{{margin:0;background:#0a2117;color:#e8eddf;font-family:Inter,system-ui,sans-serif;line-height:1.7}}main{{max-width:1240px;margin:auto;padding:48px 28px 90px}}a{{color:#d6e5b9;text-underline-offset:4px}}header{{max-width:940px;margin-bottom:48px}}h1{{font-size:clamp(2.2rem,5vw,4rem);letter-spacing:-.05em;line-height:1.15;margin:15px 0}}h2{{font-size:1.65rem;margin:0 0 12px}}h3{{font-size:1rem;margin:0}}p{{color:#b8cbb4}}.eyebrow{{letter-spacing:.16em;text-transform:uppercase;font-size:.72rem}}nav{{display:flex;flex-wrap:wrap;gap:12px 24px}}section{{padding:32px 0;border-top:1px solid #91a87840}}.grid{{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}}.three{{grid-template-columns:repeat(3,minmax(0,1fr))}}figure{{margin:0;min-width:0}}figure img{{display:block;width:100%;height:auto;background:#102c1c;border:1px solid #95aa7950}}figcaption{{font-size:.8rem;color:#b9c9ad;margin-top:9px}}.cv img{{aspect-ratio:210/297;object-fit:contain;object-position:top;background:#fff}}table{{border-collapse:collapse;width:100%;font-size:.9rem}}th,td{{text-align:left;padding:12px 8px;border-bottom:1px solid #93ae772f}}th{{font-weight:500;color:#d6e2c1}}.note{{font-size:.82rem;max-width:90ch}}.badge{{display:inline-block;background:#c7d6ab;color:#123723;padding:4px 10px;font-size:.72rem;border-radius:3px}}.callout{{padding:18px 0;border-block:1px solid #b6c39460;color:#e1e8cf}}details{{margin:20px 0}}summary{{cursor:pointer;min-height:44px;color:#d8e4bf}}li{{margin-block:7px}}code{{font-size:.83em;background:#233d2733}}.mobile{{max-width:320px;margin:auto}}@media(max-width:760px){{.grid,.three{{grid-template-columns:1fr}}main{{padding:28px 18px 60px}}table{{font-size:.76rem}}}}
+</style></head><body><main><header><p class="eyebrow">Local review · 27 October 2026</p><h1>더 분명한 프로필,<br>검증 가능한 관리 기능.</h1><p>기술의 의미, 명함의 재질과 반응, 선택 작업, CV와 관리자 통계를 함께 정리했습니다. 이 보드는 로컬 검토본이며 공개 배포 결과가 아닙니다.</p><nav><a href="/about">About</a><a href="/about?view=map#skills">Mind map</a><a href="/about/manage">Owner skill settings</a><a href="/admin">Admin</a><a href="/CV.pdf">Selected CV PDF</a></nav></header>
+<section><h2>명함과 프로필</h2><p>Software Engineer를 넓은 직함으로 두고 systems · integration · interfaces로 초점을 보완했습니다. 종이 결, 글자 없는 창 모양, 강해진 기울기와 조용한 배경 빛을 적용했습니다.</p><div class="grid"><figure><img src="captures/after-about-top.png" alt="Updated desktop About"><figcaption>Actual local rendering · three equally weighted portraits</figcaption></figure><figure class="mobile"><img src="captures/after-about-mobile.png" alt="Updated mobile About"><figcaption>Mobile card · normal text retains 85:55 proportions; enlarged text can grow to remain readable.</figcaption></figure></div></section>
+<section><h2>Skills · 상자보다 분류와 관계</h2><p>C++는 언어, Data structures는 구현 역량입니다. {len(defs['skills'])}개 정의를 종류와 근거로 정리했습니다. 이미 직접 표시·평가한 OpenCV도 library로 명시했습니다.</p><div class="grid"><figure><img src="captures/before-skills.png" alt="Previous nested skill boxes"><figcaption>Before · nested boxes</figcaption></figure><figure><img src="captures/after-skills.png" alt="Flat categorized skill list"><figcaption>After · languages/tools and practice, with the same owner levels</figcaption></figure></div><p class="note">{len(previous['entries'])}개 기존 설정을 모두 유지했습니다. 작업 중 저장된 containers → repository 선택도 보존했습니다. 현재 {len(profile['entries'])}개 override, {perf['owner_profile']['visible']}개 프로필 표시, {perf['owner_profile']['rated_visible']}개 레벨 표시입니다. 여행 {travel_count}개 기록은 원본 해시와 같습니다.</p></section>
+<section><h2>Selected work</h2><p>Containers &amp; iterators, webserv, Color Saves Life를 대표 작업으로 묶었습니다. BCX는 날짜·해커톤·팀의 challenge별 1위를 먼저 보여 주며, 설명과 film은 펼친 뒤 나타납니다. 펼쳐도 재생을 누르기 전에는 영상을 받지 않습니다.</p><figure><img src="captures/after-selected-work.png" alt="Three compact project summaries"></figure><p class="note"><code>/projects</code>는 About의 이 구역으로 연결됩니다. 상세 사례 URL은 남아 있습니다.</p></section>
+<section><h2>CV · 두 방향을 실제 A4로 비교</h2><p>큰 초록 직함과 세리프 이름의 대비를 최종 포인트로 선택했습니다. 본문 11pt, A4 한 페이지, 개인 Gmail, 별도의 42·SEA:ME 항목과 기여 범위를 유지했습니다.</p><div class="grid three cv"><figure><img src="cv/ink-panel-full.png" alt="Ink-panel CV candidate"><figcaption>검토안 A · 색면은 강하지만 직함이 버튼처럼 보인다는 지적</figcaption></figure><figure><img src="cv/type-led-full.png" alt="Type-led CV candidate"><figcaption>검토안 B · 직함은 바로 읽히지만 서체 대비가 약함</figcaption></figure><figure><a href="cv/final.pdf"><img src="cv/final-full.png" alt="Selected CV synthesis"></a><figcaption><span class="badge">Selected</span> 세리프 이름 + 큰 초록 직함 + 닫힌 창 모양</figcaption></figure></div><p><a href="/studio/cv-editorial-2026-10-27/index.html">A4 HTML, 100% view, print and copy</a> · <a href="cv/final.pdf">PDF</a> · <a href="cv/final-grayscale.png">Grayscale proof</a></p><details><summary>3 designer / 2 recruiter AI-role reviews</summary><p>두 디자이너는 A의 색면을, 제품 디자이너와 두 리크루터는 B의 이름→직함 순서를 선호했습니다. 최종안은 두 방향을 결합하고 화살표·역할 상자·중복 기술 아이콘을 걷어냈습니다. 후속 이미지 검토에서 핵심 시각·채용 스캔 문제가 해결됐습니다. 색면 안보다 thumbnail에서의 강한 실루엣은 줄어든 선택입니다.</p><p class="note">실제 외부 전문가의 평가가 아닌 AI 역할 리뷰입니다. PDF의 14개 기술 검사와 Markdown 동기화는 통과했으며, 실물 인쇄·실제 Google Docs 가져오기·ATS 합격을 검증했다는 뜻은 아닙니다.</p></details></section>
+<section><h2>Private owner workspace</h2><p>비밀번호 설정·로그인, 페이지 조회·유입 분류·이동 경로, 동의와 철회를 구현했습니다. 비밀번호는 사용자가 직접 설정하며, 운영 통계는 별도 비밀값·영속 저장소 설정 뒤에 수집됩니다.</p><figure><img src="captures/admin-fixture-desktop.png" alt="Admin dashboard with isolated test events"><figcaption><strong>격리된 테스트 데이터입니다.</strong> 실제 사이트 방문자 수가 아닙니다. 브라우저에서 생성한 3 views / 1 entrance / 1 opted-in visitor / 1 session으로 흐름을 확인했습니다.</figcaption></figure><p class="callout">로컬 Save → 이 컴퓨터의 JSON. 공개 GitHub owner Save → 저장소 commit → 배포. 일반 방문자는 읽기와 탐색만 가능합니다. 통계 비밀번호는 GitHub 쓰기 권한을 제공하지 않습니다.</p></section>
+<section><h2>Measured transfer and storage</h2><table><thead><tr><th>Route</th><th>Initial JS before</th><th>After</th><th>Change</th></tr></thead><tbody>{performance_rows}</tbody></table><p>상세 저장소 검토 JSON {perf['full_catalogue_bytes']/1000:.1f} kB는 서버에 두고, {perf['index_bytes']/1000:.1f} kB의 index와 선택한 항목의 상세 요청으로 나눴습니다. 클라이언트 검증 코드와 런타임 TSX 컴파일도 줄였습니다. 미사용 폰트 {archive['deployment_bytes_removed']/1e6:.2f} MB는 해시를 확인한 별도 보관본을 남긴 뒤 배포 자산에서 제외했습니다.</p><p class="note">동일한 로컬 production build 방식·새 브라우저 context·1440px 초기 viewport의 encoded resource bytes입니다. 실제 방문자의 네트워크/LCP 성능을 보증하는 수치가 아닙니다. 미사용 폰트 제거량은 배포 저장량이며 초기 전송량과 구별합니다.</p></section>
+<section><h2>Five adversarial review / fix / retest rounds</h2><table><thead><tr><th>Round</th><th>Concrete challenge and fix</th></tr></thead><tbody><tr><th>1 · Owner boundaries</th><td>다른 로컬 포트 Origin, 공유 토큰, 무한 body 읽기 → 정확한 origin, 목적별 토큰, byte/time limits.</td></tr><tr><th>2 · Sessions / storage</th><td>다른 프로세스의 오래된 쓰기가 로그아웃을 되돌림 → 전체 read–write 구간의 interprocess lock.</td></tr><tr><th>3 · Privacy</th><td>실패한 철회의 retry 상실, 식별 가능한 referrer, 세션 중복, 수집 중단 시 retention → retry capability, coarse sources, 서버 generation, 독립 cleanup.</td></tr><tr><th>4 · Content / documents</th><td>미디어 경로·소스 노출, SPA의 CSP 경계, studio alias → realpath/type guards, native admin navigation, global frame denial, canonical private paths.</td></tr><tr><th>5 · Retarget</th><td>복사한 GitHub 쿠키와 늦게 도착한 opt-in → 서버 publication-session 폐기와 동의 revision/CAS.</td></tr></tbody></table><p class="note">발견된 재현은 수정 후 다시 확인했습니다. 실제 Redis Lua·GitHub OAuth 쓰기·공개 배포는 구성 전이므로 검증 완료로 표시하지 않습니다. AI 검토와 로컬 테스트는 외부 보안 인증이 아닙니다.</p></section>
+<section><h2>Validation record</h2><ul>{''.join(checks)}</ul><p>Production 문서의 nonce와 script, 전체 페이지 전환, 비공개 cache, 관리 경로 차단, 저장소 74개의 상세 응답도 확인했습니다. 접근성 자동 검사에는 위반이 없었고, 이미지 배경의 대비·일부 ARIA·영상 관련 수동 검토 항목은 별도로 남겼습니다.</p><p class="note">작업은 로컬 후보입니다. 이번 작업에서 push나 공개 배포는 실행하지 않았습니다.</p></section>
+</main></body></html>"""
+(OUT/'index.html').write_text(html,encoding='utf-8')
+print('Generated local review board and taxonomy/preservation evidence.')

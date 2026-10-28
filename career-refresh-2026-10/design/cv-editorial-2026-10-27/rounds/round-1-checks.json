@@ -1,0 +1,29 @@
+{
+  "geometry": {
+    "width": 793.6875,
+    "height": 1172.484375,
+    "fonts": [
+      {
+        "family": "Manrope",
+        "status": "loaded"
+      },
+      {
+        "family": "Inter",
+        "status": "loaded"
+      }
+    ]
+  },
+  "pages": 2,
+  "a4": [
+    {
+      "width": 594.9599609375,
+      "height": 841.9199829101562,
+      "words": 246
+    },
+    {
+      "width": 594.9599609375,
+      "height": 841.9199829101562,
+      "words": 9
+    }
+  ]
+}

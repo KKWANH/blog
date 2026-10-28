@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Business Card Redesign ? 3 Designer Proposals</title>
+<style>
+@font-face {
+  font-family: 'Bastliga';
+  src: url('/font/Bastliga-One.woff') format('woff');
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #071b13;
+  color: #edf2e8;
+  font-family: system-ui, -apple-system, sans-serif;
+  padding: 40px 24px 80px;
+}
+.header {
+  max-width: 1200px;
+  margin: 0 auto 36px;
+}
+h1 { font-size: 28px; margin: 0 0 8px; color: #f0f4ea; }
+p.lead { color: #b2c5b0; font-size: 15px; margin: 0 0 24px; max-width: 75ch; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  max-width: 1360px;
+  margin: 0 auto;
+}
+.proposal {
+  background: #0f261c;
+  border: 1px solid #2d4c38;
+  border-radius: 8px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+}
+.proposal h2 { font-size: 17px; margin: 0 0 6px; color: #e6bf7d; }
+.proposal p.desc { font-size: 13px; color: #a9bead; margin: 0 0 16px; line-height: 1.5; min-height: 40px; }
+
+/* Business Card Common */
+.card-wrapper {
+  margin: auto 0 16px;
+  perspective: 1000px;
+}
+.card {
+  aspect-ratio: 85/55;
+  width: 100%;
+  background: linear-gradient(112deg, #f7f3e6, #eae4d3);
+  padding: 20px 22px;
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+  color: #173726;
+  box-shadow: 0 1px 0 #fffdf0, 0 3px 0 #bdc2a8, 0 5px 0 #294630, 0 16px 36px -12px rgba(0,0,0,0.7);
+  display: flex;
+  flex-direction: column;
+}
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('/paper-fibres.webp') 0 0/260px, url('/paper-grain.webp') 0 0/120px;
+  opacity: .55;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border: 1px solid #45644724;
+  box-shadow: inset 0 1px 0 #fffdf588;
+  opacity: .7;
+  pointer-events: none;
+}
+.debossed {
+  text-shadow: 0 1px 0.8px #ffffff, 0 -1px 0.8px rgba(18, 42, 28, 0.45), -1px 0 0.8px rgba(18, 42, 28, 0.35);
+}
+.name {
+  font-family: 'Bastliga', cursive;
+  color: #173726;
+}
+
+/* Proposal 1: Optical Centered (Classical European) */
+.card-centered {
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+}
+.card-centered .role {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #355344;
+}
+.card-centered .name {
+  font-size: 38px;
+  line-height: 1.1;
+  margin: 4px 0 2px;
+}
+.card-centered .focus {
+  font-size: 11.5px;
+  color: #3a5b44;
+  letter-spacing: 0.02em;
+}
+.card-centered .location {
+  font-size: 11px;
+  color: #55725e;
+  margin-top: 2px;
+}
+.card-centered .footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(85, 118, 76, 0.25);
+  padding-top: 8px;
+  font-size: 11px;
+  color: #21432e;
+}
+.card-centered .qr {
+  width: 24px;
+  height: 24px;
+  opacity: 0.85;
+}
+
+/* Proposal 2: Asymmetric Swiss Typography + QR Hero */
+.card-swiss {
+  justify-content: space-between;
+}
+.card-swiss .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.card-swiss .role {
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #355344;
+}
+.card-swiss .qr {
+  width: 32px;
+  height: 32px;
+  opacity: 0.85;
+  filter: drop-shadow(0 1px 0.5px #fff);
+}
+.card-swiss .name {
+  font-size: 36px;
+  line-height: 1.1;
+  margin: 6px 0 2px;
+}
+.card-swiss .focus {
+  font-size: 11.5px;
+  color: #3a5b44;
+}
+.card-swiss .footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-top: 1px solid rgba(85, 118, 76, 0.25);
+  padding-top: 8px;
+  font-size: 11px;
+  color: #21432e;
+}
+
+/* Proposal 3: Tokyo Ginza Executive Minimal */
+.card-ginza {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.card-ginza .name {
+  font-size: 42px;
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+.card-ginza .role {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #355344;
+  margin-bottom: 4px;
+}
+.card-ginza .focus {
+  font-size: 11px;
+  color: #3a5b44;
+}
+.card-ginza .qr-corner {
+  position: absolute;
+  right: 14px;
+  bottom: 12px;
+  width: 26px;
+  height: 26px;
+  opacity: 0.8;
+}
+.card-ginza .contact-left {
+  position: absolute;
+  left: 16px;
+  bottom: 12px;
+  font-size: 10.5px;
+  color: #355344;
+  text-align: left;
+}
+
+.action-row {
+  margin-top: 12px;
+  display: flex;
+  gap: 8px;
+}
+.action-row a, .action-row button {
+  background: #183d2a;
+  color: #edf2e8;
+  border: 1px solid #3c654b;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 12px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.action-row a:hover, .action-row button:hover {
+  background: #23543b;
+  border-color: #e6bf7d;
+}
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>Business Card Layout Redesign ? 3 Designer Proposals</h1>
+  <p class="lead">Evaluating central balance, spatial proportion, authentic letterpress deboss, and QR code integration for Kwanho Kim.</p>
+</div>
+
+<div class="grid">
+  <!-- Proposal 1 -->
+  <div class="proposal">
+    <h2>1. Classical Optical Centering</h2>
+    <p class="desc">Perfect vertical &amp; horizontal optical symmetry. Name takes center stage with balanced role above and contact/QR anchored at base.</p>
+    <div class="card-wrapper">
+      <div class="card card-centered">
+        <div class="role debossed">Software Engineer</div>
+        <div>
+          <div class="name debossed">Kwanho Kim</div>
+          <div class="focus debossed">C++ device software &amp; integration</div>
+          <div class="location">Leuven, Belgium</div>
+        </div>
+        <div class="footer">
+          <span>kwanho0096@gmail.com</span>
+          <img class="qr" src="/kwanho-qr.svg" alt="QR to kwanho.dev">
+          <span>kwanho.dev</span>
+        </div>
+      </div>
+    </div>
+    <div class="action-row">
+      <button type="button" onclick="alert('Proposal 1 Selected')">Select Proposal 1</button>
+    </div>
+  </div>
+
+  <!-- Proposal 2 -->
+  <div class="proposal">
+    <h2>2. Swiss Asymmetric + QR Accent</h2>
+    <p class="desc">Modern editorial rhythm. Left-anchored signature with generous negative space and a dedicated vector QR mark at the top right.</p>
+    <div class="card-wrapper">
+      <div class="card card-swiss">
+        <div class="top">
+          <div class="role debossed">Software Engineer</div>
+          <img class="qr" src="/kwanho-qr.svg" alt="QR to kwanho.dev">
+        </div>
+        <div>
+          <div class="name debossed">Kwanho Kim</div>
+          <div class="focus debossed">C++ device software &amp; integration</div>
+        </div>
+        <div class="footer">
+          <span>kwanho0096@gmail.com</span>
+          <span>Leuven, Belgium ? kwanho.dev</span>
+        </div>
+      </div>
+    </div>
+    <div class="action-row">
+      <button type="button" onclick="alert('Proposal 2 Selected')">Select Proposal 2</button>
+    </div>
+  </div>
+
+  <!-- Proposal 3 -->
+  <div class="proposal">
+    <h2>3. Ginza Minimalist Calling Card</h2>
+    <p class="desc">Bespoke Japanese luxury calling card. Grand central cursive signature, subtle blind margins, and discrete corner QR seal.</p>
+    <div class="card-wrapper">
+      <div class="card card-ginza">
+        <div class="role debossed">Software Engineer</div>
+        <div class="name debossed">Kwanho Kim</div>
+        <div class="focus debossed">C++ device software &amp; integration</div>
+        <div class="contact-left">
+          <div>kwanho0096@gmail.com</div>
+          <div>kwanho.dev ? Leuven</div>
+        </div>
+        <img class="qr-corner" src="/kwanho-qr.svg" alt="QR to kwanho.dev">
+      </div>
+    </div>
+    <div class="action-row">
+      <button type="button" onclick="alert('Proposal 3 Selected')">Select Proposal 3</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>

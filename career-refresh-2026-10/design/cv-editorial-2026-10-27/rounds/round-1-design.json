@@ -1,0 +1,22 @@
+{
+  "version": "round-1",
+  "name_font": "Manrope",
+  "body_font": "Inter",
+  "name_pt": 34,
+  "role_pt": 11,
+  "body_pt": 10.5,
+  "body_line_pt": 14,
+  "section_pt": 10,
+  "company_pt": 12.5,
+  "meta_pt": 9.5,
+  "margin_x_mm": 18,
+  "margin_top_mm": 15,
+  "margin_bottom_mm": 16,
+  "section_gap_pt": 11,
+  "job_gap_pt": 8,
+  "ink": "#1C2922",
+  "accent": "#1B4D3A",
+  "muted": "#59655E",
+  "rule": "#D5DED7",
+  "panel": "#F1F5F2"
+}

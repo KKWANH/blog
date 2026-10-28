@@ -1,0 +1,20 @@
+{
+  "pages": 1,
+  "paper_box": {
+    "x": 208.15625,
+    "y": 163.78125,
+    "width": 793.6875,
+    "height": 1122.515625
+  },
+  "pages_detail": [
+    {
+      "width": 594.9599609375,
+      "height": 841.9199829101562,
+      "text_bottom": 792.4423828125
+    }
+  ],
+  "link_count": 6,
+  "figma": true,
+  "containers": true,
+  "ariadne": false
+}

@@ -1,0 +1,19 @@
+{
+  "checks": {
+    "all_inventory_repositories": true,
+    "unique_repositories": true,
+    "readable_or_empty": true,
+    "unique_source_paths": true,
+    "ai_boundary": true,
+    "fork_boundary": true,
+    "source_links_pin_actual_paths": true,
+    "technology_evidence_paths_exist": true
+  },
+  "repositories": 74,
+  "inspected_files": 336,
+  "limited": 26,
+  "empty": 1,
+  "technology_topics": 77,
+  "passed": true,
+  "catalogue_sha256": "850e3152fb9159519a9733179ec4f3f5d9c4a827364228305f00c047fd62ca18"
+}

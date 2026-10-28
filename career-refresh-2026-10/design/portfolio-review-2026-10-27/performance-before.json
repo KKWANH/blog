@@ -1,0 +1,1258 @@
+{
+  "mode": "Production build, fresh browser context per route, initial viewport only",
+  "routes": {
+    "/": {
+      "lcp": 324,
+      "navigation": {
+        "name": "http://localhost:3102/",
+        "entryType": "navigation",
+        "startTime": 0,
+        "duration": 198.70000000018626,
+        "navigationId": 3307,
+        "initiatorType": "navigation",
+        "deliveryType": "",
+        "nextHopProtocol": "http/1.1",
+        "renderBlockingStatus": "non-blocking",
+        "contentType": "text/html",
+        "contentEncoding": "gzip",
+        "workerStart": 0,
+        "workerRouterEvaluationStart": 0,
+        "workerCacheLookupStart": 0,
+        "workerMatchedSourceType": "",
+        "workerFinalSourceType": "",
+        "redirectStart": 0,
+        "redirectEnd": 0,
+        "fetchStart": 1.900000000372529,
+        "domainLookupStart": 1.900000000372529,
+        "domainLookupEnd": 1.900000000372529,
+        "connectStart": 1.900000000372529,
+        "secureConnectionStart": 0,
+        "connectEnd": 1.900000000372529,
+        "requestStart": 3.1000000000931323,
+        "responseStart": 61.3000000002794,
+        "firstInterimResponseStart": 0,
+        "finalResponseHeadersStart": 61.3000000002794,
+        "responseEnd": 83,
+        "transferSize": 107368,
+        "encodedBodySize": 107068,
+        "decodedBodySize": 361063,
+        "responseStatus": 200,
+        "serverTiming": [],
+        "unloadEventStart": 0,
+        "unloadEventEnd": 0,
+        "domInteractive": 157.60000000009313,
+        "domContentLoadedEventStart": 157.70000000018626,
+        "domContentLoadedEventEnd": 157.8000000002794,
+        "domComplete": 198.70000000018626,
+        "loadEventStart": 198.70000000018626,
+        "loadEventEnd": 198.70000000018626,
+        "type": "navigate",
+        "redirectCount": 0,
+        "activationStart": 0,
+        "criticalCHRestart": 0,
+        "notRestoredReasons": null,
+        "confidence": {
+          "randomizedTriggerRate": 0.4994798,
+          "value": "low"
+        }
+      },
+      "resources": [
+        {
+          "path": "/_next/static/media/Figtree-s.p.273zcra3jgrc5.woff2",
+          "type": "link",
+          "encoded": 19696,
+          "decoded": 19696,
+          "transfer": 19996
+        },
+        {
+          "path": "/brands/pickit.png",
+          "type": "link",
+          "encoded": 31992,
+          "decoded": 31992,
+          "transfer": 32292
+        },
+        {
+          "path": "/window-portrait.webp",
+          "type": "link",
+          "encoded": 169556,
+          "decoded": 169556,
+          "transfer": 169856
+        },
+        {
+          "path": "/brands/bosch.svg",
+          "type": "link",
+          "encoded": 938,
+          "decoded": 2101,
+          "transfer": 1238
+        },
+        {
+          "path": "/brands/kla.svg",
+          "type": "link",
+          "encoded": 2903,
+          "decoded": 7569,
+          "transfer": 3203
+        },
+        {
+          "path": "/_next/static/chunks/29tw6cj7r1zfr.css",
+          "type": "link",
+          "encoded": 801,
+          "decoded": 801,
+          "transfer": 1101
+        },
+        {
+          "path": "/_next/static/chunks/1d428ix8gai0t.css",
+          "type": "link",
+          "encoded": 21391,
+          "decoded": 106250,
+          "transfer": 21691
+        },
+        {
+          "path": "/_next/static/chunks/0x7nn82fsyv6d.css",
+          "type": "link",
+          "encoded": 23263,
+          "decoded": 144177,
+          "transfer": 23563
+        },
+        {
+          "path": "/_next/static/chunks/0-o74znen4827.js",
+          "type": "link",
+          "encoded": 3702,
+          "decoded": 13269,
+          "transfer": 4002
+        },
+        {
+          "path": "/_next/static/chunks/3srfjz42u14tx.js",
+          "type": "script",
+          "encoded": 8136,
+          "decoded": 29981,
+          "transfer": 8436
+        },
+        {
+          "path": "/_next/static/chunks/2oi9n3b4syua3.js",
+          "type": "script",
+          "encoded": 44236,
+          "decoded": 159205,
+          "transfer": 44536
+        },
+        {
+          "path": "/_next/static/chunks/0c1ru-vk-twa3.js",
+          "type": "script",
+          "encoded": 71969,
+          "decoded": 229820,
+          "transfer": 72269
+        },
+        {
+          "path": "/_next/static/chunks/turbopack-3-ry682tkyiqk.js",
+          "type": "script",
+          "encoded": 3940,
+          "decoded": 10030,
+          "transfer": 4240
+        },
+        {
+          "path": "/_next/static/chunks/3h7p0gh-x56ks.js",
+          "type": "script",
+          "encoded": 7225,
+          "decoded": 24996,
+          "transfer": 7525
+        },
+        {
+          "path": "/_next/static/chunks/12buofoztgtd8.js",
+          "type": "script",
+          "encoded": 618,
+          "decoded": 618,
+          "transfer": 918
+        },
+        {
+          "path": "/_next/static/chunks/1uxrsxyxe598w.js",
+          "type": "script",
+          "encoded": 10833,
+          "decoded": 37273,
+          "transfer": 11133
+        },
+        {
+          "path": "/_next/static/chunks/42ujxlxa5prb3.js",
+          "type": "script",
+          "encoded": 12327,
+          "decoded": 36910,
+          "transfer": 12627
+        },
+        {
+          "path": "/_next/static/chunks/2qb07r-g5ggw6.js",
+          "type": "script",
+          "encoded": 34947,
+          "decoded": 119701,
+          "transfer": 35247
+        },
+        {
+          "path": "/_next/static/chunks/30vu3g9pugac2.js",
+          "type": "script",
+          "encoded": 19494,
+          "decoded": 60811,
+          "transfer": 19794
+        },
+        {
+          "path": "/_next/static/chunks/1c4s3ot2xn5u_.js",
+          "type": "script",
+          "encoded": 5303,
+          "decoded": 13386,
+          "transfer": 5603
+        },
+        {
+          "path": "/_next/static/chunks/2q9henqv2ttz-.js",
+          "type": "script",
+          "encoded": 22282,
+          "decoded": 158305,
+          "transfer": 22582
+        },
+        {
+          "path": "/window-atmosphere.webp",
+          "type": "css",
+          "encoded": 2334,
+          "decoded": 2334,
+          "transfer": 2634
+        },
+        {
+          "path": "/_next/static/media/Caveat_500-s.1gmrjehfwi5hj.woff2",
+          "type": "css",
+          "encoded": 51132,
+          "decoded": 51132,
+          "transfer": 51432
+        },
+        {
+          "path": "/project-media/bcx-demo-poster.webp",
+          "type": "img",
+          "encoded": 54910,
+          "decoded": 54910,
+          "transfer": 55210
+        },
+        {
+          "path": "/icon.png",
+          "type": "other",
+          "encoded": 11895,
+          "decoded": 11895,
+          "transfer": 12195
+        },
+        {
+          "path": "/_vercel/insights/script.js",
+          "type": "script",
+          "encoded": 0,
+          "decoded": 0,
+          "transfer": 300
+        },
+        {
+          "path": "/_vercel/speed-insights/script.js",
+          "type": "script",
+          "encoded": 0,
+          "decoded": 0,
+          "transfer": 300
+        },
+        {
+          "path": "/",
+          "type": "fetch",
+          "encoded": 320,
+          "decoded": 537,
+          "transfer": 620
+        },
+        {
+          "path": "/projects",
+          "type": "fetch",
+          "encoded": 333,
+          "decoded": 534,
+          "transfer": 633
+        },
+        {
+          "path": "/about",
+          "type": "fetch",
+          "encoded": 329,
+          "decoded": 531,
+          "transfer": 629
+        },
+        {
+          "path": "/notes",
+          "type": "fetch",
+          "encoded": 331,
+          "decoded": 531,
+          "transfer": 631
+        },
+        {
+          "path": "/travel",
+          "type": "fetch",
+          "encoded": 330,
+          "decoded": 532,
+          "transfer": 630
+        },
+        {
+          "path": "/",
+          "type": "fetch",
+          "encoded": 54661,
+          "decoded": 180596,
+          "transfer": 54961
+        },
+        {
+          "path": "/notes",
+          "type": "fetch",
+          "encoded": 3337,
+          "decoded": 11334,
+          "transfer": 3637
+        },
+        {
+          "path": "/about",
+          "type": "fetch",
+          "encoded": 2684,
+          "decoded": 9758,
+          "transfer": 2984
+        },
+        {
+          "path": "/travel",
+          "type": "fetch",
+          "encoded": 6339,
+          "decoded": 26142,
+          "transfer": 6639
+        },
+        {
+          "path": "/projects",
+          "type": "fetch",
+          "encoded": 3231,
+          "decoded": 11066,
+          "transfer": 3531
+        }
+      ],
+      "initial_js_encoded": 245012,
+      "initial_total_encoded": 707718
+    },
+    "/about": {
+      "lcp": 240,
+      "navigation": {
+        "name": "http://localhost:3102/about",
+        "entryType": "navigation",
+        "startTime": 0,
+        "duration": 181.5,
+        "navigationId": 2056,
+        "initiatorType": "navigation",
+        "deliveryType": "",
+        "nextHopProtocol": "http/1.1",
+        "renderBlockingStatus": "non-blocking",
+        "contentType": "text/html",
+        "contentEncoding": "gzip",
+        "workerStart": 0,
+        "workerRouterEvaluationStart": 0,
+        "workerCacheLookupStart": 0,
+        "workerMatchedSourceType": "",
+        "workerFinalSourceType": "",
+        "redirectStart": 0,
+        "redirectEnd": 0,
+        "fetchStart": 1.3999999999068677,
+        "domainLookupStart": 1.3999999999068677,
+        "domainLookupEnd": 1.3999999999068677,
+        "connectStart": 1.3999999999068677,
+        "secureConnectionStart": 0,
+        "connectEnd": 1.3999999999068677,
+        "requestStart": 2.2000000001862645,
+        "responseStart": 6,
+        "firstInterimResponseStart": 0,
+        "finalResponseHeadersStart": 6,
+        "responseEnd": 6.7000000001862645,
+        "transferSize": 14683,
+        "encodedBodySize": 14383,
+        "decodedBodySize": 90177,
+        "responseStatus": 200,
+        "serverTiming": [],
+        "unloadEventStart": 0,
+        "unloadEventEnd": 0,
+        "domInteractive": 121.60000000009313,
+        "domContentLoadedEventStart": 121.60000000009313,
+        "domContentLoadedEventEnd": 121.60000000009313,
+        "domComplete": 181.39999999990687,
+        "loadEventStart": 181.5,
+        "loadEventEnd": 181.5,
+        "type": "navigate",
+        "redirectCount": 0,
+        "activationStart": 0,
+        "criticalCHRestart": 0,
+        "notRestoredReasons": null,
+        "confidence": {
+          "randomizedTriggerRate": 0.4994798,
+          "value": "low"
+        }
+      },
+      "resources": [
+        {
+          "path": "/_next/static/media/Figtree-s.p.273zcra3jgrc5.woff2",
+          "type": "link",
+          "encoded": 19696,
+          "decoded": 19696,
+          "transfer": 19996
+        },
+        {
+          "path": "/portraits/camera-print.webp",
+          "type": "link",
+          "encoded": 11770,
+          "decoded": 11770,
+          "transfer": 12070
+        },
+        {
+          "path": "/brands/cplusplus.svg",
+          "type": "link",
+          "encoded": 779,
+          "decoded": 779,
+          "transfer": 1079
+        },
+        {
+          "path": "/brands/c.svg",
+          "type": "link",
+          "encoded": 511,
+          "decoded": 511,
+          "transfer": 811
+        },
+        {
+          "path": "/brands/python.svg",
+          "type": "link",
+          "encoded": 745,
+          "decoded": 1533,
+          "transfer": 1045
+        },
+        {
+          "path": "/_next/static/chunks/29tw6cj7r1zfr.css",
+          "type": "link",
+          "encoded": 801,
+          "decoded": 801,
+          "transfer": 1101
+        },
+        {
+          "path": "/brands/gnubash.svg",
+          "type": "link",
+          "encoded": 968,
+          "decoded": 2047,
+          "transfer": 1268
+        },
+        {
+          "path": "/brands/javascript.svg",
+          "type": "link",
+          "encoded": 989,
+          "decoded": 989,
+          "transfer": 1289
+        },
+        {
+          "path": "/brands/qt.svg",
+          "type": "link",
+          "encoded": 939,
+          "decoded": 939,
+          "transfer": 1239
+        },
+        {
+          "path": "/brands/typescript.svg",
+          "type": "link",
+          "encoded": 692,
+          "decoded": 1309,
+          "transfer": 992
+        },
+        {
+          "path": "/brands/react.svg",
+          "type": "link",
+          "encoded": 1413,
+          "decoded": 2941,
+          "transfer": 1713
+        },
+        {
+          "path": "/brands/html5.svg",
+          "type": "link",
+          "encoded": 342,
+          "decoded": 342,
+          "transfer": 642
+        },
+        {
+          "path": "/_next/static/chunks/0x7nn82fsyv6d.css",
+          "type": "link",
+          "encoded": 23263,
+          "decoded": 144177,
+          "transfer": 23563
+        },
+        {
+          "path": "/_next/static/chunks/1d428ix8gai0t.css",
+          "type": "link",
+          "encoded": 21391,
+          "decoded": 106250,
+          "transfer": 21691
+        },
+        {
+          "path": "/_next/static/chunks/0-o74znen4827.js",
+          "type": "link",
+          "encoded": 3702,
+          "decoded": 13269,
+          "transfer": 4002
+        },
+        {
+          "path": "/_next/static/chunks/3srfjz42u14tx.js",
+          "type": "script",
+          "encoded": 8136,
+          "decoded": 29981,
+          "transfer": 8436
+        },
+        {
+          "path": "/_next/static/chunks/0c1ru-vk-twa3.js",
+          "type": "script",
+          "encoded": 71969,
+          "decoded": 229820,
+          "transfer": 72269
+        },
+        {
+          "path": "/_next/static/chunks/turbopack-3-ry682tkyiqk.js",
+          "type": "script",
+          "encoded": 3940,
+          "decoded": 10030,
+          "transfer": 4240
+        },
+        {
+          "path": "/_next/static/chunks/3h7p0gh-x56ks.js",
+          "type": "script",
+          "encoded": 7225,
+          "decoded": 24996,
+          "transfer": 7525
+        },
+        {
+          "path": "/_next/static/chunks/2oi9n3b4syua3.js",
+          "type": "script",
+          "encoded": 44236,
+          "decoded": 159205,
+          "transfer": 44536
+        },
+        {
+          "path": "/_next/static/chunks/12buofoztgtd8.js",
+          "type": "script",
+          "encoded": 618,
+          "decoded": 618,
+          "transfer": 918
+        },
+        {
+          "path": "/_next/static/chunks/1uxrsxyxe598w.js",
+          "type": "script",
+          "encoded": 10833,
+          "decoded": 37273,
+          "transfer": 11133
+        },
+        {
+          "path": "/_next/static/chunks/42ujxlxa5prb3.js",
+          "type": "script",
+          "encoded": 12327,
+          "decoded": 36910,
+          "transfer": 12627
+        },
+        {
+          "path": "/brands/css.svg",
+          "type": "link",
+          "encoded": 674,
+          "decoded": 1494,
+          "transfer": 974
+        },
+        {
+          "path": "/_next/static/chunks/30vu3g9pugac2.js",
+          "type": "script",
+          "encoded": 19494,
+          "decoded": 60811,
+          "transfer": 19794
+        },
+        {
+          "path": "/_next/static/chunks/1c4s3ot2xn5u_.js",
+          "type": "script",
+          "encoded": 5303,
+          "decoded": 13386,
+          "transfer": 5603
+        },
+        {
+          "path": "/_next/static/chunks/2vu6zpu87e2ne.js",
+          "type": "script",
+          "encoded": 4322,
+          "decoded": 10396,
+          "transfer": 4622
+        },
+        {
+          "path": "/_next/static/chunks/2qb07r-g5ggw6.js",
+          "type": "script",
+          "encoded": 34947,
+          "decoded": 119701,
+          "transfer": 35247
+        },
+        {
+          "path": "/_next/static/chunks/2q9henqv2ttz-.js",
+          "type": "script",
+          "encoded": 22282,
+          "decoded": 158305,
+          "transfer": 22582
+        },
+        {
+          "path": "/brands/git.svg",
+          "type": "link",
+          "encoded": 441,
+          "decoded": 441,
+          "transfer": 741
+        },
+        {
+          "path": "/brands/raspberrypi.svg",
+          "type": "link",
+          "encoded": 2845,
+          "decoded": 5951,
+          "transfer": 3145
+        },
+        {
+          "path": "/brands/docker.svg",
+          "type": "link",
+          "encoded": 615,
+          "decoded": 1780,
+          "transfer": 915
+        },
+        {
+          "path": "/brands/linux.svg",
+          "type": "link",
+          "encoded": 2547,
+          "decoded": 5478,
+          "transfer": 2847
+        },
+        {
+          "path": "/brands/ros.svg",
+          "type": "link",
+          "encoded": 383,
+          "decoded": 1238,
+          "transfer": 683
+        },
+        {
+          "path": "/brands/nginx.svg",
+          "type": "link",
+          "encoded": 428,
+          "decoded": 428,
+          "transfer": 728
+        },
+        {
+          "path": "/brands/figma.svg",
+          "type": "link",
+          "encoded": 438,
+          "decoded": 1108,
+          "transfer": 738
+        },
+        {
+          "path": "/brands/pickit.png",
+          "type": "link",
+          "encoded": 31992,
+          "decoded": 31992,
+          "transfer": 32292
+        },
+        {
+          "path": "/brands/bosch.svg",
+          "type": "link",
+          "encoded": 938,
+          "decoded": 2101,
+          "transfer": 1238
+        },
+        {
+          "path": "/brands/unity.svg",
+          "type": "link",
+          "encoded": 669,
+          "decoded": 669,
+          "transfer": 969
+        },
+        {
+          "path": "/brands/numpy.svg",
+          "type": "link",
+          "encoded": 790,
+          "decoded": 790,
+          "transfer": 1090
+        },
+        {
+          "path": "/brands/pandas.svg",
+          "type": "link",
+          "encoded": 354,
+          "decoded": 354,
+          "transfer": 654
+        },
+        {
+          "path": "/brands/kla.svg",
+          "type": "link",
+          "encoded": 2903,
+          "decoded": 7569,
+          "transfer": 3203
+        },
+        {
+          "path": "/window-atmosphere.webp",
+          "type": "css",
+          "encoded": 2334,
+          "decoded": 2334,
+          "transfer": 2634
+        },
+        {
+          "path": "/paper-fibres.webp",
+          "type": "css",
+          "encoded": 12456,
+          "decoded": 12456,
+          "transfer": 12756
+        },
+        {
+          "path": "/paper-grain.webp",
+          "type": "css",
+          "encoded": 18076,
+          "decoded": 18076,
+          "transfer": 18376
+        },
+        {
+          "path": "/brands/cplusplus.svg",
+          "type": "css",
+          "encoded": 779,
+          "decoded": 779,
+          "transfer": 300
+        },
+        {
+          "path": "/portraits/professional-print.webp",
+          "type": "img",
+          "encoded": 40572,
+          "decoded": 40572,
+          "transfer": 40872
+        },
+        {
+          "path": "/portraits/window-print.webp",
+          "type": "img",
+          "encoded": 39698,
+          "decoded": 39698,
+          "transfer": 39998
+        },
+        {
+          "path": "/_vercel/insights/script.js",
+          "type": "script",
+          "encoded": 0,
+          "decoded": 0,
+          "transfer": 300
+        },
+        {
+          "path": "/_vercel/speed-insights/script.js",
+          "type": "script",
+          "encoded": 0,
+          "decoded": 0,
+          "transfer": 300
+        },
+        {
+          "path": "/icon.png",
+          "type": "other",
+          "encoded": 11895,
+          "decoded": 11895,
+          "transfer": 12195
+        },
+        {
+          "path": "/api/skills",
+          "type": "fetch",
+          "encoded": 2494,
+          "decoded": 2494,
+          "transfer": 2794
+        },
+        {
+          "path": "/",
+          "type": "fetch",
+          "encoded": 320,
+          "decoded": 537,
+          "transfer": 620
+        },
+        {
+          "path": "/projects",
+          "type": "fetch",
+          "encoded": 333,
+          "decoded": 534,
+          "transfer": 633
+        },
+        {
+          "path": "/notes",
+          "type": "fetch",
+          "encoded": 331,
+          "decoded": 531,
+          "transfer": 631
+        },
+        {
+          "path": "/about",
+          "type": "fetch",
+          "encoded": 329,
+          "decoded": 531,
+          "transfer": 629
+        },
+        {
+          "path": "/window-portrait.webp",
+          "type": "link",
+          "encoded": 169556,
+          "decoded": 169556,
+          "transfer": 169856
+        },
+        {
+          "path": "/travel",
+          "type": "fetch",
+          "encoded": 330,
+          "decoded": 532,
+          "transfer": 630
+        },
+        {
+          "path": "/about/manage",
+          "type": "fetch",
+          "encoded": 186,
+          "decoded": 269,
+          "transfer": 486
+        },
+        {
+          "path": "/",
+          "type": "fetch",
+          "encoded": 54661,
+          "decoded": 180596,
+          "transfer": 54961
+        },
+        {
+          "path": "/projects",
+          "type": "fetch",
+          "encoded": 3231,
+          "decoded": 11066,
+          "transfer": 3531
+        },
+        {
+          "path": "/notes",
+          "type": "fetch",
+          "encoded": 3337,
+          "decoded": 11334,
+          "transfer": 3637
+        },
+        {
+          "path": "/about",
+          "type": "fetch",
+          "encoded": 2684,
+          "decoded": 9758,
+          "transfer": 2984
+        },
+        {
+          "path": "/travel",
+          "type": "fetch",
+          "encoded": 6339,
+          "decoded": 26142,
+          "transfer": 6639
+        },
+        {
+          "path": "/about/manage",
+          "type": "fetch",
+          "encoded": 1104,
+          "decoded": 2697,
+          "transfer": 1404
+        }
+      ],
+      "initial_js_encoded": 249334,
+      "initial_total_encoded": 750695
+    },
+    "/travel": {
+      "lcp": 236,
+      "navigation": {
+        "name": "http://localhost:3102/travel",
+        "entryType": "navigation",
+        "startTime": 0,
+        "duration": 180.39999999990687,
+        "navigationId": 203,
+        "initiatorType": "navigation",
+        "deliveryType": "",
+        "nextHopProtocol": "http/1.1",
+        "renderBlockingStatus": "non-blocking",
+        "contentType": "text/html",
+        "contentEncoding": "gzip",
+        "workerStart": 0,
+        "workerRouterEvaluationStart": 0,
+        "workerCacheLookupStart": 0,
+        "workerMatchedSourceType": "",
+        "workerFinalSourceType": "",
+        "redirectStart": 0,
+        "redirectEnd": 0,
+        "fetchStart": 1.2999999998137355,
+        "domainLookupStart": 1.2999999998137355,
+        "domainLookupEnd": 1.2999999998137355,
+        "connectStart": 1.2999999998137355,
+        "secureConnectionStart": 0,
+        "connectEnd": 1.2999999998137355,
+        "requestStart": 2.7999999998137355,
+        "responseStart": 12.299999999813735,
+        "firstInterimResponseStart": 0,
+        "finalResponseHeadersStart": 12.299999999813735,
+        "responseEnd": 13.099999999627471,
+        "transferSize": 12845,
+        "encodedBodySize": 12545,
+        "decodedBodySize": 135884,
+        "responseStatus": 200,
+        "serverTiming": [],
+        "unloadEventStart": 0,
+        "unloadEventEnd": 0,
+        "domInteractive": 51.299999999813735,
+        "domContentLoadedEventStart": 51.39999999990687,
+        "domContentLoadedEventEnd": 51.39999999990687,
+        "domComplete": 180.29999999981374,
+        "loadEventStart": 180.39999999990687,
+        "loadEventEnd": 180.39999999990687,
+        "type": "navigate",
+        "redirectCount": 0,
+        "activationStart": 0,
+        "criticalCHRestart": 0,
+        "notRestoredReasons": null,
+        "confidence": {
+          "randomizedTriggerRate": 0.4994798,
+          "value": "low"
+        }
+      },
+      "resources": [
+        {
+          "path": "/_next/static/media/Figtree-s.p.273zcra3jgrc5.woff2",
+          "type": "link",
+          "encoded": 19696,
+          "decoded": 19696,
+          "transfer": 19996
+        },
+        {
+          "path": "/_next/static/chunks/29tw6cj7r1zfr.css",
+          "type": "link",
+          "encoded": 801,
+          "decoded": 801,
+          "transfer": 1101
+        },
+        {
+          "path": "/_next/static/chunks/0x7nn82fsyv6d.css",
+          "type": "link",
+          "encoded": 23263,
+          "decoded": 144177,
+          "transfer": 23563
+        },
+        {
+          "path": "/_next/static/chunks/1d428ix8gai0t.css",
+          "type": "link",
+          "encoded": 21391,
+          "decoded": 106250,
+          "transfer": 21691
+        },
+        {
+          "path": "/_next/static/chunks/0-o74znen4827.js",
+          "type": "link",
+          "encoded": 3702,
+          "decoded": 13269,
+          "transfer": 4002
+        },
+        {
+          "path": "/_next/static/chunks/3srfjz42u14tx.js",
+          "type": "script",
+          "encoded": 8136,
+          "decoded": 29981,
+          "transfer": 8436
+        },
+        {
+          "path": "/_next/static/chunks/turbopack-3-ry682tkyiqk.js",
+          "type": "script",
+          "encoded": 3940,
+          "decoded": 10030,
+          "transfer": 4240
+        },
+        {
+          "path": "/_next/static/chunks/0c1ru-vk-twa3.js",
+          "type": "script",
+          "encoded": 71969,
+          "decoded": 229820,
+          "transfer": 72269
+        },
+        {
+          "path": "/_next/static/chunks/2oi9n3b4syua3.js",
+          "type": "script",
+          "encoded": 44236,
+          "decoded": 159205,
+          "transfer": 44536
+        },
+        {
+          "path": "/_next/static/chunks/12buofoztgtd8.js",
+          "type": "script",
+          "encoded": 618,
+          "decoded": 618,
+          "transfer": 918
+        },
+        {
+          "path": "/_next/static/chunks/3h7p0gh-x56ks.js",
+          "type": "script",
+          "encoded": 7225,
+          "decoded": 24996,
+          "transfer": 7525
+        },
+        {
+          "path": "/_next/static/chunks/1uxrsxyxe598w.js",
+          "type": "script",
+          "encoded": 10833,
+          "decoded": 37273,
+          "transfer": 11133
+        },
+        {
+          "path": "/_next/static/chunks/42ujxlxa5prb3.js",
+          "type": "script",
+          "encoded": 12327,
+          "decoded": 36910,
+          "transfer": 12627
+        },
+        {
+          "path": "/_next/static/chunks/1c4s3ot2xn5u_.js",
+          "type": "script",
+          "encoded": 5303,
+          "decoded": 13386,
+          "transfer": 5603
+        },
+        {
+          "path": "/_next/static/chunks/2vu6zpu87e2ne.js",
+          "type": "script",
+          "encoded": 4322,
+          "decoded": 10396,
+          "transfer": 4622
+        },
+        {
+          "path": "/_next/static/chunks/30vu3g9pugac2.js",
+          "type": "script",
+          "encoded": 19494,
+          "decoded": 60811,
+          "transfer": 19794
+        },
+        {
+          "path": "/_next/static/chunks/2qb07r-g5ggw6.js",
+          "type": "script",
+          "encoded": 34947,
+          "decoded": 119701,
+          "transfer": 35247
+        },
+        {
+          "path": "/_next/static/chunks/2q9henqv2ttz-.js",
+          "type": "script",
+          "encoded": 22282,
+          "decoded": 158305,
+          "transfer": 22582
+        },
+        {
+          "path": "/window-atmosphere.webp",
+          "type": "css",
+          "encoded": 2334,
+          "decoded": 2334,
+          "transfer": 2634
+        },
+        {
+          "path": "/icon.png",
+          "type": "other",
+          "encoded": 11895,
+          "decoded": 11895,
+          "transfer": 12195
+        },
+        {
+          "path": "/_vercel/insights/script.js",
+          "type": "script",
+          "encoded": 0,
+          "decoded": 0,
+          "transfer": 300
+        },
+        {
+          "path": "/_vercel/speed-insights/script.js",
+          "type": "script",
+          "encoded": 0,
+          "decoded": 0,
+          "transfer": 300
+        },
+        {
+          "path": "/api/travel",
+          "type": "fetch",
+          "encoded": 16213,
+          "decoded": 16213,
+          "transfer": 16513
+        },
+        {
+          "path": "/_next/static/chunks/3zw-q5r3p9zzy.js",
+          "type": "script",
+          "encoded": 170,
+          "decoded": 170,
+          "transfer": 470
+        },
+        {
+          "path": "/_next/static/chunks/3v8qpdcjgjpcl.js",
+          "type": "script",
+          "encoded": 296163,
+          "decoded": 1095017,
+          "transfer": 296463
+        },
+        {
+          "path": "/_next/static/chunks/22kfh9t_z_iuf.js",
+          "type": "script",
+          "encoded": 55911,
+          "decoded": 151502,
+          "transfer": 56211
+        },
+        {
+          "path": "/_next/static/chunks/3v9ezwdxvaikg.css",
+          "type": "link",
+          "encoded": 11483,
+          "decoded": 77626,
+          "transfer": 11783
+        },
+        {
+          "path": "/",
+          "type": "fetch",
+          "encoded": 320,
+          "decoded": 537,
+          "transfer": 620
+        },
+        {
+          "path": "/projects",
+          "type": "fetch",
+          "encoded": 333,
+          "decoded": 534,
+          "transfer": 633
+        },
+        {
+          "path": "/notes",
+          "type": "fetch",
+          "encoded": 331,
+          "decoded": 531,
+          "transfer": 631
+        },
+        {
+          "path": "/about",
+          "type": "fetch",
+          "encoded": 329,
+          "decoded": 531,
+          "transfer": 629
+        },
+        {
+          "path": "/window-portrait.webp",
+          "type": "link",
+          "encoded": 169556,
+          "decoded": 169556,
+          "transfer": 169856
+        },
+        {
+          "path": "/brands/kla.svg",
+          "type": "link",
+          "encoded": 2903,
+          "decoded": 7569,
+          "transfer": 3203
+        },
+        {
+          "path": "/brands/pickit.png",
+          "type": "link",
+          "encoded": 31992,
+          "decoded": 31992,
+          "transfer": 32292
+        },
+        {
+          "path": "/brands/bosch.svg",
+          "type": "link",
+          "encoded": 938,
+          "decoded": 2101,
+          "transfer": 1238
+        },
+        {
+          "path": "/travel",
+          "type": "fetch",
+          "encoded": 330,
+          "decoded": 532,
+          "transfer": 630
+        },
+        {
+          "path": "/travel/manage",
+          "type": "fetch",
+          "encoded": 186,
+          "decoded": 270,
+          "transfer": 486
+        },
+        {
+          "path": "/",
+          "type": "fetch",
+          "encoded": 54661,
+          "decoded": 180596,
+          "transfer": 54961
+        },
+        {
+          "path": "/projects",
+          "type": "fetch",
+          "encoded": 3231,
+          "decoded": 11066,
+          "transfer": 3531
+        },
+        {
+          "path": "/notes",
+          "type": "fetch",
+          "encoded": 3337,
+          "decoded": 11334,
+          "transfer": 3637
+        },
+        {
+          "path": "/about",
+          "type": "fetch",
+          "encoded": 2684,
+          "decoded": 9758,
+          "transfer": 2984
+        },
+        {
+          "path": "/travel",
+          "type": "fetch",
+          "encoded": 6339,
+          "decoded": 26142,
+          "transfer": 6639
+        },
+        {
+          "path": "/travel/manage",
+          "type": "fetch",
+          "encoded": 1097,
+          "decoded": 2689,
+          "transfer": 1397
+        },
+        {
+          "path": "/maplibre-worker.mjs",
+          "type": "other",
+          "encoded": 148331,
+          "decoded": 519372,
+          "transfer": 148631
+        }
+      ],
+      "initial_js_encoded": 601578,
+      "initial_total_encoded": 1135552
+    }
+  },
+  "catalogue_bytes": 229060,
+  "largest_public_assets": [
+    {
+      "path": "font\\SpoqaHanSansNeo_OTF_original\\SpoqaHanSansNeo-Bold.otf",
+      "bytes": 12865536
+    },
+    {
+      "path": "font\\SpoqaHanSansNeo_OTF_original\\SpoqaHanSansNeo-Medium.otf",
+      "bytes": 12768364
+    },
+    {
+      "path": "font\\SpoqaHanSansNeo_OTF_original\\SpoqaHanSansNeo-Regular.otf",
+      "bytes": 12640720
+    },
+    {
+      "path": "font\\SpoqaHanSansNeo_OTF_original\\SpoqaHanSansNeo-Thin.otf",
+      "bytes": 12554964
+    },
+    {
+      "path": "font\\SpoqaHanSansNeo_OTF_original\\SpoqaHanSansNeo-Light.otf",
+      "bytes": 12546872
+    },
+    {
+      "path": "project-media\\bcx-team-demo.mp4",
+      "bytes": 1920304
+    },
+    {
+      "path": "og-image.png",
+      "bytes": 616839
+    },
+    {
+      "path": "maplibre-worker.mjs",
+      "bytes": 519372
+    },
+    {
+      "path": "font\\SpoqaHanSansNeo_OTF_subset\\SpoqaHanSansNeo-Light.woff",
+      "bytes": 420104
+    },
+    {
+      "path": "font\\SpoqaHanSansNeo_OTF_subset\\SpoqaHanSansNeo-Thin.otf",
+      "bytes": 355144
+    },
+    {
+      "path": "font\\SpoqaHanSansNeo_OTF_subset\\SpoqaHanSansNeo-Light.otf",
+      "bytes": 352820
+    },
+    {
+      "path": "font\\SpoqaHanSansNeo_OTF_subset\\SpoqaHanSansNeo-Bold.otf",
+      "bytes": 350844
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "name": "DES_PiRacer-Assembly",
+  "url": "https://github.com/KKWANH/DES_PiRacer-Assembly",
+  "fork": false,
+  "scope": "learning",
+  "scopeNote": "Learning/team project; inspect the stated contribution and source.",
+  "description": "the first project of SEAME/Embedded, [PiRacer / PiRacerPro / PiRacerEvo / PiRacerMicro]",
+  "updatedAt": "2023-07-26T12:51:13Z",
+  "defaultBranch": "main",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/DES_PiRacer-Assembly/blob/6119ee00ab75e9d6f06032dc96b4919a4e4327cb/README.md",
+      "bytes": 400,
+      "sha256": "09101645a7434719ee34b44c1e05c966fc9b15b5fd32de018c9ab001a9058b3b"
+    },
+    {
+      "path": "01_piracer-py/doc/requirements.txt",
+      "url": "https://github.com/KKWANH/DES_PiRacer-Assembly/blob/6119ee00ab75e9d6f06032dc96b4919a4e4327cb/01_piracer-py/doc/requirements.txt",
+      "bytes": 135,
+      "sha256": "b48304def8f07a6bf5df12e0582eb51fabd899c8c7a7ecb418a55cd7874b89d9"
+    },
+    {
+      "path": "01_piracer-py/scripts/make_release.sh",
+      "url": "https://github.com/KKWANH/DES_PiRacer-Assembly/blob/6119ee00ab75e9d6f06032dc96b4919a4e4327cb/01_piracer-py/scripts/make_release.sh",
+      "bytes": 1376,
+      "sha256": "15f9324e982e885a0c504f3a783037edc6dbacc122bedc6af908b3c139997a02"
+    }
+  ],
+  "limitations": [
+    "Raw .py downloads are restricted by the corporate security gateway; accessible documentation/manifests are reviewed instead."
+  ],
+  "technologies": [
+    {
+      "id": "git",
+      "label": "Git",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "01_piracer-py/scripts/make_release.sh",
+          "basis": "inspected source"
+        }
+      ]
+    },
+    {
+      "id": "opencv",
+      "label": "OpenCV",
+      "group": "data",
+      "evidence": [
+        {
+          "path": "01_piracer-py/doc/requirements.txt",
+          "basis": "declared Python dependency"
+        },
+        {
+          "path": "01_piracer-py/doc/requirements.txt",
+          "basis": "manifest/configuration"
+        }
+      ]
+    },
+    {
+      "id": "pygame",
+      "label": "Pygame",
+      "group": "design",
+      "evidence": [
+        {
+          "path": "01_piracer-py/doc/requirements.txt",
+          "basis": "declared Python dependency"
+        }
+      ]
+    },
+    {
+      "id": "python",
+      "label": "Python",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "01_piracer-py/examples/camera_get_images.py",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "01_piracer-py/examples/forward_backward_left_right.py",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "01_piracer-py/examples/print_to_display.py",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "raspberrypi",
+      "label": "Raspberry Pi",
+      "group": "systems",
+      "evidence": [
+        {
+          "path": "01_piracer-py/doc/requirements.txt",
+          "basis": "manifest/configuration"
+        }
+      ]
+    },
+    {
+      "id": "shell",
+      "label": "Shell",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "01_piracer-py/scripts/make_release.sh",
+          "basis": "source-file presence"
+        }
+      ]
+    }
+  ],
+  "commit": "6119ee00ab75e9d6f06032dc96b4919a4e4327cb",
+  "fileCount": 27,
+  "treeDepth": "recursive",
+  "status": "reviewed-limited"
+}

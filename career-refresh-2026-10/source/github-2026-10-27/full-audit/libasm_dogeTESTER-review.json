@@ -1,0 +1,59 @@
+{
+  "name": "libasm_dogeTESTER",
+  "url": "https://github.com/KKWANH/libasm_dogeTESTER",
+  "fork": false,
+  "scope": "learning",
+  "scopeNote": "Learning/team project; inspect the stated contribution and source.",
+  "description": "",
+  "updatedAt": "2021-05-18T09:08:47Z",
+  "defaultBranch": "main",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/libasm_dogeTESTER/blob/c0b2795d2535725bca69115c2a465efced9fff05/README.md",
+      "bytes": 195,
+      "sha256": "50f0b6985eb6eb6b364aa7499612c43e4f9594ff37a0b79aea4c593fbaa6310a"
+    },
+    {
+      "path": "srcs/tester.c",
+      "url": "https://github.com/KKWANH/libasm_dogeTESTER/blob/c0b2795d2535725bca69115c2a465efced9fff05/srcs/tester.c",
+      "bytes": 25905,
+      "sha256": "3547faca4727862b8d4d106b7ff2b346bbe73954296c3c46f0646b60c5f76a82"
+    },
+    {
+      "path": "test.sh",
+      "url": "https://github.com/KKWANH/libasm_dogeTESTER/blob/c0b2795d2535725bca69115c2a465efced9fff05/test.sh",
+      "bytes": 115,
+      "sha256": "e2cba0525814c692a9da2717a66c32270cd61d663733f80927e5500934be3e43"
+    }
+  ],
+  "limitations": [],
+  "technologies": [
+    {
+      "id": "c",
+      "label": "C",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "srcs/tester.c",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "shell",
+      "label": "Shell",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "test.sh",
+          "basis": "source-file presence"
+        }
+      ]
+    }
+  ],
+  "commit": "c0b2795d2535725bca69115c2a465efced9fff05",
+  "fileCount": 5,
+  "treeDepth": "recursive",
+  "status": "reviewed"
+}

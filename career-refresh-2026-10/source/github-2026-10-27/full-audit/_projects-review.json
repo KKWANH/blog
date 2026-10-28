@@ -1,0 +1,143 @@
+{
+  "name": "_projects",
+  "url": "https://github.com/KKWANH/_projects",
+  "fork": false,
+  "scope": "profile",
+  "scopeNote": "Profile/project index.",
+  "description": "",
+  "updatedAt": "2026-03-31T10:46:34Z",
+  "defaultBranch": "main",
+  "sources": [
+    {
+      "path": "frontend-support-40b/reviews/README.md",
+      "url": "https://github.com/KKWANH/_projects/blob/1d8612b8490c388513251a8e61b4d5c2603dc742/frontend-support-40b/reviews/README.md",
+      "bytes": 582,
+      "sha256": "cc4d3ea7096047b9203303e9561d5d0433efe95ef42454d31b21cbafd6c29363"
+    },
+    {
+      "path": "_template/requirement.md",
+      "url": "https://github.com/KKWANH/_projects/blob/1d8612b8490c388513251a8e61b4d5c2603dc742/_template/requirement.md",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "empty-roi-not-working-c100/requirement.md",
+      "url": "https://github.com/KKWANH/_projects/blob/1d8612b8490c388513251a8e61b4d5c2603dc742/empty-roi-not-working-c100/requirement.md",
+      "bytes": 2371,
+      "sha256": "5489b4fe0d690dbe7b600e002398adb8798f59e6feaec73d9b7c3a8415f45899"
+    },
+    {
+      "path": "frontend-support-40b/requirement.md",
+      "url": "https://github.com/KKWANH/_projects/blob/1d8612b8490c388513251a8e61b4d5c2603dc742/frontend-support-40b/requirement.md",
+      "bytes": 517,
+      "sha256": "f78b40abea643d56eb6ecbc3cbdb63ed6b049209efb0c5403c51bce1cf15590d"
+    },
+    {
+      "path": "get-cal-plate-pose/requirement.md",
+      "url": "https://github.com/KKWANH/_projects/blob/1d8612b8490c388513251a8e61b4d5c2603dc742/get-cal-plate-pose/requirement.md",
+      "bytes": 702,
+      "sha256": "d10d425f0514f3464294cc98cbd8fe537a20712447f7fc88185630e3b0d8a2eb"
+    },
+    {
+      "path": "license-server/requirement.md",
+      "url": "https://github.com/KKWANH/_projects/blob/1d8612b8490c388513251a8e61b4d5c2603dc742/license-server/requirement.md",
+      "bytes": 446,
+      "sha256": "fbe825699e8ecf0601ccd5a497f80fa8ce0b57f4e3c53be0b503846bdfa164c2"
+    },
+    {
+      "path": "pi-upgrade/requirement.md",
+      "url": "https://github.com/KKWANH/_projects/blob/1d8612b8490c388513251a8e61b4d5c2603dc742/pi-upgrade/requirement.md",
+      "bytes": 426,
+      "sha256": "e1e12fb317c2b1939e605a41b90f89d40d6c7edb7d23211f340bb5e040d068f1"
+    },
+    {
+      "path": "refactor-websocketapi/requirement.md",
+      "url": "https://github.com/KKWANH/_projects/blob/1d8612b8490c388513251a8e61b4d5c2603dc742/refactor-websocketapi/requirement.md",
+      "bytes": 414,
+      "sha256": "d3cbcddd75ce10303cfc43a01787f43a7e655c5ad834b4505328f27f41799367"
+    },
+    {
+      "path": "support-hi5e/requirement.md",
+      "url": "https://github.com/KKWANH/_projects/blob/1d8612b8490c388513251a8e61b4d5c2603dc742/support-hi5e/requirement.md",
+      "bytes": 747,
+      "sha256": "d433015f0244861e68af10c879b0539ca2f968457896167f4aee738187a3d41a"
+    },
+    {
+      "path": "timezone-conversion-upload/requirement.md",
+      "url": "https://github.com/KKWANH/_projects/blob/1d8612b8490c388513251a8e61b4d5c2603dc742/timezone-conversion-upload/requirement.md",
+      "bytes": 873,
+      "sha256": "9af0f2649565789b5b1b67c876b921060feed03e78c1bf3bd359c24f07fd4a85"
+    },
+    {
+      "path": "timezone-conversion/requirement.md",
+      "url": "https://github.com/KKWANH/_projects/blob/1d8612b8490c388513251a8e61b4d5c2603dc742/timezone-conversion/requirement.md",
+      "bytes": 715,
+      "sha256": "60edc7ae862b61c0ad443e8aa4b26d79b75e857a974371c62dac5b2c76007a48"
+    },
+    {
+      "path": "update-license-type/requirement.md",
+      "url": "https://github.com/KKWANH/_projects/blob/1d8612b8490c388513251a8e61b4d5c2603dc742/update-license-type/requirement.md",
+      "bytes": 422,
+      "sha256": "130fe1d5d2b20e7413f61882592a8f38dd81eae50b2690bb4e0ddcc15c67f836"
+    }
+  ],
+  "limitations": [],
+  "technologies": [
+    {
+      "id": "bootstrap",
+      "label": "Bootstrap",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "timezone-conversion/requirement.md",
+          "basis": "declared Python dependency"
+        }
+      ]
+    },
+    {
+      "id": "django",
+      "label": "Django",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "license-server/requirement.md",
+          "basis": "declared Python dependency"
+        },
+        {
+          "path": "license-server/requirement.md",
+          "basis": "inspected source"
+        }
+      ]
+    },
+    {
+      "id": "nextjs",
+      "label": "Next.js",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "support-hi5e/requirement.md",
+          "basis": "declared Python dependency"
+        }
+      ]
+    },
+    {
+      "id": "websocket",
+      "label": "WebSocket",
+      "group": "systems",
+      "evidence": [
+        {
+          "path": "get-cal-plate-pose/requirement.md",
+          "basis": "inspected source"
+        },
+        {
+          "path": "refactor-websocketapi/requirement.md",
+          "basis": "inspected source"
+        }
+      ]
+    }
+  ],
+  "commit": "1d8612b8490c388513251a8e61b4d5c2603dc742",
+  "fileCount": 69,
+  "treeDepth": "recursive",
+  "status": "reviewed"
+}

@@ -1,0 +1,8 @@
+{
+  "round": 4,
+  "mode": "Temporary fixture only",
+  "mediaSiblingStatus": 200,
+  "mediaSourceStatus": 200,
+  "pageOutsideRoot": true,
+  "expected": "All must be denied or absent"
+}

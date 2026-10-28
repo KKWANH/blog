@@ -1,0 +1,108 @@
+{
+  "name": "42_minishell",
+  "url": "https://github.com/KKWANH/42_minishell",
+  "fork": false,
+  "scope": "learning",
+  "scopeNote": "Learning/team project; inspect the stated contribution and source.",
+  "description": "",
+  "updatedAt": "2021-05-11T05:58:04Z",
+  "defaultBranch": "main",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/42_minishell/blob/988e62ffd4fac60a7c993beae4bf089f31209bcf/README.md",
+      "bytes": 16,
+      "sha256": "87c78e684a660856e88039679db3097065526b409b64ca21c59644c4ee266b51"
+    },
+    {
+      "path": "Makefile",
+      "url": "https://github.com/KKWANH/42_minishell/blob/988e62ffd4fac60a7c993beae4bf089f31209bcf/Makefile",
+      "bytes": 2385,
+      "sha256": "f0b2811da0e77b7d953f22e4dc3c9df4651e03f66bcaaf49567d26c9704ef2d2"
+    },
+    {
+      "path": "srcs/cd.c",
+      "url": "https://github.com/KKWANH/42_minishell/blob/988e62ffd4fac60a7c993beae4bf089f31209bcf/srcs/cd.c",
+      "bytes": 1417,
+      "sha256": "35ee86e627cfc9afb43a2da0c2d85d85dcbfe7a4fe336fc05bee0a48eb5a6277"
+    },
+    {
+      "path": "srcs/env.c",
+      "url": "https://github.com/KKWANH/42_minishell/blob/988e62ffd4fac60a7c993beae4bf089f31209bcf/srcs/env.c",
+      "bytes": 2747,
+      "sha256": "6e895de281aa39d2fba11690cad577c09ace58fc94e5440c2452ab3cd0b900b0"
+    },
+    {
+      "path": "srcs/err.c",
+      "url": "https://github.com/KKWANH/42_minishell/blob/988e62ffd4fac60a7c993beae4bf089f31209bcf/srcs/err.c",
+      "bytes": 2314,
+      "sha256": "763d71f689fbd0c98da417374cbb2c8629eb895167a48430776061a679e2ac66"
+    },
+    {
+      "path": "srcs/exe.c",
+      "url": "https://github.com/KKWANH/42_minishell/blob/988e62ffd4fac60a7c993beae4bf089f31209bcf/srcs/exe.c",
+      "bytes": 3391,
+      "sha256": "98f1b3af1030e08b2065e7873fa3bb6d6bac360fec8c960066074bc058d66ee4"
+    },
+    {
+      "path": "srcs/redir.c",
+      "url": "https://github.com/KKWANH/42_minishell/blob/988e62ffd4fac60a7c993beae4bf089f31209bcf/srcs/redir.c",
+      "bytes": 2616,
+      "sha256": "68c841a40536a3904d7ca4ff7331ca837a2eaae10384e455a3d2665f3c8399d1"
+    },
+    {
+      "path": "srcs/signal.c",
+      "url": "https://github.com/KKWANH/42_minishell/blob/988e62ffd4fac60a7c993beae4bf089f31209bcf/srcs/signal.c",
+      "bytes": 1724,
+      "sha256": "a47d36988d7334f26471088aca8d735643cdda638c08ecc01aea23e17add8f9d"
+    }
+  ],
+  "limitations": [],
+  "technologies": [
+    {
+      "id": "c",
+      "label": "C",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "minishell.c",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "srcs/builtin.c",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "srcs/cd.c",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "make",
+      "label": "Make",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "Makefile",
+          "basis": "build file"
+        }
+      ]
+    },
+    {
+      "id": "posix",
+      "label": "POSIX APIs",
+      "group": "systems",
+      "evidence": [
+        {
+          "path": "srcs/exe.c",
+          "basis": "inspected source"
+        }
+      ]
+    }
+  ],
+  "commit": "988e62ffd4fac60a7c993beae4bf089f31209bcf",
+  "fileCount": 40,
+  "treeDepth": "cached-recursive",
+  "status": "reviewed"
+}

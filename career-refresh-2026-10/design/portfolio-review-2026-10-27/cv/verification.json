@@ -1,0 +1,37 @@
+{
+  "checks": {
+    "one_a4_page": true,
+    "no_html_overflow": true,
+    "name_then_broad_role": true,
+    "personal_email": true,
+    "leuven_retained": true,
+    "three_typographic_scales": true,
+    "embedded_fonts": true,
+    "unicode_maps": true,
+    "tagged_pdf": true,
+    "six_working_link_targets": true,
+    "email_link": true,
+    "scope_and_training_preserved": true,
+    "copy_synchronized": true,
+    "design_spec_synchronized": true
+  },
+  "passed": true,
+  "page_count": 1,
+  "links": 6,
+  "fonts": [
+    "AAAAAA+SourceSerif4Roman-Regular",
+    "BAAAAA+Inter-Medium",
+    "CAAAAA+Inter-Regular",
+    "DAAAAA+Inter-SemiBold"
+  ],
+  "layout": {
+    "height": 1123,
+    "contentHeight": 1123,
+    "width": 794,
+    "contentWidth": 794
+  },
+  "pdf_sha256": "ce57a32d6e13ed9be7e7629d53ecb8cbac809a8f617b32573fa2d00ebbd9343c",
+  "limits": [
+    "No physical print, real Google Docs import or ATS acceptance test."
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "name": "assignment",
+  "url": "https://github.com/KKWANH/assignment",
+  "fork": false,
+  "scope": "project",
+  "scopeNote": "Repository project; listed technologies describe its code, not a proficiency rating.",
+  "description": "",
+  "updatedAt": "2024-11-26T14:33:23Z",
+  "defaultBranch": "main",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/assignment/blob/d518500ed5708ff0f05e4196d1da3279fbd3ef08/README.md",
+      "bytes": 12,
+      "sha256": "72213d82971964f0fc7baf488bcbd930ee20410d1f834ee0aba81e693e185d21"
+    },
+    {
+      "path": "ParkingLotSimulator/venv.sh",
+      "url": "https://github.com/KKWANH/assignment/blob/d518500ed5708ff0f05e4196d1da3279fbd3ef08/ParkingLotSimulator/venv.sh",
+      "bytes": 118,
+      "sha256": "c3e2b37beb2a0e327b15ed833f9a10e0edaf515c540f451c642e71192e8f2f64"
+    }
+  ],
+  "limitations": [
+    "Raw .py downloads are restricted by the corporate security gateway; accessible documentation/manifests are reviewed instead."
+  ],
+  "technologies": [
+    {
+      "id": "linux",
+      "label": "Linux",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "ParkingLotSimulator/venv.sh",
+          "basis": "inspected source"
+        }
+      ]
+    },
+    {
+      "id": "python",
+      "label": "Python",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "ParkingLotSimulator/main.py",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "ParkingLotSimulator/parking_lot.py",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "ParkingLotSimulator/parking_manager.py",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "shell",
+      "label": "Shell",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "ParkingLotSimulator/venv.sh",
+          "basis": "source-file presence"
+        }
+      ]
+    }
+  ],
+  "commit": "d518500ed5708ff0f05e4196d1da3279fbd3ef08",
+  "fileCount": 9,
+  "treeDepth": "recursive",
+  "status": "reviewed-limited"
+}

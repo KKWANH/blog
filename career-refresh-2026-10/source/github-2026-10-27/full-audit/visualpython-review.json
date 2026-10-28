@@ -1,0 +1,49 @@
+{
+  "name": "visualpython",
+  "url": "https://github.com/KKWANH/visualpython",
+  "fork": true,
+  "scope": "reference",
+  "scopeNote": "Fork/reference; personal implementation is not established by the fork.",
+  "description": "GUI-based Python code generator for data science.",
+  "updatedAt": "2022-07-11T11:45:45Z",
+  "defaultBranch": "main",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/visualpython/blob/944b2184e1bc24ee43ac6ef0cc29dcc8155ed6ed/README.md",
+      "bytes": 3530,
+      "sha256": "f005d70d972224819d8236dcb2aa2910e47efefa9ea9de5041eb27be2bd7b804"
+    }
+  ],
+  "limitations": [
+    "Raw .py downloads are restricted by the corporate security gateway; accessible documentation/manifests are reviewed instead."
+  ],
+  "technologies": [
+    {
+      "id": "javascript",
+      "label": "JavaScript",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "visualpython.js",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "python",
+      "label": "Python",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "__init__.py",
+          "basis": "source-file presence"
+        }
+      ]
+    }
+  ],
+  "commit": "944b2184e1bc24ee43ac6ef0cc29dcc8155ed6ed",
+  "fileCount": 7,
+  "treeDepth": "root",
+  "status": "reviewed-limited"
+}

@@ -1,0 +1,101 @@
+{
+  "name": "ColorSavesLife",
+  "url": "https://github.com/KKWANH/ColorSavesLife",
+  "fork": true,
+  "scope": "project",
+  "scopeNote": "Owner-confirmed team project; challenge award and bounded contribution.",
+  "description": "Color Saves Life! Software enhancing driving exprience for color-disabled people. Plugin-based structure, easy-to-deploy new features.",
+  "updatedAt": "2024-03-23T20:42:45Z",
+  "defaultBranch": "main",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/ColorSavesLife/blob/1687ea95fcce5ef4c552142a33b3db1f35d6bcf5/README.md",
+      "bytes": 10733,
+      "sha256": "f74d169f855da2e5d5c71477125fe28dafcb2496f1599123b8f1720403214d3b"
+    },
+    {
+      "path": ".gitmodules",
+      "url": "https://github.com/KKWANH/ColorSavesLife/blob/1687ea95fcce5ef4c552142a33b3db1f35d6bcf5/.gitmodules",
+      "bytes": 94,
+      "sha256": "dfb628c170b3ea82a28fe2bb3298bffe627dd99c60514c4df51a69297d128573"
+    }
+  ],
+  "limitations": [],
+  "technologies": [
+    {
+      "id": "docker",
+      "label": "Docker",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        }
+      ]
+    },
+    {
+      "id": "linux",
+      "label": "Linux",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        }
+      ]
+    },
+    {
+      "id": "opencv",
+      "label": "OpenCV",
+      "group": "data",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        }
+      ]
+    },
+    {
+      "id": "react",
+      "label": "React",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        }
+      ]
+    },
+    {
+      "id": "ros",
+      "label": "ROS",
+      "group": "systems",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        }
+      ]
+    },
+    {
+      "id": "yolo",
+      "label": "YOLO",
+      "group": "data",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        },
+        {
+          "path": ".gitmodules",
+          "basis": "inspected source"
+        }
+      ]
+    }
+  ],
+  "commit": "1687ea95fcce5ef4c552142a33b3db1f35d6bcf5",
+  "fileCount": 5,
+  "treeDepth": "root",
+  "status": "reviewed"
+}

@@ -1,0 +1,33 @@
+{
+  "routes": {
+    "/": 200,
+    "/about": 200,
+    "/editor": 200,
+    "/projects": 200,
+    "/projects/color-saves-life": 200,
+    "/notes": 200,
+    "/notes/ai": 200,
+    "/notes/kla": 200,
+    "/notes/semiconductor": 200,
+    "/travel": 200,
+    "/travel/manage": 200,
+    "/contact.vcf": 200
+  },
+  "checks": {
+    "production_map_ready": true,
+    "owner_entry_visible_and_disabled_until_setup": true,
+    "management_frame_protection": true,
+    "anonymous_read_only": true,
+    "anonymous_write_denied": true,
+    "unconfigured_auth_503": true,
+    "gallery_stays_unpublished": true,
+    "worker_self_hosted": true,
+    "oauth_authorization_redirect": true,
+    "oauth_state_and_pkce": true,
+    "oauth_callback_pinned": true,
+    "state_cookies_secure_httponly": true,
+    "provider_secret_not_exposed": true,
+    "no_actual_oauth_or_repository_write": true
+  },
+  "passed": true
+}

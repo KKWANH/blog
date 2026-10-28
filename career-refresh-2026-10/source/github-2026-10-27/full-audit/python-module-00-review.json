@@ -1,0 +1,46 @@
+{
+  "name": "python-module-00",
+  "url": "https://github.com/KKWANH/python-module-00",
+  "fork": false,
+  "scope": "learning",
+  "scopeNote": "Learning/team project; inspect the stated contribution and source.",
+  "description": "42's subject about Python's basic setup, variables, data types, functions, ...",
+  "updatedAt": "2023-03-02T12:01:50Z",
+  "defaultBranch": "master",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/python-module-00/blob/73edb6bd526af518b2071355310a523f49091608/README.md",
+      "bytes": 2860,
+      "sha256": "5eac5c374a145b370f4b2fdac9715d80f37819110d87b766984b0f93c3c587cd"
+    }
+  ],
+  "limitations": [
+    "Raw .py downloads are restricted by the corporate security gateway; accessible documentation/manifests are reviewed instead."
+  ],
+  "technologies": [
+    {
+      "id": "python",
+      "label": "Python",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "ex01/exec.py",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "ex02/whois.py",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "ex03/count.py",
+          "basis": "source-file presence"
+        }
+      ]
+    }
+  ],
+  "commit": "73edb6bd526af518b2071355310a523f49091608",
+  "fileCount": 17,
+  "treeDepth": "recursive",
+  "status": "reviewed-limited"
+}

@@ -1,0 +1,118 @@
+{
+  "name": "42_Django_Piscine_Rush00",
+  "url": "https://github.com/KKWANH/42_Django_Piscine_Rush00",
+  "fork": false,
+  "scope": "learning",
+  "scopeNote": "Learning/team project; inspect the stated contribution and source.",
+  "description": "",
+  "updatedAt": "2021-08-03T14:03:15Z",
+  "defaultBranch": "main",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/42_Django_Piscine_Rush00/blob/88e606cb535fe6e043434e01cd4727f9dfd81d1b/README.md",
+      "bytes": 2604,
+      "sha256": "a6995f3d5f83c38114606094304cb636daed199958e2d95ed24b5036fe7c8e79"
+    },
+    {
+      "path": "requirement.txt",
+      "url": "https://github.com/KKWANH/42_Django_Piscine_Rush00/blob/88e606cb535fe6e043434e01cd4727f9dfd81d1b/requirement.txt",
+      "bytes": 102,
+      "sha256": "a8c15d78e5da52b60059f94e8a74c413ab2fcf97030039947f87e0a8a9918ce2"
+    },
+    {
+      "path": "run.sh",
+      "url": "https://github.com/KKWANH/42_Django_Piscine_Rush00/blob/88e606cb535fe6e043434e01cd4727f9dfd81d1b/run.sh",
+      "bytes": 36,
+      "sha256": "be8b2bfed1f55c14a2bc545324549774ae85fb57fd6f554d3edc0b49eb819541"
+    }
+  ],
+  "limitations": [
+    "Raw .py downloads are restricted by the corporate security gateway; accessible documentation/manifests are reviewed instead."
+  ],
+  "technologies": [
+    {
+      "id": "css",
+      "label": "CSS",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "moviemon/static/css/style.css",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "django",
+      "label": "Django",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        },
+        {
+          "path": "requirement.txt",
+          "basis": "declared Python dependency"
+        },
+        {
+          "path": "requirement.txt",
+          "basis": "inspected source"
+        }
+      ]
+    },
+    {
+      "id": "html",
+      "label": "HTML",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "moviemon/static/templates/base.html",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "moviemon/static/templates/battle.html",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "moviemon/static/templates/detail.html",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "python",
+      "label": "Python",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "moviemon/game/__init__.py",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "moviemon/game/admin.py",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "moviemon/game/api.py",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "shell",
+      "label": "Shell",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "run.sh",
+          "basis": "source-file presence"
+        }
+      ]
+    }
+  ],
+  "commit": "88e606cb535fe6e043434e01cd4727f9dfd81d1b",
+  "fileCount": 47,
+  "treeDepth": "recursive",
+  "status": "reviewed-limited"
+}

@@ -1,0 +1,164 @@
+{
+  "name": "blog",
+  "url": "https://github.com/KKWANH/blog",
+  "fork": false,
+  "scope": "profile",
+  "scopeNote": "Owner-directed portfolio with AI-assisted implementation.",
+  "description": "",
+  "updatedAt": "2026-10-27T11:01:25Z",
+  "defaultBranch": "main",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/blog/blob/3f85a90d4d7907c923e4517a4d751bd1fec03605/README.md",
+      "bytes": 4760,
+      "sha256": "0e38f9ef4de9638ad43ee88c116c3af0335610e438a63e898ac0a41c903deee4"
+    },
+    {
+      "path": "package.json",
+      "url": "https://github.com/KKWANH/blog/blob/3f85a90d4d7907c923e4517a4d751bd1fec03605/package.json",
+      "bytes": 2983,
+      "sha256": "2df8726faf3e5984b4995f04f36eec18883496db1a46b032c60408b4bedc9e99"
+    },
+    {
+      "path": "contents/about/index.tsx",
+      "url": "https://github.com/KKWANH/blog/blob/3f85a90d4d7907c923e4517a4d751bd1fec03605/contents/about/index.tsx",
+      "bytes": 505,
+      "sha256": "5f36979216f6b0bd8c74d7de537370e1b78ec186f928fcb650828d35e84e8b45"
+    },
+    {
+      "path": "contents/travel/index.tsx",
+      "url": "https://github.com/KKWANH/blog/blob/3f85a90d4d7907c923e4517a4d751bd1fec03605/contents/travel/index.tsx",
+      "bytes": 655,
+      "sha256": "485bcf2964d9dabae51e17604d7b4f66459eb149d6bdbd761b3df7525a2cb104"
+    },
+    {
+      "path": "contents/notes/ai/index.tsx",
+      "url": "https://github.com/KKWANH/blog/blob/3f85a90d4d7907c923e4517a4d751bd1fec03605/contents/notes/ai/index.tsx",
+      "bytes": 114944,
+      "sha256": "493020c8bd310b0e83a784a2ef65c156ded93e418a5744e9199dc4994508a543"
+    },
+    {
+      "path": "contents/notes/kla/index.tsx",
+      "url": "https://github.com/KKWANH/blog/blob/3f85a90d4d7907c923e4517a4d751bd1fec03605/contents/notes/kla/index.tsx",
+      "bytes": 32580,
+      "sha256": "58bea14a58d62d3c4a2afd863c829f219c22b49bf3b64614c13a0aa9c6a03d82"
+    }
+  ],
+  "limitations": [],
+  "technologies": [
+    {
+      "id": "css",
+      "label": "CSS",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "app/globals.css",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "components/travel/travel-explorer.module.css",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "styles/cinema.css",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "maplibre",
+      "label": "MapLibre",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "package.json",
+          "basis": "direct dependency"
+        }
+      ]
+    },
+    {
+      "id": "nextjs",
+      "label": "Next.js",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        },
+        {
+          "path": "package.json",
+          "basis": "direct dependency"
+        }
+      ]
+    },
+    {
+      "id": "react",
+      "label": "React",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        },
+        {
+          "path": "package.json",
+          "basis": "direct dependency"
+        },
+        {
+          "path": "package.json",
+          "basis": "manifest/configuration"
+        }
+      ]
+    },
+    {
+      "id": "tailwind",
+      "label": "Tailwind CSS",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "package.json",
+          "basis": "direct dependency"
+        },
+        {
+          "path": "package.json",
+          "basis": "manifest/configuration"
+        }
+      ]
+    },
+    {
+      "id": "typescript",
+      "label": "TypeScript",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "app/[...slug]/loading.tsx",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "app/[...slug]/page.tsx",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "app/api/auth/[...nextauth]/route.ts",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "zod",
+      "label": "Zod",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "package.json",
+          "basis": "direct dependency"
+        }
+      ]
+    }
+  ],
+  "commit": "3f85a90d4d7907c923e4517a4d751bd1fec03605",
+  "fileCount": 251,
+  "treeDepth": "recursive",
+  "status": "reviewed"
+}

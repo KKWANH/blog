@@ -1,0 +1,58 @@
+Kwanho Kim
+C++ Software Engineer
+Leuven, Belgium
+kwanho0096@gmail.com
+kwanho.dev
+LinkedIn
+GitHub
+Experience
+KLA
+Aug 2026–Present
+C++ Engineer · ICOS Division · Zeta team · Leuven, Belgium
+Analyse lifter fault recovery across application and controller software; contribute design
+changes and early implementation with team review.
+Work on camera white-balance settings, device readback and displayed values.
+Refactor serial device-control integration and logging in a shared equipment layer.
+Pickit 3D
+Aug 2025–Mar 2026
+Research & Software Engineer · Leuven, Belgium
+Contributed to communication-interface design; built a Python WebSocket client with reconnect,
+backoff and message validation.
+Traced a field communication failure to a port conflict and implemented the fix.
+Bosch
+Jun–Nov 2024
+V2X Communication Intern · Hildesheim, Germany
+Built a V2X demonstrator, defined message interfaces and checked end-to-end behaviour in test
+runs.
+Developed a React operator interface for an eBike safety prototype.
+Technical skills
+Languages
+C++, C, Python; TypeScript, JavaScript
+Systems
+Error recovery, device communication, WebSocket, REST, ROS 1/2
+Tools & UI
+Git, Docker, Linux, Qt/QML, React; Figma / basic UI design
+Selected projects
+Color Saves Life
+BCX 2024
+Python plugin client, simulation integration and presentation. Team: 1st place in the digital.auto &
+mobility challenge.
+C++ containers
+42 project · 2022
+Implemented vector, stack and an AVL-tree-backed map with custom iterators.
+Education & training
+Mechatronics
+Bachelor’s in progress · KNOU Prime College
+2026–Present
+Artificial Intelligence
+Bachelor’s awarded · Korea National Open University
+2025
+Computer Engineering / Business Administration
+Bachelor’s degrees awarded · Academic Credit Bank System
+2020 / 2022
+42 · Software engineering
+Seoul / Wolfsburg · Completed
+SEA:ME · Automotive & Mobility
+Jul 2023–Jun 2024 · Completed
+
+Korean native · English: IELTS Academic 7.5, Mar 2025

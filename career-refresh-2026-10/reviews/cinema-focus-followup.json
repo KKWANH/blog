@@ -1,0 +1,519 @@
+{
+  "layouts": [
+    {
+      "viewport": [
+        390,
+        819
+      ],
+      "actions": {
+        "position": "sticky",
+        "top": 271.640625,
+        "bottom": 338.984375
+      },
+      "width": 390
+    },
+    {
+      "viewport": [
+        390,
+        820
+      ],
+      "actions": {
+        "position": "sticky",
+        "top": 271.640625,
+        "bottom": 338.984375
+      },
+      "width": 390
+    },
+    {
+      "viewport": [
+        390,
+        843
+      ],
+      "actions": {
+        "position": "sticky",
+        "top": 271.640625,
+        "bottom": 338.984375
+      },
+      "width": 390
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "actions": {
+        "position": "sticky",
+        "top": 271.640625,
+        "bottom": 338.984375
+      },
+      "width": 390
+    },
+    {
+      "viewport": [
+        320,
+        568
+      ],
+      "actions": {
+        "position": "static",
+        "top": 289.40625,
+        "bottom": 337.15625
+      },
+      "width": 320
+    },
+    {
+      "viewport": [
+        844,
+        390
+      ],
+      "actions": {
+        "position": "static",
+        "top": 540.203125,
+        "bottom": 587.953125
+      },
+      "width": 844
+    }
+  ],
+  "focus": [
+    {
+      "viewport": [
+        390,
+        819
+      ],
+      "text": "CV (PDF)",
+      "top": 281.4375,
+      "bottom": 329.1875,
+      "hit": true,
+      "inViewport": true
+    },
+    {
+      "viewport": [
+        390,
+        819
+      ],
+      "text": "Email",
+      "top": 281.4375,
+      "bottom": 329.1875,
+      "hit": true,
+      "inViewport": true
+    },
+    {
+      "viewport": [
+        390,
+        819
+      ],
+      "text": "Save contact",
+      "top": 508.484375,
+      "bottom": 552.484375,
+      "hit": true,
+      "inViewport": true
+    },
+    {
+      "viewport": [
+        390,
+        819
+      ],
+      "text": "LinkedIn",
+      "top": 508.484375,
+      "bottom": 552.484375,
+      "hit": true,
+      "inViewport": true
+    },
+    {
+      "viewport": [
+        390,
+        819
+      ],
+      "text": "Recruiter brief",
+      "top": 582.265625,
+      "bottom": 626.265625,
+      "hit": true,
+      "inViewport": true
+    },
+    {
+      "viewport": [
+        390,
+        819
+      ],
+      "text": "Turn the card",
+      "top": 445.296875,
+      "bottom": 489.296875,
+      "hit": true,
+      "inViewport": true
+    },
+    {
+      "viewport": [
+        390,
+        820
+      ],
+      "text": "CV (PDF)",
+      "top": 281.4375,
+      "bottom": 329.1875,
+      "hit": true,
+      "inViewport": true
+    },
+    {
+      "viewport": [
+        390,
+        820
+      ],
+      "text": "Email",
+      "top": 281.4375,
+      "bottom": 329.1875,
+      "hit": true,
+      "inViewport": true
+    },
+    {
+      "viewport": [
+        390,
+        820
+      ],
+      "text": "Save contact",
+      "top": 509.484375,
+      "bottom": 553.484375,
+      "hit": true,
+      "inViewport": true
+    },
+    {
+      "viewport": [
+        390,
+        820
+      ],
+      "text": "LinkedIn",
+      "top": 509.484375,
+      "bottom": 553.484375,
+      "hit": true,
+      "inViewport": true
+    },
+    {
+      "viewport": [
+        390,
+        820
+      ],
+      "text": "Recruiter brief",
+      "top": 583.265625,
+      "bottom": 627.265625,
+      "hit": true,
+      "inViewport": true
+    },
+    {
+      "viewport": [
+        390,
+        820
+      ],
+      "text": "Turn the card",
+      "top": 446.296875,
+      "bottom": 490.296875,
+      "hit": true,
+      "inViewport": true
+    },
+    {
+      "viewport": [
+        390,
+        843
+      ],
+      "text": "CV (PDF)",
+      "top": 281.4375,
+      "bottom": 329.1875,
+      "hit": true,
+      "inViewport": true
+    },
+    {
+      "viewport": [
+        390,
+        843
+      ],
+      "text": "Email",
+      "top": 281.4375,
+      "bottom": 329.1875,
+      "hit": true,
+      "inViewport": true
+    },
+    {
+      "viewport": [
+        390,
+        843
+      ],
+      "text": "Save contact",
+      "top": 520.484375,
+      "bottom": 564.484375,
+      "hit": true,
+      "inViewport": true
+    },
+    {
+      "viewport": [
+        390,
+        843
+      ],
+      "text": "LinkedIn",
+      "top": 520.484375,
+      "bottom": 564.484375,
+      "hit": true,
+      "inViewport": true
+    },
+    {
+      "viewport": [
+        390,
+        843
+      ],
+      "text": "Recruiter brief",
+      "top": 594.265625,
+      "bottom": 638.265625,
+      "hit": true,
+      "inViewport": true
+    },
+    {
+      "viewport": [
+        390,
+        843
+      ],
+      "text": "Turn the card",
+      "top": 457.296875,
+      "bottom": 501.296875,
+      "hit": true,
+      "inViewport": true
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "text": "CV (PDF)",
+      "top": 281.4375,
+      "bottom": 329.1875,
+      "hit": true,
+      "inViewport": true
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "text": "Email",
+      "top": 281.4375,
+      "bottom": 329.1875,
+      "hit": true,
+      "inViewport": true
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "text": "Save contact",
+      "top": 521.484375,
+      "bottom": 565.484375,
+      "hit": true,
+      "inViewport": true
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "text": "LinkedIn",
+      "top": 521.484375,
+      "bottom": 565.484375,
+      "hit": true,
+      "inViewport": true
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "text": "Recruiter brief",
+      "top": 595.265625,
+      "bottom": 639.265625,
+      "hit": true,
+      "inViewport": true
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "text": "Turn the card",
+      "top": 458.296875,
+      "bottom": 502.296875,
+      "hit": true,
+      "inViewport": true
+    },
+    {
+      "viewport": [
+        320,
+        568
+      ],
+      "text": "CV (PDF)",
+      "top": 289.40625,
+      "bottom": 337.15625,
+      "hit": true,
+      "inViewport": true
+    },
+    {
+      "viewport": [
+        320,
+        568
+      ],
+      "text": "Email",
+      "top": 289.40625,
+      "bottom": 337.15625,
+      "hit": true,
+      "inViewport": true
+    },
+    {
+      "viewport": [
+        320,
+        568
+      ],
+      "text": "Save contact",
+      "top": 383.25,
+      "bottom": 427.25,
+      "hit": true,
+      "inViewport": true
+    },
+    {
+      "viewport": [
+        320,
+        568
+      ],
+      "text": "LinkedIn",
+      "top": 383.25,
+      "bottom": 427.25,
+      "hit": true,
+      "inViewport": true
+    },
+    {
+      "viewport": [
+        320,
+        568
+      ],
+      "text": "Recruiter brief",
+      "top": 457.03125,
+      "bottom": 501.03125,
+      "hit": true,
+      "inViewport": true
+    },
+    {
+      "viewport": [
+        320,
+        568
+      ],
+      "text": "Turn the card",
+      "top": 320.0625,
+      "bottom": 364.0625,
+      "hit": true,
+      "inViewport": true
+    },
+    {
+      "viewport": [
+        844,
+        390
+      ],
+      "text": "CV (PDF)",
+      "top": 221.203125,
+      "bottom": 268.953125,
+      "hit": true,
+      "inViewport": true
+    },
+    {
+      "viewport": [
+        844,
+        390
+      ],
+      "text": "Email",
+      "top": 221.203125,
+      "bottom": 268.953125,
+      "hit": true,
+      "inViewport": true
+    },
+    {
+      "viewport": [
+        844,
+        390
+      ],
+      "text": "Save contact",
+      "top": 278.546875,
+      "bottom": 322.546875,
+      "hit": true,
+      "inViewport": true
+    },
+    {
+      "viewport": [
+        844,
+        390
+      ],
+      "text": "LinkedIn",
+      "top": 278.546875,
+      "bottom": 322.546875,
+      "hit": true,
+      "inViewport": true
+    },
+    {
+      "viewport": [
+        844,
+        390
+      ],
+      "text": "Recruiter brief",
+      "top": 346.328125,
+      "bottom": 390.328125,
+      "hit": true,
+      "inViewport": false
+    },
+    {
+      "viewport": [
+        844,
+        390
+      ],
+      "text": "Turn the card",
+      "top": 223.515625,
+      "bottom": 267.515625,
+      "hit": true,
+      "inViewport": true
+    }
+  ],
+  "revealed_link": [
+    {
+      "viewport": [
+        390,
+        819
+      ],
+      "text": "Read the field note \u2197"
+    },
+    {
+      "viewport": [
+        390,
+        820
+      ],
+      "text": "Read the field note \u2197"
+    },
+    {
+      "viewport": [
+        390,
+        843
+      ],
+      "text": "Read the field note \u2197"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "text": "Read the field note \u2197"
+    },
+    {
+      "viewport": [
+        320,
+        568
+      ],
+      "text": "Read the field note \u2197"
+    },
+    {
+      "viewport": [
+        844,
+        390
+      ],
+      "text": "Read the field note \u2197"
+    }
+  ],
+  "passed": false
+}

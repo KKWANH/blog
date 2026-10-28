@@ -1,0 +1,18 @@
+{
+  "actor": "Devin",
+  "observed_at": "2026-10-27",
+  "workspace": "C:/Projects/blog",
+  "code_commit": "36acab8191fdbe1c3a2043ce6b4c7a60f26f0d18",
+  "candidate_commit": "e332b7fdbcf655f893c2ea29b0de05ba0da111e5",
+  "owner_preference_entries": 44,
+  "owner_preferences_validated": true,
+  "visible_profile_skills": 40,
+  "rated_profile_skills": 39,
+  "candidate_build": "Native fixture checks, TypeScript and production build passed after the owner-settings commit.",
+  "remote_main_last_read": "3f85a90d4d7907c923e4517a4d751bd1fec03605",
+  "remote_mutation_performed": false,
+  "status": "Automatic approval review rejected the requested GitHub write before execution.",
+  "reason": "GitHub publish action requires an exact request in the current prompt.",
+  "instruction_source": "C:/Users/kwanhki/AppData/Roaming/devin/AGENTS.md",
+  "next_action": "A current explicit request to publish blog main, followed by read-only deployment verification."
+}

@@ -1,0 +1,23 @@
+# Requirement: Native Hi-5e (UDP) Support
+
+## Source
+Email thread "UDP to TCP for Pickit Version 4.0". Customer: EZ Robotics via Pickit KR.
+
+## Problem
+Hyundai Hi-5e robot uses UDP. Current Pickit Socket Interface is TCP-only. Workaround requires manual Python script installation.
+
+## Scope
+- Integrate UDP support natively into Pickit Socket Interface
+- Maintain TCP compatibility for all other robots
+- Eliminate manual file-copy workaround
+
+## Deliverables
+- UDP bridge component in standard Pickit
+- Configuration to enable/disable UDP
+- PR with tests
+- Partner verification via KR support
+
+## Constraints
+- v4.0.0 is frozen; target next patch release
+- Must not affect existing TCP integrations
+- UDP port 5002 (not 5001, to avoid conflict)

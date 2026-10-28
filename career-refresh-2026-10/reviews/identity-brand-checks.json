@@ -1,0 +1,104 @@
+{
+  "checks": {
+    "home_logo_targets_matching_role": true
+  },
+  "reflow": [
+    {
+      "route": "/",
+      "large": false,
+      "width": 320,
+      "content": 320
+    },
+    {
+      "route": "/",
+      "large": false,
+      "width": 390,
+      "content": 390
+    },
+    {
+      "route": "/",
+      "large": false,
+      "width": 768,
+      "content": 768
+    },
+    {
+      "route": "/",
+      "large": false,
+      "width": 1440,
+      "content": 1440
+    },
+    {
+      "route": "/",
+      "large": true,
+      "width": 320,
+      "content": 320
+    },
+    {
+      "route": "/",
+      "large": true,
+      "width": 390,
+      "content": 390
+    },
+    {
+      "route": "/",
+      "large": true,
+      "width": 768,
+      "content": 768
+    },
+    {
+      "route": "/",
+      "large": true,
+      "width": 1440,
+      "content": 1440
+    },
+    {
+      "route": "/about",
+      "large": false,
+      "width": 320,
+      "content": 320
+    },
+    {
+      "route": "/about",
+      "large": false,
+      "width": 390,
+      "content": 390
+    },
+    {
+      "route": "/about",
+      "large": false,
+      "width": 768,
+      "content": 768
+    },
+    {
+      "route": "/about",
+      "large": false,
+      "width": 1440,
+      "content": 1440
+    },
+    {
+      "route": "/about",
+      "large": true,
+      "width": 320,
+      "content": 320
+    },
+    {
+      "route": "/about",
+      "large": true,
+      "width": 390,
+      "content": 390
+    },
+    {
+      "route": "/about",
+      "large": true,
+      "width": 768,
+      "content": 768
+    },
+    {
+      "route": "/about",
+      "large": true,
+      "width": 1440,
+      "content": 1440
+    }
+  ],
+  "passed": true
+}

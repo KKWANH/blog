@@ -1,0 +1,89 @@
+{
+  "name": "BoncheonAlgorithm",
+  "url": "https://github.com/KKWANH/BoncheonAlgorithm",
+  "fork": false,
+  "scope": "learning",
+  "scopeNote": "Learning/team project; inspect the stated contribution and source.",
+  "description": "봉천 산악회의 알고리즘 뿌수기 지부!!",
+  "updatedAt": "2022-06-04T07:09:06Z",
+  "defaultBranch": "main",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/BoncheonAlgorithm/blob/1b0696de118c53252e0d0c8ae1ac3090f76daffe/README.md",
+      "bytes": 1542,
+      "sha256": "84970c9aff56e5e966c3eae6c5b2fad7bfee403a9a67952ce8aa571942539d2d"
+    },
+    {
+      "path": "week1/leetcode_547/joopark.cpp",
+      "url": "https://github.com/KKWANH/BoncheonAlgorithm/blob/1b0696de118c53252e0d0c8ae1ac3090f76daffe/week1/leetcode_547/joopark.cpp",
+      "bytes": 1859,
+      "sha256": "0145e7457461ffd6956e9ab4ae7163ebc56a94008f0c46a67220cf574362426e"
+    },
+    {
+      "path": "week1/leetcode_769/joopark.cpp",
+      "url": "https://github.com/KKWANH/BoncheonAlgorithm/blob/1b0696de118c53252e0d0c8ae1ac3090f76daffe/week1/leetcode_769/joopark.cpp",
+      "bytes": 1750,
+      "sha256": "23b59a90023dfe5fc346dcd0ee5e780a410bc54506e7fd0fd029d855e3372aab"
+    },
+    {
+      "path": "week2/leetcode_139/joopark.cpp",
+      "url": "https://github.com/KKWANH/BoncheonAlgorithm/blob/1b0696de118c53252e0d0c8ae1ac3090f76daffe/week2/leetcode_139/joopark.cpp",
+      "bytes": 1438,
+      "sha256": "e5c1c87941c6276502af64f101424e80ccac6af259d1f8d8260fc25d41b111e3"
+    },
+    {
+      "path": "week3/leetcode_392/joopark.cpp",
+      "url": "https://github.com/KKWANH/BoncheonAlgorithm/blob/1b0696de118c53252e0d0c8ae1ac3090f76daffe/week3/leetcode_392/joopark.cpp",
+      "bytes": 270,
+      "sha256": "bbfccfbe44ad1f826abd749a60b5a1d34745257ff63005acc1953f7932cc5d90"
+    }
+  ],
+  "limitations": [
+    "Raw .py downloads are restricted by the corporate security gateway; accessible documentation/manifests are reviewed instead."
+  ],
+  "technologies": [
+    {
+      "id": "cpp",
+      "label": "C++",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "week1/backjoon_1033/joopark.cpp",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "week1/leetcode_547/joopark.cpp",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "week1/leetcode_769/joopark.cpp",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "python",
+      "label": "Python",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "week1/leetcode_547/kkim.py",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "week1/leetcode_547/spark.py",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "week1/leetcode_769/kkim.py",
+          "basis": "source-file presence"
+        }
+      ]
+    }
+  ],
+  "commit": "1b0696de118c53252e0d0c8ae1ac3090f76daffe",
+  "fileCount": 19,
+  "treeDepth": "recursive",
+  "status": "reviewed-limited"
+}

@@ -1,0 +1,117 @@
+{
+  "probe": {
+    "box": {
+      "x": 481.74554443359375,
+      "y": 448.412109375,
+      "width": 165.94085693359375,
+      "height": 59.38934326171875,
+      "top": 448.412109375,
+      "right": 647.6864013671875,
+      "bottom": 507.80145263671875,
+      "left": 481.74554443359375
+    },
+    "hit": "<button class=\"map-node-face\" type=\"button\" tabindex=\"0\" data-node-button=\"group:languages\" aria-pressed=\"true\" aria-expanded=\"true\" aria-label=\"Collapse Languages\"><span><strong>Languages</strong><small>7 technologies</small></span></button>",
+    "group": "group:languages"
+  },
+  "before": [
+    {
+      "x": -430,
+      "y": -274
+    },
+    {
+      "x": -740,
+      "y": -507
+    }
+  ],
+  "after": [
+    {
+      "x": -367.026,
+      "y": -245.375
+    },
+    {
+      "x": -677.026,
+      "y": -478.375
+    }
+  ],
+  "zoom": "0.873",
+  "scroll": 935,
+  "events": [
+    {
+      "kind": "pointermove",
+      "target": "group:languages",
+      "clientX": 564.7159423828125,
+      "clientY": 478.1067810058594,
+      "button": -1
+    },
+    {
+      "kind": "pointerdown",
+      "target": "group:languages",
+      "clientX": 564.7159423828125,
+      "clientY": 478.1067810058594,
+      "button": 0
+    },
+    {
+      "kind": "pointermove",
+      "target": null,
+      "clientX": 571.5909423828125,
+      "clientY": 481.2317810058594,
+      "button": -1
+    },
+    {
+      "kind": "pointermove",
+      "target": null,
+      "clientX": 578.4659423828125,
+      "clientY": 484.3567810058594,
+      "button": -1
+    },
+    {
+      "kind": "pointermove",
+      "target": null,
+      "clientX": 585.3409423828125,
+      "clientY": 487.4817810058594,
+      "button": -1
+    },
+    {
+      "kind": "pointermove",
+      "target": null,
+      "clientX": 592.2159423828125,
+      "clientY": 490.6067810058594,
+      "button": -1
+    },
+    {
+      "kind": "pointermove",
+      "target": null,
+      "clientX": 599.0909423828125,
+      "clientY": 493.7317810058594,
+      "button": -1
+    },
+    {
+      "kind": "pointermove",
+      "target": null,
+      "clientX": 605.9659423828125,
+      "clientY": 496.8567810058594,
+      "button": -1
+    },
+    {
+      "kind": "pointermove",
+      "target": null,
+      "clientX": 612.8409423828125,
+      "clientY": 499.9817810058594,
+      "button": -1
+    },
+    {
+      "kind": "pointermove",
+      "target": null,
+      "clientX": 619.7159423828125,
+      "clientY": 503.1067810058594,
+      "button": -1
+    },
+    {
+      "kind": "pointerup",
+      "target": null,
+      "clientX": 619.7159423828125,
+      "clientY": 503.1067810058594,
+      "button": 0
+    }
+  ]
+}

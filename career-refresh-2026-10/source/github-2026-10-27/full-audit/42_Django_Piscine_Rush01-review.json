@@ -1,0 +1,192 @@
+{
+  "name": "42_Django_Piscine_Rush01",
+  "url": "https://github.com/KKWANH/42_Django_Piscine_Rush01",
+  "fork": false,
+  "scope": "learning",
+  "scopeNote": "Learning/team project; inspect the stated contribution and source.",
+  "description": "",
+  "updatedAt": "2021-08-10T13:06:54Z",
+  "defaultBranch": "main",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/42_Django_Piscine_Rush01/blob/c22a33cda3b7f1579d1a8e34c44c81f8b2b64dbe/README.md",
+      "bytes": 26,
+      "sha256": "5d8664285d582a1ec54ca6eab5aabf952f2ac2d70c829a53b45d976e05ecff14"
+    },
+    {
+      "path": "Rush01_Site/Site.egg-info/requires.txt",
+      "url": "https://github.com/KKWANH/42_Django_Piscine_Rush01/blob/c22a33cda3b7f1579d1a8e34c44c81f8b2b64dbe/Rush01_Site/Site.egg-info/requires.txt",
+      "bytes": 12,
+      "sha256": "54e45a6e99454a6e1f59eb36c1816e10b888464f232d2ae4ff8c4a114a6bc530"
+    },
+    {
+      "path": "Rush01_Site/requirement.txt",
+      "url": "https://github.com/KKWANH/42_Django_Piscine_Rush01/blob/c22a33cda3b7f1579d1a8e34c44c81f8b2b64dbe/Rush01_Site/requirement.txt",
+      "bytes": 96,
+      "sha256": "12c5e61ab634abf678551f996d80723c3f0da249bf63c0f19e5e4bed71cf7e37"
+    },
+    {
+      "path": "Rush01_Site/Dockerfile",
+      "url": "https://github.com/KKWANH/42_Django_Piscine_Rush01/blob/c22a33cda3b7f1579d1a8e34c44c81f8b2b64dbe/Rush01_Site/Dockerfile",
+      "bytes": 257,
+      "sha256": "491c540565f3be6fabe82114b0158bb264fa85a91d60bf7430ba5ca631afef4a"
+    },
+    {
+      "path": "Rush01_Site/docker-compose.yml",
+      "url": "https://github.com/KKWANH/42_Django_Piscine_Rush01/blob/c22a33cda3b7f1579d1a8e34c44c81f8b2b64dbe/Rush01_Site/docker-compose.yml",
+      "bytes": 825,
+      "sha256": "e852f3f2423c592d3507f4aaefda9863078eb6cc6e63dc6a4bf8ebbe9bc03dda"
+    },
+    {
+      "path": "run.sh",
+      "url": "https://github.com/KKWANH/42_Django_Piscine_Rush01/blob/c22a33cda3b7f1579d1a8e34c44c81f8b2b64dbe/run.sh",
+      "bytes": 59,
+      "sha256": "29d626cc32b7acacf78fb714bd3dfe61c3ba88556a341323f0827a1b33a7f0c2"
+    }
+  ],
+  "limitations": [
+    "Raw .py downloads are restricted by the corporate security gateway; accessible documentation/manifests are reviewed instead."
+  ],
+  "technologies": [
+    {
+      "id": "compose",
+      "label": "Docker Compose",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "Rush01_Site/docker-compose.yml",
+          "basis": "service configuration"
+        },
+        {
+          "path": "run.sh",
+          "basis": "inspected source"
+        }
+      ]
+    },
+    {
+      "id": "css",
+      "label": "CSS",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "Rush01_Site/Site/static/Site/rush01.css",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "Rush01_Site/static/Site/rush01.css",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "django",
+      "label": "Django",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "Rush01_Site/Site.egg-info/requires.txt",
+          "basis": "declared Python dependency"
+        },
+        {
+          "path": "Rush01_Site/Site.egg-info/requires.txt",
+          "basis": "inspected source"
+        },
+        {
+          "path": "Rush01_Site/requirement.txt",
+          "basis": "declared Python dependency"
+        }
+      ]
+    },
+    {
+      "id": "docker",
+      "label": "Docker",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "Rush01_Site/Dockerfile",
+          "basis": "container configuration"
+        },
+        {
+          "path": "run.sh",
+          "basis": "inspected source"
+        }
+      ]
+    },
+    {
+      "id": "html",
+      "label": "HTML",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "Rush01_Site/Site/templates/Site/base/base.html",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "Rush01_Site/Site/templates/Site/base/header.html",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "Rush01_Site/Site/templates/Site/view/discussion_detail.html",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "nginx",
+      "label": "NGINX",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "Rush01_Site/docker-compose.yml",
+          "basis": "manifest/configuration"
+        }
+      ]
+    },
+    {
+      "id": "pillow",
+      "label": "Pillow",
+      "group": "data",
+      "evidence": [
+        {
+          "path": "Rush01_Site/requirement.txt",
+          "basis": "declared Python dependency"
+        }
+      ]
+    },
+    {
+      "id": "python",
+      "label": "Python",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "Rush01_Site/Rush01/__init__.py",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "Rush01_Site/Rush01/asgi.py",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "Rush01_Site/Rush01/settings.py",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "shell",
+      "label": "Shell",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "run.sh",
+          "basis": "source-file presence"
+        }
+      ]
+    }
+  ],
+  "commit": "c22a33cda3b7f1579d1a8e34c44c81f8b2b64dbe",
+  "fileCount": 64,
+  "treeDepth": "cached-recursive",
+  "status": "reviewed-limited"
+}

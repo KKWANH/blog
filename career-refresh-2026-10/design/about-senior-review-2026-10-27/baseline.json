@@ -1,0 +1,12 @@
+{
+  "files": {
+    "contents/about/skill-profile.json": "415a07b7a1f01c7e26f3c4a921b140f33acf5776ec952fc0b8d5a6c0486e5d6d",
+    "contents/about/skill-definitions.json": "e74e3dc31ee1e78c8f1be6c923d2be84f2c70cc790b3f210e32f4f2e0d8cee19",
+    "contents/travel/places.json": "c986b6f50805a3820c8136c4134c29ebfe5c4f4403486d1e4c402ef0180fd2c4",
+    "public/CV.pdf": "b563aa583f7e354237d7830f3d75679d27c67a44bc1ec1008d15633064669a15"
+  },
+  "origin": "https://github.com/KKWANH/blog",
+  "head": "e332b7fdbcf655f893c2ea29b0de05ba0da111e5",
+  "local_admin_configured": true,
+  "remote_main": "3f85a90d4d7907c923e4517a4d751bd1fec03605"
+}

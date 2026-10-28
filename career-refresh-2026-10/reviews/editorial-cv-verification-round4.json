@@ -1,0 +1,43 @@
+{
+  "checks": {
+    "fonts_loaded": true,
+    "layout_guides_toggle": true,
+    "copy_cv_text": true,
+    "mobile_fit": true,
+    "full_size_toggle": true,
+    "review_round_1": true,
+    "review_round_2": true,
+    "review_round_3": true,
+    "review_round_4": true,
+    "one_a4_page": true,
+    "ink_margins": true,
+    "embedded_fonts": true,
+    "unicode_maps": true,
+    "reading_order": true,
+    "six_links": true,
+    "scope_preserved": true,
+    "no_ariadne": true,
+    "md_sync": true,
+    "tagged_pdf": true
+  },
+  "errors": [],
+  "passed": true,
+  "ink_bounds_pt": {
+    "left": 51.0,
+    "top": 48.5,
+    "right": 544.5,
+    "bottom": 792.5
+  },
+  "font_names": [
+    "AAAAAA+Manrope-Bold",
+    "BAAAAA+Inter-Medium",
+    "CAAAAA+Inter-Regular",
+    "DAAAAA+Inter-Bold",
+    "EAAAAA+Inter-SemiBold"
+  ],
+  "pdf_sha256": "5acd1d1e3bbfe546f76eb948b1a5be2675dda384cfbba771653655322bb64a0e",
+  "notes": [
+    "Rendered-ink margins checked; typographic bounding boxes are not ink bounds.",
+    "No actual Google Docs import, physical print or ATS ingestion claimed."
+  ]
+}

@@ -1,0 +1,51 @@
+[
+  {
+    "file": "django.svg",
+    "source": "https://cdn.jsdelivr.net/npm/simple-icons@16.36.0/icons/django.svg",
+    "license": "CC0-1.0"
+  },
+  {
+    "file": "numpy.svg",
+    "source": "https://cdn.jsdelivr.net/npm/simple-icons@16.36.0/icons/numpy.svg",
+    "license": "CC0-1.0"
+  },
+  {
+    "file": "pandas.svg",
+    "source": "https://cdn.jsdelivr.net/npm/simple-icons@16.36.0/icons/pandas.svg",
+    "license": "CC0-1.0"
+  },
+  {
+    "file": "matplotlib.svg",
+    "status": 404
+  },
+  {
+    "file": "scikitlearn.svg",
+    "source": "https://cdn.jsdelivr.net/npm/simple-icons@16.36.0/icons/scikitlearn.svg",
+    "license": "CC0-1.0"
+  },
+  {
+    "file": "unity.svg",
+    "source": "https://cdn.jsdelivr.net/npm/simple-icons@16.36.0/icons/unity.svg",
+    "license": "CC0-1.0"
+  },
+  {
+    "file": "html5.svg",
+    "source": "https://cdn.jsdelivr.net/npm/simple-icons@16.36.0/icons/html5.svg",
+    "license": "CC0-1.0"
+  },
+  {
+    "file": "css.svg",
+    "source": "https://cdn.jsdelivr.net/npm/simple-icons@16.36.0/icons/css.svg",
+    "license": "CC0-1.0"
+  },
+  {
+    "file": "raspberrypi.svg",
+    "source": "https://cdn.jsdelivr.net/npm/simple-icons@16.36.0/icons/raspberrypi.svg",
+    "license": "CC0-1.0"
+  },
+  {
+    "file": "gnubash.svg",
+    "source": "https://cdn.jsdelivr.net/npm/simple-icons@16.36.0/icons/gnubash.svg",
+    "license": "CC0-1.0"
+  }
+]

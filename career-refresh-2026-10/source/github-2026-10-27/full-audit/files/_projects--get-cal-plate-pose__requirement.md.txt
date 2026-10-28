@@ -1,0 +1,20 @@
+# Requirement: Websocket API - Calibration Board Detection (PI-6871)
+
+## Source
+Jira PI-6871. Customer: EZ Robotics (BMS project, led by Mo).
+
+## Problem
+Partner needs to trigger calibration board detection once via websocket, get the pose, then return to normal detection. Current example leaves system in calibration mode indefinitely.
+
+## Scope
+- Create example program: detect calibration board once, restore state, trigger normal detection
+- External system calls via websocket API
+
+## Key resources
+- projects/PI-6871/PickitWebsocketAPI.md
+- projects/PI-6871/example_requests.py, get_cal_plate_pose.py
+- pickit-scripts/pickit_websocket_api/
+- Test system: pickit-test-003
+
+## Status
+In progress.

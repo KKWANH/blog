@@ -1,0 +1,15 @@
+# Requirement: Frontend Support for 4.0b Processor
+
+## Source
+Related PR: https://github.com/Intermodalics/pickit/pull/11089
+
+## Problem
+Pickit 4 processor_4.0b (Advantech, 8 ports) not yet supported in frontend. 3-port and 6-port already supported.
+
+## Scope
+- Add 8-port processor support to frontend
+- Follow pattern from PR #11089 (which added 3-port and 6-port support)
+- Key file: src/pickit_system_configurator/scripts/network_configurator.py
+
+## Status
+Started. Branch from PR #11089 branch. record.md empty.

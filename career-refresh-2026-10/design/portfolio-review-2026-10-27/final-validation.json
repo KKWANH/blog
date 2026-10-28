@@ -1,0 +1,27 @@
+{
+  "map": {
+    "passed": true,
+    "checks": 36
+  },
+  "preferences": {
+    "passed": true,
+    "checks": 26
+  },
+  "stationery": {
+    "passed": true,
+    "checks": 51
+  },
+  "admin": {
+    "passed": true,
+    "checks": 24
+  },
+  "production": {
+    "passed": true,
+    "checks": 26
+  },
+  "cv": {
+    "passed": true,
+    "checks": 14
+  },
+  "diff_check_passed": true
+}

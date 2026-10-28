@@ -1,0 +1,21 @@
+# Requirement: Timezone Conversion for Log Downloads
+
+## Source
+Jira PI-7319 and follow-up upload feature.
+
+## Problem
+UI displays logs in browser timezone, but downloaded logs use the system bootstrap timezone. Users need to select download timezone.
+
+## Scope
+1. (Done) Download flow: user selects timezone, CSV timestamps are converted.
+2. (Done) Upload flow: user uploads existing log, converts to chosen timezone.
+
+## Deliverables
+- UI timezone selector for log downloads
+- Upload-and-convert flow for existing log files
+- i18n support (en, kr, de, jp)
+
+## Constraints
+- Backward compatible: no timezone param = no conversion
+- C++ log generation code untouched
+- Native JS Intl API only (no external library)

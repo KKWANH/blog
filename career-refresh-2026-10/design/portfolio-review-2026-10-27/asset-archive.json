@@ -1,0 +1,135 @@
+{
+  "archive": "C:\\Projects\\career-refresh-2026-10\\source\\asset-archive-2026-10-27\\SpoqaHanSansNeo_OTF_original",
+  "files": [
+    {
+      "file": "LICENSE",
+      "bytes": 4656,
+      "sha256": "5e7aab0d8e5304e061ba833fe429f84d45aef066fbdfe1b2dab42d431004fcce"
+    },
+    {
+      "file": "SpoqaHanSansNeo-Bold.otf",
+      "bytes": 12865536,
+      "sha256": "47a25f01c527b605b65a83de3f578ea5eba154bdc37fe0846b9deb02318a777e"
+    },
+    {
+      "file": "SpoqaHanSansNeo-Light.otf",
+      "bytes": 12546872,
+      "sha256": "a2e8ce410c791c0826f8f0f8a39b41b8ba82df2fc2ca304c31821deb8112817f"
+    },
+    {
+      "file": "SpoqaHanSansNeo-Medium.otf",
+      "bytes": 12768364,
+      "sha256": "c593d5a1f3eeeaf6d8a7e4774f04fe58a95ce41c04fee71359ecf7175e0014f2"
+    },
+    {
+      "file": "SpoqaHanSansNeo-Regular.otf",
+      "bytes": 12640720,
+      "sha256": "ba5aeca436d91553cb664070afa66f0715d81f59fee6e2a0c72cc7589b4937f4"
+    },
+    {
+      "file": "SpoqaHanSansNeo-Thin.otf",
+      "bytes": 12554964,
+      "sha256": "448a01c35f46cf34a7dc7cc6f12aa6e5f5a47265366d390ef10a1f39bb975c70"
+    }
+  ],
+  "deployment_bytes_removed": 68244468,
+  "basis": "No code/CSS reference to the original OTF directory; active Korean subset retained.",
+  "unused_subset_archive": "C:\\Projects\\career-refresh-2026-10\\source\\asset-archive-2026-10-27\\unused-subset-variants",
+  "unused_subset_files": [
+    {
+      "file": "SpoqaHanSansNeo-Bold.eot",
+      "bytes": 215353,
+      "sha256": "37999bcfe7044f7193c36413d1b9451dcdd3d5848105e33080d391ec979ee684"
+    },
+    {
+      "file": "SpoqaHanSansNeo-Bold.otf",
+      "bytes": 350844,
+      "sha256": "1016efb1b1a04c59d7b7d5927878c2e444e25ddbb2df6435168aecb24164723f"
+    },
+    {
+      "file": "SpoqaHanSansNeo-Bold.woff",
+      "bytes": 214696,
+      "sha256": "3c3afc9b2b8b443c8bdebfd5b138367082ea3b2ef27a2b72e7e49bdeb61060a1"
+    },
+    {
+      "file": "SpoqaHanSansNeo-Bold.woff2",
+      "bytes": 183708,
+      "sha256": "c85faa3fa812cae9fad6eadc662b0e68c84f010b61c5c0ebc769a7b43e0fcd4d"
+    },
+    {
+      "file": "SpoqaHanSansNeo-Light.eot",
+      "bytes": 330751,
+      "sha256": "24dda0cd71b6374f94eeaa8bc3be6dff902816918f208713f14edafdc3c0e1a7"
+    },
+    {
+      "file": "SpoqaHanSansNeo-Light.otf",
+      "bytes": 352820,
+      "sha256": "c1c301b0698f223e6e0bb3b5ef6e4f2425b590814bd01eadfa8541209fede497"
+    },
+    {
+      "file": "SpoqaHanSansNeo-Light.woff",
+      "bytes": 420104,
+      "sha256": "16ea156a3047ec63a40ced681b00303c6a8ab889da6d67d5a4f9980caa4bd046"
+    },
+    {
+      "file": "SpoqaHanSansNeo-Light.woff2",
+      "bytes": 175620,
+      "sha256": "ab4f571e3f0d6429f32499639dd590b842f3cc406b12590b0378954a201c7fbc"
+    },
+    {
+      "file": "SpoqaHanSansNeo-Medium.eot",
+      "bytes": 211936,
+      "sha256": "b593690cd958d560b50cc72d148d4a40e25bff0a611ad5f02b1cd7fa03cd121d"
+    },
+    {
+      "file": "SpoqaHanSansNeo-Medium.otf",
+      "bytes": 345844,
+      "sha256": "9add9d4caa2890cd54b446b251a179a1cf1c724db99092737b831b982654a16d"
+    },
+    {
+      "file": "SpoqaHanSansNeo-Medium.woff",
+      "bytes": 210740,
+      "sha256": "fa68a4fec8953d757c8fcaf4121f30b6eccb3fc95e417d62b821a3bee55ca44f"
+    },
+    {
+      "file": "SpoqaHanSansNeo-Medium.woff2",
+      "bytes": 179960,
+      "sha256": "7f98c688a6a270ccbc2b1dbf96bd89f40174c4b859edd8aa6d3c885d8346ad12"
+    },
+    {
+      "file": "SpoqaHanSansNeo-Regular.eot",
+      "bytes": 212642,
+      "sha256": "3ddb97ca0562da49a9bc0a2680c1d7b08880222edf9dfdfee5a8e338fc8a6028"
+    },
+    {
+      "file": "SpoqaHanSansNeo-Regular.otf",
+      "bytes": 349036,
+      "sha256": "cd299687ead5c64fcbefa697191a7dcc643a61febcf2c1a3b824b21facab1f56"
+    },
+    {
+      "file": "SpoqaHanSansNeo-Regular.woff",
+      "bytes": 211628,
+      "sha256": "d8fe91dd13094ddc9ab6fe078d915fb22b49b75422998ad784291db46ee89dbf"
+    },
+    {
+      "file": "SpoqaHanSansNeo-Thin.eot",
+      "bytes": 190034,
+      "sha256": "244c3b0263068d721a82d600c143925b41aec8be74a160f1d79a6dd256d09c48"
+    },
+    {
+      "file": "SpoqaHanSansNeo-Thin.otf",
+      "bytes": 355144,
+      "sha256": "612e168bf0816e4a57ac5a94260482673fb849cf09f2c5df0b0df5890ac85b68"
+    },
+    {
+      "file": "SpoqaHanSansNeo-Thin.woff",
+      "bytes": 191584,
+      "sha256": "917ac7458c0c6c3a9c2558344baa8c41898dc15aa246d5b299ef6cc6aff0be7c"
+    },
+    {
+      "file": "SpoqaHanSansNeo-Thin.woff2",
+      "bytes": 160912,
+      "sha256": "6740c25430d6a25c5de198d1493e49beda3464982ff58a310c8cf27d66f61a89"
+    }
+  ]
+}

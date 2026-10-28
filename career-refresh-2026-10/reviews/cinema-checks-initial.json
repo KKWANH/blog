@@ -1,0 +1,338 @@
+{
+  "checks": {
+    "single_theme_ignores_old_preference": true,
+    "theme_toggle_removed": true,
+    "mark_removed": true,
+    "ariadne_not_featured_as_work": true,
+    "hero_tilt": true,
+    "background_reacts": true,
+    "button_lift_eases": true,
+    "card_has_clear_range": true,
+    "turn_keeps_light": true,
+    "stationary_actions": true,
+    "inactive_face_inert": true,
+    "escape_returns_portrait_and_focus": true,
+    "pause_persists_and_stops_tilt": true,
+    "paused_flip_instant": true,
+    "brief_focus_return": true,
+    "preview_gallery_labelled": true,
+    "gallery_filter": true,
+    "gallery_keyboard_navigation": true,
+    "gallery_focus_return": true,
+    "travel_selection_survives": true,
+    "map_survives_pause": true,
+    "mobile_turn_visible_above_dock": true,
+    "horizontal_touch_tilts": true,
+    "vertical_touch_scrolls": true,
+    "system_reduced_motion": true,
+    "reduced_content_available": true,
+    "native_contact_actions": true,
+    "atlas_not_mutated": true
+  },
+  "audits": [
+    {
+      "page": "home",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "page": "card-front",
+      "violations": [],
+      "incomplete": [
+        "aria-valid-attr-value",
+        "color-contrast"
+      ]
+    },
+    {
+      "page": "card-back",
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "aria-valid-attr-value",
+        "color-contrast"
+      ]
+    },
+    {
+      "page": "recruiter-brief",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "nodes": [
+            {
+              "target": [
+                ".brief-actions > .action-primary.action-button[href$=\"CV.pdf\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.63 (foreground color: #0b1f15, background color: #6c766a, font size: 10.8pt (14.4px), font weight: normal). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        "aria-hidden-focus",
+        "color-contrast"
+      ]
+    },
+    {
+      "page": "gallery-viewer",
+      "violations": [],
+      "incomplete": [
+        "aria-hidden-focus",
+        "color-contrast"
+      ]
+    },
+    {
+      "page": "travel",
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    }
+  ],
+  "reflow": [
+    {
+      "route": "/",
+      "large_text": false,
+      "width": 320,
+      "content": 320,
+      "pass": true
+    },
+    {
+      "route": "/",
+      "large_text": false,
+      "width": 390,
+      "content": 390,
+      "pass": true
+    },
+    {
+      "route": "/",
+      "large_text": false,
+      "width": 768,
+      "content": 768,
+      "pass": true
+    },
+    {
+      "route": "/",
+      "large_text": false,
+      "width": 1440,
+      "content": 1440,
+      "pass": true
+    },
+    {
+      "route": "/",
+      "large_text": true,
+      "width": 320,
+      "content": 320,
+      "pass": true
+    },
+    {
+      "route": "/",
+      "large_text": true,
+      "width": 390,
+      "content": 390,
+      "pass": true
+    },
+    {
+      "route": "/",
+      "large_text": true,
+      "width": 768,
+      "content": 768,
+      "pass": true
+    },
+    {
+      "route": "/",
+      "large_text": true,
+      "width": 1440,
+      "content": 1440,
+      "pass": true
+    },
+    {
+      "route": "/about",
+      "large_text": false,
+      "width": 320,
+      "content": 320,
+      "pass": true
+    },
+    {
+      "route": "/about",
+      "large_text": false,
+      "width": 390,
+      "content": 390,
+      "pass": true
+    },
+    {
+      "route": "/about",
+      "large_text": false,
+      "width": 768,
+      "content": 768,
+      "pass": true
+    },
+    {
+      "route": "/about",
+      "large_text": false,
+      "width": 1440,
+      "content": 1440,
+      "pass": true
+    },
+    {
+      "route": "/about",
+      "large_text": true,
+      "width": 320,
+      "content": 320,
+      "pass": true
+    },
+    {
+      "route": "/about",
+      "large_text": true,
+      "width": 390,
+      "content": 390,
+      "pass": true
+    },
+    {
+      "route": "/about",
+      "large_text": true,
+      "width": 768,
+      "content": 768,
+      "pass": true
+    },
+    {
+      "route": "/about",
+      "large_text": true,
+      "width": 1440,
+      "content": 1440,
+      "pass": true
+    },
+    {
+      "route": "/photography",
+      "large_text": false,
+      "width": 320,
+      "content": 320,
+      "pass": true
+    },
+    {
+      "route": "/photography",
+      "large_text": false,
+      "width": 390,
+      "content": 390,
+      "pass": true
+    },
+    {
+      "route": "/photography",
+      "large_text": false,
+      "width": 768,
+      "content": 768,
+      "pass": true
+    },
+    {
+      "route": "/photography",
+      "large_text": false,
+      "width": 1440,
+      "content": 1440,
+      "pass": true
+    },
+    {
+      "route": "/photography",
+      "large_text": true,
+      "width": 320,
+      "content": 320,
+      "pass": true
+    },
+    {
+      "route": "/photography",
+      "large_text": true,
+      "width": 390,
+      "content": 390,
+      "pass": true
+    },
+    {
+      "route": "/photography",
+      "large_text": true,
+      "width": 768,
+      "content": 768,
+      "pass": true
+    },
+    {
+      "route": "/photography",
+      "large_text": true,
+      "width": 1440,
+      "content": 1440,
+      "pass": true
+    },
+    {
+      "route": "/travel",
+      "large_text": false,
+      "width": 320,
+      "content": 320,
+      "pass": true
+    },
+    {
+      "route": "/travel",
+      "large_text": false,
+      "width": 390,
+      "content": 390,
+      "pass": true
+    },
+    {
+      "route": "/travel",
+      "large_text": false,
+      "width": 768,
+      "content": 768,
+      "pass": true
+    },
+    {
+      "route": "/travel",
+      "large_text": false,
+      "width": 1440,
+      "content": 1440,
+      "pass": true
+    },
+    {
+      "route": "/travel",
+      "large_text": true,
+      "width": 320,
+      "content": 320,
+      "pass": true
+    },
+    {
+      "route": "/travel",
+      "large_text": true,
+      "width": 390,
+      "content": 390,
+      "pass": true
+    },
+    {
+      "route": "/travel",
+      "large_text": true,
+      "width": 768,
+      "content": 768,
+      "pass": true
+    },
+    {
+      "route": "/travel",
+      "large_text": true,
+      "width": 1440,
+      "content": 1440,
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "tilt_samples": [
+    {
+      "rx": 7.099,
+      "ry": -10.649,
+      "shine": 0.986
+    },
+    {
+      "rx": -7.157,
+      "ry": 10.735,
+      "shine": 1
+    }
+  ],
+  "mobile_geometry": {
+    "turn_bottom": 752.765625,
+    "dock_top": 763.859375
+  },
+  "passed": false
+}

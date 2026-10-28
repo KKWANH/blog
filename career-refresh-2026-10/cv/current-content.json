@@ -1,0 +1,96 @@
+{
+  "version": "current",
+  "identity": {
+    "name": "Kwanho Kim",
+    "headline": "C++ Software Engineer",
+    "contacts": [
+      [
+        {"text": "Leuven, Belgium"},
+        {"text": "contact@kwanho.dev", "href": "mailto:contact@kwanho.dev"},
+        {"text": "kwanho.dev", "href": "https://kwanho.dev"}
+      ],
+      [
+        {"text": "linkedin.com/in/kwanhokim", "href": "https://linkedin.com/in/kwanhokim"},
+        {"text": "github.com/KKWANH", "href": "https://github.com/KKWANH"}
+      ]
+    ]
+  },
+  "summary": "Software engineer focused on C++ development, error recovery and software integration. Experience at KLA, Pickit 3D and Bosch spans equipment, robotics and vehicle communication.",
+  "experience": [
+    {
+      "employer": "KLA",
+      "role": "C++ Engineer",
+      "metadata": "Aug 2026–Present · Zeta team, ICOS Division · Leuven, Belgium",
+      "bullets": [
+        "Analyse lifter fault recovery and design changes across application and controller software; early implementation is in progress with team review.",
+        "Work on camera white-balance settings, device readback and the values shown in the interface.",
+        "Refactor serial device-control integration and logging within a shared equipment layer."
+      ]
+    },
+    {
+      "employer": "Pickit 3D",
+      "role": "Research & Software Engineer",
+      "metadata": "Aug 2025–Mar 2026 · Leuven, Belgium",
+      "bullets": [
+        "Worked on system design and integration for robotic-vision software, focusing on communication interfaces and failure handling.",
+        "Designed a Python WebSocket client with reconnect, backoff and message validation for internal integrations.",
+        "Traced a field communication failure to a port conflict and implemented the fix."
+      ]
+    },
+    {
+      "employer": "Bosch",
+      "role": "V2X Communication Intern",
+      "metadata": "Jun 2024–Nov 2024 · Hildesheim, Germany",
+      "bullets": [
+        "Built a vehicle-to-everything (V2X) demonstrator, defined message interfaces and checked end-to-end behaviour in test runs.",
+        "Integrated communication modules and developed a React interface for an eBike safety prototype."
+      ]
+    }
+  ],
+  "skills": [
+    {"label": "Programming", "text": "C++, C, Python, TypeScript, JavaScript."},
+    {"label": "Systems & integration", "text": "Error handling and recovery, device communication, WebSocket, REST, ROS 1/2."},
+    {"label": "Applications & tools", "text": "React; Git, Docker, Linux."},
+    {"label": "Spoken languages", "text": "Korean (native); English (IELTS Academic 7.5, Mar 2025)."}
+  ],
+  "projects": [
+    {
+      "name": "Color Saves Life",
+      "descriptor": "Bosch ConnectedExperience 2024",
+      "metadata": "Feb 2024 · 1st place, digital.auto & mobility challenge · Berlin",
+      "bullets": [
+        "Led and presented a hackathon team; integrated eye-tracking with a simulation pipeline and built a plugin-based Python client."
+      ]
+    },
+    {
+      "name": "Autonomous Lane-Keeping Assist",
+      "descriptor": "SEA:ME",
+      "metadata": "Aug–Dec 2023 · Wolfsburg, Germany",
+      "bullets": [
+        "Implemented CNN-based lane detection in CARLA and a client to collect and evaluate simulation data."
+      ]
+    }
+  ],
+  "education": {
+    "entries": [
+      {"subject": "Bachelor's, Mechatronics (in progress)", "institution": "KNOU Prime College", "dates": "Feb 2026–Present · Korea National Open University"},
+      {"subject": "Bachelor's, Artificial Intelligence", "institution": "Korea National Open University", "dates": "Mar 2023–Feb 2025 · Awarded"},
+      {"subject": "Bachelor's, Business Administration", "institution": "Academic Credit Bank System", "dates": "Apr 2019–Aug 2022 · Awarded"},
+      {"subject": "Bachelor's, Computer Engineering", "institution": "Academic Credit Bank System", "dates": "Apr 2019–Aug 2020 · Awarded"}
+    ]
+  },
+  "training": [
+    {"name": "SEA:ME", "description": "Automotive & Mobility program", "metadata": "Jul 2023–Jun 2024 · Completed · Wolfsburg, Germany"},
+    {"name": "42", "description": "Software engineering program", "metadata": "Completed · Seoul / Wolfsburg"}
+  ],
+  "credential": {
+    "name": "Engineer Information Processing",
+    "metadata": "Nov 2020 · Human Resources Development Service of Korea (HRD Korea)"
+  },
+  "leadership": {
+    "name": "Rush03",
+    "role": "Keyboardist & leader",
+    "metadata": "Aug 2022–Jul 2023 · 42 student club · Seoul, South Korea",
+    "bullet": "Led a 50-member community and delivered three events for 200–300 attendees."
+  }
+}

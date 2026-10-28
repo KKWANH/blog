@@ -1,0 +1,88 @@
+{
+  "new_cycle_count": 5,
+  "checks": {
+    "cycle_1_artifacts": true,
+    "cycle_1_visual_change": true,
+    "cycle_2_artifacts": true,
+    "cycle_2_visual_change": true,
+    "cycle_3_artifacts": true,
+    "cycle_3_visual_change": true,
+    "cycle_4_artifacts": true,
+    "cycle_4_visual_change": true,
+    "cycle_5_artifacts": true,
+    "cycle_5_visual_change": true,
+    "identity_facts_preserved": true,
+    "employment_facts_preserved": true,
+    "project_identity_preserved": true,
+    "actual_name_font": true,
+    "actual_body_11pt": true,
+    "unboxed_header": true,
+    "separate_role_context": true,
+    "separate_programs": true,
+    "42_no_invented_date": true,
+    "gmail_mailto": true,
+    "no_photo": true,
+    "copy_correct": true,
+    "guides_work": true,
+    "preview_mobile_fit": true,
+    "all_comparisons_work": true,
+    "comparison_mobile_fit": true,
+    "one_a4_page": true,
+    "ink_margins": true,
+    "fonts_embedded": true,
+    "unicode_maps": true,
+    "reading_order": true,
+    "six_links": true,
+    "tagged_pdf": true,
+    "claim_scope": true,
+    "no_ariadne": true,
+    "md_spec_sync": true,
+    "md_copy_sync": true
+  },
+  "phase_pages": [
+    {
+      "cycle": 1,
+      "before_pages": 1,
+      "after_pages": 1
+    },
+    {
+      "cycle": 2,
+      "before_pages": 1,
+      "after_pages": 2
+    },
+    {
+      "cycle": 3,
+      "before_pages": 2,
+      "after_pages": 1
+    },
+    {
+      "cycle": 4,
+      "before_pages": 1,
+      "after_pages": 1
+    },
+    {
+      "cycle": 5,
+      "before_pages": 1,
+      "after_pages": 1
+    }
+  ],
+  "errors": [],
+  "font_names": [
+    "AAAAAA+SourceSerif4Roman-Regular",
+    "BAAAAA+Inter-Medium",
+    "CAAAAA+Inter-Regular",
+    "DAAAAA+Inter-SemiBold"
+  ],
+  "ink_bounds_pt": {
+    "left": 51.0,
+    "top": 46.5,
+    "right": 544.5,
+    "bottom": 788.0
+  },
+  "passed": true,
+  "limits": [
+    "Designer judgments are self-review, not independent endorsement.",
+    "No real Google Docs/ATS or physical-printer test."
+  ],
+  "harness_note": "The initial string-form image wait was rejected by the studio CSP. A function-form wait was used; CSP was not changed."
+}

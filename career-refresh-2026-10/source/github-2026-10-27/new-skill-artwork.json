@@ -1,0 +1,20 @@
+[
+  {
+    "file": "figma.svg",
+    "source": "https://cdn.jsdelivr.net/npm/simple-icons@16.36.0/icons/figma.svg",
+    "license": "CC0-1.0",
+    "treatment": "Paths unchanged; explicit single-colour fill."
+  },
+  {
+    "file": "qt.svg",
+    "source": "https://cdn.jsdelivr.net/npm/simple-icons@16.36.0/icons/qt.svg",
+    "license": "CC0-1.0",
+    "treatment": "Paths unchanged; explicit single-colour fill."
+  },
+  {
+    "file": "nginx.svg",
+    "source": "https://cdn.jsdelivr.net/npm/simple-icons@16.36.0/icons/nginx.svg",
+    "license": "CC0-1.0",
+    "treatment": "Paths unchanged; explicit single-colour fill."
+  }
+]

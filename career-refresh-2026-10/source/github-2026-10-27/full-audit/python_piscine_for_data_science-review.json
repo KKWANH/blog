@@ -1,0 +1,73 @@
+{
+  "name": "python_piscine_for_data_science",
+  "url": "https://github.com/KKWANH/python_piscine_for_data_science",
+  "fork": false,
+  "scope": "learning",
+  "scopeNote": "Learning/team project; inspect the stated contribution and source.",
+  "description": "",
+  "updatedAt": "2023-05-04T08:16:53Z",
+  "defaultBranch": "main",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/python_piscine_for_data_science/blob/5b5671cfd4338ecd1ae937ba454749c44450a038/README.md",
+      "bytes": 33,
+      "sha256": "7f4e94afcf3d2d6b283222c21ff28e84c1656c76e08595b05847f1c1f17b500f"
+    },
+    {
+      "path": "setup/setup.sh",
+      "url": "https://github.com/KKWANH/python_piscine_for_data_science/blob/5b5671cfd4338ecd1ae937ba454749c44450a038/setup/setup.sh",
+      "bytes": 310,
+      "sha256": "1e201f38e098ce1a8eeeeda998dd890bed1b005ef4ca98da1b730d1f76090002"
+    },
+    {
+      "path": "day.0.starting/ex04/.test.sh",
+      "url": "https://github.com/KKWANH/python_piscine_for_data_science/blob/5b5671cfd4338ecd1ae937ba454749c44450a038/day.0.starting/ex04/.test.sh",
+      "bytes": 309,
+      "sha256": "9f65bd45895804b2f0451009dc09b71ffb4dddab640fd80a2909e6099fb47a99"
+    }
+  ],
+  "limitations": [
+    "Raw .py downloads are restricted by the corporate security gateway; accessible documentation/manifests are reviewed instead."
+  ],
+  "technologies": [
+    {
+      "id": "python",
+      "label": "Python",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "day.0.starting/ex00/hello.py",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "day.0.starting/ex01/format_ft_time.py",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "day.0.starting/ex02/.test.py",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "shell",
+      "label": "Shell",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "day.0.starting/ex04/.test.sh",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "setup/setup.sh",
+          "basis": "source-file presence"
+        }
+      ]
+    }
+  ],
+  "commit": "5b5671cfd4338ecd1ae937ba454749c44450a038",
+  "fileCount": 12,
+  "treeDepth": "recursive",
+  "status": "reviewed-limited"
+}

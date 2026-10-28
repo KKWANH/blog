@@ -1,0 +1,26 @@
+{
+  "checks": {
+    "route_/": true,
+    "route_/about": true,
+    "route_/travel": true,
+    "route_/travel/manage": true,
+    "route_/contact.vcf": true,
+    "private_/studio": true,
+    "private_/studio/index.html": true,
+    "private_/studio/business-card-2026-10-27/index.html": true,
+    "private_/studio/business-card-2026-10-27/assets/contact-portrait.webp": true,
+    "paper_visible": true,
+    "production_video_playback": true,
+    "public_atlas_read_only": true,
+    "enable_flag_not_authority": true,
+    "range_playback": true,
+    "no_studio_asset_tracing": true
+  },
+  "trace": {
+    "files": 111,
+    "public_assets": 0
+  },
+  "errors": [],
+  "passed": true,
+  "note": "Fixed internal production QA port; the user-facing development site remains localhost:3100 throughout."
+}

@@ -1,0 +1,256 @@
+{
+  "name": "reading_books_record_repository",
+  "url": "https://github.com/KKWANH/reading_books_record_repository",
+  "fork": true,
+  "scope": "reference",
+  "scopeNote": "Fork/reference; personal implementation is not established by the fork.",
+  "description": "📚 책을 읽고 정리합니다. 📖  Summary of Books 👉 우리 같이 책을 읽어볼까요?",
+  "updatedAt": "2022-10-08T16:19:14Z",
+  "defaultBranch": "master",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/reading_books_record_repository/blob/03e15c7f0562435fe2c8cf4eaf5b62a2b373acd0/README.md",
+      "bytes": 10988,
+      "sha256": "2c3f204a301859ddba146b93dd47741bad62cfb86174b728f274186e384dc7e3"
+    },
+    {
+      "path": "package.json",
+      "url": "https://github.com/KKWANH/reading_books_record_repository/blob/03e15c7f0562435fe2c8cf4eaf5b62a2b373acd0/package.json",
+      "bytes": 1200,
+      "sha256": "10255c9874ec4b686c2d4ec0da13a9433f404fc49020a97e003cc21ab62deeff"
+    },
+    {
+      "path": "summarize_books_in_markdown/Do it TypeScript Programming/Chapter 10/package.json",
+      "url": "https://github.com/KKWANH/reading_books_record_repository/blob/03e15c7f0562435fe2c8cf4eaf5b62a2b373acd0/summarize_books_in_markdown/Do%20it%20TypeScript%20Programming/Chapter%2010/package.json",
+      "bytes": 545,
+      "sha256": "ad7c74518a726fcbe0f90764e071f660788cb09b5b5b9c949b6befadae0bb4fc"
+    },
+    {
+      "path": "summarize_books_in_markdown/Do it TypeScript Programming/Chapter 11/package.json",
+      "url": "https://github.com/KKWANH/reading_books_record_repository/blob/03e15c7f0562435fe2c8cf4eaf5b62a2b373acd0/summarize_books_in_markdown/Do%20it%20TypeScript%20Programming/Chapter%2011/package.json",
+      "bytes": 578,
+      "sha256": "139129fa9dde924f4fbd14837527391b4c4557525cb762fe8ec5ffa5e7828113"
+    },
+    {
+      "path": "summarize_books_in_markdown/Do it TypeScript Programming/Chapter 12/frontend/package.json",
+      "url": "https://github.com/KKWANH/reading_books_record_repository/blob/03e15c7f0562435fe2c8cf4eaf5b62a2b373acd0/summarize_books_in_markdown/Do%20it%20TypeScript%20Programming/Chapter%2012/frontend/package.json",
+      "bytes": 968,
+      "sha256": "f415017b95452556337e37ed01265e1338415085052d0e10559131cd918e5d4a"
+    },
+    {
+      "path": "summarize_books_in_markdown/Do it TypeScript Programming/Chapter 12/package.json",
+      "url": "https://github.com/KKWANH/reading_books_record_repository/blob/03e15c7f0562435fe2c8cf4eaf5b62a2b373acd0/summarize_books_in_markdown/Do%20it%20TypeScript%20Programming/Chapter%2012/package.json",
+      "bytes": 1079,
+      "sha256": "8ea1e1b6e0482f8ae2a55b6e9325e358c2b640b68aabcf1db8527c1ce07f983a"
+    },
+    {
+      "path": "summarize_books_in_markdown/Do it TypeScript Programming/Chapter 2/ch02-1/package.json",
+      "url": "https://github.com/KKWANH/reading_books_record_repository/blob/03e15c7f0562435fe2c8cf4eaf5b62a2b373acd0/summarize_books_in_markdown/Do%20it%20TypeScript%20Programming/Chapter%202/ch02-1/package.json",
+      "bytes": 649,
+      "sha256": "2a6f096a3bc6d0a657ed15133b48bdea8eaf561ef122588e98d2febc4f3f426e"
+    },
+    {
+      "path": "summarize_books_in_markdown/Do it TypeScript Programming/Chapter 2/ch02-2/package.json",
+      "url": "https://github.com/KKWANH/reading_books_record_repository/blob/03e15c7f0562435fe2c8cf4eaf5b62a2b373acd0/summarize_books_in_markdown/Do%20it%20TypeScript%20Programming/Chapter%202/ch02-2/package.json",
+      "bytes": 785,
+      "sha256": "0cd3897d242ead17fe55933a4200413b162e8cac54a5e5247b254554edf8ad28"
+    },
+    {
+      "path": "summarize_books_in_markdown/Do it TypeScript Programming/Chapter 3/package.json",
+      "url": "https://github.com/KKWANH/reading_books_record_repository/blob/03e15c7f0562435fe2c8cf4eaf5b62a2b373acd0/summarize_books_in_markdown/Do%20it%20TypeScript%20Programming/Chapter%203/package.json",
+      "bytes": 481,
+      "sha256": "e7a1811f5d5887479d1d0a3be2abe1f2dbbb655886d78eafdc9e1171ddd0baf0"
+    },
+    {
+      "path": "summarize_books_in_markdown/Do it TypeScript Programming/Chapter 4/package.json",
+      "url": "https://github.com/KKWANH/reading_books_record_repository/blob/03e15c7f0562435fe2c8cf4eaf5b62a2b373acd0/summarize_books_in_markdown/Do%20it%20TypeScript%20Programming/Chapter%204/package.json",
+      "bytes": 484,
+      "sha256": "47bda81790b00fdfcbf5b61408f4c1e3ded0d4f0afdb17e9b80be6a8b6324c5e"
+    },
+    {
+      "path": "summarize_books_in_markdown/Do it TypeScript Programming/Chapter 5/package.json",
+      "url": "https://github.com/KKWANH/reading_books_record_repository/blob/03e15c7f0562435fe2c8cf4eaf5b62a2b373acd0/summarize_books_in_markdown/Do%20it%20TypeScript%20Programming/Chapter%205/package.json",
+      "bytes": 481,
+      "sha256": "e2a4592eacb73a016f0d0269f6e7e5540a692c977451a763139019fde6e33895"
+    },
+    {
+      "path": "summarize_books_in_markdown/Do it TypeScript Programming/Chapter 6/package.json",
+      "url": "https://github.com/KKWANH/reading_books_record_repository/blob/03e15c7f0562435fe2c8cf4eaf5b62a2b373acd0/summarize_books_in_markdown/Do%20it%20TypeScript%20Programming/Chapter%206/package.json",
+      "bytes": 376,
+      "sha256": "d8e1226d5cba034778693e78ede51e08a56c601d8bdeb4e72470fe797bd016a0"
+    },
+    {
+      "path": "summarize_books_in_markdown/Do it TypeScript Programming/Chapter 7/package.json",
+      "url": "https://github.com/KKWANH/reading_books_record_repository/blob/03e15c7f0562435fe2c8cf4eaf5b62a2b373acd0/summarize_books_in_markdown/Do%20it%20TypeScript%20Programming/Chapter%207/package.json",
+      "bytes": 383,
+      "sha256": "2235e7fc0e71175d5097d36557186a613e88c0985e62d68d3e5253d4dbace4de"
+    },
+    {
+      "path": "summarize_books_in_markdown/쉽게 배우는 알고리즘/package.json",
+      "url": "https://github.com/KKWANH/reading_books_record_repository/blob/03e15c7f0562435fe2c8cf4eaf5b62a2b373acd0/summarize_books_in_markdown/%EC%89%BD%EA%B2%8C%20%EB%B0%B0%EC%9A%B0%EB%8A%94%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/package.json",
+      "bytes": 857,
+      "sha256": "198a5a5d3b07339c40ec838c972b223584f653e6cb77dfe1e5ae8a1dbe92ff7e"
+    },
+    {
+      "path": "summarize_books_in_markdown/자바스크립트 코딩의 기술/Chapter 10/package.json",
+      "url": "https://github.com/KKWANH/reading_books_record_repository/blob/03e15c7f0562435fe2c8cf4eaf5b62a2b373acd0/summarize_books_in_markdown/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%20%EC%BD%94%EB%94%A9%EC%9D%98%20%EA%B8%B0%EC%88%A0/Chapter%2010/package.json",
+      "bytes": 724,
+      "sha256": "cef3c1fafae538a6cbf8539a07e92bdd84ebdedaf6f7d11f5075191a4cf6292a"
+    }
+  ],
+  "limitations": [],
+  "technologies": [
+    {
+      "id": "css",
+      "label": "CSS",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "src/css/custom.css",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "src/css/index.module.css",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "summarize_books_in_markdown/Do it TypeScript Programming/Chapter 12/frontend/src/App.css",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "express",
+      "label": "Express",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "summarize_books_in_markdown/Do it TypeScript Programming/Chapter 12/package.json",
+          "basis": "direct dependency"
+        }
+      ]
+    },
+    {
+      "id": "github-actions",
+      "label": "GitHub Actions",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": ".github/workflows/documentation.yml",
+          "basis": "workflow file"
+        }
+      ]
+    },
+    {
+      "id": "html",
+      "label": "HTML",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "summarize_books_in_markdown/Do it TypeScript Programming/Chapter 12/frontend/public/index.html",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "summarize_books_in_markdown/자바스크립트 코딩의 기술/Chapter 10/index.html",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "summarize_books_in_markdown/자바스크립트 코딩의 기술/Chapter 10/src/css/css.html",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "java",
+      "label": "Java",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "summarize_books_in_markdown/오브젝트/Chapter 1/src/Audience.java",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "summarize_books_in_markdown/오브젝트/Chapter 1/src/Bag.java",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "summarize_books_in_markdown/오브젝트/Chapter 1/src/Invitation.java",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "javascript",
+      "label": "JavaScript",
+      "group": "web",
+      "evidence": [
+        {
+          "path": ".eslintrc.js",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "babel.config.js",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "docusaurus.config.js",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "jest",
+      "label": "Jest",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "summarize_books_in_markdown/쉽게 배우는 알고리즘/package.json",
+          "basis": "direct dependency"
+        }
+      ]
+    },
+    {
+      "id": "react",
+      "label": "React",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        },
+        {
+          "path": "package.json",
+          "basis": "direct dependency"
+        },
+        {
+          "path": "package.json",
+          "basis": "manifest/configuration"
+        }
+      ]
+    },
+    {
+      "id": "typescript",
+      "label": "TypeScript",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "summarize_books_in_markdown/Do it TypeScript Programming/Chapter 1/hello.ts",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "summarize_books_in_markdown/Do it TypeScript Programming/Chapter 10/src/classes/Calculator.ts",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "summarize_books_in_markdown/Do it TypeScript Programming/Chapter 10/src/classes/StringComposer.ts",
+          "basis": "source-file presence"
+        }
+      ]
+    }
+  ],
+  "commit": "03e15c7f0562435fe2c8cf4eaf5b62a2b373acd0",
+  "fileCount": 926,
+  "treeDepth": "recursive",
+  "status": "reviewed"
+}

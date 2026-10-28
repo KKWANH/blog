@@ -1,0 +1,4544 @@
+{
+  "repo": "ai-assistant",
+  "commit": "d59d45a617c5da89fbea630410675b26b3a9e68b",
+  "tree": {
+    "sha": "d59d45a617c5da89fbea630410675b26b3a9e68b",
+    "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/d59d45a617c5da89fbea630410675b26b3a9e68b",
+    "tree": [
+      {
+        "path": ".claude",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "1f843c8602bfd725cef9157ccba70bcb40e41908",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/1f843c8602bfd725cef9157ccba70bcb40e41908"
+      },
+      {
+        "path": ".claude/launch.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "278e3f0b596086d673038eea86ea1238faec3f7d",
+        "size": 398,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/278e3f0b596086d673038eea86ea1238faec3f7d"
+      },
+      {
+        "path": ".env.example",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b11a3325e4fa9c8f00c74ed091f98d3b3601df84",
+        "size": 1888,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/b11a3325e4fa9c8f00c74ed091f98d3b3601df84"
+      },
+      {
+        "path": ".github",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "4b0fdec67b3c4e2d160dd468aac62f64de602f93",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/4b0fdec67b3c4e2d160dd468aac62f64de602f93"
+      },
+      {
+        "path": ".github/ISSUE_TEMPLATE",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "4615b6cd9c5a57f570bd5f282c6954aef450e55e",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/4615b6cd9c5a57f570bd5f282c6954aef450e55e"
+      },
+      {
+        "path": ".github/ISSUE_TEMPLATE/bug_report.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0bba920fc93a4cd9c7afcb28ff647d3533dda996",
+        "size": 801,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/0bba920fc93a4cd9c7afcb28ff647d3533dda996"
+      },
+      {
+        "path": ".github/ISSUE_TEMPLATE/config.yml",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ec1d1607a1bda664845eb585a84162836f98e485",
+        "size": 384,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/ec1d1607a1bda664845eb585a84162836f98e485"
+      },
+      {
+        "path": ".github/ISSUE_TEMPLATE/feature_request.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "49ccbe79f3327a3815729f92f717850685a99dfa",
+        "size": 734,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/49ccbe79f3327a3815729f92f717850685a99dfa"
+      },
+      {
+        "path": ".github/ISSUE_TEMPLATE/question.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ecaf0dff402e260a658e6dacca612316614fd943",
+        "size": 515,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/ecaf0dff402e260a658e6dacca612316614fd943"
+      },
+      {
+        "path": ".github/pull_request_template.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "347fd495c0f4e832d9163da2f567a86576ed7815",
+        "size": 681,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/347fd495c0f4e832d9163da2f567a86576ed7815"
+      },
+      {
+        "path": ".github/workflows",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "99ce45252e85d0ef6249d470e5c0a75a18dcdc3f",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/99ce45252e85d0ef6249d470e5c0a75a18dcdc3f"
+      },
+      {
+        "path": ".github/workflows/bundle-rule-check.yml",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "af97274483afc7ea97f04654e9bef49d04a0b5d0",
+        "size": 2807,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/af97274483afc7ea97f04654e9bef49d04a0b5d0"
+      },
+      {
+        "path": ".github/workflows/ci.yml",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "abcdce52bc37ed191b5108d1277872ba3e5753eb",
+        "size": 2657,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/abcdce52bc37ed191b5108d1277872ba3e5753eb"
+      },
+      {
+        "path": ".github/workflows/desktop.yml",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "75a960c07010ebb8833d55e554664741d4adf035",
+        "size": 2743,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/75a960c07010ebb8833d55e554664741d4adf035"
+      },
+      {
+        "path": ".gitignore",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a132f2dd1129caf1f20226605ca55fc346b2eb93",
+        "size": 1427,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/a132f2dd1129caf1f20226605ca55fc346b2eb93"
+      },
+      {
+        "path": "CODE_OF_CONDUCT.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e916cd9c1c63f3842849da0f23ce8c7e067b7a92",
+        "size": 927,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/e916cd9c1c63f3842849da0f23ce8c7e067b7a92"
+      },
+      {
+        "path": "CONTRIBUTING.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f1a876f939d71785b0fe5cd8efb294b6a45e4620",
+        "size": 3666,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/f1a876f939d71785b0fe5cd8efb294b6a45e4620"
+      },
+      {
+        "path": "LICENSE",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e6015448a6529114a4d526f3b859903ba3f9dfad",
+        "size": 35334,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/e6015448a6529114a4d526f3b859903ba3f9dfad"
+      },
+      {
+        "path": "README.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f76b95d8c57c25fa20c80c3657a1e22ff9c304b1",
+        "size": 10207,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/f76b95d8c57c25fa20c80c3657a1e22ff9c304b1"
+      },
+      {
+        "path": "SECURITY.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "407399d06b309c997ca6721b1ab2ed0c40f0c9ba",
+        "size": 4929,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/407399d06b309c997ca6721b1ab2ed0c40f0c9ba"
+      },
+      {
+        "path": "apps",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "b63eed11d774461e48919afaf1294f38aeec1606",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/b63eed11d774461e48919afaf1294f38aeec1606"
+      },
+      {
+        "path": "apps/admin",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "aa254a9ab9f8bb941bd818284f21014801b05929",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/aa254a9ab9f8bb941bd818284f21014801b05929"
+      },
+      {
+        "path": "apps/admin/package.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9b45f1107a1a2a52d3bc9ab49e78f2be3bc560a3",
+        "size": 195,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/9b45f1107a1a2a52d3bc9ab49e78f2be3bc560a3"
+      },
+      {
+        "path": "apps/admin/public",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "75b6497bb8f3a2fff98f2abfb8fb180cd88167b2",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/75b6497bb8f3a2fff98f2abfb8fb180cd88167b2"
+      },
+      {
+        "path": "apps/admin/public/dashboard.js",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "73e2857713055d377a212bb3b65d7f46fe6fe542",
+        "size": 7749,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/73e2857713055d377a212bb3b65d7f46fe6fe542"
+      },
+      {
+        "path": "apps/admin/public/index.html",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "13666e1db750ac98f22cff253cc504cb355ecb54",
+        "size": 2899,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/13666e1db750ac98f22cff253cc504cb355ecb54"
+      },
+      {
+        "path": "apps/admin/public/style.css",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "52840c39b2589851bc640ddfc99933096a3ea4de",
+        "size": 9178,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/52840c39b2589851bc640ddfc99933096a3ea4de"
+      },
+      {
+        "path": "apps/admin/src",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "7dd9d95461c189fc4e2d533645c28fb31c724d37",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/7dd9d95461c189fc4e2d533645c28fb31c724d37"
+      },
+      {
+        "path": "apps/admin/src/dashboard.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0683c0d176d1fea8ea0c402b3962356e5fc2b45b",
+        "size": 4987,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/0683c0d176d1fea8ea0c402b3962356e5fc2b45b"
+      },
+      {
+        "path": "apps/admin/src/errorAnalyzer.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9e0dc679c8959a86c10bcc6f82ec496319b5e1dd",
+        "size": 3973,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/9e0dc679c8959a86c10bcc6f82ec496319b5e1dd"
+      },
+      {
+        "path": "apps/admin/src/logManager.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "77188b84f5e517f84d9939e95b913be0c86a3e2e",
+        "size": 1667,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/77188b84f5e517f84d9939e95b913be0c86a3e2e"
+      },
+      {
+        "path": "apps/admin/src/processManager.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a555b383de5f4e3f24e053f2f2d3c94a0e6625d2",
+        "size": 12458,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/a555b383de5f4e3f24e053f2f2d3c94a0e6625d2"
+      },
+      {
+        "path": "apps/admin/src/supervisor.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "552aa993e5c205cd446f3bf7a0b54c4f2657ab75",
+        "size": 3265,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/552aa993e5c205cd446f3bf7a0b54c4f2657ab75"
+      },
+      {
+        "path": "apps/admin/tsconfig.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "cd953713f99f1f60fea664f730692cd78b9892f7",
+        "size": 204,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/cd953713f99f1f60fea664f730692cd78b9892f7"
+      },
+      {
+        "path": "apps/desktop",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "e30bc2237a3d2176290c7b9654f24433c6923cd9",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/e30bc2237a3d2176290c7b9654f24433c6923cd9"
+      },
+      {
+        "path": "apps/desktop/BUILD.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "99863e7ae8c4005fe13bf0553bb1b26641ea473d",
+        "size": 4474,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/99863e7ae8c4005fe13bf0553bb1b26641ea473d"
+      },
+      {
+        "path": "apps/desktop/README.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1c4cccc7fdb40f739c063c24137e6fa93dedfdb5",
+        "size": 2061,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/1c4cccc7fdb40f739c063c24137e6fa93dedfdb5"
+      },
+      {
+        "path": "apps/desktop/package.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "49ad0ec74cb62f897fe5ff7212ae901d68b73742",
+        "size": 342,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/49ad0ec74cb62f897fe5ff7212ae901d68b73742"
+      },
+      {
+        "path": "apps/desktop/scripts",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "e29d1378c90b360210bebe54ce5b63425f4f4fb3",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/e29d1378c90b360210bebe54ce5b63425f4f4fb3"
+      },
+      {
+        "path": "apps/desktop/scripts/build-app.sh",
+        "mode": "100755",
+        "type": "blob",
+        "sha": "f7ec8d58ba7a3230dce5d08f21b13a446b384129",
+        "size": 1331,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/f7ec8d58ba7a3230dce5d08f21b13a446b384129"
+      },
+      {
+        "path": "apps/desktop/scripts/fetch-node-sidecar.sh",
+        "mode": "100755",
+        "type": "blob",
+        "sha": "54892558097522b64d2a31ce09b42de7650f40a3",
+        "size": 3805,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/54892558097522b64d2a31ce09b42de7650f40a3"
+      },
+      {
+        "path": "apps/desktop/scripts/stage-server.sh",
+        "mode": "100755",
+        "type": "blob",
+        "sha": "3b8090d1d91089f2f8a54f5fdc85214cc2e41be5",
+        "size": 3822,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/3b8090d1d91089f2f8a54f5fdc85214cc2e41be5"
+      },
+      {
+        "path": "apps/desktop/src-tauri",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "99cc381c38fb3a1f7b33ee2ed0d6e74759a013e9",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/99cc381c38fb3a1f7b33ee2ed0d6e74759a013e9"
+      },
+      {
+        "path": "apps/desktop/src-tauri/.gitignore",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "60965ecd8840448d42d4538c5ce844deadffb4ea",
+        "size": 244,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/60965ecd8840448d42d4538c5ce844deadffb4ea"
+      },
+      {
+        "path": "apps/desktop/src-tauri/Cargo.lock",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3e9b1ae0bd72cce519bee3af265b35b6d731af77",
+        "size": 111687,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/3e9b1ae0bd72cce519bee3af265b35b6d731af77"
+      },
+      {
+        "path": "apps/desktop/src-tauri/Cargo.toml",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "06fa49ebb610de990613fcfdb353bbd471520b88",
+        "size": 935,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/06fa49ebb610de990613fcfdb353bbd471520b88"
+      },
+      {
+        "path": "apps/desktop/src-tauri/build.rs",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "261851f6b60e0ae6f244b5469289870facc8c997",
+        "size": 40,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/261851f6b60e0ae6f244b5469289870facc8c997"
+      },
+      {
+        "path": "apps/desktop/src-tauri/capabilities",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "86f6e4a40f1fab626ccefbf7fb37580cfa71a8c4",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/86f6e4a40f1fab626ccefbf7fb37580cfa71a8c4"
+      },
+      {
+        "path": "apps/desktop/src-tauri/capabilities/default.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ff32549960186a9e1da19fbc00aeef14c6a07023",
+        "size": 335,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/ff32549960186a9e1da19fbc00aeef14c6a07023"
+      },
+      {
+        "path": "apps/desktop/src-tauri/icons",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "d50eb4d6c7160c032a33762baf58b69ab0a0d4e9",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/d50eb4d6c7160c032a33762baf58b69ab0a0d4e9"
+      },
+      {
+        "path": "apps/desktop/src-tauri/icons/128x128.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6f54c293e15788db0f8a158bf412c42a870f8d93",
+        "size": 17357,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/6f54c293e15788db0f8a158bf412c42a870f8d93"
+      },
+      {
+        "path": "apps/desktop/src-tauri/icons/128x128@2x.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "860020c60dcda5eda9c29256cd1613358f206d11",
+        "size": 42395,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/860020c60dcda5eda9c29256cd1613358f206d11"
+      },
+      {
+        "path": "apps/desktop/src-tauri/icons/32x32.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7daebe83d51ebf44940cb21015a036b210b4aa60",
+        "size": 2396,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/7daebe83d51ebf44940cb21015a036b210b4aa60"
+      },
+      {
+        "path": "apps/desktop/src-tauri/icons/64x64.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a7aed9fc464d0e178bc8e61f27666fdbc94dceba",
+        "size": 6467,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/a7aed9fc464d0e178bc8e61f27666fdbc94dceba"
+      },
+      {
+        "path": "apps/desktop/src-tauri/icons/icon.icns",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8214b69e285df7c1fc23473f92ccd022f9120fc8",
+        "size": 489605,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/8214b69e285df7c1fc23473f92ccd022f9120fc8"
+      },
+      {
+        "path": "apps/desktop/src-tauri/icons/icon.ico",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "45e54162bd804d587ebc36eced186d4f4959a226",
+        "size": 59258,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/45e54162bd804d587ebc36eced186d4f4959a226"
+      },
+      {
+        "path": "apps/desktop/src-tauri/icons/icon.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1cb3bba485a30550ffd3b3f76d894b9e9bcb9232",
+        "size": 101941,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/1cb3bba485a30550ffd3b3f76d894b9e9bcb9232"
+      },
+      {
+        "path": "apps/desktop/src-tauri/icons/trayTemplate.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "00bac394f47fc3ffa5894d27e155e86e9fd96049",
+        "size": 882,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/00bac394f47fc3ffa5894d27e155e86e9fd96049"
+      },
+      {
+        "path": "apps/desktop/src-tauri/src",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "c52e3ba6a7f2b35c1f3b95e840c420658da3e092",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/c52e3ba6a7f2b35c1f3b95e840c420658da3e092"
+      },
+      {
+        "path": "apps/desktop/src-tauri/src/main.rs",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7d7ee8290946268030a34ff5d515098ace72855f",
+        "size": 19761,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/7d7ee8290946268030a34ff5d515098ace72855f"
+      },
+      {
+        "path": "apps/desktop/src-tauri/tauri.conf.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d917123eaa1d8a7fd9730838fed34740dfa1e778",
+        "size": 604,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/d917123eaa1d8a7fd9730838fed34740dfa1e778"
+      },
+      {
+        "path": "apps/server",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "3a7ec4addd6f103a0ecd35d962aef415cb077f9c",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/3a7ec4addd6f103a0ecd35d962aef415cb077f9c"
+      },
+      {
+        "path": "apps/server/package.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f72d467dac3d0caabf2a2d7ef58baa03377238cd",
+        "size": 1353,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/f72d467dac3d0caabf2a2d7ef58baa03377238cd"
+      },
+      {
+        "path": "apps/server/scripts",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "16c8b8189ffeeb7196d140767962e11b00a833cd",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/16c8b8189ffeeb7196d140767962e11b00a833cd"
+      },
+      {
+        "path": "apps/server/scripts/create-account.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "589bb721d50e6ab827ae8d18cd00015733a9ff3a",
+        "size": 1489,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/589bb721d50e6ab827ae8d18cd00015733a9ff3a"
+      },
+      {
+        "path": "apps/server/scripts/pymupdf_extract.py",
+        "mode": "100755",
+        "type": "blob",
+        "sha": "3ea944e5caa162ebd58eb2cb4a6eb85b75a5d17a",
+        "size": 1788,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/3ea944e5caa162ebd58eb2cb4a6eb85b75a5d17a"
+      },
+      {
+        "path": "apps/server/src",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "0e4b98989ef62f0cb388811f72200b573a558c08",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/0e4b98989ef62f0cb388811f72200b573a558c08"
+      },
+      {
+        "path": "apps/server/src/ariadneFolder.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9417b611e4464c7cdf9662a44717936bd9723e8b",
+        "size": 13145,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/9417b611e4464c7cdf9662a44717936bd9723e8b"
+      },
+      {
+        "path": "apps/server/src/auth",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "a186b24cc4efee546974abbfef46221bfdc18582",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/a186b24cc4efee546974abbfef46221bfdc18582"
+      },
+      {
+        "path": "apps/server/src/auth/accounts.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9755457129ead31e9d977d10a3e593c8f422a78e",
+        "size": 7043,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/9755457129ead31e9d977d10a3e593c8f422a78e"
+      },
+      {
+        "path": "apps/server/src/auth/context.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c8eeabb7cbc6c6a7d175b9e3d066708cf91b1957",
+        "size": 1913,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/c8eeabb7cbc6c6a7d175b9e3d066708cf91b1957"
+      },
+      {
+        "path": "apps/server/src/auth/passwords.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6b1ad7b91b413db85a8eb137735b2fec880033db",
+        "size": 764,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/6b1ad7b91b413db85a8eb137735b2fec880033db"
+      },
+      {
+        "path": "apps/server/src/auth/sessions.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5eebb3aaa8d745947e422eae9e27e24fe66576ef",
+        "size": 1798,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/5eebb3aaa8d745947e422eae9e27e24fe66576ef"
+      },
+      {
+        "path": "apps/server/src/config.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3ce7018b87356a6e6fff0f9fee7ff5aef361b212",
+        "size": 12569,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/3ce7018b87356a6e6fff0f9fee7ff5aef361b212"
+      },
+      {
+        "path": "apps/server/src/db",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "d7f64c6b871b4382b52157afe2bbd159626321a6",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/d7f64c6b871b4382b52157afe2bbd159626321a6"
+      },
+      {
+        "path": "apps/server/src/db/index.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3c2512f24e1a278a41ad5ea9e835582b53be0e4b",
+        "size": 20631,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/3c2512f24e1a278a41ad5ea9e835582b53be0e4b"
+      },
+      {
+        "path": "apps/server/src/db/repo.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0e5ce63cce6ced12a8162adf822e0654528084dc",
+        "size": 70364,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/0e5ce63cce6ced12a8162adf822e0654528084dc"
+      },
+      {
+        "path": "apps/server/src/demoWorkspace.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a292b30b27175172a9e3caa2b026be87101ffa67",
+        "size": 7760,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/a292b30b27175172a9e3caa2b026be87101ffa67"
+      },
+      {
+        "path": "apps/server/src/eval",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "349c947f331a87b150ce998f8255cb926801504a",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/349c947f331a87b150ce998f8255cb926801504a"
+      },
+      {
+        "path": "apps/server/src/eval/cases.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6fab8203b5a62cb08cb586ececaa80c2000ca700",
+        "size": 7430,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/6fab8203b5a62cb08cb586ececaa80c2000ca700"
+      },
+      {
+        "path": "apps/server/src/eval/cases",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "e08ba653f8fd79383fd312b53ecbf59fe4d9f3ae",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/e08ba653f8fd79383fd312b53ecbf59fe4d9f3ae"
+      },
+      {
+        "path": "apps/server/src/eval/cases/rag-answer.yaml",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5158679a2923e5e21818b8874461a2ed28895c3c",
+        "size": 4715,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/5158679a2923e5e21818b8874461a2ed28895c3c"
+      },
+      {
+        "path": "apps/server/src/eval/cases/retrieval.yaml",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0ddaa27052795729d369d3b595d55177b43888f6",
+        "size": 6934,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/0ddaa27052795729d369d3b595d55177b43888f6"
+      },
+      {
+        "path": "apps/server/src/eval/cases/safety.yaml",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "74b182b89bf23bbeb5a55ddb9145755d3ccce97a",
+        "size": 2500,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/74b182b89bf23bbeb5a55ddb9145755d3ccce97a"
+      },
+      {
+        "path": "apps/server/src/eval/fixtures",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "bdd4c56b70dff4d8a78932535a1d25ccfa9d32f4",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/bdd4c56b70dff4d8a78932535a1d25ccfa9d32f4"
+      },
+      {
+        "path": "apps/server/src/eval/fixtures/code-small",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "c71bc62d708ea393b3158a5e3d1d2006167fe1d5",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/c71bc62d708ea393b3158a5e3d1d2006167fe1d5"
+      },
+      {
+        "path": "apps/server/src/eval/fixtures/code-small/README.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6cb024480b33f6308493c52ab962e81b1fbd74d5",
+        "size": 845,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/6cb024480b33f6308493c52ab962e81b1fbd74d5"
+      },
+      {
+        "path": "apps/server/src/eval/fixtures/code-small/notes-distractor.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6822906e7b5f7914840eb03b4f4af4253216a0e6",
+        "size": 705,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/6822906e7b5f7914840eb03b4f4af4253216a0e6"
+      },
+      {
+        "path": "apps/server/src/eval/fixtures/code-small/src",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "0e6358451d4f4b5f55dc822e640266fcd9474976",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/0e6358451d4f4b5f55dc822e640266fcd9474976"
+      },
+      {
+        "path": "apps/server/src/eval/fixtures/code-small/src/pricing.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "4e6297842dd9f6eb4ecc356978342c3122c76125",
+        "size": 1847,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/4e6297842dd9f6eb4ecc356978342c3122c76125"
+      },
+      {
+        "path": "apps/server/src/eval/fixtures/code-small/src/retrieval.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2fc4d3950aaa185d1df21eb8a46e832aeb711817",
+        "size": 730,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/2fc4d3950aaa185d1df21eb8a46e832aeb711817"
+      },
+      {
+        "path": "apps/server/src/eval/fixtures/code-small/src/symbolIndex.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e07daae23f25e9cd3d885cfc0309d0dc0304e736",
+        "size": 598,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/e07daae23f25e9cd3d885cfc0309d0dc0304e736"
+      },
+      {
+        "path": "apps/server/src/eval/fixtures/korean-mixed",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "11682278759f06a2335faf1c6d2973b341b8c92e",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/11682278759f06a2335faf1c6d2973b341b8c92e"
+      },
+      {
+        "path": "apps/server/src/eval/fixtures/korean-mixed/random.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "476d0d6d4e2f9636ec7c48a583ec42966b866a8c",
+        "size": 257,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/476d0d6d4e2f9636ec7c48a583ec42966b866a8c"
+      },
+      {
+        "path": "apps/server/src/eval/fixtures/korean-mixed/강의계획.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "183e778b30b08269654a6208a42f1fe1a13232ad",
+        "size": 272,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/183e778b30b08269654a6208a42f1fe1a13232ad"
+      },
+      {
+        "path": "apps/server/src/eval/fixtures/korean-mixed/조형예술론.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "94cb739664ed272fb259b48460cc69ec91d90ffd",
+        "size": 636,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/94cb739664ed272fb259b48460cc69ec91d90ffd"
+      },
+      {
+        "path": "apps/server/src/eval/fixtures/portfolio-small",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "3a585bc5d7de4a0cabf3f2be18c4759db07abaef",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/3a585bc5d7de4a0cabf3f2be18c4759db07abaef"
+      },
+      {
+        "path": "apps/server/src/eval/fixtures/portfolio-small/fx-rates.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c4773ce214fd77c45a7610704b508c8f858becd3",
+        "size": 128,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/c4773ce214fd77c45a7610704b508c8f858becd3"
+      },
+      {
+        "path": "apps/server/src/eval/fixtures/portfolio-small/holdings.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d3da92ade033efbe8262b0c4f41060e145bddaa9",
+        "size": 133,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/d3da92ade033efbe8262b0c4f41060e145bddaa9"
+      },
+      {
+        "path": "apps/server/src/eval/fixtures/portfolio-small/notes.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "408a342c4d57975c7e27ece7a4ccebe188f0a3a6",
+        "size": 413,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/408a342c4d57975c7e27ece7a4ccebe188f0a3a6"
+      },
+      {
+        "path": "apps/server/src/eval/fixtures/portfolio-small/unrelated.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3a551a21b1cbb30c99049fbe9c7bc194879fa3ec",
+        "size": 323,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/3a551a21b1cbb30c99049fbe9c7bc194879fa3ec"
+      },
+      {
+        "path": "apps/server/src/eval/fixtures/safety-fixture",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "cd890211907f857640f1a316decf3ea64de24d5a",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/cd890211907f857640f1a316decf3ea64de24d5a"
+      },
+      {
+        "path": "apps/server/src/eval/fixtures/safety-fixture/.ariadne",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "142a274d126cc653af7717cbeb25b5b3287b1612",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/142a274d126cc653af7717cbeb25b5b3287b1612"
+      },
+      {
+        "path": "apps/server/src/eval/fixtures/safety-fixture/.ariadne/private.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "07ef570edea1b6d13de656239bb17684117aeb64",
+        "size": 203,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/07ef570edea1b6d13de656239bb17684117aeb64"
+      },
+      {
+        "path": "apps/server/src/eval/fixtures/safety-fixture/credentials.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a86291eacac5ac9e85cc9b3494b1952291302a7b",
+        "size": 216,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/a86291eacac5ac9e85cc9b3494b1952291302a7b"
+      },
+      {
+        "path": "apps/server/src/eval/fixtures/safety-fixture/notes.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2a6a833bf8b3fdc80e67522e3c6637db0abb8898",
+        "size": 309,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/2a6a833bf8b3fdc80e67522e3c6637db0abb8898"
+      },
+      {
+        "path": "apps/server/src/eval/fixtures/safety-fixture/secrets.env",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c1f339b0b7748ff2ff246e1d3704ed3ccd78bec1",
+        "size": 319,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/c1f339b0b7748ff2ff246e1d3704ed3ccd78bec1"
+      },
+      {
+        "path": "apps/server/src/eval/gates.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d72d885009317e4924d1c89321f63234cc689e64",
+        "size": 3476,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/d72d885009317e4924d1c89321f63234cc689e64"
+      },
+      {
+        "path": "apps/server/src/eval/gates.yaml",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "691229874ebd38a7faae47398374a6c0877a6b65",
+        "size": 1365,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/691229874ebd38a7faae47398374a6c0877a6b65"
+      },
+      {
+        "path": "apps/server/src/eval/genMetrics.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "91c61fb9e960bfeee9fdea44ddd0b174784d561e",
+        "size": 12618,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/91c61fb9e960bfeee9fdea44ddd0b174784d561e"
+      },
+      {
+        "path": "apps/server/src/eval/metrics.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ad84f5c94f5db43ad82c43857e24583ca9280e02",
+        "size": 7279,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/ad84f5c94f5db43ad82c43857e24583ca9280e02"
+      },
+      {
+        "path": "apps/server/src/eval/reporters",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "572cdd753451b3b90907eeb2b38410eab9e458ac",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/572cdd753451b3b90907eeb2b38410eab9e458ac"
+      },
+      {
+        "path": "apps/server/src/eval/reporters/index.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f559b9537f30ef64350cb5ee91fc03fb8f4f0560",
+        "size": 4304,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/f559b9537f30ef64350cb5ee91fc03fb8f4f0560"
+      },
+      {
+        "path": "apps/server/src/eval/runPromotedRetrievalEval.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0f3a1c1bc0853f54b593ec60263ca0bbce421834",
+        "size": 7899,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/0f3a1c1bc0853f54b593ec60263ca0bbce421834"
+      },
+      {
+        "path": "apps/server/src/eval/runRagEval.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "480325a0dbd98e0dd8bc1c9f3ba11b8858460de3",
+        "size": 17550,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/480325a0dbd98e0dd8bc1c9f3ba11b8858460de3"
+      },
+      {
+        "path": "apps/server/src/eval/runRetrievalEval.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c8d22dd60fd03105001f54a9b71e715df35e25eb",
+        "size": 8421,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/c8d22dd60fd03105001f54a9b71e715df35e25eb"
+      },
+      {
+        "path": "apps/server/src/eval/runStrategyEval.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "11043fca079ff1e7b5db3bd977a2b59c625ec20d",
+        "size": 14374,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/11043fca079ff1e7b5db3bd977a2b59c625ec20d"
+      },
+      {
+        "path": "apps/server/src/gasp",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "d3cbd7166ba11bb1220ea59e1c0be161f69fab1c",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/d3cbd7166ba11bb1220ea59e1c0be161f69fab1c"
+      },
+      {
+        "path": "apps/server/src/gasp/filter.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "026b081c90956705de5cdeff2b8ce7f0e8bce5ca",
+        "size": 9499,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/026b081c90956705de5cdeff2b8ce7f0e8bce5ca"
+      },
+      {
+        "path": "apps/server/src/index.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "73ce9d06697fa7661a5ede0db1b3c919269f7edf",
+        "size": 13335,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/73ce9d06697fa7661a5ede0db1b3c919269f7edf"
+      },
+      {
+        "path": "apps/server/src/logger.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "42531f5f3406fad7a4c90886ccf0581fdf8cd562",
+        "size": 308,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/42531f5f3406fad7a4c90886ccf0581fdf8cd562"
+      },
+      {
+        "path": "apps/server/src/projects",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "1a443b0d683ae814f680dfdefac5625850a285bd",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/1a443b0d683ae814f680dfdefac5625850a285bd"
+      },
+      {
+        "path": "apps/server/src/projects/index.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d418b295d04dab231b20f5754db27588e70dc85b",
+        "size": 2486,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/d418b295d04dab231b20f5754db27588e70dc85b"
+      },
+      {
+        "path": "apps/server/src/providers",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "b2c73e9f4ea17c5e60f76abd4cf9928b7578d5ac",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/b2c73e9f4ea17c5e60f76abd4cf9928b7578d5ac"
+      },
+      {
+        "path": "apps/server/src/providers/anthropic.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ef996afa87db33e0bef8db35048694fca8764165",
+        "size": 5710,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/ef996afa87db33e0bef8db35048694fca8764165"
+      },
+      {
+        "path": "apps/server/src/providers/embedding.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "918b6c89fc7b6272e75f4e9ca2d64b38b6d182fd",
+        "size": 10695,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/918b6c89fc7b6272e75f4e9ca2d64b38b6d182fd"
+      },
+      {
+        "path": "apps/server/src/providers/gemini.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5b65523dc52e5440698d5d2847ac2b0f0a428c1f",
+        "size": 8616,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/5b65523dc52e5440698d5d2847ac2b0f0a428c1f"
+      },
+      {
+        "path": "apps/server/src/providers/index.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "62bcca6bd4d4a4ceecbffc87c899c9c9c4875b1b",
+        "size": 8643,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/62bcca6bd4d4a4ceecbffc87c899c9c9c4875b1b"
+      },
+      {
+        "path": "apps/server/src/providers/mock.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5ea330fd38ba13727a999b816d221a17c899335b",
+        "size": 12569,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/5ea330fd38ba13727a999b816d221a17c899335b"
+      },
+      {
+        "path": "apps/server/src/providers/openai.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f9768eafc280b2e8899021362f2d0278f58dcd03",
+        "size": 12512,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/f9768eafc280b2e8899021362f2d0278f58dcd03"
+      },
+      {
+        "path": "apps/server/src/routes",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "b3dfbe35af5d0e290da7ff0e62371c2c6310ded6",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/b3dfbe35af5d0e290da7ff0e62371c2c6310ded6"
+      },
+      {
+        "path": "apps/server/src/routes/account.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "bf8e81f663cd66b1231083f08b5b5d81a5eed194",
+        "size": 2451,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/bf8e81f663cd66b1231083f08b5b5d81a5eed194"
+      },
+      {
+        "path": "apps/server/src/routes/actions.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "aa9492965bfac35ec5d16ac99c6f522e1bdd0e1e",
+        "size": 4309,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/aa9492965bfac35ec5d16ac99c6f522e1bdd0e1e"
+      },
+      {
+        "path": "apps/server/src/routes/alerts.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "805fd96d29a2432b1f8c64a5535a5931259258b0",
+        "size": 1906,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/805fd96d29a2432b1f8c64a5535a5931259258b0"
+      },
+      {
+        "path": "apps/server/src/routes/attempts.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "fcdc1e5fc8da7b7a3884acc88390729b55af91aa",
+        "size": 4125,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/fcdc1e5fc8da7b7a3884acc88390729b55af91aa"
+      },
+      {
+        "path": "apps/server/src/routes/auth.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "bccfda7fd614a6d9ff9edc57b9e73036bd0a3be8",
+        "size": 4241,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/bccfda7fd614a6d9ff9edc57b9e73036bd0a3be8"
+      },
+      {
+        "path": "apps/server/src/routes/chat.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e291108311a7c3cd31e31b0230e2432de398103c",
+        "size": 64210,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/e291108311a7c3cd31e31b0230e2432de398103c"
+      },
+      {
+        "path": "apps/server/src/routes/compare.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d674fb48ac8095d551f1989369ad113b8d3978e4",
+        "size": 3348,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/d674fb48ac8095d551f1989369ad113b8d3978e4"
+      },
+      {
+        "path": "apps/server/src/routes/evalCases.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "00cef4b3967c7bd11aee6d8d659c258296593bfe",
+        "size": 4651,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/00cef4b3967c7bd11aee6d8d659c258296593bfe"
+      },
+      {
+        "path": "apps/server/src/routes/files.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1098fb5d06ba5e3ec8ae1fa4dc768ea22d33e224",
+        "size": 10241,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/1098fb5d06ba5e3ec8ae1fa4dc768ea22d33e224"
+      },
+      {
+        "path": "apps/server/src/routes/fs.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1f019ddd8096985111df991dfbcd4b670b19c492",
+        "size": 3376,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/1f019ddd8096985111df991dfbcd4b670b19c492"
+      },
+      {
+        "path": "apps/server/src/routes/git.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f89094febeb73a90ef221d37a0870030c6680b0e",
+        "size": 2567,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/f89094febeb73a90ef221d37a0870030c6680b0e"
+      },
+      {
+        "path": "apps/server/src/routes/health.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "99b8783dad92f114bec65efec6e0926ee2d8946c",
+        "size": 230,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/99b8783dad92f114bec65efec6e0926ee2d8946c"
+      },
+      {
+        "path": "apps/server/src/routes/hooks.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "08b14841eb349a96d74ab054fdf949494ccdd87f",
+        "size": 2428,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/08b14841eb349a96d74ab054fdf949494ccdd87f"
+      },
+      {
+        "path": "apps/server/src/routes/marketData.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b015346e28975a6a8e3e5bcb84a852e576bd1148",
+        "size": 6129,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/b015346e28975a6a8e3e5bcb84a852e576bd1148"
+      },
+      {
+        "path": "apps/server/src/routes/mcp.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ecaa0634ec418c0f63ec545d9845b6543f46295f",
+        "size": 6658,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/ecaa0634ec418c0f63ec545d9845b6543f46295f"
+      },
+      {
+        "path": "apps/server/src/routes/memory.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "45c727e2a2f3b7aefb93ea1f13643e84919a09da",
+        "size": 2207,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/45c727e2a2f3b7aefb93ea1f13643e84919a09da"
+      },
+      {
+        "path": "apps/server/src/routes/providers.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "83c8cc3a64ea388575b4e770fff697b1c7ce79d1",
+        "size": 3739,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/83c8cc3a64ea388575b4e770fff697b1c7ce79d1"
+      },
+      {
+        "path": "apps/server/src/routes/registry.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a2dacf72f7df66e07311d89e4387d3b467f364e2",
+        "size": 7119,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/a2dacf72f7df66e07311d89e4387d3b467f364e2"
+      },
+      {
+        "path": "apps/server/src/routes/reports.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5d93ef2c4d4c48a16779929f8fca332a9a71dc74",
+        "size": 6441,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/5d93ef2c4d4c48a16779929f8fca332a9a71dc74"
+      },
+      {
+        "path": "apps/server/src/routes/runs.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e79fbfabd35eee810992f9c67e335082a6a19225",
+        "size": 9426,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/e79fbfabd35eee810992f9c67e335082a6a19225"
+      },
+      {
+        "path": "apps/server/src/routes/schedules.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2a2b8bb49227aecdef7de0193363a0baf072de29",
+        "size": 5368,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/2a2b8bb49227aecdef7de0193363a0baf072de29"
+      },
+      {
+        "path": "apps/server/src/routes/scripts.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0d8d59a8d06daf4a23fbde44f0c8d6d1df8452cb",
+        "size": 6367,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/0d8d59a8d06daf4a23fbde44f0c8d6d1df8452cb"
+      },
+      {
+        "path": "apps/server/src/routes/search.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "cf637aedfe30dc8a78e425fc92cd93eb76019d78",
+        "size": 2919,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/cf637aedfe30dc8a78e425fc92cd93eb76019d78"
+      },
+      {
+        "path": "apps/server/src/routes/settings.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c2646bc567dee3a6d89754304cd46cadfa7e6ec4",
+        "size": 741,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/c2646bc567dee3a6d89754304cd46cadfa7e6ec4"
+      },
+      {
+        "path": "apps/server/src/routes/skills.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3157958466118e7a94d214581be2a382254d2c26",
+        "size": 4623,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/3157958466118e7a94d214581be2a382254d2c26"
+      },
+      {
+        "path": "apps/server/src/routes/surface.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5a6c9a95ef761d9632fc04abf7b33f9b02043048",
+        "size": 28038,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/5a6c9a95ef761d9632fc04abf7b33f9b02043048"
+      },
+      {
+        "path": "apps/server/src/routes/surfaceHost.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "df9b72f26d72115384e82be370fcd666edab9054",
+        "size": 7887,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/df9b72f26d72115384e82be370fcd666edab9054"
+      },
+      {
+        "path": "apps/server/src/routes/templates.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5d35fafc0789f027c7957ba6f2007f0f0bea0962",
+        "size": 597,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/5d35fafc0789f027c7957ba6f2007f0f0bea0962"
+      },
+      {
+        "path": "apps/server/src/routes/terminal.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5a21f8449e242c5bdff57a7d8f2d8db57fd362ef",
+        "size": 1465,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/5a21f8449e242c5bdff57a7d8f2d8db57fd362ef"
+      },
+      {
+        "path": "apps/server/src/routes/triggers.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "95ca7286c58dca69bb6312d65d7dc9f2ffe034fe",
+        "size": 6864,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/95ca7286c58dca69bb6312d65d7dc9f2ffe034fe"
+      },
+      {
+        "path": "apps/server/src/routes/usage.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c3d2a696c48bf3ffea10680b50aeedfa61e55f82",
+        "size": 518,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/c3d2a696c48bf3ffea10680b50aeedfa61e55f82"
+      },
+      {
+        "path": "apps/server/src/routes/workspaceGuard.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "fa48b34974d274e86689a9af3ce85040ae549e8b",
+        "size": 5655,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/fa48b34974d274e86689a9af3ce85040ae549e8b"
+      },
+      {
+        "path": "apps/server/src/routes/workspaces.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "50d9b91bb382e362fdd9e044ddeec5b12e350e28",
+        "size": 25272,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/50d9b91bb382e362fdd9e044ddeec5b12e350e28"
+      },
+      {
+        "path": "apps/server/src/runs",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "346d572c416cb7e1d125015052bffb9914f4c698",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/346d572c416cb7e1d125015052bffb9914f4c698"
+      },
+      {
+        "path": "apps/server/src/runs/actionEngine.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "00cfcbde4754df416e11ecd337fd3155abbb5224",
+        "size": 22776,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/00cfcbde4754df416e11ecd337fd3155abbb5224"
+      },
+      {
+        "path": "apps/server/src/runs/engine.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7f92d7013a6ca75470374e6819e19d4a3c53dbbb",
+        "size": 20142,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/7f92d7013a6ca75470374e6819e19d4a3c53dbbb"
+      },
+      {
+        "path": "apps/server/src/runs/evidence.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c082947c90208f44fa21bcf17ace57109e1b64b4",
+        "size": 7947,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/c082947c90208f44fa21bcf17ace57109e1b64b4"
+      },
+      {
+        "path": "apps/server/src/runs/runRegistry.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "08a2bea444f4c0ae62f29959075545b0c4aa0a97",
+        "size": 1363,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/08a2bea444f4c0ae62f29959075545b0c4aa0a97"
+      },
+      {
+        "path": "apps/server/src/runs/templates.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "01e7e38b70808a55bb0ab1e58824bf7e355224d3",
+        "size": 5948,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/01e7e38b70808a55bb0ab1e58824bf7e355224d3"
+      },
+      {
+        "path": "apps/server/src/sampleAssets.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c8ab53b3782a933e6fc4f4cfdcabdb307bb3c88c",
+        "size": 5157,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/c8ab53b3782a933e6fc4f4cfdcabdb307bb3c88c"
+      },
+      {
+        "path": "apps/server/src/security",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "dccf3f244d4e7117cd095a886197c22e1672f417",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/dccf3f244d4e7117cd095a886197c22e1672f417"
+      },
+      {
+        "path": "apps/server/src/security/pathGuard.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "aba58d0fe56699b0d2a06dea021a1072f1bb0d3b",
+        "size": 1369,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/aba58d0fe56699b0d2a06dea021a1072f1bb0d3b"
+      },
+      {
+        "path": "apps/server/src/security/security.test.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9ea472bc2a295401b67205cd3a3066aa24b2f291",
+        "size": 4542,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/9ea472bc2a295401b67205cd3a3066aa24b2f291"
+      },
+      {
+        "path": "apps/server/src/security/sensitive.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "70ba272399bf59175d66670dcdd318dfbaf2f2ff",
+        "size": 749,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/70ba272399bf59175d66670dcdd318dfbaf2f2ff"
+      },
+      {
+        "path": "apps/server/src/services",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "0accb2da861ab54d49b4801f67f9fdaf02485b8b",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/0accb2da861ab54d49b4801f67f9fdaf02485b8b"
+      },
+      {
+        "path": "apps/server/src/services/accountContext.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9fe2e761ef3af4cd777b0e09b9f09c5966b75de4",
+        "size": 3505,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/9fe2e761ef3af4cd777b0e09b9f09c5966b75de4"
+      },
+      {
+        "path": "apps/server/src/services/actions.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e479b628c636c5ea2096ba410c3d3442682ca7df",
+        "size": 9033,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/e479b628c636c5ea2096ba410c3d3442682ca7df"
+      },
+      {
+        "path": "apps/server/src/services/agent.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "fa2afb99310267b36c21d2e2418a1ac2d96f676e",
+        "size": 62688,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/fa2afb99310267b36c21d2e2418a1ac2d96f676e"
+      },
+      {
+        "path": "apps/server/src/services/agentReplan.test.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a3dcf12f28b5327add1a06492c4da4ff19eb97c4",
+        "size": 2143,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/a3dcf12f28b5327add1a06492c4da4ff19eb97c4"
+      },
+      {
+        "path": "apps/server/src/services/alerts.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "711454e4d9b95aa24a90a517e1f9d70b6ed02677",
+        "size": 908,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/711454e4d9b95aa24a90a517e1f9d70b6ed02677"
+      },
+      {
+        "path": "apps/server/src/services/attachmentExtraction.test.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a80942c16f4e0b13916fed3df6e1382948688286",
+        "size": 2708,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/a80942c16f4e0b13916fed3df6e1382948688286"
+      },
+      {
+        "path": "apps/server/src/services/attempts.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a90e67ab3aca1e35ea75fb6af2637f603b039b1d",
+        "size": 5424,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/a90e67ab3aca1e35ea75fb6af2637f603b039b1d"
+      },
+      {
+        "path": "apps/server/src/services/builtinSkills.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d02aa940b4ff29d2b07ed0268400336e177ede23",
+        "size": 7721,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/d02aa940b4ff29d2b07ed0268400336e177ede23"
+      },
+      {
+        "path": "apps/server/src/services/chatContext.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b18e74ce861a79f535909df8915a8b4d6a8f348e",
+        "size": 39210,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/b18e74ce861a79f535909df8915a8b4d6a8f348e"
+      },
+      {
+        "path": "apps/server/src/services/diff.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c6d79664e7b0515a28a368046f1e0c69cb331c64",
+        "size": 3613,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/c6d79664e7b0515a28a368046f1e0c69cb331c64"
+      },
+      {
+        "path": "apps/server/src/services/escalation.test.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5f0674b7945552a5abc662487046c27602d0925d",
+        "size": 3083,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/5f0674b7945552a5abc662487046c27602d0925d"
+      },
+      {
+        "path": "apps/server/src/services/generations.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2b8ac9321e2f475dce0717e1b2748aab67713330",
+        "size": 3204,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/2b8ac9321e2f475dce0717e1b2748aab67713330"
+      },
+      {
+        "path": "apps/server/src/services/groundCheck.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "29e12b1fe28aa7af816253d904526423588302eb",
+        "size": 3466,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/29e12b1fe28aa7af816253d904526423588302eb"
+      },
+      {
+        "path": "apps/server/src/services/groundCheckText.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "663532a8e81def0dbd71381c5a80ae53d2276d80",
+        "size": 6066,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/663532a8e81def0dbd71381c5a80ae53d2276d80"
+      },
+      {
+        "path": "apps/server/src/services/hooks.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "57c57c16a48ddc9704f60085d15445b7efacda20",
+        "size": 6873,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/57c57c16a48ddc9704f60085d15445b7efacda20"
+      },
+      {
+        "path": "apps/server/src/services/imageSearch.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0a026d557fa86416cc1215567ca31d47c299929b",
+        "size": 12466,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/0a026d557fa86416cc1215567ca31d47c299929b"
+      },
+      {
+        "path": "apps/server/src/services/libreoffice.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1573c0857a5f1b093adc2794b6f961663083b9e2",
+        "size": 6587,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/1573c0857a5f1b093adc2794b6f961663083b9e2"
+      },
+      {
+        "path": "apps/server/src/services/limits.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8299354e9ccc3c168b964d77252770349fc45239",
+        "size": 1703,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/8299354e9ccc3c168b964d77252770349fc45239"
+      },
+      {
+        "path": "apps/server/src/services/markdownCache.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c81bb0e3df048800919c015529163fd4e6eb4fde",
+        "size": 7692,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/c81bb0e3df048800919c015529163fd4e6eb4fde"
+      },
+      {
+        "path": "apps/server/src/services/markdownChunks.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "75748c7386879a264828990afe1f18ffe2fe9f6a",
+        "size": 3831,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/75748c7386879a264828990afe1f18ffe2fe9f6a"
+      },
+      {
+        "path": "apps/server/src/services/markdownQueue.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3cc435afc3c1b2db3410a2a6271ec1af77d8ce1c",
+        "size": 4220,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/3cc435afc3c1b2db3410a2a6271ec1af77d8ce1c"
+      },
+      {
+        "path": "apps/server/src/services/marketData.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "44537512c7f02c28f7a8604081fe268663033988",
+        "size": 30123,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/44537512c7f02c28f7a8604081fe268663033988"
+      },
+      {
+        "path": "apps/server/src/services/markitdown.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6ea044e9288068fbf35b912a1039be571b0157a4",
+        "size": 7087,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/6ea044e9288068fbf35b912a1039be571b0157a4"
+      },
+      {
+        "path": "apps/server/src/services/mcpClient.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "14bd4a79faf7f9551e20e3f3ae5618bd74c27e64",
+        "size": 9782,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/14bd4a79faf7f9551e20e3f3ae5618bd74c27e64"
+      },
+      {
+        "path": "apps/server/src/services/ollamaModels.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "53741e4f541c3625dfd42ebe049b266f1fad59d1",
+        "size": 2052,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/53741e4f541c3625dfd42ebe049b266f1fad59d1"
+      },
+      {
+        "path": "apps/server/src/services/orchestrator.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "60791fa241799bb8096822ccf5b8080412051fbd",
+        "size": 8472,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/60791fa241799bb8096822ccf5b8080412051fbd"
+      },
+      {
+        "path": "apps/server/src/services/pdfExtract.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ecc284f2ca05ca7c001d5584c2d926ce55d3ccab",
+        "size": 5036,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/ecc284f2ca05ca7c001d5584c2d926ce55d3ccab"
+      },
+      {
+        "path": "apps/server/src/services/pdfScreenshot.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "cb8c57e11ac25d1e2059a1e0963479e7adf15171",
+        "size": 6563,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/cb8c57e11ac25d1e2059a1e0963479e7adf15171"
+      },
+      {
+        "path": "apps/server/src/services/pymupdf.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "530c72ed62f48da2f77bd72e5c81a4700be42574",
+        "size": 5416,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/530c72ed62f48da2f77bd72e5c81a4700be42574"
+      },
+      {
+        "path": "apps/server/src/services/repoGit.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7515b74439caa3111e476840e3fe32e8da989997",
+        "size": 7231,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/7515b74439caa3111e476840e3fe32e8da989997"
+      },
+      {
+        "path": "apps/server/src/services/reranker.test.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "106275a7a1a3d1d8c14878550a34fa069221da2b",
+        "size": 2978,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/106275a7a1a3d1d8c14878550a34fa069221da2b"
+      },
+      {
+        "path": "apps/server/src/services/reranker.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "970e25d6e2a25e7471f62389ffc11f0236a2617b",
+        "size": 5559,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/970e25d6e2a25e7471f62389ffc11f0236a2617b"
+      },
+      {
+        "path": "apps/server/src/services/retrieval.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "30d745e4101232a61c820e74a039cb5cadc0a9f3",
+        "size": 48396,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/30d745e4101232a61c820e74a039cb5cadc0a9f3"
+      },
+      {
+        "path": "apps/server/src/services/safeParse.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a9ae858dee27b444e1dab469122ddc638068a524",
+        "size": 988,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/a9ae858dee27b444e1dab469122ddc638068a524"
+      },
+      {
+        "path": "apps/server/src/services/scheduler.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1363984a1e4dd232ab2025434efb772eb5036487",
+        "size": 4148,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/1363984a1e4dd232ab2025434efb772eb5036487"
+      },
+      {
+        "path": "apps/server/src/services/scriptEnv.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "aadc865b66273a03c2d06ccb13991d986bd8f1b9",
+        "size": 784,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/aadc865b66273a03c2d06ccb13991d986bd8f1b9"
+      },
+      {
+        "path": "apps/server/src/services/search.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ecd53405865d94d469e29a131d31c294be49cb43",
+        "size": 8028,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/ecd53405865d94d469e29a131d31c294be49cb43"
+      },
+      {
+        "path": "apps/server/src/services/stagedEdits.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "78e6ec439e454c6eb6e90a20db3756bec531035a",
+        "size": 14278,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/78e6ec439e454c6eb6e90a20db3756bec531035a"
+      },
+      {
+        "path": "apps/server/src/services/surfaceBuild.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "76abdb57f2a50506aa6784f90da3efaf254ede8d",
+        "size": 3903,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/76abdb57f2a50506aa6784f90da3efaf254ede8d"
+      },
+      {
+        "path": "apps/server/src/services/symbolIndex.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "44ee4bf2bc76fefecbcd5c7594b70c3a76892ce3",
+        "size": 6859,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/44ee4bf2bc76fefecbcd5c7594b70c3a76892ce3"
+      },
+      {
+        "path": "apps/server/src/services/symbolIndex",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "cec51583cd3fab37b666d794a59fc8fb72185692",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/cec51583cd3fab37b666d794a59fc8fb72185692"
+      },
+      {
+        "path": "apps/server/src/services/symbolIndex/treeSitterProvider.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f4b02cef8d01afda4cd2ac34ff870f60864cc68e",
+        "size": 14847,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/f4b02cef8d01afda4cd2ac34ff870f60864cc68e"
+      },
+      {
+        "path": "apps/server/src/services/terminal.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "217fe1ccd6da0d8e42d885bf5d5201dc61e2c5a1",
+        "size": 3905,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/217fe1ccd6da0d8e42d885bf5d5201dc61e2c5a1"
+      },
+      {
+        "path": "apps/server/src/services/triage.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "666b1f2b949b9ed3abd12cd7f3a55b70db47c40f",
+        "size": 13220,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/666b1f2b949b9ed3abd12cd7f3a55b70db47c40f"
+      },
+      {
+        "path": "apps/server/src/services/turnTimer.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9cbff142b662e8bad995864cbe6eb72c53af5a65",
+        "size": 3189,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/9cbff142b662e8bad995864cbe6eb72c53af5a65"
+      },
+      {
+        "path": "apps/server/src/services/uploads.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "471806128792e8cc70f953573abdd9ff687316d0",
+        "size": 2523,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/471806128792e8cc70f953573abdd9ff687316d0"
+      },
+      {
+        "path": "apps/server/src/services/workspaceContext.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f41460fcd4ffd809ed550ed9e7cca3e9d613b463",
+        "size": 1607,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/f41460fcd4ffd809ed550ed9e7cca3e9d613b463"
+      },
+      {
+        "path": "apps/server/src/services/workspaceEvents.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ca719554b21fe1dc67fb4aaa699bcfd88345289c",
+        "size": 2082,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/ca719554b21fe1dc67fb4aaa699bcfd88345289c"
+      },
+      {
+        "path": "apps/server/src/services/workspaceGit.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "30c4ca8a1a6d21d88bb3bc7de4736b9f43c44915",
+        "size": 12047,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/30c4ca8a1a6d21d88bb3bc7de4736b9f43c44915"
+      },
+      {
+        "path": "apps/server/src/services/workspaceMemory.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "785d67dfecd83f1c4ea9ab3f08e6f10b8bf7a0bb",
+        "size": 5219,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/785d67dfecd83f1c4ea9ab3f08e6f10b8bf7a0bb"
+      },
+      {
+        "path": "apps/server/src/services/workspaceTemplate.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "491d806f37adefa0922008e6fa137a961dc48770",
+        "size": 6263,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/491d806f37adefa0922008e6fa137a961dc48770"
+      },
+      {
+        "path": "apps/server/src/surface-templates",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "6183f2b8969b3a89510cfc9ca9365a7e1b7ec9f5",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/6183f2b8969b3a89510cfc9ca9365a7e1b7ec9f5"
+      },
+      {
+        "path": "apps/server/src/surface-templates/assets-sample",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "1e654713cb15529750de6dcbbdf4e844300362a7",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/1e654713cb15529750de6dcbbdf4e844300362a7"
+      },
+      {
+        "path": "apps/server/src/surface-templates/assets-sample/seed",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "163938eefb8acd99751ecb4a059c717e0d05f9cb",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/163938eefb8acd99751ecb4a059c717e0d05f9cb"
+      },
+      {
+        "path": "apps/server/src/surface-templates/assets-sample/seed/briefs",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "b55bbae5399f2c1f7724c38ba497274426f43020",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/b55bbae5399f2c1f7724c38ba497274426f43020"
+      },
+      {
+        "path": "apps/server/src/surface-templates/assets-sample/seed/briefs/latest.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "18e94f4269e94ece2f725472dd5e2124118bdab4",
+        "size": 261,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/18e94f4269e94ece2f725472dd5e2124118bdab4"
+      },
+      {
+        "path": "apps/server/src/surface-templates/assets-sample/seed/instruments",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "f31adf4a6416e8100deca31978be61073797e89c",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/f31adf4a6416e8100deca31978be61073797e89c"
+      },
+      {
+        "path": "apps/server/src/surface-templates/assets-sample/seed/instruments/_index.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "396e1419f98c3597b834ca3d252a010141270776",
+        "size": 463,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/396e1419f98c3597b834ca3d252a010141270776"
+      },
+      {
+        "path": "apps/server/src/surface-templates/assets-sample/seed/positions",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "db665bd0ec73019e1ff0fcf23de6646181abac22",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/db665bd0ec73019e1ff0fcf23de6646181abac22"
+      },
+      {
+        "path": "apps/server/src/surface-templates/assets-sample/seed/positions/current.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "75fed26d07fd1267994ba4a212aacb7bf649b492",
+        "size": 505,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/75fed26d07fd1267994ba4a212aacb7bf649b492"
+      },
+      {
+        "path": "apps/server/src/surface-templates/assets-sample/seed/targets",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "aa515ec8af71e1d76e78ef71c2207a2915872559",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/aa515ec8af71e1d76e78ef71c2207a2915872559"
+      },
+      {
+        "path": "apps/server/src/surface-templates/assets-sample/seed/targets/deploy.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ca80705c40487bd876215f72c3c91e72d5330d1e",
+        "size": 1771,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/ca80705c40487bd876215f72c3c91e72d5330d1e"
+      },
+      {
+        "path": "apps/server/src/surface-templates/assets-sample/seed/targets/geo.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8ab09befbd61f5c8f74d9e9742b1956051bf208a",
+        "size": 119,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/8ab09befbd61f5c8f74d9e9742b1956051bf208a"
+      },
+      {
+        "path": "apps/server/src/surface-templates/assets-sample/seed/targets/plan.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "007a4e7c0c52bef18cf7f814a5b8561bdc2aed3b",
+        "size": 258,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/007a4e7c0c52bef18cf7f814a5b8561bdc2aed3b"
+      },
+      {
+        "path": "apps/server/src/surface-templates/assets-sample/seed/targets/profiles.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "39b481655d75950ddd8458d785e9aadeaca6efba",
+        "size": 83,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/39b481655d75950ddd8458d785e9aadeaca6efba"
+      },
+      {
+        "path": "apps/server/src/surface-templates/assets-sample/seed/targets/sparplan.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "48bdb131e237ede53dbc30042fca497dfa09d266",
+        "size": 140,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/48bdb131e237ede53dbc30042fca497dfa09d266"
+      },
+      {
+        "path": "apps/server/src/surface-templates/assets-sample/seed/targets/todos.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "601d88307075ba924aac261f8197b58e43a746bc",
+        "size": 191,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/601d88307075ba924aac261f8197b58e43a746bc"
+      },
+      {
+        "path": "apps/server/src/surface-templates/assets-sample/seed/targets/watch.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3f9e2a397b735a76c98b8f8e1e47e1a11ea0901d",
+        "size": 123,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/3f9e2a397b735a76c98b8f8e1e47e1a11ea0901d"
+      },
+      {
+        "path": "apps/server/src/surface-templates/assets-sample/seed/targets/watchlist.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3ee3474c172aa528dfc68ce8a8eabd8417fd755f",
+        "size": 50,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/3ee3474c172aa528dfc68ce8a8eabd8417fd755f"
+      },
+      {
+        "path": "apps/server/src/surface-templates/assets-sample/store",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "ae34a23c656fc98c35b894010eac3c7f3827d31c",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/ae34a23c656fc98c35b894010eac3c7f3827d31c"
+      },
+      {
+        "path": "apps/server/src/surface-templates/assets-sample/store/value_history.csv",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "40a37e0c3eadeb5f02cd82e3b2224e97f05dca97",
+        "size": 387,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/40a37e0c3eadeb5f02cd82e3b2224e97f05dca97"
+      },
+      {
+        "path": "apps/server/src/surface-templates/assets-sample/store/view.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e75b08f7acbb2706c1d5ab00c6431ccabd7cf687",
+        "size": 8120,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/e75b08f7acbb2706c1d5ab00c6431ccabd7cf687"
+      },
+      {
+        "path": "apps/server/src/surface-templates/assets-sample/surface.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7d4ff09ee526402eb678d61d05f7b1001deef65b",
+        "size": 135637,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/7d4ff09ee526402eb678d61d05f7b1001deef65b"
+      },
+      {
+        "path": "apps/server/src/surface-templates/portfolio-v2",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "0e97fe278c8cdeffbebf09159272b07e73e381fe",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/0e97fe278c8cdeffbebf09159272b07e73e381fe"
+      },
+      {
+        "path": "apps/server/src/surface-templates/portfolio-v2/index.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "86b0d3580694cd06976900860ed410f18d6a64d8",
+        "size": 43373,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/86b0d3580694cd06976900860ed410f18d6a64d8"
+      },
+      {
+        "path": "apps/server/src/surface-templates/portfolio-v2/markdown.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "64246a44b027070d87c996e350ab322b324af156",
+        "size": 10012,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/64246a44b027070d87c996e350ab322b324af156"
+      },
+      {
+        "path": "apps/server/src/surface-templates/portfolio-v2/primitives.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "224a32876e5dd44b8ee0abae119ced36f68e47f7",
+        "size": 5321,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/224a32876e5dd44b8ee0abae119ced36f68e47f7"
+      },
+      {
+        "path": "apps/server/src/surface-templates/portfolio-v2/sections.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "416d0df94c70ea05b0273faaef1cb2ef1655ac8d",
+        "size": 103818,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/416d0df94c70ea05b0273faaef1cb2ef1655ac8d"
+      },
+      {
+        "path": "apps/server/src/surface-templates/portfolio-v2/types.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a6059d5f515587166057228f085bb865ac156a94",
+        "size": 10871,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/a6059d5f515587166057228f085bb865ac156a94"
+      },
+      {
+        "path": "apps/server/src/surface-templates/portfolio-v2/utils.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "27d7750de304c225af5240946438fcc1f91aeb8e",
+        "size": 19230,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/27d7750de304c225af5240946438fcc1f91aeb8e"
+      },
+      {
+        "path": "apps/server/src/surface-templates/portfolio-v2/yaml.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "02c4461d058c4d28fbfc4c308a4c806a939e4dc9",
+        "size": 6777,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/02c4461d058c4d28fbfc4c308a4c806a939e4dc9"
+      },
+      {
+        "path": "apps/server/src/surface",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "461b6891760ce8c23ae6af96ab930ddd5599d737",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/461b6891760ce8c23ae6af96ab930ddd5599d737"
+      },
+      {
+        "path": "apps/server/src/surface/portfolioStarter.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c0186cadab6a2588c255137091e5ca1af19760bd",
+        "size": 70914,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/c0186cadab6a2588c255137091e5ca1af19760bd"
+      },
+      {
+        "path": "apps/server/src/surface/portfolioV2Template.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c0e78f4808ce6d7034cf745fd950824e92f5888a",
+        "size": 2442,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/c0e78f4808ce6d7034cf745fd950824e92f5888a"
+      },
+      {
+        "path": "apps/server/src/surface/runtime.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "fa60b74c0093932e9f722b344746ed7eb13eb531",
+        "size": 37369,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/fa60b74c0093932e9f722b344746ed7eb13eb531"
+      },
+      {
+        "path": "apps/server/src/tutorialWorkspace.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "12cf8cdeacc215053ffba1d9391c3a6a2ced6549",
+        "size": 5727,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/12cf8cdeacc215053ffba1d9391c3a6a2ced6549"
+      },
+      {
+        "path": "apps/server/src/workspace",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "f1522e541bcf3472e2a0ab2c057dd8d7ccc0ffc5",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/f1522e541bcf3472e2a0ab2c057dd8d7ccc0ffc5"
+      },
+      {
+        "path": "apps/server/src/workspace/metadata.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e749eabd829f6f547ce2852da20410d1dbcbfcbb",
+        "size": 5147,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/e749eabd829f6f547ce2852da20410d1dbcbfcbb"
+      },
+      {
+        "path": "apps/server/src/workspace/readWithinRoot.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6345a95fcdd011cb1c284aa364d7c57ec2521c1c",
+        "size": 1704,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/6345a95fcdd011cb1c284aa364d7c57ec2521c1c"
+      },
+      {
+        "path": "apps/server/src/workspace/scanner.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2bdeabd43abcc1081f0999141380cdc1c81cef9f",
+        "size": 8419,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/2bdeabd43abcc1081f0999141380cdc1c81cef9f"
+      },
+      {
+        "path": "apps/server/tsconfig.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "291d788219485dbaf94423da65f9044313a0eaa4",
+        "size": 590,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/291d788219485dbaf94423da65f9044313a0eaa4"
+      },
+      {
+        "path": "apps/web",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "cccd7889ea415ecedef5012575de8644c2496f14",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/cccd7889ea415ecedef5012575de8644c2496f14"
+      },
+      {
+        "path": "apps/web/index.html",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "170eba66e9862d997e45108c8125c57d2716ab13",
+        "size": 1683,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/170eba66e9862d997e45108c8125c57d2716ab13"
+      },
+      {
+        "path": "apps/web/package.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d7c1abfbacb1757366bb9c170fff5eb64099d16d",
+        "size": 1616,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/d7c1abfbacb1757366bb9c170fff5eb64099d16d"
+      },
+      {
+        "path": "apps/web/public",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "57093013f8fefda4c32278da6951c429330f125c",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/57093013f8fefda4c32278da6951c429330f125c"
+      },
+      {
+        "path": "apps/web/public/apple-touch-icon.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d4db96ce2e2c233ccf61cae3774a2a30c47cf2b5",
+        "size": 25903,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/d4db96ce2e2c233ccf61cae3774a2a30c47cf2b5"
+      },
+      {
+        "path": "apps/web/public/favicon-16.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e30f998ed3913b8b2b78d95ccb1d05307590db8e",
+        "size": 822,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/e30f998ed3913b8b2b78d95ccb1d05307590db8e"
+      },
+      {
+        "path": "apps/web/public/favicon-32.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "cbb585af78ce3694851c88377645432397ee1a82",
+        "size": 2180,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/cbb585af78ce3694851c88377645432397ee1a82"
+      },
+      {
+        "path": "apps/web/public/favicon-48.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9c614368c146ed091a57d7e9beda25751c7fb1e0",
+        "size": 3776,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/9c614368c146ed091a57d7e9beda25751c7fb1e0"
+      },
+      {
+        "path": "apps/web/public/icon-192.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2b8b46a7142c70f39a5c0d76f43468f9a3c93100",
+        "size": 28449,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/2b8b46a7142c70f39a5c0d76f43468f9a3c93100"
+      },
+      {
+        "path": "apps/web/public/icon-512.png",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2127012a4f59b522885d1b4e553ec63f26ae119a",
+        "size": 106999,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/2127012a4f59b522885d1b4e553ec63f26ae119a"
+      },
+      {
+        "path": "apps/web/public/site.webmanifest",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "75061aefc55ac59571f4d60defcacde00936a71e",
+        "size": 472,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/75061aefc55ac59571f4d60defcacde00936a71e"
+      },
+      {
+        "path": "apps/web/src",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "8507cc62075c715b8fb3675bed743d209c340e93",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/8507cc62075c715b8fb3675bed743d209c340e93"
+      },
+      {
+        "path": "apps/web/src/App.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "de48c884efd457a653c160e579bd4cb478551b37",
+        "size": 13030,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/de48c884efd457a653c160e579bd4cb478551b37"
+      },
+      {
+        "path": "apps/web/src/components",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "fecf98707ea01cb07b6eb0d0f0794bf7b575f0ad",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/fecf98707ea01cb07b6eb0d0f0794bf7b575f0ad"
+      },
+      {
+        "path": "apps/web/src/components/GlobalCommands.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e93f0957228b8bba200d29b06e480870f18c5fb7",
+        "size": 2259,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/e93f0957228b8bba200d29b06e480870f18c5fb7"
+      },
+      {
+        "path": "apps/web/src/components/GlobalSettings.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "32b69114d44066813b44a37d8d47b6751d1f380c",
+        "size": 1548,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/32b69114d44066813b44a37d8d47b6751d1f380c"
+      },
+      {
+        "path": "apps/web/src/components/Keybindings.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d744e886680659d3aebe7420f459cd9923528302",
+        "size": 1307,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/d744e886680659d3aebe7420f459cd9923528302"
+      },
+      {
+        "path": "apps/web/src/components/NotFoundRedirect.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e59f8e0575f37fed64d0d14f3c5c4c96e11aba06",
+        "size": 591,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/e59f8e0575f37fed64d0d14f3c5c4c96e11aba06"
+      },
+      {
+        "path": "apps/web/src/components/ShortcutsHelp.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "df623998b3066c7497dee3025479ccf470ecb6fd",
+        "size": 7519,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/df623998b3066c7497dee3025479ccf470ecb6fd"
+      },
+      {
+        "path": "apps/web/src/components/WorkspaceCommands.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "723fbdcf8872f338bb757d9dc496374dc4e5442f",
+        "size": 1634,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/723fbdcf8872f338bb757d9dc496374dc4e5442f"
+      },
+      {
+        "path": "apps/web/src/components/layout",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "a2553f05aac430777f39ce8bc6a860898b300b1a",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/a2553f05aac430777f39ce8bc6a860898b300b1a"
+      },
+      {
+        "path": "apps/web/src/components/layout/ActivityPanel.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9d842c597f6c8987edced8b258a4787ef064c029",
+        "size": 3409,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/9d842c597f6c8987edced8b258a4787ef064c029"
+      },
+      {
+        "path": "apps/web/src/components/layout/AppShell.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7413102a0dea82b49f52307770f837f9f5afee56",
+        "size": 54392,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/7413102a0dea82b49f52307770f837f9f5afee56"
+      },
+      {
+        "path": "apps/web/src/components/layout/CodePane.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ec2a3f59890a2a15a21d32017b718eefb940136b",
+        "size": 3454,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/ec2a3f59890a2a15a21d32017b718eefb940136b"
+      },
+      {
+        "path": "apps/web/src/components/layout/Inspector.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6566343d8a8274d55f0470f0ea18965565d65529",
+        "size": 8040,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/6566343d8a8274d55f0470f0ea18965565d65529"
+      },
+      {
+        "path": "apps/web/src/components/layout/PageHeader.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2fc467667ec813691f239c376dd7615c41c2f550",
+        "size": 1808,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/2fc467667ec813691f239c376dd7615c41c2f550"
+      },
+      {
+        "path": "apps/web/src/components/layout/SidePanel.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d7c4c470c988106072fe54d316397f4a777746f2",
+        "size": 2694,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/d7c4c470c988106072fe54d316397f4a777746f2"
+      },
+      {
+        "path": "apps/web/src/components/layout/SortableList.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5561ee8862d0f4070fe3b8a6300d725543ed469e",
+        "size": 3732,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/5561ee8862d0f4070fe3b8a6300d725543ed469e"
+      },
+      {
+        "path": "apps/web/src/components/tutorial",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "a68d05bf43ea346126e47e45a37be8a0d5e8d08a",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/a68d05bf43ea346126e47e45a37be8a0d5e8d08a"
+      },
+      {
+        "path": "apps/web/src/components/tutorial/TutorialOverlay.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b14f0e8ad9f0f91594bac2b5a0ed1e7e0b3abd11",
+        "size": 9487,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/b14f0e8ad9f0f91594bac2b5a0ed1e7e0b3abd11"
+      },
+      {
+        "path": "apps/web/src/components/tutorial/steps.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c535c71a1efc341e227442ef953424670eaea90a",
+        "size": 1537,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/c535c71a1efc341e227442ef953424670eaea90a"
+      },
+      {
+        "path": "apps/web/src/components/ui",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "ace7874eb2a560c712472d9a590cf57522af0f10",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/ace7874eb2a560c712472d9a590cf57522af0f10"
+      },
+      {
+        "path": "apps/web/src/components/ui/Badge.module.css",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9bb2eae1c6885e633ece6ae32792a7c2147e005b",
+        "size": 1928,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/9bb2eae1c6885e633ece6ae32792a7c2147e005b"
+      },
+      {
+        "path": "apps/web/src/components/ui/Badge.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "cfcb342e142253a653c89a9f3bdbf5c9e451c738",
+        "size": 2719,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/cfcb342e142253a653c89a9f3bdbf5c9e451c738"
+      },
+      {
+        "path": "apps/web/src/components/ui/Button.module.css",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "83bcbd12be13b2b913d7cb52b5d6c3b9793912e4",
+        "size": 2934,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/83bcbd12be13b2b913d7cb52b5d6c3b9793912e4"
+      },
+      {
+        "path": "apps/web/src/components/ui/Button.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "4acbae24c7c1146200d1590f918b2307086adc3d",
+        "size": 2236,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/4acbae24c7c1146200d1590f918b2307086adc3d"
+      },
+      {
+        "path": "apps/web/src/components/ui/Card.module.css",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ad06bc2c48713fa38fa610b015ace23c5a8c8e97",
+        "size": 1418,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/ad06bc2c48713fa38fa610b015ace23c5a8c8e97"
+      },
+      {
+        "path": "apps/web/src/components/ui/Card.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "715d29be8b87b70e571e4af042bb72de8339f9fe",
+        "size": 1223,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/715d29be8b87b70e571e4af042bb72de8339f9fe"
+      },
+      {
+        "path": "apps/web/src/components/ui/Checkbox.module.css",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c01a7588d0afd499f10147ab495c6d2b7e37fea8",
+        "size": 1619,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/c01a7588d0afd499f10147ab495c6d2b7e37fea8"
+      },
+      {
+        "path": "apps/web/src/components/ui/Checkbox.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "abe0b2b68d621be6b65e107ff842a052c9ca7b22",
+        "size": 1489,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/abe0b2b68d621be6b65e107ff842a052c9ca7b22"
+      },
+      {
+        "path": "apps/web/src/components/ui/CodeBlock.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "140116b38105a0943170659a937b7307b650ee27",
+        "size": 3154,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/140116b38105a0943170659a937b7307b650ee27"
+      },
+      {
+        "path": "apps/web/src/components/ui/CommandMenu.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "eeffa3d526615b7f4eb17d0fb68eeb04aee885aa",
+        "size": 8699,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/eeffa3d526615b7f4eb17d0fb68eeb04aee885aa"
+      },
+      {
+        "path": "apps/web/src/components/ui/ConfirmDialog.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0802375bbf78fea97097ea0460862c8085cd8f81",
+        "size": 4982,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/0802375bbf78fea97097ea0460862c8085cd8f81"
+      },
+      {
+        "path": "apps/web/src/components/ui/ContextMenu.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "26a3cb0f0cc245b0b7c502bf6955e899ab470ac1",
+        "size": 3227,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/26a3cb0f0cc245b0b7c502bf6955e899ab470ac1"
+      },
+      {
+        "path": "apps/web/src/components/ui/Dialog.module.css",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "bb91c7ebc24109051ba6909abef265fc00e93f7e",
+        "size": 2685,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/bb91c7ebc24109051ba6909abef265fc00e93f7e"
+      },
+      {
+        "path": "apps/web/src/components/ui/Dialog.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "cd3fcb1b6bb3aa05d6420d14cdb9d88357838f37",
+        "size": 5496,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/cd3fcb1b6bb3aa05d6420d14cdb9d88357838f37"
+      },
+      {
+        "path": "apps/web/src/components/ui/ErrorBoundary.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5dea7b108b05f75e2802b9a5f114f4defebad71d",
+        "size": 3666,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/5dea7b108b05f75e2802b9a5f114f4defebad71d"
+      },
+      {
+        "path": "apps/web/src/components/ui/EvidenceBadge.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2cfffee8c2976ecdb8b558e9cc0577344a2203ad",
+        "size": 1789,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/2cfffee8c2976ecdb8b558e9cc0577344a2203ad"
+      },
+      {
+        "path": "apps/web/src/components/ui/IconButton.module.css",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "614a9cf397a2eb582b62587e775c577c996c2b00",
+        "size": 1497,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/614a9cf397a2eb582b62587e775c577c996c2b00"
+      },
+      {
+        "path": "apps/web/src/components/ui/IconButton.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ab63b3d42a0626d955a55994383d81b63eb936ec",
+        "size": 1993,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/ab63b3d42a0626d955a55994383d81b63eb936ec"
+      },
+      {
+        "path": "apps/web/src/components/ui/Input.module.css",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "28beb699ca577579f077b514bd6d3bd5c501e71f",
+        "size": 1351,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/28beb699ca577579f077b514bd6d3bd5c501e71f"
+      },
+      {
+        "path": "apps/web/src/components/ui/Input.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "54018d5ebf763165c8dee64997f35b780c84f16a",
+        "size": 1496,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/54018d5ebf763165c8dee64997f35b780c84f16a"
+      },
+      {
+        "path": "apps/web/src/components/ui/SegmentedControl.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3bb731633a95aeea053b02f2e08cc46b620d5ba9",
+        "size": 2077,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/3bb731633a95aeea053b02f2e08cc46b620d5ba9"
+      },
+      {
+        "path": "apps/web/src/components/ui/Select.module.css",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b1b21aecb284c01e3b9b929777e85d433b57a506",
+        "size": 1313,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/b1b21aecb284c01e3b9b929777e85d433b57a506"
+      },
+      {
+        "path": "apps/web/src/components/ui/Select.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "54807433852b8bb60e03fe7a6d084f374338571c",
+        "size": 1629,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/54807433852b8bb60e03fe7a6d084f374338571c"
+      },
+      {
+        "path": "apps/web/src/components/ui/SidebarItem.module.css",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e3cb19ac6859863d27fbd87c55602ee623b61929",
+        "size": 1550,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/e3cb19ac6859863d27fbd87c55602ee623b61929"
+      },
+      {
+        "path": "apps/web/src/components/ui/SidebarItem.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5fd78b5c64458e66a1d2a5f5b04b8f0f5e498afc",
+        "size": 1892,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/5fd78b5c64458e66a1d2a5f5b04b8f0f5e498afc"
+      },
+      {
+        "path": "apps/web/src/components/ui/Skeleton.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "935c2f250735c1791847601b6cbdeaa993d94cd4",
+        "size": 590,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/935c2f250735c1791847601b6cbdeaa993d94cd4"
+      },
+      {
+        "path": "apps/web/src/components/ui/Spinner.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "da2435bb6aa71a1f7d0b5a5f2adbc5d00a9de577",
+        "size": 2177,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/da2435bb6aa71a1f7d0b5a5f2adbc5d00a9de577"
+      },
+      {
+        "path": "apps/web/src/components/ui/Tabs.module.css",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c05c87ee51c30cb1e6a016fcfb193f246f29ac60",
+        "size": 1397,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/c05c87ee51c30cb1e6a016fcfb193f246f29ac60"
+      },
+      {
+        "path": "apps/web/src/components/ui/Tabs.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "afcf01a992447b636e7ef1c21707f506ea81b3de",
+        "size": 4452,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/afcf01a992447b636e7ef1c21707f506ea81b3de"
+      },
+      {
+        "path": "apps/web/src/components/ui/Textarea.module.css",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0f606a80412c58effbd29a3c8cbb146a78d5f715",
+        "size": 1087,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/0f606a80412c58effbd29a3c8cbb146a78d5f715"
+      },
+      {
+        "path": "apps/web/src/components/ui/Textarea.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "232d510c440d9adbaf971f23d41720410e793ec5",
+        "size": 1236,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/232d510c440d9adbaf971f23d41720410e793ec5"
+      },
+      {
+        "path": "apps/web/src/components/ui/Toast.module.css",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9c57bdce4cf25621697fae2eb75935fa2cffd80d",
+        "size": 2292,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/9c57bdce4cf25621697fae2eb75935fa2cffd80d"
+      },
+      {
+        "path": "apps/web/src/components/ui/Toast.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e8ec37f093e20062a0fae091721d154d92004e56",
+        "size": 4168,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/e8ec37f093e20062a0fae091721d154d92004e56"
+      },
+      {
+        "path": "apps/web/src/components/ui/TokenEstimate.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "bbf3d4ee98de3f58040fd93b8525dfdd3e992050",
+        "size": 910,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/bbf3d4ee98de3f58040fd93b8525dfdd3e992050"
+      },
+      {
+        "path": "apps/web/src/components/ui/Tooltip.module.css",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "12b306e9223d337e1259e753a76dd7117d946490",
+        "size": 1092,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/12b306e9223d337e1259e753a76dd7117d946490"
+      },
+      {
+        "path": "apps/web/src/components/ui/Tooltip.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "80a32a272bf2986486506327bdce9163f48aeb7c",
+        "size": 1702,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/80a32a272bf2986486506327bdce9163f48aeb7c"
+      },
+      {
+        "path": "apps/web/src/components/ui/TraceTimeline.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b5563e1c84130a0c8bd1f4f26daf99b75d8f2132",
+        "size": 4087,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/b5563e1c84130a0c8bd1f4f26daf99b75d8f2132"
+      },
+      {
+        "path": "apps/web/src/features",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "1a9d8c13b07e7762d563c036a4f16ab50d8b60f1",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/1a9d8c13b07e7762d563c036a4f16ab50d8b60f1"
+      },
+      {
+        "path": "apps/web/src/features/alerts",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "b66daae079c0be8c7c59ae91c7433dbf40aa4c6f",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/b66daae079c0be8c7c59ae91c7433dbf40aa4c6f"
+      },
+      {
+        "path": "apps/web/src/features/alerts/NotificationsBell.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6e8dfc1be5b0417dfde19d47e069703b82cf99aa",
+        "size": 5263,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/6e8dfc1be5b0417dfde19d47e069703b82cf99aa"
+      },
+      {
+        "path": "apps/web/src/features/auth",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "f017c34cfeb06915bf6f04c98e4167da53bb8ac9",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/f017c34cfeb06915bf6f04c98e4167da53bb8ac9"
+      },
+      {
+        "path": "apps/web/src/features/auth/LoginView.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "97b9c704d925f2e7d9445f2f00f8c6cee1a16f5d",
+        "size": 5791,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/97b9c704d925f2e7d9445f2f00f8c6cee1a16f5d"
+      },
+      {
+        "path": "apps/web/src/features/chat",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "d741f72f0c610b93cd53c788716eb259cd660324",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/d741f72f0c610b93cd53c788716eb259cd660324"
+      },
+      {
+        "path": "apps/web/src/features/chat/ChatComposer.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3d8cb44bf48d39da052c7d2bd488f7e54c0d4e18",
+        "size": 66017,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/3d8cb44bf48d39da052c7d2bd488f7e54c0d4e18"
+      },
+      {
+        "path": "apps/web/src/features/chat/ChatSkeleton.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "342ba639fe3d906aef2aa4684e718622bd01e1ec",
+        "size": 1180,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/342ba639fe3d906aef2aa4684e718622bd01e1ec"
+      },
+      {
+        "path": "apps/web/src/features/chat/ChatView.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b8bd5ece9f58920372364f7294b02ae63017563f",
+        "size": 27984,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/b8bd5ece9f58920372364f7294b02ae63017563f"
+      },
+      {
+        "path": "apps/web/src/features/chat/CodeBlockVisualization.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8c1bbcffd5ff93d5515755808cbb341f37926004",
+        "size": 4829,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/8c1bbcffd5ff93d5515755808cbb341f37926004"
+      },
+      {
+        "path": "apps/web/src/features/chat/FloatingChat.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ab43e10c03fc53c1ef050c3b8154fd884b5efb0b",
+        "size": 5941,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/ab43e10c03fc53c1ef050c3b8154fd884b5efb0b"
+      },
+      {
+        "path": "apps/web/src/features/chat/ImageGrid.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "00e7e89378600a6e6b3e6a110a920aa39170b9fb",
+        "size": 4839,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/00e7e89378600a6e6b3e6a110a920aa39170b9fb"
+      },
+      {
+        "path": "apps/web/src/features/chat/MarkdownContent.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "524cdbc15efea2a1936c006cacdf7f031be33bc1",
+        "size": 4621,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/524cdbc15efea2a1936c006cacdf7f031be33bc1"
+      },
+      {
+        "path": "apps/web/src/features/chat/MessageBubble.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "4a0fdabdee8f1cadbd6c49b806dfa2f3d8fba07b",
+        "size": 34453,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/4a0fdabdee8f1cadbd6c49b806dfa2f3d8fba07b"
+      },
+      {
+        "path": "apps/web/src/features/chat/TableSheet.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "46501d49b15705ad93f9c44bff3ef5c95f4abd31",
+        "size": 8093,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/46501d49b15705ad93f9c44bff3ef5c95f4abd31"
+      },
+      {
+        "path": "apps/web/src/features/chat/WorkspaceContextStrip.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5552e238642a42e60bf2600c7fd080cab50a3a5d",
+        "size": 3150,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/5552e238642a42e60bf2600c7fd080cab50a3a5d"
+      },
+      {
+        "path": "apps/web/src/features/chat/WorkspaceFilePicker.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ba884950cdd976781a155b1d53b16258ba47d17a",
+        "size": 11601,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/ba884950cdd976781a155b1d53b16258ba47d17a"
+      },
+      {
+        "path": "apps/web/src/features/compare",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "2ad5a2893fd9bdb177cecae657cce7086c6756f6",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/2ad5a2893fd9bdb177cecae657cce7086c6756f6"
+      },
+      {
+        "path": "apps/web/src/features/compare/CompareView.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e29eb4f8dcae0ee58cf3445c4f49337f10f88e96",
+        "size": 5717,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/e29eb4f8dcae0ee58cf3445c4f49337f10f88e96"
+      },
+      {
+        "path": "apps/web/src/features/developers",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "e745f55b6f22e92f65399f15c3fe329c62f58f98",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/e745f55b6f22e92f65399f15c3fe329c62f58f98"
+      },
+      {
+        "path": "apps/web/src/features/developers/ApiReference.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "fc82ca525a97ccb0cea3ba5c525dc94d52f37755",
+        "size": 7949,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/fc82ca525a97ccb0cea3ba5c525dc94d52f37755"
+      },
+      {
+        "path": "apps/web/src/features/developers/DevelopersView.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "eebbec048bbfe6531f79640a47497a7d72e3dd74",
+        "size": 14544,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/eebbec048bbfe6531f79640a47497a7d72e3dd74"
+      },
+      {
+        "path": "apps/web/src/features/developers/apiInventory.generated.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "410a4a5d92052e83256135fc366339c75963f50a",
+        "size": 20890,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/410a4a5d92052e83256135fc366339c75963f50a"
+      },
+      {
+        "path": "apps/web/src/features/developers/apiMeta.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "750280ec8a6685b7e0f09f8384f2fb423e297113",
+        "size": 6415,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/750280ec8a6685b7e0f09f8384f2fb423e297113"
+      },
+      {
+        "path": "apps/web/src/features/developers/diagrams.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "cd13079ccb282279374b85db0b9e35722c7c32d2",
+        "size": 7610,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/cd13079ccb282279374b85db0b9e35722c7c32d2"
+      },
+      {
+        "path": "apps/web/src/features/developers/docsContent.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "71565b1a8a86a6c2535818b35afaba852da2bd51",
+        "size": 52813,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/71565b1a8a86a6c2535818b35afaba852da2bd51"
+      },
+      {
+        "path": "apps/web/src/features/developers/docsKit.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e55e46eaa49e334cea9c096d9dfd20780e2d3e85",
+        "size": 12708,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/e55e46eaa49e334cea9c096d9dfd20780e2d3e85"
+      },
+      {
+        "path": "apps/web/src/features/developers/docsLanding.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8e99b52f811582d18214af14a2612aab45993d0d",
+        "size": 11482,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/8e99b52f811582d18214af14a2612aab45993d0d"
+      },
+      {
+        "path": "apps/web/src/features/developers/docsRegistry.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "720b4797b7ff6a083cbe25790ba09f2b32a360ab",
+        "size": 8243,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/720b4797b7ff6a083cbe25790ba09f2b32a360ab"
+      },
+      {
+        "path": "apps/web/src/features/eval",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "52446117050309fc02fedee26a2e25bdb241c1f7",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/52446117050309fc02fedee26a2e25bdb241c1f7"
+      },
+      {
+        "path": "apps/web/src/features/eval/PromoteCaseModal.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "16d54f026d763c8c90736083e4ace2443287e246",
+        "size": 5337,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/16d54f026d763c8c90736083e4ace2443287e246"
+      },
+      {
+        "path": "apps/web/src/features/hooks",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "5df3f0399e35691dfc82e3182f7eeebe30065429",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/5df3f0399e35691dfc82e3182f7eeebe30065429"
+      },
+      {
+        "path": "apps/web/src/features/hooks/HooksPanel.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c71e975e7c525b9f049eeb4b946bf709b9b7bdcb",
+        "size": 7990,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/c71e975e7c525b9f049eeb4b946bf709b9b7bdcb"
+      },
+      {
+        "path": "apps/web/src/features/mcp",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "acf406c3fe39bd83917823ab33667b60452743eb",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/acf406c3fe39bd83917823ab33667b60452743eb"
+      },
+      {
+        "path": "apps/web/src/features/mcp/McpServersPanel.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "58feb438defe2427e85ebc43fe1ec5cb84f584cf",
+        "size": 12310,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/58feb438defe2427e85ebc43fe1ec5cb84f584cf"
+      },
+      {
+        "path": "apps/web/src/features/memory",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "06943b60ddc6952b07b6d0c1ab0fa5dc8db1f18a",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/06943b60ddc6952b07b6d0c1ab0fa5dc8db1f18a"
+      },
+      {
+        "path": "apps/web/src/features/memory/MemoryPanel.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b40eeacc1f5f5241e96fdfc7ad5ffeabc4374811",
+        "size": 6548,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/b40eeacc1f5f5241e96fdfc7ad5ffeabc4374811"
+      },
+      {
+        "path": "apps/web/src/features/memory/SaveToMemoryModal.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "50cfb6f75e49513f39b70272a550574800314e67",
+        "size": 4853,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/50cfb6f75e49513f39b70272a550574800314e67"
+      },
+      {
+        "path": "apps/web/src/features/onboarding",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "c2a514449eaf9b4b274ec4725f5aba64030d0bbc",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/c2a514449eaf9b4b274ec4725f5aba64030d0bbc"
+      },
+      {
+        "path": "apps/web/src/features/onboarding/FirstRunWizard.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8b35b170179b1ed6f91c90b7ed07f16436050192",
+        "size": 3751,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/8b35b170179b1ed6f91c90b7ed07f16436050192"
+      },
+      {
+        "path": "apps/web/src/features/reports",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "eedeb51083bca9d4d03324d5a235a80b02cd0abc",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/eedeb51083bca9d4d03324d5a235a80b02cd0abc"
+      },
+      {
+        "path": "apps/web/src/features/reports/ReportDialog.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "303b2cc358c9c4e7c838d296dd53f40087dca821",
+        "size": 8497,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/303b2cc358c9c4e7c838d296dd53f40087dca821"
+      },
+      {
+        "path": "apps/web/src/features/reports/ReportsQueueView.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "98b1f30c8f8923b2bff78be6619c4ba0f6a29b61",
+        "size": 7907,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/98b1f30c8f8923b2bff78be6619c4ba0f6a29b61"
+      },
+      {
+        "path": "apps/web/src/features/runs",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "02ad9081a0ead4f03f2850af000604be467b07fa",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/02ad9081a0ead4f03f2850af000604be467b07fa"
+      },
+      {
+        "path": "apps/web/src/features/runs/ActionRunView.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0c59510f988e9bb88b11d53b7533d1625f8f73a8",
+        "size": 7381,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/0c59510f988e9bb88b11d53b7533d1625f8f73a8"
+      },
+      {
+        "path": "apps/web/src/features/runs/AttemptDiffView.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "20765ea1a0111969d31d0bc42df8c5723d2e8dcb",
+        "size": 7110,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/20765ea1a0111969d31d0bc42df8c5723d2e8dcb"
+      },
+      {
+        "path": "apps/web/src/features/runs/AttemptsListView.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "48a4e637800cce56545e950ef948aa2241ac6050",
+        "size": 4169,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/48a4e637800cce56545e950ef948aa2241ac6050"
+      },
+      {
+        "path": "apps/web/src/features/runs/ContextPickView.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "bc21ccc6ecb7e0a46274a220af45326ec3a32807",
+        "size": 10889,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/bc21ccc6ecb7e0a46274a220af45326ec3a32807"
+      },
+      {
+        "path": "apps/web/src/features/runs/RunDetailView.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "769ceada8fd99154253f01cc9857a2e1f9b2c676",
+        "size": 22673,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/769ceada8fd99154253f01cc9857a2e1f9b2c676"
+      },
+      {
+        "path": "apps/web/src/features/runs/StagedDiffView.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a6c48dec3a774d6654d43b6b3d53a4321541dd58",
+        "size": 8842,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/a6c48dec3a774d6654d43b6b3d53a4321541dd58"
+      },
+      {
+        "path": "apps/web/src/features/runs/TemplateRunView.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "dc4fc96ce8f9f2fc51ca7d22b96f40b95b8d7b4c",
+        "size": 10197,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/dc4fc96ce8f9f2fc51ca7d22b96f40b95b8d7b4c"
+      },
+      {
+        "path": "apps/web/src/features/runs/diffRender.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "86223807be57588661a3685afbaa58fe305d69c0",
+        "size": 6453,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/86223807be57588661a3685afbaa58fe305d69c0"
+      },
+      {
+        "path": "apps/web/src/features/search",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "6684642c8b7b6b74935074d78e5058e14ffb5454",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/6684642c8b7b6b74935074d78e5058e14ffb5454"
+      },
+      {
+        "path": "apps/web/src/features/search/SearchView.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a4c5c2a26da3e063536e1d6ee29b00a4f5d4ff86",
+        "size": 4472,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/a4c5c2a26da3e063536e1d6ee29b00a4f5d4ff86"
+      },
+      {
+        "path": "apps/web/src/features/settings",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "d8ddead056dd41e7486c4a72a0e3b1191d3c43aa",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/d8ddead056dd41e7486c4a72a0e3b1191d3c43aa"
+      },
+      {
+        "path": "apps/web/src/features/settings/RegisteredSettings.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3f85381f5c44ba91e707fd0ab417eda719c43149",
+        "size": 2508,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/3f85381f5c44ba91e707fd0ab417eda719c43149"
+      },
+      {
+        "path": "apps/web/src/features/settings/SettingsView.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f182dd772e068812b634feb88c7fd510697140ad",
+        "size": 23790,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/f182dd772e068812b634feb88c7fd510697140ad"
+      },
+      {
+        "path": "apps/web/src/features/settings/SkillsManager.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8250683f4ee7c286d9adea4a2d435c365d493af8",
+        "size": 7336,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/8250683f4ee7c286d9adea4a2d435c365d493af8"
+      },
+      {
+        "path": "apps/web/src/features/surface",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "ed4ad07c9f3a4f2bd1e0ef4422aa0c16fc7896c7",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/ed4ad07c9f3a4f2bd1e0ef4422aa0c16fc7896c7"
+      },
+      {
+        "path": "apps/web/src/features/surface/SurfaceEditor.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "457c9c714c39437ee80052e79d483debab9fa3cc",
+        "size": 23342,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/457c9c714c39437ee80052e79d483debab9fa3cc"
+      },
+      {
+        "path": "apps/web/src/features/surface/SurfaceView.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6fddf5ce66cccc00cc079d53d5431ca71c213db8",
+        "size": 14171,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/6fddf5ce66cccc00cc079d53d5431ca71c213db8"
+      },
+      {
+        "path": "apps/web/src/features/tutorial",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "f48ab84a5ac387d3a36f09e84f5d43b05cccea28",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/f48ab84a5ac387d3a36f09e84f5d43b05cccea28"
+      },
+      {
+        "path": "apps/web/src/features/tutorial/TutorialPage.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "83c772ecf9ac37d5934ff36bb2d5cc3becc490fc",
+        "size": 6563,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/83c772ecf9ac37d5934ff36bb2d5cc3becc490fc"
+      },
+      {
+        "path": "apps/web/src/features/tutorial/tutorialSections.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c6066f8bba75b07153122b4b865ed13c07c80fa8",
+        "size": 5213,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/c6066f8bba75b07153122b4b865ed13c07c80fa8"
+      },
+      {
+        "path": "apps/web/src/features/tutorial/tutorialVisuals.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "06814149d07799a6d1a95d4ad1199b4967837d2b",
+        "size": 13333,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/06814149d07799a6d1a95d4ad1199b4967837d2b"
+      },
+      {
+        "path": "apps/web/src/features/workspace",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "158189a4e04d9c5590cad1678dd17298ce7d18e2",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/158189a4e04d9c5590cad1678dd17298ce7d18e2"
+      },
+      {
+        "path": "apps/web/src/features/workspace/ActionsEditor.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "01f787f9dc2cccf039fb8eb9d81bf60a9f324232",
+        "size": 33370,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/01f787f9dc2cccf039fb8eb9d81bf60a9f324232"
+      },
+      {
+        "path": "apps/web/src/features/workspace/ContextEditor.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "155bb705a4bc578c7884a8608cc326a638005c01",
+        "size": 3331,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/155bb705a4bc578c7884a8608cc326a638005c01"
+      },
+      {
+        "path": "apps/web/src/features/workspace/CreateFileDialog.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "465c4c9f044843a5925d44f1ea55603ca3c1784c",
+        "size": 4721,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/465c4c9f044843a5925d44f1ea55603ca3c1784c"
+      },
+      {
+        "path": "apps/web/src/features/workspace/CreateWorkspaceDialog.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7a4a7c8899e86a78ed1e54afc29b25bca451f678",
+        "size": 12160,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/7a4a7c8899e86a78ed1e54afc29b25bca451f678"
+      },
+      {
+        "path": "apps/web/src/features/workspace/DataFilesView.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b7dcb767c227c6d6debb6080c703ef9330dc60ed",
+        "size": 13775,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/b7dcb767c227c6d6debb6080c703ef9330dc60ed"
+      },
+      {
+        "path": "apps/web/src/features/workspace/DeleteWorkspaceDialog.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b71069887789a1fd22c5cb5a8578f28da21fb2c7",
+        "size": 4487,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/b71069887789a1fd22c5cb5a8578f28da21fb2c7"
+      },
+      {
+        "path": "apps/web/src/features/workspace/DocumentPreview.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "54a3ed327dcc9660411b2b32a408fbeaf9d8f810",
+        "size": 10711,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/54a3ed327dcc9660411b2b32a408fbeaf9d8f810"
+      },
+      {
+        "path": "apps/web/src/features/workspace/FileTree.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9a9f0a9ac06991ce35d5328df712cd2c59d723be",
+        "size": 3682,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/9a9f0a9ac06991ce35d5328df712cd2c59d723be"
+      },
+      {
+        "path": "apps/web/src/features/workspace/FolderPicker.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ce879794da6a9663cdd691b3ccd4bd8480afd981",
+        "size": 6902,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/ce879794da6a9663cdd691b3ccd4bd8480afd981"
+      },
+      {
+        "path": "apps/web/src/features/workspace/GitPanel.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b592446569bfa029c2a75dbc4e7586604ffec9c5",
+        "size": 8481,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/b592446569bfa029c2a75dbc4e7586604ffec9c5"
+      },
+      {
+        "path": "apps/web/src/features/workspace/HistoryView.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "be213a231abc4f830037d1442ffdaa567d9b8fe0",
+        "size": 7653,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/be213a231abc4f830037d1442ffdaa567d9b8fe0"
+      },
+      {
+        "path": "apps/web/src/features/workspace/ImmersiveSurfaceHome.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f92aef122348c21f8dd6829d6e2f3065eba3a3ac",
+        "size": 2906,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/f92aef122348c21f8dd6829d6e2f3065eba3a3ac"
+      },
+      {
+        "path": "apps/web/src/features/workspace/ScriptsView.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d5af24e10f028d09bfc887a0eb335e2533d9aac7",
+        "size": 12655,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/d5af24e10f028d09bfc887a0eb335e2533d9aac7"
+      },
+      {
+        "path": "apps/web/src/features/workspace/SectionManagerDialog.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e3cec75a0398f48e0acffc802dc755eba55283b4",
+        "size": 2609,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/e3cec75a0398f48e0acffc802dc755eba55283b4"
+      },
+      {
+        "path": "apps/web/src/features/workspace/TerminalPanel.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "626588a69c901b19a221722959c7ccc132d25ad6",
+        "size": 3284,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/626588a69c901b19a221722959c7ccc132d25ad6"
+      },
+      {
+        "path": "apps/web/src/features/workspace/WorkspaceFileEditor.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "40bc5b4f294b8b9c17470315fd12b92fb35a537f",
+        "size": 21085,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/40bc5b4f294b8b9c17470315fd12b92fb35a537f"
+      },
+      {
+        "path": "apps/web/src/features/workspace/WorkspaceList.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d5c1ad6fe778eb085fa9b4044eeb5ace5dbd677b",
+        "size": 4225,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/d5c1ad6fe778eb085fa9b4044eeb5ace5dbd677b"
+      },
+      {
+        "path": "apps/web/src/features/workspace/WorkspaceOverview.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8a3f0d8034397c98c8eef3576eb1ecf195e56b12",
+        "size": 63975,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/8a3f0d8034397c98c8eef3576eb1ecf195e56b12"
+      },
+      {
+        "path": "apps/web/src/features/workspace/WorkspaceSearchView.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0ba7b9a99c6fd02637fec2b9831ad7b9e566b70d",
+        "size": 8346,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/0ba7b9a99c6fd02637fec2b9831ad7b9e566b70d"
+      },
+      {
+        "path": "apps/web/src/features/workspace/WorkspaceSettings.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "672bce8f6234009470adf9116bf0902699bc56ad",
+        "size": 26802,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/672bce8f6234009470adf9116bf0902699bc56ad"
+      },
+      {
+        "path": "apps/web/src/lib",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "852380e0b0571a8a6b3f558ee8c0a9ebebf997d2",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/852380e0b0571a8a6b3f558ee8c0a9ebebf997d2"
+      },
+      {
+        "path": "apps/web/src/lib/api.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a1aa00ee408278ab5e02dfc4add108aae4209f82",
+        "size": 38645,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/a1aa00ee408278ab5e02dfc4add108aae4209f82"
+      },
+      {
+        "path": "apps/web/src/lib/commands.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9a69ea56d9550d20f434577b5b2810bfaf10a4fb",
+        "size": 2630,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/9a69ea56d9550d20f434577b5b2810bfaf10a4fb"
+      },
+      {
+        "path": "apps/web/src/lib/fileTree.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c55069b6f86c22af834c269b6b57c3d98ff757b4",
+        "size": 2492,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/c55069b6f86c22af834c269b6b57c3d98ff757b4"
+      },
+      {
+        "path": "apps/web/src/lib/glass.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2fee8d6aae03375d9cb5aee5c672b96db895eaaf",
+        "size": 1562,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/2fee8d6aae03375d9cb5aee5c672b96db895eaaf"
+      },
+      {
+        "path": "apps/web/src/lib/i18n",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "58a77a40a8a8060699fee3c1d270ff0c76900f06",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/58a77a40a8a8060699fee3c1d270ff0c76900f06"
+      },
+      {
+        "path": "apps/web/src/lib/i18n/en.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6aca1887f9555fbc8af27942663723e07559b30a",
+        "size": 84344,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/6aca1887f9555fbc8af27942663723e07559b30a"
+      },
+      {
+        "path": "apps/web/src/lib/i18n/index.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "81d24663787da4c3acf1f105b5505667ce49a499",
+        "size": 6263,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/81d24663787da4c3acf1f105b5505667ce49a499"
+      },
+      {
+        "path": "apps/web/src/lib/i18n/ko.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "33169028b7435e7cef9edd24e12d1be4a34912fd",
+        "size": 95238,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/33169028b7435e7cef9edd24e12d1be4a34912fd"
+      },
+      {
+        "path": "apps/web/src/lib/keybindings.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "da13e5ed705e3675cb187c4ed3f299414de27fe5",
+        "size": 2762,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/da13e5ed705e3675cb187c4ed3f299414de27fe5"
+      },
+      {
+        "path": "apps/web/src/lib/markdownBase.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f3be2923be4d68bc17c24fdf2c8c9d7e409b63e5",
+        "size": 2261,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/f3be2923be4d68bc17c24fdf2c8c9d7e409b63e5"
+      },
+      {
+        "path": "apps/web/src/lib/modelInfo.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "bcbfcf7588e94e006e52c7acc67d7e1cdcad355c",
+        "size": 4370,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/bcbfcf7588e94e006e52c7acc67d7e1cdcad355c"
+      },
+      {
+        "path": "apps/web/src/lib/queries.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "36c99b0647e0dc43268261aa51357db314a6577c",
+        "size": 46153,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/36c99b0647e0dc43268261aa51357db314a6577c"
+      },
+      {
+        "path": "apps/web/src/lib/settings-registry.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2dfdb1338cc5117ba86aab464318318ca6dfa58b",
+        "size": 2362,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/2dfdb1338cc5117ba86aab464318318ca6dfa58b"
+      },
+      {
+        "path": "apps/web/src/lib/statusText.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1c571997ed5f045d912ca58bc9f8b7997a2bc54f",
+        "size": 1803,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/1c571997ed5f045d912ca58bc9f8b7997a2bc54f"
+      },
+      {
+        "path": "apps/web/src/lib/store.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7ccb05a5cee88c3e5c50d58a57c204bb960b813f",
+        "size": 12926,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/7ccb05a5cee88c3e5c50d58a57c204bb960b813f"
+      },
+      {
+        "path": "apps/web/src/lib/tableData.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8c4ba32d7ff5092245a781c3030789e4b873e722",
+        "size": 3292,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/8c4ba32d7ff5092245a781c3030789e4b873e722"
+      },
+      {
+        "path": "apps/web/src/lib/templateLabels.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b3f138b628f487fd60900cf8156495fcbd6433f9",
+        "size": 1492,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/b3f138b628f487fd60900cf8156495fcbd6433f9"
+      },
+      {
+        "path": "apps/web/src/lib/theme.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "be43feaba0475bc425989ab6a2619209360bc3fd",
+        "size": 741,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/be43feaba0475bc425989ab6a2619209360bc3fd"
+      },
+      {
+        "path": "apps/web/src/lib/useExitTransition.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0a4a165adfa5c3674f4a51be424b3c41126397a7",
+        "size": 1020,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/0a4a165adfa5c3674f4a51be424b3c41126397a7"
+      },
+      {
+        "path": "apps/web/src/lib/useScrollRestoration.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8a22bfe198cd65a89119b1d7d370fd4c9f86700c",
+        "size": 1464,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/8a22bfe198cd65a89119b1d7d370fd4c9f86700c"
+      },
+      {
+        "path": "apps/web/src/lib/wallpaper.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "110310f28a6d1137387eb284bf175cf3f7eb9a37",
+        "size": 4826,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/110310f28a6d1137387eb284bf175cf3f7eb9a37"
+      },
+      {
+        "path": "apps/web/src/main.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7d1add8d7375865d175310337ef71a51c4af1cb3",
+        "size": 2456,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/7d1add8d7375865d175310337ef71a51c4af1cb3"
+      },
+      {
+        "path": "apps/web/src/projects",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "a5fb060fd56a0392b86dd349cf4f97ab7c55a6d7",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/a5fb060fd56a0392b86dd349cf4f97ab7c55a6d7"
+      },
+      {
+        "path": "apps/web/src/projects/i18n.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "178397487b579dac2d1232c60b1304d07e7ac807",
+        "size": 713,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/178397487b579dac2d1232c60b1304d07e7ac807"
+      },
+      {
+        "path": "apps/web/src/projects/index.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8dbf2c1cf95a0f75bf710344dc215ca22898a9b7",
+        "size": 3380,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/8dbf2c1cf95a0f75bf710344dc215ca22898a9b7"
+      },
+      {
+        "path": "apps/web/src/styles",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "ece9e6d6cb4aaa3e1fae87749bc90a2ef4bb62be",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/ece9e6d6cb4aaa3e1fae87749bc90a2ef4bb62be"
+      },
+      {
+        "path": "apps/web/src/styles/globals.css",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d8074f1ff332e49d0e3351143a7ba368a2d18801",
+        "size": 17222,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/d8074f1ff332e49d0e3351143a7ba368a2d18801"
+      },
+      {
+        "path": "apps/web/src/styles/tokens.css",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1e63aba79f0d959bd6a205e2ae86805a02f928a3",
+        "size": 364,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/1e63aba79f0d959bd6a205e2ae86805a02f928a3"
+      },
+      {
+        "path": "apps/web/src/vite-env.d.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e140bd521c0ec58f1e35910dba4ae8e5525501ff",
+        "size": 382,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/e140bd521c0ec58f1e35910dba4ae8e5525501ff"
+      },
+      {
+        "path": "apps/web/tsconfig.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0754d18d4230824dc66a389b1ddd059791ce0754",
+        "size": 731,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/0754d18d4230824dc66a389b1ddd059791ce0754"
+      },
+      {
+        "path": "apps/web/tsconfig.node.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6741235873488376adbbcac03e0b41e26cb995c4",
+        "size": 322,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/6741235873488376adbbcac03e0b41e26cb995c4"
+      },
+      {
+        "path": "apps/web/vite.config.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "4ece3859a915547b08c66d7ec0b2dbb69d311dbe",
+        "size": 3626,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/4ece3859a915547b08c66d7ec0b2dbb69d311dbe"
+      },
+      {
+        "path": "docs",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "b2b464f12ff0f338ce732bfcce8b525290c5f8c0",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/b2b464f12ff0f338ce732bfcce8b525290c5f8c0"
+      },
+      {
+        "path": "docs/AGENT_INTERNALS.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c555e5e149e3a9b269f6de5b955f74f96d68d309",
+        "size": 17833,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/c555e5e149e3a9b269f6de5b955f74f96d68d309"
+      },
+      {
+        "path": "docs/API.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "4cd8d36f6f6a6e937e5d52f2a2c7d91255484d02",
+        "size": 971,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/4cd8d36f6f6a6e937e5d52f2a2c7d91255484d02"
+      },
+      {
+        "path": "docs/ARCHITECTURE.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "532176e886c39392a7a86f3a7b51d2e68e918d3e",
+        "size": 1057,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/532176e886c39392a7a86f3a7b51d2e68e918d3e"
+      },
+      {
+        "path": "docs/DESIGN_GUIDELINE.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7c04b232e34b9992ef9b6f1e04527438bf8175c6",
+        "size": 20899,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/7c04b232e34b9992ef9b6f1e04527438bf8175c6"
+      },
+      {
+        "path": "docs/HOW_TO_USE.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "596952d323ab2d82cfde3145b51e723b0061248c",
+        "size": 16758,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/596952d323ab2d82cfde3145b51e723b0061248c"
+      },
+      {
+        "path": "docs/INSTALL.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7fa82ea003f8d2f54a583632d13884735daac077",
+        "size": 998,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/7fa82ea003f8d2f54a583632d13884735daac077"
+      },
+      {
+        "path": "docs/INTELLIGENCE_TUNING.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "fd16aa12a3ae57f5133fe2959f5e8f8d08ae6481",
+        "size": 7775,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/fd16aa12a3ae57f5133fe2959f5e8f8d08ae6481"
+      },
+      {
+        "path": "docs/PERFORMANCE_ARCHITECTURE.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1a4c06545f3cc6486fecd29eadc3f50b865d5b8d",
+        "size": 11340,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/1a4c06545f3cc6486fecd29eadc3f50b865d5b8d"
+      },
+      {
+        "path": "docs/PHILOSOPHY.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "97aad4448e2522e2213228e53dd78056ae38246a",
+        "size": 3147,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/97aad4448e2522e2213228e53dd78056ae38246a"
+      },
+      {
+        "path": "docs/PORTFOLIO_STARTER_V2.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "93d35ed053f67db0eb854d9023e8f1a44499d53b",
+        "size": 18715,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/93d35ed053f67db0eb854d9023e8f1a44499d53b"
+      },
+      {
+        "path": "docs/RAG_HARNESS.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8fca254af407a45661f1b4a4ddbd103a1525abba",
+        "size": 32259,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/8fca254af407a45661f1b4a4ddbd103a1525abba"
+      },
+      {
+        "path": "docs/REVIEW-2026-07.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "41f908864ff16a1222391caee6bcdf551614464c",
+        "size": 5903,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/41f908864ff16a1222391caee6bcdf551614464c"
+      },
+      {
+        "path": "docs/SURFACE_SDK.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9d25ec8f66d3471e8677d344960817689414384b",
+        "size": 10898,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/9d25ec8f66d3471e8677d344960817689414384b"
+      },
+      {
+        "path": "docs/diagrams",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "e6b124312dd14a9a8ee33409bb352c7ee576a164",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/e6b124312dd14a9a8ee33409bb352c7ee576a164"
+      },
+      {
+        "path": "docs/diagrams/hero.svg",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "45c9b1ce2467f9059660903a8b699c19e8aac197",
+        "size": 2555,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/45c9b1ce2467f9059660903a8b699c19e8aac197"
+      },
+      {
+        "path": "docs/learn",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "9a5156aeb72ddb3f76fbf89b0450bd245c0807e0",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/9a5156aeb72ddb3f76fbf89b0450bd245c0807e0"
+      },
+      {
+        "path": "docs/learn/01-rag-harness-explainer.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a1abf4af40fcc694a4d630402d646d21842d52a7",
+        "size": 25034,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/a1abf4af40fcc694a4d630402d646d21842d52a7"
+      },
+      {
+        "path": "docs/learn/02-rag-harness-deck.pptx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "17e0cfa22f0deaa0f8349c7ea8fb7b5e6aea8923",
+        "size": 70169,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/17e0cfa22f0deaa0f8349c7ea8fb7b5e6aea8923"
+      },
+      {
+        "path": "docs/learn/03-llm-mastery",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "ea3dfc6a236383f086cd0642a651045fffaaabb5",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/ea3dfc6a236383f086cd0642a651045fffaaabb5"
+      },
+      {
+        "path": "docs/learn/03-llm-mastery/01-foundations.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "028601c33070643a7af1d278866d60b83c3c3f99",
+        "size": 9356,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/028601c33070643a7af1d278866d60b83c3c3f99"
+      },
+      {
+        "path": "docs/learn/03-llm-mastery/02-transformer.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a76dcae0f9a4d6ee0be1d5346844e999f949b35b",
+        "size": 10041,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/a76dcae0f9a4d6ee0be1d5346844e999f949b35b"
+      },
+      {
+        "path": "docs/learn/03-llm-mastery/03-training-alignment.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "dced737fc2af3cf93293d6bea3433e66a86bb8a4",
+        "size": 8885,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/dced737fc2af3cf93293d6bea3433e66a86bb8a4"
+      },
+      {
+        "path": "docs/learn/03-llm-mastery/04-inference-efficiency.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1d94d40708bac678ca0471d924e948f50f6f4da9",
+        "size": 8448,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/1d94d40708bac678ca0471d924e948f50f6f4da9"
+      },
+      {
+        "path": "docs/learn/03-llm-mastery/05-augmentation-agents.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7c88d8821324736a7c270e96b44f2c9c2a04a520",
+        "size": 8190,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/7c88d8821324736a7c270e96b44f2c9c2a04a520"
+      },
+      {
+        "path": "docs/learn/03-llm-mastery/06-industry-ecosystem.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b8627325504c31d05c12de1f8c981d7097cb4f48",
+        "size": 10039,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/b8627325504c31d05c12de1f8c981d7097cb4f48"
+      },
+      {
+        "path": "docs/learn/03-llm-mastery/07-llm-mastery-deck.pptx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a16b891cc011503edfa5a0037a6b6589c72eb68b",
+        "size": 85834,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/a16b891cc011503edfa5a0037a6b6589c72eb68b"
+      },
+      {
+        "path": "docs/learn/03-llm-mastery/README.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d486fda04de3665bc1c3fd74b675654edd0707eb",
+        "size": 5276,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/d486fda04de3665bc1c3fd74b675654edd0707eb"
+      },
+      {
+        "path": "docs/learn/03-llm-mastery/deck",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "86ab0cb2370b4534abc362528679e1fde1abb1ae",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/86ab0cb2370b4534abc362528679e1fde1abb1ae"
+      },
+      {
+        "path": "docs/learn/03-llm-mastery/deck/build.js",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b4e7e7f9cb71d0881d4a91878ec62770394310e6",
+        "size": 29322,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/b4e7e7f9cb71d0881d4a91878ec62770394310e6"
+      },
+      {
+        "path": "docs/learn/03-llm-mastery/deck/inject-animations.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1a7d794039a5c0f28d73a11d80483d6b00cf4e90",
+        "size": 3777,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/1a7d794039a5c0f28d73a11d80483d6b00cf4e90"
+      },
+      {
+        "path": "docs/learn/README.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "96b07758a65a88080c291000e787323622a8b7a7",
+        "size": 1459,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/96b07758a65a88080c291000e787323622a8b7a7"
+      },
+      {
+        "path": "docs/learn/deck",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "f866b080f7eb280d6ce39ac5dcc5b95e82ca8eea",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/f866b080f7eb280d6ce39ac5dcc5b95e82ca8eea"
+      },
+      {
+        "path": "docs/learn/deck/build.js",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "028d42f36a27442f6b260f643e3d259bdc0a9213",
+        "size": 29128,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/028d42f36a27442f6b260f643e3d259bdc0a9213"
+      },
+      {
+        "path": "docs/learn/deck/inject-animations.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "556527191be98ecc7a99bc8a0ea6dc6aa66aa003",
+        "size": 3774,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/556527191be98ecc7a99bc8a0ea6dc6aa66aa003"
+      },
+      {
+        "path": "ops",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "856acfd084180133256196314772d9accc9c8cd9",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/856acfd084180133256196314772d9accc9c8cd9"
+      },
+      {
+        "path": "ops/ariadne.sh",
+        "mode": "100755",
+        "type": "blob",
+        "sha": "53126c6ffc8ebdccca3cb350fdcb851ea7fe8146",
+        "size": 13011,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/53126c6ffc8ebdccca3cb350fdcb851ea7fe8146"
+      },
+      {
+        "path": "ops/install-aliases.sh",
+        "mode": "100755",
+        "type": "blob",
+        "sha": "47bef7e1f5e1f44bb50ad7de9ca39dba20fb2310",
+        "size": 1993,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/47bef7e1f5e1f44bb50ad7de9ca39dba20fb2310"
+      },
+      {
+        "path": "ops/setup-tunnel.sh",
+        "mode": "100755",
+        "type": "blob",
+        "sha": "c0001c1cff239c03534edddd243ac737ef7e6b70",
+        "size": 2729,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/c0001c1cff239c03534edddd243ac737ef7e6b70"
+      },
+      {
+        "path": "package-lock.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "4bb03932b8d56eb4ea2484755eafc2181079fad7",
+        "size": 358559,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/4bb03932b8d56eb4ea2484755eafc2181079fad7"
+      },
+      {
+        "path": "package.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "bef79b5722b2822549af86c22dca7d230fe8057d",
+        "size": 1705,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/bef79b5722b2822549af86c22dca7d230fe8057d"
+      },
+      {
+        "path": "packages",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "dc6549915802d81156171418484474a0a1d768bd",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/dc6549915802d81156171418484474a0a1d768bd"
+      },
+      {
+        "path": "packages/shared",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "ff414388c9257a40a498bb95cb224589dda05c3e",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/ff414388c9257a40a498bb95cb224589dda05c3e"
+      },
+      {
+        "path": "packages/shared/package.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "009a5fc4272c846100063ddbf4e47b9261fe8c70",
+        "size": 211,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/009a5fc4272c846100063ddbf4e47b9261fe8c70"
+      },
+      {
+        "path": "packages/shared/src",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "d5c4998044bd33634a170e3e30470d81a2072639",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/d5c4998044bd33634a170e3e30470d81a2072639"
+      },
+      {
+        "path": "packages/shared/src/config.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8c170b0308d3b8ba6e5debb2968095d2e264ea8d",
+        "size": 18285,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/8c170b0308d3b8ba6e5debb2968095d2e264ea8d"
+      },
+      {
+        "path": "packages/shared/src/index.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "27599e35ae2d4891cfac0c5f9b7292668f8dae1e",
+        "size": 146,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/27599e35ae2d4891cfac0c5f9b7292668f8dae1e"
+      },
+      {
+        "path": "packages/shared/src/projects.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0669084fb9c358fd6f2d007f4e404775006cab90",
+        "size": 3220,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/0669084fb9c358fd6f2d007f4e404775006cab90"
+      },
+      {
+        "path": "packages/shared/src/schemas.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0856d68cec666e23caed196c016fb6c750fca4b2",
+        "size": 14757,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/0856d68cec666e23caed196c016fb6c750fca4b2"
+      },
+      {
+        "path": "packages/shared/src/theme.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2558294d5676ce2a17ab9c490a44c3ef187a2f69",
+        "size": 3035,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/2558294d5676ce2a17ab9c490a44c3ef187a2f69"
+      },
+      {
+        "path": "packages/shared/src/types.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e53cb1a09c52bb699dcc5cdd11eed0dc1415d82b",
+        "size": 36106,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/e53cb1a09c52bb699dcc5cdd11eed0dc1415d82b"
+      },
+      {
+        "path": "packages/shared/tsconfig.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "99a8a32a0a713c34639ca381813e6f3ebd2d3328",
+        "size": 157,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/99a8a32a0a713c34639ca381813e6f3ebd2d3328"
+      },
+      {
+        "path": "packages/surface-sdk",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "61bf8d316e206cd5550a34e7230e2053d3eb7a69",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/61bf8d316e206cd5550a34e7230e2053d3eb7a69"
+      },
+      {
+        "path": "packages/surface-sdk/README.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7488551a78601e5bd773548388d32c501440763c",
+        "size": 1354,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/7488551a78601e5bd773548388d32c501440763c"
+      },
+      {
+        "path": "packages/surface-sdk/package.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0b17198c24d1244915bc1f76b82cb1537156278f",
+        "size": 376,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/0b17198c24d1244915bc1f76b82cb1537156278f"
+      },
+      {
+        "path": "packages/surface-sdk/surface-env.d.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ea2b96131495d18ed071bf13d9f20dd11c253c79",
+        "size": 9765,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/ea2b96131495d18ed071bf13d9f20dd11c253c79"
+      },
+      {
+        "path": "projects",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "08aa0e519191c726865e02d27519c4ecb8e3fbc8",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/08aa0e519191c726865e02d27519c4ecb8e3fbc8"
+      },
+      {
+        "path": "projects/PHASE3_PORTFOLIO_PROMPT.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9109208ba74140d3b2486db9f62f9f97e12db0e5",
+        "size": 4907,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/9109208ba74140d3b2486db9f62f9f97e12db0e5"
+      },
+      {
+        "path": "projects/README.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "fd40c5f5bfc3e42a6d74a7f03a56ab223e8b3e7d",
+        "size": 9184,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/fd40c5f5bfc3e42a6d74a7f03a56ab223e8b3e7d"
+      },
+      {
+        "path": "projects/budget",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "ae3587440cee98b8f58367627889322b5b350a38",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/ae3587440cee98b8f58367627889322b5b350a38"
+      },
+      {
+        "path": "projects/budget/README.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "db965e91e6f113efeeceb35012a64b81c2e66193",
+        "size": 634,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/db965e91e6f113efeeceb35012a64b81c2e66193"
+      },
+      {
+        "path": "projects/budget/server.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "4442b39debe5a837c28c219fc29d62d39de4b0f2",
+        "size": 444,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/4442b39debe5a837c28c219fc29d62d39de4b0f2"
+      },
+      {
+        "path": "projects/budget/template.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "945fa72d1a8844104a2283df820534357ed24ef8",
+        "size": 13685,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/945fa72d1a8844104a2283df820534357ed24ef8"
+      },
+      {
+        "path": "projects/budget/web.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "aeac2502ae32d1d1b5dc4a13f2dc65e7c222a9df",
+        "size": 860,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/aeac2502ae32d1d1b5dc4a13f2dc65e7c222a9df"
+      },
+      {
+        "path": "projects/chefbook",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "f83cca1f976b8c87148bb4d756499634f9e58a5b",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/f83cca1f976b8c87148bb4d756499634f9e58a5b"
+      },
+      {
+        "path": "projects/chefbook/README.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a88d3de9a949ab61b75c18888139be09b2588358",
+        "size": 371,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/a88d3de9a949ab61b75c18888139be09b2588358"
+      },
+      {
+        "path": "projects/chefbook/server.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c7e74ae4fa996e5d9833a89a6ef046a422cdf718",
+        "size": 515,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/c7e74ae4fa996e5d9833a89a6ef046a422cdf718"
+      },
+      {
+        "path": "projects/chefbook/template.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2d9e02f5c611a7ecae14ec26357771e5a06fe9ff",
+        "size": 16474,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/2d9e02f5c611a7ecae14ec26357771e5a06fe9ff"
+      },
+      {
+        "path": "projects/chefbook/web.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ba06cca6ecf57228bddcac9b9ed5dffec2e056ed",
+        "size": 290,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/ba06cca6ecf57228bddcac9b9ed5dffec2e056ed"
+      },
+      {
+        "path": "projects/code",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "6dc604b91ef5986354d4fc321681691fb74b1991",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/6dc604b91ef5986354d4fc321681691fb74b1991"
+      },
+      {
+        "path": "projects/code/README.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "32fc5d4a2a9653dd5900c1a4881d5b2bb111194e",
+        "size": 392,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/32fc5d4a2a9653dd5900c1a4881d5b2bb111194e"
+      },
+      {
+        "path": "projects/code/server.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8c24c552b8fe64b45b2ca02ce500bf02b125a726",
+        "size": 563,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/8c24c552b8fe64b45b2ca02ce500bf02b125a726"
+      },
+      {
+        "path": "projects/code/template.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "90b8561d0379bf3e33fd786e0367d8254d054e10",
+        "size": 9435,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/90b8561d0379bf3e33fd786e0367d8254d054e10"
+      },
+      {
+        "path": "projects/code/web.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "871124a350960b8b15e1dbfbe705b03c97d49f26",
+        "size": 272,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/871124a350960b8b15e1dbfbe705b03c97d49f26"
+      },
+      {
+        "path": "projects/decisions",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "1968ba9fac332f7073096f3814d6a81020b02914",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/1968ba9fac332f7073096f3814d6a81020b02914"
+      },
+      {
+        "path": "projects/decisions/README.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1db1eb5dd6169efe9bbbfd9fa9831751211d05f8",
+        "size": 372,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/1db1eb5dd6169efe9bbbfd9fa9831751211d05f8"
+      },
+      {
+        "path": "projects/decisions/server.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d418dc8f000e43832ccb54bef3f81483459cb843",
+        "size": 677,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/d418dc8f000e43832ccb54bef3f81483459cb843"
+      },
+      {
+        "path": "projects/decisions/template.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "475889142cc0bddb0e9b6d826d8a2b937f906360",
+        "size": 12172,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/475889142cc0bddb0e9b6d826d8a2b937f906360"
+      },
+      {
+        "path": "projects/decisions/web.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0191028476ebd3808c939a8670fa03786c7fe57e",
+        "size": 300,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/0191028476ebd3808c939a8670fa03786c7fe57e"
+      },
+      {
+        "path": "projects/lecture",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "77ffc05f8699e26e09a678f37601453fbd0b394d",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/77ffc05f8699e26e09a678f37601453fbd0b394d"
+      },
+      {
+        "path": "projects/lecture/README.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "91b1a3b22439f7985935c5a013c3b6c8123c36e2",
+        "size": 2365,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/91b1a3b22439f7985935c5a013c3b6c8123c36e2"
+      },
+      {
+        "path": "projects/lecture/server.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0051483374eaf46768dcf98bae7e42201ff3d068",
+        "size": 1453,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/0051483374eaf46768dcf98bae7e42201ff3d068"
+      },
+      {
+        "path": "projects/lecture/server",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "d22088e948a31eb53b42eeceab32f8cce3ffae63",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/d22088e948a31eb53b42eeceab32f8cce3ffae63"
+      },
+      {
+        "path": "projects/lecture/server/deckGen.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "06220a8aac4fc41075473e38d030960aefd4fa7f",
+        "size": 10172,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/06220a8aac4fc41075473e38d030960aefd4fa7f"
+      },
+      {
+        "path": "projects/lecture/server/docGen.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "52f3867745048e46a4dfb6e95ae9f6b697100b50",
+        "size": 5082,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/52f3867745048e46a4dfb6e95ae9f6b697100b50"
+      },
+      {
+        "path": "projects/lecture/server/examGen.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2f69e0c521a985595ad639800d5ea9966872f5e7",
+        "size": 9930,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/2f69e0c521a985595ad639800d5ea9966872f5e7"
+      },
+      {
+        "path": "projects/lecture/server/grounding.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "53f17d6671f2c78aa9923e397264ec1450f5e590",
+        "size": 3394,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/53f17d6671f2c78aa9923e397264ec1450f5e590"
+      },
+      {
+        "path": "projects/lecture/server/lecturePrep.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "71ff0614fd27fcc1e75b6de138c476572c5693a6",
+        "size": 4454,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/71ff0614fd27fcc1e75b6de138c476572c5693a6"
+      },
+      {
+        "path": "projects/lecture/server/routes.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "485acfa2307b6e4ae6d5b11feaf11758d63882c4",
+        "size": 19594,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/485acfa2307b6e4ae6d5b11feaf11758d63882c4"
+      },
+      {
+        "path": "projects/lecture/server/scriptGen.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0e126da04bd47875ebd39d73984dd130c79677b7",
+        "size": 3365,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/0e126da04bd47875ebd39d73984dd130c79677b7"
+      },
+      {
+        "path": "projects/lecture/server/templates.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "530ec4c0882539ebd6c47af51e90af0478c19105",
+        "size": 1964,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/530ec4c0882539ebd6c47af51e90af0478c19105"
+      },
+      {
+        "path": "projects/lecture/types.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0a0287495060fbebae11358273ed62345d7e993d",
+        "size": 4939,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/0a0287495060fbebae11358273ed62345d7e993d"
+      },
+      {
+        "path": "projects/lecture/web.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "70454efb89c533442066ca2e4e11a0b597f1b100",
+        "size": 1287,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/70454efb89c533442066ca2e4e11a0b597f1b100"
+      },
+      {
+        "path": "projects/lecture/web",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "3aa7f02a2cd13166832226d5a64203adf9f17972",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/3aa7f02a2cd13166832226d5a64203adf9f17972"
+      },
+      {
+        "path": "projects/lecture/web/CourseView.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0b27dcdc1ddd390389d0a87fea536235b013658c",
+        "size": 9697,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/0b27dcdc1ddd390389d0a87fea536235b013658c"
+      },
+      {
+        "path": "projects/lecture/web/DeckPreview.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "374ee781e3b3559c6601888d262c2e723f2885d2",
+        "size": 14541,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/374ee781e3b3559c6601888d262c2e723f2885d2"
+      },
+      {
+        "path": "projects/lecture/web/DocPreview.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0ced29e6e7943b6e35bc5398fcbde45bb6ac6b11",
+        "size": 2728,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/0ced29e6e7943b6e35bc5398fcbde45bb6ac6b11"
+      },
+      {
+        "path": "projects/lecture/web/ExamPreview.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "685c30e8bcc63e3ef75dd458f4b951f628f7a64b",
+        "size": 7246,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/685c30e8bcc63e3ef75dd458f4b951f628f7a64b"
+      },
+      {
+        "path": "projects/lecture/web/LectureView.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e0b4cac5c73c3c6c5a74cb0b778cf2efd8fbc073",
+        "size": 7410,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/e0b4cac5c73c3c6c5a74cb0b778cf2efd8fbc073"
+      },
+      {
+        "path": "projects/lecture/web/WeekView.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "413e0bde80b54857c53a870f3143a8c67ba6ceb1",
+        "size": 21975,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/413e0bde80b54857c53a870f3143a8c67ba6ceb1"
+      },
+      {
+        "path": "projects/lecture/web/api.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "35a58aab67c6fbf3ad73665934cec892dd16c7dd",
+        "size": 3104,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/35a58aab67c6fbf3ad73665934cec892dd16c7dd"
+      },
+      {
+        "path": "projects/lecture/web/i18n.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ef3718b09ba2a3ba5f96b0e1fefd56cff4332dfb",
+        "size": 1616,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/ef3718b09ba2a3ba5f96b0e1fefd56cff4332dfb"
+      },
+      {
+        "path": "projects/lecture/web/lectureRoute.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "04fe7694f3c17afab7327379f9575fe20ee50e21",
+        "size": 3528,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/04fe7694f3c17afab7327379f9575fe20ee50e21"
+      },
+      {
+        "path": "projects/lecture/web/routes.tsx",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "fb60cdf0ee37690638eb0963c6aac209c5e1077c",
+        "size": 2524,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/fb60cdf0ee37690638eb0963c6aac209c5e1077c"
+      },
+      {
+        "path": "projects/lecture/web/weekChats.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0253075254d024113abd3c11c7098da87249ee05",
+        "size": 3103,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/0253075254d024113abd3c11c7098da87249ee05"
+      },
+      {
+        "path": "projects/papers",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "df7c3dd8096d106062780d8e8fa13c7c3dd6a38d",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/df7c3dd8096d106062780d8e8fa13c7c3dd6a38d"
+      },
+      {
+        "path": "projects/papers/README.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7cac073db899014f8c44175d9b43058743acde94",
+        "size": 397,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/7cac073db899014f8c44175d9b43058743acde94"
+      },
+      {
+        "path": "projects/papers/server.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2637f77c3e976cd4b967d6ec5051bf3f3e48bf47",
+        "size": 755,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/2637f77c3e976cd4b967d6ec5051bf3f3e48bf47"
+      },
+      {
+        "path": "projects/papers/template.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2ea88001edb9f07021c3e680eb8748077e0fc986",
+        "size": 16148,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/2ea88001edb9f07021c3e680eb8748077e0fc986"
+      },
+      {
+        "path": "projects/papers/web.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d11d4c59317f5973fa00f8576b2abaebc638b5e8",
+        "size": 285,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/d11d4c59317f5973fa00f8576b2abaebc638b5e8"
+      },
+      {
+        "path": "projects/reading",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "f126b7920617afbf013ca8f2b98428e527a92a25",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/f126b7920617afbf013ca8f2b98428e527a92a25"
+      },
+      {
+        "path": "projects/reading/README.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "fbc0235484f56e342ae2811bd9e8f670675cb8e4",
+        "size": 358,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/fbc0235484f56e342ae2811bd9e8f670675cb8e4"
+      },
+      {
+        "path": "projects/reading/server.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0d5fa23070b4c56c12990d58cf5c6140b4b41d5c",
+        "size": 428,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/0d5fa23070b4c56c12990d58cf5c6140b4b41d5c"
+      },
+      {
+        "path": "projects/reading/template.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6049e5d57135ad741f78e10602326dfe5f529560",
+        "size": 15026,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/6049e5d57135ad741f78e10602326dfe5f529560"
+      },
+      {
+        "path": "projects/reading/web.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0342811c5483671758143d289788c91f9ca8eac6",
+        "size": 287,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/0342811c5483671758143d289788c91f9ca8eac6"
+      },
+      {
+        "path": "projects/writing",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "1009357308f72d63ef409222c5dbcd80019ba64a",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/1009357308f72d63ef409222c5dbcd80019ba64a"
+      },
+      {
+        "path": "projects/writing/server.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c3cddf543c4db330fd21d479d90396cedb5effee",
+        "size": 647,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/c3cddf543c4db330fd21d479d90396cedb5effee"
+      },
+      {
+        "path": "projects/writing/web.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "64d902cf3a693f2fbd349d804e5f796ff02fadb5",
+        "size": 1142,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/64d902cf3a693f2fbd349d804e5f796ff02fadb5"
+      },
+      {
+        "path": "projects/writing/web",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "341c91d9d3fef80aa02bac49e4eb3377b8559264",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/341c91d9d3fef80aa02bac49e4eb3377b8559264"
+      },
+      {
+        "path": "projects/writing/web/i18n.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "973ab0b08f7c51431fd94345c63833ee910f7871",
+        "size": 933,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/973ab0b08f7c51431fd94345c63833ee910f7871"
+      },
+      {
+        "path": "scripts",
+        "mode": "040000",
+        "type": "tree",
+        "sha": "84fa6ea22cf64a95f1b0fc583b44f02f4535910a",
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/trees/84fa6ea22cf64a95f1b0fc583b44f02f4535910a"
+      },
+      {
+        "path": "scripts/check-bundle-budgets.ts",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b177ca12eceaaf68460e73d838d05020183bc449",
+        "size": 8398,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/b177ca12eceaaf68460e73d838d05020183bc449"
+      },
+      {
+        "path": "scripts/gen-api-inventory.mjs",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d31c80df48155ad008ef4706a9b1da9b95cbd7b0",
+        "size": 5521,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/d31c80df48155ad008ef4706a9b1da9b95cbd7b0"
+      },
+      {
+        "path": "tsconfig.base.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "10194e8721312aceb85b871e05d2254bd567366c",
+        "size": 363,
+        "url": "https://api.github.com/repos/KKWANH/ai-assistant/git/blobs/10194e8721312aceb85b871e05d2254bd567366c"
+      }
+    ],
+    "truncated": false
+  },
+  "fork": false,
+  "branch": "main"
+}

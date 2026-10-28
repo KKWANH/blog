@@ -1,0 +1,29 @@
+{
+  "actor": "Devin",
+  "observed_at": "2026-10-27T11:40:31.121032+00:00",
+  "workspace": "C:\\Projects\\blog",
+  "head": "3f85a90d4d7907c923e4517a4d751bd1fec03605",
+  "code_sha256": "39e0222a3b291d6e257f05a4c71944de74afc0c564d28dfdbdbfe221450875f9",
+  "cv_proof_passed": true,
+  "skill_ui_passed": true,
+  "cv_spec_sha256": "08249bdb41c2b45e5a563d341d481370a864332b4ad1f66222e68ccc5638390c",
+  "cv_content_md_synced": true,
+  "publication": "local candidate only",
+  "public_pdf_replaced": false,
+  "files": {
+    "README.md": "132b497a1f7ef54917908efe58750de1678a0313f5dd5c2bd49cba5af1d843b3",
+    "components/career-icons.tsx": "eb63de1506f99f8f43f85456c9ff2b913df5935ea5edb392eddfe87e376f35a6",
+    "components/profile-overview.tsx": "d580049a156116ff952da6e48b47e6549b3023ac2bebc29befb405967b14f213",
+    "components/repository-evidence.tsx": "37cb5afbe313707ff0c28f4868f4f67bac45e1219d87d0631d505b40e43c1742",
+    "components/skill-explorer.tsx": "2cbaadd3ce90432061115280e4b76f352afd945a69200fd984916d9b03bea39d",
+    "docs/brand-assets.md": "8483f58f3acf1ff96c379c593b8a2887a91945ae86b2aaea3fe556682aeba226",
+    "docs/skill-evidence.md": "8b3b14ac79fbc71903d6b9359debb7cad8807d6100a249c13cd8f8144e6b1cf9",
+    "lib/local-studio.ts": "356ceac0cfd233cd3246c509ce1025fc03533fcfaad90cf2d1da5cc2099e04ab",
+    "lib/profile.ts": "369d30d7172b8d3efc0fa751b5e7c66487be8b7fbf2e45e2eda1ed3c338c6f0d",
+    "lib/skill-projects.ts": "e933fbd2d314dffbfa57d801ac71d3b4baf82c73e12a9381a8b4b6fa5e997fb6",
+    "public/brands/figma.svg": "b9171110637bb953781a04044d9957478ae84f6a7ac597a25c0bfdfb3292a45e",
+    "public/brands/nginx.svg": "14e77ea88f50ee3ebcf43919b91e545292673ec35b21bee32ad1f230ee5004bd",
+    "public/brands/qt.svg": "83b31ebe6a9f02894ccc9ccd6599ec940fcaa80fb856e95f65b5043b2f7efece",
+    "styles/profile.css": "b130da42928500e7b6965c37b0057c759cfd59abc60b9f417024861402ef8874"
+  }
+}

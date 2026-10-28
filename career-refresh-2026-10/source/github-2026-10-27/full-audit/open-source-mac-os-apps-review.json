@@ -1,0 +1,150 @@
+{
+  "name": "open-source-mac-os-apps",
+  "url": "https://github.com/KKWANH/open-source-mac-os-apps",
+  "fork": true,
+  "scope": "reference",
+  "scopeNote": "Fork/reference; personal implementation is not established by the fork.",
+  "description": "🚀 Awesome list of open source applications for macOS. https://t.me/s/opensourcemacosapps",
+  "updatedAt": "2022-10-08T14:40:45Z",
+  "defaultBranch": "master",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/open-source-mac-os-apps/blob/9711970be54435be0151c2c3cb8ec0cfd168e262/README.md",
+      "bytes": 103744,
+      "sha256": "d9966f6f6377cb0c4f8aabd1ba731d7d61aa12885b1e27cf1a7fe161f930362f"
+    }
+  ],
+  "limitations": [],
+  "technologies": [
+    {
+      "id": "azure",
+      "label": "Azure",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        }
+      ]
+    },
+    {
+      "id": "github-actions",
+      "label": "GitHub Actions",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": ".github/workflows/main.yml",
+          "basis": "workflow file"
+        },
+        {
+          "path": ".github/workflows/pr.yml",
+          "basis": "workflow file"
+        }
+      ]
+    },
+    {
+      "id": "linux",
+      "label": "Linux",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        }
+      ]
+    },
+    {
+      "id": "mariadb",
+      "label": "MariaDB",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        }
+      ]
+    },
+    {
+      "id": "mysql",
+      "label": "MySQL",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        }
+      ]
+    },
+    {
+      "id": "postgres",
+      "label": "PostgreSQL",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        }
+      ]
+    },
+    {
+      "id": "qt",
+      "label": "Qt / QML",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        }
+      ]
+    },
+    {
+      "id": "react",
+      "label": "React",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        }
+      ]
+    },
+    {
+      "id": "rest",
+      "label": "REST",
+      "group": "systems",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        }
+      ]
+    },
+    {
+      "id": "shell",
+      "label": "Shell",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": ".github/deploy.sh",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "sqlite",
+      "label": "SQLite",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        }
+      ]
+    }
+  ],
+  "commit": "9711970be54435be0151c2c3cb8ec0cfd168e262",
+  "fileCount": 72,
+  "treeDepth": "recursive",
+  "status": "reviewed"
+}

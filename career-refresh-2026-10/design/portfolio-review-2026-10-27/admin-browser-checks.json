@@ -1,0 +1,55 @@
+{
+  "mode": "Real local handlers and browser cookies, isolated temporary files; not production Redis/OAuth",
+  "checks": {
+    "fixture_only_configuration_created": true,
+    "plaintext_password_not_stored": true,
+    "failed_signin_clears_password_field": true,
+    "admin_cookie_http_only_strict": true,
+    "setup_is_closed_after_creation": true,
+    "anonymous_metrics_denied": true,
+    "no_visitor_or_control_cookie_before_choice": true,
+    "consent_confirmed": true,
+    "visitor_cookie_http_only_lax": true,
+    "control_cookie_created_only_for_settings": true,
+    "real_fixture_views_counted": true,
+    "single_consented_visitor_and_session": true,
+    "coarse_google_source": true,
+    "client_page_flows_recorded": true,
+    "payload_drops_referrer_details": true,
+    "admin_mobile_no_document_overflow": true,
+    "withdrawal_revokes_authority": true,
+    "optional_cookie_removed": true,
+    "shared_tab_stale_grant_conflicts": true,
+    "withdrawal_remains_effective": true,
+    "gpc_suppresses_collection": true,
+    "copied_admin_cookie_rejected_after_logout": true,
+    "fixture_maps_not_mutated": true,
+    "real_owner_files_unchanged_by_fixture": true
+  },
+  "errors": [],
+  "fixture_totals": {
+    "views": 3,
+    "entries": 1,
+    "visitors": 1,
+    "sessions": 1
+  },
+  "payloads": [
+    {
+      "path": "/",
+      "previous": null,
+      "referral": "google"
+    },
+    {
+      "path": "/about",
+      "previous": "/",
+      "referral": "google"
+    },
+    {
+      "path": "/notes",
+      "previous": "/about",
+      "referral": "google"
+    }
+  ],
+  "protected_file_hashes_unchanged": true,
+  "passed": true
+}

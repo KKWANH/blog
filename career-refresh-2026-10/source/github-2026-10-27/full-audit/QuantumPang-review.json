@@ -1,0 +1,59 @@
+{
+  "name": "QuantumPang",
+  "url": "https://github.com/KKWANH/QuantumPang",
+  "fork": false,
+  "scope": "project",
+  "scopeNote": "Repository project; listed technologies describe its code, not a proficiency rating.",
+  "description": "",
+  "updatedAt": "2020-09-11T07:45:13Z",
+  "defaultBranch": "master",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/QuantumPang/blob/ba1cf2ed76ae2fe3e2b3542ac6f6b3384d090c13/README.md",
+      "bytes": 194,
+      "sha256": "012c65d8545e90de908f3497d0ba25870d568aceaddfb24b7a1d9069ae4559c1"
+    },
+    {
+      "path": "ProjectSettings/ProjectVersion.txt",
+      "url": "https://github.com/KKWANH/QuantumPang/blob/ba1cf2ed76ae2fe3e2b3542ac6f6b3384d090c13/ProjectSettings/ProjectVersion.txt",
+      "bytes": 85,
+      "sha256": "e926967feb04cad14f76e7651a4a65544767a40d3f90434573dcbfe08241c18a"
+    },
+    {
+      "path": "Assets/Scripts/pointer.cs",
+      "url": "https://github.com/KKWANH/QuantumPang/blob/ba1cf2ed76ae2fe3e2b3542ac6f6b3384d090c13/Assets/Scripts/pointer.cs",
+      "bytes": 7108,
+      "sha256": "95c171cbf23f0ec17be68fe08357299443d62f03b7b8ce1549d4b2df4a2e3526"
+    }
+  ],
+  "limitations": [],
+  "technologies": [
+    {
+      "id": "csharp",
+      "label": "C#",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "Assets/Scripts/pointer.cs",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "unity",
+      "label": "Unity",
+      "group": "design",
+      "evidence": [
+        {
+          "path": "Assets/Scripts/pointer.cs",
+          "basis": "inspected source"
+        }
+      ]
+    }
+  ],
+  "commit": "ba1cf2ed76ae2fe3e2b3542ac6f6b3384d090c13",
+  "fileCount": 384,
+  "treeDepth": "recursive",
+  "status": "reviewed"
+}

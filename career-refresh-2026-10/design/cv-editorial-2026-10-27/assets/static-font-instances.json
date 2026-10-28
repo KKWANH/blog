@@ -1,0 +1,37 @@
+[
+  {
+    "file": "manrope-700.ttf",
+    "weight": 700,
+    "sha256": "0a1ec18501e6b814c25874ea5eda78dade923bf6684c7408815ff7c7fe823324",
+    "postscript": "Manrope-Bold",
+    "variable": false
+  },
+  {
+    "file": "inter-400.ttf",
+    "weight": 400,
+    "sha256": "4386f3b50d845a17f28c23e8ef6b9dcdc1eae0d367fd01a90f903d267dd2a500",
+    "postscript": "Inter-Regular",
+    "variable": false
+  },
+  {
+    "file": "inter-500.ttf",
+    "weight": 500,
+    "sha256": "a109d8584ed406b6822e2057da0b690cd5b40bfb02fee60d590706df9d5ba27c",
+    "postscript": "Inter-Medium",
+    "variable": false
+  },
+  {
+    "file": "inter-600.ttf",
+    "weight": 600,
+    "sha256": "b1ed8c2ae5d513ff5d724d03b0e70a3f47d2583e9555fbc0ad9f5c464430c899",
+    "postscript": "Inter-SemiBold",
+    "variable": false
+  },
+  {
+    "file": "inter-700.ttf",
+    "weight": 700,
+    "sha256": "ff713b60f7ee6454dd08cf76ef48a2b4564e7f78f2209dca5dc56832429a791c",
+    "postscript": "Inter-Bold",
+    "variable": false
+  }
+]

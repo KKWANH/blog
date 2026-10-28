@@ -1,0 +1,27 @@
+{
+  "checks": {
+    "/": true,
+    "/about": true,
+    "/editor": true,
+    "/travel": true,
+    "/travel/manage": true,
+    "/CV.pdf": true,
+    "/contact.vcf": true,
+    "14_skills": true,
+    "camera_first": true,
+    "production_map_view": true,
+    "cv_only_context": true,
+    "local_brand_files": true,
+    "travel_map_ready": true,
+    "anonymous_read_only": true,
+    "anonymous_writes_denied": true,
+    "private_studio_unavailable": true,
+    "empty_gallery_unpublished": true,
+    "video_range": true
+  },
+  "atlas_records": 115,
+  "errors": [],
+  "passed": true,
+  "actual_oauth_write_tested": false,
+  "app_setup_required": true
+}

@@ -1,0 +1,199 @@
+{
+  "name": "cub3d_kkim",
+  "url": "https://github.com/KKWANH/cub3d_kkim",
+  "fork": false,
+  "scope": "learning",
+  "scopeNote": "Learning/team project; inspect the stated contribution and source.",
+  "description": "",
+  "updatedAt": "2022-02-07T16:17:47Z",
+  "defaultBranch": "main",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/cub3d_kkim/blob/7b745e78986a931624f86028c177429a37d2ea6f/README.md",
+      "bytes": 68,
+      "sha256": "c317167589cf2f10fd5a1edfb872d2ed2d62a0b8d9f6e08f9ebcc72cf186ee6a"
+    },
+    {
+      "path": "C2_2D_Map/Makefile",
+      "url": "https://github.com/KKWANH/cub3d_kkim/blob/7b745e78986a931624f86028c177429a37d2ea6f/C2_2D_Map/Makefile",
+      "bytes": 95,
+      "sha256": "90604fb8a3caf5b241a9065faa973b678a92e435eee5034078fb6fb306ed4867"
+    },
+    {
+      "path": "C3_2D_Ray_FOV/Makefile",
+      "url": "https://github.com/KKWANH/cub3d_kkim/blob/7b745e78986a931624f86028c177429a37d2ea6f/C3_2D_Ray_FOV/Makefile",
+      "bytes": 95,
+      "sha256": "90604fb8a3caf5b241a9065faa973b678a92e435eee5034078fb6fb306ed4867"
+    },
+    {
+      "path": "C7_3D_Texture/Makefile",
+      "url": "https://github.com/KKWANH/cub3d_kkim/blob/7b745e78986a931624f86028c177429a37d2ea6f/C7_3D_Texture/Makefile",
+      "bytes": 95,
+      "sha256": "90604fb8a3caf5b241a9065faa973b678a92e435eee5034078fb6fb306ed4867"
+    },
+    {
+      "path": "C16_3D_color_h/Makefile",
+      "url": "https://github.com/KKWANH/cub3d_kkim/blob/7b745e78986a931624f86028c177429a37d2ea6f/C16_3D_color_h/Makefile",
+      "bytes": 95,
+      "sha256": "90604fb8a3caf5b241a9065faa973b678a92e435eee5034078fb6fb306ed4867"
+    },
+    {
+      "path": "A00_Final_Cub3d/Makefile",
+      "url": "https://github.com/KKWANH/cub3d_kkim/blob/7b745e78986a931624f86028c177429a37d2ea6f/A00_Final_Cub3d/Makefile",
+      "bytes": 2079,
+      "sha256": "b69f44c00372142e05b1e7d74bc964fdfbe34dfb5a3bc794634d425f7921957f"
+    },
+    {
+      "path": "C8_3D_textures_h/Makefile",
+      "url": "https://github.com/KKWANH/cub3d_kkim/blob/7b745e78986a931624f86028c177429a37d2ea6f/C8_3D_textures_h/Makefile",
+      "bytes": 95,
+      "sha256": "90604fb8a3caf5b241a9065faa973b678a92e435eee5034078fb6fb306ed4867"
+    },
+    {
+      "path": "C2_2D_Map/src/main.c",
+      "url": "https://github.com/KKWANH/cub3d_kkim/blob/7b745e78986a931624f86028c177429a37d2ea6f/C2_2D_Map/src/main.c",
+      "bytes": 6367,
+      "sha256": "01d1e52f8873ba80b5b5b36802fee6884eab8ab9bf47c44250347d8dadd4c687"
+    },
+    {
+      "path": "C3_2D_Ray_FOV/src/main.c",
+      "url": "https://github.com/KKWANH/cub3d_kkim/blob/7b745e78986a931624f86028c177429a37d2ea6f/C3_2D_Ray_FOV/src/main.c",
+      "bytes": 11303,
+      "sha256": "f83ffe02970cc5074aa4da673fdf80101e1d819b2ac415bb17a6e33d96d5dc39"
+    },
+    {
+      "path": "C7_3D_Texture/src/main.c",
+      "url": "https://github.com/KKWANH/cub3d_kkim/blob/7b745e78986a931624f86028c177429a37d2ea6f/C7_3D_Texture/src/main.c",
+      "bytes": 14682,
+      "sha256": "55cda3e99ea83629057e8ca0b82945ce44853ca888778a97cc38d9d04ffbc806"
+    },
+    {
+      "path": "C16_3D_color_h/src/main.c",
+      "url": "https://github.com/KKWANH/cub3d_kkim/blob/7b745e78986a931624f86028c177429a37d2ea6f/C16_3D_color_h/src/main.c",
+      "bytes": 2208,
+      "sha256": "e307aa98f3c8d4fea149b0b827870f6ad16321ca068623d42d610e9d83a77108"
+    }
+  ],
+  "limitations": [],
+  "technologies": [
+    {
+      "id": "c",
+      "label": "C",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "A00_Final_Cub3d/mlx/font.c",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "A00_Final_Cub3d/mlx/mlx_int_str_to_wordtab.c",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "A00_Final_Cub3d/mlx/mlx_png.c",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "css",
+      "label": "CSS",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "J0_2D_Map/styles.css",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "J1_2D_Player/styles.css",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "J2_2D_Collision/styles.css",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "html",
+      "label": "HTML",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "J0_2D_Map/index.html",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "J1_2D_Player/index.html",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "J2_2D_Collision/index.html",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "javascript",
+      "label": "JavaScript",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "J0_2D_Map/p5.js",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "J0_2D_Map/raycast.js",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "J1_2D_Player/p5.js",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "make",
+      "label": "Make",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "A00_Final_Cub3d/Makefile",
+          "basis": "build file"
+        },
+        {
+          "path": "A00_Final_Cub3d/mlx/Makefile",
+          "basis": "build file"
+        },
+        {
+          "path": "C0_Basic_RunningSDL/Makefile",
+          "basis": "build file"
+        }
+      ]
+    },
+    {
+      "id": "raycasting",
+      "label": "Raycasting",
+      "group": "practice",
+      "evidence": [
+        {
+          "path": "C2_2D_Map/Makefile",
+          "basis": "inspected source"
+        },
+        {
+          "path": "C3_2D_Ray_FOV/Makefile",
+          "basis": "inspected source"
+        },
+        {
+          "path": "C7_3D_Texture/Makefile",
+          "basis": "inspected source"
+        }
+      ]
+    }
+  ],
+  "commit": "7b745e78986a931624f86028c177429a37d2ea6f",
+  "fileCount": 388,
+  "treeDepth": "recursive",
+  "status": "reviewed"
+}

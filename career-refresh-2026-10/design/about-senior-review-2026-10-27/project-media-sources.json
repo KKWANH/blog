@@ -1,0 +1,26 @@
+{
+  "repository": "DES02-PiRacer-instrument",
+  "commit": "96706c8e55594ec3161c958a1a572592447c7e1b",
+  "assets": [
+    {
+      "source": "https://raw.githubusercontent.com/KKWANH/DES02-PiRacer-instrument/96706c8e55594ec3161c958a1a572592447c7e1b/docs/imgs/demonstration.gif",
+      "bytes": 2662546,
+      "sha256": "8788e8e39c48fa047359647924ad33ace07e70e112671220bbb13233bdc1c60f"
+    },
+    {
+      "source": "https://raw.githubusercontent.com/KKWANH/DES02-PiRacer-instrument/96706c8e55594ec3161c958a1a572592447c7e1b/docs/imgs/software-architecture.png",
+      "bytes": 67628,
+      "sha256": "f5e45c7b9573bf4b3263035f5f069d18d15f8c7b0ead756cccacb940635b5c83"
+    },
+    {
+      "source": "https://raw.githubusercontent.com/KKWANH/DES02-PiRacer-instrument/96706c8e55594ec3161c958a1a572592447c7e1b/docs/imgs/Assembled_PiRacer.png",
+      "bytes": 8648723,
+      "sha256": "3c935ba31791c1c8932ec6368403a66439e88f5b232372b90af9154d80ed921c"
+    },
+    {
+      "source": "https://raw.githubusercontent.com/KKWANH/DES02-PiRacer-instrument/96706c8e55594ec3161c958a1a572592447c7e1b/docs/imgs/dashboard.png",
+      "bytes": 954808,
+      "sha256": "3b37a31994af5684399a8053ea502d37a018a602cc7092dac7bc676da2cfaefb"
+    }
+  ]
+}

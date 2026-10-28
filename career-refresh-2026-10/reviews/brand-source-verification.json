@@ -1,0 +1,58 @@
+{
+  "observed_at": "2026-10-27",
+  "assets": [
+    {
+      "file": "cplusplus.svg",
+      "source": "https://cdn.jsdelivr.net/npm/simple-icons@16.36.0/icons/cplusplus.svg",
+      "license": "CC0-1.0",
+      "change": "Explicit single-colour fill #00599C; paths unchanged.",
+      "sha256": "945ee6813f347f7b15611f314b0b66ffa95fbf459e99a67f740dc9850a6f52ff"
+    },
+    {
+      "file": "python.svg",
+      "source": "https://cdn.jsdelivr.net/npm/simple-icons@16.36.0/icons/python.svg",
+      "license": "CC0-1.0",
+      "change": "Explicit single-colour fill #3776AB; paths unchanged.",
+      "sha256": "a762008752dc999ad54e7e477194f12a1b2ce07c735be1f21b3b3af8f26eb7af"
+    },
+    {
+      "file": "react.svg",
+      "source": "https://cdn.jsdelivr.net/npm/simple-icons@16.36.0/icons/react.svg",
+      "license": "CC0-1.0",
+      "change": "Explicit single-colour fill #61DAFB; paths unchanged.",
+      "sha256": "37c8c23bc6ea999ad58b7f3883fc08b7e22128ec25adcca60ae1046ff878bcc3"
+    },
+    {
+      "file": "ros.svg",
+      "source": "https://cdn.jsdelivr.net/npm/simple-icons@16.36.0/icons/ros.svg",
+      "license": "CC0-1.0",
+      "change": "Explicit single-colour fill #22314E; paths unchanged.",
+      "sha256": "644d2f32181f187a0e9fd691c01bae8e7a89d76a083ffd2caa553d88bb3f3d1c"
+    },
+    {
+      "file": "kla.svg",
+      "source": "https://www.kla.com/",
+      "extraction": "Public header inline SVG",
+      "license": "Employer-owned mark; nominative employment context.",
+      "change": "None",
+      "sha256": "d0ef6fe80db42655ae4343cb5b08f6d927880c913d13515cb2e08d5747111164"
+    },
+    {
+      "file": "bosch.svg",
+      "source": "https://www.bosch.com/",
+      "extraction": "Public header inline SVG",
+      "license": "Employer-owned mark; nominative employment context.",
+      "change": "None",
+      "sha256": "be4625a60064808020fb5a36b57920f1754358265a7984832caf8ce26b970eab"
+    },
+    {
+      "file": "pickit.png",
+      "source": "https://docs.pickit3d.com/en/latest/_static/logo.png",
+      "page": "https://docs.pickit3d.com/en/latest/",
+      "license": "Employer-owned mark; nominative employment context.",
+      "change": "None",
+      "sha256": "a5d8fd72dd1e0026f0eca321c4d65315c8399ebcf657e726eec75b27db63b916"
+    }
+  ],
+  "svg_checks": "No scripts, foreignObject, event handlers or external href/src references."
+}

@@ -1,0 +1,11 @@
+{
+  "observed_at": "2026-10-27T15:19:40.037157+00:00",
+  "head": "e332b7fdbcf655f893c2ea29b0de05ba0da111e5",
+  "files": {
+    "contents/about/skill-profile.json": "30f1285f4460c5fa196b802325853aa2d4cb0bebafa39823f201d2da35a9d478",
+    "contents/about/skill-definitions.json": "8385e91758f71b8422a32dcd99bf6126f9cf2b68f472dc1cdb8f9c3c35fc44be",
+    "contents/travel/places.json": "c986b6f50805a3820c8136c4134c29ebfe5c4f4403486d1e4c402ef0180fd2c4",
+    "public/CV.pdf": "d81682408d042eba17c7c88d2f95d09c1c3efb4d9ca015cfbc2da63d46669357"
+  },
+  "scope": "Local portfolio refinement, admin analytics and five security reviews; no GitHub publication authorized."
+}

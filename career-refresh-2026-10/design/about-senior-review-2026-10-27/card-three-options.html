@@ -1,0 +1,179 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+@font-face {
+  font-family: 'Bastliga';
+  src: url('assets/Bastliga-One.woff') format('woff');
+}
+@font-face {
+  font-family: 'Amsterdam';
+  src: url('assets/Amsterdam.woff') format('woff');
+}
+@font-face {
+  font-family: 'Figtree';
+  src: url('/font/Figtree.woff2') format('woff2');
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #071b13;
+  color: #fff;
+  font-family: system-ui, sans-serif;
+  padding: 30px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1400px;
+  margin: auto;
+}
+.card {
+  aspect-ratio: 85/55;
+  background: linear-gradient(112deg, #f7f3e6, #eae4d3);
+  padding: 24px 28px;
+  border-radius: 2px;
+  box-shadow: 0 1px 0 #fffdf0, 0 3px 0 #bdc2a8, 0 5px 0 #294630, 0 16px 36px -12px rgba(0,0,0,0.7);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  color: #173726;
+}
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('/paper-fibres.webp') 0 0/260px, url('/paper-grain.webp') 0 0/120px;
+  opacity: .55;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+.debossed {
+  /* Exactly like the C++ impression: dark upper-left shadow + crisp white lower-right bevel */
+  text-shadow: 0 1px 0.8px #ffffff, 0 -1px 0.8px rgba(18, 42, 28, 0.45), -1px 0 0.8px rgba(18, 42, 28, 0.35);
+}
+.card-role {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #355344;
+}
+.card-focus {
+  font-size: 13px;
+  color: #3d5d47;
+  margin-top: 4px;
+}
+.card-location {
+  font-size: 13px;
+  color: #55725e;
+  margin-top: 4px;
+}
+.card-footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid rgba(85, 118, 76, 0.3);
+  padding-top: 12px;
+  font-size: 13px;
+}
+.card-footer a {
+  color: #1b392a;
+  text-decoration: none;
+}
+/* 1. Bastliga One */
+.name-bastliga {
+  font-family: 'Bastliga', cursive;
+  font-size: 46px;
+  line-height: 1.1;
+  margin: 14px 0 4px;
+}
+/* 2. Amsterdam */
+.name-amsterdam {
+  font-family: 'Amsterdam', cursive;
+  font-size: 44px;
+  line-height: 1.15;
+  margin: 14px 0 4px;
+}
+/* 3. Clean Centered Swiss Gothic */
+.card-centered {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.card-centered .card-role {
+  font-size: 12px;
+  letter-spacing: 0.16em;
+}
+.name-gothic {
+  font-family: 'Figtree', sans-serif;
+  font-size: 34px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin: 12px 0 6px;
+}
+.card-centered .card-focus {
+  font-size: 13px;
+  margin-top: 2px;
+}
+.card-centered .card-footer {
+  width: 100%;
+  margin-top: auto;
+  justify-content: space-between;
+}
+h2 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #d6e8ce;
+  margin-bottom: 12px;
+}
+</style>
+</head>
+<body>
+<div class="grid">
+  <div>
+    <h2>1. Bastliga One (Priority 1) ? No logo</h2>
+    <div class="card">
+      <div class="card-role debossed">Software Engineer</div>
+      <div class="name-bastliga debossed">Kwanho Kim</div>
+      <div class="card-focus debossed">C++ device software &amp; integration</div>
+      <div class="card-location">Leuven, Belgium</div>
+      <div class="card-footer">
+        <span>contact@kwanho.dev</span>
+        <span>kwanho.dev</span>
+      </div>
+    </div>
+  </div>
+  <div>
+    <h2>2. Amsterdam (Priority 2) ? No logo</h2>
+    <div class="card">
+      <div class="card-role debossed">Software Engineer</div>
+      <div class="name-amsterdam debossed">Kwanho Kim</div>
+      <div class="card-focus debossed">C++ device software &amp; integration</div>
+      <div class="card-location">Leuven, Belgium</div>
+      <div class="card-footer">
+        <span>contact@kwanho.dev</span>
+        <span>kwanho.dev</span>
+      </div>
+    </div>
+  </div>
+  <div>
+    <h2>3. Clean Centered Gothic (Fallback)</h2>
+    <div class="card card-centered">
+      <div class="card-role debossed">Software Engineer</div>
+      <div class="name-gothic debossed">Kwanho Kim</div>
+      <div class="card-focus debossed">C++ device software &amp; integration</div>
+      <div class="card-location">Leuven, Belgium</div>
+      <div class="card-footer">
+        <span>contact@kwanho.dev</span>
+        <span>kwanho.dev</span>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

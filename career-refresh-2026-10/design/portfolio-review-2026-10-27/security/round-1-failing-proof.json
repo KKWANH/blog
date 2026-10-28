@@ -1,0 +1,7 @@
+{
+  "round": 1,
+  "invariant": "Local writes require the exact editor origin",
+  "expected": false,
+  "actual": true,
+  "mode": "Policy-only fixture; no atlas mutation"
+}

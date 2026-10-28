@@ -1,0 +1,82 @@
+{
+  "checks": {
+    "server_restart_persistence": true,
+    "location_lookup": true,
+    "lookup_fills_fields": true,
+    "stale_form_kept_open_without_overwrite": true,
+    "theme_keeps_map": true,
+    "enlarged_brief_fits": true,
+    "test_entry_removed": true,
+    "real_atlas_untouched": true
+  },
+  "audits": [
+    {
+      "path": "/",
+      "theme": "dark",
+      "violations": []
+    },
+    {
+      "path": "/about",
+      "theme": "dark",
+      "violations": []
+    },
+    {
+      "path": "/travel",
+      "theme": "dark",
+      "violations": []
+    },
+    {
+      "path": "travel editor",
+      "theme": "dark",
+      "violations": []
+    }
+  ],
+  "large_text": [
+    {
+      "path": "/",
+      "width": 320,
+      "content": 320
+    },
+    {
+      "path": "/",
+      "width": 390,
+      "content": 390
+    },
+    {
+      "path": "/",
+      "width": 768,
+      "content": 768
+    },
+    {
+      "path": "/about",
+      "width": 320,
+      "content": 320
+    },
+    {
+      "path": "/about",
+      "width": 390,
+      "content": 390
+    },
+    {
+      "path": "/about",
+      "width": 768,
+      "content": 768
+    },
+    {
+      "path": "/travel",
+      "width": 320,
+      "content": 361
+    },
+    {
+      "path": "/travel",
+      "width": 390,
+      "content": 390
+    },
+    {
+      "path": "/travel",
+      "width": 768,
+      "content": 768
+    }
+  ],
+  "passed": false
+}

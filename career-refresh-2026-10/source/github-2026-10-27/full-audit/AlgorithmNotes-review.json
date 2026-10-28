@@ -1,0 +1,68 @@
+{
+  "name": "AlgorithmNotes",
+  "url": "https://github.com/KKWANH/AlgorithmNotes",
+  "fork": false,
+  "scope": "learning",
+  "scopeNote": "Learning/team project; inspect the stated contribution and source.",
+  "description": "알고리즘 노트",
+  "updatedAt": "2020-03-14T13:36:14Z",
+  "defaultBranch": "master",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/AlgorithmNotes/blob/28b8727b68ff3a132f1c86ab1454fed11153d1c4/README.md",
+      "bytes": 118,
+      "sha256": "b220d832c131552a305ddc8e8943cf72b4cde9652418bea0f89bce5f869fb511"
+    },
+    {
+      "path": "BackJoon/Problem1260.java",
+      "url": "https://github.com/KKWANH/AlgorithmNotes/blob/28b8727b68ff3a132f1c86ab1454fed11153d1c4/BackJoon/Problem1260.java",
+      "bytes": 786,
+      "sha256": "a44275245d189bf99c236af564cf85a75caf774dcb0735ac90f592462c183e07"
+    },
+    {
+      "path": "BackJoon/Problem1931.java",
+      "url": "https://github.com/KKWANH/AlgorithmNotes/blob/28b8727b68ff3a132f1c86ab1454fed11153d1c4/BackJoon/Problem1931.java",
+      "bytes": 961,
+      "sha256": "b09b6179fce1bab24d980f1706fc1adb779aac6fde1b02b649e19b5e04b1626f"
+    },
+    {
+      "path": "BackJoon/Problem11047.java",
+      "url": "https://github.com/KKWANH/AlgorithmNotes/blob/28b8727b68ff3a132f1c86ab1454fed11153d1c4/BackJoon/Problem11047.java",
+      "bytes": 720,
+      "sha256": "f7d30c8e7d07630fe29de8f53cadb7df67c91bdc1f5edb2a85d0c64667ef0f0a"
+    },
+    {
+      "path": "CodeUp_기초100제/Problem1001.java",
+      "url": "https://github.com/KKWANH/AlgorithmNotes/blob/28b8727b68ff3a132f1c86ab1454fed11153d1c4/CodeUp_%EA%B8%B0%EC%B4%88100%EC%A0%9C/Problem1001.java",
+      "bytes": 154,
+      "sha256": "ee01e65b2ff091a600291394bedea8f94b123d77f9e12ef5916d4062a931a06f"
+    }
+  ],
+  "limitations": [],
+  "technologies": [
+    {
+      "id": "java",
+      "label": "Java",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "BackJoon/Problem11047.java",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "BackJoon/Problem1260.java",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "BackJoon/Problem1931.java",
+          "basis": "source-file presence"
+        }
+      ]
+    }
+  ],
+  "commit": "28b8727b68ff3a132f1c86ab1454fed11153d1c4",
+  "fileCount": 18,
+  "treeDepth": "recursive",
+  "status": "reviewed"
+}

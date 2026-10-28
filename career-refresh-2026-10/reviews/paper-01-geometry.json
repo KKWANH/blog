@@ -1,0 +1,370 @@
+[
+  {
+    "viewport": 1440,
+    "enlarged": false,
+    "page_width": 1440,
+    "width": 660,
+    "height": 427.046875,
+    "ratio": 1.5454977863963997,
+    "scroll": 658,
+    "children": [
+      {
+        "text": "C++ Software Engineer",
+        "left": true,
+        "right": true,
+        "top": true,
+        "bottom": true
+      },
+      {
+        "text": "Kwanho Kim",
+        "left": true,
+        "right": true,
+        "top": true,
+        "bottom": true
+      },
+      {
+        "text": "contact@kwanho.dev",
+        "left": true,
+        "right": true,
+        "top": true,
+        "bottom": true
+      },
+      {
+        "text": "kwanho.dev",
+        "left": true,
+        "right": true,
+        "top": true,
+        "bottom": true
+      },
+      {
+        "text": "Leuven, Belgium",
+        "left": true,
+        "right": true,
+        "top": true,
+        "bottom": true
+      }
+    ]
+  },
+  {
+    "viewport": 1440,
+    "enlarged": true,
+    "page_width": 1440,
+    "width": 660,
+    "height": 427.046875,
+    "ratio": 1.5454977863963997,
+    "scroll": 658,
+    "children": [
+      {
+        "text": "C++ Software Engineer",
+        "left": true,
+        "right": true,
+        "top": true,
+        "bottom": true
+      },
+      {
+        "text": "Kwanho Kim",
+        "left": true,
+        "right": true,
+        "top": true,
+        "bottom": true
+      },
+      {
+        "text": "contact@kwanho.dev",
+        "left": true,
+        "right": true,
+        "top": true,
+        "bottom": true
+      },
+      {
+        "text": "kwanho.dev",
+        "left": true,
+        "right": true,
+        "top": true,
+        "bottom": true
+      },
+      {
+        "text": "Leuven, Belgium",
+        "left": true,
+        "right": true,
+        "top": true,
+        "bottom": true
+      }
+    ]
+  },
+  {
+    "viewport": 768,
+    "enlarged": false,
+    "page_width": 768,
+    "width": 491.421875,
+    "height": 317.96875,
+    "ratio": 1.5455036855036854,
+    "scroll": 489,
+    "children": [
+      {
+        "text": "C++ Software Engineer",
+        "left": true,
+        "right": true,
+        "top": true,
+        "bottom": true
+      },
+      {
+        "text": "Kwanho Kim",
+        "left": true,
+        "right": true,
+        "top": true,
+        "bottom": true
+      },
+      {
+        "text": "contact@kwanho.dev",
+        "left": true,
+        "right": true,
+        "top": true,
+        "bottom": true
+      },
+      {
+        "text": "kwanho.dev",
+        "left": true,
+        "right": true,
+        "top": true,
+        "bottom": true
+      },
+      {
+        "text": "Leuven, Belgium",
+        "left": true,
+        "right": true,
+        "top": true,
+        "bottom": true
+      }
+    ]
+  },
+  {
+    "viewport": 768,
+    "enlarged": true,
+    "page_width": 768,
+    "width": 288,
+    "height": 491.75,
+    "ratio": 0.5856634468734113,
+    "scroll": 286,
+    "children": [
+      {
+        "text": "C++ Software Engineer",
+        "left": true,
+        "right": true,
+        "top": true,
+        "bottom": true
+      },
+      {
+        "text": "Kwanho Kim",
+        "left": true,
+        "right": true,
+        "top": true,
+        "bottom": true
+      },
+      {
+        "text": "contact@kwanho.dev",
+        "left": true,
+        "right": true,
+        "top": true,
+        "bottom": true
+      },
+      {
+        "text": "kwanho.dev",
+        "left": true,
+        "right": true,
+        "top": true,
+        "bottom": true
+      },
+      {
+        "text": "Leuven, Belgium",
+        "left": true,
+        "right": true,
+        "top": true,
+        "bottom": true
+      }
+    ]
+  },
+  {
+    "viewport": 390,
+    "enlarged": false,
+    "page_width": 390,
+    "width": 350,
+    "height": 226.46875,
+    "ratio": 1.5454670898302747,
+    "scroll": 348,
+    "children": [
+      {
+        "text": "C++ Software Engineer",
+        "left": true,
+        "right": true,
+        "top": true,
+        "bottom": true
+      },
+      {
+        "text": "Kwanho Kim",
+        "left": true,
+        "right": true,
+        "top": true,
+        "bottom": true
+      },
+      {
+        "text": "contact@kwanho.dev",
+        "left": true,
+        "right": true,
+        "top": true,
+        "bottom": true
+      },
+      {
+        "text": "kwanho.dev",
+        "left": true,
+        "right": true,
+        "top": true,
+        "bottom": true
+      },
+      {
+        "text": "Leuven, Belgium",
+        "left": true,
+        "right": true,
+        "top": true,
+        "bottom": true
+      }
+    ]
+  },
+  {
+    "viewport": 390,
+    "enlarged": true,
+    "page_width": 390,
+    "width": 310,
+    "height": 491.75,
+    "ratio": 0.630401626842908,
+    "scroll": 308,
+    "children": [
+      {
+        "text": "C++ Software Engineer",
+        "left": true,
+        "right": true,
+        "top": true,
+        "bottom": true
+      },
+      {
+        "text": "Kwanho Kim",
+        "left": true,
+        "right": true,
+        "top": true,
+        "bottom": true
+      },
+      {
+        "text": "contact@kwanho.dev",
+        "left": true,
+        "right": true,
+        "top": true,
+        "bottom": true
+      },
+      {
+        "text": "kwanho.dev",
+        "left": true,
+        "right": true,
+        "top": true,
+        "bottom": true
+      },
+      {
+        "text": "Leuven, Belgium",
+        "left": true,
+        "right": true,
+        "top": true,
+        "bottom": true
+      }
+    ]
+  },
+  {
+    "viewport": 320,
+    "enlarged": false,
+    "page_width": 320,
+    "width": 280,
+    "height": 181.171875,
+    "ratio": 1.5454937473048729,
+    "scroll": 278,
+    "children": [
+      {
+        "text": "C++ Software Engineer",
+        "left": true,
+        "right": true,
+        "top": true,
+        "bottom": true
+      },
+      {
+        "text": "Kwanho Kim",
+        "left": true,
+        "right": true,
+        "top": true,
+        "bottom": true
+      },
+      {
+        "text": "contact@kwanho.dev",
+        "left": true,
+        "right": true,
+        "top": true,
+        "bottom": true
+      },
+      {
+        "text": "kwanho.dev",
+        "left": true,
+        "right": true,
+        "top": true,
+        "bottom": true
+      },
+      {
+        "text": "Leuven, Belgium",
+        "left": true,
+        "right": true,
+        "top": true,
+        "bottom": true
+      }
+    ]
+  },
+  {
+    "viewport": 320,
+    "enlarged": true,
+    "page_width": 320,
+    "width": 240,
+    "height": 525.34375,
+    "ratio": 0.4568437332698828,
+    "scroll": 238,
+    "children": [
+      {
+        "text": "C++ Software Engineer",
+        "left": true,
+        "right": true,
+        "top": true,
+        "bottom": true
+      },
+      {
+        "text": "Kwanho Kim",
+        "left": true,
+        "right": true,
+        "top": true,
+        "bottom": true
+      },
+      {
+        "text": "contact@kwanho.dev",
+        "left": true,
+        "right": true,
+        "top": true,
+        "bottom": true
+      },
+      {
+        "text": "kwanho.dev",
+        "left": true,
+        "right": true,
+        "top": true,
+        "bottom": true
+      },
+      {
+        "text": "Leuven, Belgium",
+        "left": true,
+        "right": true,
+        "top": true,
+        "bottom": true
+      }
+    ]
+  }
+]

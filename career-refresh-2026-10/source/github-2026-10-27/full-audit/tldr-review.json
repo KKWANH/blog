@@ -1,0 +1,48 @@
+{
+  "name": "tldr",
+  "url": "https://github.com/KKWANH/tldr",
+  "fork": true,
+  "scope": "reference",
+  "scopeNote": "Fork/reference; personal implementation is not established by the fork.",
+  "description": "📚 Collaborative cheatsheets for console commands",
+  "updatedAt": "2022-10-12T13:45:50Z",
+  "defaultBranch": "main",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/tldr/blob/f1a55a2a4b605e0c59d7566b4b93862d600f0ea2/README.md",
+      "bytes": 6316,
+      "sha256": "378d501c7ad2625f2eae47b495ee14fcedbccf399c211f32f63e2a07dd20506e"
+    },
+    {
+      "path": "package.json",
+      "url": "https://github.com/KKWANH/tldr/blob/f1a55a2a4b605e0c59d7566b4b93862d600f0ea2/package.json",
+      "bytes": 678,
+      "sha256": "306d0f3cc1b1c23d0a8be0cde1b73cf50ce73b4bdb23cc720440b789ef5f57c8"
+    },
+    {
+      "path": "requirements.txt",
+      "url": "https://github.com/KKWANH/tldr/blob/f1a55a2a4b605e0c59d7566b4b93862d600f0ea2/requirements.txt",
+      "bytes": 48,
+      "sha256": "9a0c3fb15e1c2993cfb338b7eae8faa2f05e86065f1eadf57006b9a5aa2dda48"
+    }
+  ],
+  "limitations": [],
+  "technologies": [
+    {
+      "id": "linux",
+      "label": "Linux",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        }
+      ]
+    }
+  ],
+  "commit": "f1a55a2a4b605e0c59d7566b4b93862d600f0ea2",
+  "fileCount": 16,
+  "treeDepth": "root",
+  "status": "reviewed"
+}

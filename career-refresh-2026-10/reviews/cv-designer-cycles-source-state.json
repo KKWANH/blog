@@ -1,0 +1,16 @@
+{
+  "actor": "Devin",
+  "observed_at": "2026-10-27T13:55:45.454206+00:00",
+  "scope": "Five new CV designer capture/revision cycles",
+  "workspace": "C:\\Projects\\career-refresh-2026-10",
+  "new_cycles": 5,
+  "functional_integrity_checks": 37,
+  "checks_passed": true,
+  "visual_evidence": "20 before/after full/top captures plus per-cycle critique and print proofs",
+  "prior_blog_work_preserved": true,
+  "public_pdf_unchanged": true,
+  "content_sha256": "b6c6fef05302bbcd0c59233d2d483e6ae59ee9db399067cd8059743288f24a05",
+  "design_sha256": "6713429279af5714e9a7f6abd6d287c045f132055654b240001b33364a23cf2a",
+  "proof_sha256": "17b6651b45a12cbeb12c2ed4b1561cd15152cf9a8e614cc8caf2e5e0d95d1322",
+  "publication": "local only"
+}

@@ -1,0 +1,69 @@
+{
+  "name": "DES01-PiRacer-Assembly",
+  "url": "https://github.com/KKWANH/DES01-PiRacer-Assembly",
+  "fork": false,
+  "scope": "learning",
+  "scopeNote": "Learning/team project; inspect the stated contribution and source.",
+  "description": "hands-on experience in assembling and testing a PiRacer",
+  "updatedAt": "2023-07-26T20:21:52Z",
+  "defaultBranch": "main",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/DES01-PiRacer-Assembly/blob/5e9b2c582928e6669ff3cd8b506dcd1486d762f8/README.md",
+      "bytes": 7047,
+      "sha256": "d6e9b2c4db935b49dae11d9863234756ef1e78fdd265fe77cc4c957e35aab2a9"
+    }
+  ],
+  "limitations": [],
+  "technologies": [
+    {
+      "id": "git",
+      "label": "Git",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        }
+      ]
+    },
+    {
+      "id": "linux",
+      "label": "Linux",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        }
+      ]
+    },
+    {
+      "id": "raspberrypi",
+      "label": "Raspberry Pi",
+      "group": "systems",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        }
+      ]
+    },
+    {
+      "id": "tensorflow",
+      "label": "TensorFlow",
+      "group": "data",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        }
+      ]
+    }
+  ],
+  "commit": "5e9b2c582928e6669ff3cd8b506dcd1486d762f8",
+  "fileCount": 4,
+  "treeDepth": "recursive",
+  "status": "reviewed"
+}
