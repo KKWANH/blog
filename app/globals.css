@@ -238,13 +238,13 @@
  * =====================================================================*/
 
 :root {
-  --scrollbar-track: rgba(7, 27, 19, 0.4);
+  --scrollbar-track: transparent;
   --scrollbar-thumb: #254d36;
   --scrollbar-thumb-hover: #3a7553;
 }
 
 html[data-theme="light"], .light {
-  --scrollbar-track: rgba(220, 230, 218, 0.5);
+  --scrollbar-track: transparent;
   --scrollbar-thumb: #9ab49e;
   --scrollbar-thumb-hover: #729677;
 }

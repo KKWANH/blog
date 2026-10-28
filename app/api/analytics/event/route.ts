@@ -25,6 +25,10 @@ export async function POST(request: Request) {
     if (!body || typeof body !== 'object' || Array.isArray(body) || Object.keys(body).some((key) => !['path', 'previous', 'referral', 'action'].includes(key))) throw new HttpInputError('Invalid event.', 422)
     const path = publicAnalyticsPath(body.path), previous = body.previous === null ? null : publicAnalyticsPath(body.previous)
     if (!path || (body.previous !== null && !previous)) throw new HttpInputError('Unknown public path.', 422)
+    const cookieHeader = request.headers.get('cookie') || ''
+    if (cookieHeader.includes('kwanho-admin-device=1') || cookieHeader.includes('admin-session')) {
+      return new Response(null, { status: 204, headers })
+    }
     if (await readAdminSession(request, process.env, config, store)) return new Response(null, { status: 204, headers })
     const visitor = await consentedVisitor(request, config, store, true)
     const rawCountry = (request.headers.get('x-vercel-ip-country') || 'ZZ').toUpperCase()

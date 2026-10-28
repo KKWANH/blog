@@ -1,11 +1,11 @@
 html {
   scroll-padding-bottom: 100px;
   scrollbar-width: thin !important;
-  scrollbar-color: #2b5c3e rgba(7, 27, 19, 0.5) !important;
+  scrollbar-color: #2b5c3e transparent !important;
 }
 html[data-theme="light"] {
   scrollbar-width: thin !important;
-  scrollbar-color: #92ae95 rgba(215, 226, 212, 0.7) !important;
+  scrollbar-color: #92ae95 transparent !important;
 }
 
 *::-webkit-scrollbar {
@@ -13,7 +13,7 @@ html[data-theme="light"] {
   height: 10px !important;
 }
 *::-webkit-scrollbar-track {
-  background: rgba(7, 27, 19, 0.5) !important;
+  background: transparent !important;
 }
 *::-webkit-scrollbar-thumb {
   background-color: #2b5c3e !important;
@@ -26,7 +26,7 @@ html[data-theme="light"] {
 }
 
 html[data-theme="light"] *::-webkit-scrollbar-track {
-  background: rgba(215, 226, 212, 0.7) !important;
+  background: transparent !important;
 }
 html[data-theme="light"] *::-webkit-scrollbar-thumb {
   background-color: #92ae95 !important;

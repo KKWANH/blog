@@ -135,6 +135,9 @@
 .timeline-legend i { display: inline-block; width: 16px; height: 7px; border-radius: 1px; }
 .work-key { background: #d3b477; }.study-key { background: #69916a; border: 1px solid #aac8a0; }.ongoing-key { border: 1px dashed #b2ce9d; }
 .open-experience, .open-education { margin-bottom: 3rem; }
+.experience-tenure-banner { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .4rem; margin-bottom: .4rem; }
+.tenure-summary-badge { display: inline-flex; align-items: center; font-size: .78rem; font-weight: 500; padding: .2rem .6rem; border-radius: 4px; background: rgba(230, 191, 125, 0.12); border: 1px solid rgba(230, 191, 125, 0.28); color: #eeddb2; }
+html[data-theme="light"] .tenure-summary-badge { background: #f0ebe1; border-color: #d6c6a8; color: #634a1a; }
 .experience-layout { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(17rem, .85fr); gap: 2rem; align-items: start; }
 .experience-records { min-width: 0; }
 .experience-records > li { border-top: 1px solid var(--border); padding: 1.4rem 0 1.7rem 1rem; border-left: 2px solid transparent; scroll-margin-top: calc(var(--site-header-height, 5rem) + 2rem); }
@@ -474,11 +477,11 @@ html[data-theme="light"] .profile-exits {
 }
 html[data-theme="light"] .profile-exits a {
   border-color: #cad9c6;
-  background: #ffffff;
+  background: #f0f3ea;
 }
 html[data-theme="light"] .profile-exits a:hover {
-  background: #f0f5ee;
-  border-color: #9cbda0;
+  background: #e2ede0;
+  border-color: #8fae92;
 }
 html[data-theme="light"] .profile-exits h3 {
   color: #11261a;
@@ -501,18 +504,23 @@ html[data-theme="light"] .main-nav a[aria-current="page"] {
 html[data-theme="light"] .header-cv {
   border-color: #cad9c6;
   color: #1a422a;
-  background: #ffffff;
+  background: #f0f3ea;
+}
+html[data-theme="light"] .header-cv:hover {
+  background: #e2ede0;
+  border-color: #8fae92;
 }
 html[data-theme="light"] .motion-control,
 html[data-theme="light"] .theme-toggle {
   border-color: #cad9c6;
   color: #3b5a45;
-  background: #ffffff;
+  background: #f0f3ea;
 }
 html[data-theme="light"] .motion-control:hover,
 html[data-theme="light"] .theme-toggle:hover {
   color: #0c2017;
   border-color: #8fae92;
+  background: #e2ede0;
 }
 html[data-theme="light"] .notebook-footer {
   border-top-color: #cad9c6;

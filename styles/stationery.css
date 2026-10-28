@@ -33,7 +33,7 @@
 .paper-business-card::after { inset: 6px; border: 1px solid #45644724; box-shadow: inset 0 1px 0 #fffdf588; opacity: .7; }
 .paper-business-card > * { position: relative; z-index: 1; flex-shrink: 0; min-inline-size: 0; }
 .paper-business-card * { overflow-wrap: anywhere; }
-.paper-card-exact, .paper-card-hybrid, .paper-card-centered {
+.card-centered, .paper-card-exact, .paper-card-hybrid, .paper-card-centered {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -41,7 +41,7 @@
   align-items: center;
   padding: max(.85rem, 5.5cqi) max(1rem, 6cqi) max(.6rem, 3.8cqi);
 }
-.paper-card-main-stack {
+.paper-card-center-stack, .paper-card-main-stack, .paper-card-core {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -50,17 +50,16 @@
   margin-top: auto;
   margin-bottom: auto;
 }
-.paper-card-exact .paper-card-role, .paper-card-hybrid .paper-card-role, .paper-card-centered .paper-card-role {
+.paper-card-role {
   font-size: max(.76rem, 3.1cqi);
   line-height: 1.2;
   font-weight: 600;
   letter-spacing: .18em;
   text-transform: uppercase;
   color: #355344;
-  text-shadow: 0 1px 0.6px #ffffff, 0 -0.8px 0.6px rgba(18, 42, 28, 0.35);
   margin: 0;
 }
-.paper-card-exact h1, .paper-card-hybrid h1, .paper-card-centered h1 {
+.paper-business-card h1 {
   font-family: var(--font-signature), 'Bastliga One', cursive;
   font-size: max(2.35rem, 12.8cqi);
   font-weight: 400;
@@ -68,24 +67,25 @@
   line-height: 1.05;
   margin-block: max(.2rem, 1cqi) max(.15rem, .8cqi);
   color: #173726;
-  text-shadow: 0 1px 0.8px #ffffff, 0 -1px 0.8px rgba(18, 42, 28, 0.45), -1px 0 0.8px rgba(18, 42, 28, 0.35);
   overflow-wrap: normal;
   user-select: text;
 }
-.paper-card-exact .paper-card-focus, .paper-card-hybrid .paper-card-focus, .paper-card-centered .paper-card-focus {
+.paper-card-focus {
   font-size: max(.74rem, 2.85cqi);
   line-height: 1.4;
   color: #31533c;
   font-weight: 450;
-  text-shadow: 0 1px 0.6px #ffffff, 0 -0.8px 0.6px rgba(18, 42, 28, 0.35);
   margin: 0;
 }
-.paper-card-exact .paper-card-location, .paper-card-hybrid .paper-card-location, .paper-card-centered .paper-card-location {
+.paper-card-location {
   font-size: max(.72rem, 2.7cqi);
   line-height: 1.4;
   margin-top: max(3px, .9cqi);
   color: #4a6652;
   font-weight: 400;
+}
+.debossed {
+  text-shadow: 0 1px 0.8px #ffffff, 0 -1px 0.8px rgba(18, 42, 28, 0.45), -1px 0 0.8px rgba(18, 42, 28, 0.35);
 }
 .paper-card-footer-split {
   width: 100%;
@@ -277,4 +277,47 @@ html[data-motion="off"] .portrait-contact-sheet a { transform: none; transition:
   height: max(20px, 5.2cqi);
   display: block;
   filter: drop-shadow(0 0.5px 0.3px #ffffff);
+}
+
+/* Light mode: Inverted Forest Edge color scheme (Image 1) while preserving 100% of the layout & elements */
+html[data-theme="light"] .paper-business-card {
+  background: linear-gradient(135deg, #133c27, #0a2416) !important;
+  border: 1px solid #2d5538 !important;
+  color: #f7f5e8 !important;
+  box-shadow: 0 1px 0 #3a6845, 0 3px 0 #1b3d27, 0 5px 0 #0d2215, 0 20px 40px -10px rgba(0, 0, 0, 0.35) !important;
+}
+html[data-theme="light"] .paper-business-card::before {
+  mix-blend-mode: overlay;
+  opacity: .35;
+}
+html[data-theme="light"] .paper-business-card::after {
+  border-color: #55876044;
+  box-shadow: inset 0 1px 0 #85b89033;
+}
+html[data-theme="light"] .paper-business-card .paper-card-role {
+  color: #c4dec1 !important;
+}
+html[data-theme="light"] .paper-business-card h1 {
+  color: #fcfbf5 !important;
+}
+html[data-theme="light"] .paper-business-card .paper-card-focus {
+  color: #d8ead4 !important;
+}
+html[data-theme="light"] .paper-business-card .paper-card-location {
+  color: #9cb89c !important;
+}
+html[data-theme="light"] .paper-business-card .debossed {
+  text-shadow: 0 1px 0.8px #05140b, 0 -1px 0.8px rgba(165, 215, 175, 0.5), -1px 0 0.8px rgba(165, 215, 175, 0.4) !important;
+}
+html[data-theme="light"] .paper-business-card .paper-card-footer {
+  border-top-color: rgba(85, 140, 100, 0.4) !important;
+  box-shadow: inset 0 1px 0 rgba(140, 200, 160, 0.2) !important;
+}
+html[data-theme="light"] .paper-business-card .paper-card-footer a,
+html[data-theme="light"] .paper-business-card .paper-contact-link,
+html[data-theme="light"] .paper-business-card .paper-site-link {
+  color: #f0f4ea !important;
+}
+html[data-theme="light"] .paper-business-card .paper-card-qr {
+  filter: invert(1) hue-rotate(95deg) brightness(1.2) drop-shadow(0 0.5px 0.3px #05140b) !important;
 }

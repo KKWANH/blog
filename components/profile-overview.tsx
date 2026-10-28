@@ -94,7 +94,14 @@ function ProfileContent() {
       <PaperIntroduction />
 
       <section className="open-experience" id="work" aria-labelledby="experience-title">
-        <div className="profile-section-heading"><h2 id="experience-title"><BriefcaseBusiness aria-hidden="true" />Experience</h2><p>Select a role to inspect its work scope and evidence.</p></div>
+        <div className="profile-section-heading">
+          <h2 id="experience-title"><BriefcaseBusiness aria-hidden="true" />Experience</h2>
+          <div className="experience-tenure-banner" role="status" aria-label="Career experience summary">
+            <span className="tenure-summary-badge">Industry: 2+ yrs (KLA · Pickit · Bosch)</span>
+            <span className="tenure-summary-badge">Software practice: 6+ yrs (since 2020)</span>
+          </div>
+          <p>Select a role to inspect its work scope and evidence.</p>
+        </div>
         <div className="experience-layout">
           <ol className="experience-records">
             {experience.map((job) => {

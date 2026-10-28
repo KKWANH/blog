@@ -49,7 +49,23 @@ export function SkillExplorer({ selected, onSelect, onViewEvidence }: { selected
       else openTechnology(skill.id)
     }}><CareerIcon skill={skill.id} /><span className="skill-item-copy"><span className="skill-item-heading">{skill.label}{skill.personal ? <SkillLevelBadge level={skill.level} /> : null}</span><small>{skill.kind === 'practice' ? skill.detail : skill.personal ? skill.kind ? skillKindLabels[skill.kind] : 'Profile skill' : 'Repository context'}</small></span></button>
   }
-  const practices = visible.filter((skill) => skill.kind === 'practice')
+  const levelPriority: Record<string, number> = {
+    strong: 1,
+    comfortable: 2,
+    used: 3,
+    learning: 4,
+  }
+
+  function sortSkillsByLevel<T extends { level?: string | null; label: string }>(items: T[]): T[] {
+    return [...items].sort((a, b) => {
+      const pA = levelPriority[a.level ?? ''] ?? 99
+      const pB = levelPriority[b.level ?? ''] ?? 99
+      if (pA !== pB) return pA - pB
+      return a.label.localeCompare(b.label)
+    })
+  }
+
+  const practices = sortSkillsByLevel(visible.filter((skill) => skill.kind === 'practice'))
   return (
     <div className="skill-explorer" data-view={view}>
       <div className="skill-view-controls" aria-label="Skills presentation">
@@ -79,7 +95,7 @@ export function SkillExplorer({ selected, onSelect, onViewEvidence }: { selected
         </div>
         <div className="skill-explorer-canvas">
           {mapGroups.map((group) => {
-            const skills = visible.filter((skill) => skill.group === group.id && skill.kind !== 'practice')
+            const skills = sortSkillsByLevel(visible.filter((skill) => skill.group === group.id && skill.kind !== 'practice'))
             if (!skills.length) return null
             return <section key={group.id} className="skill-family" aria-labelledby={`skill-group-${group.id}`}>
               <h3 id={`skill-group-${group.id}`}>{group.label}</h3><div className="skill-lenses">

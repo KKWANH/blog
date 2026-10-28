@@ -79,8 +79,18 @@ export function AdminDashboard() {
     {error ? <p role="alert" className="admin-error">{error}</p> : null}
     <p className="admin-muted">Public visitors can read the site. Editing and private statistics require owner access.</p>
   </section>
+  useEffect(() => {
+    if (session?.authenticated && typeof document !== 'undefined') {
+      document.cookie = 'kwanho-admin-device=1; path=/; max-age=31536000; SameSite=Lax;'
+      try { localStorage.setItem('kwanho-admin-device', '1') } catch {}
+    }
+  }, [session?.authenticated])
+
+  const [selectedDate, setSelectedDate] = useState<string | null>(null)
   const latest = report?.days.at(-1)
   const maximum = Math.max(1, ...(report?.days.map((day) => day.views) ?? []))
+  const inspectedDay = selectedDate ? report?.days.find((d) => d.date === selectedDate) : latest
+
   return <div className="admin-dashboard">
     <div className="admin-toolbar"><span><ShieldCheck aria-hidden="true" />Private owner session</span><label><span className="sr-only">Statistics range</span><select value={days} onChange={(event) => setDays(Number(event.target.value))}><option value={7}>7 days</option><option value={30}>30 days</option><option value={90}>90 days</option></select></label><button type="button" className="action-button" onClick={() => void metrics()}><RefreshCw aria-hidden="true" />Refresh</button><button type="button" className="action-button" disabled={busy} onClick={() => void signOut()}><LogOut aria-hidden="true" />Sign out</button></div>
     <nav className="admin-tools" aria-label="Content management"><a href="/about/manage">Skill familiarity &amp; visibility <ArrowUpRight aria-hidden="true" /></a><a href="/travel/manage">Travel records <ArrowUpRight aria-hidden="true" /></a></nav>
@@ -95,7 +105,36 @@ export function AdminDashboard() {
         <article><span>Sessions · opt-in</span><strong>{report.totals.sessions.toLocaleString()}</strong></article>
         <article><span>Avg views / session</span><strong>{(report.totals.views / Math.max(1, report.totals.sessions)).toFixed(1)}</strong></article>
       </div>
-      <section className="admin-section"><h2>Daily traffic</h2><div className="traffic-chart" aria-label="Daily page views">{report.days.map((day) => <div key={day.date} title={`${day.date}: ${day.views} views, ${day.visitors} opted-in visitors`}><span className="traffic-bar" style={{ height: `${Math.max(2, day.views / maximum * 100)}%` }} /><small>{day.date.slice(5)}</small><span className="sr-only">{day.views} views, {day.visitors} visitors</span></div>)}</div></section>
+      <section className="admin-section">
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '.6rem', flexWrap: 'wrap', gap: '.4rem' }}>
+          <h2>Daily traffic</h2>
+          {inspectedDay ? (
+            <span style={{ fontSize: '.78rem', color: '#cbe4b8' }}>
+              <strong>{inspectedDay.date}</strong>: {inspectedDay.views} views, {inspectedDay.entries} entrances, {inspectedDay.visitors} visitors
+            </span>
+          ) : null}
+        </div>
+        <div className="traffic-chart" aria-label="Daily page views">
+          {report.days.map((day) => (
+            <div
+              key={day.date}
+              onClick={() => setSelectedDate(day.date)}
+              onMouseEnter={() => setSelectedDate(day.date)}
+              style={{ cursor: 'pointer' }}
+              title={`${day.date}: ${day.views} views, ${day.visitors} opted-in visitors`}
+            >
+              <span
+                className="traffic-bar"
+                style={{
+                  height: `${Math.max(2, (day.views / maximum) * 100)}%`,
+                  background: selectedDate === day.date ? 'linear-gradient(#f0dfb0, #d4b574)' : undefined,
+                }}
+              />
+              <small>{day.date.slice(5)}</small>
+            </div>
+          ))}
+        </div>
+      </section>
       <div className="admin-data-grid admin-three-grid">
         <VisualDataTable title="Entry referrals" rows={report.referrals} empty="No entry referrals recorded." />
         <VisualDataTable title="Pages viewed" rows={report.pages} empty="No page views recorded." />
@@ -113,32 +152,53 @@ export function AdminDashboard() {
   </div>
 }
 function VisualDataTable({ title, rows, empty }: { title: string; rows: Array<{ name: string; count: number }>; empty: string }) {
+  const [viewTuples, setViewTuples] = useState(false)
   const max = Math.max(1, ...rows.map((r) => r.count))
   const sum = Math.max(1, rows.reduce((acc, r) => acc + r.count, 0))
   return (
     <section className="admin-section admin-card-panel">
-      <h2>{title}</h2>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '.7rem' }}>
+        <h2 style={{ margin: 0, fontSize: '1.05rem' }}>{title}</h2>
+        {rows.length ? (
+          <button
+            type="button"
+            className="action-button"
+            style={{ minHeight: '26px', padding: '2px 8px', fontSize: '.68rem', borderRadius: '3px' }}
+            onClick={() => setViewTuples(!viewTuples)}
+          >
+            {viewTuples ? 'Visual Bars' : 'Data Tuples'}
+          </button>
+        ) : null}
+      </div>
       {rows.length ? (
-        <div className="admin-stat-list">
-          {rows.slice(0, 8).map((row) => {
-            const pct = Math.round((row.count / sum) * 100)
-            const widthPct = Math.max(4, Math.round((row.count / max) * 100))
-            return (
-              <div key={row.name} className="admin-stat-item">
-                <div className="admin-stat-label-row">
-                  <span className="admin-stat-name">{row.name}</span>
-                  <span className="admin-stat-val">
-                    <strong>{row.count.toLocaleString()}</strong>
-                    <small>({pct}%)</small>
-                  </span>
+        viewTuples ? (
+          <pre className="admin-tuple-view" style={{ fontSize: '.72rem', background: '#071810', padding: '.6rem', borderRadius: '4px', overflowX: 'auto', color: '#bfe4c5', margin: 0 }}>
+            <code>
+              {rows.map((r) => `("${r.name}", ${r.count}, "${Math.round((r.count / sum) * 100)}%")`).join('\n')}
+            </code>
+          </pre>
+        ) : (
+          <div className="admin-stat-list">
+            {rows.slice(0, 8).map((row) => {
+              const pct = Math.round((row.count / sum) * 100)
+              const widthPct = Math.max(4, Math.round((row.count / max) * 100))
+              return (
+                <div key={row.name} className="admin-stat-item">
+                  <div className="admin-stat-label-row">
+                    <span className="admin-stat-name">{row.name}</span>
+                    <span className="admin-stat-val">
+                      <strong>{row.count.toLocaleString()}</strong>
+                      <small>({pct}%)</small>
+                    </span>
+                  </div>
+                  <div className="admin-stat-bar-track">
+                    <div className="admin-stat-bar-fill" style={{ width: `${widthPct}%` }} />
+                  </div>
                 </div>
-                <div className="admin-stat-bar-track">
-                  <div className="admin-stat-bar-fill" style={{ width: `${widthPct}%` }} />
-                </div>
-              </div>
-            )
-          })}
-        </div>
+              )
+            })}
+          </div>
+        )
       ) : (
         <p className="admin-empty">{empty}</p>
       )}

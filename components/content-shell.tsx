@@ -12,6 +12,7 @@ const labels: Record<string, string> = {
 
 export function ContentHero({ page, decodedSlug }: { page: ContentPage; decodedSlug: string[] }) {
   const isProfile = page.slugPath === 'about'
+  if (isProfile) return null
   return (
     <header className={isProfile ? 'profile-path' : 'content-hero'}>
       <nav className="breadcrumbs" aria-label="Breadcrumb">

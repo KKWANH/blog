@@ -112,6 +112,53 @@ body {
   display: block;
   opacity: 0.85;
 }
+body[data-theme="light"] {
+  background: #f7f6f0;
+  color: #14281c;
+}
+body[data-theme="light"] .card {
+  background: linear-gradient(135deg, #133c27, #0a2416);
+  border: 1px solid #2d5538;
+  color: #f7f5e8;
+  box-shadow: 0 1px 0 #3a6845, 0 3px 0 #1b3d27, 0 5px 0 #0d2215, 0 20px 40px -10px rgba(0, 0, 0, 0.35);
+}
+body[data-theme="light"] .card::before {
+  mix-blend-mode: overlay;
+  opacity: .35;
+}
+body[data-theme="light"] .role {
+  color: #c4dec1;
+}
+body[data-theme="light"] .name {
+  color: #fcfbf5;
+}
+body[data-theme="light"] .focus {
+  color: #d8ead4;
+}
+body[data-theme="light"] .location {
+  color: #9cb89c;
+}
+body[data-theme="light"] .debossed {
+  text-shadow: 0 1px 0.8px #05140b, 0 -1px 0.8px rgba(165, 215, 175, 0.5), -1px 0 0.8px rgba(165, 215, 175, 0.4);
+}
+body[data-theme="light"] .footer {
+  border-top-color: rgba(85, 140, 100, 0.4);
+  box-shadow: inset 0 1px 0 rgba(140, 200, 160, 0.2);
+  color: #f0f4ea;
+}
+body[data-theme="light"] .qr {
+  filter: invert(1) hue-rotate(95deg) brightness(1.2) drop-shadow(0 0.5px 0.3px #05140b);
+}
+body[data-theme="light"] .toolbar button, body[data-theme="light"] .toolbar a {
+  background: #ffffff;
+  color: #14281c;
+  border-color: #cad9c6;
+}
+body[data-theme="light"] .toolbar button:hover, body[data-theme="light"] .toolbar a:hover {
+  background: #eef4ec;
+  border-color: #8fae92;
+  color: #0c2017;
+}
 .toolbar {
   display: flex;
   flex-wrap: wrap;
@@ -161,9 +208,16 @@ body {
   </div>
 
   <nav class="toolbar" aria-label="Card actions">
+    <button type="button" onclick="toggleCardTheme()">Theme: Dark / Light (Forest Edge)</button>
     <button type="button" onclick="window.print()">Print Card / Save PDF</button>
-    <a href="/" target="_self">Return to portfolio</a>
+    <a href="/about" target="_self">Return to portfolio</a>
   </nav>
+  <script>
+    function toggleCardTheme() {
+      const isLight = document.body.getAttribute('data-theme') === 'light';
+      document.body.setAttribute('data-theme', isLight ? 'dark' : 'light');
+    }
+  </script>
 </main>
 </body>
 </html>

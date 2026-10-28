@@ -43,7 +43,7 @@ export function VisitStatisticsProvider({ children, possible = true }: { childre
   }, [refresh])
   useEffect(() => {
     if (!publicPaths.has(pathname)) { previous.current = null; return }
-    if (!status.enabled || status.privacySignal || navigator.doNotTrack === '1' || (navigator as Navigator & { globalPrivacyControl?: boolean }).globalPrivacyControl) return
+    if (!status.enabled || status.privacySignal || navigator.doNotTrack === '1' || (navigator as Navigator & { globalPrivacyControl?: boolean }).globalPrivacyControl || localStorage.getItem('kwanho-admin-device') === '1' || document.cookie.includes('kwanho-admin-device=1')) return
     if (previous.current === pathname) return
     const before = previous.current
     previous.current = pathname
