@@ -334,23 +334,28 @@
 .cv-toolbar-back:hover { color: #f2f7ec; }
 .cv-toolbar-actions { display: flex; gap: .6rem; flex-wrap: wrap; }
 .html-cv-scroll { overflow-x: auto; padding: 4px; }
+/* Static Figtree cuts (same face as the site). Chrome embeds variable fonts in PDFs as
+   Type 3, which drops word spaces for ATS text extraction; static cuts embed as TrueType. */
+@font-face { font-family: 'Figtree CV'; src: url('/font/Figtree-400.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: block; }
+@font-face { font-family: 'Figtree CV'; src: url('/font/Figtree-500.woff2') format('woff2'); font-weight: 500; font-style: normal; font-display: block; }
+@font-face { font-family: 'Figtree CV'; src: url('/font/Figtree-600.woff2') format('woff2'); font-weight: 600; font-style: normal; font-display: block; }
+@font-face { font-family: 'Figtree CV'; src: url('/font/Figtree-700.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: block; }
 .html-cv-paper {
-  /* One ink, one accent, one muted grey, one rule — every other green maps to these. */
+  /* One ink, one accent, one muted grey, one rule. Green marks only the role and section titles. */
   --ink: #14281C;
   --accent: #1B4D3A;
   --muted: #59655E;
   --rule: #9AAE9B;
   --hair: .75pt;
-  /* Type: 30 name / 12.5 headings / 11 body / 9.5 small; 400 and 600 only.
-     Baseline: 15.5pt for 11pt and up, 12.4pt for 9.5pt. */
+  /* Type: 30 name / 12 headings / 10.5 body / 9.5 meta; weights 400 / 500 / 600 / 700 (name).
+     One 14pt line everywhere; gaps only 3.5 / 7 / 14pt, top to bottom. */
   width: 210mm;
   min-height: 297mm;
   padding: 15mm 18mm 16mm;
   margin: auto;
   background: #ffffff;
   color: var(--ink);
-  font: 400 11pt/15.5pt var(--font-figtree), 'Figtree', system-ui, sans-serif;
-  font-optical-sizing: auto;
+  font: 400 10.5pt/14pt 'Figtree CV', system-ui, sans-serif;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
   display: flex;
   flex-direction: column;
@@ -361,51 +366,45 @@
 }
 .html-cv-paper h1, .html-cv-paper h2, .html-cv-paper h3, .html-cv-paper h4, .html-cv-paper p { margin: 0; }
 .html-cv-paper a { color: inherit; text-decoration: underline; text-decoration-color: #5f7d62; text-decoration-thickness: var(--hair); text-underline-offset: 1.6pt; }
-.html-cv-paper strong { font-weight: 600; }
-.html-cv-paper .cv-header { padding-bottom: 7.75pt; border-bottom: var(--hair) solid var(--rule); }
-.html-cv-paper .identity-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 12mm; }
+.html-cv-paper strong { font-weight: 500; }
+.html-cv-paper .cv-header { padding-bottom: 7pt; border-bottom: var(--hair) solid var(--rule); }
 /* Figtree, the site's own face (loaded by app/layout.tsx), so CV, site and card share one sans. */
-.html-cv-paper .cv-name { font-size: 30pt; font-weight: 750; line-height: 31pt; letter-spacing: -.02em; color: var(--ink); }
-.html-cv-paper .cv-role { font-size: 12.5pt; font-weight: 400; line-height: 15.5pt; color: var(--accent); margin-top: 3.875pt !important; }
-.html-cv-paper .identity-context { display: flex; align-items: stretch; gap: 4mm; padding-top: 3pt; font-size: 9.5pt; line-height: 12.4pt; color: var(--muted); text-align: right; }
-.html-cv-paper .identity-context span { display: block; }
-.html-cv-paper .identity-rule { width: 0; border-left: var(--hair) solid var(--accent); flex-shrink: 0; }
-.html-cv-paper .cv-contact { margin-top: 7.75pt; white-space: nowrap; font-size: 9.5pt; line-height: 12.4pt; color: var(--muted); }
-.html-cv-paper .cv-contact .cv-sep { color: var(--rule); word-spacing: -.12em; }
-.html-cv-paper .cv-contact a { color: var(--ink); }
-.html-cv-paper .cv-summary { margin-top: 9pt; max-width: 160mm; }
-.html-cv-paper .cv-section { margin-top: 17pt; }
-.html-cv-paper .section-title { font: 600 9.5pt/12.4pt var(--font-figtree), 'Figtree', system-ui, sans-serif; color: var(--accent); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 3.875pt !important; }
-.html-cv-paper .cv-job + .cv-job { margin-top: 7.75pt; }
+.html-cv-paper .cv-name { font-size: 30pt; font-weight: 700; line-height: 31pt; letter-spacing: -.015em; color: var(--ink); }
+/* The card's tracked-caps role line, carried over to tie CV and card together. */
+.html-cv-paper .cv-role { font-size: 9.5pt; font-weight: 600; line-height: 14pt; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-top: 3.5pt !important; }
+/* Contact spans the full measure; plain text, no underline row. */
+.html-cv-paper .cv-contact { display: flex; justify-content: space-between; align-items: baseline; margin-top: 7pt; white-space: nowrap; font-size: 9.5pt; line-height: 14pt; color: var(--muted); }
+.html-cv-paper .cv-contact a { color: var(--ink); text-decoration: none; }
+.html-cv-paper .cv-contact .cv-sep { color: var(--rule); }
+.html-cv-paper .cv-summary { margin-top: 7pt; }
+.html-cv-paper .cv-section { margin-top: 14pt; }
+.html-cv-paper .section-title { font: 600 9.5pt/14pt 'Figtree CV', system-ui, sans-serif; color: var(--accent); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 3.5pt !important; }
+.html-cv-paper .cv-job + .cv-job { margin-top: 7pt; }
 .html-cv-paper .job-linear-heading { display: flex; gap: 3mm; align-items: baseline; }
-.html-cv-paper .job-linear-heading h3 { font-size: 12.5pt; line-height: 15.5pt; font-weight: 600; color: var(--ink); }
-.html-cv-paper .job-linear-heading > strong { font-size: 11pt; font-weight: 400; color: var(--accent); }
+.html-cv-paper .job-linear-heading h3 { font-size: 12pt; line-height: 14pt; font-weight: 600; color: var(--ink); }
+.html-cv-paper .job-linear-heading > strong { font-size: 10.5pt; font-weight: 400; color: var(--ink); }
 .html-cv-paper .job-linear-heading time { margin-left: auto; font-size: 9.5pt; color: var(--muted); white-space: nowrap; }
 /* One hanging indent: dash markers in the gutter, text on a single left edge. */
 .html-cv-paper .job-body ul { list-style: none; padding: 0 0 0 3.6mm; margin: 0; }
-.html-cv-paper .job-body li { position: relative; margin: 2pt 0 0; }
-.html-cv-paper .job-body li::before { content: '–'; position: absolute; left: -3.6mm; color: var(--accent); }
-.html-cv-paper .job-progress > span { font-weight: 600; color: var(--accent); }
-.html-cv-paper .award-project { display: grid; grid-template-columns: 17mm minmax(0, 1fr); gap: 4mm; align-items: start; }
-.html-cv-paper .award-result { border: var(--hair) solid var(--accent); color: var(--accent); min-height: 14mm; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.5mm; border-radius: 1px; }
-.html-cv-paper .award-result > span { font-size: 7pt; line-height: 9pt; text-transform: uppercase; letter-spacing: .14em; }
-.html-cv-paper .award-result > strong { font-size: 15pt; line-height: 17pt; font-weight: 600; letter-spacing: -.02em; }
+.html-cv-paper .job-body li { margin: 0; }
+/* In-flow marker (not absolutely positioned) so PDF text order keeps each dash with its line. */
+.html-cv-paper .job-body li::before { content: '–'; display: inline-block; width: 3.6mm; margin-left: -3.6mm; color: var(--rule); }
+.html-cv-paper .job-progress > span { color: var(--muted); }
+/* Award: plain text; its text column starts at 30mm, the same edge as the skills values. */
+.html-cv-paper .award-project { display: grid; grid-template-columns: 26mm minmax(0, 1fr); gap: 4mm; align-items: baseline; }
+.html-cv-paper .award-result > span { font-size: 9.5pt; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); }
+.html-cv-paper .award-result > strong { font-size: 12pt; font-weight: 600; }
 .html-cv-paper .award-heading { display: flex; justify-content: space-between; gap: 3mm; align-items: baseline; }
-.html-cv-paper .award-heading h3 { font-size: 12.5pt; line-height: 15.5pt; font-weight: 600; }
+.html-cv-paper .award-heading h3 { font-size: 12pt; line-height: 14pt; font-weight: 600; }
+.html-cv-paper .award-heading h3 a { text-decoration: none; }
 .html-cv-paper .award-heading > span { font-size: 9.5pt; color: var(--muted); }
-.html-cv-paper .award-scope { font-size: 9.5pt; line-height: 12.4pt; color: var(--accent); }
-.html-cv-paper .award-contribution { margin-top: 3.875pt !important; }
-/* Shared three-column grid: skills use all three, education spans two, training the third. */
-.html-cv-paper .skills-band { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4mm; }
-.html-cv-paper .skills-band h3 { font-size: 9.5pt; line-height: 12.4pt; font-weight: 600; color: var(--accent); margin-bottom: 2pt !important; }
-.html-cv-paper .skills-band p { font-size: 9.5pt; line-height: 12.4pt; }
-.html-cv-paper .skill-line, .html-cv-paper .edu-line { display: block; }
-.html-cv-paper .education-grid { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 4mm; }
-.html-cv-paper .education-item + .education-item, .html-cv-paper .training-item + .training-item { margin-top: 3.875pt; }
-.html-cv-paper .education-heading { display: flex; justify-content: space-between; gap: 3mm; align-items: baseline; }
-.html-cv-paper .education-heading h3, .html-cv-paper .training-item h3 { font-size: 9.5pt; line-height: 12.4pt; font-weight: 600; }
-.html-cv-paper .education-heading > span { font-size: 9.5pt; line-height: 12.4pt; color: var(--muted); white-space: nowrap; }
-.html-cv-paper .education-item p, .html-cv-paper .training-item p { font-size: 9.5pt; line-height: 12.4pt; color: var(--muted); }
-.html-cv-paper .training-item h3 { display: flex; justify-content: space-between; gap: 2mm; }
-.html-cv-paper .training-item h3 > span { font-size: 9.5pt; color: var(--muted); font-weight: 400; }
-.html-cv-paper .cv-footer { margin-top: auto; padding-top: 4pt; border-top: var(--hair) solid var(--rule); font-size: 9.5pt; line-height: 12.4pt; color: var(--muted); }
+.html-cv-paper .award-scope { color: var(--muted); }
+/* Skills as capability rows; the label is an inline-block so each row extracts as one line. */
+.html-cv-paper .skills-list > p { padding-left: 30mm; text-indent: -30mm; }
+.html-cv-paper .skills-list > p > strong { display: inline-block; width: calc(30mm - .25em); text-indent: 0; font-weight: 600; }
+.html-cv-paper .cv-row { display: flex; justify-content: space-between; gap: 4mm; align-items: baseline; }
+.html-cv-paper .cv-row > span:first-child { color: var(--muted); }
+.html-cv-paper .cv-row strong { color: var(--ink); font-weight: 600; }
+.html-cv-paper .cv-row-date { font-size: 9.5pt; color: var(--muted); white-space: nowrap; }
+.html-cv-paper > section:last-of-type { margin-bottom: 7pt; }
+.html-cv-paper .cv-footer { margin-top: auto; padding-top: 7pt; border-top: var(--hair) solid var(--rule); font-size: 9.5pt; line-height: 14pt; color: var(--muted); }

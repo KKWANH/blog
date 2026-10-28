@@ -1,7 +1,7 @@
 {
   "name": "Kwanho Kim",
-  "role": "Software Engineer",
-  "summary": "C++ engineer working on semiconductor inspection equipment at KLA, with earlier robotics software at Pickit 3D and V2X work at Bosch. Focused on device control and communication interfaces, system integration and fault recovery.",
+  "role": "Software Engineer · C++ device software & integration",
+  "summary": "C++ engineer on semiconductor inspection equipment at KLA since 2026; previously robotics integration at Pickit 3D and V2X prototyping at Bosch. Works on serial device control, communication failures and logging for field diagnosis.",
   "domains": ["Semiconductor inspection", "Robotics", "Mobility"],
   "focusLine": "Systems & interfaces · Integration · C++",
   "focusLines": ["Systems & interfaces", "Integration · C++"],
@@ -21,7 +21,7 @@
       "domain": "Semiconductor inspection",
       "current": true,
       "emphasis": ["white-balance settings", "serial control and logging"],
-      "currentFocus": "Fault-recovery design and early C++ implementation for the equipment’s lift mechanism, with team review.",
+      "currentFocus": "Designing fault-recovery logic for the equipment’s lift mechanism and implementing it in C++, with team review",
       "bullets": [
         "Made the camera’s reported white-balance settings visible in the UI.",
         "Refactored serial control and logging into reusable components."
@@ -58,9 +58,11 @@
     }
   ],
   "skills": [
-    {"label": "Languages", "text": "C++, C, Python; TypeScript, JavaScript, Bash", "lines": ["C++, C, Python;", "TypeScript, JavaScript, Bash"]},
-    {"label": "Systems & integration", "text": "Linux, Docker, Git, Make; Serial, CAN, D-Bus; REST, WebSocket", "lines": ["Linux, Docker, Git, Make;", "Serial, CAN, D-Bus;", "REST, WebSocket"]},
-    {"label": "Robotics & interfaces", "text": "ROS 1/2, CARLA, OpenCV; React, Qt/QML, Figma", "lines": ["ROS 1/2, CARLA, OpenCV;", "React, Qt/QML, Figma"]}
+    {"label": "Languages", "text": "C++ (primary), C, Python; TypeScript / JavaScript, Bash"},
+    {"label": "Device software", "text": "Serial device control, logging and diagnostics; fault-recovery design; CAN (basic)"},
+    {"label": "Integration", "text": "REST, WebSocket, D-Bus, ROS 1/2; Docker; CARLA simulation"},
+    {"label": "Operator UIs", "text": "Qt/QML, React"},
+    {"label": "Tooling & AI", "text": "Git, Make; AI coding agents (Claude Code, Devin) for refactoring and tests"}
   ],
   "projects": [
     {

@@ -57,13 +57,13 @@ export function HtmlCv() {
             </div>
             <p className="cv-contact">
               <span>{content.location}</span>
-              <span className="cv-sep" aria-hidden="true">{" \u00b7 "}</span>
+              <span className="cv-sep" aria-hidden="true">{"\u00b7"}</span>
               <a href={`mailto:${content.email}`}>{content.email}</a>
-              <span className="cv-sep" aria-hidden="true">{" \u00b7 "}</span>
+              <span className="cv-sep" aria-hidden="true">{"\u00b7"}</span>
               <a href={content.website}>kwanho.dev</a>
-              <span className="cv-sep" aria-hidden="true">{" \u00b7 "}</span>
+              <span className="cv-sep" aria-hidden="true">{"\u00b7"}</span>
               <a href={content.linkedin} target="_blank" rel="noopener noreferrer">linkedin.com/in/kwanhokim</a>
-              <span className="cv-sep" aria-hidden="true">{" \u00b7 "}</span>
+              <span className="cv-sep" aria-hidden="true">{"\u00b7"}</span>
               <a href={content.github} target="_blank" rel="noopener noreferrer">github.com/KKWANH</a>
             </p>
           </header>
@@ -86,7 +86,7 @@ export function HtmlCv() {
                   <ul>
                     {(job as { currentFocus?: string }).currentFocus ? (
                       <li className="job-progress">
-                        <span>In progress</span> {(job as { currentFocus?: string }).currentFocus}
+                        {(job as { currentFocus?: string }).currentFocus} <span>(in progress)</span>
                       </li>
                     ) : null}
                     {job.bullets.map((bullet) => (
@@ -101,7 +101,7 @@ export function HtmlCv() {
           </section>
 
           <section className="cv-section">
-            <h2 className="section-title">Team project &amp; award</h2>
+            <h2 className="section-title">Projects</h2>
             {selectedProjects.map((project) => {
               const award = (project as { award?: { credit: string; rank: string; scope: string; event: string } }).award
               return (
@@ -135,55 +135,36 @@ export function HtmlCv() {
 
           <section className="cv-section">
             <h2 className="section-title">Technical skills</h2>
-            <div className="skills-band">
+            {/* One paragraph per row so text extraction keeps each label with its values. */}
+            <div className="skills-list">
               {content.skills.map((skill) => (
-                <div key={skill.label}>
-                  <h3>{skill.label}</h3>
-                  <p>
-                    {((skill as { lines?: string[] }).lines || [skill.text]).map((line, idx) => (
-                      <span key={idx} className="skill-line">
-                        {line}{' '}
-                      </span>
-                    ))}
-                  </p>
-                </div>
+                <p key={skill.label}>
+                  <strong>{skill.label}</strong> {skill.text}
+                </p>
               ))}
             </div>
           </section>
 
-          <div className="cv-section education-grid">
-            <section>
-              <h2 className="section-title">Education</h2>
-              {content.education.map((edu) => (
-                <article key={edu.name} className="education-item">
-                  <div className="education-heading">
-                    <h3>{edu.name}</h3>
-                    <span>{edu.date}</span>
-                  </div>
-                  <p>
-                    {((edu as { detailLines?: string[] }).detailLines || [edu.detail]).map((line, idx) => (
-                      <span key={idx} className="edu-line">
-                        {line}
-                      </span>
-                    ))}
-                  </p>
-                </article>
-              ))}
-            </section>
-            <section>
-              <h2 className="section-title">Technical training</h2>
-              {content.training.map((prog) => (
-                <article key={prog.id} className="training-item">
-                  <h3>
-                    {prog.name}{' '}
-                    <span>{prog.status}</span>
-                  </h3>
-                  <p>{prog.program}</p>
-                  <p>{prog.period || prog.location}</p>
-                </article>
-              ))}
-            </section>
-          </div>
+          {/* Single column rows: PDF text extraction reads each entry with its own date. */}
+          <section className="cv-section">
+            <h2 className="section-title">Education</h2>
+            {content.education.map((edu) => (
+              <p key={edu.name} className="cv-row">
+                <span><strong>{edu.name}</strong> · {((edu as { detailLines?: string[] }).detailLines || [edu.detail]).join(' · ')}</span>{' '}
+                <span className="cv-row-date">{edu.date}</span>
+              </p>
+            ))}
+          </section>
+
+          <section className="cv-section">
+            <h2 className="section-title">Training</h2>
+            {content.training.map((prog) => (
+              <p key={prog.id} className="cv-row">
+                <span><strong>{prog.name}</strong> · {prog.program} · {prog.location}</span>{' '}
+                <span className="cv-row-date">{prog.period || prog.status}</span>
+              </p>
+            ))}
+          </section>
 
           <footer className="cv-footer">
             {content.languages}
