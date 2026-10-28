@@ -1,0 +1,248 @@
+{
+  "url": "https://www.kwanho.dev/",
+  "status": 200,
+  "links": [
+    {
+      "text": "kwanho.dev",
+      "href": "/",
+      "class": "group flex items-center gap-2.5"
+    },
+    {
+      "text": "Projects",
+      "href": "/#projects",
+      "class": "hidden md:inline-flex items-center px-2.5 py-1.5 text-xs uppercase tracking-[0.16em] rounded-md transition-colors text-foreground bg-secondary/60"
+    },
+    {
+      "text": "Editor",
+      "href": "/editor",
+      "class": "hidden md:inline-flex items-center px-2.5 py-1.5 text-xs uppercase tracking-[0.16em] rounded-md transition-colors text-muted-foreground hover:text-foreground hover:bg-secondary/40"
+    },
+    {
+      "text": "Travel",
+      "href": "/travel",
+      "class": "hidden md:inline-flex items-center px-2.5 py-1.5 text-xs uppercase tracking-[0.16em] rounded-md transition-colors text-muted-foreground hover:text-foreground hover:bg-secondary/40"
+    },
+    {
+      "text": "Notes",
+      "href": "/notes",
+      "class": "hidden md:inline-flex items-center px-2.5 py-1.5 text-xs uppercase tracking-[0.16em] rounded-md transition-colors text-muted-foreground hover:text-foreground hover:bg-secondary/40"
+    },
+    {
+      "text": "Projects",
+      "href": "/#projects",
+      "class": "px-2.5 py-1 text-[11px] uppercase tracking-[0.16em] rounded-md transition-colors whitespace-nowrap text-foreground bg-secondary/60"
+    },
+    {
+      "text": "Editor",
+      "href": "/editor",
+      "class": "px-2.5 py-1 text-[11px] uppercase tracking-[0.16em] rounded-md transition-colors whitespace-nowrap text-muted-foreground hover:text-foreground hover:bg-secondary/40"
+    },
+    {
+      "text": "Travel",
+      "href": "/travel",
+      "class": "px-2.5 py-1 text-[11px] uppercase tracking-[0.16em] rounded-md transition-colors whitespace-nowrap text-muted-foreground hover:text-foreground hover:bg-secondary/40"
+    },
+    {
+      "text": "Notes",
+      "href": "/notes",
+      "class": "px-2.5 py-1 text-[11px] uppercase tracking-[0.16em] rounded-md transition-colors whitespace-nowrap text-muted-foreground hover:text-foreground hover:bg-secondary/40"
+    },
+    {
+      "text": "/editor",
+      "href": "/editor",
+      "class": "text-foreground underline decoration-border underline-offset-4 hover:decoration-foreground"
+    },
+    {
+      "text": "Projects",
+      "href": "#projects",
+      "class": "group inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-transform hover:-translate-y-0.5"
+    },
+    {
+      "text": "Profile",
+      "href": "/editor",
+      "class": "group inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-5 py-2.5 text-sm font-medium hover:border-foreground/40 transition-colors"
+    },
+    {
+      "text": "Open the demo",
+      "href": "https://earprint.kwanho.dev",
+      "class": "group/btn inline-flex flex-1 items-center justify-between rounded-xl border px-4 py-2.5 text-sm font-medium transition-all"
+    },
+    {
+      "text": "Open the demo",
+      "href": "https://ai.kwanho.dev",
+      "class": "group/btn inline-flex flex-1 items-center justify-between rounded-xl border px-4 py-2.5 text-sm font-medium transition-all"
+    },
+    {
+      "text": "노트 · Notes반도체 완전정복, AI 완전정복, KLA Corporation — 직접 공부하며 그림으로 정리한 노트.Rea",
+      "href": "/notes",
+      "class": "group relative flex flex-col gap-3 rounded-2xl border border-border/60 bg-card/40 backdrop-blur-sm p-6 transition-all hover:-translate-y-1 hover:border-foreground/30"
+    },
+    {
+      "text": "노트 · 40 minAI 완전정복\"사람이 규칙을 짜는 대신 기계가 데이터에서 규칙을 찾게 한다.\" 이 한 발상에서 ChatGP",
+      "href": "/notes/ai",
+      "class": "group relative flex flex-col gap-3 rounded-2xl border border-border/60 bg-card/40 backdrop-blur-sm p-6 transition-all hover:-translate-y-1 hover:border-foreground/30"
+    },
+    {
+      "text": "노트 · 18 minKLA Corporation1975년 창립, 본사 Milpitas, 매출 약 $12.2B, 광학 웨이퍼 검",
+      "href": "/notes/kla",
+      "class": "group relative flex flex-col gap-3 rounded-2xl border border-border/60 bg-card/40 backdrop-blur-sm p-6 transition-all hover:-translate-y-1 hover:border-foreground/30"
+    },
+    {
+      "text": "노트 · 35 min반도체 완전정복\"전기가 흐른다 = 전자가 움직인다\" 한 문장에서 출발해, 트랜지스터·CMOS·메모리·8대 ",
+      "href": "/notes/semiconductor",
+      "class": "group relative flex flex-col gap-3 rounded-2xl border border-border/60 bg-card/40 backdrop-blur-sm p-6 transition-all hover:-translate-y-1 hover:border-foreground/30"
+    },
+    {
+      "text": "GitHub",
+      "href": "https://github.com/KKWANH",
+      "class": "group inline-flex items-center gap-2 px-3 py-2 rounded-md border border-border/70 bg-card/50 hover:border-foreground/40 hover:bg-card transition-colors text-sm"
+    },
+    {
+      "text": "LinkedIn",
+      "href": "https://www.linkedin.com/in/kwanho-kim-327152232/",
+      "class": "group inline-flex items-center gap-2 px-3 py-2 rounded-md border border-border/70 bg-card/50 hover:border-foreground/40 hover:bg-card transition-colors text-sm"
+    },
+    {
+      "text": "Instagram",
+      "href": "https://instagram.com/kwanho._kim",
+      "class": "group inline-flex items-center gap-2 px-3 py-2 rounded-md border border-border/70 bg-card/50 hover:border-foreground/40 hover:bg-card transition-colors text-sm"
+    },
+    {
+      "text": "Email",
+      "href": "mailto:contact@kwanho.dev",
+      "class": "group inline-flex items-center gap-2 px-3 py-2 rounded-md border border-border/70 bg-card/50 hover:border-foreground/40 hover:bg-card transition-colors text-sm"
+    },
+    {
+      "text": "CV",
+      "href": "/CV.pdf",
+      "class": "group inline-flex items-center gap-2 px-3 py-2 rounded-md border border-border/70 bg-card/50 hover:border-foreground/40 hover:bg-card transition-colors text-sm"
+    },
+    {
+      "text": "contact@kwanho.dev",
+      "href": "mailto:contact@kwanho.dev",
+      "class": "text-sm text-foreground hover:text-muted-foreground transition-colors"
+    }
+  ],
+  "motion": [
+    {
+      "tag": "SPAN",
+      "cls": "status-breath inline-flex h-1.5 w-1.5 rounded-full bg-[var(--brand-emerald)]",
+      "animation": "status-breath",
+      "transition": "all",
+      "duration": "0s"
+    },
+    {
+      "tag": "A",
+      "cls": "group inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-transform hover:-translate-y-0.5",
+      "animation": "none",
+      "transition": "transform, translate, scale, rotate",
+      "duration": "0.15s"
+    },
+    {
+      "tag": "A",
+      "cls": "group inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-5 py-2.5 text-sm font-medium hover:border-foreground/40 transition-colors",
+      "animation": "none",
+      "transition": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to",
+      "duration": "0.15s"
+    },
+    {
+      "tag": "ARTICLE",
+      "cls": "spotlight group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card/60 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-foreground/30",
+      "animation": "none",
+      "transition": "all",
+      "duration": "0.3s"
+    },
+    {
+      "tag": "SPAN",
+      "cls": "status-breath inline-flex h-1.5 w-1.5 rounded-full bg-[var(--brand-emerald)]",
+      "animation": "status-breath",
+      "transition": "all",
+      "duration": "0s"
+    },
+    {
+      "tag": "A",
+      "cls": "group/btn inline-flex flex-1 items-center justify-between rounded-xl border px-4 py-2.5 text-sm font-medium transition-all",
+      "animation": "none",
+      "transition": "all",
+      "duration": "0.15s"
+    },
+    {
+      "tag": "A",
+      "cls": "inline-flex h-10 w-10 items-center justify-center rounded-xl border border-border/70 bg-card/40 text-muted-foreground hover:text-foreground hover:border-foreground/40 transition-colors",
+      "animation": "none",
+      "transition": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to",
+      "duration": "0.15s"
+    },
+    {
+      "tag": "ARTICLE",
+      "cls": "spotlight group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card/60 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-foreground/30",
+      "animation": "none",
+      "transition": "all",
+      "duration": "0.3s"
+    },
+    {
+      "tag": "SPAN",
+      "cls": "status-breath inline-flex h-1.5 w-1.5 rounded-full bg-[var(--brand-emerald)]",
+      "animation": "status-breath",
+      "transition": "all",
+      "duration": "0s"
+    },
+    {
+      "tag": "A",
+      "cls": "group/btn inline-flex flex-1 items-center justify-between rounded-xl border px-4 py-2.5 text-sm font-medium transition-all",
+      "animation": "none",
+      "transition": "all",
+      "duration": "0.15s"
+    },
+    {
+      "tag": "A",
+      "cls": "inline-flex h-10 w-10 items-center justify-center rounded-xl border border-border/70 bg-card/40 text-muted-foreground hover:text-foreground hover:border-foreground/40 transition-colors",
+      "animation": "none",
+      "transition": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to",
+      "duration": "0.15s"
+    },
+    {
+      "tag": "ARTICLE",
+      "cls": "spotlight group relative flex flex-col gap-4 rounded-2xl border border-border bg-card/50 backdrop-blur-sm p-6 md:p-7 transition-all duration-300 hover:-translate-y-1 hover:border-foreground/30",
+      "animation": "none",
+      "transition": "all",
+      "duration": "0.3s"
+    },
+    {
+      "tag": "ARTICLE",
+      "cls": "spotlight group relative flex flex-col gap-4 rounded-2xl border border-border bg-card/50 backdrop-blur-sm p-6 md:p-7 transition-all duration-300 hover:-translate-y-1 hover:border-foreground/30",
+      "animation": "none",
+      "transition": "all",
+      "duration": "0.3s"
+    },
+    {
+      "tag": "A",
+      "cls": "group relative flex flex-col gap-3 rounded-2xl border border-border/60 bg-card/40 backdrop-blur-sm p-6 transition-all hover:-translate-y-1 hover:border-foreground/30",
+      "animation": "none",
+      "transition": "all",
+      "duration": "0.15s"
+    },
+    {
+      "tag": "A",
+      "cls": "group relative flex flex-col gap-3 rounded-2xl border border-border/60 bg-card/40 backdrop-blur-sm p-6 transition-all hover:-translate-y-1 hover:border-foreground/30",
+      "animation": "none",
+      "transition": "all",
+      "duration": "0.15s"
+    },
+    {
+      "tag": "A",
+      "cls": "group relative flex flex-col gap-3 rounded-2xl border border-border/60 bg-card/40 backdrop-blur-sm p-6 transition-all hover:-translate-y-1 hover:border-foreground/30",
+      "animation": "none",
+      "transition": "all",
+      "duration": "0.15s"
+    },
+    {
+      "tag": "A",
+      "cls": "group relative flex flex-col gap-3 rounded-2xl border border-border/60 bg-card/40 backdrop-blur-sm p-6 transition-all hover:-translate-y-1 hover:border-foreground/30",
+      "animation": "none",
+      "transition": "all",
+      "duration": "0.15s"
+    }
+  ],
+  "errors": []
+}

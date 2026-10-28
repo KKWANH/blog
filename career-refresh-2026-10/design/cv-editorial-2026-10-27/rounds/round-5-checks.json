@@ -1,0 +1,32 @@
+{
+  "pages": 1,
+  "dom": {
+    "paper": {
+      "x": 208,
+      "y": 163.78125,
+      "width": 793.6875,
+      "height": 1122.515625
+    },
+    "header": {
+      "x": 276.03125,
+      "y": 220.46875,
+      "width": 657.625,
+      "height": 116.078125
+    },
+    "email": "mailto:kwanho0096@gmail.com",
+    "training": [
+      "42Software engineering\n\nSeoul / Wolfsburg · Completed",
+      "SEA:MEAutomotive & Mobility\n\nJul 2023–Jun 2024 · Completed"
+    ]
+  },
+  "bottom": 794.1708984375,
+  "links": [
+    "mailto:kwanho0096@gmail.com",
+    "https://www.kwanho.dev/",
+    "https://www.linkedin.com/in/kwanhokim",
+    "https://github.com/KKWANH",
+    "https://github.com/KKWANH/ColorSavesLife",
+    "https://github.com/KKWANH/ft_containers"
+  ],
+  "text_start": "Kwanho Kim\nC++ Software Engineer\nLeuven, Belgium\nkwanho0096@gmail.com\nkwanho.dev\nLinkedIn\nGitHub\nEXPERIENCE\nKLA C++ Engineer\nAug 2026–Present\nICOS Division · Ze"
+}

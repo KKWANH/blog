@@ -1,0 +1,59 @@
+{
+  "name": "42-multilayer-perception",
+  "url": "https://github.com/KKWANH/42-multilayer-perception",
+  "fork": false,
+  "scope": "learning",
+  "scopeNote": "Learning/team project; inspect the stated contribution and source.",
+  "description": "",
+  "updatedAt": "2024-03-08T15:48:14Z",
+  "defaultBranch": "main",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/42-multilayer-perception/blob/7d1c78d495c7781eaa0d8c9de69b6a236d368020/README.md",
+      "bytes": 26,
+      "sha256": "656d7cff5caf1a069ca9fad0ece588e0708fc0b9860198f600da559e057ba168"
+    },
+    {
+      "path": "Makefile",
+      "url": "https://github.com/KKWANH/42-multilayer-perception/blob/7d1c78d495c7781eaa0d8c9de69b6a236d368020/Makefile",
+      "bytes": 3394,
+      "sha256": "65ccb4eeb8c0eb1c79a919cd0841c12c581de94b7c89535eea1bd2b08d6f6ffd"
+    },
+    {
+      "path": "setup/install.sh",
+      "url": "https://github.com/KKWANH/42-multilayer-perception/blob/7d1c78d495c7781eaa0d8c9de69b6a236d368020/setup/install.sh",
+      "bytes": 445,
+      "sha256": "b83f837db3590b70bed5fe612c83f340fb450e2d92fdcb2431ba6dc1a03e3eda"
+    }
+  ],
+  "limitations": [],
+  "technologies": [
+    {
+      "id": "make",
+      "label": "Make",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "Makefile",
+          "basis": "build file"
+        }
+      ]
+    },
+    {
+      "id": "shell",
+      "label": "Shell",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "setup/install.sh",
+          "basis": "source-file presence"
+        }
+      ]
+    }
+  ],
+  "commit": "7d1c78d495c7781eaa0d8c9de69b6a236d368020",
+  "fileCount": 6,
+  "treeDepth": "recursive",
+  "status": "reviewed"
+}

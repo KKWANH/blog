@@ -1,0 +1,123 @@
+{
+  "name": "CPP_Module",
+  "url": "https://github.com/KKWANH/CPP_Module",
+  "fork": false,
+  "scope": "learning",
+  "scopeNote": "Learning/team project; inspect the stated contribution and source.",
+  "description": "",
+  "updatedAt": "2021-09-22T20:42:52Z",
+  "defaultBranch": "main",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/CPP_Module/blob/101050915580a725c8fc7f6744e88bc178d144a5/README.md",
+      "bytes": 2550,
+      "sha256": "b7e766e5cd5ed0b26543fd0603651aa8c18ea32d4e72a875107b3c75e4741962"
+    },
+    {
+      "path": "cpp_00/ex00/Makefile",
+      "url": "https://github.com/KKWANH/CPP_Module/blob/101050915580a725c8fc7f6744e88bc178d144a5/cpp_00/ex00/Makefile",
+      "bytes": 1649,
+      "sha256": "390bbd4e038dacb03310027e750e351ac5a6aca171c5c15522d9e13a9f1242e5"
+    },
+    {
+      "path": "cpp_00/ex01/Makefile",
+      "url": "https://github.com/KKWANH/CPP_Module/blob/101050915580a725c8fc7f6744e88bc178d144a5/cpp_00/ex01/Makefile",
+      "bytes": 1669,
+      "sha256": "d4b43c845d5d39c301c6b74de1354b155c86bcd0fe678696e9cb46275906a379"
+    },
+    {
+      "path": "cpp_00/ex02/Makefile",
+      "url": "https://github.com/KKWANH/CPP_Module/blob/101050915580a725c8fc7f6744e88bc178d144a5/cpp_00/ex02/Makefile",
+      "bytes": 1660,
+      "sha256": "bd6b075a428ddba73b5f5926296d778fe98623f39f3a4dcf2f229b1072064e01"
+    },
+    {
+      "path": "cpp_01/ex00/Makefile",
+      "url": "https://github.com/KKWANH/CPP_Module/blob/101050915580a725c8fc7f6744e88bc178d144a5/cpp_01/ex00/Makefile",
+      "bytes": 1700,
+      "sha256": "8abc0572c79ff3db4f2839ff653aef0bb3b1ce0852135c0b8a1a668b2a1db439"
+    },
+    {
+      "path": "cpp_01/ex01/Makefile",
+      "url": "https://github.com/KKWANH/CPP_Module/blob/101050915580a725c8fc7f6744e88bc178d144a5/cpp_01/ex01/Makefile",
+      "bytes": 1680,
+      "sha256": "8e7c7e83434b3f6267d74d42d74beebea07581a7f561e0580c3ab61369bb74f4"
+    },
+    {
+      "path": "cpp_01/ex02/Makefile",
+      "url": "https://github.com/KKWANH/CPP_Module/blob/101050915580a725c8fc7f6744e88bc178d144a5/cpp_01/ex02/Makefile",
+      "bytes": 1640,
+      "sha256": "b45d2bb25989e77818b661b97a69fae7a694259c487e23a4004688ad2e8e6dca"
+    },
+    {
+      "path": "cpp_01/ex00/main.cpp",
+      "url": "https://github.com/KKWANH/CPP_Module/blob/101050915580a725c8fc7f6744e88bc178d144a5/cpp_01/ex00/main.cpp",
+      "bytes": 1071,
+      "sha256": "3f43f7b22a44e4a25701adf81970c71658c50321e0244208fb885db6dc6b8eb4"
+    },
+    {
+      "path": "cpp_01/ex01/main.cpp",
+      "url": "https://github.com/KKWANH/CPP_Module/blob/101050915580a725c8fc7f6744e88bc178d144a5/cpp_01/ex01/main.cpp",
+      "bytes": 1098,
+      "sha256": "b984645e61114cf5851e5d40c532ee674c492b6d8233000e0dbcdc2b39373dc0"
+    },
+    {
+      "path": "cpp_01/ex02/main.cpp",
+      "url": "https://github.com/KKWANH/CPP_Module/blob/101050915580a725c8fc7f6744e88bc178d144a5/cpp_01/ex02/main.cpp",
+      "bytes": 1262,
+      "sha256": "d4a310bafd371269ae323c2fb625008c864bc0dea74ade73d452181dabebec39"
+    },
+    {
+      "path": "cpp_01/ex03/main.cpp",
+      "url": "https://github.com/KKWANH/CPP_Module/blob/101050915580a725c8fc7f6744e88bc178d144a5/cpp_01/ex03/main.cpp",
+      "bytes": 1329,
+      "sha256": "482c046501d027087ae438763431163377cb1ca285caac1f09109e539de0ebb0"
+    }
+  ],
+  "limitations": [],
+  "technologies": [
+    {
+      "id": "cpp",
+      "label": "C++",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "cpp_00/ex00/megaphone.cpp",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "cpp_00/ex01/contact.cpp",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "cpp_00/ex01/phone_book.cpp",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "make",
+      "label": "Make",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "cpp_00/ex00/Makefile",
+          "basis": "build file"
+        },
+        {
+          "path": "cpp_00/ex01/Makefile",
+          "basis": "build file"
+        },
+        {
+          "path": "cpp_00/ex02/Makefile",
+          "basis": "build file"
+        }
+      ]
+    }
+  ],
+  "commit": "101050915580a725c8fc7f6744e88bc178d144a5",
+  "fileCount": 202,
+  "treeDepth": "recursive",
+  "status": "reviewed"
+}

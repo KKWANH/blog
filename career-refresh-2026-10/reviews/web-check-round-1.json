@@ -1,0 +1,315 @@
+{
+  "base": "http://127.0.0.1:3101",
+  "round": "1",
+  "completed": true,
+  "browser": "Microsoft Edge, headless",
+  "routes": [
+    {
+      "path": "/",
+      "status": 200
+    },
+    {
+      "path": "/editor",
+      "status": 200
+    },
+    {
+      "path": "/notes",
+      "status": 200
+    },
+    {
+      "path": "/notes/ai",
+      "status": 200
+    },
+    {
+      "path": "/notes/device-readback",
+      "status": 200
+    },
+    {
+      "path": "/notes/kla",
+      "status": 200
+    },
+    {
+      "path": "/notes/semiconductor",
+      "status": 200
+    },
+    {
+      "path": "/projects",
+      "status": 200
+    },
+    {
+      "path": "/projects/ariadne",
+      "status": 200
+    },
+    {
+      "path": "/projects/color-saves-life",
+      "status": 200
+    },
+    {
+      "path": "/projects/earprint",
+      "status": 200
+    },
+    {
+      "path": "/travel",
+      "status": 200
+    }
+  ],
+  "responsive": [
+    {
+      "path": "/",
+      "width": 360,
+      "content": 360,
+      "font": "figtree, \"figtree Fallback\", \"Spoqa Han Sans Neo\", \"Malgun Gothic\", sans-serif",
+      "h1": 1,
+      "overflow": false
+    },
+    {
+      "path": "/",
+      "width": 768,
+      "content": 768,
+      "font": "figtree, \"figtree Fallback\", \"Spoqa Han Sans Neo\", \"Malgun Gothic\", sans-serif",
+      "h1": 1,
+      "overflow": false
+    },
+    {
+      "path": "/",
+      "width": 1440,
+      "content": 1440,
+      "font": "figtree, \"figtree Fallback\", \"Spoqa Han Sans Neo\", \"Malgun Gothic\", sans-serif",
+      "h1": 1,
+      "overflow": false
+    },
+    {
+      "path": "/editor",
+      "width": 360,
+      "content": 360,
+      "font": "figtree, \"figtree Fallback\", \"Spoqa Han Sans Neo\", \"Malgun Gothic\", sans-serif",
+      "h1": 1,
+      "overflow": false
+    },
+    {
+      "path": "/editor",
+      "width": 768,
+      "content": 768,
+      "font": "figtree, \"figtree Fallback\", \"Spoqa Han Sans Neo\", \"Malgun Gothic\", sans-serif",
+      "h1": 1,
+      "overflow": false
+    },
+    {
+      "path": "/editor",
+      "width": 1440,
+      "content": 1440,
+      "font": "figtree, \"figtree Fallback\", \"Spoqa Han Sans Neo\", \"Malgun Gothic\", sans-serif",
+      "h1": 1,
+      "overflow": false
+    },
+    {
+      "path": "/projects/ariadne",
+      "width": 360,
+      "content": 360,
+      "font": "figtree, \"figtree Fallback\", \"Spoqa Han Sans Neo\", \"Malgun Gothic\", sans-serif",
+      "h1": 1,
+      "overflow": false
+    },
+    {
+      "path": "/projects/ariadne",
+      "width": 768,
+      "content": 768,
+      "font": "figtree, \"figtree Fallback\", \"Spoqa Han Sans Neo\", \"Malgun Gothic\", sans-serif",
+      "h1": 1,
+      "overflow": false
+    },
+    {
+      "path": "/projects/ariadne",
+      "width": 1440,
+      "content": 1440,
+      "font": "figtree, \"figtree Fallback\", \"Spoqa Han Sans Neo\", \"Malgun Gothic\", sans-serif",
+      "h1": 1,
+      "overflow": false
+    },
+    {
+      "path": "/notes/device-readback",
+      "width": 360,
+      "content": 360,
+      "font": "figtree, \"figtree Fallback\", \"Spoqa Han Sans Neo\", \"Malgun Gothic\", sans-serif",
+      "h1": 1,
+      "overflow": false
+    },
+    {
+      "path": "/notes/device-readback",
+      "width": 768,
+      "content": 768,
+      "font": "figtree, \"figtree Fallback\", \"Spoqa Han Sans Neo\", \"Malgun Gothic\", sans-serif",
+      "h1": 1,
+      "overflow": false
+    },
+    {
+      "path": "/notes/device-readback",
+      "width": 1440,
+      "content": 1440,
+      "font": "figtree, \"figtree Fallback\", \"Spoqa Han Sans Neo\", \"Malgun Gothic\", sans-serif",
+      "h1": 1,
+      "overflow": false
+    },
+    {
+      "path": "/notes/semiconductor",
+      "width": 360,
+      "content": 360,
+      "font": "figtree, \"figtree Fallback\", \"Spoqa Han Sans Neo\", \"Malgun Gothic\", sans-serif",
+      "h1": 1,
+      "overflow": false
+    },
+    {
+      "path": "/notes/semiconductor",
+      "width": 768,
+      "content": 768,
+      "font": "figtree, \"figtree Fallback\", \"Spoqa Han Sans Neo\", \"Malgun Gothic\", sans-serif",
+      "h1": 1,
+      "overflow": false
+    },
+    {
+      "path": "/notes/semiconductor",
+      "width": 1440,
+      "content": 1440,
+      "font": "figtree, \"figtree Fallback\", \"Spoqa Han Sans Neo\", \"Malgun Gothic\", sans-serif",
+      "h1": 1,
+      "overflow": false
+    },
+    {
+      "path": "/travel",
+      "width": 360,
+      "content": 360,
+      "font": "figtree, \"figtree Fallback\", \"Spoqa Han Sans Neo\", \"Malgun Gothic\", sans-serif",
+      "h1": 1,
+      "overflow": false
+    },
+    {
+      "path": "/travel",
+      "width": 768,
+      "content": 768,
+      "font": "figtree, \"figtree Fallback\", \"Spoqa Han Sans Neo\", \"Malgun Gothic\", sans-serif",
+      "h1": 1,
+      "overflow": false
+    },
+    {
+      "path": "/travel",
+      "width": 1440,
+      "content": 1440,
+      "font": "figtree, \"figtree Fallback\", \"Spoqa Han Sans Neo\", \"Malgun Gothic\", sans-serif",
+      "h1": 1,
+      "overflow": false
+    }
+  ],
+  "accessibility": [
+    {
+      "path": "/",
+      "violations": [],
+      "incomplete": 1
+    },
+    {
+      "path": "/editor",
+      "violations": [],
+      "incomplete": 0
+    },
+    {
+      "path": "/projects/ariadne",
+      "violations": [],
+      "incomplete": 0
+    },
+    {
+      "path": "/notes/device-readback",
+      "violations": [],
+      "incomplete": 0
+    },
+    {
+      "path": "/notes/semiconductor",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": [
+            {
+              "target": [
+                "#c1 > .tracking-\\[0\\.28em\\].text-muted-foreground\\/70.text-\\[11px\\]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.42 (foreground color: #9ba2a9, background color: #f7f8fa, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<p class=\"font-mono text-[11px] uppercase tracking-[0.28em] text-muted-foreground/70\">PART 1 · 물질과 전기의 기초</p>"
+            },
+            {
+              "target": [
+                "#c1 > .md\\:text-xl.text-lg.leading-8"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.93 (foreground color: #747d86, background color: #f7f8fa, font size: 15.0pt (20px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<p class=\"text-lg md:text-xl leading-8 text-muted-foreground\">반도체를 이해하려면 딱 하나만 먼저 잡으면 된다. <strong class=\"text-foreground font-semibold\">\"전기가 흐른다 = 전자가 움직인다.\"</strong> 이 한 문장이 강의 전체의 뿌리다.</p>"
+            },
+            {
+              "target": [
+                "#c1 > .leading-8.text-\\[0\\.95rem\\].text-muted-foreground:nth-child(6)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.93 (foreground color: #747d86, background color: #f7f8fa, font size: 11.4pt (15.2px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<p class=\"text-[0.95rem] leading-8 text-muted-foreground\">"
+            },
+            {
+              "target": [
+                "#c1 > .leading-8.text-\\[0\\.95rem\\].text-muted-foreground:nth-child(6) > span:nth-child(2)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.76 (foreground color: #9b7a41, background color: #f7f8fa, font size: 11.4pt (15.2px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"font-semibold\" style=\"color:var(--brand-amber)\">원자핵</span>"
+            },
+            {
+              "target": [
+                "#c1 > .leading-8.text-\\[0\\.95rem\\].text-muted-foreground:nth-child(7)"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.93 (foreground color: #747d86, background color: #f7f8fa, font size: 11.4pt (15.2px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<p class=\"text-[0.95rem] leading-8 text-muted-foreground\">"
+            },
+            {
+              "target": [
+                ".nt-atom-tag"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.11 (foreground color: #578673, background color: #fefefe, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1",
+              "html": "<span class=\"nt-atom-tag\">최외각 전자<br>전기를 좌우</span>"
+            }
+          ]
+        }
+      ],
+      "incomplete": 1
+    },
+    {
+      "path": "/travel",
+      "violations": [
+        {
+          "id": "link-in-text-block",
+          "impact": "serious",
+          "help": "Links must be distinguishable without relying on color",
+          "nodes": [
+            {
+              "target": [
+                "a[href$=\"maplibre.org/\"]"
+              ],
+              "summary": "Fix any of the following:\n  The link has insufficient color contrast of 2.02:1 with the surrounding text. (Minimum contrast is 3:1, link text: #404040, surrounding text: #000000)\n  The link has no styling (such as underline) to distinguish it from the surrounding text",
+              "html": "<a href=\"https://maplibre.org/\" target=\"_blank\">MapLibre</a>"
+            }
+          ]
+        }
+      ],
+      "incomplete": 0
+    }
+  ],
+  "interactions": {
+    "tab_enters_open_navigation": false,
+    "escape_closes_menu": true,
+    "escape_restores_menu_focus": true,
+    "mobile_navigation_reaches_notes": false,
+    "implementation_disclosure_opens": true,
+    "theme_persists": true,
+    "toc_target_exists": true
+  },
+  "runtime_errors": [],
+  "limitations": [
+    "Automated axe findings do not establish full accessibility conformance.",
+    "No screen-reader, real touch-device or field-performance test.",
+    "External project applications and account actions are outside this check."
+  ],
+  "passed": false
+}

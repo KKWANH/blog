@@ -1,0 +1,72 @@
+{
+  "name": "Kwanho Kim",
+  "role": "C++ Software Engineer",
+  "location": "Leuven, Belgium",
+  "email": "contact@kwanho.dev",
+  "website": "https://www.kwanho.dev",
+  "linkedin": "https://www.linkedin.com/in/kwanhokim",
+  "github": "https://github.com/KKWANH",
+  "focus": ["C++ systems", "Interfaces", "Error recovery"],
+  "experience": [
+    {
+      "company": "KLA",
+      "role": "C++ Engineer",
+      "dates": "Aug 2026–Present",
+      "context": "ICOS Division · Zeta team · Leuven, Belgium",
+      "current": true,
+      "bullets": [
+        "Analyse lifter fault recovery across application and controller software; contribute design changes and early implementation with team review.",
+        "Work on camera white-balance settings, device readback and displayed values.",
+        "Refactor serial device-control integration and logging in a shared equipment layer."
+      ]
+    },
+    {
+      "company": "Pickit 3D",
+      "role": "Research & Software Engineer",
+      "dates": "Aug 2025–Mar 2026",
+      "context": "Leuven, Belgium",
+      "current": false,
+      "bullets": [
+        "Contributed to communication-interface design; built a Python WebSocket client with reconnect, backoff and message validation.",
+        "Traced a field communication failure to a port conflict and implemented the fix."
+      ]
+    },
+    {
+      "company": "Bosch",
+      "role": "V2X Communication Intern",
+      "dates": "Jun–Nov 2024",
+      "context": "Hildesheim, Germany",
+      "current": false,
+      "bullets": [
+        "Built a V2X demonstrator, defined message interfaces and checked end-to-end behaviour in test runs.",
+        "Developed a React operator interface for an eBike safety prototype."
+      ]
+    }
+  ],
+  "skills": [
+    {"label": "Languages", "text": "C++, C, Python; TypeScript, JavaScript"},
+    {"label": "Systems", "text": "Error recovery, device communication, WebSocket, REST, ROS 1/2"},
+    {"label": "Tools & UI", "text": "Git, Docker, Linux, Qt/QML, React; Figma / basic UI design"}
+  ],
+  "projects": [
+    {
+      "name": "Color Saves Life",
+      "link": "https://github.com/KKWANH/ColorSavesLife",
+      "dates": "BCX 2024",
+      "description": "Python plugin client, simulation integration and presentation. Team: 1st place in the digital.auto & mobility challenge."
+    },
+    {
+      "name": "C++ containers",
+      "link": "https://github.com/KKWANH/ft_containers",
+      "dates": "42 project · 2022",
+      "description": "Implemented vector, stack and an AVL-tree-backed map with custom iterators."
+    }
+  ],
+  "education": [
+    {"name": "Mechatronics", "detail": "Bachelor’s in progress · KNOU Prime College", "date": "2026–Present"},
+    {"name": "Artificial Intelligence", "detail": "Bachelor’s awarded · Korea National Open University", "date": "2025"},
+    {"name": "Computer Engineering / Business Administration", "detail": "Bachelor’s degrees awarded · Academic Credit Bank System", "date": "2020 / 2022"},
+    {"name": "SEA:ME / 42", "detail": "Automotive & Mobility (SEA:ME, 2023–24) / Software engineering (42) · Both completed", "date": ""}
+  ],
+  "languages": "Korean native · English: IELTS Academic 7.5, Mar 2025"
+}

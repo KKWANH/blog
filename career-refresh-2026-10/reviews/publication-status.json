@@ -1,0 +1,29 @@
+{
+  "stage": "deployment-verified",
+  "verified": true,
+  "remote_head": "3f85a90d4d7907c923e4517a4d751bd1fec03605",
+  "target_commit": "3f85a90d4d7907c923e4517a4d751bd1fec03605",
+  "url": "https://www.kwanho.dev",
+  "observed_at": "2026-10-27T11:06:32.215237+00:00",
+  "checks": {
+    "fourteen_skills": true,
+    "camera_first": true,
+    "equal_portrait_frames": true,
+    "mind_map_works": true,
+    "skill_context_correct": true,
+    "portrait_viewer": true,
+    "video_not_automatically_loaded": true,
+    "live_video_plays": true,
+    "live_atlas_map": true,
+    "published_atlas_matches_commit": true,
+    "anonymous_editor_not_granted": true,
+    "owner_entrance_present": true,
+    "private_studio_denied": true,
+    "empty_gallery_unpublished": true,
+    "cv_matches_commit": true,
+    "contact_download": true,
+    "new_brand_assets": true
+  },
+  "owner_signin_configured": false,
+  "mode": "read-only"
+}

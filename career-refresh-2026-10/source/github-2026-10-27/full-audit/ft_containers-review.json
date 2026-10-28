@@ -1,0 +1,119 @@
+{
+  "name": "ft_containers",
+  "url": "https://github.com/KKWANH/ft_containers",
+  "fork": false,
+  "scope": "learning",
+  "scopeNote": "Learning/team project; inspect the stated contribution and source.",
+  "description": "",
+  "updatedAt": "2022-09-18T11:24:08Z",
+  "defaultBranch": "main",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/ft_containers/blob/40d52a84fcbdb5b3d02adbe2d8c3a10ad6e7bde6/README.md",
+      "bytes": 4277,
+      "sha256": "437ea2e7d8d7380567fd3313a8bf419171f28934e3125aac38d95da74b3ada95"
+    },
+    {
+      "path": "Makefile",
+      "url": "https://github.com/KKWANH/ft_containers/blob/40d52a84fcbdb5b3d02adbe2d8c3a10ad6e7bde6/Makefile",
+      "bytes": 6010,
+      "sha256": "15b44e3ee12b5821b163aab120cb604008259575fb099ec1e2b82f203e8247ed"
+    },
+    {
+      "path": "includes/ft.hpp",
+      "url": "https://github.com/KKWANH/ft_containers/blob/40d52a84fcbdb5b3d02adbe2d8c3a10ad6e7bde6/includes/ft.hpp",
+      "bytes": 239,
+      "sha256": "be7f819e3d369a3a7c6551fdd6bafee20141eba265dc8af98c7b62471803522c"
+    },
+    {
+      "path": "includes/map.hpp",
+      "url": "https://github.com/KKWANH/ft_containers/blob/40d52a84fcbdb5b3d02adbe2d8c3a10ad6e7bde6/includes/map.hpp",
+      "bytes": 8871,
+      "sha256": "b33764483a20fea2842bd39380a17b422c42f667ee7a455b59f41d6cdb2ad784"
+    },
+    {
+      "path": "includes/Tree.hpp",
+      "url": "https://github.com/KKWANH/ft_containers/blob/40d52a84fcbdb5b3d02adbe2d8c3a10ad6e7bde6/includes/Tree.hpp",
+      "bytes": 10481,
+      "sha256": "03ad59ab7c35547bd3a9856bd5e047a12ef6a4e49e37914b8c52ca81ad919abc"
+    },
+    {
+      "path": "includes/pair.hpp",
+      "url": "https://github.com/KKWANH/ft_containers/blob/40d52a84fcbdb5b3d02adbe2d8c3a10ad6e7bde6/includes/pair.hpp",
+      "bytes": 2033,
+      "sha256": "089ea4d5ea0e9e0ad82a72eb82388367f0d12a4d4aeccf3a0c0a09aaddc80a3b"
+    },
+    {
+      "path": "includes/vector.hpp",
+      "url": "https://github.com/KKWANH/ft_containers/blob/40d52a84fcbdb5b3d02adbe2d8c3a10ad6e7bde6/includes/vector.hpp",
+      "bytes": 14181,
+      "sha256": "5c6c813e0dde88f3b76d6982b62ffc8ed2898898e660cdc619b3f2a556e83b0f"
+    },
+    {
+      "path": "includes/iterators.hpp",
+      "url": "https://github.com/KKWANH/ft_containers/blob/40d52a84fcbdb5b3d02adbe2d8c3a10ad6e7bde6/includes/iterators.hpp",
+      "bytes": 7281,
+      "sha256": "ce9f30d30d700b0c25280c8433eea06199f03755dde376624c41fbcf3ef67156"
+    }
+  ],
+  "limitations": [],
+  "technologies": [
+    {
+      "id": "cpp",
+      "label": "C++",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "includes/Tree.hpp",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "includes/ft.hpp",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "includes/iterators.hpp",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "git",
+      "label": "Git",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        }
+      ]
+    },
+    {
+      "id": "linux",
+      "label": "Linux",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        }
+      ]
+    },
+    {
+      "id": "make",
+      "label": "Make",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "Makefile",
+          "basis": "build file"
+        }
+      ]
+    }
+  ],
+  "commit": "40d52a84fcbdb5b3d02adbe2d8c3a10ad6e7bde6",
+  "fileCount": 35,
+  "treeDepth": "cached-recursive",
+  "status": "reviewed"
+}

@@ -1,0 +1,93 @@
+{
+  "actor": "Devin",
+  "observed_at": "2026-10-27T15:00:33.052071+00:00",
+  "workspace": "C:\\Projects\\blog",
+  "baseline": "3f85a90d4d7907c923e4517a4d751bd1fec03605",
+  "reports": {
+    "interactive-map-checks": {
+      "passed": true,
+      "checks": 36
+    },
+    "skill-preferences-ui-checks": {
+      "passed": true,
+      "checks": 26
+    },
+    "stationery-checks": {
+      "passed": true,
+      "checks": 48
+    },
+    "skill-map-touch-background": {
+      "passed": true,
+      "checks": 0
+    },
+    "cv-interface-final-checks": {
+      "passed": true,
+      "checks": 14
+    }
+  },
+  "native_validation": "Content/store/auth/sync fixtures and Next production build with TypeScript passed; canonical skills:sync:check passed after system-CA flag.",
+  "travel_records": 115,
+  "owner_preference_entries": 0,
+  "pdf_sha256": "d81682408d042eba17c7c88d2f95d09c1c3efb4d9ca015cfbc2da63d46669357",
+  "file_hashes": {
+    ".gitignore": "b49fa6d1e89b8b41fb84ed836d2bd02d95d1f5160f64966124e9db5e22b372de",
+    "README.md": "f552f544a7d3950258d6761ececf63996480dc8658ba0ad1b1ba5bfb38268be5",
+    "app/about/manage/page.tsx": "3a697560886c6809aa0c43b311edda9fffb2fa18b5216488f1f9e0396c9b37e9",
+    "app/api/skills/route.ts": "1e3d83f5fccb93c505f9da5a2ba8f6dfe47ad261984202c47e7529316de748f2",
+    "app/layout.tsx": "636bc9453dc08ec921f81e35115b618f96875007a8f373a93097608ace4aad45",
+    "components/career-icons.tsx": "e67635c88d0c8aa6d1e7e9bab18d9a499caadd370e0185cb14c1e4831e586fb0",
+    "components/profile-overview.tsx": "da4febc2cf8654a925c49acacb99a1cd8b296af81c8e0915690ed99d9a83c24b",
+    "components/repository-catalogue.tsx": "f092974ee33370f5a90ffe21ca79747a807ffb782ad120f464d856b45aa50b1b",
+    "components/repository-evidence.tsx": "37cb5afbe313707ff0c28f4868f4f67bac45e1219d87d0631d505b40e43c1742",
+    "components/repository-inspector.tsx": "dbec599b3dbceee6c1e1a47b68ab74719c3ce480a813ef3b770ac75bea135c30",
+    "components/skill-editor.tsx": "d478fe03ed1d548be90f428ee9bf276f83322a5b623900296e3915a6316384c1",
+    "components/skill-explorer.tsx": "5f1767c6d0750a4683fa8eb27bb89853950f1c6f2c13be3b65e9ccff12653d01",
+    "components/skill-level-badge.tsx": "3989e41069c6fab96ad53835020ca5578419e542be0f4f11e56261f5f1c09909",
+    "components/skill-mind-map.tsx": "ee5da296a00770dd1c3ff315eee24ad375ef4654653e57a474e47ad09e821c80",
+    "components/skill-profile-provider.tsx": "cae031f3fd630f97ae2299f95a27c60a756d9144d4a61b434001e5472f113466",
+    "contents/about/repositories.generated.json": "ab929c8759f7fd9c29ad04a28c5427f90610fc5aa16c105ac934101cb6fed37c",
+    "contents/about/repository-overrides.json": "80eeb1ebd574715eb9361359f2afece35df53b1c5ab8dfd1f4fcfa662ee07b17",
+    "contents/about/skill-definitions.json": "8385e91758f71b8422a32dcd99bf6126f9cf2b68f472dc1cdb8f9c3c35fc44be",
+    "contents/about/skill-profile.json": "08220e958d3412442fa398f4d901d6b766c05dab3cd5e852301d79bc5f3fbf46",
+    "docs/brand-assets.md": "3ca16b3558f35c40bb4b477318173ad13e7bec8a5fa908605e0d5ba4829247ee",
+    "docs/design.md": "a135317e4cbc4298ac17ac742ab5f9433b64b90b2f4bcff785964a119a145e4e",
+    "docs/skill-evidence.md": "e6e0f2fa1d357dfcddab62a135ecde767d7c3ceae12e818a55b9732cf4a9725f",
+    "docs/skills-editor.md": "8481cc69c93d51131aff6f94d931b947db8c92f92e668cb96657dfb7c0b2990a",
+    "lib/local-studio.ts": "356ceac0cfd233cd3246c509ce1025fc03533fcfaad90cf2d1da5cc2099e04ab",
+    "lib/mind-map-layout.ts": "7fcfa061bb44723e1e6604199e1fc6a6e188c782fecb1c67e83dbdb7852bbeb6",
+    "lib/profile.ts": "80be646b84b25b69cfc9cf4629d1ea874a8c480d8e1b599d99bb1b69b3d0af2e",
+    "lib/repository-catalogue.ts": "137939aae19072980c6721a7737bffd157bc998b73d821ffcee122d2d3cb84b4",
+    "lib/repository-types.ts": "3ae32a2b3590903d92392250e6cc17dacd29407a4d4439116aaef1f1635cf3a9",
+    "lib/skill-data.ts": "4438ed1b62d5b1de18f206c7002d55d6ca786ffa18bfb89528b53e334c018247",
+    "lib/skill-events.ts": "ce8f03b0eaa356d2fc8b7fe63626fb64142cc8e3ecd0983bceb569cceac1b94b",
+    "lib/skill-github-store.ts": "b3a6124721bfd82eacc9df072183aa5127b4c598f02c04af192195f1e4072fc1",
+    "lib/skill-owner.ts": "4e4beaf48156a607910535be6dac0ec8e10f58997ff130f0afa9084e2713fa73",
+    "lib/skill-preferences.ts": "0bf17a06c89a60603e8e6c495e84e9b8e6a899f5d0a15c1d7f6c085774c60180",
+    "lib/skill-projects.ts": "e933fbd2d314dffbfa57d801ac71d3b4baf82c73e12a9381a8b4b6fa5e997fb6",
+    "lib/skill-store.ts": "e8c77076d3f79569565d1cd6ad0bf1434bdd93aec9c028eb958a39fd03a9ac72",
+    "lib/travel-editor-access.ts": "81437a33f6ed784a156f208997af80a2f64b7ea7bbf0920e7f69bce62faea403",
+    "lib/travel-owner-policy.ts": "2b3f953fac59d00f97337a7c9eaa65f0bc974a2eeef504601cbe4bbfcbe6dde1",
+    "next.config.mjs": "f6ed7789a6a9ce89e495a00b2fa5fd750ffb179e7468164ac61fbd35bb01ed56",
+    "package.json": "d83d32c09bdb53cef4c21587b909e1897141c045ac2bd5d4800cb64014999625",
+    "public/CV.pdf": "d81682408d042eba17c7c88d2f95d09c1c3efb4d9ca015cfbc2da63d46669357",
+    "public/brands/css.svg": "25b8fae9cc6e4d5ae96a6d5c3d2fe0951be0d9296fa059913ac609857dc99de1",
+    "public/brands/django.svg": "9c7dd873e6c0abd1ea6e2c7ec44bafd43d2c0164f8c7f1633a5b56ac103edb7e",
+    "public/brands/figma.svg": "b9171110637bb953781a04044d9957478ae84f6a7ac597a25c0bfdfb3292a45e",
+    "public/brands/gnubash.svg": "d5bdfe3c67a2baf479b60e2e9a588b7882bad378d707545c0b8f2321f01faaff",
+    "public/brands/html5.svg": "6dbc134a2c0ede550ef086cd5ebc5c0af7ddf6c4318d4fe54706aaf6a4e4714e",
+    "public/brands/nginx.svg": "14e77ea88f50ee3ebcf43919b91e545292673ec35b21bee32ad1f230ee5004bd",
+    "public/brands/numpy.svg": "1c2fcdec4b291799c3bae475e6aaff2fa694df88c5ae7181e3b62c72d51e9610",
+    "public/brands/pandas.svg": "7ff6ac657802511b4f2134ff37ff4c4fb8fca6bf3a9ffee1fb19e9469525913f",
+    "public/brands/qt.svg": "83b31ebe6a9f02894ccc9ccd6599ec940fcaa80fb856e95f65b5043b2f7efece",
+    "public/brands/raspberrypi.svg": "e590634edc47b919ff6d3b101f9d6a5aee65a783f9be0f59875b70527f2e791a",
+    "public/brands/scikitlearn.svg": "422acd1156f9cf98d6f31dd5d743aa02f452a3f0e092309bdda36d468575fc53",
+    "public/brands/unity.svg": "1718beefe3dcbf0893db3702425b5a10de0806f2ddad9ef6df75b24c74c8a0f9",
+    "scripts/check-content.mjs": "64a9c7f4ae6f1c18fa3367d0640847861d83f1b5479e2a5e726d34ee1d243e6c",
+    "scripts/local-server.mjs": "52a7e65003c0f25277d6ebc0bbd9986f7b9bebe78d006b58bcecd76adceed4e4",
+    "scripts/sync-repositories.mjs": "599121bddce830b271024d0a40c24429ec05a619dae4aa29e549f798ac91d7db",
+    "styles/mind-map.css": "ce36d094b083efa046f90a7f33a0c68fadf64a135c6e9df6db9a90a7c989baa4",
+    "styles/profile.css": "38a34d9c4a7d08d0182091cc8a5fbec193fe2ef2b38255833e2faf06c0ae103f",
+    "styles/skill-editor.css": "b7cc5a8d7dd92060c952f211c28409de68486ee7d7317c433b8dd7588626b3d0"
+  },
+  "publication": "Candidate prepared for the explicit requested push; not yet published."
+}

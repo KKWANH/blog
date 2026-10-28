@@ -1,0 +1,425 @@
+{
+  "baseline": "e332b7fdbcf655f893c2ea29b0de05ba0da111e5",
+  "curated_count": 45,
+  "kinds": {
+    "language": 11,
+    "framework": 5,
+    "practice": 8,
+    "interface": 4,
+    "platform": 3,
+    "tool": 7,
+    "library": 7
+  },
+  "original_ids_retained": true,
+  "all_previous_overrides_retained": true,
+  "newer_override_ids": [
+    "containers"
+  ],
+  "current_override_count": 45,
+  "current_updated_at": "2026-10-27T15:24:09.716Z",
+  "travel_records": 115,
+  "travel_matches_intake": true,
+  "definitions": [
+    {
+      "id": "cpp",
+      "kind": "language",
+      "label": "C++",
+      "detail": "Application and device software",
+      "group": "languages"
+    },
+    {
+      "id": "c",
+      "kind": "language",
+      "label": "C",
+      "detail": "Shell and pthreads coursework",
+      "group": "languages"
+    },
+    {
+      "id": "python",
+      "kind": "language",
+      "label": "Python",
+      "detail": "Communication clients and prototypes",
+      "group": "languages"
+    },
+    {
+      "id": "asm",
+      "kind": "language",
+      "label": "x86-64 ASM",
+      "detail": "42 assembly exercises",
+      "group": "languages"
+    },
+    {
+      "id": "csharp",
+      "kind": "language",
+      "label": "C#",
+      "detail": "Earlier Unity project practice",
+      "group": "languages"
+    },
+    {
+      "id": "java",
+      "kind": "language",
+      "label": "Java",
+      "detail": "Algorithm exercises and small Java programs",
+      "group": "languages"
+    },
+    {
+      "id": "shell",
+      "kind": "language",
+      "label": "Shell / Bash",
+      "detail": "Setup scripts and shell configuration",
+      "group": "languages"
+    },
+    {
+      "id": "javascript",
+      "kind": "language",
+      "label": "JavaScript",
+      "detail": "Programming language listed in the CV",
+      "group": "web"
+    },
+    {
+      "id": "typescript",
+      "kind": "language",
+      "related": [
+        "javascript"
+      ],
+      "label": "TypeScript",
+      "detail": "Programming language listed in the CV",
+      "group": "web"
+    },
+    {
+      "id": "react",
+      "kind": "framework",
+      "related": [
+        "javascript",
+        "typescript"
+      ],
+      "label": "React",
+      "detail": "Operator and configuration interfaces",
+      "group": "web"
+    },
+    {
+      "id": "qt",
+      "kind": "framework",
+      "related": [
+        "cpp",
+        "qmake"
+      ],
+      "label": "Qt / QML",
+      "detail": "SEA:ME instrument-cluster prototype",
+      "group": "web"
+    },
+    {
+      "id": "html",
+      "kind": "language",
+      "label": "HTML",
+      "detail": "Web and Django coursework",
+      "group": "web"
+    },
+    {
+      "id": "css",
+      "kind": "language",
+      "label": "CSS",
+      "detail": "Web and Django coursework",
+      "group": "web"
+    },
+    {
+      "id": "django",
+      "kind": "framework",
+      "related": [
+        "python"
+      ],
+      "label": "Django",
+      "detail": "42 Django course projects and declared dependencies",
+      "group": "web"
+    },
+    {
+      "id": "interfaces",
+      "kind": "practice",
+      "related": [
+        "websocket",
+        "rest",
+        "dbus"
+      ],
+      "label": "Software interfaces",
+      "detail": "Message contracts, device interfaces and integration work",
+      "group": "practice"
+    },
+    {
+      "id": "recovery",
+      "kind": "practice",
+      "related": [
+        "cpp",
+        "python"
+      ],
+      "label": "Fault recovery",
+      "detail": "Fault handling and reconnect behaviour",
+      "group": "practice"
+    },
+    {
+      "id": "websocket",
+      "kind": "interface",
+      "label": "WebSocket",
+      "detail": "Pickit communication client",
+      "group": "systems"
+    },
+    {
+      "id": "rest",
+      "kind": "interface",
+      "label": "REST APIs",
+      "detail": "HTTP API integration and REST-style interfaces",
+      "group": "systems"
+    },
+    {
+      "id": "can",
+      "kind": "interface",
+      "label": "CAN bus",
+      "detail": "SEA:ME team-project context",
+      "group": "systems"
+    },
+    {
+      "id": "dbus",
+      "kind": "interface",
+      "related": [
+        "qt"
+      ],
+      "label": "D-Bus",
+      "detail": "Qt instrument-cluster signal receiver",
+      "group": "systems"
+    },
+    {
+      "id": "raspberrypi",
+      "kind": "platform",
+      "label": "Raspberry Pi",
+      "detail": "SEA:ME PiRacer assembly and instrument projects",
+      "group": "tools"
+    },
+    {
+      "id": "carla",
+      "kind": "platform",
+      "related": [
+        "python"
+      ],
+      "label": "CARLA",
+      "detail": "SEA:ME lane-keeping simulation project",
+      "group": "tools"
+    },
+    {
+      "id": "git",
+      "kind": "tool",
+      "label": "Git",
+      "detail": "Version control and public project source",
+      "group": "tools"
+    },
+    {
+      "id": "docker",
+      "kind": "tool",
+      "label": "Docker",
+      "detail": "Documented team-prototype environment",
+      "group": "tools"
+    },
+    {
+      "id": "linux",
+      "kind": "platform",
+      "label": "Linux",
+      "detail": "Documented team-prototype environment",
+      "group": "tools"
+    },
+    {
+      "id": "ros",
+      "kind": "framework",
+      "label": "ROS 2",
+      "detail": "The BCX team simulation prototype",
+      "group": "tools"
+    },
+    {
+      "id": "compose",
+      "kind": "tool",
+      "related": [
+        "docker"
+      ],
+      "label": "Docker Compose",
+      "detail": "42 Inception service configuration",
+      "group": "tools"
+    },
+    {
+      "id": "nginx",
+      "kind": "tool",
+      "related": [
+        "docker"
+      ],
+      "label": "NGINX",
+      "detail": "42 Inception service configuration",
+      "group": "tools"
+    },
+    {
+      "id": "make",
+      "kind": "tool",
+      "related": [
+        "c",
+        "cpp"
+      ],
+      "label": "Make",
+      "detail": "C/C++ project build files",
+      "group": "tools"
+    },
+    {
+      "id": "qmake",
+      "kind": "tool",
+      "related": [
+        "qt"
+      ],
+      "label": "qmake",
+      "detail": "Qt project build configuration",
+      "group": "tools"
+    },
+    {
+      "id": "containers",
+      "kind": "practice",
+      "related": [
+        "cpp"
+      ],
+      "label": "Data structures",
+      "detail": "Vector, stack, AVL trees and iterators, implemented in C++",
+      "group": "practice"
+    },
+    {
+      "id": "processes",
+      "kind": "practice",
+      "related": [
+        "c",
+        "shell"
+      ],
+      "label": "Processes & pipes",
+      "detail": "Minishell: fork, exec, pipes and signals",
+      "group": "practice"
+    },
+    {
+      "id": "threads",
+      "kind": "practice",
+      "related": [
+        "c",
+        "cpp"
+      ],
+      "label": "Concurrency",
+      "detail": "C/pthreads coursework",
+      "group": "practice"
+    },
+    {
+      "id": "http",
+      "kind": "practice",
+      "related": [
+        "cpp",
+        "c"
+      ],
+      "label": "Network programming",
+      "detail": "HTTP, sockets and event-loop practice in the webserv team project",
+      "group": "practice"
+    },
+    {
+      "id": "raycasting",
+      "kind": "practice",
+      "related": [
+        "c",
+        "minilibx"
+      ],
+      "label": "Raycasting",
+      "detail": "C cub3D graphics coursework",
+      "group": "practice"
+    },
+    {
+      "id": "minilibx",
+      "kind": "library",
+      "label": "MiniLibX",
+      "detail": "Authored cub3D drawing and initialization code",
+      "group": "tools"
+    },
+    {
+      "id": "figma",
+      "kind": "tool",
+      "label": "Figma",
+      "detail": "Working familiarity, owner stated",
+      "group": "design"
+    },
+    {
+      "id": "ui-design",
+      "kind": "practice",
+      "related": [
+        "figma",
+        "react"
+      ],
+      "label": "UI design basics",
+      "detail": "Basic design familiarity, owner stated",
+      "group": "design"
+    },
+    {
+      "id": "unity",
+      "kind": "framework",
+      "related": [
+        "csharp"
+      ],
+      "label": "Unity",
+      "detail": "Earlier C# game/prototype practice",
+      "group": "design"
+    },
+    {
+      "id": "numpy",
+      "kind": "library",
+      "related": [
+        "python"
+      ],
+      "label": "NumPy",
+      "detail": "Declared data-science course dependencies",
+      "group": "data"
+    },
+    {
+      "id": "pandas",
+      "kind": "library",
+      "related": [
+        "python"
+      ],
+      "label": "Pandas",
+      "detail": "Declared data-science course dependencies",
+      "group": "data"
+    },
+    {
+      "id": "matplotlib",
+      "kind": "library",
+      "related": [
+        "python"
+      ],
+      "label": "Matplotlib",
+      "detail": "Plotting dependencies in data-science coursework",
+      "group": "data"
+    },
+    {
+      "id": "sklearn",
+      "kind": "library",
+      "related": [
+        "python"
+      ],
+      "label": "scikit-learn",
+      "detail": "Declared regression/BCI course dependencies",
+      "group": "data"
+    },
+    {
+      "id": "mne",
+      "kind": "library",
+      "related": [
+        "python"
+      ],
+      "label": "MNE",
+      "detail": "BCI coursework README and setup dependencies",
+      "group": "data"
+    },
+    {
+      "id": "opencv",
+      "kind": "library",
+      "related": [
+        "python"
+      ],
+      "label": "OpenCV",
+      "detail": "Computer-vision library; BCX and SEA:ME repository context, with owner-selected familiarity",
+      "group": "data"
+    }
+  ]
+}

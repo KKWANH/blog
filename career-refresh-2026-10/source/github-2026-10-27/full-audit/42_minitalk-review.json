@@ -1,0 +1,85 @@
+{
+  "name": "42_minitalk",
+  "url": "https://github.com/KKWANH/42_minitalk",
+  "fork": false,
+  "scope": "learning",
+  "scopeNote": "Learning/team project; inspect the stated contribution and source.",
+  "description": "",
+  "updatedAt": "2021-10-27T17:49:29Z",
+  "defaultBranch": "main",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/42_minitalk/blob/2defc1ab93afc144dd5041f7efb3702a9b823c1b/README.md",
+      "bytes": 12,
+      "sha256": "ec531f875e7bb6786d6dcf7577273c86386f735a8249126783d19bd583eee9bf"
+    },
+    {
+      "path": "Makefile",
+      "url": "https://github.com/KKWANH/42_minitalk/blob/2defc1ab93afc144dd5041f7efb3702a9b823c1b/Makefile",
+      "bytes": 3441,
+      "sha256": "868262881aebe06b72a9f802b0d3968d391679f22b615537b47126585d4519b6"
+    },
+    {
+      "path": "srcs/base/client.c",
+      "url": "https://github.com/KKWANH/42_minitalk/blob/2defc1ab93afc144dd5041f7efb3702a9b823c1b/srcs/base/client.c",
+      "bytes": 3276,
+      "sha256": "73f232773bb44b8133deef7cdffb4220dac073ad445ca7c5cc54eaa02a2811e5"
+    },
+    {
+      "path": "srcs/base/server.c",
+      "url": "https://github.com/KKWANH/42_minitalk/blob/2defc1ab93afc144dd5041f7efb3702a9b823c1b/srcs/base/server.c",
+      "bytes": 2774,
+      "sha256": "3813564f9540b2650b09528c727f9d654070f4939f9b291e7ffee0163af944c6"
+    },
+    {
+      "path": "srcs/utils/util1.c",
+      "url": "https://github.com/KKWANH/42_minitalk/blob/2defc1ab93afc144dd5041f7efb3702a9b823c1b/srcs/utils/util1.c",
+      "bytes": 1974,
+      "sha256": "144ab7a0db7325e0daa0294764f7dea56bbf6507b2088f214cbc786f961bbe5b"
+    },
+    {
+      "path": "srcs/utils/util2.c",
+      "url": "https://github.com/KKWANH/42_minitalk/blob/2defc1ab93afc144dd5041f7efb3702a9b823c1b/srcs/utils/util2.c",
+      "bytes": 2156,
+      "sha256": "f656e376f84a6b0ed282f2e3c5ed71ea1dd33cb489ce8201f28284588f579377"
+    }
+  ],
+  "limitations": [],
+  "technologies": [
+    {
+      "id": "c",
+      "label": "C",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "srcs/base/client.c",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "srcs/base/client_bonus.c",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "srcs/base/server.c",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "make",
+      "label": "Make",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "Makefile",
+          "basis": "build file"
+        }
+      ]
+    }
+  ],
+  "commit": "2defc1ab93afc144dd5041f7efb3702a9b823c1b",
+  "fileCount": 11,
+  "treeDepth": "recursive",
+  "status": "reviewed"
+}

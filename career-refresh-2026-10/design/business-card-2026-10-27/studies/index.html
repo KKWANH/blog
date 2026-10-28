@@ -1,0 +1,730 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Kwanho Kim — five paper introductions</title>
+  <style>
+    @font-face {
+      font-family: Figtree;
+      src: url("../assets/Figtree.woff2") format("woff2");
+      font-style: normal;
+      font-weight: 300 900;
+      font-display: swap;
+    }
+
+    :root {
+      font-family: Figtree, Arial, sans-serif;
+      font-size: 100%;
+      color: #25342c;
+      background: #eae8e0;
+      font-synthesis: none;
+      --board: #eae8e0;
+      --muted: #526158;
+      --rule: #bfc5b8;
+      --pocket-width: 390px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+    body { margin: 0; line-height: 1.5; }
+    a { color: inherit; text-underline-offset: .22em; }
+    button { font: inherit; color: inherit; }
+    a:focus-visible, button:focus-visible {
+      outline: 3px solid #b34127;
+      outline-offset: 5px;
+    }
+    img { display: block; max-inline-size: 100%; }
+    h1, h2, h3, p, figure, dl, dd { margin: 0; }
+    h1, h2, .study-subtitle, .notes { overflow-wrap: anywhere; }
+    .sr-only {
+      position: absolute; inline-size: 1px; block-size: 1px;
+      padding: 0; margin: -1px; overflow: hidden;
+      clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+    }
+    .skip-link {
+      position: absolute; inset-block-start: -100px; inset-inline-start: 16px;
+      z-index: 10; padding: 12px 18px; background: #fffdf4;
+    }
+    .skip-link:focus { inset-block-start: 12px; }
+    .shell { max-inline-size: 1280px; margin-inline: auto; }
+    .masthead { padding: 54px 0 40px; }
+    .eyebrow {
+      font-size: .75rem; font-weight: 600; letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .masthead-top {
+      display: flex; flex-wrap: wrap; justify-content: space-between;
+      gap: 12px; padding-block-end: 34px;
+      border-block-end: 1px solid var(--rule);
+    }
+    .intro {
+      display: grid; grid-template-columns: 1.4fr 1fr;
+      align-items: end; gap: 60px; padding-block: 42px 34px;
+    }
+    h1 {
+      max-inline-size: 12ch; font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400; font-size: clamp(2.75rem, 5.2vw, 4.7rem);
+      letter-spacing: -.055em; line-height: 1.03;
+    }
+    .intro-copy { max-inline-size: 43ch; font-size: 1.05rem; }
+    .intro-copy p + p { margin-block-start: 14px; }
+    .disclosure { color: var(--muted); font-size: .87rem; }
+    .index-nav {
+      display: flex; flex-wrap: wrap; gap: 4px 24px;
+      padding-block-start: 20px; border-block-start: 1px solid var(--rule);
+    }
+    .index-nav a {
+      min-block-size: 44px; display: inline-flex; align-items: center;
+      gap: 9px; font-size: .86rem; text-decoration: none;
+    }
+    .index-nav a:hover { text-decoration: underline; }
+    .index-nav span { color: var(--muted); font-size: .72rem; }
+    .study { padding-block: 35px 44px; border-block-start: 1px solid var(--rule); }
+    .study-heading {
+      display: grid; grid-template-columns: 42px minmax(0, 1fr) auto;
+      align-items: baseline; gap: 14px; margin-block-end: 24px;
+    }
+    .study-number {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.4rem; color: var(--muted);
+    }
+    h2 { font-size: 1.6rem; line-height: 1.2; font-weight: 500; letter-spacing: -.035em; }
+    .study-subtitle { margin-block-start: 7px; font-size: .88rem; color: var(--muted); }
+    .format-tag { font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; }
+    .study-layout {
+      display: grid; grid-template-columns: minmax(0, 1fr) 270px;
+      gap: 36px; align-items: start;
+    }
+    .study-visual { min-inline-size: 0; }
+    .proof-scene {
+      position: relative; isolation: isolate; display: grid; place-items: center;
+      grid-template-rows: auto 1fr auto; gap: 20px;
+      min-block-size: 500px; padding: 23px 48px 20px;
+      background: var(--scene); border: 1px solid #25342c0a;
+    }
+    .scene-cotton { --scene: #dedbd1; }
+    .scene-forest { --scene: #cdd3c7; }
+    .scene-photo { --scene: #dcd6ce; }
+    .scene-swiss { --scene: #d8dfdc; }
+    .scene-vellum { --scene: #cbd2c3; }
+    .scene-caption {
+      position: relative; grid-row: 1; justify-self: start; align-self: start;
+      z-index: 4; font-size: .65rem; letter-spacing: .13em;
+      text-transform: uppercase; color: #4b584e;
+    }
+    .scene-footnote {
+      position: relative; grid-row: 3; justify-self: end; align-self: end;
+      z-index: 4; font-size: .65rem; letter-spacing: .06em; color: #4b584e;
+    }
+    .card-holder {
+      position: relative; z-index: 2; grid-row: 2; inline-size: 100%; max-inline-size: 560px;
+      container-type: inline-size;
+    }
+
+    /* The physical ratio is a minimum height, not a fixed aspect-ratio box.
+       Flex layout must retain its intrinsic content height at enlarged type:
+       aspect-ratio + min-content alone did not do so in the tested Edge. */
+    .paper {
+      --paper-min-height: calc(100cqi * 55 / 85);
+      position: relative; isolation: isolate; inline-size: 100%;
+      min-block-size: var(--paper-min-height);
+      display: flex; flex-direction: column;
+      padding: max(1rem, 6.2cqi);
+      background: #f8f4e9; color: #2e342d;
+      border: 1px solid #3d43351a;
+      box-shadow:
+        0 1px 0 #fdfbf4,
+        0 3px 0 #c5c0b2,
+        0 5px 0 #b7b4a755,
+        0 12px 16px -8px #32392d40,
+        0 25px 45px -15px #30392e35;
+    }
+    .paper::before {
+      content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+      opacity: .045; mix-blend-mode: multiply;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch' seed='14'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)' opacity='.75'/%3E%3C/svg%3E");
+    }
+    .paper > * { position: relative; z-index: 1; flex-shrink: 0; }
+    .paper * { min-inline-size: 0; overflow-wrap: anywhere; }
+    .paper h3 { font-weight: 500; }
+    .paper a { text-decoration: none; }
+    .paper a:hover { text-decoration: underline; }
+    .paper a:focus-visible { outline-offset: 3px; }
+    .paper .contact-lines { display: flex; flex-direction: column; gap: .12em; }
+
+    /* 01 — the name is the impression; no device or logo is needed. */
+    .cotton {
+      background: linear-gradient(115deg, #fbf8ed, #f3eee0);
+      color: #373a30;
+      text-shadow: 0 .5px .25px #fffdf0;
+    }
+    .cotton-role { font-size: max(.8rem, 3.35cqi); line-height: 1.3; }
+    .cotton .cotton-name {
+      margin-block: max(1.15rem, 6cqi) auto;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: max(1.8rem, 10.3cqi); line-height: 1.1;
+      letter-spacing: -.045em; font-weight: 400;
+    }
+    .cotton-footer {
+      display: flex; flex-wrap: wrap; justify-content: space-between;
+      align-items: end; gap: .7rem 1rem;
+      margin-block-start: max(1rem, 5cqi);
+      font-size: max(.78rem, 3.05cqi); line-height: 1.4;
+    }
+    .cotton-city { font-size: max(.75rem, 2.8cqi); }
+
+    /* 02 — a two-part composition, reversed ink and a pale duplex edge. */
+    .forest {
+      --paper-min-height: calc(100cqi * 50 / 90); padding: max(.875rem, 5.8cqi);
+      color: #f5f0dd; background: #203e32; border-color: #18392e;
+      box-shadow:
+        inset 4px 0 0 #e2dfc9, inset 6px 0 0 #849276,
+        0 2px 0 #e0dcc7, 0 4px 0 #3e5441,
+        0 13px 17px -8px #243a2b65, 0 25px 42px -13px #2a3c2a50;
+    }
+    .forest::before { opacity: .09; mix-blend-mode: screen; }
+    .forest-top { display: flex; flex-wrap: wrap; align-items: start; gap: max(.75rem, 4cqi); }
+    .forest .forest-name {
+      flex: 1 1 8rem; font-size: max(1.8rem, 10.5cqi);
+      line-height: .99; font-weight: 500; letter-spacing: -.045em;
+    }
+    .forest-meta {
+      flex: 1 1 6rem; padding-block-start: .12em;
+      font-size: max(.8rem, 3.2cqi); line-height: 1.3;
+    }
+    .forest-city { margin-block-start: max(.75rem, 4cqi); font-size: max(.75rem, 2.9cqi); }
+    .forest-footer {
+      display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between;
+      gap: .65rem 1rem; margin-block-start: auto;
+      padding-block-start: max(.65rem, 2.9cqi);
+      border-block-start: 1px solid #f5f0dd66;
+      font-size: max(.75rem, 2.8cqi); line-height: 1.35;
+    }
+    .forest-top { margin-block-end: max(1rem, 5cqi); }
+    .forest-url { font-size: max(.8rem, 3.2cqi); font-weight: 500; }
+
+    /* 03 — a portrait window, with contacts spanning the entire lower edge. */
+    .photographic { padding: max(.95rem, 5.8cqi); background: #f9f8f2; color: #292d2b; }
+    .photo-top { display: flex; flex-wrap: wrap; align-items: start; gap: max(.7rem, 4cqi); }
+    .photo-identity { flex: 1 1 7.3rem; }
+    .photographic .photo-name {
+      font-size: max(1.55rem, 8.4cqi); line-height: 1.03;
+      font-weight: 450; letter-spacing: -.045em;
+    }
+    .photo-role { margin-block-start: max(.35rem, 2cqi); font-size: max(.78rem, 3.1cqi); line-height: 1.25; }
+    .photo-city { margin-block-start: max(.35rem, 2cqi); font-size: max(.75rem, 2.8cqi); line-height: 1.25; }
+    .photo-portrait {
+      position: relative; flex: 0 0 31.5%; aspect-ratio: 4 / 5;
+      background: #c5c8bc;
+    }
+    .photo-portrait img {
+      position: absolute; inset: 0; inline-size: 100%; block-size: 100%;
+      object-fit: cover; object-position: 50% 43%;
+      filter: grayscale(1) sepia(.12) contrast(.96);
+    }
+    .photo-top { margin-block-end: max(.9rem, 5cqi); }
+    .photo-footer {
+      display: flex; flex-wrap: wrap; justify-content: space-between; gap: .6rem .7rem;
+      margin-block-start: auto; padding-block-start: max(.65rem, 3.2cqi);
+      border-block-start: 1px solid #38423246;
+      font-size: max(.76rem, 3cqi); line-height: 1.3;
+    }
+
+    /* 04 — three grid zones; the accent belongs to the discipline, not a logo. */
+    .swiss {
+      --paper-min-height: calc(100cqi * 50 / 90); padding: max(.95rem, 6cqi);
+      background: #f5f7f2; color: #182b27; gap: max(.65rem, 3.5cqi);
+    }
+    .swiss .swiss-name {
+      font-size: max(1.8rem, 11.8cqi); font-weight: 650;
+      line-height: .98; letter-spacing: -.06em;
+    }
+    .swiss-lower {
+      display: flex; flex-wrap: wrap; gap: .75rem;
+      margin-block-start: auto; padding-block-start: max(.75rem, 3cqi);
+      border-block-start: max(1px, .23cqi) solid #ac3b23;
+    }
+    .swiss-role { flex: 1 1 5.5rem; font-size: max(.8rem, 3.3cqi); line-height: 1.2; }
+    .swiss-discipline {
+      display: block; color: #a73721; font-size: max(.95rem, 4cqi);
+      margin-block-end: .3em; font-weight: 600;
+    }
+    .swiss-contacts { flex: 1.2 1 8.8rem; font-size: max(.76rem, 3cqi); line-height: 1.3; }
+    .swiss-city { margin-block-end: max(.75rem, 3cqi); }
+
+    /* 05 — the photograph is a separate, useful print; the contact face stays quiet. */
+    .companion-print {
+      position: absolute; z-index: 1; inline-size: 250px; aspect-ratio: 16 / 10;
+      inset-inline-end: 4%; inset-block-start: 48px;
+      padding: 9px 9px 22px; transform: rotate(8deg);
+      background: #f6f5e9; border: 1px solid #6d786736;
+      box-shadow: 0 10px 20px -10px #26372270;
+    }
+    .companion-print img { inline-size: 100%; block-size: 100%; object-fit: cover; }
+    .vellum {
+      padding: max(1rem, 6cqi); text-align: center;
+      background: linear-gradient(105deg, #f9faf0eb, #f5f5e9f7);
+      border: 1px solid #fffff4b3; color: #253a2e;
+      backdrop-filter: blur(1px);
+      box-shadow:
+        0 1px 0 #fffff2, 0 3px 0 #b9c1ad,
+        0 14px 26px -12px #283b2760, 0 28px 45px -16px #273a2750;
+    }
+    .vellum::before { opacity: .03; }
+    .vellum-city { font-size: max(.75rem, 2.75cqi); line-height: 1.25; }
+    .vellum-identity { margin-block: auto; padding-block: max(1rem, 7cqi); }
+    .vellum .vellum-name {
+      font-size: max(1.1rem, 6cqi); font-weight: 450; line-height: 1.2;
+      letter-spacing: .13em; text-transform: uppercase;
+    }
+    .vellum-role { margin-block-start: .5rem; font-size: max(.78rem, 3.1cqi); line-height: 1.25; }
+    .vellum-contacts {
+      font-size: max(.78rem, 3cqi); line-height: 1.3;
+      align-items: center;
+    }
+    .vellum-contacts::before {
+      content: ""; inline-size: 34%; border-block-start: 1px solid #3c503b66;
+      margin-block-end: max(.6rem, 2.5cqi);
+    }
+
+    /* The page interface is deliberately outside the physical object. */
+    .web-actions {
+      display: flex; align-items: center; flex-wrap: wrap; gap: 2px 16px;
+      padding-block: 14px 0; font-size: .82rem;
+    }
+    .web-actions > span { color: var(--muted); font-size: .72rem; margin-inline-end: auto; }
+    .web-actions a { display: inline-flex; align-items: center; min-block-size: 44px; padding-inline: 4px; }
+    .notes { padding-block-start: 6px; font-size: .88rem; color: #3f4f43; }
+    .notes .design-intent { font-family: Georgia, "Times New Roman", serif; font-size: 1.25rem; line-height: 1.42; color: #25342c; }
+    .specs { margin-block: 24px; padding-block: 14px; border-block: 1px solid var(--rule); }
+    .specs > div { display: grid; grid-template-columns: 70px 1fr; gap: 12px; margin-block: 6px; }
+    .specs dt { color: var(--muted); font-size: .7rem; letter-spacing: .06em; text-transform: uppercase; padding-block-start: 3px; }
+    .notes h3 { font-size: .72rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; margin-block: 20px 6px; }
+    .notes p + p { margin-block-start: 12px; }
+    .notes .verdict { margin-block-start: 20px; padding-inline-start: 12px; border-inline-start: 2px solid #657759; color: #253c2c; }
+    .section-block { padding-block: 44px; border-block-start: 1px solid var(--rule); }
+    .section-header { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 24px; }
+    .section-header h2 { margin-block: 8px 10px; font-family: Georgia, "Times New Roman", serif; font-size: 2.3rem; font-weight: 400; }
+    .section-header p { max-inline-size: 65ch; color: var(--muted); font-size: .9rem; }
+    .size-controls { display: flex; gap: 8px; }
+    .size-controls button {
+      cursor: pointer; min-block-size: 44px; padding: 8px 14px;
+      border: 1px solid #76836e; background: transparent;
+    }
+    .size-controls button[aria-pressed="true"] { background: #2d4535; color: #fbf8eb; border-color: #2d4535; }
+    .comparison-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 390px), 1fr));
+      gap: 30px 24px; align-items: start; margin-block-start: 30px;
+    }
+    .pocket-sample { min-inline-size: 0; }
+    .pocket-frame {
+      position: relative; isolation: isolate; display: grid; place-items: center;
+      inline-size: var(--pocket-width); max-inline-size: 100%;
+      padding: 32px 16px 38px; background: var(--scene);
+    }
+    .pocket-frame .card-holder { max-inline-size: none; grid-row: 1; }
+    .pocket-sample figcaption { margin-block-start: 12px; font-size: .86rem; }
+    .pocket-sample figcaption span { color: var(--muted); font-size: .75rem; margin-inline-end: 8px; }
+    .pocket-frame .companion-print {
+      position: relative; grid-row: 2; justify-self: end; inset: auto;
+      inline-size: 150px; margin-block-start: 28px; padding: 5px 5px 12px; transform: rotate(-4deg);
+    }
+    .comparison-disclosure { margin-block-start: 24px; font-size: .8rem; color: var(--muted); }
+    .synthesis {
+      display: grid; grid-template-columns: 1fr 1.2fr; gap: 64px;
+      padding-block: 48px 56px; border-block-start: 1px solid var(--rule);
+    }
+    .synthesis h2 { margin-block-start: 10px; font-family: Georgia, "Times New Roman", serif; font-size: 2.3rem; font-weight: 400; max-inline-size: 14ch; }
+    .synthesis-copy { max-inline-size: 62ch; }
+    .synthesis-copy p + p { margin-block-start: 16px; }
+    .synthesis-copy .provisional { font-size: .82rem; color: var(--muted); }
+    .colophon { display: flex; flex-wrap: wrap; gap: 10px 28px; padding-block: 20px 36px; border-block-start: 1px solid var(--rule); font-size: .72rem; color: var(--muted); }
+    .colophon a { min-block-size: 44px; display: inline-flex; align-items: center; }
+    .colophon p { flex: 1 1 32rem; }
+
+    @media (max-width: 1390px) { .shell { margin-inline: 36px; } }
+    @media (max-width: 1050px) {
+      .study-layout { grid-template-columns: minmax(0, 1fr) 240px; gap: 24px; }
+      .proof-scene { padding-inline: 28px; min-block-size: 450px; }
+      .intro { gap: 30px; }
+    }
+    @media (max-width: 850px) {
+      .shell { margin-inline: 24px; }
+      .study-layout { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+      .notes { display: grid; grid-template-columns: 1fr 1fr; gap: 0 30px; }
+      .notes .design-intent { grid-column: 1 / -1; max-inline-size: 42ch; }
+      .notes .specs { grid-row: span 3; margin-block-end: 0; }
+      .notes h3 { margin-block-start: 20px; }
+      .notes .verdict { grid-column: 1 / -1; }
+      .intro { grid-template-columns: 1fr; gap: 28px; }
+      h1 { max-inline-size: 16ch; }
+      .intro-copy { max-inline-size: 65ch; }
+      .synthesis { gap: 30px; }
+    }
+    @media (max-width: 560px) {
+      .shell { margin-inline: 0; }
+      .masthead { padding: 28px 16px 24px; }
+      .masthead-top { padding-block-end: 22px; font-size: .65rem; }
+      .intro { padding-block: 28px 24px; gap: 22px; }
+      h1 { font-size: 3rem; }
+      .intro-copy { font-size: .96rem; }
+      .index-nav { gap: 0 18px; }
+      .study { padding-block: 26px 34px; }
+      .study-heading { padding-inline: 16px; grid-template-columns: 28px minmax(0, 1fr); gap: 10px; margin-block-end: 20px; }
+      .study-heading h2 { font-size: 1.35rem; }
+      .format-tag { grid-column: 2; font-size: .66rem; }
+      .study-subtitle { font-size: .8rem; }
+      .study-number { font-size: 1.2rem; }
+      .proof-scene { padding: 18px 16px 13px; min-block-size: 0; gap: 18px; border-inline: 0; }
+      .scene-caption { font-size: .6rem; }
+      .scene-footnote { font-size: .58rem; }
+      .web-actions { padding-inline: 16px; gap: 0 12px; }
+      .web-actions > span { font-size: .65rem; }
+      .web-actions a { font-size: .78rem; }
+      .notes { display: block; padding: 0 20px; }
+      .notes .design-intent { font-size: 1.2rem; }
+      .notes .specs { margin-block: 18px; }
+      .notes h3 { margin-block-start: 16px; }
+      .companion-print {
+        position: relative; grid-row: 3; justify-self: end; inset: auto;
+        inline-size: 160px; padding: 5px 5px 12px;
+        margin-block: 10px 4px; transform: rotate(-4deg);
+      }
+      .scene-vellum .scene-footnote { grid-row: 4; }
+      .section-block { padding: 32px 0; }
+      .section-header { padding-inline: 16px; gap: 20px; }
+      .section-header h2 { font-size: 2rem; }
+      .comparison-grid { grid-template-columns: minmax(0, 1fr); gap: 25px; }
+      .pocket-sample figcaption { padding-inline: 16px; }
+      .comparison-disclosure { padding-inline: 16px; }
+      .synthesis { grid-template-columns: 1fr; padding: 32px 20px; gap: 24px; }
+      .synthesis h2 { max-inline-size: 18ch; font-size: 2rem; }
+      .colophon { padding: 20px 16px 28px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation: none !important; transition: none !important; }
+    }
+    @media print {
+      :root { background: white; }
+      .shell { margin: 0; max-inline-size: none; }
+      .masthead, .notes, .web-actions, .section-block, .synthesis, .colophon, .scene-caption, .scene-footnote { display: none; }
+      .study { break-inside: avoid; border: 0; padding: 6mm 0; }
+      .study-heading { margin-block-end: 4mm; }
+      .study-heading h2 { font-size: 12pt; }
+      .study-subtitle, .format-tag { display: none; }
+      .study-layout { display: block; }
+      .proof-scene { min-block-size: 0; padding: 6mm; background: white; border: 0; }
+      .card-holder { inline-size: 85mm; max-inline-size: none; }
+      .scene-forest .card-holder, .scene-swiss .card-holder { inline-size: 90mm; }
+      .companion-print { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#studies">Skip to the five studies</a>
+  <header class="masthead shell">
+    <div class="masthead-top eyebrow">
+      <span>Kwanho Kim / Personal stationery</span>
+      <span>Original studies · 27 October 2026</span>
+    </div>
+    <div class="intro">
+      <h1>Five paper introductions.</h1>
+      <div class="intro-copy">
+        <p>One real identity, five distinct ways to put it on paper. Landscape business cards, with the contact information doing the work—not a monogram or a slogan.</p>
+        <p class="disclosure">These are screen studies, not photographs of printed stock. Grain, impression, edges and translucency are digital cues; every stock and finishing specification below is a proposal.</p>
+      </div>
+    </div>
+    <nav class="index-nav" aria-label="Study index">
+      <a href="#cotton"><span>01</span> Cotton impression</a>
+      <a href="#forest"><span>02</span> Forest edge</a>
+      <a href="#photographic"><span>03</span> Photographic margin</a>
+      <a href="#swiss"><span>04</span> Swiss register</a>
+      <a href="#vellum"><span>05</span> Vellum &amp; portrait</a>
+      <a href="#mobile-comparison">Mobile comparison ↓</a>
+    </nav>
+  </header>
+
+  <main class="shell" id="studies">
+    <article class="study" id="cotton" data-study="01" data-concept="Cotton impression">
+      <header class="study-heading">
+        <span class="study-number">01</span>
+        <div><h2>Cotton impression</h2><p class="study-subtitle">A warm, typographic introduction. The name carries the weight.</p></div>
+        <p class="format-tag">85 × 55 mm · single face</p>
+      </header>
+      <div class="study-layout">
+        <div class="study-visual">
+          <figure class="proof-scene scene-cotton" aria-label="Cotton impression business-card rendering">
+            <figcaption class="scene-caption">01 / Warm cotton · one ink</figcaption>
+            <div class="card-holder">
+              <div class="paper cotton" data-ratio="1.5454545455">
+                <p class="cotton-role">C++ Software Engineer</p>
+                <h3 class="cotton-name">Kwanho Kim</h3>
+                <div class="cotton-footer">
+                  <div class="contact-lines">
+                    <a href="mailto:contact@kwanho.dev">contact@<wbr>kwanho.dev</a>
+                    <a href="https://kwanho.dev">kwanho.dev</a>
+                  </div>
+                  <p class="cotton-city">Leuven, Belgium</p>
+                </div>
+              </div>
+            </div>
+            <span class="scene-footnote">Digital material study / face only</span>
+          </figure>
+          <div class="web-actions"><span>Page actions · off the paper</span><a href="mailto:contact@kwanho.dev">Contact ↗</a><a href="https://kwanho.dev">Website ↗</a></div>
+        </div>
+        <aside class="notes" aria-label="Cotton impression critique">
+          <p class="design-intent">Let the margin feel generous, and the introduction feel human.</p>
+          <dl class="specs">
+            <div><dt>Format</dt><dd>85 × 55 mm</dd></div>
+            <div><dt>Stock</dt><dd>Warm cotton, 600 gsm proposed</dd></div>
+            <div><dt>Ink</dt><dd>Soft charcoal; restrained impression</dd></div>
+            <div><dt>Type</dt><dd>Georgia / Figtree</dd></div>
+          </dl>
+          <div><h3>Why it works</h3><p>A serif name and quiet sans-serif details establish a clear, personal hierarchy. The two bottom anchors give the blank space purpose.</p></div>
+          <div><h3>Watch</h3><p>Exaggerated emboss shadows would make it look artificial. At small sizes, keep the contacts dark; do not turn them into pale “fine print.”</p></div>
+          <p class="verdict">Strongest base for the website introduction: calm, legible, recognisably a business card.</p>
+        </aside>
+      </div>
+    </article>
+
+    <article class="study" id="forest" data-study="02" data-concept="Forest edge">
+      <header class="study-heading">
+        <span class="study-number">02</span>
+        <div><h2>Forest edge</h2><p class="study-subtitle">A compact, architectural face with a pale duplex edge.</p></div>
+        <p class="format-tag">90 × 50 mm · single face</p>
+      </header>
+      <div class="study-layout">
+        <div class="study-visual">
+          <figure class="proof-scene scene-forest" aria-label="Forest edge business-card rendering">
+            <figcaption class="scene-caption">02 / Deep forest · pale core</figcaption>
+            <div class="card-holder">
+              <div class="paper forest" data-ratio="1.8">
+                <div class="forest-top">
+                  <h3 class="forest-name">Kwanho<br>Kim</h3>
+                  <div class="forest-meta"><p>C++<br>Software Engineer</p><p class="forest-city">Leuven, Belgium</p></div>
+                </div>
+                <div class="forest-footer">
+                  <a class="forest-url" href="https://kwanho.dev">kwanho.dev</a>
+                  <a href="mailto:contact@kwanho.dev">contact@<wbr>kwanho.dev</a>
+                </div>
+              </div>
+            </div>
+            <span class="scene-footnote">Digital material study / face only</span>
+          </figure>
+          <div class="web-actions"><span>Page actions · off the paper</span><a href="mailto:contact@kwanho.dev">Contact ↗</a><a href="https://kwanho.dev">Website ↗</a></div>
+        </div>
+        <aside class="notes" aria-label="Forest edge critique">
+          <p class="design-intent">A strong silhouette, without turning the person into a logo.</p>
+          <dl class="specs">
+            <div><dt>Format</dt><dd>90 × 50 mm</dd></div>
+            <div><dt>Stock</dt><dd>Forest / natural duplex proposed</dd></div>
+            <div><dt>Ink</dt><dd>Warm opaque light ink; proof first</dd></div>
+            <div><dt>Type</dt><dd>Figtree, medium / regular</dd></div>
+          </dl>
+          <div><h3>Why it works</h3><p>The stacked name and offset role are a different composition, not a colour swap. The horizontal contact rail makes the wider format feel deliberate.</p></div>
+          <div><h3>Watch</h3><p>Light ink on dark stock needs a physical proof. Heavy green coverage also feels more corporate; an all-dark web section would overstate it.</p></div>
+          <p class="verdict">Best source of colour and edge detail. Borrow the restraint, not necessarily the dark face.</p>
+        </aside>
+      </div>
+    </article>
+
+    <article class="study" id="photographic" data-study="03" data-concept="Photographic margin">
+      <header class="study-heading">
+        <span class="study-number">03</span>
+        <div><h2>Photographic margin</h2><p class="study-subtitle">A small portrait window; a full-width contact line.</p></div>
+        <p class="format-tag">85 × 55 mm · single face</p>
+      </header>
+      <div class="study-layout">
+        <div class="study-visual">
+          <figure class="proof-scene scene-photo" aria-label="Photographic margin business-card rendering">
+            <figcaption class="scene-caption">03 / Natural white · warm monochrome</figcaption>
+            <div class="card-holder">
+              <div class="paper photographic" data-ratio="1.5454545455">
+                <div class="photo-top">
+                  <div class="photo-identity">
+                    <h3 class="photo-name">Kwanho<br>Kim</h3>
+                    <p class="photo-role">C++ Software Engineer</p>
+                    <p class="photo-city">Leuven, Belgium</p>
+                  </div>
+                  <div class="photo-portrait"><img src="../assets/contact-portrait.webp" alt="Portrait of Kwanho Kim" width="800" height="800"></div>
+                </div>
+                <div class="photo-footer">
+                  <a href="mailto:contact@kwanho.dev">contact@<wbr>kwanho.dev</a>
+                  <a href="https://kwanho.dev">kwanho.dev</a>
+                </div>
+              </div>
+            </div>
+            <span class="scene-footnote">Supplied portrait / digital paper study</span>
+          </figure>
+          <div class="web-actions"><span>Page actions · off the paper</span><a href="mailto:contact@kwanho.dev">Contact ↗</a><a href="https://kwanho.dev">Website ↗</a></div>
+        </div>
+        <aside class="notes" aria-label="Photographic margin critique">
+          <p class="design-intent">Recognise the person first; never hunt for their address.</p>
+          <dl class="specs">
+            <div><dt>Format</dt><dd>85 × 55 mm</dd></div>
+            <div><dt>Stock</dt><dd>Smooth natural white proposed</dd></div>
+            <div><dt>Image</dt><dd>Supplied professional portrait</dd></div>
+            <div><dt>Type</dt><dd>Figtree, regular / medium</dd></div>
+          </dl>
+          <div><h3>Why it works</h3><p>The portrait has a real margin and a controlled crop. Contacts sit below both columns, so the email is not squeezed into a narrow picture caption.</p></div>
+          <div><h3>Watch</h3><p>The small photograph loses expression on a phone, and makes this closer to an editorial calling card. Never reduce type to preserve a larger image.</p></div>
+          <p class="verdict">Useful for a portrait-led variant. In the final introduction, a separate companion print gives the face more room.</p>
+        </aside>
+      </div>
+    </article>
+
+    <article class="study" id="swiss" data-study="04" data-concept="Swiss register">
+      <header class="study-heading">
+        <span class="study-number">04</span>
+        <div><h2>Swiss register</h2><p class="study-subtitle">An explicit grid, a strong name, and one meaningful accent.</p></div>
+        <p class="format-tag">90 × 50 mm · single face</p>
+      </header>
+      <div class="study-layout">
+        <div class="study-visual">
+          <figure class="proof-scene scene-swiss" aria-label="Swiss register business-card rendering">
+            <figcaption class="scene-caption">04 / Cool white · charcoal + vermilion</figcaption>
+            <div class="card-holder">
+              <div class="paper swiss" data-ratio="1.8">
+                <h3 class="swiss-name">Kwanho Kim</h3>
+                <div class="swiss-lower">
+                  <p class="swiss-role"><span class="swiss-discipline">C++</span>Software Engineer</p>
+                  <div class="swiss-contacts">
+                    <p class="swiss-city">Leuven, Belgium</p>
+                    <div class="contact-lines">
+                      <a href="mailto:contact@kwanho.dev">contact@<wbr>kwanho.dev</a>
+                      <a href="https://kwanho.dev">kwanho.dev</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <span class="scene-footnote">Digital material study / face only</span>
+          </figure>
+          <div class="web-actions"><span>Page actions · off the paper</span><a href="mailto:contact@kwanho.dev">Contact ↗</a><a href="https://kwanho.dev">Website ↗</a></div>
+        </div>
+        <aside class="notes" aria-label="Swiss register critique">
+          <p class="design-intent">Make precision visible through alignment, not technical decoration.</p>
+          <dl class="specs">
+            <div><dt>Format</dt><dd>90 × 50 mm</dd></div>
+            <div><dt>Stock</dt><dd>Smooth uncoated white proposed</dd></div>
+            <div><dt>Ink</dt><dd>Charcoal and vermilion</dd></div>
+            <div><dt>Type</dt><dd>Figtree, semibold / regular</dd></div>
+          </dl>
+          <div><h3>Why it works</h3><p>The oversized name stays on one line at normal mobile sizes. C++ is the accent because it is actual information. The lower zones have different, useful jobs.</p></div>
+          <div><h3>Watch</h3><p>The compact 90 × 50 format is less forgiving of enlarged type. Let the lower columns reflow instead of forcing a rigid printed grid onto every reader.</p></div>
+          <p class="verdict">Best information discipline. Excellent fallback behaviour, but cooler and less personal than cotton.</p>
+        </aside>
+      </div>
+    </article>
+
+    <article class="study" id="vellum" data-study="05" data-concept="Vellum &amp; portrait">
+      <header class="study-heading">
+        <span class="study-number">05</span>
+        <div><h2>Vellum &amp; portrait</h2><p class="study-subtitle">A translucent contact face with a separate, purposeful photograph.</p></div>
+        <p class="format-tag">85 × 55 mm · card + print</p>
+      </header>
+      <div class="study-layout">
+        <div class="study-visual">
+          <figure class="proof-scene scene-vellum" aria-label="Vellum contact card with a separate window-portrait print">
+            <figcaption class="scene-caption">05 / Translucent wrap · portrait companion</figcaption>
+            <div class="companion-print"><img src="../assets/window-portrait.webp" alt="Separate companion print of Kwanho Kim beside a window" width="1024" height="576"></div>
+            <div class="card-holder">
+              <div class="paper vellum" data-ratio="1.5454545455">
+                <p class="vellum-city">Leuven, Belgium</p>
+                <div class="vellum-identity">
+                  <h3 class="vellum-name">Kwanho Kim</h3>
+                  <p class="vellum-role">C++ Software Engineer</p>
+                </div>
+                <div class="contact-lines vellum-contacts">
+                  <a href="mailto:contact@kwanho.dev">contact@<wbr>kwanho.dev</a>
+                  <a href="https://kwanho.dev">kwanho.dev</a>
+                </div>
+              </div>
+            </div>
+            <span class="scene-footnote">Two useful pieces / no empty reverse</span>
+          </figure>
+          <div class="web-actions"><span>Page actions · off the paper</span><a href="mailto:contact@kwanho.dev">Contact ↗</a><a href="https://kwanho.dev">Website ↗</a></div>
+        </div>
+        <aside class="notes" aria-label="Vellum and portrait critique">
+          <p class="design-intent">Keep the introduction on one piece, the atmosphere on another.</p>
+          <dl class="specs">
+            <div><dt>Format</dt><dd>85 × 55 mm face; separate photo</dd></div>
+            <div><dt>Stock</dt><dd>Vellum / warm backing proposed</dd></div>
+            <div><dt>Image</dt><dd>Supplied window portrait</dd></div>
+            <div><dt>Type</dt><dd>Figtree, spaced capitals</dd></div>
+          </dl>
+          <div><h3>Why it works</h3><p>The centered contact face has a different rhythm. The photograph is an actual companion print, not an invented back or an excuse to hide essential information.</p></div>
+          <div><h3>Watch</h3><p>Translucency is the least reliable screen-to-print effect here. A light backing is essential. On mobile, a separate portrait below the card is better than a decorative overlap.</p></div>
+          <p class="verdict">Borrow the two-piece idea, not the optical effect. The quiet card should also work without a photograph.</p>
+        </aside>
+      </div>
+    </article>
+
+    <section class="section-block" id="mobile-comparison" aria-labelledby="comparison-title">
+      <div class="section-header">
+        <div>
+          <p class="eyebrow">Pocket proof / no miniature type</p>
+          <h2 id="comparison-title">Compare the small faces.</h2>
+          <p>These are the same live cards, in 390 or 320 CSS-pixel frames with 16-pixel gutters. No image scaling, no alternate mobile identity.</p>
+        </div>
+        <div class="size-controls" aria-label="Comparison frame width" hidden>
+          <button type="button" data-width="390" aria-pressed="true">390 px</button>
+          <button type="button" data-width="320" aria-pressed="false">320 px</button>
+        </div>
+      </div>
+      <div class="comparison-grid" id="comparison-grid"></div>
+      <noscript><p class="comparison-disclosure">Enable local JavaScript for the side-by-side comparison. All five full studies above remain responsive without it.</p></noscript>
+      <p class="comparison-disclosure">On a screen narrower than the selected frame, the frame uses the available width. At enlarged text sizes the paper may become taller: readable contact information takes precedence over a fixed rectangle.</p>
+    </section>
+
+    <section class="synthesis" aria-labelledby="synthesis-title">
+      <div><p class="eyebrow">Recommendation from the original studies</p><h2 id="synthesis-title">Cotton, with a forest edge.</h2></div>
+      <div class="synthesis-copy">
+        <p>Use <strong>01’s name-led hierarchy and 85 × 55 proportions</strong>. Take only the deep green ink and restrained edge from 02, and the alignment discipline of 04. Keep the paper warm and the contacts fully readable.</p>
+        <p>Put the professional portrait beside the card as a separate print, borrowing 05’s two-piece logic rather than its translucency. At mobile widths it belongs below the card, not underneath the email.</p>
+        <p>Keep CV, contact and vCard actions in the page interface. This study links only the supplied email and website; no unverified CV path or download has been invented.</p>
+        <p class="provisional">This recommendation is based on the five original designs only. The separate five-reference review should validate or revise it before application integration. There is no sixth “final” card or reference claim hidden in this board.</p>
+      </div>
+    </section>
+  </main>
+  <footer class="colophon shell">
+    <p>Local design evidence only. All five faces use the same real identity and contact data. No monogram, slogan, flipping interaction, tracking or remote dependency. Figtree is supplied under the SIL Open Font License; serif type is the local Georgia system font.</p>
+    <a href="../assets/Figtree-OFL.txt">Figtree licence</a>
+    <a href="notes.md">Critique &amp; test notes</a>
+    <a href="#studies">Back to studies ↑</a>
+  </footer>
+
+  <script>
+    // Local DOM duplication only: no fetch, storage, analytics, or remote scripts.
+    const comparison = document.getElementById("comparison-grid");
+    document.querySelector(".size-controls").hidden = false;
+    for (const study of document.querySelectorAll("article.study")) {
+      const sample = document.createElement("figure");
+      sample.className = "pocket-sample";
+      const scene = study.querySelector(".proof-scene");
+      const frame = document.createElement("div");
+      frame.className = "pocket-frame " + [...scene.classList].find(name => name.startsWith("scene-"));
+      const companion = scene.querySelector(".companion-print");
+      if (companion) frame.append(companion.cloneNode(true));
+      frame.append(scene.querySelector(".card-holder").cloneNode(true));
+      const caption = document.createElement("figcaption");
+      const number = document.createElement("span");
+      number.textContent = study.dataset.study;
+      caption.append(number, document.createTextNode(study.dataset.concept));
+      sample.append(frame, caption);
+      comparison.append(sample);
+    }
+    for (const button of document.querySelectorAll("[data-width]")) {
+      button.addEventListener("click", () => {
+        document.documentElement.style.setProperty("--pocket-width", button.dataset.width + "px");
+        for (const control of document.querySelectorAll("[data-width]")) {
+          control.setAttribute("aria-pressed", String(control === button));
+        }
+      });
+    }
+  </script>
+</body>
+</html>

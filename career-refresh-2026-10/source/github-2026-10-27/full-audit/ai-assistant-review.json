@@ -1,0 +1,333 @@
+{
+  "name": "ai-assistant",
+  "url": "https://github.com/KKWANH/ai-assistant",
+  "fork": false,
+  "scope": "ai-directed",
+  "scopeNote": "AI-directed/configured project; implementation expertise is not inferred.",
+  "description": "",
+  "updatedAt": "2026-07-31T23:37:38Z",
+  "defaultBranch": "main",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/ai-assistant/blob/d59d45a617c5da89fbea630410675b26b3a9e68b/README.md",
+      "bytes": 10439,
+      "sha256": "a0041a4438258c7907d7edd8be3d2c7327b97f20380e0fc7598e5a61ffa3e837"
+    },
+    {
+      "path": "apps/admin/package.json",
+      "url": "https://github.com/KKWANH/ai-assistant/blob/d59d45a617c5da89fbea630410675b26b3a9e68b/apps/admin/package.json",
+      "bytes": 207,
+      "sha256": "66d65f847fac02dba72e0ab4300678b7351ca8513d75d1c65a5cd9376dc02e97"
+    },
+    {
+      "path": "apps/desktop/package.json",
+      "url": "https://github.com/KKWANH/ai-assistant/blob/d59d45a617c5da89fbea630410675b26b3a9e68b/apps/desktop/package.json",
+      "bytes": 356,
+      "sha256": "a008b523dd7bb112e8ed0b1782f1ee508c565a4f7d59b4d8f817541be10973e8"
+    },
+    {
+      "path": "apps/server/package.json",
+      "url": "https://github.com/KKWANH/ai-assistant/blob/d59d45a617c5da89fbea630410675b26b3a9e68b/apps/server/package.json",
+      "bytes": 1405,
+      "sha256": "97da71ece6cd3a028548a2a43b6ef90f6b8883a5af61c4f5566a631de0620a7a"
+    },
+    {
+      "path": "apps/web/package.json",
+      "url": "https://github.com/KKWANH/ai-assistant/blob/d59d45a617c5da89fbea630410675b26b3a9e68b/apps/web/package.json",
+      "bytes": 1673,
+      "sha256": "5e56504500be783c3fc60eedf70f32404f878c8d34ba73e863a443251dfa4204"
+    },
+    {
+      "path": "package.json",
+      "url": "https://github.com/KKWANH/ai-assistant/blob/d59d45a617c5da89fbea630410675b26b3a9e68b/package.json",
+      "bytes": 1749,
+      "sha256": "09389817382d1dfeff1a523f9583e9248e363314af100599fc644a17e4faaa2c"
+    },
+    {
+      "path": "packages/shared/package.json",
+      "url": "https://github.com/KKWANH/ai-assistant/blob/d59d45a617c5da89fbea630410675b26b3a9e68b/packages/shared/package.json",
+      "bytes": 224,
+      "sha256": "f1bdeea7ddceba1fa55465662ad57151c8c5b1e4f1f267c5c9c0eaab27604501"
+    },
+    {
+      "path": "packages/surface-sdk/package.json",
+      "url": "https://github.com/KKWANH/ai-assistant/blob/d59d45a617c5da89fbea630410675b26b3a9e68b/packages/surface-sdk/package.json",
+      "bytes": 376,
+      "sha256": "e162c6f420c4ff32c0a121559722e2819ecd4870d7187e5ad28a1e6ceb2b68ef"
+    },
+    {
+      "path": "scripts/check-bundle-budgets.ts",
+      "url": "https://github.com/KKWANH/ai-assistant/blob/d59d45a617c5da89fbea630410675b26b3a9e68b/scripts/check-bundle-budgets.ts",
+      "bytes": 8574,
+      "sha256": "a9e2cbb723085bb7ff45512643f6c05932ffafa79e340dbce1515b0c33022e41"
+    },
+    {
+      "path": "apps/web/src/App.tsx",
+      "url": "https://github.com/KKWANH/ai-assistant/blob/d59d45a617c5da89fbea630410675b26b3a9e68b/apps/web/src/App.tsx",
+      "bytes": 13369,
+      "sha256": "e992c9afa3de47ba4e97f9d6f3b7fd1fa0af885012a5e464eb66faf6272f7b85"
+    },
+    {
+      "path": "apps/web/src/main.tsx",
+      "url": "https://github.com/KKWANH/ai-assistant/blob/d59d45a617c5da89fbea630410675b26b3a9e68b/apps/web/src/main.tsx",
+      "bytes": 2518,
+      "sha256": "5f8c6c4c6f7224f6cec5e9d47428dc46c6548bf1a00f5afa114eda90d713fdf6"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "url": "https://github.com/KKWANH/ai-assistant/blob/d59d45a617c5da89fbea630410675b26b3a9e68b/apps/server/src/index.ts",
+      "bytes": 13335,
+      "sha256": "76a7eb0cabec3cbff044c854758903c4586ad4cc3a9fdeba93d7a329bee40657"
+    }
+  ],
+  "limitations": [
+    "Raw .py downloads are restricted by the corporate security gateway; accessible documentation/manifests are reviewed instead."
+  ],
+  "technologies": [
+    {
+      "id": "css",
+      "label": "CSS",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "apps/admin/public/style.css",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "apps/web/src/components/ui/Badge.module.css",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "apps/web/src/components/ui/Button.module.css",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "fastify",
+      "label": "Fastify",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "apps/server/package.json",
+          "basis": "direct dependency"
+        }
+      ]
+    },
+    {
+      "id": "git",
+      "label": "Git",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        }
+      ]
+    },
+    {
+      "id": "github-actions",
+      "label": "GitHub Actions",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": ".github/workflows/bundle-rule-check.yml",
+          "basis": "workflow file"
+        },
+        {
+          "path": ".github/workflows/ci.yml",
+          "basis": "workflow file"
+        },
+        {
+          "path": ".github/workflows/desktop.yml",
+          "basis": "workflow file"
+        }
+      ]
+    },
+    {
+      "id": "html",
+      "label": "HTML",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "apps/admin/public/index.html",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "apps/web/index.html",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "javascript",
+      "label": "JavaScript",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "apps/admin/public/dashboard.js",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "docs/learn/03-llm-mastery/deck/build.js",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "docs/learn/deck/build.js",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "python",
+      "label": "Python",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "apps/server/scripts/pymupdf_extract.py",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "docs/learn/03-llm-mastery/deck/inject-animations.py",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "docs/learn/deck/inject-animations.py",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "react",
+      "label": "React",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        },
+        {
+          "path": "apps/desktop/package.json",
+          "basis": "manifest/configuration"
+        },
+        {
+          "path": "apps/server/package.json",
+          "basis": "direct dependency"
+        }
+      ]
+    },
+    {
+      "id": "shell",
+      "label": "Shell",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "apps/desktop/scripts/build-app.sh",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "apps/desktop/scripts/fetch-node-sidecar.sh",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "apps/desktop/scripts/stage-server.sh",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "sqlite",
+      "label": "SQLite",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        }
+      ]
+    },
+    {
+      "id": "tailwind",
+      "label": "Tailwind CSS",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "apps/web/package.json",
+          "basis": "direct dependency"
+        }
+      ]
+    },
+    {
+      "id": "typescript",
+      "label": "TypeScript",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "apps/admin/src/dashboard.ts",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "apps/admin/src/errorAnalyzer.ts",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "apps/admin/src/logManager.ts",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "vite",
+      "label": "Vite",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "apps/web/package.json",
+          "basis": "direct dependency"
+        }
+      ]
+    },
+    {
+      "id": "websocket",
+      "label": "WebSocket",
+      "group": "systems",
+      "evidence": [
+        {
+          "path": "apps/server/package.json",
+          "basis": "manifest/configuration"
+        },
+        {
+          "path": "apps/server/src/index.ts",
+          "basis": "inspected source"
+        }
+      ]
+    },
+    {
+      "id": "zod",
+      "label": "Zod",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "packages/shared/package.json",
+          "basis": "direct dependency"
+        }
+      ]
+    },
+    {
+      "id": "zustand",
+      "label": "Zustand",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "apps/web/package.json",
+          "basis": "direct dependency"
+        }
+      ]
+    }
+  ],
+  "commit": "d59d45a617c5da89fbea630410675b26b3a9e68b",
+  "fileCount": 478,
+  "treeDepth": "cached-recursive",
+  "status": "reviewed-limited"
+}

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CV Design Review</title>
+<style>
+body{margin:0;background:#e8ede8;color:#1b3023;font:16px/1.7 system-ui,sans-serif}main{max-width:1220px;margin:auto;padding:36px 24px}h1{font-size:36px;letter-spacing:-.04em;font-weight:600;margin:16px 0}h2{font-size:22px;font-weight:600}a{color:#22553b;text-underline-offset:4px}.toolbar{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0}button{min-height:44px;padding:10px 16px;border:1px solid #6b8a73;border-radius:5px;background:#f7faf5;color:#244c35;font:500 14px system-ui;cursor:pointer}button[aria-pressed=true]{background:#244c35;color:white}.comparison{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:30px;align-items:start}.proof{display:block;width:100%;height:auto;box-shadow:0 8px 24px #20392420}aside{background:#f8faf6;border:1px solid #cbd8cc;padding:24px;position:sticky;top:24px;border-radius:8px}aside p{font-size:14px;color:#425c49}.metric{font-size:13px;border-block:1px solid #ccd9cf;padding:12px 0;margin:20px 0}.review-note{font-size:13px;color:#4f6656;max-width:80ch;margin-top:28px}a:focus-visible,button:focus-visible{outline:2px solid #1a8051;outline-offset:4px}@media(max-width:900px){.comparison{grid-template-columns:1fr}aside{position:static}}
+</style>
+<main>
+<p><strong>이 페이지는 이전 시안의 기록입니다.</strong> 현재 선택안과 새로 진행한 다섯 사이클은 <a href="/studio/cv-designer-cycles-2026-10-27/index.html">새 비교 보드</a>에서 확인합니다.</p>
+<a href="index.html">← Current A4 layout</a>
+<h1>CV design review.</h1>
+<p>Actual A4 output, from the first composition to the latest contact and training refinement. The body remains at 10.5pt.</p>
+<div class="toolbar" aria-label="Review iteration"><button type="button" data-round="1" aria-pressed="false">1 · Initial composition</button><button type="button" data-round="2" aria-pressed="false">2 · Fit and rhythm</button><button type="button" data-round="3" aria-pressed="false">3 · Source-backed content</button><button type="button" data-round="4" aria-pressed="false">4 · Print robustness</button><button type="button" data-round="5" aria-pressed="true">5 · Contact &amp; training</button></div>
+<div class="comparison">
+<a id="full-proof" href="rounds/round-5.png" target="_blank" rel="noopener noreferrer"><img id="proof" class="proof" src="rounds/round-5.png" alt="Selected one-page CV design"></a>
+<aside><h2 id="round-title">Contact &amp; training</h2><p id="round-body">The personal Gmail address is now the CV contact. A quiet nameplate echoes the business card, and 42 and SEA:ME have independent completed-program entries. City/country remains visible; age, street address and a photograph are omitted from the general version.</p><div class="metric" id="round-metric">A4 · 1 page · Personal Gmail · Two distinct programs · 10.5pt body</div><p>Click the page to inspect the full-size render. These are actual browser renders, not idealized mockups.</p><p><a href="index.html">Open the live layout</a></p><p><a href="rounds/round-5-grayscale.png">Grayscale proof</a></p><p><a href="google-docs.md">Matching Google Docs specification</a></p></aside>
+</div>
+<p class="review-note">Round 1 overflowed to a second page. Round 2 corrected fit; round 3 added the containers project; round 4 corrected font embedding and text order. The latest revision updates contact preference, adds the restrained nameplate and separates the programs without inventing a 42 completion date. Actual Google Docs import and ATS behaviour are not claimed.</p>
+</main>
+<script>
+const rounds={
+1:{title:'Initial composition',body:'The name/contact hierarchy and skills surface worked, but print output overflowed A4. Nine footer words landed alone on page 2. The issue was composition and repeated emphasis, not a need for smaller body text.',metric:'A4 · 2 pages · 10.5pt body · Overflow detected'},
+2:{title:'Fit and rhythm',body:'Redundant focus pills were removed. Section spacing became more deliberate, and completed training was combined without assigning a date to 42. The full CV now fits one A4 page at the original body size.',metric:'A4 · 1 page · 10.5pt body · 5 PDF links'},
+3:{title:'Source-backed content',body:'The C++ containers project, Qt/QML and owner-confirmed Figma were added. Visual fit remained good, but the PDF inspection found Type3 font output and the name appearing late in extracted text.',metric:'A4 · 1 page · 10.5pt body · Export issues found'},
+4:{title:'Print robustness',body:'The visual composition is retained. Static font instances now embed as named TrueType subsets, and the decorative header rule no longer places the name after the body in extracted text.',metric:'A4 · 1 page · Embedded fonts / Unicode maps · Header-first text order · 6 links'},
+5:{title:'Contact & training',body:'The personal Gmail address is now the CV contact. A quiet nameplate echoes the business card, and 42 and SEA:ME have independent completed-program entries. City/country remains visible; age, street address and a photograph are omitted from the general version.',metric:'A4 · 1 page · Personal Gmail · Two distinct programs · 10.5pt body'}
+};
+document.querySelectorAll('button[data-round]').forEach(button=>button.addEventListener('click',()=>{
+const key=button.dataset.round,item=rounds[key];document.querySelectorAll('button[data-round]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));document.getElementById('proof').src=`rounds/round-${key}.png`;document.getElementById('proof').alt=`CV review round ${key}: ${item.title}`;document.getElementById('full-proof').href=`rounds/round-${key}.png`;document.getElementById('round-title').textContent=item.title;document.getElementById('round-body').textContent=item.body;document.getElementById('round-metric').textContent=item.metric;
+}));
+</script>
+</html>

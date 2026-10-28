@@ -1,0 +1,53 @@
+[
+  {
+    "source": "https://raw.githubusercontent.com/KKWANH/ColorSavesLife/main/assets/presentation/demo.mp4",
+    "path": "C:\\Projects\\career-refresh-2026-10\\source\\project-artifacts\\bcx-demo-original.mp4",
+    "sha256": "29b64ea06d5be026dc980e7329bd3677ac530db9c28f3f27bfbe84d9a55f9a99",
+    "size": 2252707,
+    "duration": "16.300000",
+    "streams": [
+      {
+        "codec_type": "video",
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1104,
+        "r_frame_rate": "30/1",
+        "sample_rate": null
+      }
+    ]
+  },
+  {
+    "source": "https://raw.githubusercontent.com/KKWANH/ColorSavesLife/main/assets/presentation/opencv.mp4",
+    "path": "C:\\Projects\\career-refresh-2026-10\\source\\project-artifacts\\bcx-opencv-original.mp4",
+    "sha256": "26c83e874f9b5693d704c12e5784950873c1ab6a7923ce72169b887578d42774",
+    "size": 4438883,
+    "duration": "21.148000",
+    "streams": [
+      {
+        "codec_type": "video",
+        "codec_name": "h264",
+        "width": 1288,
+        "height": 1286,
+        "r_frame_rate": "1000/1",
+        "sample_rate": null
+      }
+    ]
+  },
+  {
+    "source": "https://raw.githubusercontent.com/KKWANH/ColorSavesLife/main/assets/presentation/eye_tracking.mp4",
+    "path": "C:\\Projects\\career-refresh-2026-10\\source\\project-artifacts\\bcx-eye_tracking-original.mp4",
+    "sha256": "392dda95f2897d90565342d8d5e888d2554d60214c87df28b5efc9a0354c79b1",
+    "size": 784381,
+    "duration": "12.633333",
+    "streams": [
+      {
+        "codec_type": "video",
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1096,
+        "r_frame_rate": "30/1",
+        "sample_rate": null
+      }
+    ]
+  }
+]

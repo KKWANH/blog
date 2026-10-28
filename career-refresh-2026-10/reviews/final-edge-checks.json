@@ -1,0 +1,78 @@
+{
+  "completed": true,
+  "dark_audits": [
+    {
+      "path": "/",
+      "violations": []
+    },
+    {
+      "path": "/notes/device-readback",
+      "violations": []
+    },
+    {
+      "path": "/notes/semiconductor",
+      "violations": []
+    },
+    {
+      "path": "/notes/ai",
+      "violations": []
+    },
+    {
+      "path": "/travel",
+      "violations": []
+    }
+  ],
+  "layout_shift": [
+    {
+      "font_delay_seconds": 0,
+      "observed_cls": 0,
+      "font_resources": [
+        {
+          "file": "Figtree-s.p.0plrx.kcroir..woff2",
+          "encoded_bytes": 19696
+        },
+        {
+          "file": "Caveat_500-s.0gv9sivs~7n1o.woff2",
+          "encoded_bytes": 51132
+        }
+      ]
+    },
+    {
+      "font_delay_seconds": 0.5,
+      "observed_cls": 8.732204861111111e-05,
+      "font_resources": [
+        {
+          "file": "Figtree-s.p.0plrx.kcroir..woff2",
+          "encoded_bytes": 19696
+        },
+        {
+          "file": "Caveat_500-s.0gv9sivs~7n1o.woff2",
+          "encoded_bytes": 51132
+        }
+      ]
+    }
+  ],
+  "map": {
+    "ready_without_external_https": true,
+    "external_attempts": [],
+    "country_mode": true,
+    "city_selection_and_popup": true,
+    "reduced_motion_running_css_animations": 0
+  },
+  "cv": {
+    "/": {
+      "count": 2,
+      "all_labelled_draft": true
+    },
+    "/editor": {
+      "count": 2,
+      "all_labelled_draft": true
+    },
+    "matches_reviewed_pdf": true,
+    "pages": 2
+  },
+  "limitations": [
+    "Local headless checks; no real-device, screen-reader or field-performance claim."
+  ],
+  "passed": true
+}

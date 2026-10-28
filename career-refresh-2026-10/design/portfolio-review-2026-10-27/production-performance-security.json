@@ -1,0 +1,924 @@
+{
+  "mode": "Production build, fresh browser context per route, initial viewport only",
+  "routes": {
+    "/": {
+      "lcp": 408,
+      "resources": [
+        {
+          "path": "/_next/static/media/Amsterdam-s.p.1dw4vz4vu1uia.woff",
+          "type": "link",
+          "encoded": 89484,
+          "decoded": 89484,
+          "transfer": 89784
+        },
+        {
+          "path": "/_next/static/media/Figtree-s.p.273zcra3jgrc5.woff2",
+          "type": "link",
+          "encoded": 19696,
+          "decoded": 19696,
+          "transfer": 19996
+        },
+        {
+          "path": "/window-portrait.webp",
+          "type": "link",
+          "encoded": 169556,
+          "decoded": 169556,
+          "transfer": 169856
+        },
+        {
+          "path": "/brands/kla.svg",
+          "type": "link",
+          "encoded": 2903,
+          "decoded": 7569,
+          "transfer": 3203
+        },
+        {
+          "path": "/brands/pickit.png",
+          "type": "link",
+          "encoded": 31992,
+          "decoded": 31992,
+          "transfer": 32292
+        },
+        {
+          "path": "/brands/bosch.svg",
+          "type": "link",
+          "encoded": 938,
+          "decoded": 2101,
+          "transfer": 1238
+        },
+        {
+          "path": "/_next/static/chunks/022wwnxf3srm6.css",
+          "type": "link",
+          "encoded": 439,
+          "decoded": 1226,
+          "transfer": 739
+        },
+        {
+          "path": "/_next/static/chunks/1i6snmnxxd81k.css",
+          "type": "link",
+          "encoded": 3410,
+          "decoded": 11558,
+          "transfer": 3710
+        },
+        {
+          "path": "/_next/static/chunks/0pypl-ut_ka02.css",
+          "type": "link",
+          "encoded": 22503,
+          "decoded": 111338,
+          "transfer": 22803
+        },
+        {
+          "path": "/_next/static/chunks/2oq39t_nsmv18.css",
+          "type": "link",
+          "encoded": 23276,
+          "decoded": 144227,
+          "transfer": 23576
+        },
+        {
+          "path": "/_next/static/chunks/0-o74znen4827.js",
+          "type": "link",
+          "encoded": 3702,
+          "decoded": 13269,
+          "transfer": 4002
+        },
+        {
+          "path": "/_next/static/chunks/3srfjz42u14tx.js",
+          "type": "script",
+          "encoded": 8136,
+          "decoded": 29981,
+          "transfer": 8436
+        },
+        {
+          "path": "/_next/static/chunks/turbopack-3-ry682tkyiqk.js",
+          "type": "script",
+          "encoded": 3940,
+          "decoded": 10030,
+          "transfer": 4240
+        },
+        {
+          "path": "/_next/static/chunks/2oi9n3b4syua3.js",
+          "type": "script",
+          "encoded": 44236,
+          "decoded": 159205,
+          "transfer": 44536
+        },
+        {
+          "path": "/_next/static/chunks/0c1ru-vk-twa3.js",
+          "type": "script",
+          "encoded": 71969,
+          "decoded": 229820,
+          "transfer": 72269
+        },
+        {
+          "path": "/_next/static/chunks/3tdlzwu-3849l.js",
+          "type": "script",
+          "encoded": 7898,
+          "decoded": 26137,
+          "transfer": 8198
+        },
+        {
+          "path": "/_next/static/chunks/1y3_05lxpvjrp.js",
+          "type": "script",
+          "encoded": 4992,
+          "decoded": 12232,
+          "transfer": 5292
+        },
+        {
+          "path": "/_next/static/chunks/3cqp3rihlcovo.js",
+          "type": "script",
+          "encoded": 12386,
+          "decoded": 38050,
+          "transfer": 12686
+        },
+        {
+          "path": "/_next/static/chunks/30vu3g9pugac2.js",
+          "type": "script",
+          "encoded": 19494,
+          "decoded": 60811,
+          "transfer": 19794
+        },
+        {
+          "path": "/_next/static/chunks/0prkehfu8bo8w.js",
+          "type": "script",
+          "encoded": 10033,
+          "decoded": 34751,
+          "transfer": 10333
+        },
+        {
+          "path": "/_next/static/chunks/1bze28kr4yyjg.js",
+          "type": "script",
+          "encoded": 15526,
+          "decoded": 65740,
+          "transfer": 15826
+        },
+        {
+          "path": "/_next/static/chunks/3yal8lq2lw7hl.js",
+          "type": "script",
+          "encoded": 7022,
+          "decoded": 18018,
+          "transfer": 7322
+        },
+        {
+          "path": "/window-atmosphere.webp",
+          "type": "css",
+          "encoded": 2334,
+          "decoded": 2334,
+          "transfer": 2634
+        },
+        {
+          "path": "/_next/static/media/Caveat_500-s.1gmrjehfwi5hj.woff2",
+          "type": "css",
+          "encoded": 51132,
+          "decoded": 51132,
+          "transfer": 51432
+        },
+        {
+          "path": "/project-media/bcx-demo-poster.webp",
+          "type": "img",
+          "encoded": 54910,
+          "decoded": 54910,
+          "transfer": 55210
+        },
+        {
+          "path": "/favicon.ico",
+          "type": "other",
+          "encoded": 9241,
+          "decoded": 9241,
+          "transfer": 9541
+        },
+        {
+          "path": "/",
+          "type": "fetch",
+          "encoded": 362,
+          "decoded": 696,
+          "transfer": 662
+        },
+        {
+          "path": "/about",
+          "type": "fetch",
+          "encoded": 382,
+          "decoded": 703,
+          "transfer": 682
+        },
+        {
+          "path": "/",
+          "type": "fetch",
+          "encoded": 54881,
+          "decoded": 181896,
+          "transfer": 55181
+        },
+        {
+          "path": "/about",
+          "type": "fetch",
+          "encoded": 2911,
+          "decoded": 10923,
+          "transfer": 3211
+        }
+      ],
+      "initial_js_encoded": 209334,
+      "initial_total_encoded": 749684
+    },
+    "/about": {
+      "lcp": 324,
+      "resources": [
+        {
+          "path": "/_next/static/media/Amsterdam-s.p.1dw4vz4vu1uia.woff",
+          "type": "link",
+          "encoded": 89484,
+          "decoded": 89484,
+          "transfer": 89784
+        },
+        {
+          "path": "/portraits/camera-print.webp",
+          "type": "link",
+          "encoded": 11770,
+          "decoded": 11770,
+          "transfer": 12070
+        },
+        {
+          "path": "/_next/static/media/Figtree-s.p.273zcra3jgrc5.woff2",
+          "type": "link",
+          "encoded": 19696,
+          "decoded": 19696,
+          "transfer": 19996
+        },
+        {
+          "path": "/brands/pickit.png",
+          "type": "link",
+          "encoded": 31992,
+          "decoded": 31992,
+          "transfer": 32292
+        },
+        {
+          "path": "/brands/bosch.svg",
+          "type": "link",
+          "encoded": 938,
+          "decoded": 2101,
+          "transfer": 1238
+        },
+        {
+          "path": "/brands/cplusplus.svg",
+          "type": "link",
+          "encoded": 779,
+          "decoded": 779,
+          "transfer": 1079
+        },
+        {
+          "path": "/brands/kla.svg",
+          "type": "link",
+          "encoded": 2903,
+          "decoded": 7569,
+          "transfer": 3203
+        },
+        {
+          "path": "/brands/python.svg",
+          "type": "link",
+          "encoded": 745,
+          "decoded": 1533,
+          "transfer": 1045
+        },
+        {
+          "path": "/brands/react.svg",
+          "type": "link",
+          "encoded": 1413,
+          "decoded": 2941,
+          "transfer": 1713
+        },
+        {
+          "path": "/brands/c.svg",
+          "type": "link",
+          "encoded": 511,
+          "decoded": 511,
+          "transfer": 811
+        },
+        {
+          "path": "/brands/gnubash.svg",
+          "type": "link",
+          "encoded": 968,
+          "decoded": 2047,
+          "transfer": 1268
+        },
+        {
+          "path": "/_next/static/chunks/022wwnxf3srm6.css",
+          "type": "link",
+          "encoded": 439,
+          "decoded": 1226,
+          "transfer": 739
+        },
+        {
+          "path": "/_next/static/chunks/2oq39t_nsmv18.css",
+          "type": "link",
+          "encoded": 23276,
+          "decoded": 144227,
+          "transfer": 23576
+        },
+        {
+          "path": "/_next/static/chunks/1i6snmnxxd81k.css",
+          "type": "link",
+          "encoded": 3410,
+          "decoded": 11558,
+          "transfer": 3710
+        },
+        {
+          "path": "/_next/static/chunks/0pypl-ut_ka02.css",
+          "type": "link",
+          "encoded": 22503,
+          "decoded": 111338,
+          "transfer": 22803
+        },
+        {
+          "path": "/brands/javascript.svg",
+          "type": "link",
+          "encoded": 989,
+          "decoded": 989,
+          "transfer": 1289
+        },
+        {
+          "path": "/_next/static/chunks/0-o74znen4827.js",
+          "type": "link",
+          "encoded": 3702,
+          "decoded": 13269,
+          "transfer": 4002
+        },
+        {
+          "path": "/_next/static/chunks/3srfjz42u14tx.js",
+          "type": "script",
+          "encoded": 8136,
+          "decoded": 29981,
+          "transfer": 8436
+        },
+        {
+          "path": "/_next/static/chunks/0c1ru-vk-twa3.js",
+          "type": "script",
+          "encoded": 71969,
+          "decoded": 229820,
+          "transfer": 72269
+        },
+        {
+          "path": "/_next/static/chunks/turbopack-3-ry682tkyiqk.js",
+          "type": "script",
+          "encoded": 3940,
+          "decoded": 10030,
+          "transfer": 4240
+        },
+        {
+          "path": "/_next/static/chunks/2oi9n3b4syua3.js",
+          "type": "script",
+          "encoded": 44236,
+          "decoded": 159205,
+          "transfer": 44536
+        },
+        {
+          "path": "/_next/static/chunks/1y3_05lxpvjrp.js",
+          "type": "script",
+          "encoded": 4992,
+          "decoded": 12232,
+          "transfer": 5292
+        },
+        {
+          "path": "/_next/static/chunks/3tdlzwu-3849l.js",
+          "type": "script",
+          "encoded": 7898,
+          "decoded": 26137,
+          "transfer": 8198
+        },
+        {
+          "path": "/_next/static/chunks/3cqp3rihlcovo.js",
+          "type": "script",
+          "encoded": 12386,
+          "decoded": 38050,
+          "transfer": 12686
+        },
+        {
+          "path": "/_next/static/chunks/1bze28kr4yyjg.js",
+          "type": "script",
+          "encoded": 15526,
+          "decoded": 65740,
+          "transfer": 15826
+        },
+        {
+          "path": "/_next/static/chunks/0prkehfu8bo8w.js",
+          "type": "script",
+          "encoded": 10033,
+          "decoded": 34751,
+          "transfer": 10333
+        },
+        {
+          "path": "/_next/static/chunks/3yal8lq2lw7hl.js",
+          "type": "script",
+          "encoded": 7022,
+          "decoded": 18018,
+          "transfer": 7322
+        },
+        {
+          "path": "/brands/qt.svg",
+          "type": "link",
+          "encoded": 939,
+          "decoded": 939,
+          "transfer": 1239
+        },
+        {
+          "path": "/brands/typescript.svg",
+          "type": "link",
+          "encoded": 692,
+          "decoded": 1309,
+          "transfer": 992
+        },
+        {
+          "path": "/_next/static/chunks/30vu3g9pugac2.js",
+          "type": "script",
+          "encoded": 19494,
+          "decoded": 60811,
+          "transfer": 19794
+        },
+        {
+          "path": "/_next/static/chunks/357nr0sc8bg-w.js",
+          "type": "script",
+          "encoded": 4333,
+          "decoded": 10425,
+          "transfer": 4633
+        },
+        {
+          "path": "/brands/html5.svg",
+          "type": "link",
+          "encoded": 342,
+          "decoded": 342,
+          "transfer": 642
+        },
+        {
+          "path": "/brands/css.svg",
+          "type": "link",
+          "encoded": 674,
+          "decoded": 1494,
+          "transfer": 974
+        },
+        {
+          "path": "/brands/raspberrypi.svg",
+          "type": "link",
+          "encoded": 2845,
+          "decoded": 5951,
+          "transfer": 3145
+        },
+        {
+          "path": "/brands/git.svg",
+          "type": "link",
+          "encoded": 441,
+          "decoded": 441,
+          "transfer": 741
+        },
+        {
+          "path": "/brands/docker.svg",
+          "type": "link",
+          "encoded": 615,
+          "decoded": 1780,
+          "transfer": 915
+        },
+        {
+          "path": "/brands/nginx.svg",
+          "type": "link",
+          "encoded": 428,
+          "decoded": 428,
+          "transfer": 728
+        },
+        {
+          "path": "/brands/linux.svg",
+          "type": "link",
+          "encoded": 2547,
+          "decoded": 5478,
+          "transfer": 2847
+        },
+        {
+          "path": "/brands/ros.svg",
+          "type": "link",
+          "encoded": 383,
+          "decoded": 1238,
+          "transfer": 683
+        },
+        {
+          "path": "/brands/unity.svg",
+          "type": "link",
+          "encoded": 669,
+          "decoded": 669,
+          "transfer": 969
+        },
+        {
+          "path": "/brands/figma.svg",
+          "type": "link",
+          "encoded": 438,
+          "decoded": 1108,
+          "transfer": 738
+        },
+        {
+          "path": "/brands/numpy.svg",
+          "type": "link",
+          "encoded": 790,
+          "decoded": 790,
+          "transfer": 1090
+        },
+        {
+          "path": "/brands/pandas.svg",
+          "type": "link",
+          "encoded": 354,
+          "decoded": 354,
+          "transfer": 654
+        },
+        {
+          "path": "/_next/static/chunks/3lss5b2vs8466.js",
+          "type": "link",
+          "encoded": 149,
+          "decoded": 149,
+          "transfer": 449
+        },
+        {
+          "path": "/window-atmosphere.webp",
+          "type": "css",
+          "encoded": 2334,
+          "decoded": 2334,
+          "transfer": 2634
+        },
+        {
+          "path": "/paper-fibres.webp",
+          "type": "css",
+          "encoded": 12456,
+          "decoded": 12456,
+          "transfer": 12756
+        },
+        {
+          "path": "/paper-grain.webp",
+          "type": "css",
+          "encoded": 18076,
+          "decoded": 18076,
+          "transfer": 18376
+        },
+        {
+          "path": "/brands/kwanho-mark.svg",
+          "type": "css",
+          "encoded": 232,
+          "decoded": 232,
+          "transfer": 532
+        },
+        {
+          "path": "/portraits/professional-print.webp",
+          "type": "img",
+          "encoded": 40572,
+          "decoded": 40572,
+          "transfer": 40872
+        },
+        {
+          "path": "/portraits/window-print.webp",
+          "type": "img",
+          "encoded": 39698,
+          "decoded": 39698,
+          "transfer": 39998
+        },
+        {
+          "path": "/favicon.ico",
+          "type": "other",
+          "encoded": 9241,
+          "decoded": 9241,
+          "transfer": 9541
+        },
+        {
+          "path": "/api/skills",
+          "type": "fetch",
+          "encoded": 2548,
+          "decoded": 2548,
+          "transfer": 2848
+        },
+        {
+          "path": "/",
+          "type": "fetch",
+          "encoded": 362,
+          "decoded": 696,
+          "transfer": 662
+        },
+        {
+          "path": "/window-portrait.webp",
+          "type": "link",
+          "encoded": 169556,
+          "decoded": 169556,
+          "transfer": 169856
+        },
+        {
+          "path": "/",
+          "type": "fetch",
+          "encoded": 54881,
+          "decoded": 181896,
+          "transfer": 55181
+        }
+      ],
+      "initial_js_encoded": 213816,
+      "initial_total_encoded": 787745
+    },
+    "/travel": {
+      "lcp": 184,
+      "resources": [
+        {
+          "path": "/_next/static/media/Amsterdam-s.p.1dw4vz4vu1uia.woff",
+          "type": "link",
+          "encoded": 89484,
+          "decoded": 89484,
+          "transfer": 89784
+        },
+        {
+          "path": "/_next/static/media/Figtree-s.p.273zcra3jgrc5.woff2",
+          "type": "link",
+          "encoded": 19696,
+          "decoded": 19696,
+          "transfer": 19996
+        },
+        {
+          "path": "/_next/static/chunks/022wwnxf3srm6.css",
+          "type": "link",
+          "encoded": 439,
+          "decoded": 1226,
+          "transfer": 739
+        },
+        {
+          "path": "/_next/static/chunks/1i6snmnxxd81k.css",
+          "type": "link",
+          "encoded": 3410,
+          "decoded": 11558,
+          "transfer": 3710
+        },
+        {
+          "path": "/_next/static/chunks/2oq39t_nsmv18.css",
+          "type": "link",
+          "encoded": 23276,
+          "decoded": 144227,
+          "transfer": 23576
+        },
+        {
+          "path": "/_next/static/chunks/0pypl-ut_ka02.css",
+          "type": "link",
+          "encoded": 22503,
+          "decoded": 111338,
+          "transfer": 22803
+        },
+        {
+          "path": "/_next/static/chunks/0-o74znen4827.js",
+          "type": "link",
+          "encoded": 3702,
+          "decoded": 13269,
+          "transfer": 4002
+        },
+        {
+          "path": "/_next/static/chunks/3srfjz42u14tx.js",
+          "type": "script",
+          "encoded": 8136,
+          "decoded": 29981,
+          "transfer": 8436
+        },
+        {
+          "path": "/_next/static/chunks/2oi9n3b4syua3.js",
+          "type": "script",
+          "encoded": 44236,
+          "decoded": 159205,
+          "transfer": 44536
+        },
+        {
+          "path": "/_next/static/chunks/0c1ru-vk-twa3.js",
+          "type": "script",
+          "encoded": 71969,
+          "decoded": 229820,
+          "transfer": 72269
+        },
+        {
+          "path": "/_next/static/chunks/turbopack-3-ry682tkyiqk.js",
+          "type": "script",
+          "encoded": 3940,
+          "decoded": 10030,
+          "transfer": 4240
+        },
+        {
+          "path": "/_next/static/chunks/3tdlzwu-3849l.js",
+          "type": "script",
+          "encoded": 7898,
+          "decoded": 26137,
+          "transfer": 8198
+        },
+        {
+          "path": "/_next/static/chunks/1y3_05lxpvjrp.js",
+          "type": "script",
+          "encoded": 4992,
+          "decoded": 12232,
+          "transfer": 5292
+        },
+        {
+          "path": "/_next/static/chunks/3cqp3rihlcovo.js",
+          "type": "script",
+          "encoded": 12386,
+          "decoded": 38050,
+          "transfer": 12686
+        },
+        {
+          "path": "/_next/static/chunks/1bze28kr4yyjg.js",
+          "type": "script",
+          "encoded": 15526,
+          "decoded": 65740,
+          "transfer": 15826
+        },
+        {
+          "path": "/_next/static/chunks/0prkehfu8bo8w.js",
+          "type": "script",
+          "encoded": 10033,
+          "decoded": 34751,
+          "transfer": 10333
+        },
+        {
+          "path": "/_next/static/chunks/30vu3g9pugac2.js",
+          "type": "script",
+          "encoded": 19494,
+          "decoded": 60811,
+          "transfer": 19794
+        },
+        {
+          "path": "/_next/static/chunks/3yal8lq2lw7hl.js",
+          "type": "script",
+          "encoded": 7022,
+          "decoded": 18018,
+          "transfer": 7322
+        },
+        {
+          "path": "/_next/static/chunks/357nr0sc8bg-w.js",
+          "type": "script",
+          "encoded": 4333,
+          "decoded": 10425,
+          "transfer": 4633
+        },
+        {
+          "path": "/window-atmosphere.webp",
+          "type": "css",
+          "encoded": 2334,
+          "decoded": 2334,
+          "transfer": 2634
+        },
+        {
+          "path": "/favicon.ico",
+          "type": "other",
+          "encoded": 9241,
+          "decoded": 9241,
+          "transfer": 9541
+        },
+        {
+          "path": "/api/travel",
+          "type": "fetch",
+          "encoded": 16213,
+          "decoded": 16213,
+          "transfer": 16513
+        },
+        {
+          "path": "/_next/static/chunks/3zw-q5r3p9zzy.js",
+          "type": "script",
+          "encoded": 170,
+          "decoded": 170,
+          "transfer": 470
+        },
+        {
+          "path": "/_next/static/chunks/3v8qpdcjgjpcl.js",
+          "type": "script",
+          "encoded": 296163,
+          "decoded": 1095017,
+          "transfer": 296463
+        },
+        {
+          "path": "/_next/static/chunks/22kfh9t_z_iuf.js",
+          "type": "script",
+          "encoded": 55911,
+          "decoded": 151502,
+          "transfer": 56211
+        },
+        {
+          "path": "/_next/static/chunks/3v9ezwdxvaikg.css",
+          "type": "link",
+          "encoded": 11483,
+          "decoded": 77626,
+          "transfer": 11783
+        },
+        {
+          "path": "/",
+          "type": "fetch",
+          "encoded": 362,
+          "decoded": 696,
+          "transfer": 662
+        },
+        {
+          "path": "/travel/manage",
+          "type": "fetch",
+          "encoded": 189,
+          "decoded": 270,
+          "transfer": 489
+        },
+        {
+          "path": "/window-portrait.webp",
+          "type": "link",
+          "encoded": 169556,
+          "decoded": 169556,
+          "transfer": 169856
+        },
+        {
+          "path": "/brands/kla.svg",
+          "type": "link",
+          "encoded": 2903,
+          "decoded": 7569,
+          "transfer": 3203
+        },
+        {
+          "path": "/brands/pickit.png",
+          "type": "link",
+          "encoded": 31992,
+          "decoded": 31992,
+          "transfer": 32292
+        },
+        {
+          "path": "/brands/bosch.svg",
+          "type": "link",
+          "encoded": 938,
+          "decoded": 2101,
+          "transfer": 1238
+        },
+        {
+          "path": "/",
+          "type": "fetch",
+          "encoded": 54881,
+          "decoded": 181896,
+          "transfer": 55181
+        },
+        {
+          "path": "/travel/manage",
+          "type": "fetch",
+          "encoded": 1146,
+          "decoded": 2852,
+          "transfer": 1446
+        },
+        {
+          "path": "/maplibre-worker.mjs",
+          "type": "other",
+          "encoded": 148331,
+          "decoded": 519372,
+          "transfer": 148631
+        }
+      ],
+      "initial_js_encoded": 565911,
+      "initial_total_encoded": 1174288
+    }
+  },
+  "checks": {
+    "public_frame_denial": true,
+    "details_not_loaded_initially": true,
+    "video_not_downloaded_initially": true,
+    "broad_role": true,
+    "flat_skill_groups": true,
+    "real_owner_levels_match_file": true,
+    "repository_only_container_choice_retained": true,
+    "two_featured_projects": true,
+    "color_saves_life_expanded": true,
+    "expansion_does_not_start_video": true,
+    "piracer_expanded_on_click": true,
+    "admin_full_document_entry": true,
+    "admin_nonce_csp": true,
+    "admin_private_cache": true,
+    "no_internal_cookie_header": true,
+    "html_nonces_match_policy": true,
+    "admin_exit_new_document": true,
+    "public_does_not_retain_admin_csp": true,
+    "denied_/api/admin/setup": true,
+    "denied_/studio/index.html": true,
+    "denied_/media/about/index.tsx": true,
+    "denied_/media/about/skill-profile.json": true,
+    "public_readonly_/api/skills": true,
+    "public_readonly_/api/travel": true,
+    "all_74_lazy_records_match_reviewed_sources": true,
+    "typescript_compiler_not_in_server_trace": true,
+    "private_state_not_in_server_trace": true
+  },
+  "errors": [],
+  "owner_profile": {
+    "overrides": 45,
+    "visible": 39,
+    "rated_visible": 39
+  },
+  "comparison": {
+    "/": {
+      "js_before": 245012,
+      "js_after": 209334,
+      "total_before": 707718,
+      "total_after": 749684
+    },
+    "/about": {
+      "js_before": 249334,
+      "js_after": 213816,
+      "total_before": 750695,
+      "total_after": 787745
+    },
+    "/travel": {
+      "js_before": 601578,
+      "js_after": 565911,
+      "total_before": 1135552,
+      "total_after": 1174288
+    }
+  },
+  "index_bytes": 69512,
+  "full_catalogue_bytes": 229060,
+  "passed": true
+}

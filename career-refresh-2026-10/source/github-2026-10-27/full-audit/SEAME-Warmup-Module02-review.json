@@ -1,0 +1,68 @@
+{
+  "name": "SEAME-Warmup-Module02",
+  "url": "https://github.com/KKWANH/SEAME-Warmup-Module02",
+  "fork": true,
+  "scope": "learning",
+  "scopeNote": "Learning/team project; inspect the stated contribution and source.",
+  "description": "Third warmup module of SEAME, learning smart pointer",
+  "updatedAt": "2023-07-13T10:23:45Z",
+  "defaultBranch": "main",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/SEAME-Warmup-Module02/blob/30d062d8b622b925aed0408e8b829db1b60cdb11/README.md",
+      "bytes": 18,
+      "sha256": "bfd820bc67f0d2c1f0f1e913e1471a7842006b9a75ee13af3f6521a94fceae37"
+    },
+    {
+      "path": "ex01/main.cpp",
+      "url": "https://github.com/KKWANH/SEAME-Warmup-Module02/blob/30d062d8b622b925aed0408e8b829db1b60cdb11/ex01/main.cpp",
+      "bytes": 203,
+      "sha256": "e36ea48841fac4c080a72c81399fca23e912a00e248fb4a4febc20d0a004add2"
+    },
+    {
+      "path": "smart pointer practice.cpp",
+      "url": "https://github.com/KKWANH/SEAME-Warmup-Module02/blob/30d062d8b622b925aed0408e8b829db1b60cdb11/smart%20pointer%20practice.cpp",
+      "bytes": 538,
+      "sha256": "dbc7655ffe4a76f2af92ffd779a24e055f06ae9f9eec3a0d623e7233c8bdefd7"
+    },
+    {
+      "path": "ex01/Car.hpp",
+      "url": "https://github.com/KKWANH/SEAME-Warmup-Module02/blob/30d062d8b622b925aed0408e8b829db1b60cdb11/ex01/Car.hpp",
+      "bytes": 2649,
+      "sha256": "7cb987a8e509fdee9b595e468942d49e5dd50f7aa644874edbd928fe9e672588"
+    },
+    {
+      "path": "ex01/Part.hpp",
+      "url": "https://github.com/KKWANH/SEAME-Warmup-Module02/blob/30d062d8b622b925aed0408e8b829db1b60cdb11/ex01/Part.hpp",
+      "bytes": 214,
+      "sha256": "c377d5b1d32c0202ce28f05608f64d2248974306a61ffee9b69ea20f7397ce13"
+    }
+  ],
+  "limitations": [],
+  "technologies": [
+    {
+      "id": "cpp",
+      "label": "C++",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "ex01/Accelerator.hpp",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "ex01/Brake.hpp",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "ex01/Car.hpp",
+          "basis": "source-file presence"
+        }
+      ]
+    }
+  ],
+  "commit": "30d062d8b622b925aed0408e8b829db1b60cdb11",
+  "fileCount": 12,
+  "treeDepth": "recursive",
+  "status": "reviewed"
+}

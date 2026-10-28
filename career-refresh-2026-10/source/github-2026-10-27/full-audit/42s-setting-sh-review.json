@@ -1,0 +1,77 @@
+{
+  "name": "42s-setting-sh",
+  "url": "https://github.com/KKWANH/42s-setting-sh",
+  "fork": false,
+  "scope": "learning",
+  "scopeNote": "Learning/team project; inspect the stated contribution and source.",
+  "description": "",
+  "updatedAt": "2023-04-03T04:50:54Z",
+  "defaultBranch": "main",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/42s-setting-sh/blob/ae880c8c8131d7d5419d1ffaca0a3751f740295b/README.md",
+      "bytes": 16,
+      "sha256": "84c6f7ccdc9368d7528322145b18798b44bd96ef2120be1afeaef6f9d71fab51"
+    },
+    {
+      "path": "42toolbox.sh",
+      "url": "https://github.com/KKWANH/42s-setting-sh/blob/ae880c8c8131d7d5419d1ffaca0a3751f740295b/42toolbox.sh",
+      "bytes": 79,
+      "sha256": "71e6edb42c7b6dc932834aa4e6b385f6de00adce16ea815a41a1cd6a731e5136"
+    },
+    {
+      "path": "cache-clean.sh",
+      "url": "https://github.com/KKWANH/42s-setting-sh/blob/ae880c8c8131d7d5419d1ffaca0a3751f740295b/cache-clean.sh",
+      "bytes": 874,
+      "sha256": "324f7a890856b2a2834eb04be14ab075dadd91febf02bde2eb379aa4e78c1a0c"
+    },
+    {
+      "path": "zsh-ohmyzsh.sh",
+      "url": "https://github.com/KKWANH/42s-setting-sh/blob/ae880c8c8131d7d5419d1ffaca0a3751f740295b/zsh-ohmyzsh.sh",
+      "bytes": 597,
+      "sha256": "1aeea8e256d192905f5139df711bc887923600cd74488f490b125fae8724f417"
+    }
+  ],
+  "limitations": [],
+  "technologies": [
+    {
+      "id": "git",
+      "label": "Git",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "42toolbox.sh",
+          "basis": "inspected source"
+        },
+        {
+          "path": "zsh-ohmyzsh.sh",
+          "basis": "inspected source"
+        }
+      ]
+    },
+    {
+      "id": "shell",
+      "label": "Shell",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "42toolbox.sh",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "cache-clean.sh",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "zsh-ohmyzsh.sh",
+          "basis": "source-file presence"
+        }
+      ]
+    }
+  ],
+  "commit": "ae880c8c8131d7d5419d1ffaca0a3751f740295b",
+  "fileCount": 4,
+  "treeDepth": "recursive",
+  "status": "reviewed"
+}

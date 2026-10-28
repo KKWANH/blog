@@ -1,0 +1,87 @@
+{
+  "name": "pingpong",
+  "url": "https://github.com/KKWANH/pingpong",
+  "fork": false,
+  "scope": "project",
+  "scopeNote": "Repository project; listed technologies describe its code, not a proficiency rating.",
+  "description": "PPiing/PPoong practice",
+  "updatedAt": "2022-05-05T03:27:00Z",
+  "defaultBranch": "master",
+  "sources": [
+    {
+      "path": "package.json",
+      "url": "https://github.com/KKWANH/pingpong/blob/0f8c255a6f40b09d0a4e549a22c29c604c853e87/package.json",
+      "bytes": 868,
+      "sha256": "893d87866a2fc1a559c00867b10489f77ba00e4351a7e88bc57903bfe8ce9ee7"
+    },
+    {
+      "path": "srcs/canvas.tsx",
+      "url": "https://github.com/KKWANH/pingpong/blob/0f8c255a6f40b09d0a4e549a22c29c604c853e87/srcs/canvas.tsx",
+      "bytes": 7480,
+      "sha256": "fee2094425dde64dd383b7fb256459d85366b7168ea2bbb39b798d6d6d56dd42"
+    }
+  ],
+  "limitations": [],
+  "technologies": [
+    {
+      "id": "html",
+      "label": "HTML",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "index.html",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "react",
+      "label": "React",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "package.json",
+          "basis": "direct dependency"
+        },
+        {
+          "path": "package.json",
+          "basis": "manifest/configuration"
+        },
+        {
+          "path": "srcs/canvas.tsx",
+          "basis": "inspected source"
+        }
+      ]
+    },
+    {
+      "id": "typescript",
+      "label": "TypeScript",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "srcs/canvas.tsx",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "package.json",
+          "basis": "direct dependency"
+        }
+      ]
+    },
+    {
+      "id": "vite",
+      "label": "Vite",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "package.json",
+          "basis": "direct dependency"
+        }
+      ]
+    }
+  ],
+  "commit": "0f8c255a6f40b09d0a4e549a22c29c604c853e87",
+  "fileCount": 13,
+  "treeDepth": "recursive",
+  "status": "reviewed"
+}

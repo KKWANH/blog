@@ -1,0 +1,46 @@
+{
+  "name": "WaterSortGame",
+  "url": "https://github.com/KKWANH/WaterSortGame",
+  "fork": false,
+  "scope": "project",
+  "scopeNote": "Repository project; listed technologies describe its code, not a proficiency rating.",
+  "description": "This project is containing a water sort puzzle game by python, and various ways out to solve this game(Just algorith, machine learning, reinforcement learning, ...).",
+  "updatedAt": "2024-10-29T15:01:24Z",
+  "defaultBranch": "main",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/WaterSortGame/blob/e56af4dfc775f050f3003b9e01129322ffd70a77/README.md",
+      "bytes": 186,
+      "sha256": "3c092318e8844c7a6793cfb50d1930de2e716b825282a7a5182e9ce92eb54b18"
+    }
+  ],
+  "limitations": [
+    "Raw .py downloads are restricted by the corporate security gateway; accessible documentation/manifests are reviewed instead."
+  ],
+  "technologies": [
+    {
+      "id": "python",
+      "label": "Python",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "src/game/game.py",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "src/game/gui.py",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "src/game/state.py",
+          "basis": "source-file presence"
+        }
+      ]
+    }
+  ],
+  "commit": "e56af4dfc775f050f3003b9e01129322ffd70a77",
+  "fileCount": 9,
+  "treeDepth": "recursive",
+  "status": "reviewed-limited"
+}

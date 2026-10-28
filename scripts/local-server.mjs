@@ -39,7 +39,9 @@ export async function startLocalServer({ editor = false, production = false } = 
   const { ensureBuildMeta } = await import('./build-meta.mjs')
   ensureBuildMeta()
   const env = { ...process.env, NODE_ENV: production ? 'production' : 'development', TRAVEL_EDITOR_ENABLED: editor && !production ? '1' : '0' }
-  const studio = path.resolve(root, process.env.DEV_STUDIO_DIR ?? '../career-refresh-2026-10/design')
+  const internalStudio = path.resolve(root, 'career-refresh-2026-10/design')
+  const defaultStudio = existsSync(internalStudio) ? internalStudio : '../career-refresh-2026-10/design'
+  const studio = path.resolve(root, process.env.DEV_STUDIO_DIR ?? defaultStudio)
   if (!production && existsSync(studio)) env.DEV_STUDIO_DIR = realpathSync(studio)
   else delete env.DEV_STUDIO_DIR
 

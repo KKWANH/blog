@@ -1,0 +1,70 @@
+{
+  "checks": {
+    "owner_pdf_preserved": true,
+    "html_one_a4": true,
+    "html_name_first": true,
+    "html_single_contact": true,
+    "html_narrative_complete": true,
+    "html_job_dates_and_roles": true,
+    "html_education_complete": true,
+    "html_body_11pt": true,
+    "html_name_30pt": true,
+    "html_fonts_embedded": true,
+    "html_five_links": true,
+    "html_gmail_link": true,
+    "html_scope_and_training": true,
+    "html_coursework_not_default": true,
+    "html_no_unintended_font_fallback": true,
+    "word_one_a4": true,
+    "word_name_first": true,
+    "word_single_contact": true,
+    "word_narrative_complete": true,
+    "word_job_dates_and_roles": true,
+    "word_education_complete": true,
+    "word_body_11pt": true,
+    "word_name_30pt": true,
+    "word_fonts_embedded": true,
+    "word_five_links": true,
+    "word_gmail_link": true,
+    "word_scope_and_training": true,
+    "word_coursework_not_default": true,
+    "word_no_unintended_font_fallback": true,
+    "markdown_narrative_complete": true,
+    "markdown_scope_complete": true,
+    "guide_matches_fonts": true,
+    "skill_line_breaks_preserve_copy": true,
+    "editable_word_not_page_images": true,
+    "word_has_no_macros": true,
+    "word_name_font_embedded": true
+  },
+  "artifacts": {
+    "html": {
+      "pages": 1,
+      "sha256": "6398707b171cef6148dbad0030fd4f6c2e07c5ca7582ed529cd3175d9320c821",
+      "fonts": [
+        "AAAAAA+Manrope-Bold",
+        "BAAAAA+Inter-Medium",
+        "CAAAAA+Inter-Regular",
+        "DAAAAA+Inter-SemiBold"
+      ],
+      "links": 5
+    },
+    "word": {
+      "pages": 1,
+      "sha256": "88a89bb7be32701924a4cb7d03a76ae96700d78c3a7117490ee7c2276cd43eb2",
+      "fonts": [
+        "BCDEEE+___WRD_EMBED_SUB_47,Bold",
+        "BCDFEE+ArialMT",
+        "BCDGEE+Arial-BoldMT",
+        "BCDHEE+ArialMT"
+      ],
+      "links": 5
+    }
+  },
+  "limits": [
+    "No physical-print or ATS ingestion test.",
+    "Actual Word rendering was checked; Google Docs import/reflow was not.",
+    "HTML/PDF uses Inter; editable Word uses the explicit Arial fallback and embedded Manrope."
+  ],
+  "passed": true
+}

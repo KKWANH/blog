@@ -1,0 +1,159 @@
+{
+  "name": "total-perspective-vortex",
+  "url": "https://github.com/KKWANH/total-perspective-vortex",
+  "fork": false,
+  "scope": "learning",
+  "scopeNote": "Learning/team project; inspect the stated contribution and source.",
+  "description": "Machine learning with BCI dataset(MNE), 42's subject.",
+  "updatedAt": "2023-06-20T21:22:03Z",
+  "defaultBranch": "main",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/total-perspective-vortex/blob/f4931be16b193f3395b26eb9acd3bc3458fc846c/README.md",
+      "bytes": 83,
+      "sha256": "1ca8a1101b4e3e47e0b82ded383ff106f8955970a51b22d080a3d37503f3696f"
+    },
+    {
+      "path": "Makefile",
+      "url": "https://github.com/KKWANH/total-perspective-vortex/blob/f4931be16b193f3395b26eb9acd3bc3458fc846c/Makefile",
+      "bytes": 4800,
+      "sha256": "8f11645e4b0dacb6c7170a7ba1d66bac9fad6305ecd0403990cd2ebe9466a9fb"
+    },
+    {
+      "path": "setup/install.sh",
+      "url": "https://github.com/KKWANH/total-perspective-vortex/blob/f4931be16b193f3395b26eb9acd3bc3458fc846c/setup/install.sh",
+      "bytes": 598,
+      "sha256": "4cbd837243bffa19b940938a25bfacca3333db103a04a9de4e99d98c3a58928a"
+    }
+  ],
+  "limitations": [
+    "Raw .py downloads are restricted by the corporate security gateway; accessible documentation/manifests are reviewed instead."
+  ],
+  "technologies": [
+    {
+      "id": "make",
+      "label": "Make",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "Makefile",
+          "basis": "build file"
+        }
+      ]
+    },
+    {
+      "id": "matplotlib",
+      "label": "Matplotlib",
+      "group": "data",
+      "evidence": [
+        {
+          "path": "Makefile",
+          "basis": "inspected source"
+        },
+        {
+          "path": "setup/install.sh",
+          "basis": "inspected source"
+        }
+      ]
+    },
+    {
+      "id": "mne",
+      "label": "MNE",
+      "group": "data",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        },
+        {
+          "path": "Makefile",
+          "basis": "inspected source"
+        },
+        {
+          "path": "setup/install.sh",
+          "basis": "inspected source"
+        }
+      ]
+    },
+    {
+      "id": "numpy",
+      "label": "NumPy",
+      "group": "data",
+      "evidence": [
+        {
+          "path": "Makefile",
+          "basis": "inspected source"
+        },
+        {
+          "path": "setup/install.sh",
+          "basis": "inspected source"
+        }
+      ]
+    },
+    {
+      "id": "pandas",
+      "label": "Pandas",
+      "group": "data",
+      "evidence": [
+        {
+          "path": "Makefile",
+          "basis": "inspected source"
+        },
+        {
+          "path": "setup/install.sh",
+          "basis": "inspected source"
+        }
+      ]
+    },
+    {
+      "id": "python",
+      "label": "Python",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "srcs/ft_fit.py",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "srcs/ft_predict.py",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "srcs/ft_replay.py",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "shell",
+      "label": "Shell",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "setup/install.sh",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "sklearn",
+      "label": "scikit-learn",
+      "group": "data",
+      "evidence": [
+        {
+          "path": "Makefile",
+          "basis": "inspected source"
+        },
+        {
+          "path": "setup/install.sh",
+          "basis": "inspected source"
+        }
+      ]
+    }
+  ],
+  "commit": "f4931be16b193f3395b26eb9acd3bc3458fc846c",
+  "fileCount": 10,
+  "treeDepth": "cached-recursive",
+  "status": "reviewed-limited"
+}

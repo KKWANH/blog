@@ -51,3 +51,23 @@ contents/photography/*.tmp
 contents/photography/*.lock
 /public/maplibre-worker.mjs
 /public/maplibre-LICENSE.txt
+
+# career-refresh heavy binaries & media
+career-refresh-2026-10/**/*.png
+career-refresh-2026-10/**/*.jpg
+career-refresh-2026-10/**/*.jpeg
+career-refresh-2026-10/**/*.gif
+career-refresh-2026-10/**/*.webp
+career-refresh-2026-10/**/*.pdf
+career-refresh-2026-10/**/*.docx
+career-refresh-2026-10/**/*.mp4
+career-refresh-2026-10/**/*.zip
+career-refresh-2026-10/**/*.exe
+career-refresh-2026-10/**/*.pyd
+career-refresh-2026-10/tools/node-*
+career-refresh-2026-10/tools/python/
+career-refresh-2026-10/tools/font-compress/
+career-refresh-2026-10/screenshots/
+career-refresh-2026-10/source/asset-archive-*/
+career-refresh-2026-10/**/__pycache__/
+career-refresh-2026-10/**/*.pyc

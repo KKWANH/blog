@@ -1,0 +1,205 @@
+{
+  "checks": {
+    "real_project_image": true,
+    "pipeline_intrinsic_frame": true,
+    "atlas_preview_uses_existing_records": true,
+    "old_generic_note_not_featured": true,
+    "portrait_flip_removed": true,
+    "profile_not_folded": true,
+    "open_roles": true,
+    "open_degrees": true,
+    "completed_programs": true,
+    "skill_C++": true,
+    "skill_Python": true,
+    "skill_React": true,
+    "matching_evidence_focus": true,
+    "summary_copy": true,
+    "map_worker_local": true,
+    "owner_tool_discoverable": true,
+    "local_owner_save_persists": true,
+    "local_owner_edit": true,
+    "local_remove_and_restore": true,
+    "foreign_origin_denied": true,
+    "fixture_removed": true,
+    "unconfigured_auth_fails_closed": true,
+    "mobile_recent_timeline": true,
+    "mobile_scope_focus": true,
+    "research_10_concepts_5_references": true,
+    "research_images_load": true,
+    "real_atlas_untouched": true
+  },
+  "audits": [
+    {
+      "page": "home",
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    {
+      "page": "open-profile",
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    {
+      "page": "owner-place-dialog",
+      "violations": [],
+      "incomplete": [
+        "aria-hidden-focus",
+        "color-contrast"
+      ]
+    }
+  ],
+  "reflow": [
+    {
+      "route": "/",
+      "large": false,
+      "width": 320,
+      "content": 320
+    },
+    {
+      "route": "/",
+      "large": false,
+      "width": 390,
+      "content": 390
+    },
+    {
+      "route": "/",
+      "large": false,
+      "width": 768,
+      "content": 768
+    },
+    {
+      "route": "/",
+      "large": false,
+      "width": 1440,
+      "content": 1440
+    },
+    {
+      "route": "/",
+      "large": true,
+      "width": 320,
+      "content": 320
+    },
+    {
+      "route": "/",
+      "large": true,
+      "width": 390,
+      "content": 390
+    },
+    {
+      "route": "/",
+      "large": true,
+      "width": 768,
+      "content": 768
+    },
+    {
+      "route": "/",
+      "large": true,
+      "width": 1440,
+      "content": 1440
+    },
+    {
+      "route": "/about",
+      "large": false,
+      "width": 320,
+      "content": 320
+    },
+    {
+      "route": "/about",
+      "large": false,
+      "width": 390,
+      "content": 390
+    },
+    {
+      "route": "/about",
+      "large": false,
+      "width": 768,
+      "content": 768
+    },
+    {
+      "route": "/about",
+      "large": false,
+      "width": 1440,
+      "content": 1440
+    },
+    {
+      "route": "/about",
+      "large": true,
+      "width": 320,
+      "content": 320
+    },
+    {
+      "route": "/about",
+      "large": true,
+      "width": 390,
+      "content": 390
+    },
+    {
+      "route": "/about",
+      "large": true,
+      "width": 768,
+      "content": 768
+    },
+    {
+      "route": "/about",
+      "large": true,
+      "width": 1440,
+      "content": 1440
+    },
+    {
+      "route": "/travel/manage",
+      "large": false,
+      "width": 320,
+      "content": 320
+    },
+    {
+      "route": "/travel/manage",
+      "large": false,
+      "width": 390,
+      "content": 390
+    },
+    {
+      "route": "/travel/manage",
+      "large": false,
+      "width": 768,
+      "content": 768
+    },
+    {
+      "route": "/travel/manage",
+      "large": false,
+      "width": 1440,
+      "content": 1440
+    },
+    {
+      "route": "/travel/manage",
+      "large": true,
+      "width": 320,
+      "content": 320
+    },
+    {
+      "route": "/travel/manage",
+      "large": true,
+      "width": 390,
+      "content": 390
+    },
+    {
+      "route": "/travel/manage",
+      "large": true,
+      "width": 768,
+      "content": 768
+    },
+    {
+      "route": "/travel/manage",
+      "large": true,
+      "width": 1440,
+      "content": 1440
+    }
+  ],
+  "errors": [],
+  "passed": true
+}

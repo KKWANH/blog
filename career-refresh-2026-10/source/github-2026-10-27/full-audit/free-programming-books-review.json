@@ -1,0 +1,24 @@
+{
+  "name": "free-programming-books",
+  "url": "https://github.com/KKWANH/free-programming-books",
+  "fork": true,
+  "scope": "reference",
+  "scopeNote": "Fork/reference; personal implementation is not established by the fork.",
+  "description": ":books: Freely available programming books",
+  "updatedAt": "2022-10-08T03:38:25Z",
+  "defaultBranch": "main",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/free-programming-books/blob/aab57ad576d407139254ed7c826b16240269a553/README.md",
+      "bytes": 14829,
+      "sha256": "a294bc6e494fefb0c3048821e3765224545477ca57eca0fb9695c3dd25d70824"
+    }
+  ],
+  "limitations": [],
+  "technologies": [],
+  "commit": "aab57ad576d407139254ed7c826b16240269a553",
+  "fileCount": 5,
+  "treeDepth": "root",
+  "status": "reviewed"
+}

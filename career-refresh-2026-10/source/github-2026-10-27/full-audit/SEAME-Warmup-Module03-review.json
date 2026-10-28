@@ -1,0 +1,141 @@
+{
+  "name": "SEAME-Warmup-Module03",
+  "url": "https://github.com/KKWANH/SEAME-Warmup-Module03",
+  "fork": true,
+  "scope": "learning",
+  "scopeNote": "Learning/team project; inspect the stated contribution and source.",
+  "description": "Fourth warmup module of SEAME, first qt-based projet",
+  "updatedAt": "2023-07-14T10:37:23Z",
+  "defaultBranch": "main",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/SEAME-Warmup-Module03/blob/008c5adf5a7c18f313d95413d5aaefe82946072e/README.md",
+      "bytes": 17,
+      "sha256": "5b911c7d0cfb834e0be5e96793d9c3e755ab0f6fd456f185cc068830ba2d1572"
+    },
+    {
+      "path": "PhoneBook_ui/PhoneBook.pro",
+      "url": "https://github.com/KKWANH/SEAME-Warmup-Module03/blob/008c5adf5a7c18f313d95413d5aaefe82946072e/PhoneBook_ui/PhoneBook.pro",
+      "bytes": 240,
+      "sha256": "613ce3ee12aa9d2900ca78fb683b96e03de7cdc1966806255a088f515805c4ce"
+    },
+    {
+      "path": "PhoneBook_no_ui/PhoneBook.pro",
+      "url": "https://github.com/KKWANH/SEAME-Warmup-Module03/blob/008c5adf5a7c18f313d95413d5aaefe82946072e/PhoneBook_no_ui/PhoneBook.pro",
+      "bytes": 213,
+      "sha256": "a1c6d95722d4d250247c0bee705bb466cbdb57025147d84b8e966fde986d54cb"
+    },
+    {
+      "path": "PhoneBook/PhoneBook/PhoneBook.pro",
+      "url": "https://github.com/KKWANH/SEAME-Warmup-Module03/blob/008c5adf5a7c18f313d95413d5aaefe82946072e/PhoneBook/PhoneBook/PhoneBook.pro",
+      "bytes": 240,
+      "sha256": "613ce3ee12aa9d2900ca78fb683b96e03de7cdc1966806255a088f515805c4ce"
+    },
+    {
+      "path": "PhoneBook/build-PhoneBook-Desktop_Qt_5_15_2_clang_64bit-Debug/Makefile",
+      "url": "https://github.com/KKWANH/SEAME-Warmup-Module03/blob/008c5adf5a7c18f313d95413d5aaefe82946072e/PhoneBook/build-PhoneBook-Desktop_Qt_5_15_2_clang_64bit-Debug/Makefile",
+      "bytes": 78012,
+      "sha256": "c82ef94334e1a8f4ad0d7fcf311da853818ab934d0cddd5398930bf15befdd5f"
+    },
+    {
+      "path": "PhoneBook_ui/main.cpp",
+      "url": "https://github.com/KKWANH/SEAME-Warmup-Module03/blob/008c5adf5a7c18f313d95413d5aaefe82946072e/PhoneBook_ui/main.cpp",
+      "bytes": 198,
+      "sha256": "1b60e81b7e8a888c767a30f5891286b6540bb0893c34741ecbdafe520870bf40"
+    },
+    {
+      "path": "PhoneBook_no_ui/main.cpp",
+      "url": "https://github.com/KKWANH/SEAME-Warmup-Module03/blob/008c5adf5a7c18f313d95413d5aaefe82946072e/PhoneBook_no_ui/main.cpp",
+      "bytes": 198,
+      "sha256": "1b60e81b7e8a888c767a30f5891286b6540bb0893c34741ecbdafe520870bf40"
+    },
+    {
+      "path": "PhoneBook/PhoneBook/main.cpp",
+      "url": "https://github.com/KKWANH/SEAME-Warmup-Module03/blob/008c5adf5a7c18f313d95413d5aaefe82946072e/PhoneBook/PhoneBook/main.cpp",
+      "bytes": 198,
+      "sha256": "1b60e81b7e8a888c767a30f5891286b6540bb0893c34741ecbdafe520870bf40"
+    },
+    {
+      "path": "PhoneBook_ui/contact.cpp",
+      "url": "https://github.com/KKWANH/SEAME-Warmup-Module03/blob/008c5adf5a7c18f313d95413d5aaefe82946072e/PhoneBook_ui/contact.cpp",
+      "bytes": 713,
+      "sha256": "08af01c8ddb7dbf572c5fc833da69c07475eeeb005d82572e10f7e472be2175f"
+    }
+  ],
+  "limitations": [],
+  "technologies": [
+    {
+      "id": "cpp",
+      "label": "C++",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "PhoneBook/PhoneBook/contact.cpp",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "PhoneBook/PhoneBook/contactlist.cpp",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "PhoneBook/PhoneBook/main.cpp",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "make",
+      "label": "Make",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "PhoneBook/build-PhoneBook-Desktop_Qt_5_15_2_clang_64bit-Debug/Makefile",
+          "basis": "build file"
+        }
+      ]
+    },
+    {
+      "id": "qmake",
+      "label": "qmake",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "PhoneBook/PhoneBook/PhoneBook.pro",
+          "basis": "build file"
+        },
+        {
+          "path": "PhoneBook_no_ui/PhoneBook.pro",
+          "basis": "build file"
+        },
+        {
+          "path": "PhoneBook_ui/PhoneBook.pro",
+          "basis": "build file"
+        }
+      ]
+    },
+    {
+      "id": "qt",
+      "label": "Qt / QML",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "PhoneBook_ui/PhoneBook.pro",
+          "basis": "inspected source"
+        },
+        {
+          "path": "PhoneBook_no_ui/PhoneBook.pro",
+          "basis": "inspected source"
+        },
+        {
+          "path": "PhoneBook/PhoneBook/PhoneBook.pro",
+          "basis": "inspected source"
+        }
+      ]
+    }
+  ],
+  "commit": "008c5adf5a7c18f313d95413d5aaefe82946072e",
+  "fileCount": 46,
+  "treeDepth": "recursive",
+  "status": "reviewed"
+}

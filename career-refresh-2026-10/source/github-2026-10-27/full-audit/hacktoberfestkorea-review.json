@@ -1,0 +1,24 @@
+{
+  "name": "hacktoberfestkorea",
+  "url": "https://github.com/KKWANH/hacktoberfestkorea",
+  "fork": true,
+  "scope": "reference",
+  "scopeNote": "Fork/reference; personal implementation is not established by the fork.",
+  "description": "Hacktoberfest Korea site",
+  "updatedAt": "2022-10-07T09:08:20Z",
+  "defaultBranch": "master",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/hacktoberfestkorea/blob/83c6a9180f330abd0c1a52510b44484396ef514c/README.md",
+      "bytes": 1950,
+      "sha256": "5291bea83b0ac4a4e8ced83973ef71edb6309602d20108864673e10633795486"
+    }
+  ],
+  "limitations": [],
+  "technologies": [],
+  "commit": "83c6a9180f330abd0c1a52510b44484396ef514c",
+  "fileCount": 5,
+  "treeDepth": "root",
+  "status": "reviewed"
+}

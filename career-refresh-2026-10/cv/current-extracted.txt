@@ -1,0 +1,67 @@
+--- PAGE 1 ---
+Kwanho Kim
+C++ Software Engineer
+Leuven, Belgium · contact@kwanho.dev · kwanho.dev
+linkedin.com/in/kwanhokim · github.com/KKWANH
+SUMMARY
+Software engineer focused on C++ development, error recovery and software integration. Experience at
+KLA, Pickit 3D and Bosch spans equipment, robotics and vehicle communication.
+EXPERIENCE
+KLA — C++ Engineer
+Aug 2026–Present · Zeta team, ICOS Division · Leuven, Belgium
+• Analyse lifter fault recovery and design changes across application and controller software; early
+implementation is in progress with team review.
+• Work on camera white-balance settings, device readback and the values shown in the interface.
+• Refactor serial device-control integration and logging within a shared equipment layer.
+Pickit 3D — Research & Software Engineer
+Aug 2025–Mar 2026 · Leuven, Belgium
+• Worked on system design and integration for robotic-vision software, focusing on communication
+interfaces and failure handling.
+• Designed a Python WebSocket client with reconnect, backoff and message validation for internal
+integrations.
+• Traced a field communication failure to a port conflict and implemented the fix.
+Bosch — V2X Communication Intern
+Jun 2024–Nov 2024 · Hildesheim, Germany
+• Built a vehicle-to-everything (V2X) demonstrator, defined message interfaces and checked end-to-end
+behaviour in test runs.
+• Integrated communication modules and developed a React interface for an eBike safety prototype.
+SKILLS
+Programming: C++, C, Python, TypeScript, JavaScript.
+Systems & integration: Error handling and recovery, device communication, WebSocket, REST, ROS 1/2.
+Applications & tools: React; Git, Docker, Linux.
+Spoken languages: Korean (native); English (IELTS Academic 7.5, Mar 2025).
+Kwanho Kim · C++ Software Engineer
+1 / 2
+
+--- PAGE 2 ---
+Kwanho Kim — C++ Software Engineer
+SELECTED PROJECTS
+Color Saves Life — Bosch ConnectedExperience 2024
+Feb 2024 · 1st place, digital.auto & mobility challenge · Berlin
+• Led and presented a hackathon team; integrated eye-tracking with a simulation pipeline and built a
+plugin-based Python client.
+Autonomous Lane-Keeping Assist — SEA:ME
+Aug–Dec 2023 · Wolfsburg, Germany
+• Implemented CNN-based lane detection in CARLA and a client to collect and evaluate simulation data.
+EDUCATION
+Bachelor's, Mechatronics (in progress) — KNOU Prime College
+Feb 2026–Present · Korea National Open University
+Bachelor's, Artificial Intelligence — Korea National Open University
+Mar 2023–Feb 2025 · Awarded
+Bachelor's, Business Administration — Academic Credit Bank System
+Apr 2019–Aug 2022 · Awarded
+Bachelor's, Computer Engineering — Academic Credit Bank System
+Apr 2019–Aug 2020 · Awarded
+TRAINING & CERTIFICATION
+SEA:ME — Automotive & Mobility program
+Jul 2023–Jun 2024 · Completed · Wolfsburg, Germany
+42 — Software engineering program
+Completed · Seoul / Wolfsburg
+Engineer Information Processing
+Nov 2020 · Human Resources Development Service of Korea (HRD Korea)
+LEADERSHIP
+Rush03 — Keyboardist & leader
+Aug 2022–Jul 2023 · 42 student club · Seoul, South Korea
+• Led a 50-member community and delivered three events for 200–300 attendees.
+Kwanho Kim · C++ Software Engineer
+2 / 2

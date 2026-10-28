@@ -1,0 +1,36 @@
+{
+  "name": "software-resources",
+  "url": "https://github.com/KKWANH/software-resources",
+  "fork": true,
+  "scope": "reference",
+  "scopeNote": "Fork/reference; personal implementation is not established by the fork.",
+  "description": "개발관련 정보를 얻을 수 있는 곳들,  by",
+  "updatedAt": "2021-01-21T01:12:52Z",
+  "defaultBranch": "master",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/software-resources/blob/60aa23775130de6dffdf23e4f3572dcdaacb904f/README.md",
+      "bytes": 2242,
+      "sha256": "7d06eeb644b7b1fa33484a91cb1221566cbf24af4497857b17d6405290f73058"
+    }
+  ],
+  "limitations": [],
+  "technologies": [
+    {
+      "id": "wordpress",
+      "label": "WordPress",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        }
+      ]
+    }
+  ],
+  "commit": "60aa23775130de6dffdf23e4f3572dcdaacb904f",
+  "fileCount": 8,
+  "treeDepth": "recursive",
+  "status": "reviewed"
+}

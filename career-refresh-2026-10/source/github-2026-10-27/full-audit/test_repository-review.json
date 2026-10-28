@@ -1,0 +1,62 @@
+{
+  "name": "test_repository",
+  "url": "https://github.com/KKWANH/test_repository",
+  "fork": false,
+  "scope": "project",
+  "scopeNote": "Repository project; listed technologies describe its code, not a proficiency rating.",
+  "description": "",
+  "updatedAt": "2022-11-07T01:50:30Z",
+  "defaultBranch": "master",
+  "sources": [
+    {
+      "path": "JavaCode_Examples 2/Test0.java",
+      "url": "https://github.com/KKWANH/test_repository/blob/a9f22236d43c50a17c21d6b58d1fd3a1141769d3/JavaCode_Examples%202/Test0.java",
+      "bytes": 138,
+      "sha256": "456830a63af9c98be1c61de795733411c6f912dd243a8a76a0259627f70366a8"
+    },
+    {
+      "path": "JavaCode_Examples 2/Test1.java",
+      "url": "https://github.com/KKWANH/test_repository/blob/a9f22236d43c50a17c21d6b58d1fd3a1141769d3/JavaCode_Examples%202/Test1.java",
+      "bytes": 985,
+      "sha256": "4031becfd474dd5592fb2cff4011b6b62a4606e44def0ece9aa51ad2056348d1"
+    },
+    {
+      "path": "JavaCode_Examples 2/Test2.java",
+      "url": "https://github.com/KKWANH/test_repository/blob/a9f22236d43c50a17c21d6b58d1fd3a1141769d3/JavaCode_Examples%202/Test2.java",
+      "bytes": 877,
+      "sha256": "cc0474154a772668f77180107ecf7ff497b59d4c02015dc6814587f9e7607932"
+    },
+    {
+      "path": "JavaCode_Examples 2/Test3.java",
+      "url": "https://github.com/KKWANH/test_repository/blob/a9f22236d43c50a17c21d6b58d1fd3a1141769d3/JavaCode_Examples%202/Test3.java",
+      "bytes": 1468,
+      "sha256": "554cec8574ad36233cc997db846a22ed0ca760f568cad107986ea9d94c972339"
+    }
+  ],
+  "limitations": [],
+  "technologies": [
+    {
+      "id": "java",
+      "label": "Java",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "JavaCode_Examples 2/Test0.java",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "JavaCode_Examples 2/Test1.java",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "JavaCode_Examples 2/Test10.java",
+          "basis": "source-file presence"
+        }
+      ]
+    }
+  ],
+  "commit": "a9f22236d43c50a17c21d6b58d1fd3a1141769d3",
+  "fileCount": 37,
+  "treeDepth": "recursive",
+  "status": "reviewed"
+}

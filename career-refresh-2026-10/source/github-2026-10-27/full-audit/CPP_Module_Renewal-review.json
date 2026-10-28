@@ -1,0 +1,24 @@
+{
+  "name": "CPP_Module_Renewal",
+  "url": "https://github.com/KKWANH/CPP_Module_Renewal",
+  "fork": false,
+  "scope": "learning",
+  "scopeNote": "Learning/team project; inspect the stated contribution and source.",
+  "description": "",
+  "updatedAt": "2024-02-20T23:38:07Z",
+  "defaultBranch": "main",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/CPP_Module_Renewal/blob/c6f39bb0f8f887a5ef6f5f4242501c6a8c783912/README.md",
+      "bytes": 158,
+      "sha256": "34c7aaa563a2e9bd0c5cf3b8afc3e5b0c98075c4ff71d15997f1e60aa1714035"
+    }
+  ],
+  "limitations": [],
+  "technologies": [],
+  "commit": "c6f39bb0f8f887a5ef6f5f4242501c6a8c783912",
+  "fileCount": 2,
+  "treeDepth": "recursive",
+  "status": "reviewed"
+}

@@ -1,0 +1,34 @@
+{
+  "checks": {
+    "one_a4_page": true,
+    "embedded_fonts": true,
+    "unicode_maps": true,
+    "tagged_structure": true,
+    "gmail_link": true,
+    "six_links": true,
+    "degree_years_explicit": true,
+    "bounded_scope": true,
+    "cpp_project_first": true,
+    "separate_programs": true,
+    "no_ariadne": true,
+    "ink_margins": true,
+    "spec_synced": true,
+    "copy_synced": true
+  },
+  "passed": true,
+  "fonts": [
+    "AAAAAA+SourceSerif4Roman-Regular",
+    "BAAAAA+Inter-Medium",
+    "CAAAAA+Inter-Regular",
+    "DAAAAA+Inter-SemiBold"
+  ],
+  "ink_bounds_pt": [
+    51.0,
+    42.5,
+    544.5,
+    793.5
+  ],
+  "pdf_sha256": "d81682408d042eba17c7c88d2f95d09c1c3efb4d9ca015cfbc2da63d46669357",
+  "reviews": "3 designer and 2 recruiter AI roles, two rounds; actual updated captures viewed",
+  "limits": "No physical printer, Google Docs import or ATS certification."
+}

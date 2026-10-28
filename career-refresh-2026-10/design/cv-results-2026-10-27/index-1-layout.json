@@ -1,0 +1,30 @@
+{
+  "client": 1123,
+  "scroll": 1123,
+  "children": [
+    {
+      "class": "cv-header",
+      "height": 119.5
+    },
+    {
+      "class": "cv-section",
+      "height": 434.5625
+    },
+    {
+      "class": "cv-section",
+      "height": 108.984375
+    },
+    {
+      "class": "cv-section",
+      "height": 99.34375
+    },
+    {
+      "class": "cv-section education-grid",
+      "height": 173.296875
+    },
+    {
+      "class": "cv-footer",
+      "height": 23.65625
+    }
+  ]
+}

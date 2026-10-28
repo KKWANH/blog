@@ -1,0 +1,13 @@
+{
+  "production_read": true,
+  "production_editor_absent": true,
+  "production_write_denied_even_with_enable_flag": true,
+  "/_status": 200,
+  "/about_status": 200,
+  "/travel_status": 200,
+  "production_manage_hidden": true,
+  "real_editor_enabled": true,
+  "cv_matches_current": true,
+  "real_data_unchanged": true,
+  "passed": true
+}

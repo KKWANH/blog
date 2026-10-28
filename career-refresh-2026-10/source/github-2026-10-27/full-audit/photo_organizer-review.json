@@ -1,0 +1,38 @@
+{
+  "name": "photo_organizer",
+  "url": "https://github.com/KKWANH/photo_organizer",
+  "fork": false,
+  "scope": "project",
+  "scopeNote": "Repository project; listed technologies describe its code, not a proficiency rating.",
+  "description": "",
+  "updatedAt": "2025-12-27T15:31:49Z",
+  "defaultBranch": "main",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/photo_organizer/blob/085272c1504f69568f2fc54db16b353e7a4bb605/README.md",
+      "bytes": 17,
+      "sha256": "20eb01c1181cd27facef5df892a96c28147d086b9363944250407f95f71f6226"
+    }
+  ],
+  "limitations": [
+    "Raw .py downloads are restricted by the corporate security gateway; accessible documentation/manifests are reviewed instead."
+  ],
+  "technologies": [
+    {
+      "id": "python",
+      "label": "Python",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "photo_organizer.py",
+          "basis": "source-file presence"
+        }
+      ]
+    }
+  ],
+  "commit": "085272c1504f69568f2fc54db16b353e7a4bb605",
+  "fileCount": 4,
+  "treeDepth": "cached-recursive",
+  "status": "reviewed-limited"
+}

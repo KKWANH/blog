@@ -1,0 +1,120 @@
+{
+  "checks": {
+    "hero_photo": true,
+    "identity_photo_on_card": true,
+    "recruiter_copy": true,
+    "brief_focus_return": true,
+    "vcard_download": true,
+    "legacy_about_redirect": true,
+    "map_after_delayed_bootstrap": true,
+    "create_visible": true,
+    "reload_persistence": true,
+    "edit_visible": true,
+    "remove_visible": true,
+    "undo_visible": true,
+    "foreign_origin_denied": true,
+    "missing_token_denied": true,
+    "denied_requests_preserve_revision": true,
+    "map_survives_updates": true,
+    "original_atlas_untouched": true
+  },
+  "errors": [],
+  "responsive": [
+    {
+      "path": "/",
+      "width": 320,
+      "content": 320,
+      "pass": true
+    },
+    {
+      "path": "/",
+      "width": 390,
+      "content": 390,
+      "pass": true
+    },
+    {
+      "path": "/",
+      "width": 768,
+      "content": 768,
+      "pass": true
+    },
+    {
+      "path": "/",
+      "width": 1440,
+      "content": 1440,
+      "pass": true
+    },
+    {
+      "path": "/about",
+      "width": 320,
+      "content": 320,
+      "pass": true
+    },
+    {
+      "path": "/about",
+      "width": 390,
+      "content": 390,
+      "pass": true
+    },
+    {
+      "path": "/about",
+      "width": 768,
+      "content": 768,
+      "pass": true
+    },
+    {
+      "path": "/about",
+      "width": 1440,
+      "content": 1440,
+      "pass": true
+    },
+    {
+      "path": "/travel",
+      "width": 320,
+      "content": 320,
+      "pass": true
+    },
+    {
+      "path": "/travel",
+      "width": 390,
+      "content": 390,
+      "pass": true
+    },
+    {
+      "path": "/travel",
+      "width": 768,
+      "content": 768,
+      "pass": true
+    },
+    {
+      "path": "/travel",
+      "width": 1440,
+      "content": 1440,
+      "pass": true
+    }
+  ],
+  "audits": [
+    {
+      "path": "/",
+      "violations": []
+    },
+    {
+      "path": "/about",
+      "violations": []
+    },
+    {
+      "path": "/travel",
+      "violations": []
+    }
+  ],
+  "persisted_test_entry": {
+    "city": "QA Revised Notebook",
+    "countryCode": "NL",
+    "level": "lived-there",
+    "lat": 52.1,
+    "lng": 4.3,
+    "id": "place-3b34c08c-2228-4c01-88c4-27fcf565037d",
+    "country": "Netherlands"
+  },
+  "passed": true
+}

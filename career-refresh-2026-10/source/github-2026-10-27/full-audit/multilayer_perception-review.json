@@ -1,0 +1,113 @@
+{
+  "name": "multilayer_perception",
+  "url": "https://github.com/KKWANH/multilayer_perception",
+  "fork": false,
+  "scope": "learning",
+  "scopeNote": "Learning/team project; inspect the stated contribution and source.",
+  "description": "",
+  "updatedAt": "2023-01-10T03:59:17Z",
+  "defaultBranch": "master",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/multilayer_perception/blob/797729b1eb0abf0cbe2ad90fafce85589f3a7386/README.md",
+      "bytes": 83,
+      "sha256": "8c8c33d388c95cbbaef7110f8a0abc0b407b5ed7184f9d1082448dbbec5ffe3e"
+    },
+    {
+      "path": "Makefile",
+      "url": "https://github.com/KKWANH/multilayer_perception/blob/797729b1eb0abf0cbe2ad90fafce85589f3a7386/Makefile",
+      "bytes": 3354,
+      "sha256": "933ad8648919c782bc34d542ca47b61bbee692e752133cef074a3d79cdeff5ba"
+    },
+    {
+      "path": "srcs/setup.sh",
+      "url": "https://github.com/KKWANH/multilayer_perception/blob/797729b1eb0abf0cbe2ad90fafce85589f3a7386/srcs/setup.sh",
+      "bytes": 1198,
+      "sha256": "2a39d739771da24d027edf00bb274abeebad4bed3286ba038bf77c4833091b18"
+    }
+  ],
+  "limitations": [
+    "Raw .py downloads are restricted by the corporate security gateway; accessible documentation/manifests are reviewed instead."
+  ],
+  "technologies": [
+    {
+      "id": "make",
+      "label": "Make",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "Makefile",
+          "basis": "build file"
+        }
+      ]
+    },
+    {
+      "id": "matplotlib",
+      "label": "Matplotlib",
+      "group": "data",
+      "evidence": [
+        {
+          "path": "srcs/setup.sh",
+          "basis": "inspected source"
+        }
+      ]
+    },
+    {
+      "id": "numpy",
+      "label": "NumPy",
+      "group": "data",
+      "evidence": [
+        {
+          "path": "srcs/setup.sh",
+          "basis": "inspected source"
+        }
+      ]
+    },
+    {
+      "id": "pandas",
+      "label": "Pandas",
+      "group": "data",
+      "evidence": [
+        {
+          "path": "srcs/setup.sh",
+          "basis": "inspected source"
+        }
+      ]
+    },
+    {
+      "id": "python",
+      "label": "Python",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "srcs/DSLR/core.py",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "srcs/DSLR/layer.py",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "srcs/DSLR/math.py",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "shell",
+      "label": "Shell",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "srcs/setup.sh",
+          "basis": "source-file presence"
+        }
+      ]
+    }
+  ],
+  "commit": "797729b1eb0abf0cbe2ad90fafce85589f3a7386",
+  "fileCount": 12,
+  "treeDepth": "recursive",
+  "status": "reviewed-limited"
+}

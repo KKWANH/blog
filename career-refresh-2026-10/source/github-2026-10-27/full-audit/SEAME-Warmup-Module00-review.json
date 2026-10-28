@@ -1,0 +1,95 @@
+{
+  "name": "SEAME-Warmup-Module00",
+  "url": "https://github.com/KKWANH/SEAME-Warmup-Module00",
+  "fork": true,
+  "scope": "learning",
+  "scopeNote": "Learning/team project; inspect the stated contribution and source.",
+  "description": "First warm-up module of SEA:ME, learning basic github, qt, and c++",
+  "updatedAt": "2023-07-18T09:27:06Z",
+  "defaultBranch": "main",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/SEAME-Warmup-Module00/blob/854b283d564d5802d6c4f3bb9d86ab057cdcda32/README.md",
+      "bytes": 17,
+      "sha256": "15667e3cb77f3fdbf778235d1192aa7f267a8fefbaa91a4dabc600a8dc46c957"
+    },
+    {
+      "path": "ex02/Makefile",
+      "url": "https://github.com/KKWANH/SEAME-Warmup-Module00/blob/854b283d564d5802d6c4f3bb9d86ab057cdcda32/ex02/Makefile",
+      "bytes": 146,
+      "sha256": "1c49f1a8443b08ee0c32d007cfd3803cf44def480d35b4290fa800688097b7eb"
+    },
+    {
+      "path": "ex03/Makefile",
+      "url": "https://github.com/KKWANH/SEAME-Warmup-Module00/blob/854b283d564d5802d6c4f3bb9d86ab057cdcda32/ex03/Makefile",
+      "bytes": 373,
+      "sha256": "4b1deb75504ffac1e99f3351b37301afb6559c6acef356aed4b4b217d0c91ecf"
+    },
+    {
+      "path": "ex03/main.cpp",
+      "url": "https://github.com/KKWANH/SEAME-Warmup-Module00/blob/854b283d564d5802d6c4f3bb9d86ab057cdcda32/ex03/main.cpp",
+      "bytes": 1689,
+      "sha256": "e574a54c39c72a383999cf2ee19fc5645df58c3a5173c6ee2a97eeddaa04cc98"
+    },
+    {
+      "path": "ex03/Phone.cpp",
+      "url": "https://github.com/KKWANH/SEAME-Warmup-Module00/blob/854b283d564d5802d6c4f3bb9d86ab057cdcda32/ex03/Phone.cpp",
+      "bytes": 1440,
+      "sha256": "4b5ffd0c4863303d8d197433f10b3efd41cb75bdb46fa12dada0ec8a84ac92dd"
+    },
+    {
+      "path": "ex03/Phone.hpp",
+      "url": "https://github.com/KKWANH/SEAME-Warmup-Module00/blob/854b283d564d5802d6c4f3bb9d86ab057cdcda32/ex03/Phone.hpp",
+      "bytes": 561,
+      "sha256": "be0a5ddd53c33c69043b33851004ad3a30291002b86242688ee97e9105b17fdb"
+    },
+    {
+      "path": "ex03/Utils.cpp",
+      "url": "https://github.com/KKWANH/SEAME-Warmup-Module00/blob/854b283d564d5802d6c4f3bb9d86ab057cdcda32/ex03/Utils.cpp",
+      "bytes": 1521,
+      "sha256": "d179a1f2edc24fa2dc9bd2003642abc6eefa46c216c4cef5e5a7c1ffe465a413"
+    }
+  ],
+  "limitations": [],
+  "technologies": [
+    {
+      "id": "cpp",
+      "label": "C++",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "ex02/SimpleString.cpp",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "ex03/Contacts.add.cpp",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "ex03/Contacts.bookmark.cpp",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "make",
+      "label": "Make",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "ex02/Makefile",
+          "basis": "build file"
+        },
+        {
+          "path": "ex03/Makefile",
+          "basis": "build file"
+        }
+      ]
+    }
+  ],
+  "commit": "854b283d564d5802d6c4f3bb9d86ab057cdcda32",
+  "fileCount": 25,
+  "treeDepth": "recursive",
+  "status": "reviewed"
+}

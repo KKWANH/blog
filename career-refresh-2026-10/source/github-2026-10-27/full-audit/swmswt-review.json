@@ -1,0 +1,55 @@
+{
+  "name": "swmswt",
+  "url": "https://github.com/KKWANH/swmswt",
+  "fork": false,
+  "scope": "project",
+  "scopeNote": "Repository project; listed technologies describe its code, not a proficiency rating.",
+  "description": "",
+  "updatedAt": "2023-06-09T03:06:50Z",
+  "defaultBranch": "master",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/swmswt/blob/f13bf5d0e9d9987522d8f5b742c300924418d8c0/README.md",
+      "bytes": 1584,
+      "sha256": "399187f6898f55b5d95c5364150e530d9c684c65d0b4c319bb52cc6beeab7406"
+    },
+    {
+      "path": "setup.sh",
+      "url": "https://github.com/KKWANH/swmswt/blob/f13bf5d0e9d9987522d8f5b742c300924418d8c0/setup.sh",
+      "bytes": 490,
+      "sha256": "b7031eb47ab9ef0a85e3b51fdc36732028f9cc9af106f74e9855ae1b5bad4aeb"
+    }
+  ],
+  "limitations": [
+    "Raw .py downloads are restricted by the corporate security gateway; accessible documentation/manifests are reviewed instead."
+  ],
+  "technologies": [
+    {
+      "id": "python",
+      "label": "Python",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "swmsweets.macro.py",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "shell",
+      "label": "Shell",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "setup.sh",
+          "basis": "source-file presence"
+        }
+      ]
+    }
+  ],
+  "commit": "f13bf5d0e9d9987522d8f5b742c300924418d8c0",
+  "fileCount": 8,
+  "treeDepth": "recursive",
+  "status": "reviewed-limited"
+}

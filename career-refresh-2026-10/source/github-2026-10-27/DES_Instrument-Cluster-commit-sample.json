@@ -1,0 +1,86 @@
+[
+  {
+    "sha": "b3556e7d5ad7f8525b4090832dd4f94150760be3",
+    "login": "KKWANH",
+    "author": "KKWANH",
+    "date": "2023-08-02T13:02:33Z",
+    "subject": ":spakles: #10 [speedometer] dbus receiver"
+  },
+  {
+    "sha": "3b3ede254cee11ce42ef2226e5a41f375e1c19e9",
+    "login": "KKWANH",
+    "author": "KKWANH",
+    "date": "2023-08-02T12:49:51Z",
+    "subject": ":art: #8 [rpm calculation] comments"
+  },
+  {
+    "sha": "e8ac448c487f081c29a5a11ff2f6f758bc37a199",
+    "login": "Shuta-syd",
+    "author": "Shuta Ogura",
+    "date": "2023-08-02T11:43:53Z",
+    "subject": "Merge pull request #12 from kianwasabi/main"
+  },
+  {
+    "sha": "040d9c1af5d46a8ab3f02c9f0661d6be24e03971",
+    "login": "KKWANH",
+    "author": "KKWANH",
+    "date": "2023-08-02T10:10:52Z",
+    "subject": ":art: #10 [QML in Qt reasearch - speedometer] remove turn indicator, fix fuel&tempererature, km/h -> cm/s"
+  },
+  {
+    "sha": "fb2250fefeeac6154ca5068d8f1d780284524c3a",
+    "login": "KKWANH",
+    "author": "KKWANH",
+    "date": "2023-08-01T13:27:43Z",
+    "subject": ":hammer: #8 [rpm calculation] rpm calculating"
+  },
+  {
+    "sha": "472e93fa9b53cddebd963bea6a98f092d73c871d",
+    "login": "KKWANH",
+    "author": "KKWANH",
+    "date": "2023-08-01T13:24:59Z",
+    "subject": ":hammer: #8 [rpm calculation] rpm calculating"
+  },
+  {
+    "sha": "065365f9b879a41d7408dc8b58fe8422def2b87d",
+    "login": "KKWANH",
+    "author": "KKWANH",
+    "date": "2023-08-01T13:17:46Z",
+    "subject": ":hammer: #8 [rpm calculation] rpm calculating"
+  },
+  {
+    "sha": "7aca427a07c5d05219f5842c1f54090d7d45bdd6",
+    "login": "KKWANH",
+    "author": "KKWANH",
+    "date": "2023-08-01T13:08:36Z",
+    "subject": ":hammer: #8 [rpm calculation] rpm"
+  },
+  {
+    "sha": "2a7bc3e84f540d4f11b01b94b8c126991dd5bb9a",
+    "login": "KKWANH",
+    "author": "KKWANH",
+    "date": "2023-08-01T12:22:23Z",
+    "subject": ":hammer: #8 [rpm calculation] remove Average, print RPM"
+  },
+  {
+    "sha": "6d66ec109c27c2d69ec616a2ff1feb440497cd10",
+    "login": "KKWANH",
+    "author": "KKWANH",
+    "date": "2023-08-01T12:19:45Z",
+    "subject": ":hammer: #8 [rpm calculation] PPR update"
+  },
+  {
+    "sha": "ce031bc1ecdd831891eb21b99f90b10a90f8fa50",
+    "login": "kianwasabi",
+    "author": "kianwasabi",
+    "date": "2023-08-01T09:06:58Z",
+    "subject": "Merge branch 'main' of https://github.com/kianwasabi/DES_Instrument-Cluster"
+  },
+  {
+    "sha": "c69ab809ba38ad5fc4333fbf46cd6d3d98ff46c0",
+    "login": "kianwasabi",
+    "author": "kianwasabi",
+    "date": "2023-08-01T09:06:22Z",
+    "subject": "20230801 [update] thread for receiving can messages"
+  }
+]

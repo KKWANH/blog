@@ -1,0 +1,103 @@
+{
+  "name": "2023_42AprilFoolsDay",
+  "url": "https://github.com/KKWANH/2023_42AprilFoolsDay",
+  "fork": false,
+  "scope": "project",
+  "scopeNote": "Repository project; listed technologies describe its code, not a proficiency rating.",
+  "description": "",
+  "updatedAt": "2023-04-04T06:26:03Z",
+  "defaultBranch": "main",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/2023_42AprilFoolsDay/blob/ecbe98f30647916b38cf38f9dd7949c55eb5914c/README.md",
+      "bytes": 22,
+      "sha256": "8f26ce57e04877787a6eec5e1de397b6cbbe2d838d5da3a25adb66e9e662fa7d"
+    },
+    {
+      "path": "ex01/yes.sh",
+      "url": "https://github.com/KKWANH/2023_42AprilFoolsDay/blob/ecbe98f30647916b38cf38f9dd7949c55eb5914c/ex01/yes.sh",
+      "bytes": 54,
+      "sha256": "37c3dba43099866502096258888514390a1a56ad3e8a5fcafd8873fc855bf609"
+    },
+    {
+      "path": "ex06/rps.php",
+      "url": "https://github.com/KKWANH/2023_42AprilFoolsDay/blob/ecbe98f30647916b38cf38f9dd7949c55eb5914c/ex06/rps.php",
+      "bytes": 1107,
+      "sha256": "c51c598115a7d6c059ac76e47db2e0934ab1daf165e6614dfecda6e9d47faa08"
+    },
+    {
+      "path": "ex09/frame.c",
+      "url": "https://github.com/KKWANH/2023_42AprilFoolsDay/blob/ecbe98f30647916b38cf38f9dd7949c55eb5914c/ex09/frame.c",
+      "bytes": 910,
+      "sha256": "0d1312930075d65c72a134e2028c0cc31c3cbcc568705e44e7d6420f3e3daee5"
+    },
+    {
+      "path": "ex07/smallest.c",
+      "url": "https://github.com/KKWANH/2023_42AprilFoolsDay/blob/ecbe98f30647916b38cf38f9dd7949c55eb5914c/ex07/smallest.c",
+      "bytes": 61,
+      "sha256": "7d0540f2409056c004cbcdcfc390c5634b3f0c4d7a0b6883a2909ae86eed3207"
+    }
+  ],
+  "limitations": [
+    "Raw .py downloads are restricted by the corporate security gateway; accessible documentation/manifests are reviewed instead."
+  ],
+  "technologies": [
+    {
+      "id": "c",
+      "label": "C",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "ex07/smallest.c",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "ex08/blackjack.c",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "ex09/frame.c",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "php",
+      "label": "PHP",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "ex06/rps.php",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "python",
+      "label": "Python",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "ex11/find.py",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "shell",
+      "label": "Shell",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "ex01/yes.sh",
+          "basis": "source-file presence"
+        }
+      ]
+    }
+  ],
+  "commit": "ecbe98f30647916b38cf38f9dd7949c55eb5914c",
+  "fileCount": 19,
+  "treeDepth": "recursive",
+  "status": "reviewed-limited"
+}

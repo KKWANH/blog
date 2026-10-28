@@ -1,0 +1,52 @@
+{
+  "version": "round-5",
+  "checks": {
+    "personal_email_visible": true,
+    "personal_mailto": true,
+    "city_country_present": true,
+    "separate_programs": true,
+    "42_completed_without_invented_date": true,
+    "seame_confirmed_dates": true,
+    "no_photo": true,
+    "nameplate_header": true,
+    "body_size_preserved": true,
+    "copy_matches_contacts_and_programs": true,
+    "mobile_fit": true,
+    "comparison_current": true,
+    "one_a4_page": true,
+    "ink_margins": true,
+    "fonts_embedded": true,
+    "unicode_maps": true,
+    "reading_order": true,
+    "program_reading_order": true,
+    "gmail_pdf_link": true,
+    "six_links": true,
+    "no_old_email_in_current_cv": true,
+    "scope_preserved": true,
+    "no_ariadne": true,
+    "tagged_pdf": true,
+    "spec_md_synced": true,
+    "copy_md_synced": true
+  },
+  "errors": [],
+  "passed": true,
+  "ink_bounds_pt": {
+    "left": 51.0,
+    "top": 43.0,
+    "right": 544.5,
+    "bottom": 794.0
+  },
+  "font_names": [
+    "AAAAAA+Manrope-Bold",
+    "BAAAAA+Inter-Medium",
+    "CAAAAA+Inter-Regular",
+    "DAAAAA+Inter-Bold",
+    "EAAAAA+Inter-SemiBold"
+  ],
+  "pdf_sha256": "0f036f0228613b73a4cbb7a333b658eb70dffbf24e3aa7bb9af6a179cfc503a5",
+  "limits": [
+    "No actual Google Docs import, physical print or ATS ingestion.",
+    "No email inbox/delivery verification; address is owner supplied."
+  ],
+  "verification_note": "The initial two Unicode-string comparisons used a PowerShell pipe encoding. Unicode-escaped comparisons confirm the actual DOM/copy text; application content was not changed."
+}

@@ -1,0 +1,53 @@
+## Affected versions
+4.0 and `kinetic-devel`. 
+
+## Description
+When using the C100, teaching the empty ROI box volume on a ROI Box that still contains a bit of points keeps the threshold to 0mm3 in the UI. It's not just a display issue, since detecting afterwards on that empty ROI does not lead to the "ROI box is empty" result. The scene on which I tested was clearly full of points in the ROI though:
+
+<img alt="image" src="./specs/image.png" />
+
+## How to reproduce
+1. Open the snapshot `/share/intermodalics/pickit/snapshots/2_issues_and_debug/issues/10960/2025-11-17T11:00:56Z_define-empty-roi-box-c100-not-working.snapshot`
+2. Click on Define empty ROI box -> Teach from scene
+3. See that volume threshold remains 0 mm3
+4. Click detect
+5. See that there is no pop up saying "The ROI box is empty"
+
+
+## Comment 1
+@TimHabra
+> Raising priority.
+> 
+> This is a basic functionality that we will need for the C100, even for an inspection task
+
+## Comment 2
+@TimHabra
+> @adolfo-rt can you update here your findings?
+> I remember you found some things
+
+## Comment 3
+@adolfo-rt
+> I didn't get too far, but this is what I observed. For this code block:
+> 
+> https://github.com/Intermodalics/pickit/blob/6827ff23358b327e82a608bd33577b715a72b1f0/src/im_localiser/src/scene_pre_processing.cpp#L226-L239
+> 
+> - The average resolution that is computed by `calculateAverageResolution` was quite a small value (mm/pixel). I don't know if it was representative of the actual camera.
+> - The way it's used in `calculateOccupiedVolume` resulted in no voxels getting populated as occupied.
+>
+> It's the interplay between these two places that needs investigation.
+```cpp
+ if (calculateAverageResolution(*unprocessed_cloud, depth_map_resolution)) { 
+   // Multiply by 2 to have some margin (we want the resolution coarse enough 
+   // so that no fake holes will appear in the depthmap). 
+   depth_map_resolution *= 2.0f; 
+ } else { 
+   // Default value. Doesn't matter much what we put here since the cloud is 
+   // likely empty. 
+   depth_map_resolution = 10;  // 10mm / pixel 
+   log(Warning) << "Could not auto calculate depth map resolution for " 
+                   "occupied volume calculation. Using default value."; 
+ } 
+  
+ occupied_roi_volume = calculateOccupiedVolume(processed_cloud, cropped_roi, 
+                                                depth_map_resolution); 
+```

@@ -1,0 +1,114 @@
+Kwanho Kim​ Software Engineer
+
+Leuven 3001, Belgium | kwanho0096@gmail.com | linkedin.com/kwanhokim | github.com/KKWANH | kwanhokim.vercel.app/editor
+
+Software engineer with hands-on C++ and Python experience building and integrating real-time, distributed systems -
+across robotics  / 3D vision at Pickit and automotive V2X at Bosch.  I work close to the system: message protocols,
+WebSocket / REST service integration, cross-layer debugging, and making things run reliably under real-world latency
+and throughput constraints. Strong academic foundation in computer engineering and AI. Early in my professional career,
+but fast to absorb unfamiliar codebases and technical domains, and most motivated by performance-critical systems
+where correctness and speed both matter.
+
+Skills
+ Languages: C++, C, Python, TypeScript / JavaScript
+ Systems & performance: real-time and safety-critical systems, low-latency message handling, WebSocket & REST
+  APIs, distributed / streaming integration, message validation, reconnect / backoff, data contracts & interface design
+ Frameworks & libraries: ROS1 / ROS2, Node, React
+ Tools & infrastructure: Docker, Git, Linux / Bash, Cloudflare, etc
+ Spoken languages: Korean (native), English (C1, IELTS 7.5), German (basic, learning), Dutch (basic, learning)
+
+Professional Experience
+  Pickit 3D​     Research & Software Engineer
+               Leuven, Belgium​| Aug 2025 - Mar 2026
+              Core stack: C, C++, Python, TypeScript, React, WebSocket, ROS1, Docker, Git
+
+                          -​  Delivered production support features across React UI + API + ROS/streaming layers to unblock
+                    on-site operations and reduce troubleshooting cycle time.
+                          -​  Built a reusable Python WebSocket client with reconnect/backoff and message validation, enabling
+                    consistent integration across internal tools.
+                          -​  Built an internal log workflow: timezone-aware download → upload/convert pipeline → multilingual
+                      UI, reducing manual log handling effort and speeding up incident triage.
+                     -​  Developed a configuration UI for system/network settings with input validation and safe defaults,
+                  reducing misconfiguration-related support requests.
+                          -​  Diagnosed a field communication failure to a port conflict and shipped a fix; restored stable
+                    connectivity and prevented recurrence via documentation/checks.
+
+  Bosch​​        Internship, V2X Communication
+                Hildesheim, Germany | Jun 2024 - Nov 2024
+              Core stack: C++, Python, TypeScript, React, ROS2, Docker, Git
+
+                          -​  Implemented a V2X vehicle demonstrator for safety-critical scenarios, defining message/data
+                    interfaces and validating end-to-end behaviors in test runs.
+                          -​  Integrated communication modules and designed data contracts/interfaces to decouple components
+                and speed up iteration.
+                          -​  Built a React-based HMI for an eBike safety prototype with clear state modeling and
+                    operator-friendly interactions.
+                          -​  Performed data analysis and troubleshooting in automotive systems
+
+
+Projects & Leadership
+ Ariadne - Local-first LLM workspace
+      Personal project / May 2026
+       -​TypeScript, Python, Fastify, React, SQLite · Anthropic / OpenAI / Gemini / Ollama · esbuild, Cloudflare Tunnel
+        -​Built a unified gateway over 5 LLM providers (Anthropic, OpenAI, Gemini, Moonshot, Ollama) with per-model
+        token-priced cost reporting on every chat and action run.
+      -​Shipped a plan–execute–replan agent that decomposes tasks into typed tool calls (web search, file I/O, document
+         extraction) and stages every write as a reviewable diff requiring explicit user approval before it lands.
+      -​Designed a citation-anchored output engine: every claim in agent responses links back to its source span;
+       unsupported claims are flagged inline — a reproducibility audit trail and hallucination guardrail.
+
+        -​Built a pluggable document pipeline with SHA-keyed cache: PDF/DOCX/PPTX/XLSX/HWP → markdown via
+       markitdown + PyMuPDF (auto-dispatched for Korean content via Hangul codepoint sniffing); LibreOffice
+        headless for page screenshots; background scan-time queue.
+      -​Authored a custom-surface system letting users ship workspace dashboards as iframe-sandboxed React
+        bundles (esbuild + postMessage SDK to host APIs) — in production for a portfolio analytics dashboard with live
+       Yahoo quotes, FX, news, and earnings calendar.
+      -​Deployed over Cloudflare Tunnel: single Fastify process, node:sqlite, SSE push for live workspace updates;
+       access split between LAN (full read/write) and tunnel (read + chat) with per-route origin checks.
+
+ ColorSaveLife
+      BoschConnectedExperience (BCX) 2024 Hackathon 1st Prize
+       Berlin, Germany / Feb 2024
+      -​Led and presented a cross-functional team that won 1st place; integrated gaze / eye-tracking into a simulation
+         pipeline and built a plugin-based Python client architecture for rapid experimentation.
+
+ Autonomous Lane-Keeping-Assist
+     SEA:ME (Software Engineering Automotive & Mobility Ecosystems)
+      Wolfsburg, Germany / Aug 2023 - Dec 2023
+      -​Implemented CNN-based lane detection on the CARLA simulator and built a data-handling client to streamline
+        dataset capture and evaluation.
+
+ Rush03 : Rock Band, Keyboardist & Leader
+      École 42 - Seoul, Student Club
+      Seoul, South Korea / Aug 2022 - Jul 2023
+      -​Led a 50-member community and delivered 3 events for 200–300 attendees, establishing a repeatable planning /
+        rehearsal / risk-response process.
+
+Education
+ Bachelor
+    -​  Mechatronics,​       ​       Korea National Open University​
+           ​  ​             ​             ​        Seoul, South Korea | Feb 2026 - Present
+    -​  Artificial Intelligence,​     Korea National Open University​
+           ​  ​             ​             ​       GPA: 3.44/4.5 | Seoul, South Korea | Mar 2023 - Feb 2025
+    -​ Computer Engineering,​   Korea Academic Credit Bank System​
+           ​  ​             ​             ​       GPA: 4.24/4.5 | Seoul, South Korea | Apr 2019 - Aug 2020
+    -​  Business Administration,​  Korea Academic Credit Bank System​
+           ​  ​             ​             ​       GPA: 3.77/4.5 | Seoul, South Korea | Apr 2019 - Aug 2022
+ École 42​     Software engineering program: C/C++/Unix/algorithms​    Seoul / Wolfsburg | Sep 2020 - Present
+ SEA:ME​       Master-level program, Automotive & Mobility​             ​        Wolfsburg, Germany | Jul 2023 - Jun 2024
+
+Certifications
+
+  IELTS Academic 7.5 (C1)                                                               Mar 2025
+
+  Engineer Information Processing                                                     Nov 2020
+     -​ Human Resources Development Service of Korea (HRD Korea)
+     -​  Korea national certification in system development / information processing / project management
+
+  Computer Specialist in Spreadsheet & Database (Level I)                                    Dec 2019
+     -​  Korea Chamber of Commerce and Industry (KCCI)
+     -​  Korean national certification for advanced productivity software and data management skills
+
+  Network Advisor (Level 2)                                                                     Oct 2019
+     -​  International Civil Qualification Association (ICQA)
+     -​  Korean national certification for network administration

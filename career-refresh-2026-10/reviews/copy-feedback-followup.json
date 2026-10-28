@@ -1,0 +1,8 @@
+{
+  "calls": 2,
+  "messages": [
+    "Email address copied."
+  ],
+  "passed": false,
+  "method": "Stubbed clipboard with observed DOM status transitions; no OS clipboard or screen-reader test."
+}

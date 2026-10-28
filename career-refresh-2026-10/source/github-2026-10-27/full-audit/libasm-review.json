@@ -1,0 +1,91 @@
+{
+  "name": "libasm",
+  "url": "https://github.com/KKWANH/libasm",
+  "fork": false,
+  "scope": "learning",
+  "scopeNote": "Learning/team project; inspect the stated contribution and source.",
+  "description": "",
+  "updatedAt": "2021-05-15T02:39:46Z",
+  "defaultBranch": "master",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/libasm/blob/0ab36cc0aa72e71ea807110f61e47e6796e21f5e/README.md",
+      "bytes": 107,
+      "sha256": "14bcb099160956b51ff12357ff9ea8b86af1e51563fcdd687ac730578eccdb8e"
+    },
+    {
+      "path": "Makefile",
+      "url": "https://github.com/KKWANH/libasm/blob/0ab36cc0aa72e71ea807110f61e47e6796e21f5e/Makefile",
+      "bytes": 1466,
+      "sha256": "6ee4b9d16e40b00c94ab172f7773092600da38ac88b617f8afd30dd79a3ead25"
+    },
+    {
+      "path": "ft_read.s",
+      "url": "https://github.com/KKWANH/libasm/blob/0ab36cc0aa72e71ea807110f61e47e6796e21f5e/ft_read.s",
+      "bytes": 1080,
+      "sha256": "3af23e4404d58d21ca911551610662c8340a28a42c232dca55801e3d9d71a436"
+    },
+    {
+      "path": "ft_write.s",
+      "url": "https://github.com/KKWANH/libasm/blob/0ab36cc0aa72e71ea807110f61e47e6796e21f5e/ft_write.s",
+      "bytes": 1139,
+      "sha256": "8d2ca4d30f3c451d63b6b265a4c6c136822863661231e10f32cb7914fd58b858"
+    },
+    {
+      "path": "ft_strcmp.s",
+      "url": "https://github.com/KKWANH/libasm/blob/0ab36cc0aa72e71ea807110f61e47e6796e21f5e/ft_strcmp.s",
+      "bytes": 1470,
+      "sha256": "3543623649fbbe6da0b2e2c1638382eb1cfad1b2ff8ea213acc81fb8bf93b990"
+    },
+    {
+      "path": "ft_strcpy.s",
+      "url": "https://github.com/KKWANH/libasm/blob/0ab36cc0aa72e71ea807110f61e47e6796e21f5e/ft_strcpy.s",
+      "bytes": 1089,
+      "sha256": "ecb5ba132c1396edef58d566ab893e791b1ff00b82fc62a300a97b9708b17876"
+    },
+    {
+      "path": "ft_strlen.s",
+      "url": "https://github.com/KKWANH/libasm/blob/0ab36cc0aa72e71ea807110f61e47e6796e21f5e/ft_strlen.s",
+      "bytes": 922,
+      "sha256": "026b3ae606a6178b9fc13cd7caa77df250afc2fea1634e4905117b814d89b382"
+    }
+  ],
+  "limitations": [],
+  "technologies": [
+    {
+      "id": "asm",
+      "label": "x86-64 ASM",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "ft_read.s",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "ft_strcmp.s",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "ft_strcpy.s",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "make",
+      "label": "Make",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "Makefile",
+          "basis": "build file"
+        }
+      ]
+    }
+  ],
+  "commit": "0ab36cc0aa72e71ea807110f61e47e6796e21f5e",
+  "fileCount": 8,
+  "treeDepth": "cached-recursive",
+  "status": "reviewed"
+}

@@ -1,0 +1,125 @@
+{
+  "name": "azure-static-web-app-react",
+  "url": "https://github.com/KKWANH/azure-static-web-app-react",
+  "fork": false,
+  "scope": "learning",
+  "scopeNote": "Learning/team project; inspect the stated contribution and source.",
+  "description": "",
+  "updatedAt": "2024-01-11T12:52:22Z",
+  "defaultBranch": "main",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/azure-static-web-app-react/blob/c60be52ff7d30265569b249234fc790cc8c967c2/README.md",
+      "bytes": 440,
+      "sha256": "fa1599e2fadcd8eb184273a18b7ba624cc36ef89ed18f498d602a548b8915e65"
+    },
+    {
+      "path": "package.json",
+      "url": "https://github.com/KKWANH/azure-static-web-app-react/blob/c60be52ff7d30265569b249234fc790cc8c967c2/package.json",
+      "bytes": 775,
+      "sha256": "69c2c5cdd13921faa7a5e978965a8035f9922d0bfb8938ddbfa94050fefb773c"
+    },
+    {
+      "path": "src/App.js",
+      "url": "https://github.com/KKWANH/azure-static-web-app-react/blob/c60be52ff7d30265569b249234fc790cc8c967c2/src/App.js",
+      "bytes": 119,
+      "sha256": "0eabf2a74ba3ff80870c6b57bed0021b78a443fa6f83ea26f1c8695687f1c1f7"
+    },
+    {
+      "path": "src/index.js",
+      "url": "https://github.com/KKWANH/azure-static-web-app-react/blob/c60be52ff7d30265569b249234fc790cc8c967c2/src/index.js",
+      "bytes": 174,
+      "sha256": "8dc0290f1f56235604bcf8598165c79dfa94198c9d7284552aa7dd45225823ee"
+    }
+  ],
+  "limitations": [],
+  "technologies": [
+    {
+      "id": "azure",
+      "label": "Azure",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        }
+      ]
+    },
+    {
+      "id": "css",
+      "label": "CSS",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "src/index.css",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "github-actions",
+      "label": "GitHub Actions",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": ".github/workflows/azure-static-web-apps-gentle-mushroom-08f313603.yml",
+          "basis": "workflow file"
+        },
+        {
+          "path": ".github/workflows/azure-staticwebapp.yml",
+          "basis": "workflow file"
+        }
+      ]
+    },
+    {
+      "id": "html",
+      "label": "HTML",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "public/index.html",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "javascript",
+      "label": "JavaScript",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "src/App.js",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "src/index.js",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "react",
+      "label": "React",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        },
+        {
+          "path": "package.json",
+          "basis": "direct dependency"
+        },
+        {
+          "path": "package.json",
+          "basis": "manifest/configuration"
+        }
+      ]
+    }
+  ],
+  "commit": "c60be52ff7d30265569b249234fc790cc8c967c2",
+  "fileCount": 17,
+  "treeDepth": "recursive",
+  "status": "reviewed"
+}

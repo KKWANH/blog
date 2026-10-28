@@ -1,0 +1,112 @@
+{
+  "name": "hyunja27.github.io",
+  "url": "https://github.com/KKWANH/hyunja27.github.io",
+  "fork": true,
+  "scope": "reference",
+  "scopeNote": "Fork/reference; personal implementation is not established by the fork.",
+  "description": "For Simple description for Hyunja",
+  "updatedAt": "2022-04-28T07:46:01Z",
+  "defaultBranch": "main",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/hyunja27.github.io/blob/f1fc27b31ae46474252580a045ee5e35bfc6a51f/README.md",
+      "bytes": 45,
+      "sha256": "a58039a27a5c51a6b99e3c3b4c663828f9f25d30cc3d7f0c3472747023804942"
+    },
+    {
+      "path": "ReactResume/package.json",
+      "url": "https://github.com/KKWANH/hyunja27.github.io/blob/f1fc27b31ae46474252580a045ee5e35bfc6a51f/ReactResume/package.json",
+      "bytes": 564,
+      "sha256": "0f66b279b1ca884315a4747b4e1f8107c4a1da6ccefd8a9253ae0affd8c03606"
+    },
+    {
+      "path": "package.json",
+      "url": "https://github.com/KKWANH/hyunja27.github.io/blob/f1fc27b31ae46474252580a045ee5e35bfc6a51f/package.json",
+      "bytes": 54,
+      "sha256": "c6743344f4bbb33801ecc605f7be445a38b7f9d2a1a15d2a04739065b3fd9971"
+    }
+  ],
+  "limitations": [],
+  "technologies": [
+    {
+      "id": "html",
+      "label": "HTML",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "ReactResume/index.html",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "index.html",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "javascript",
+      "label": "JavaScript",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "assets/index.132acabd.js",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "react",
+      "label": "React",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "ReactResume/package.json",
+          "basis": "direct dependency"
+        },
+        {
+          "path": "ReactResume/package.json",
+          "basis": "manifest/configuration"
+        }
+      ]
+    },
+    {
+      "id": "typescript",
+      "label": "TypeScript",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "ReactResume/src/App.tsx",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "ReactResume/src/component/pages/PageMain.tsx",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "ReactResume/src/component/pages/PageSpec.tsx",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "vite",
+      "label": "Vite",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "ReactResume/package.json",
+          "basis": "direct dependency"
+        },
+        {
+          "path": "package.json",
+          "basis": "direct dependency"
+        }
+      ]
+    }
+  ],
+  "commit": "f1fc27b31ae46474252580a045ee5e35bfc6a51f",
+  "fileCount": 33,
+  "treeDepth": "recursive",
+  "status": "reviewed"
+}

@@ -1,0 +1,241 @@
+{
+  "name": "42inception",
+  "url": "https://github.com/KKWANH/42inception",
+  "fork": false,
+  "scope": "learning",
+  "scopeNote": "Learning/team project; inspect the stated contribution and source.",
+  "description": "42SEOUL_kkim's inception. ubuntu_init shell script has prepared.",
+  "updatedAt": "2021-07-08T11:07:17Z",
+  "defaultBranch": "main",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/42inception/blob/eb3f2e6bc9c0ac74d4323a42775db1b2a72c5c3b/README.md",
+      "bytes": 81,
+      "sha256": "ec91c81c015f6e2a947036a8e853821829ec17d1cef8654c64e9efc6bd24870b"
+    },
+    {
+      "path": "Makefile",
+      "url": "https://github.com/KKWANH/42inception/blob/eb3f2e6bc9c0ac74d4323a42775db1b2a72c5c3b/Makefile",
+      "bytes": 681,
+      "sha256": "b04206716a1ffb91377a572f1d52943dd9cd196cbc01f65e86ce19f83f91717d"
+    },
+    {
+      "path": "srcs/docker-compose.yml",
+      "url": "https://github.com/KKWANH/42inception/blob/eb3f2e6bc9c0ac74d4323a42775db1b2a72c5c3b/srcs/docker-compose.yml",
+      "bytes": 1216,
+      "sha256": "19db01fa0d676fb870b11b42ce1b308d3721a7e60655abacd5c9c1a5c723d8c8"
+    },
+    {
+      "path": "srcs/requirements/nginx/Dockerfile",
+      "url": "https://github.com/KKWANH/42inception/blob/eb3f2e6bc9c0ac74d4323a42775db1b2a72c5c3b/srcs/requirements/nginx/Dockerfile",
+      "bytes": 648,
+      "sha256": "25f91fb917c64f7035e8444333417117de765259d932f5049835963e55e6d2e1"
+    },
+    {
+      "path": "srcs/requirements/mariadb/Dockerfile",
+      "url": "https://github.com/KKWANH/42inception/blob/eb3f2e6bc9c0ac74d4323a42775db1b2a72c5c3b/srcs/requirements/mariadb/Dockerfile",
+      "bytes": 428,
+      "sha256": "a06ac1892b035228f5e1b6fc775ffcf607d2ca0be7cf2ef8fcb9e2b1df598fb1"
+    },
+    {
+      "path": "srcs/requirements/wordpress/Dockerfile",
+      "url": "https://github.com/KKWANH/42inception/blob/eb3f2e6bc9c0ac74d4323a42775db1b2a72c5c3b/srcs/requirements/wordpress/Dockerfile",
+      "bytes": 452,
+      "sha256": "991207842b9d70caad2cf493522b59b1ab345b6159bda3114d2cfd9e8c6cf79d"
+    },
+    {
+      "path": "srcs/requirements/tools/clear.sh",
+      "url": "https://github.com/KKWANH/42inception/blob/eb3f2e6bc9c0ac74d4323a42775db1b2a72c5c3b/srcs/requirements/tools/clear.sh",
+      "bytes": 110,
+      "sha256": "1e077ef3ef3908fa9ab7cd9d689b6e12a41354bba9b15457aab68fcb892f435e"
+    },
+    {
+      "path": "srcs/requirements/mariadb/tools/setup_db.sh",
+      "url": "https://github.com/KKWANH/42inception/blob/eb3f2e6bc9c0ac74d4323a42775db1b2a72c5c3b/srcs/requirements/mariadb/tools/setup_db.sh",
+      "bytes": 535,
+      "sha256": "76a12a818f200c061dc5102741aa50e4b903033737c382ec09c4e1474b617eee"
+    },
+    {
+      "path": "srcs/requirements/wordpress/tools/setup_wp.sh",
+      "url": "https://github.com/KKWANH/42inception/blob/eb3f2e6bc9c0ac74d4323a42775db1b2a72c5c3b/srcs/requirements/wordpress/tools/setup_wp.sh",
+      "bytes": 718,
+      "sha256": "e5a115ca4aba67b8dceda90a40f482755a97f28de30b954c836846434222caa2"
+    },
+    {
+      "path": "srcs/requirements/wordpress/conf/wp-config.php",
+      "url": "https://github.com/KKWANH/42inception/blob/eb3f2e6bc9c0ac74d4323a42775db1b2a72c5c3b/srcs/requirements/wordpress/conf/wp-config.php",
+      "bytes": 3100,
+      "sha256": "cf857be2f37707aaacd6956e3086b61eac6d2925aa669817681db225635bb870"
+    }
+  ],
+  "limitations": [],
+  "technologies": [
+    {
+      "id": "compose",
+      "label": "Docker Compose",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "srcs/docker-compose.yml",
+          "basis": "service configuration"
+        },
+        {
+          "path": "Makefile",
+          "basis": "inspected source"
+        }
+      ]
+    },
+    {
+      "id": "docker",
+      "label": "Docker",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "srcs/requirements/mariadb/Dockerfile",
+          "basis": "container configuration"
+        },
+        {
+          "path": "srcs/requirements/nginx/Dockerfile",
+          "basis": "container configuration"
+        },
+        {
+          "path": "srcs/requirements/wordpress/Dockerfile",
+          "basis": "container configuration"
+        }
+      ]
+    },
+    {
+      "id": "linux",
+      "label": "Linux",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "srcs/requirements/nginx/Dockerfile",
+          "basis": "manifest/configuration"
+        },
+        {
+          "path": "srcs/requirements/mariadb/Dockerfile",
+          "basis": "manifest/configuration"
+        },
+        {
+          "path": "srcs/requirements/wordpress/Dockerfile",
+          "basis": "manifest/configuration"
+        }
+      ]
+    },
+    {
+      "id": "make",
+      "label": "Make",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "Makefile",
+          "basis": "build file"
+        }
+      ]
+    },
+    {
+      "id": "mariadb",
+      "label": "MariaDB",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "srcs/docker-compose.yml",
+          "basis": "manifest/configuration"
+        },
+        {
+          "path": "srcs/requirements/mariadb/Dockerfile",
+          "basis": "manifest/configuration"
+        }
+      ]
+    },
+    {
+      "id": "mysql",
+      "label": "MySQL",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "srcs/docker-compose.yml",
+          "basis": "manifest/configuration"
+        },
+        {
+          "path": "srcs/requirements/mariadb/Dockerfile",
+          "basis": "manifest/configuration"
+        },
+        {
+          "path": "srcs/requirements/wordpress/Dockerfile",
+          "basis": "manifest/configuration"
+        }
+      ]
+    },
+    {
+      "id": "nginx",
+      "label": "NGINX",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "srcs/docker-compose.yml",
+          "basis": "manifest/configuration"
+        },
+        {
+          "path": "srcs/requirements/nginx/Dockerfile",
+          "basis": "manifest/configuration"
+        }
+      ]
+    },
+    {
+      "id": "php",
+      "label": "PHP",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "srcs/requirements/wordpress/conf/wp-config.php",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "shell",
+      "label": "Shell",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "srcs/requirements/mariadb/tools/setup_db.sh",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "srcs/requirements/tools/clear.sh",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "srcs/requirements/wordpress/tools/setup_wp.sh",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "wordpress",
+      "label": "WordPress",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "srcs/docker-compose.yml",
+          "basis": "manifest/configuration"
+        },
+        {
+          "path": "srcs/requirements/wordpress/Dockerfile",
+          "basis": "manifest/configuration"
+        },
+        {
+          "path": "srcs/requirements/wordpress/tools/setup_wp.sh",
+          "basis": "inspected source"
+        }
+      ]
+    }
+  ],
+  "commit": "eb3f2e6bc9c0ac74d4323a42775db1b2a72c5c3b",
+  "fileCount": 15,
+  "treeDepth": "cached-recursive",
+  "status": "reviewed"
+}

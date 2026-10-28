@@ -1,0 +1,131 @@
+Kwanho Kim
+
+Software Engineer
+
+kwanho0096@gmail.com · kwanho.dev
+
+linkedin.com/in/kwanhokim · github.com/KKWANH
+
+WORKING DRAFT · DESIGN EXAMPLE
+
+Role and education details await confirmation.
+
+SUMMARY
+
+Software engineer working on semiconductor inspection equipment at KLA. Earlier work at Pickit 3D and Bosch spans robotic vision, communication software and operator interfaces.
+
+EXPERIENCE
+
+KLA — Software engineering
+
+Current · Semiconductor inspection equipment
+
+- Work includes lifter control and recovery across application and controller software, including response to an axis error. Hardware validation is pending.
+
+- Work includes camera white-balance settings, device readback and the values shown in the interface.
+
+- Work includes moving serial device-control code into a shared layer and updating its integration.
+
+Pickit 3D — Research & Software Engineer
+
+Aug 2025–Mar 2026 · Leuven, Belgium
+
+- Traced a field communication failure to a port conflict and implemented the fix.
+
+- Built a Python WebSocket client with reconnect, backoff and message validation for internal tools.
+
+- Built log-download and conversion tools with timezone handling and a multilingual interface.
+
+- Developed system and network configuration screens with input validation.
+
+Bosch — V2X Communication Intern
+
+Jun 2024–Nov 2024 · Hildesheim, Germany
+
+- Built a vehicle-to-everything (V2X) demonstrator, defined message interfaces and checked end-to-end behaviour in test runs.
+
+- Integrated communication modules and developed a React interface for an eBike safety prototype.
+
+SKILLS
+
+Programming: C++, C, Python, TypeScript, JavaScript.
+
+Equipment & integration: Device-control software, serial communication, camera configuration, WebSocket, REST, ROS 1/2.
+
+Applications & tools: React, Node.js, Fastify, SQLite; Git, Docker, Linux.
+
+Spoken languages: Korean (native); English (IELTS Academic 7.5, Mar 2025).
+
+WORKING DRAFT · Not for submission | 1 / 2
+
+--- PLANNED PAGE BREAK ---
+
+Kwanho Kim — Software Engineer
+
+SELECTED PROJECTS
+
+Ariadne — Local-document workspace
+
+2026 · Personal project · github.com/KKWANH/ai-assistant
+
+- Built a workspace for using language models with local documents, including source references and a review step for proposed file changes.
+
+- Developed the application in TypeScript and Python with Fastify, React and SQLite.
+
+ColorSaveLife — Bosch ConnectedExperience
+
+Feb 2024 · Berlin, Germany
+
+- Led and presented a hackathon team; integrated eye-tracking with a simulation pipeline and built a plugin-based Python client.
+
+Autonomous Lane-Keeping Assist — SEA:ME
+
+Aug–Dec 2023 · Wolfsburg, Germany
+
+- Implemented CNN-based lane detection in CARLA and a client to collect and evaluate simulation data.
+
+EDUCATION
+
+Subjects and dates as supplied; degree status to confirm.
+
+Mechatronics — Korea National Open University
+
+Feb 2026–Present
+
+Artificial Intelligence — Korea National Open University
+
+Mar 2023–Feb 2025
+
+Business Administration — Academic Credit Bank System
+
+Apr 2019–Aug 2022
+
+Computer Engineering — Academic Credit Bank System
+
+Apr 2019–Aug 2020
+
+TRAINING
+
+SEA:ME — Automotive & Mobility program
+
+Jul 2023–Jun 2024 · Wolfsburg, Germany
+
+42 — Software engineering program
+
+Started Sep 2020 · Seoul / Wolfsburg
+
+SELECTED CREDENTIAL
+
+Engineer Information Processing
+
+Nov 2020 · Human Resources Development Service of Korea (HRD Korea)
+
+LEADERSHIP
+
+Rush03 — Keyboardist & leader
+
+Aug 2022–Jul 2023 · 42 student club · Seoul, South Korea
+
+- Led a 50-member community and delivered three events for 200–300 attendees.
+
+WORKING DRAFT · Not for submission | 2 / 2

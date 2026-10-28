@@ -1,0 +1,124 @@
+{
+  "name": "triple_FrontEnd_2022",
+  "url": "https://github.com/KKWANH/triple_FrontEnd_2022",
+  "fork": true,
+  "scope": "reference",
+  "scopeNote": "Fork/reference; personal implementation is not established by the fork.",
+  "description": "for triple's HomeWork #3 submit :)",
+  "updatedAt": "2022-07-04T10:55:24Z",
+  "defaultBranch": "main",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/triple_FrontEnd_2022/blob/e5a64e3b1018bbbce0b5eda33a76f6bd85320f21/README.md",
+      "bytes": 4972,
+      "sha256": "fd3dffc98b62fc045f4d588cd675010aec3b746e136cf4325b7a456ae74a8414"
+    },
+    {
+      "path": "tripleHomeWork3/package.json",
+      "url": "https://github.com/KKWANH/triple_FrontEnd_2022/blob/e5a64e3b1018bbbce0b5eda33a76f6bd85320f21/tripleHomeWork3/package.json",
+      "bytes": 868,
+      "sha256": "1cb0f0e6270718cf26fc7511c1716d318d529a422044eca69cd30948dc1ce6d2"
+    }
+  ],
+  "limitations": [],
+  "technologies": [
+    {
+      "id": "css",
+      "label": "CSS",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "tripleHomeWork3/src/reset.css",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "git",
+      "label": "Git",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        }
+      ]
+    },
+    {
+      "id": "html",
+      "label": "HTML",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "tripleHomeWork3/index.html",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "javascript",
+      "label": "JavaScript",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "tripleHomeWork3/.eslintrc.js",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "react",
+      "label": "React",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        },
+        {
+          "path": "tripleHomeWork3/package.json",
+          "basis": "direct dependency"
+        },
+        {
+          "path": "tripleHomeWork3/package.json",
+          "basis": "manifest/configuration"
+        }
+      ]
+    },
+    {
+      "id": "typescript",
+      "label": "TypeScript",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "tripleHomeWork3/src/App.tsx",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "tripleHomeWork3/src/container/CompanyLogo.tsx",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "tripleHomeWork3/src/container/MarketingInfo.tsx",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "vite",
+      "label": "Vite",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "tripleHomeWork3/package.json",
+          "basis": "direct dependency"
+        }
+      ]
+    }
+  ],
+  "commit": "e5a64e3b1018bbbce0b5eda33a76f6bd85320f21",
+  "fileCount": 31,
+  "treeDepth": "recursive",
+  "status": "reviewed"
+}

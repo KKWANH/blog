@@ -1,0 +1,172 @@
+{
+  "name": "Kwanho Kim",
+  "role": "Software Engineer",
+  "domains": [
+    "Semiconductor inspection",
+    "Robotics",
+    "Mobility"
+  ],
+  "focusLine": "Systems & interfaces · Integration · C++",
+  "focusLines": [
+    "Systems & interfaces",
+    "Integration · C++"
+  ],
+  "location": "Leuven, Belgium",
+  "email": "kwanho0096@gmail.com",
+  "website": "https://www.kwanho.dev",
+  "linkedin": "https://www.linkedin.com/in/kwanhokim",
+  "github": "https://github.com/KKWANH",
+  "focus": [
+    "C++ systems",
+    "Interfaces",
+    "Error recovery"
+  ],
+  "experience": [
+    {
+      "company": "KLA",
+      "role": "C++ Engineer",
+      "dates": "Aug 2026–Present",
+      "context": "ICOS Division · Zeta team · Leuven, Belgium",
+      "location": "Leuven, Belgium",
+      "domain": "Semiconductor inspection",
+      "current": true,
+      "emphasis": [
+        "visible in the UI",
+        "reuse by application code"
+      ],
+      "currentFocus": "Fault-recovery design and early C++ implementation for the equipment’s lift mechanism, with team review.",
+      "bullets": [
+        "Made the camera’s reported white-balance settings visible in the UI.",
+        "Moved serial device control and logging into shared components for reuse by application code."
+      ]
+    },
+    {
+      "company": "Pickit 3D",
+      "role": "Research & Software Engineer",
+      "dates": "Aug 2025–Mar 2026",
+      "context": "Leuven, Belgium",
+      "location": "Leuven, Belgium",
+      "domain": "Robotics & 3D vision",
+      "current": false,
+      "emphasis": [
+        "Resolved a field communication failure",
+        "incident investigation",
+        "internal tools"
+      ],
+      "bullets": [
+        "Resolved a field communication failure by identifying and fixing a port conflict.",
+        "Built a timezone-aware log download and conversion workflow with a multilingual UI for incident investigation.",
+        "Built a reusable Python client for internal tools, with reconnection and message checks; contributed to interface design."
+      ]
+    },
+    {
+      "company": "Bosch",
+      "role": "V2X Communication Intern",
+      "dates": "Jun–Nov 2024",
+      "context": "Hildesheim, Germany",
+      "location": "Hildesheim, Germany",
+      "domain": "Mobility prototypes",
+      "current": false,
+      "emphasis": [
+        "V2X safety scenarios",
+        "operator interface"
+      ],
+      "bullets": [
+        "Built a vehicle demonstrator for V2X safety scenarios; tested end-to-end messaging.",
+        "Built the operator interface for an eBike safety prototype in React."
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "label": "Languages",
+      "text": "C++, C, Python; TypeScript, JavaScript",
+      "lines": [
+        "C++, C, Python;",
+        "TypeScript, JavaScript"
+      ]
+    },
+    {
+      "label": "Systems & tools",
+      "text": "Linux, Git, Docker; WebSocket / REST; ROS 1/2",
+      "lines": [
+        "Linux, Git, Docker;",
+        "WebSocket / REST; ROS 1/2"
+      ]
+    },
+    {
+      "label": "Interfaces",
+      "text": "React, Qt/QML; Figma (basic UI)",
+      "lines": [
+        "React, Qt/QML;",
+        "Figma (basic UI)"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "C++ containers",
+      "includeInCV": false,
+      "link": "https://github.com/KKWANH/ft_containers",
+      "dates": "42 project · 2022",
+      "emphasis": [
+        "AVL-tree-backed map"
+      ],
+      "description": "Implemented vector, stack and an AVL-tree-backed map with custom iterators."
+    },
+    {
+      "name": "Color Saves Life",
+      "includeInCV": true,
+      "link": "https://github.com/KKWANH/ColorSavesLife",
+      "dates": "Feb 2024",
+      "award": {
+        "rank": "1st",
+        "credit": "Team",
+        "scope": "digital.auto & mobility challenge",
+        "event": "BCX 2024"
+      },
+      "emphasis": [],
+      "description": "Built the Python client for a driver visual-assistance prototype, integrated eye tracking with simulation and presented the team’s demo."
+    }
+  ],
+  "education": [
+    {
+      "name": "Mechatronics",
+      "detail": "Bachelor’s in progress · KNOU Prime College",
+      "date": "2026–Present"
+    },
+    {
+      "name": "Artificial Intelligence",
+      "detail": "Bachelor’s awarded · Korea National Open University",
+      "date": "2025"
+    },
+    {
+      "name": "Computer Engineering (2020) / Business Administration (2022)",
+      "detail": "Bachelor's degrees awarded · Academic Credit Bank System",
+      "detailLines": [
+        "Bachelor's degrees awarded",
+        "Academic Credit Bank System"
+      ],
+      "date": ""
+    }
+  ],
+  "training": [
+    {
+      "id": "42",
+      "name": "42",
+      "program": "Software engineering",
+      "location": "Seoul / Wolfsburg",
+      "period": null,
+      "status": "Completed"
+    },
+    {
+      "id": "sea-me",
+      "name": "SEA:ME",
+      "program": "Automotive & Mobility",
+      "location": "Wolfsburg",
+      "period": "Jul 2023–Jun 2024",
+      "status": "Completed"
+    }
+  ],
+  "languages": "Korean native · English: IELTS Academic 7.5, Mar 2025"
+}

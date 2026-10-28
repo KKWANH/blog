@@ -1,0 +1,52 @@
+{
+  "focus": [
+    {
+      "name": "Email contact@kwanho.dev",
+      "hit": true
+    },
+    {
+      "name": "Kwanho website home",
+      "hit": true
+    },
+    {
+      "name": "Read the CV",
+      "hit": true
+    },
+    {
+      "name": "Email Kwanho",
+      "hit": true
+    },
+    {
+      "name": "Save contact",
+      "hit": true
+    },
+    {
+      "name": "LinkedIn",
+      "hit": true
+    },
+    {
+      "name": "Current work at KLA",
+      "hit": true
+    },
+    {
+      "name": "Copy profile summary",
+      "hit": true
+    },
+    {
+      "name": "Open the camera portrait",
+      "hit": true
+    },
+    {
+      "name": "Open the professional portrait",
+      "hit": true
+    },
+    {
+      "name": "Open the window portrait",
+      "hit": true
+    }
+  ],
+  "focus_passed": true,
+  "hub_inside": true,
+  "page_reflows": true,
+  "passed": true
+}

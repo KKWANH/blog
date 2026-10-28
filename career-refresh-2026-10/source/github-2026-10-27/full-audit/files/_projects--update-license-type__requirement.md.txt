@@ -1,0 +1,13 @@
+# Requirement: Update License Type in License Server
+
+## Source
+Task description from team lead.
+
+## Problem
+License type dropdown needs updated values. 3.x and 4.x systems need different handling (4.x should not write license_type to file).
+
+## Deliverables
+- Merged PR updating license server with new license type field management
+
+## Status
+Design proposed in projects/update-license-type-in-license-server/README.md.

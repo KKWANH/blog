@@ -1,0 +1,73 @@
+{
+  "name": "QuantumPang2",
+  "url": "https://github.com/KKWANH/QuantumPang2",
+  "fork": false,
+  "scope": "learning",
+  "scopeNote": "Early Unity menu/scene prototype; broad gameplay implementation is not established.",
+  "description": "",
+  "updatedAt": "2020-09-22T06:28:42Z",
+  "defaultBranch": "master",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/QuantumPang2/blob/fd0f1f5015b49bf2e2bc24f605160b5ed87241eb/README.md",
+      "bytes": 75,
+      "sha256": "fea508f35932da177e42c09300a6d00da3e9490238aeb5a1d27e5234de3c87d5"
+    },
+    {
+      "path": "ProjectSettings/ProjectVersion.txt",
+      "url": "https://github.com/KKWANH/QuantumPang2/blob/fd0f1f5015b49bf2e2bc24f605160b5ed87241eb/ProjectSettings/ProjectVersion.txt",
+      "bytes": 85,
+      "sha256": "e926967feb04cad14f76e7651a4a65544767a40d3f90434573dcbfe08241c18a"
+    },
+    {
+      "path": "Assets/Scripts/BlockManager.cs",
+      "url": "https://github.com/KKWANH/QuantumPang2/blob/fd0f1f5015b49bf2e2bc24f605160b5ed87241eb/Assets/Scripts/BlockManager.cs",
+      "bytes": 206,
+      "sha256": "ab9473b4e38032646cab651abb955b462267c77a897ca4b51c3230b6361fe094"
+    },
+    {
+      "path": "Assets/Scripts/SceneManager.cs",
+      "url": "https://github.com/KKWANH/QuantumPang2/blob/fd0f1f5015b49bf2e2bc24f605160b5ed87241eb/Assets/Scripts/SceneManager.cs",
+      "bytes": 546,
+      "sha256": "e067b311cdc251b4482f7207dd5d309ad7cad9e44af4f1e933fd9a59c92e9c9f"
+    }
+  ],
+  "limitations": [],
+  "technologies": [
+    {
+      "id": "csharp",
+      "label": "C#",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "Assets/Scripts/BlockManager.cs",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "Assets/Scripts/SceneManager.cs",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "unity",
+      "label": "Unity",
+      "group": "design",
+      "evidence": [
+        {
+          "path": "Assets/Scripts/BlockManager.cs",
+          "basis": "inspected source"
+        },
+        {
+          "path": "Assets/Scripts/SceneManager.cs",
+          "basis": "inspected source"
+        }
+      ]
+    }
+  ],
+  "commit": "fd0f1f5015b49bf2e2bc24f605160b5ed87241eb",
+  "fileCount": 9120,
+  "treeDepth": "cached-recursive",
+  "status": "reviewed"
+}

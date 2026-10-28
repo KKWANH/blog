@@ -1,0 +1,183 @@
+{
+  "name": "AutoTrader-Template",
+  "url": "https://github.com/KKWANH/AutoTrader-Template",
+  "fork": false,
+  "scope": "project",
+  "scopeNote": "Repository project; listed technologies describe its code, not a proficiency rating.",
+  "description": "",
+  "updatedAt": "2025-10-28T15:48:05Z",
+  "defaultBranch": "main",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/AutoTrader-Template/blob/97230c9877d205c1cfe97699325d640faf02c098/README.md",
+      "bytes": 4889,
+      "sha256": "68d9e9a48f6480217799949de77f6b1796559ef92a88fbf35e983bfcc09a6b7f"
+    },
+    {
+      "path": "requirements.txt",
+      "url": "https://github.com/KKWANH/AutoTrader-Template/blob/97230c9877d205c1cfe97699325d640faf02c098/requirements.txt",
+      "bytes": 164,
+      "sha256": "160156620a011fe238d298f9f9be74e4945e10a7e71ffef82d98d9175d12437e"
+    },
+    {
+      "path": "Dockerfile",
+      "url": "https://github.com/KKWANH/AutoTrader-Template/blob/97230c9877d205c1cfe97699325d640faf02c098/Dockerfile",
+      "bytes": 408,
+      "sha256": "881bcca339d8109dc59237efeb7309713528f32432b0de46f7244d7a047e3408"
+    },
+    {
+      "path": "docker-compose.yml",
+      "url": "https://github.com/KKWANH/AutoTrader-Template/blob/97230c9877d205c1cfe97699325d640faf02c098/docker-compose.yml",
+      "bytes": 1060,
+      "sha256": "b34021d174119359f32545088cfc37a89c8ed2d60209d548c1ac8f161be08c9b"
+    },
+    {
+      "path": "scripts/start_cron.sh",
+      "url": "https://github.com/KKWANH/AutoTrader-Template/blob/97230c9877d205c1cfe97699325d640faf02c098/scripts/start_cron.sh",
+      "bytes": 1049,
+      "sha256": "8fe8a37ccfa7b6e673f72f259943d7ca25a330c6459609eb82b666001b46bb4a"
+    },
+    {
+      "path": "scripts/init_ollama.sh",
+      "url": "https://github.com/KKWANH/AutoTrader-Template/blob/97230c9877d205c1cfe97699325d640faf02c098/scripts/init_ollama.sh",
+      "bytes": 460,
+      "sha256": "e6648271fc8202ac8a9ce4c01a54f2406fe53226f003ac89e18237c21f0a729c"
+    },
+    {
+      "path": "scripts/wait-for-http.sh",
+      "url": "https://github.com/KKWANH/AutoTrader-Template/blob/97230c9877d205c1cfe97699325d640faf02c098/scripts/wait-for-http.sh",
+      "bytes": 302,
+      "sha256": "a17d6b49b34f68c69de29610e97ba8f5119f96ae3221771f91949898e9a3489e"
+    }
+  ],
+  "limitations": [
+    "Raw .py downloads are restricted by the corporate security gateway; accessible documentation/manifests are reviewed instead."
+  ],
+  "technologies": [
+    {
+      "id": "compose",
+      "label": "Docker Compose",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "docker-compose.yml",
+          "basis": "service configuration"
+        },
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        }
+      ]
+    },
+    {
+      "id": "docker",
+      "label": "Docker",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "Dockerfile",
+          "basis": "container configuration"
+        },
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        }
+      ]
+    },
+    {
+      "id": "git",
+      "label": "Git",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        }
+      ]
+    },
+    {
+      "id": "numpy",
+      "label": "NumPy",
+      "group": "data",
+      "evidence": [
+        {
+          "path": "requirements.txt",
+          "basis": "declared Python dependency"
+        },
+        {
+          "path": "requirements.txt",
+          "basis": "manifest/configuration"
+        }
+      ]
+    },
+    {
+      "id": "pandas",
+      "label": "Pandas",
+      "group": "data",
+      "evidence": [
+        {
+          "path": "requirements.txt",
+          "basis": "declared Python dependency"
+        },
+        {
+          "path": "requirements.txt",
+          "basis": "manifest/configuration"
+        }
+      ]
+    },
+    {
+      "id": "python",
+      "label": "Python",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "app.py",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "exec/broker_binance.py",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "exec/paper.py",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "shell",
+      "label": "Shell",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "scripts/init_ollama.sh",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "scripts/start_cron.sh",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "scripts/wait-for-http.sh",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "websocket",
+      "label": "WebSocket",
+      "group": "systems",
+      "evidence": [
+        {
+          "path": "requirements.txt",
+          "basis": "manifest/configuration"
+        }
+      ]
+    }
+  ],
+  "commit": "97230c9877d205c1cfe97699325d640faf02c098",
+  "fileCount": 25,
+  "treeDepth": "recursive",
+  "status": "reviewed-limited"
+}

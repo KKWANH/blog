@@ -1,0 +1,113 @@
+{
+  "name": "MarioThread",
+  "url": "https://github.com/KKWANH/MarioThread",
+  "fork": false,
+  "scope": "learning",
+  "scopeNote": "Learning/team project; inspect the stated contribution and source.",
+  "description": "C++/QT5 based multithread racing game (Super Mario Kart)",
+  "updatedAt": "2023-07-17T14:41:26Z",
+  "defaultBranch": "master",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/MarioThread/blob/286dc8633fff0ef493f9330230f81cdd6c84cc4e/README.md",
+      "bytes": 853,
+      "sha256": "55a694d3619be174b9b873bf431c59350230ffdd558bfa509912ead303ff3359"
+    },
+    {
+      "path": "RaceArcade.pro",
+      "url": "https://github.com/KKWANH/MarioThread/blob/286dc8633fff0ef493f9330230f81cdd6c84cc4e/RaceArcade.pro",
+      "bytes": 240,
+      "sha256": "0ad3112609ea45136f476f57e6b5b2e3fa000d5667119d35ad5553d1051cb30b"
+    },
+    {
+      "path": "src/main.cpp",
+      "url": "https://github.com/KKWANH/MarioThread/blob/286dc8633fff0ef493f9330230f81cdd6c84cc4e/src/main.cpp",
+      "bytes": 225,
+      "sha256": "e5e51ef1c5d63f63ab1c0bd56bac3aca5ac84b3e1b9a9c3383f50d81f82a1898"
+    },
+    {
+      "path": "src/view.cpp",
+      "url": "https://github.com/KKWANH/MarioThread/blob/286dc8633fff0ef493f9330230f81cdd6c84cc4e/src/view.cpp",
+      "bytes": 1012,
+      "sha256": "63cd3ac2bb389cddfea361ca0d0400dd6690541119be0842e7c19c4a86c56c6a"
+    },
+    {
+      "path": "src/gamethread.cpp",
+      "url": "https://github.com/KKWANH/MarioThread/blob/286dc8633fff0ef493f9330230f81cdd6c84cc4e/src/gamethread.cpp",
+      "bytes": 15436,
+      "sha256": "84ba8d18562d7a50cd75b93cd14366c6a8484c807fdde0e4434a3068ae742ccf"
+    }
+  ],
+  "limitations": [],
+  "technologies": [
+    {
+      "id": "cpp",
+      "label": "C++",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "src/gamethread.cpp",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "src/main.cpp",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "src/view.cpp",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "git",
+      "label": "Git",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        }
+      ]
+    },
+    {
+      "id": "qmake",
+      "label": "qmake",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "RaceArcade.pro",
+          "basis": "build file"
+        },
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        }
+      ]
+    },
+    {
+      "id": "qt",
+      "label": "Qt / QML",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        },
+        {
+          "path": "RaceArcade.pro",
+          "basis": "inspected source"
+        },
+        {
+          "path": "src/main.cpp",
+          "basis": "inspected source"
+        }
+      ]
+    }
+  ],
+  "commit": "286dc8633fff0ef493f9330230f81cdd6c84cc4e",
+  "fileCount": 37,
+  "treeDepth": "cached-recursive",
+  "status": "reviewed"
+}

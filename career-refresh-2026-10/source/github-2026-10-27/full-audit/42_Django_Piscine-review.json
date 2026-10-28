@@ -1,0 +1,203 @@
+{
+  "name": "42_Django_Piscine",
+  "url": "https://github.com/KKWANH/42_Django_Piscine",
+  "fork": false,
+  "scope": "learning",
+  "scopeNote": "Learning/team project; inspect the stated contribution and source.",
+  "description": "",
+  "updatedAt": "2021-08-11T14:39:10Z",
+  "defaultBranch": "main",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/42_Django_Piscine/blob/d7b2e86da7e8872b42461ee6f3b4ed4b0281b3d9/README.md",
+      "bytes": 19,
+      "sha256": "4df48732bda7f776320189e1b18e4788b5e17353afd4bfbc7e74ac86891aca11"
+    },
+    {
+      "path": "D03/ex04/requirement.txt",
+      "url": "https://github.com/KKWANH/42_Django_Piscine/blob/d7b2e86da7e8872b42461ee6f3b4ed4b0281b3d9/D03/ex04/requirement.txt",
+      "bytes": 96,
+      "sha256": "013636a3c741186b84a220843e1a1a703c3ad915bca4ab612331f8b7204cc704"
+    },
+    {
+      "path": "D05/requirement.txt",
+      "url": "https://github.com/KKWANH/42_Django_Piscine/blob/d7b2e86da7e8872b42461ee6f3b4ed4b0281b3d9/D05/requirement.txt",
+      "bytes": 129,
+      "sha256": "221b2460727ea4a43eb27591784e618b456139042a18f86d5cd24ffa50248345"
+    },
+    {
+      "path": "D07/requirements.txt",
+      "url": "https://github.com/KKWANH/42_Django_Piscine/blob/d7b2e86da7e8872b42461ee6f3b4ed4b0281b3d9/D07/requirements.txt",
+      "bytes": 140,
+      "sha256": "2a90d4d808ce53b44af9f102b7281a59d519a57372c2b6c1d7735a4cfb7fd302"
+    },
+    {
+      "path": "D08/ex0123/settings/requirements.txt",
+      "url": "https://github.com/KKWANH/42_Django_Piscine/blob/d7b2e86da7e8872b42461ee6f3b4ed4b0281b3d9/D08/ex0123/settings/requirements.txt",
+      "bytes": 122,
+      "sha256": "85a2e9e93e0b8455bc8bf8107521b06527eeb0eed05f878f5068a9fcfcb43f3f"
+    },
+    {
+      "path": "D07/run.sh",
+      "url": "https://github.com/KKWANH/42_Django_Piscine/blob/d7b2e86da7e8872b42461ee6f3b4ed4b0281b3d9/D07/run.sh",
+      "bytes": 191,
+      "sha256": "b76acd0abfe88ecfe53c858a641d4a1aa0828aed8b36ea1bcca7bff5f17ffbf5"
+    },
+    {
+      "path": "D00/ex02/popup.js",
+      "url": "https://github.com/KKWANH/42_Django_Piscine/blob/d7b2e86da7e8872b42461ee6f3b4ed4b0281b3d9/D00/ex02/popup.js",
+      "bytes": 991,
+      "sha256": "12b9b066e59ee4766895d39ba32775a7f152a0038359302b66dbfc82ab13373c"
+    },
+    {
+      "path": "D00/ex04/file1.js",
+      "url": "https://github.com/KKWANH/42_Django_Piscine/blob/d7b2e86da7e8872b42461ee6f3b4ed4b0281b3d9/D00/ex04/file1.js",
+      "bytes": 39,
+      "sha256": "4bb5b49949d7cdb679c6585f86ed9c272583a5f46b970862579a9fc5b076775a"
+    },
+    {
+      "path": "D00/ex04/file2.js",
+      "url": "https://github.com/KKWANH/42_Django_Piscine/blob/d7b2e86da7e8872b42461ee6f3b4ed4b0281b3d9/D00/ex04/file2.js",
+      "bytes": 36,
+      "sha256": "7bf6e8d241a38351260b714427d41f5746197cfe5632ab6487ffbc8fbc821b1e"
+    }
+  ],
+  "limitations": [
+    "Raw .py downloads are restricted by the corporate security gateway; accessible documentation/manifests are reviewed instead.",
+    "D03/ex04/django_venv/lib/python3.8/site-packages/pip/_vendor/packaging/requirements.py: source download not retried after a corporate gateway restriction.",
+    "D03/ex04/django_venv/lib/python3.8/site-packages/pkg_resources/_vendor/packaging/requirements.py: source download not retried after a corporate gateway restriction.",
+    "D03/ex04/django_venv/lib/python3.8/site-packages/setuptools/_vendor/packaging/requirements.py: source download not retried after a corporate gateway restriction."
+  ],
+  "technologies": [
+    {
+      "id": "css",
+      "label": "CSS",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "D00/ex03/style.css",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "D00/ex05/normalize.css",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "D00/ex05/style.css",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "django",
+      "label": "Django",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "D03/ex04/requirement.txt",
+          "basis": "declared Python dependency"
+        },
+        {
+          "path": "D03/ex04/requirement.txt",
+          "basis": "inspected source"
+        },
+        {
+          "path": "D05/requirement.txt",
+          "basis": "declared Python dependency"
+        }
+      ]
+    },
+    {
+      "id": "html",
+      "label": "HTML",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "D00/ex01/cv.html",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "D00/ex02/form.html",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "D00/ex03/copy.html",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "javascript",
+      "label": "JavaScript",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "D00/ex02/popup.js",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "D00/ex04/file1.js",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "D00/ex04/file2.js",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "pillow",
+      "label": "Pillow",
+      "group": "data",
+      "evidence": [
+        {
+          "path": "D08/ex0123/settings/requirements.txt",
+          "basis": "declared Python dependency"
+        }
+      ]
+    },
+    {
+      "id": "python",
+      "label": "Python",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "D01/ex00/var.py",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "D01/ex01/numbers.py",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "D01/ex02/var_to_dict.py",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "shell",
+      "label": "Shell",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "D00/ex00/myawesomescript.sh",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "D03/ex01/my_script.sh",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "D03/ex04/my_script.sh",
+          "basis": "source-file presence"
+        }
+      ]
+    }
+  ],
+  "commit": "d7b2e86da7e8872b42461ee6f3b4ed4b0281b3d9",
+  "fileCount": 719,
+  "treeDepth": "recursive",
+  "status": "reviewed-limited"
+}

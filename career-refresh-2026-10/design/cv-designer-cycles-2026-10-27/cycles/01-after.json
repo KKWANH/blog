@@ -1,0 +1,58 @@
+{
+  "cycle": 1,
+  "phase": "after",
+  "pages": 1,
+  "measurements": {
+    "width": 794,
+    "height": 1123,
+    "header": 114.546875,
+    "bodySize": "14px",
+    "fonts": [
+      {
+        "family": "Manrope",
+        "status": "loaded"
+      },
+      {
+        "family": "Source Serif 4",
+        "status": "loaded"
+      },
+      {
+        "family": "Inter",
+        "status": "loaded"
+      },
+      {
+        "family": "Inter",
+        "status": "loaded"
+      },
+      {
+        "family": "Inter",
+        "status": "loaded"
+      },
+      {
+        "family": "Inter",
+        "status": "loaded"
+      }
+    ],
+    "sections": [
+      {
+        "title": "Experience",
+        "height": 372.84375
+      },
+      {
+        "title": "Technical skills",
+        "height": 115.609375
+      },
+      {
+        "title": "Selected projects",
+        "height": 129.96875
+      },
+      {
+        "title": "Education & training",
+        "height": 185.515625
+      }
+    ]
+  },
+  "runtime_errors": [],
+  "links": 6,
+  "pdf_sha256": "7d2d79e33365beb6ec86147e7ae51d6a06c91f342c9bcf32dfb0ba937ba1e6d1"
+}

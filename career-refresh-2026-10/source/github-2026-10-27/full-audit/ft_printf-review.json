@@ -1,0 +1,85 @@
+{
+  "name": "ft_printf",
+  "url": "https://github.com/KKWANH/ft_printf",
+  "fork": false,
+  "scope": "learning",
+  "scopeNote": "Learning/team project; inspect the stated contribution and source.",
+  "description": "",
+  "updatedAt": "2022-02-07T16:10:53Z",
+  "defaultBranch": "master",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/ft_printf/blob/4b4b28ac4836aae98d59af8204c4c2fc67f63414/README.md",
+      "bytes": 31,
+      "sha256": "9e47e4e16e595132d409e2d3f272270e4de759511af92fbc03d7861ab4331bc6"
+    },
+    {
+      "path": "Makefile",
+      "url": "https://github.com/KKWANH/ft_printf/blob/4b4b28ac4836aae98d59af8204c4c2fc67f63414/Makefile",
+      "bytes": 904,
+      "sha256": "ae9329d86d40c67f673448a5461e9aafe955b44dcae53bb3c60ae13cf77c6230"
+    },
+    {
+      "path": "ft_printf.c",
+      "url": "https://github.com/KKWANH/ft_printf/blob/4b4b28ac4836aae98d59af8204c4c2fc67f63414/ft_printf.c",
+      "bytes": 2013,
+      "sha256": "0a680208ceece69d85f96b1f8fc75dd876c8d1418d5c83f48d8bc9ac8e13f2ce"
+    },
+    {
+      "path": "ft_util_0.c",
+      "url": "https://github.com/KKWANH/ft_printf/blob/4b4b28ac4836aae98d59af8204c4c2fc67f63414/ft_util_0.c",
+      "bytes": 1767,
+      "sha256": "366854a8482555943186b566a257f15ed7d7b7d7c0eaf793bf58ca50cf9d413a"
+    },
+    {
+      "path": "ft_util_1.c",
+      "url": "https://github.com/KKWANH/ft_printf/blob/4b4b28ac4836aae98d59af8204c4c2fc67f63414/ft_util_1.c",
+      "bytes": 2453,
+      "sha256": "1c77fd3453c04d82447f4e428ed3c8cc04c8a83082ea7f4da2b636362f2c30d5"
+    },
+    {
+      "path": "ft_util_2.c",
+      "url": "https://github.com/KKWANH/ft_printf/blob/4b4b28ac4836aae98d59af8204c4c2fc67f63414/ft_util_2.c",
+      "bytes": 1486,
+      "sha256": "dba460fdeab37a37d131d87a147a7e06270ace419de125e0a6c3c727979ce5a7"
+    }
+  ],
+  "limitations": [],
+  "technologies": [
+    {
+      "id": "c",
+      "label": "C",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "ft_format_check.c",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "ft_format_ini_par.c",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "ft_format_menu.c",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "make",
+      "label": "Make",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "Makefile",
+          "basis": "build file"
+        }
+      ]
+    }
+  ],
+  "commit": "4b4b28ac4836aae98d59af8204c4c2fc67f63414",
+  "fileCount": 18,
+  "treeDepth": "recursive",
+  "status": "reviewed"
+}

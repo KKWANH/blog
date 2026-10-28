@@ -1,0 +1,20 @@
+{
+  "checks": [
+    {
+      "width": 320,
+      "content": 320,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "content": 390,
+      "passed": true
+    },
+    {
+      "width": 768,
+      "content": 768,
+      "passed": true
+    }
+  ],
+  "passed": true
+}

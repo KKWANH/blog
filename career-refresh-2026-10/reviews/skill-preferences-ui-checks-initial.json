@@ -1,0 +1,44 @@
+{
+  "checks": {
+    "no_guessed_initial_levels": true,
+    "save_payload_scoped": true,
+    "reload_preferences": true,
+    "icon_list_level_visible": true,
+    "hidden_skill_absent_from_list": true,
+    "neutral_person_center": false,
+    "map_level_matches_list": true,
+    "hidden_skill_absent_from_search": true,
+    "background_click_steps_out": true,
+    "background_double_click_zooms": true,
+    "shift_double_click_zooms_out": true,
+    "cross_tab_refresh": true,
+    "level_survives_view_switch": true
+  },
+  "errors": [],
+  "audits": [],
+  "fixture_saves": [
+    {
+      "cpp": {
+        "level": "comfortable",
+        "visibility": "profile"
+      },
+      "mne": {
+        "level": null,
+        "visibility": "hidden"
+      }
+    },
+    {
+      "cpp": {
+        "level": "strong",
+        "visibility": "profile"
+      }
+    }
+  ],
+  "failure": "Locator expected to contain text 'changed'\nActual value: None\nError: strict mode violation: get_by_role(\"alert\") resolved to 2 elements:\n    1) <div role=\"alert\" class=\"skill-editor-error\">\u2026</div> aka get_by_text(\"Skill settings changed. Reload the latest file before saving.Your unsaved\")\n    2) <div role=\"alert\" aria-live=\"assertive\" id=\"__next-route-announcer__\"></div> aka locator(\"[id=\\\"__next-route-announcer__\\\"]\")\n \nCall log:\n  - Expect \"to_contain_text\" get_by_role(\"alert\") with timeout 5000ms\n  - waiting for get_by_role(\"alert\")\n",
+  "trace": "Traceback (most recent call last):\n  File \"C:\\Projects\\career-refresh-2026-10\\tools\\check-skill-preferences-ui.py\", line 75, in main\n    editor.get_by_role('button',name='Save changes',exact=True).click();expect(editor.get_by_role('alert')).to_contain_text('changed')\n                                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^\n  File \"C:\\Projects\\career-refresh-2026-10\\tools\\python\\playwright\\sync_api\\_generated.py\", line 14961, in to_contain_text\n    self._sync(\n    ~~~~~~~~~~^\n        self._impl_obj.to_contain_text(\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    ...<4 lines>...\n        )\n        ^\n    )\n    ^\n  File \"C:\\Projects\\career-refresh-2026-10\\tools\\python\\playwright\\_impl\\_sync_base.py\", line 111, in _sync\n    return task.result()\n           ~~~~~~~~~~~^^\n  File \"C:\\Projects\\career-refresh-2026-10\\tools\\python\\playwright\\_impl\\_assertions.py\", line 303, in to_contain_text\n    await self._expect_impl(\n    ...<9 lines>...\n    )\n  File \"C:\\Projects\\career-refresh-2026-10\\tools\\python\\playwright\\_impl\\_assertions.py\", line 128, in _expect_impl\n    _record_soft_or_raise(\n    ~~~~~~~~~~~~~~~~~~~~~^\n        AssertionError(\n        ^^^^^^^^^^^^^^^\n    ...<2 lines>...\n        self._is_soft,\n        ^^^^^^^^^^^^^^\n    )\n    ^\n  File \"C:\\Projects\\career-refresh-2026-10\\tools\\python\\playwright\\_impl\\_assertions.py\", line 60, in _record_soft_or_raise\n    raise error\nAssertionError: Locator expected to contain text 'changed'\nActual value: None\nError: strict mode violation: get_by_role(\"alert\") resolved to 2 elements:\n    1) <div role=\"alert\" class=\"skill-editor-error\">\u2026</div> aka get_by_text(\"Skill settings changed. Reload the latest file before saving.Your unsaved\")\n    2) <div role=\"alert\" aria-live=\"assertive\" id=\"__next-route-announcer__\"></div> aka locator(\"[id=\\\"__next-route-announcer__\\\"]\")\n \nCall log:\n  - Expect \"to_contain_text\" get_by_role(\"alert\") with timeout 5000ms\n  - waiting for get_by_role(\"alert\")\n\n",
+  "real_file_observation": {
+    "unchanged": true,
+    "test_writes": "All browser skill writes intercepted by fixture API. Real filesystem/API persistence checked separately by native tests."
+  },
+  "passed": false
+}

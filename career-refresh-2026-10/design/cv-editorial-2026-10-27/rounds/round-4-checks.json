@@ -1,0 +1,39 @@
+{
+  "pages": 1,
+  "fonts": [
+    {
+      "type": "Type0",
+      "name": "AAAAAA+Manrope-Bold",
+      "embedded": true,
+      "unicode": true
+    },
+    {
+      "type": "Type0",
+      "name": "BAAAAA+Inter-Medium",
+      "embedded": true,
+      "unicode": true
+    },
+    {
+      "type": "Type0",
+      "name": "CAAAAA+Inter-Regular",
+      "embedded": true,
+      "unicode": true
+    },
+    {
+      "type": "Type0",
+      "name": "DAAAAA+Inter-Bold",
+      "embedded": true,
+      "unicode": true
+    },
+    {
+      "type": "Type0",
+      "name": "EAAAAA+Inter-SemiBold",
+      "embedded": true,
+      "unicode": true
+    }
+  ],
+  "text_start": "Kwanho Kim\nC++ Software Engineer\nLeuven, Belgium\ncontact@kwanho.dev\nkwanho.dev\nLinkedIn\nGitHub\nEXPERIENCE\nKLA C++ Engineer\nAug 2026\u2013Present\nICOS Division \u00b7 Zeta team \u00b7 Leuven, Belgium\nAnalyse lifter fault recovery across application and controller software; co",
+  "top": 37.258663177490234,
+  "bottom": 792.6708984375,
+  "links": 6
+}

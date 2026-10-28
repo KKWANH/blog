@@ -1,0 +1,235 @@
+{
+  "name": "webserv",
+  "url": "https://github.com/KKWANH/webserv",
+  "fork": false,
+  "scope": "learning",
+  "scopeNote": "Learning/team project; inspect the stated contribution and source.",
+  "description": "",
+  "updatedAt": "2022-03-30T08:40:19Z",
+  "defaultBranch": "main",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/webserv/blob/fbceda5266b69a9eca37504fc7850e33b2fef90f/README.md",
+      "bytes": 3848,
+      "sha256": "1663ad7e5a0ceeb585c5ce1ed977ecc624defeb9e1f2d10252694e61afa8cf72"
+    },
+    {
+      "path": "Makefile",
+      "url": "https://github.com/KKWANH/webserv/blob/fbceda5266b69a9eca37504fc7850e33b2fef90f/Makefile",
+      "bytes": 3799,
+      "sha256": "0cd7be1c5ff962274cef6e164f241a88d61a09ed50476fa8d47228e555ae4ae6"
+    },
+    {
+      "path": "server.cpp",
+      "url": "https://github.com/KKWANH/webserv/blob/fbceda5266b69a9eca37504fc7850e33b2fef90f/server.cpp",
+      "bytes": 1977,
+      "sha256": "cd3e0ae445411ade696748035568b63fb0642b9db40b5f1bd66665c3b24277d8"
+    },
+    {
+      "path": "CGIProcess/CGIProcess.cpp",
+      "url": "https://github.com/KKWANH/webserv/blob/fbceda5266b69a9eca37504fc7850e33b2fef90f/CGIProcess/CGIProcess.cpp",
+      "bytes": 5863,
+      "sha256": "87747328134cabae59398ed2d60d6a95282557b6ee1295a206563b0e1d4d0f62"
+    },
+    {
+      "path": "CGIProcess/CGIProcess.hpp",
+      "url": "https://github.com/KKWANH/webserv/blob/fbceda5266b69a9eca37504fc7850e33b2fef90f/CGIProcess/CGIProcess.hpp",
+      "bytes": 1494,
+      "sha256": "8a21dabe402da003c3088bf23f658271f5b65199b465789a9a7e60a984d2c28c"
+    },
+    {
+      "path": "ParsingController/Parser.cpp",
+      "url": "https://github.com/KKWANH/webserv/blob/fbceda5266b69a9eca37504fc7850e33b2fef90f/ParsingController/Parser.cpp",
+      "bytes": 2758,
+      "sha256": "302ed4ce7fa329b38baeb7ea4f8ac405ebf9704a5f46e72c9e23ea06eba382e1"
+    },
+    {
+      "path": "SocketController/SocketController.cpp",
+      "url": "https://github.com/KKWANH/webserv/blob/fbceda5266b69a9eca37504fc7850e33b2fef90f/SocketController/SocketController.cpp",
+      "bytes": 1872,
+      "sha256": "7ad26a2912a17e0c33ddddb5da59b9491be7c489769819bca84c8d6004bdc23b"
+    },
+    {
+      "path": "KernelQueueController/KernelQueueController.cpp",
+      "url": "https://github.com/KKWANH/webserv/blob/fbceda5266b69a9eca37504fc7850e33b2fef90f/KernelQueueController/KernelQueueController.cpp",
+      "bytes": 1639,
+      "sha256": "9fbd661d38e6b053e30eda83d84faf157d8926fb4692257cdfa7f86dc6425764"
+    },
+    {
+      "path": "HTTPMessageController/RequestMessage.cpp",
+      "url": "https://github.com/KKWANH/webserv/blob/fbceda5266b69a9eca37504fc7850e33b2fef90f/HTTPMessageController/RequestMessage.cpp",
+      "bytes": 12987,
+      "sha256": "1697c9ba994563b5574bac5a2152293461fb9a4bbe6d4ff164ba8e7636a280c3"
+    }
+  ],
+  "limitations": [
+    "Raw .py downloads are restricted by the corporate security gateway; accessible documentation/manifests are reviewed instead."
+  ],
+  "technologies": [
+    {
+      "id": "cpp",
+      "label": "C++",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "AutoindexController/AutoindexController.cpp",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "AutoindexController/AutoindexController.hpp",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "CGIProcess/CGIProcess.cpp",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "css",
+      "label": "CSS",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "static_html/css/styles.css",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "git",
+      "label": "Git",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        }
+      ]
+    },
+    {
+      "id": "html",
+      "label": "HTML",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "html/403.html",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "html/404.html",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "html/index.html",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "javascript",
+      "label": "JavaScript",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "static_html/js/scripts.js",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "kqueue",
+      "label": "kqueue",
+      "group": "systems",
+      "evidence": [
+        {
+          "path": "KernelQueueController/KernelQueueController.cpp",
+          "basis": "inspected source"
+        }
+      ]
+    },
+    {
+      "id": "make",
+      "label": "Make",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "Makefile",
+          "basis": "build file"
+        }
+      ]
+    },
+    {
+      "id": "nginx",
+      "label": "NGINX",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "Makefile",
+          "basis": "inspected source"
+        },
+        {
+          "path": "server.cpp",
+          "basis": "inspected source"
+        }
+      ]
+    },
+    {
+      "id": "php",
+      "label": "PHP",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "static_html/static_cgi/cookie.php",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "static_html/static_cgi/file.php",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "static_html/static_cgi/phpinfo.php",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "posix",
+      "label": "POSIX APIs",
+      "group": "systems",
+      "evidence": [
+        {
+          "path": "CGIProcess/CGIProcess.cpp",
+          "basis": "inspected source"
+        }
+      ]
+    },
+    {
+      "id": "python",
+      "label": "Python",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "static_html/python/pycgi.py",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "sockets",
+      "label": "Sockets",
+      "group": "systems",
+      "evidence": [
+        {
+          "path": "SocketController/SocketController.cpp",
+          "basis": "inspected source"
+        }
+      ]
+    }
+  ],
+  "commit": "fbceda5266b69a9eca37504fc7850e33b2fef90f",
+  "fileCount": 91,
+  "treeDepth": "cached-recursive",
+  "status": "reviewed-limited"
+}

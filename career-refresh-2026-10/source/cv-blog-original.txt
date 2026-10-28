@@ -1,0 +1,102 @@
+Kwanho Kim​ Software Engineer
+
+Leuven 3001, Belgium | kwanho0096@gmail.com | linkedin.com/kwanhokim | github.com/KKWANH | kwanhokim.vercel.app/editor
+
+Software Engineer with hands-on experience in automotive and robotics software, including C++, Python, Linux,
+simulation, and real-world system integration. My background spans V2X communication, real-time systems, autonomous
+driving prototypes, and production-oriented robotic vision software.  I am motivated by function development problems
+where planning, control, testing, and system behavior must come together reliably in real vehicles.
+
+Education
+ Bachelor
+    -​  Mechatronics,​       ​       Korea National Open University​
+           ​  ​             ​             ​        Seoul, South Korea | Feb 2026 - Present
+    -​  Artificial Intelligence,​     Korea National Open University​
+           ​  ​             ​             ​       GPA: 3.44/4.5 | Seoul, South Korea | Mar 2023 - Feb 2025
+    -​ Computer Engineering,​   Korea Academic Credit Bank System​
+           ​  ​             ​             ​       GPA: 4.24/4.5 | Seoul, South Korea | Apr 2019 - Aug 2020
+    -​  Business Administration,​  Korea Academic Credit Bank System​
+           ​  ​             ​             ​       GPA: 3.77/4.5 | Seoul, South Korea | Apr 2019 - Aug 2022
+
+ École 42​     Software engineering program: C/C++/Unix/algorithms​    Seoul / Wolfsburg | Sep 2020 - Present
+ SEA:ME​       Master-level program, Automotive & Mobility​             ​        Wolfsburg, Germany | Jul 2023 - Jun 2024
+
+Professional Experience
+  Pickit 3D​     Research & Software Engineer
+               Leuven, Belgium​| Aug 2025 - Mar 2026
+              Core stack: C, C++, Python, TypeScript, React, WebSocket, ROS1, Docker, Git
+
+                          -​  Developed and supported production software features across UI, API, and streaming/integration
+                    layers for deployed vision systems.
+                          -​  Built a reusable Python WebSocket client with reconnect/backoff logic, validation, and logging to
+                  improve robustness across internal tools.
+                          -​  Implemented internal tooling for log collection, conversion, and troubleshooting workflows, reducing
+                 manual effort and speeding up incident triage.
+                          -​  Developed a configuration interface for system and network settings with validation and safe defaults,
+                  improving usability and reducing configuration errors.
+                          -​  Diagnosed and fixed a field communication issue caused by a port conflict, restoring stable
+                    connectivity and documenting preventive checks.
+
+  Bosch​​        Internship, V2X Communication
+                Hildesheim, Germany | Jun 2024 - Nov 2024
+              Core stack: C++, Python, TypeScript, React, ROS2, Docker, Git
+
+                          -​  Implemented a V2X vehicle demonstrator for safety-critical scenarios, defining message/data
+                    interfaces and validating end-to-end behaviors in test runs.
+                          -​  Integrated communication modules and designed data contracts/interfaces to decouple components
+                and speed up iteration.
+                          -​  Built a React-based HMI for an eBike safety prototype with clear state modeling and
+                    operator-friendly interactions.
+                          -​  Performed data analysis and troubleshooting in automotive systems
+
+Skills
+ Programming: C, C++, Python, TypeScript
+ Systems & Platforms: Linux, Docker, ROS1/ROS2, WebSocket, system integration, field debugging
+ Software for Machines: hardware-adjacent software, communication layers, configuration tools, operational tooling,
+  reliability-focused troubleshooting
+ Frontend & Interfaces: React, TypeScript, operator-facing UIs, configuration workflows, Figma
+ Applied Domains: robotic vision systems, V2X communication, simulator-based prototyping (CARLA)
+  Tools: Git, logging/debugging workflows, documentation, cross-functional collaboration
+ Languages: Korean (Native), English (C1/Advanced)
+
+Projects & Leadership
+ ColorSaveLife
+      BoschConnectedExperience (BCX) 2024 Hackathon 1st Prize
+       Berlin, Germany / Feb 2024
+      -​Led and presented a cross-functional team that won 1st place at Bosch ConnectedExperience 2024.
+       -​Integrated gaze/eye-tracking into a simulation pipeline and built a plugin-based Python client architecture for
+         rapid experimentation.
+
+ Autonomous Lane-Keeping-Assist
+     SEA:ME (Software Engineering Automotive & Mobility Ecosystems)
+      Wolfsburg, Germany / Aug 2023 - Dec 2023
+      -​Implemented CNN-based lane detection on CARLA and built a data-handling client to streamline dataset capture
+       and evaluation.
+      -​Designed a specialized CarlaClient class for efficient data management
+
+ Rush03 : Rock Band, Keyboardist & Leader
+      École 42 - Seoul, Student Club
+      Seoul, South Korea / Aug 2022 - Jul 2023
+      -​Led a 50-member community and delivered 3 events for 200–300 attendees, establishing a repeatable
+        operational process (Planning/Rehearsal/Risk Response).
+       -​Integrated multifaceted initiatives such as a developer conference to enrich the event experience.
+
+Certifications
+
+  IELTS Academic 7.5 (C1)                                                               Mar 2025
+
+  TOEIC Speaking 160 (B2)                                                            Dec 2022
+
+  TOEIC 860 (B2)                                                                    Dec 2021
+
+  Engineer Information Processing                                                     Nov 2020
+     -​ Human Resources Development Service of Korea (HRD Korea)
+     -​  Korea national certification in system development / information processing / project management
+
+  Computer Specialist in Spreadsheet & Database (Level I)                                    Dec 2019
+     -​  Korea Chamber of Commerce and Industry (KCCI)
+     -​  Korean national certification for advanced productivity software and data management skills
+
+  Network Advisor (Level 2)                                                                     Oct 2019
+     -​  International Civil Qualification Association (ICQA)
+     -​  Korean national certification for network administration

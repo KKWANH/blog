@@ -1,0 +1,229 @@
+{
+  "name": "DES_Instrument-Cluster",
+  "url": "https://github.com/KKWANH/DES_Instrument-Cluster",
+  "fork": false,
+  "scope": "learning",
+  "scopeNote": "Learning/team project; inspect the stated contribution and source.",
+  "description": "PiRacer instrument cluster Qt application running on RPi and receiving speed data from a speed sensor via CAN",
+  "updatedAt": "2023-08-02T13:02:36Z",
+  "defaultBranch": "main",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/DES_Instrument-Cluster/blob/b3556e7d5ad7f8525b4090832dd4f94150760be3/README.md",
+      "bytes": 587,
+      "sha256": "32fc079058aad2eb9b0524e2a594cdd8914529957cad9457302b00582b0e6002"
+    },
+    {
+      "path": "piracer_py/requirements.txt",
+      "url": "https://github.com/KKWANH/DES_Instrument-Cluster/blob/b3556e7d5ad7f8525b4090832dd4f94150760be3/piracer_py/requirements.txt",
+      "bytes": 140,
+      "sha256": "0a6e804b6ba99e1bb3042197fa845169abfa89e2e83d5856a74560d84e5d4d10"
+    },
+    {
+      "path": "dashboard/dashboard.pro",
+      "url": "https://github.com/KKWANH/DES_Instrument-Cluster/blob/b3556e7d5ad7f8525b4090832dd4f94150760be3/dashboard/dashboard.pro",
+      "bytes": 633,
+      "sha256": "10bbc992aeab2db291dd1e29541c207a23ec66f5cef75b2e1fc672fa80032476"
+    },
+    {
+      "path": "speedometer/speedometer.pro",
+      "url": "https://github.com/KKWANH/DES_Instrument-Cluster/blob/b3556e7d5ad7f8525b4090832dd4f94150760be3/speedometer/speedometer.pro",
+      "bytes": 1335,
+      "sha256": "331b5134c3642338e6a58914435ed7482bb8e9625869bbf8492850fe98cb8e78"
+    },
+    {
+      "path": "dashboard/main.cpp",
+      "url": "https://github.com/KKWANH/DES_Instrument-Cluster/blob/b3556e7d5ad7f8525b4090832dd4f94150760be3/dashboard/main.cpp",
+      "bytes": 1475,
+      "sha256": "580acbd70e1b843faab91a55be6214003625d5bcf290e4c37cf775a1445ab624"
+    },
+    {
+      "path": "speedometer/main.cpp",
+      "url": "https://github.com/KKWANH/DES_Instrument-Cluster/blob/b3556e7d5ad7f8525b4090832dd4f94150760be3/speedometer/main.cpp",
+      "bytes": 2030,
+      "sha256": "97c6afe38de8fdff3941c8618a5ef57a888249a4d75366595328a6991b4ea32e"
+    },
+    {
+      "path": "speedometer/main.qml",
+      "url": "https://github.com/KKWANH/DES_Instrument-Cluster/blob/b3556e7d5ad7f8525b4090832dd4f94150760be3/speedometer/main.qml",
+      "bytes": 1100,
+      "sha256": "e35c600fe9681e43684238a92333781f73dfeb02c63b1a6859adf561101d6991"
+    },
+    {
+      "path": "connect.cpp",
+      "url": "https://github.com/KKWANH/DES_Instrument-Cluster/blob/b3556e7d5ad7f8525b4090832dd4f94150760be3/connect.cpp",
+      "bytes": 2487,
+      "sha256": "eba914e1577a6f1900d299fde3190ee828837c88a82964e4c8c7c520753dc105"
+    },
+    {
+      "path": "speedometer/speedometer.cpp",
+      "url": "https://github.com/KKWANH/DES_Instrument-Cluster/blob/b3556e7d5ad7f8525b4090832dd4f94150760be3/speedometer/speedometer.cpp",
+      "bytes": 5627,
+      "sha256": "51df741d65a8219f6cd0c9d21a3a6b7469830ddfe81410bc4d11682630e10dc9"
+    }
+  ],
+  "limitations": [
+    "Raw .py downloads are restricted by the corporate security gateway; accessible documentation/manifests are reviewed instead."
+  ],
+  "technologies": [
+    {
+      "id": "can",
+      "label": "CAN bus",
+      "group": "systems",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        }
+      ]
+    },
+    {
+      "id": "cpp",
+      "label": "C++",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "connect.cpp",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "dashboard/main.cpp",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "our_connect.cpp",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "dbus",
+      "label": "D-Bus",
+      "group": "systems",
+      "evidence": [
+        {
+          "path": "dashboard/main.cpp",
+          "basis": "inspected source"
+        }
+      ]
+    },
+    {
+      "id": "opencv",
+      "label": "OpenCV",
+      "group": "data",
+      "evidence": [
+        {
+          "path": "piracer_py/requirements.txt",
+          "basis": "declared Python dependency"
+        },
+        {
+          "path": "piracer_py/requirements.txt",
+          "basis": "manifest/configuration"
+        }
+      ]
+    },
+    {
+      "id": "pygame",
+      "label": "Pygame",
+      "group": "design",
+      "evidence": [
+        {
+          "path": "piracer_py/requirements.txt",
+          "basis": "declared Python dependency"
+        }
+      ]
+    },
+    {
+      "id": "python",
+      "label": "Python",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "piracer_py/piracer/__init__.py",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "piracer_py/piracer/cameras.py",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "piracer_py/piracer/gamepads.py",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "qmake",
+      "label": "qmake",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": "dashboard/dashboard.pro",
+          "basis": "build file"
+        },
+        {
+          "path": "speedometer/speedometer.pro",
+          "basis": "build file"
+        }
+      ]
+    },
+    {
+      "id": "qml",
+      "label": "QML",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "dashboard/asset/qml/DashboardGaugeStyle.qml",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "dashboard/asset/qml/IconGaugeStyle.qml",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "dashboard/asset/qml/TachometerStyle.qml",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "qt",
+      "label": "Qt / QML",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        },
+        {
+          "path": "dashboard/dashboard.pro",
+          "basis": "inspected source"
+        },
+        {
+          "path": "speedometer/speedometer.pro",
+          "basis": "inspected source"
+        }
+      ]
+    },
+    {
+      "id": "raspberrypi",
+      "label": "Raspberry Pi",
+      "group": "systems",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        },
+        {
+          "path": "piracer_py/requirements.txt",
+          "basis": "manifest/configuration"
+        }
+      ]
+    }
+  ],
+  "commit": "b3556e7d5ad7f8525b4090832dd4f94150760be3",
+  "fileCount": 38,
+  "treeDepth": "cached-recursive",
+  "status": "reviewed-limited"
+}

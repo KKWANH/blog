@@ -1,0 +1,84 @@
+{
+  "name": "42somoim3",
+  "url": "https://github.com/KKWANH/42somoim3",
+  "fork": true,
+  "scope": "reference",
+  "scopeNote": "Fork/reference; personal implementation is not established by the fork.",
+  "description": "알고리즘 소모임 3그룹",
+  "updatedAt": "2020-11-17T11:19:39Z",
+  "defaultBranch": "main",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/42somoim3/blob/df352885fc4f8c751760812a9027acbe465b4d03/README.md",
+      "bytes": 2306,
+      "sha256": "37e77e26733b25e9a6f73b98b6042088fde394add51e456f1995b1fcacaca010"
+    }
+  ],
+  "limitations": [
+    "Raw .py downloads are restricted by the corporate security gateway; accessible documentation/manifests are reviewed instead."
+  ],
+  "technologies": [
+    {
+      "id": "c",
+      "label": "C",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "gashin/week1/BOJ_01924.c",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "gashin/week1/BOJ_02440.c",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "gashin/week1/BOJ_02441.c",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "cpp",
+      "label": "C++",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "youpark/입출력/10991- 별 찍기16.cpp",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "youpark/입출력/10992- 별 찍기17.cpp",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "youpark/입출력/11022- A+B-8.cpp",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "python",
+      "label": "Python",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "gashin/week1/BOJ_01000.py",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "gashin/week1/BOJ_02438.py",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "gashin/week1/BOJ_02439.py",
+          "basis": "source-file presence"
+        }
+      ]
+    }
+  ],
+  "commit": "df352885fc4f8c751760812a9027acbe465b4d03",
+  "fileCount": 95,
+  "treeDepth": "recursive",
+  "status": "reviewed-limited"
+}

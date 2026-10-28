@@ -1,0 +1,272 @@
+[
+  {
+    "repo": "webserv",
+    "path": "README.md",
+    "url": "https://raw.githubusercontent.com/KKWANH/webserv/fbceda5266b69a9eca37504fc7850e33b2fef90f/README.md",
+    "lines": 161,
+    "evidence": "# webserv\n팀원: spark / skim / hybae / kkim / Juhpark\n\n# 0. How to use?\n## 0.1 Clone\n-- mac environment\n```\ngit clone https://github.com/KKWANH/webserv.git webserv_github\n```\n\n## 0.2 Launch\n```\n$ make\n$ ./webserv\n```\nYou can change your config file and mime setting file on server.cpp.\n\n# 1. Coding Convention\n## 1.1. Basic Rules\n```\nTAB: 4 spaces, doesn't matter tap or a space\n```\n\n## 1.2. Variable\n```\nUnderbar at first character\n\nSnake case (small letter only, separate word with _)\n\nNo limits for variable letter\n\nRecommend 3 letter (_num, _str, ...): it could be confused\n\nExample: _num, _header_field, _mth\n```\n\n## 1.3. Class\n```\nPascal Case (Start with BIG letter, separate with alphabet size)\n\nExample: ConfigController, RequestMessage\n```\n\n## 1.4. Function\n```\nCamel Case  (start with small letter, separate with alphabet size)\n\n- case 1\nreturn\n    functionName(_parameter)\n{ function }\n\n- case 2 : Simple function, getter/setter, ...\nreturn  functionName(_parameter)    { function }\n```\n\n## 1.5. Comment Rules\n```\nClass explanation (1.5.1)\n\nFunction explanation? (1.5.2) : (hasn't been introduced yet, but soon)\n\nAnything one-line comment you want to explain (//)\n```\n\n### 1.5.1. Class Explnation Example\n```\n/**\nHeader\n-----------\n> Class_Name : PARENT\nPrivate variable ...\nProtected variable ...\nPublic variable ...\nMember function ...\nNonmember function ...\nPrivate function ...\n... anything you have.\n*/\n\n함수 이름과 한줄설명, 탭으로 시작 위치 맞추기\n\n한줄로만 간단하게 설명, 자세한 리턴이나 파라미터 관련 내용은 1.5.2.에서\n```\n\n<details markdown=\"1\">\n    <summary>예시 보기</summary>\n    \n```\n/**\n----------------------------------------"
+  },
+  {
+    "repo": "webserv",
+    "path": "SocketController/SocketController.cpp",
+    "url": "https://raw.githubusercontent.com/KKWANH/webserv/fbceda5266b69a9eca37504fc7850e33b2fef90f/SocketController/SocketController.cpp",
+    "lines": 71,
+    "evidence": "16: \tserverSocket = socket(PF_INET, SOCK_STREAM, 0);\n48: \tserverSocket = socket(PF_INET, SOCK_STREAM, 0);\n56: \tint e1 = bind(serverSocket, (struct sockaddr *) &serverAddress, sizeof(serverAddress));\n57: \tint e2 = listen(serverSocket, 42);"
+  },
+  {
+    "repo": "webserv",
+    "path": "KernelQueueController/KernelQueueController.cpp",
+    "url": "https://raw.githubusercontent.com/KKWANH/webserv/fbceda5266b69a9eca37504fc7850e33b2fef90f/KernelQueueController/KernelQueueController.cpp",
+    "lines": 48,
+    "evidence": "7: \tgetEvent = new struct kevent[events_size];\n8: \tsetEvent = new struct kevent[events_size];\n9: \tkfd = kqueue();\n17: \tsize_t events = kevent(kfd, setEvent, set_events_size, getEvent, get_events_size, &pollingTime);"
+  },
+  {
+    "repo": "webserv",
+    "path": "HTTPMessageController/RequestMessage.cpp",
+    "url": "https://raw.githubusercontent.com/KKWANH/webserv/fbceda5266b69a9eca37504fc7850e33b2fef90f/HTTPMessageController/RequestMessage.cpp",
+    "lines": 418,
+    "evidence": ""
+  },
+  {
+    "repo": "ft_containers",
+    "path": "README.md",
+    "url": "https://raw.githubusercontent.com/KKWANH/ft_containers/40d52a84fcbdb5b3d02adbe2d8c3a10ad6e7bde6/README.md",
+    "lines": 78,
+    "evidence": "# ft_containers\nSTL(Standard Template Library)에 구현되어있는 자료형인 **vector, stack, map**을 구현하였습니다.<br>\n언어는 cpp을 사용하였으며, [cpp reference](https://en.cppreference.com/w/) 사이트의 명세들을 참고하였습니다.<br>\n\n## Details\n### 1. vector\nvector는 수정작업에 더욱 편리하도록 만들어진 동적 배열입니다.<br>\n그렇기에 배열과 유사하게 **직접 접근, tail에 추가/삭제가 용이** 하다는 장점이 있습니다.<br>\n다만 중간 삽입 시의 비효율성과 검색 속도 저하 등의 단점도 존재합니다.<br>\n\n### 2. stack\n매우 유명한 자료구조 stack은 **LIFO(last in first out)** 형식의 간단한 자료구조입니다.<br>\n한 쪽 끝에서만 자료 추가/삭제가 가능하며, 이 연산의 소요 시간이 상수 시간이라는 점에서 특정 상황에서 배열보다 적합할 수 있습니다.<br>\n\n### 3. map\nmap은 **pair<key, value>** 쌍을 원소으로써 저장하는 자료구조입니다.<br>\nkey 값은 중복을 허용하지 않으며, 값 삽입 시 key 값을 기준으로 자동 정렬됩니다.<br>\n따라서 값 검색 시의 시간을 단축할 수 있습니다.<br>\n기존 stl의 맵은 자가 균형 이진 탐색 트리인 red-black 트리로 구현되었습니다.<br>\n이 트리는 스스로 검정색-빨강색 룰을 통해 균형을 맞추며, 이로 인해 평균 연산 속도가 `O(log N)`이 됩니다.<br>\n다만 이 프로젝트에서는 Balance Factor를 이용해 자가 균형 이진 탐색 트리인 **AVL 트리**를 이용하여 구현하였습니다.<br>\n\n## Folder Structure\n```\n📄 Makefile                   : 프로젝트 실행을 위한 명령어 정의 파일\n📄 rotations_avl.txt          : AVL 트리 회전 방식을 설명하는 텍스트 파일\n📁 test_srcs                  : 실제 stl의 컨테이너와 제작한 ft_container의 실행 결과를 비교하기 위한 main 소스 코드\n   📁 map               \n   📁 stack             \n   📁 vector            \n   📄 containers.hpp           \n   📄 main.cpp          \n📁 includes                   : ft_container의 소스 파일들 (.hpp 파일로만 구성 되어 있음)\n   📄 ft.hpp                  : 필요한 header file들을 모두 include함\n   📄 utils.hpp               : 범용적으로 필요한 compare, enable_if 등\n   📄 iterators.hpp           : vector와 map에 사용할 iterator\n   📄 reverse_iterators.hpp   : vector와 map에 사용할 reverse_iterator\n   📄 vector.hpp              : vector 자료형\n   📄 stack.hpp  "
+  },
+  {
+    "repo": "ft_containers",
+    "path": "includes/vector.hpp",
+    "url": "https://raw.githubusercontent.com/KKWANH/ft_containers/40d52a84fcbdb5b3d02adbe2d8c3a10ad6e7bde6/includes/vector.hpp",
+    "lines": 431,
+    "evidence": "10: \ttemplate\t<class Typ, class Alc = std::allocator<Typ> >\n19: \t * \t\t\ttemplate <class Itr>\n65: \t * template <class Itr>\n124: \t\ttemplate\t<class Itr>\n250: \t\ttemplate\t\t<class Itr>\n344: \t\ttemplate\t\t<class Itr>\n424: \ttemplate\t\t\t<class Typ, class Alc>"
+  },
+  {
+    "repo": "ft_containers",
+    "path": "includes/Tree.hpp",
+    "url": "https://raw.githubusercontent.com/KKWANH/ft_containers/40d52a84fcbdb5b3d02adbe2d8c3a10ad6e7bde6/includes/Tree.hpp",
+    "lines": 431,
+    "evidence": "11:     template\t<class Typ, class Cmp = ft::less<typename Typ::first_type>, class Alc = std::allocator<Typ> >\n74: \t\t\tfriend class Tree;\n225: \t\tNode*\t\t\tleftRotate(Node* x)\n237: \t\tNode*\t\t\trightRotate(Node* y)\n261: \t\t\t\treturn rightRotate(node);\n264: \t\t\t\treturn leftRotate(node);\n268: \t\t\t\tnode->left = leftRotate(node->left);\n269: \t\t\t\treturn rightRotate(node);\n274: \t\t\t\tnode->right = rightRotate(node->right);\n275: \t\t\t\treturn leftRotate(node);\n286: \t\t\t\treturn rightRotate(node);\n289: \t\t\t\treturn leftRotate(node);\n293: \t\t\t\tnode->left = leftRotate(node->left);\n294: \t\t\t\treturn rightRotate(node);\n299: \t\t\t\tnode->right = rightRotate(node->right);\n300: \t\t\t\treturn leftRotate(node);"
+  },
+  {
+    "repo": "ft_containers",
+    "path": "includes/iterators.hpp",
+    "url": "https://raw.githubusercontent.com/KKWANH/ft_containers/40d52a84fcbdb5b3d02adbe2d8c3a10ad6e7bde6/includes/iterators.hpp",
+    "lines": 219,
+    "evidence": "19: \ttemplate\t<class Cat, class Typ, class Dst = ptrdiff_t, class Ptr = Typ*, class Ref = Typ& >\n103: \ttemplate\t<class Cat, class Typ, class TypNN = Typ>"
+  },
+  {
+    "repo": "42_minishell",
+    "path": "README.md",
+    "url": "https://raw.githubusercontent.com/KKWANH/42_minishell/988e62ffd4fac60a7c993beae4bf089f31209bcf/README.md",
+    "lines": 1,
+    "evidence": "# 42_minishell"
+  },
+  {
+    "repo": "42_minishell",
+    "path": "srcs/exe.c",
+    "url": "https://raw.githubusercontent.com/KKWANH/42_minishell/988e62ffd4fac60a7c993beae4bf089f31209bcf/srcs/exe.c",
+    "lines": 137,
+    "evidence": "6: /*   By: kimkwanho <kimkwanho@student.42.fr>        +#+  +:+       +#+        */\n8: /*   Created: 2021/03/25 13:39:37 by kimkwanho         #+#    #+#             */\n17: int\t\t\t\t\tft_execve_nonap(char **par, int i)\n26: \t\tret = execve(paths[i], par, g_mns->env_str);\n41: void\t\t\t\tft_execve(t_par *par, int res, int sta)\n45: \tpid = fork();\n50: \t\tft_util_open_pipe(par);\n54: \t\t\tres = execve(par->spl[0], par->spl, g_mns->env_str);\n56: \t\t\tres = ft_execve_nonap(par->spl, 0);\n81: \t\t\tft_execve(par, 0, 0);\n86: \t\t\tft_execve(par, 0, 0);\n91: \t\tft_execve(par, 0, 0);\n103: \t\t\tft_util_close_pipe(par);\n109: \t\t\tif (pipe(par->fil) == -1)\n113: \t\tft_util_close_pipe(par);"
+  },
+  {
+    "repo": "42_minishell",
+    "path": "srcs/redir.c",
+    "url": "https://raw.githubusercontent.com/KKWANH/42_minishell/988e62ffd4fac60a7c993beae4bf089f31209bcf/srcs/redir.c",
+    "lines": 104,
+    "evidence": "6: /*   By: kimkwanho <kimkwanho@student.42.fr>        +#+  +:+       +#+        */"
+  },
+  {
+    "repo": "42_minishell",
+    "path": "srcs/signal.c",
+    "url": "https://raw.githubusercontent.com/KKWANH/42_minishell/988e62ffd4fac60a7c993beae4bf089f31209bcf/srcs/signal.c",
+    "lines": 65,
+    "evidence": "6: /*   By: kimkwanho <kimkwanho@student.42.fr>        +#+  +:+       +#+        */\n8: /*   Created: 2021/04/08 14:49:18 by kimkwanho         #+#    #+#             */\n63: \tsignal(2, ft_signal_handle_c);\n64: \tsignal(3, ft_signal_handle_rvc_slash);"
+  },
+  {
+    "repo": "42Philosopher",
+    "path": "README.md",
+    "url": "https://raw.githubusercontent.com/KKWANH/42Philosopher/4b44ab65bb5eb96bad96d8ca8b0f8ce494a50504/README.md",
+    "lines": 1,
+    "evidence": "# 42Philosopher"
+  },
+  {
+    "repo": "42Philosopher",
+    "path": "srcs/start.c",
+    "url": "https://raw.githubusercontent.com/KKWANH/42Philosopher/4b44ab65bb5eb96bad96d8ca8b0f8ce494a50504/srcs/start.c",
+    "lines": 81,
+    "evidence": "6: /*   By: kimkwanho <kimkwanho@student.42.fr>        +#+  +:+       +#+        */\n8: /*   Created: 2021/07/23 20:28:21 by kimkwanho         #+#    #+#             */\n9: /*   Updated: 2021/07/24 19:23:27 by kimkwanho        ###   ########.fr       */\n20: \t\tpthread_mutex_lock(phl->rg_stk);\n27: \t\t\tpthread_mutex_lock(phl->lf_stk);\n33: \t\tpthread_mutex_lock(phl->lf_stk);\n35: \t\tpthread_mutex_lock(phl->rg_stk);\n51: \t\tpthread_mutex_lock(&phl->st_all->f_meal);\n53: \t\tpthread_mutex_unlock(&phl->st_all->f_meal);\n60: \tpthread_mutex_unlock(phl->rg_stk);\n63: \tpthread_mutex_unlock(phl->lf_stk);"
+  },
+  {
+    "repo": "42Philosopher",
+    "path": "srcs/init.c",
+    "url": "https://raw.githubusercontent.com/KKWANH/42Philosopher/4b44ab65bb5eb96bad96d8ca8b0f8ce494a50504/srcs/init.c",
+    "lines": 99,
+    "evidence": "6: /*   By: kimkwanho <kimkwanho@student.42.fr>        +#+  +:+       +#+        */\n8: /*   Created: 2021/07/24 18:30:56 by kimkwanho         #+#    #+#             */\n9: /*   Updated: 2021/07/24 19:21:41 by kimkwanho        ###   ########.fr       */\n55: \tif (!(all->sticks = malloc(sizeof(pthread_mutex_t) * all->ph_cnt)))\n63: int\t\t\t\t\tft_init_mutex(t_all *all)\n69: \t\tpthread_mutex_init(&all->sticks[idx++], NULL);\n70: \tpthread_mutex_init(&all->printr, NULL);\n71: \tpthread_mutex_init(&all->f_meal, NULL);\n72: \tpthread_mutex_init(&all->ph_die, NULL);\n94: \t\t\tft_init_mutex(all) == -1)"
+  },
+  {
+    "repo": "DES_Instrument-Cluster",
+    "path": "README.md",
+    "url": "https://raw.githubusercontent.com/KKWANH/DES_Instrument-Cluster/b3556e7d5ad7f8525b4090832dd4f94150760be3/README.md",
+    "lines": 19,
+    "evidence": "# DES_Instrument-Cluster\nPiRacer instrument cluster Qt application running on RPi and receiving speed data from a speed sensor via CAN\n\n# Study Notes\n - [Controller Area Network](https://www.kkim.info/sea-me/can)\n - [CAN Bus Error](https://www.kkim.info/sea-me/can/bus-error)\n=======\nPiRacer instrument cluster Qt application running on RPi and receiving speed data from a speed sensor via CAN.\n### Project Intro\noverview\n### System Architecture\nwiring and stuff\n### Software Design\nsoftware and stuff\n### Implementation\ndirectory and so on \n\n\n>>>>>>> Stashed changes"
+  },
+  {
+    "repo": "DES_Instrument-Cluster",
+    "path": "speedometer/speedometer.cpp",
+    "url": "https://raw.githubusercontent.com/KKWANH/DES_Instrument-Cluster/b3556e7d5ad7f8525b4090832dd4f94150760be3/speedometer/speedometer.cpp",
+    "lines": 243,
+    "evidence": "21: //virtual paint method (here the speedometer is drawn on the qml canvas)\n133: // setter (the emit will effect the qml part)"
+  },
+  {
+    "repo": "DES_Instrument-Cluster",
+    "path": "speedometer/main.qml",
+    "url": "https://raw.githubusercontent.com/KKWANH/DES_Instrument-Cluster/b3556e7d5ad7f8525b4090832dd4f94150760be3/speedometer/main.qml",
+    "lines": 34,
+    "evidence": "1: import QtQuick              2.9\n2: import QtQuick.Window       2.2\n4: import QtQuick.Controls     2.0\n5: import QtQuick.Controls     1.2\n6: import QtQuick.Layouts      1.1"
+  },
+  {
+    "repo": "DES_Instrument-Cluster",
+    "path": "piracer_py/threads/receive_can_messages_thread.py",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "repo": "MarioThread",
+    "path": "README.md",
+    "url": "https://raw.githubusercontent.com/KKWANH/MarioThread/286dc8633fff0ef493f9330230f81cdd6c84cc4e/README.md",
+    "lines": 21,
+    "evidence": "# Retro Race Arcade Qt/C++\nSimple retro style racing game in quick and simple Qt/C++. It is based on this [repository](https://github.com/OneLoneCoder/Javidx9/blob/master/ConsoleGameEngine/SmallerProjects/OneLoneCoder_RetroArcadeRacer.cpp) and It is converted to Qt/C++.\n\n## Screenshots\n![Image](https://user-images.githubusercontent.com/28188300/206850516-c6e06466-c538-45c3-82ec-558a9492d2cc.gif)\n\n### Installing\nA step by step series  that tell you how to get a execute project.\nGet it from GitHub\n```\ngit clone git@github.com:Przemekkkth/RetroRaceArcade_Qt-Cpp.git\n```\nCompile\n```\nqmake && make\n```\n\n## Addons\n* [Qt](https://www.qt.io/) - Cross-Platform software for embedded & desktop\n* [yt](https://youtu.be/2HYlmMHNWxU) - gameplay\n* [Play online](https://przemekkkth.github.io/retroarcade/index.html) - game hosted on GitHub"
+  },
+  {
+    "repo": "MarioThread",
+    "path": "src/gamethread.cpp",
+    "url": "https://raw.githubusercontent.com/KKWANH/MarioThread/286dc8633fff0ef493f9330230f81cdd6c84cc4e/src/gamethread.cpp",
+    "lines": 450,
+    "evidence": "17: GameScene::GameScene(QObject *parent)\n276:     // Calculate total track distance, so we can set lap times\n428:     QObject*    _parent\n430:     QThread(_parent)"
+  },
+  {
+    "repo": "MarioThread",
+    "path": "src/view.cpp",
+    "url": "https://raw.githubusercontent.com/KKWANH/MarioThread/286dc8633fff0ef493f9330230f81cdd6c84cc4e/src/view.cpp",
+    "lines": 38,
+    "evidence": ""
+  },
+  {
+    "repo": "42_Django_Piscine_Rush01",
+    "path": "README.md",
+    "url": "https://raw.githubusercontent.com/KKWANH/42_Django_Piscine_Rush01/c22a33cda3b7f1579d1a8e34c44c81f8b2b64dbe/README.md",
+    "lines": 1,
+    "evidence": "# 42_Django_Piscine_Rush01"
+  },
+  {
+    "repo": "42_Django_Piscine_Rush01",
+    "path": "Rush01_Site/Site/models/post.py",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "repo": "42_Django_Piscine_Rush01",
+    "path": "Rush01_Site/Site/views/post.py",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "repo": "42inception",
+    "path": "README.md",
+    "url": "https://raw.githubusercontent.com/KKWANH/42inception/eb3f2e6bc9c0ac74d4323a42775db1b2a72c5c3b/README.md",
+    "lines": 2,
+    "evidence": "# 42inception\n42SEOUL_kkim's inception. ubuntu_init shell script has prepared."
+  },
+  {
+    "repo": "42inception",
+    "path": "srcs/docker-compose.yml",
+    "url": "https://raw.githubusercontent.com/KKWANH/42inception/eb3f2e6bc9c0ac74d4323a42775db1b2a72c5c3b/srcs/docker-compose.yml",
+    "lines": 55,
+    "evidence": "49:              device: '/home/kkim/data/wp'\n55:              device: '/home/kkim/data/db'"
+  },
+  {
+    "repo": "libasm",
+    "path": "README.md",
+    "url": "https://raw.githubusercontent.com/KKWANH/libasm/0ab36cc0aa72e71ea807110f61e47e6796e21f5e/README.md",
+    "lines": 3,
+    "evidence": "# libasm\n\n<a href=\"https://kkim-blog.tistory.com/entry/minishell\">블로그 글</a>을 참고하세요."
+  },
+  {
+    "repo": "libasm",
+    "path": "ft_read.s",
+    "url": "https://raw.githubusercontent.com/KKWANH/libasm/0ab36cc0aa72e71ea807110f61e47e6796e21f5e/ft_read.s",
+    "lines": 28,
+    "evidence": "11: \tmov\t\trax, 0x2000003\t; syscall에서 read를 사용하기 위해 rax를 고유번호로 변경한다.\n12: \tsyscall\t\t\t\t\t; syscall에 대한 내용은 ft_write.s를 참고하자.\n17: \tpush\trax\t\t\t\t; 스택 꼭대기에 rax를 저장한다.\n18: \t\t\t\t\t\t\t; rax에는 error value가 저장되어 있다.\n19: \tcall\t___error\t\t; rax에 음수가 들어갔으므로 ___error를 호출한다.\n20: \t\t\t\t\t\t\t; 실행 후 rax에 &errno가 들어가 있다.\n22: \t\t\t\t\t\t\t; syscall 실행 결과가 rax에 저장되어있다.\n23: \tmov\t\t[rax], rdx\t\t; rax의 값만 rdx(error value)로 변경한다.\n24: \tmov\t\trax, -1\t\t\t; rax에 -1를 넣는다. return (-1)과 같은 효과!\n28: \tret\t\t\t\t\t\t; 종료 (rax 반환)"
+  },
+  {
+    "repo": "libasm",
+    "path": "ft_strlen.s",
+    "url": "https://raw.githubusercontent.com/KKWANH/libasm/0ab36cc0aa72e71ea807110f61e47e6796e21f5e/ft_strlen.s",
+    "lines": 25,
+    "evidence": "1: ;\t----[ft_str by kkim]----\n10: \tmov\t\trax, 0\t\t\t\t\t; 반환값은 받아들인 str의 index이다.\n11: \t\t\t\t\t\t\t\t\t; rax 레지스터의 값을 0으로 초기화하여 사용하자!\n16: \tcmp\t\tBYTE [rdi + rax], 0\n17: \tje\t\t_ft_exit\t\t\t\t; cmp 명령어로 BYTE [rdi + rax]와 0이 같다면,\n20: \tinc\t\trax\t\t\t\t\t\t; 조건에 어긋나지 않았다면 rax를 1 증가시키자.\n25: \tret\t\t\t\t\t\t\t\t; 함수를 종료하고 rax를 반환한다."
+  },
+  {
+    "repo": "QuantumPang2",
+    "path": "README.md",
+    "url": "https://raw.githubusercontent.com/KKWANH/QuantumPang2/fd0f1f5015b49bf2e2bc24f605160b5ed87241eb/README.md",
+    "lines": 3,
+    "evidence": "# QuantumPang2\n2020 09 22\n ~ 메뉴만 넣었음 기능부 넣을거임"
+  },
+  {
+    "repo": "QuantumPang2",
+    "path": "Assets/Scripts/BlockManager.cs",
+    "url": "https://raw.githubusercontent.com/KKWANH/QuantumPang2/fd0f1f5015b49bf2e2bc24f605160b5ed87241eb/Assets/Scripts/BlockManager.cs",
+    "lines": 11,
+    "evidence": "3: using UnityEngine;\n5: public\t\tclass\t\tBlockManager : MonoBehaviour"
+  },
+  {
+    "repo": "QuantumPang2",
+    "path": "Assets/Scripts/SceneManager.cs",
+    "url": "https://raw.githubusercontent.com/KKWANH/QuantumPang2/fd0f1f5015b49bf2e2bc24f605160b5ed87241eb/Assets/Scripts/SceneManager.cs",
+    "lines": 23,
+    "evidence": "3: using UnityEngine;\n4: using UnityEngine.SceneManagement;\n6: public\tclass\tSceneManager : MonoBehaviour\n9: \t\tUnityEngine.SceneManagement.SceneManager.LoadScene(\"0_Title\");\n13: \t\tUnityEngine.SceneManagement.SceneManager.LoadScene(\"1_InGame\");\n17: \t\tUnityEngine.SceneManagement.SceneManager.LoadScene(\"2_AboutGame\");"
+  },
+  {
+    "repo": "ft_linear_regression",
+    "path": "README.md",
+    "url": "https://raw.githubusercontent.com/KKWANH/ft_linear_regression/8983a360c92fbfd216841e5408e33d9b93bab950/README.md",
+    "lines": 40,
+    "evidence": "# ft_linear_regression\n\n## How to run\n1. **First, clone the repository.**\n```\ngit clone https://github.com/KKWANH/linear_regression\n```\n\n2. **Move to the repository that you just cloned.**\n```Shell\ncd linear_regression\n```\n\n3. You can run everything in our repository by the command; `make`\n```\n# To get informations about specitfic make keywords\nmake help\n```\n```\n# Remove temporary files\nmake clean\n```\n```\n# Setup python virtual environmetns\nmake setup\n```\n```\n# Enable the virtual env that you just made\nmake env\n```\n```\n# Predicting.\n#   If you input the mileage(km), and you will receive predicted price.\nmake predict\n```\n```\n# Training\n#   Train and make [parameter.dat] as a result.\nmake train\n```"
+  },
+  {
+    "repo": "ft_linear_regression",
+    "path": "srcs/training.py",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "repo": "total-perspective-vortex",
+    "path": "README.md",
+    "url": "https://raw.githubusercontent.com/KKWANH/total-perspective-vortex/f4931be16b193f3395b26eb9acd3bc3458fc846c/README.md",
+    "lines": 2,
+    "evidence": "# total-perspective-vortex\nMachine learning with BCI dataset(MNE), 42's subject."
+  },
+  {
+    "repo": "total-perspective-vortex",
+    "path": "srcs/ft_fit.py",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "repo": "ai-assistant",
+    "path": "README.md",
+    "url": "https://raw.githubusercontent.com/KKWANH/ai-assistant/d59d45a617c5da89fbea630410675b26b3a9e68b/README.md",
+    "lines": 231,
+    "evidence": "<div align=\"center\">\n\n# Ariadne\n\n**The local-first AI workspace you can see into.**\n\nAsk questions over your PDFs, slides, CSVs, notes, and code — and get\nanswers that **cite their source**, **read the actual images** on your\nslides (not just the text), and are **fact-checked against those sources**\nbefore you trust them. Automate repeatable work; review every AI edit as a\nstaged diff. Runs on your machine — your files and keys never leave, and it\nnever trains on your data.\n\nOne app that's both a power-user IDE and an approachable assistant\n(toggle per workspace), and a platform you build on — ship your own\ndashboard as a sandboxed React surface the host feeds with files, live\ndata, retrieval, and the model.\n\n<img src=\"docs/diagrams/hero.svg\" alt=\"Local files become evidence-backed work\" width=\"520\">\n\n[![license: AGPL-3.0](https://img.shields.io/badge/license-AGPL--3.0-blue.svg)](LICENSE)\n[![node ≥22](https://img.shields.io/badge/node-%E2%89%A522-brightgreen.svg)](docs/INSTALL.md)\n[![retrieval Hit@6 76.5%](https://img.shields.io/badge/retrieval%20Hit%406-76.5%25-success.svg)](docs/RAG_HARNESS.md)\n\n[How to use](docs/HOW_TO_USE.md) · [Install (5 min)](docs/INSTALL.md) · [API](docs/API.md)\n\n</div>\n\n> **Ariadne does not train on your data.**\n> It improves by turning your corrections into [eval cases](docs/RAG_HARNESS.md)\n> the next version has to pass.\n\n---\n\n## 30-second demo\n\n> Real screencasts replace these placeholders as they're captured.\n\n| | Demo | What it shows |\n|---|---|---|\n| 📄 | **Docs folder → answer with evidence** | Drop a folder of PDFs / Markdown / notes. Ask a "
+  },
+  {
+    "repo": "game",
+    "path": "README.md",
+    "url": "https://raw.githubusercontent.com/KKWANH/game/2c6fb4ba8f483d11123f3af11195c91c7eca3f73/README.md",
+    "lines": 84,
+    "evidence": "# 🃏 Blackjack — `game.kwanho.dev`\n\n친구끼리 즐기는 실시간 멀티플레이어 블랙잭. 가상 칩으로 베팅하고, 모든 칩 이동이\n장부에 기록되며, 방이 끝나면 **누가 누구에게 얼마**를 줄지 자동 정산합니다.\n\n- **실시간 멀티플레이** — Supabase Realtime로 카드 분배·턴이 동기화됩니다.\n- **치팅 방지** — 덱과 딜러 홀카드는 서버(`private` 스키마 + service-role)만 봅니다.\n- **AI / 사람 딜러** — 사람 딜러도 카지노 고정룰(17까지 히트)을 서버가 자동 플레이하고, 정산에서 뱅크 역할만 합니다.\n- **풀 룰** — 히트/스탠드/더블/스플릿/서렌더/인슈어런스, 3:2·6:5 배당, 덱 수·소프트17·턴 타이머·인원수 설정.\n- **구글 로그인**, 화려하고 반응형인 UI.\n\n## 스택\nNext.js 16 (App Router) · React 19 · TypeScript · Tailwind v4 · framer-motion ·\nSupabase (Postgres + Realtime + Auth) · Vercel.\n\n---\n\n## 로컬 실행\n\n### 1) 의존성\n```bash\nnpm install\n```\n\n### 2) Supabase 프로젝트\n1. [supabase.com](https://supabase.com)에서 무료 프로젝트 생성.\n2. **SQL Editor**에서 `supabase/migrations/`의 파일을 순서대로 실행:\n   `0001_schema.sql` → `0002_rpcs.sql` → `0003_chips.sql`.\n   (또는 `supabase db push` / `supabase migration up`.)\n3. **Database → Replication**(또는 Realtime)에서 `supabase_realtime` 퍼블리케이션에\n   `0001_schema.sql`이 추가한 public 테이블이 포함됐는지 확인. `private` 스키마는 절대 추가하지 마세요.\n\n### 3) 구글 OAuth\n1. Google Cloud Console → **OAuth 동의 화면** 구성 → **사용자 인증 정보 → OAuth 클라이언트 ID**(웹) 생성.\n2. **승인된 리디렉션 URI**에 추가: `https://<프로젝트>.supabase.co/auth/v1/callback`\n3. Supabase 대시보드 → **Authentication → Providers → Google**에 클라이언트 ID/시크릿 입력.\n4. **Authentication → URL Configuration**에서 Site URL을 로컬은 `http://localhost:3000`,\n   배포는 `https://game.kwanho.dev`로 설정하고 둘 다 redirect 허용 목록에 추가.\n\n### 4) 환경변수\n`.env.example`을 `.env.local`로 복사하고 값을 채웁니다 (Supabase → Settings → API):\n```bash\ncp .env.example .env.local\n```\n\n### 5) 개발 서버\n```bash\nnpm run dev      # http://localhost:3000\nnpm test     "
+  },
+  {
+    "repo": "photo_organizer",
+    "path": "README.md",
+    "url": "https://raw.githubusercontent.com/KKWANH/photo_organizer/085272c1504f69568f2fc54db16b353e7a4bb605/README.md",
+    "lines": 1,
+    "evidence": "# photo_organizer"
+  }
+]

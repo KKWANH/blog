@@ -1,0 +1,241 @@
+{
+  "name": "velocitas-first-app",
+  "url": "https://github.com/KKWANH/velocitas-first-app",
+  "fork": false,
+  "scope": "learning",
+  "scopeNote": "Learning/team project; inspect the stated contribution and source.",
+  "description": "",
+  "updatedAt": "2023-11-07T13:50:46Z",
+  "defaultBranch": "main",
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KKWANH/velocitas-first-app/blob/e90770e25c021eb0804ffc25d59c2d87b5ecb30c/README.md",
+      "bytes": 1943,
+      "sha256": "34b830964730f016a2123cf351e1e0b66810de786c006e11b5cbc08ef57b4116"
+    },
+    {
+      "path": ".devcontainer/tests/automated_tests/requirements.txt",
+      "url": "https://github.com/KKWANH/velocitas-first-app/blob/e90770e25c021eb0804ffc25d59c2d87b5ecb30c/.devcontainer/tests/automated_tests/requirements.txt",
+      "bytes": 21,
+      "sha256": "982834914bd371325e618214da9dd3ad8240628c2bb1bc82db7743ad2e94d912"
+    },
+    {
+      "path": "app/requirements-links.txt",
+      "url": "https://github.com/KKWANH/velocitas-first-app/blob/e90770e25c021eb0804ffc25d59c2d87b5ecb30c/app/requirements-links.txt",
+      "bytes": 71,
+      "sha256": "6e0a22e32a94cdce2e36f6796a7a9594058d1f47d3e4d5cd716423e856981ede"
+    },
+    {
+      "path": "app/requirements-velocitas.txt",
+      "url": "https://github.com/KKWANH/velocitas-first-app/blob/e90770e25c021eb0804ffc25d59c2d87b5ecb30c/app/requirements-velocitas.txt",
+      "bytes": 22,
+      "sha256": "21d1c5ff45bca415fcc735bc9cb2a4acdd982114fb5ab461d6b9ab1ac029dc57"
+    },
+    {
+      "path": "app/requirements.in",
+      "url": "https://github.com/KKWANH/velocitas-first-app/blob/e90770e25c021eb0804ffc25d59c2d87b5ecb30c/app/requirements.in",
+      "bytes": 65,
+      "sha256": "be20deadcea379d55778585340fa90c38cd2e4c6e6d2b5c891ad3aa8450d2701"
+    },
+    {
+      "path": "app/requirements.txt",
+      "url": "https://github.com/KKWANH/velocitas-first-app/blob/e90770e25c021eb0804ffc25d59c2d87b5ecb30c/app/requirements.txt",
+      "bytes": 949,
+      "sha256": "212783191f1877db008bc60b94167f95c73199613662c8f26ac6ccb6dbd66d7f"
+    },
+    {
+      "path": "app/tests/requirements.in",
+      "url": "https://github.com/KKWANH/velocitas-first-app/blob/e90770e25c021eb0804ffc25d59c2d87b5ecb30c/app/tests/requirements.in",
+      "bytes": 60,
+      "sha256": "223e3a65322336f3097106595aa2e77603d97b9fd3f40cce6329b5945637c59b"
+    },
+    {
+      "path": "app/tests/requirements.txt",
+      "url": "https://github.com/KKWANH/velocitas-first-app/blob/e90770e25c021eb0804ffc25d59c2d87b5ecb30c/app/tests/requirements.txt",
+      "bytes": 712,
+      "sha256": "4553b52f6ed06d0b90224114f671566e7c6d86b586df5287d29ecf0f77ee78d2"
+    },
+    {
+      "path": "requirements.in",
+      "url": "https://github.com/KKWANH/velocitas-first-app/blob/e90770e25c021eb0804ffc25d59c2d87b5ecb30c/requirements.in",
+      "bytes": 1018,
+      "sha256": "817794905277b5e2597fe3ff63236a2b61dc9103f842ee4523b89554f0d05876"
+    },
+    {
+      "path": "requirements.txt",
+      "url": "https://github.com/KKWANH/velocitas-first-app/blob/e90770e25c021eb0804ffc25d59c2d87b5ecb30c/requirements.txt",
+      "bytes": 2108,
+      "sha256": "5cf62f86a73af2b620554e3400a5613a7545421eee7d523a1b8d7a9d337de4a1"
+    },
+    {
+      "path": "setup.cfg",
+      "url": "https://github.com/KKWANH/velocitas-first-app/blob/e90770e25c021eb0804ffc25d59c2d87b5ecb30c/setup.cfg",
+      "bytes": 758,
+      "sha256": "2ccf3b5a3dc5b838178a6ab9fa01d6a7cc25af72799c057ca9769b85a55054b9"
+    },
+    {
+      "path": "app/Dockerfile",
+      "url": "https://github.com/KKWANH/velocitas-first-app/blob/e90770e25c021eb0804ffc25d59c2d87b5ecb30c/app/Dockerfile",
+      "bytes": 2325,
+      "sha256": "35e377cfdf5a24f9198de0bb9f36ebd1e92d862be18d098bf004c2a06205886f"
+    },
+    {
+      "path": ".devcontainer/Dockerfile",
+      "url": "https://github.com/KKWANH/velocitas-first-app/blob/e90770e25c021eb0804ffc25d59c2d87b5ecb30c/.devcontainer/Dockerfile",
+      "bytes": 1084,
+      "sha256": "23ac1b3986b10b715f2bd16acf9ce2bf054f94fe6ba650830ef3c03f4f3e5e3f"
+    },
+    {
+      "path": ".devcontainer/scripts/container-set.sh",
+      "url": "https://github.com/KKWANH/velocitas-first-app/blob/e90770e25c021eb0804ffc25d59c2d87b5ecb30c/.devcontainer/scripts/container-set.sh",
+      "bytes": 998,
+      "sha256": "1b35dce7dd591bacc86b51788b7fc44293bcd58fd0d743cc29efbd5d24e68008"
+    },
+    {
+      "path": ".devcontainer/scripts/onCreateCommand.sh",
+      "url": "https://github.com/KKWANH/velocitas-first-app/blob/e90770e25c021eb0804ffc25d59c2d87b5ecb30c/.devcontainer/scripts/onCreateCommand.sh",
+      "bytes": 2731,
+      "sha256": "8f29bd295903c4c4f59cd6d04e85b75a2fb81b27e944f0217aa7185b23b5511c"
+    },
+    {
+      "path": ".devcontainer/scripts/postStartCommand.sh",
+      "url": "https://github.com/KKWANH/velocitas-first-app/blob/e90770e25c021eb0804ffc25d59c2d87b5ecb30c/.devcontainer/scripts/postStartCommand.sh",
+      "bytes": 2848,
+      "sha256": "7671938af16a58a60680abe201a5d2f75b75e8967a86594aae583184114ee0aa"
+    },
+    {
+      "path": ".devcontainer/scripts/configure-proxies.sh",
+      "url": "https://github.com/KKWANH/velocitas-first-app/blob/e90770e25c021eb0804ffc25d59c2d87b5ecb30c/.devcontainer/scripts/configure-proxies.sh",
+      "bytes": 4046,
+      "sha256": "dc387404959a4304991170ca099b8813732cf979ebd3a55d0fd980deaf4a2d50"
+    }
+  ],
+  "limitations": [
+    "Raw .py downloads are restricted by the corporate security gateway; accessible documentation/manifests are reviewed instead.",
+    ".devcontainer/tests/automated_tests/requirements_test.py: source download not retried after a corporate gateway restriction."
+  ],
+  "technologies": [
+    {
+      "id": "docker",
+      "label": "Docker",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": ".devcontainer/Dockerfile",
+          "basis": "container configuration"
+        },
+        {
+          "path": "app/Dockerfile",
+          "basis": "container configuration"
+        },
+        {
+          "path": "app/Dockerfile",
+          "basis": "manifest/configuration"
+        }
+      ]
+    },
+    {
+      "id": "express",
+      "label": "Express",
+      "group": "web",
+      "evidence": [
+        {
+          "path": "requirements.in",
+          "basis": "declared Python dependency"
+        }
+      ]
+    },
+    {
+      "id": "github-actions",
+      "label": "GitHub Actions",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": ".github/workflows/build-docker-image.yml",
+          "basis": "workflow file"
+        },
+        {
+          "path": ".github/workflows/build-multiarch-image.yml",
+          "basis": "workflow file"
+        },
+        {
+          "path": ".github/workflows/check-devcontainer.yml",
+          "basis": "workflow file"
+        }
+      ]
+    },
+    {
+      "id": "linux",
+      "label": "Linux",
+      "group": "tools",
+      "evidence": [
+        {
+          "path": ".devcontainer/scripts/postStartCommand.sh",
+          "basis": "inspected source"
+        }
+      ]
+    },
+    {
+      "id": "python",
+      "label": "Python",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": ".devcontainer/tests/automated_tests/requirements_test.py",
+          "basis": "source-file presence"
+        },
+        {
+          "path": ".devcontainer/tests/automated_tests/runtime_test.py",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "app/src/main.py",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "shell",
+      "label": "Shell",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": ".devcontainer/scripts/configure-proxies.sh",
+          "basis": "source-file presence"
+        },
+        {
+          "path": ".devcontainer/scripts/container-set.sh",
+          "basis": "source-file presence"
+        },
+        {
+          "path": ".devcontainer/scripts/onCreateCommand.sh",
+          "basis": "source-file presence"
+        }
+      ]
+    },
+    {
+      "id": "velocitas",
+      "label": "Velocitas",
+      "group": "systems",
+      "evidence": [
+        {
+          "path": "README.md",
+          "basis": "README declaration"
+        },
+        {
+          "path": "app/requirements-links.txt",
+          "basis": "inspected source"
+        },
+        {
+          "path": "app/requirements-velocitas.txt",
+          "basis": "inspected source"
+        }
+      ]
+    }
+  ],
+  "commit": "e90770e25c021eb0804ffc25d59c2d87b5ecb30c",
+  "fileCount": 61,
+  "treeDepth": "recursive",
+  "status": "reviewed-limited"
+}

@@ -5,9 +5,10 @@ This repository powers Kwanho Kim's personal engineering portfolio and career pl
 
 ## Architecture & Workspaces
 - **Blog Repo:** `C:\Projects\blog` (Next.js app)
-- **Career Refresh Tools:** `C:\Projects\career-refresh-2026-10` (Python tools, CV generators, test harnesses, reviews, captures)
+- **Embedded Career Refresh & Studio:** `C:\Projects\blog\career-refresh-2026-10` (Python tools, CV generators, design studio boards, test harnesses, reviews, captures)
+- **Mounted Design Studio URL:** Accessible locally at `http://localhost:3100/studio/` (serves `career-refresh-2026-10/design`)
 - **Node Binary:** `C:\Projects\career-refresh-2026-10\tools\node-v22.23.4-win-x64\node.exe`
-- **Python Binary:** `C:\Program Files\Python313\python.exe` (with `PYTHONPATH=C:\Projects\career-refresh-2026-10\tools\python`)
+- **Python Binary:** `C:\Program Files\Python313\python.exe` (with `PYTHONPATH=career-refresh-2026-10/tools/python`)
 - **Local Dev Server:** Runs on `http://localhost:3100` via `scripts/dev-editor.mjs`
 
 ## Recent Refinements & Key Features

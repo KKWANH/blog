@@ -1,0 +1,56 @@
+{
+  "name": "SEAME-Warmup-Module01",
+  "url": "https://github.com/KKWANH/SEAME-Warmup-Module01",
+  "fork": true,
+  "scope": "learning",
+  "scopeNote": "Learning/team project; inspect the stated contribution and source.",
+  "description": "Second warmup module of SEAME, learning basic OOP with c++",
+  "updatedAt": "2023-07-13T10:16:58Z",
+  "defaultBranch": "main",
+  "sources": [
+    {
+      "path": "ex00/ex00.cpp",
+      "url": "https://github.com/KKWANH/SEAME-Warmup-Module01/blob/542e84c4c7f635fd5f895940207225811e969e54/ex00/ex00.cpp",
+      "bytes": 1703,
+      "sha256": "8f0efe8dd999cd693cc9fe1059df5ee3e5c2001e10b5483c5f0738962a4e34f0"
+    },
+    {
+      "path": "ex01/ex01.cpp",
+      "url": "https://github.com/KKWANH/SEAME-Warmup-Module01/blob/542e84c4c7f635fd5f895940207225811e969e54/ex01/ex01.cpp",
+      "bytes": 3131,
+      "sha256": "a7629895e890715aa3c8f96726f411d241c1c87762da933ac9f456d453e8e92e"
+    },
+    {
+      "path": "ex02/ex02.cpp",
+      "url": "https://github.com/KKWANH/SEAME-Warmup-Module01/blob/542e84c4c7f635fd5f895940207225811e969e54/ex02/ex02.cpp",
+      "bytes": 3358,
+      "sha256": "b00a9566059a221a31f42eb4d37e8bf922e83d905e14a924a37e5603c6fd7357"
+    }
+  ],
+  "limitations": [],
+  "technologies": [
+    {
+      "id": "cpp",
+      "label": "C++",
+      "group": "languages",
+      "evidence": [
+        {
+          "path": "ex00/ex00.cpp",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "ex01/ex01.cpp",
+          "basis": "source-file presence"
+        },
+        {
+          "path": "ex02/ex02.cpp",
+          "basis": "source-file presence"
+        }
+      ]
+    }
+  ],
+  "commit": "542e84c4c7f635fd5f895940207225811e969e54",
+  "fileCount": 5,
+  "treeDepth": "recursive",
+  "status": "reviewed"
+}

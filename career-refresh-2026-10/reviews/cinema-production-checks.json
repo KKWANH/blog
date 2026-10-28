@@ -1,0 +1,58 @@
+{
+  "routes": {
+    "/": 200,
+    "/about": 200,
+    "/editor": 200,
+    "/projects": 200,
+    "/projects/ariadne": 200,
+    "/projects/earprint": 200,
+    "/projects/color-saves-life": 200,
+    "/notes": 200,
+    "/notes/device-readback": 200,
+    "/notes/ai": 200,
+    "/notes/kla": 200,
+    "/notes/semiconductor": 200,
+    "/travel": 200,
+    "/contact.vcf": 200
+  },
+  "checks": {
+    "gallery_not_published": true,
+    "negative_route": true,
+    "public_editor_disabled": true,
+    "production_writes_denied_with_flag": true,
+    "home_h1": true,
+    "home_gallery_link_absent": true,
+    "card_h1": true,
+    "card_gallery_link_absent": true,
+    "atlas_h1": true,
+    "atlas_gallery_link_absent": true,
+    "canonical_domain": true,
+    "gallery_absent_from_sitemap": true,
+    "cv_expected_bytes": true
+  },
+  "performance": [
+    {
+      "label": "contact-card",
+      "frames": 167,
+      "median": 17.600000000000364,
+      "p95": 18.300000000000182,
+      "longTasks": 0
+    },
+    {
+      "label": "project",
+      "frames": 169,
+      "median": 17.800000000000182,
+      "p95": 18.300000000000182,
+      "longTasks": 0
+    },
+    {
+      "label": "live-project",
+      "frames": 170,
+      "median": 17.799999999999272,
+      "p95": 18.200000000000273,
+      "longTasks": 0
+    }
+  ],
+  "errors": [],
+  "passed": true
+}

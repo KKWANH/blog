@@ -1,0 +1,111 @@
+{
+  "version": "round-2",
+  "identity": {
+    "name": "Kwanho Kim",
+    "headline": "Software Engineer",
+    "contacts": [
+      [
+        {"text": "kwanho0096@gmail.com", "href": "mailto:kwanho0096@gmail.com"},
+        {"text": "kwanho.dev", "href": "https://kwanho.dev"}
+      ],
+      [
+        {"text": "linkedin.com/in/kwanhokim", "href": "https://linkedin.com/in/kwanhokim"},
+        {"text": "github.com/KKWANH", "href": "https://github.com/KKWANH"}
+      ]
+    ]
+  },
+  "notice": {
+    "label": "WORKING DRAFT · DESIGN EXAMPLE",
+    "note": "Role and education details await confirmation."
+  },
+  "summary": "Software engineer working on semiconductor inspection equipment at KLA. Earlier work at Pickit 3D and Bosch spans robotic vision, communication software and operator interfaces.",
+  "experience": [
+    {
+      "employer": "KLA",
+      "role": "Software engineering",
+      "metadata": "Current · Semiconductor inspection equipment",
+      "bullets": [
+        "Lifter control and recovery across application and controller software, including response to an axis error. Hardware validation is pending.",
+        "Camera white-balance settings, device readback and the values shown in the interface.",
+        "Serial device-control code moving into a shared layer, with updates to its application integration."
+      ]
+    },
+    {
+      "employer": "Pickit 3D",
+      "role": "Research & Software Engineer",
+      "metadata": "Aug 2025–Mar 2026 · Leuven, Belgium",
+      "bullets": [
+        "Traced a field communication failure to a port conflict and implemented the fix.",
+        "Built a Python WebSocket client with reconnect, backoff and message validation for internal tools.",
+        "Built log-download and conversion tools with timezone handling and a multilingual interface.",
+        "Developed system and network configuration screens with input validation."
+      ]
+    },
+    {
+      "employer": "Bosch",
+      "role": "V2X Communication Intern",
+      "metadata": "Jun 2024–Nov 2024 · Hildesheim, Germany",
+      "bullets": [
+        "Built a vehicle-to-everything (V2X) demonstrator, defined message interfaces and checked end-to-end behaviour in test runs.",
+        "Integrated communication modules and developed a React interface for an eBike safety prototype."
+      ]
+    }
+  ],
+  "skills": [
+    {"label": "Programming", "text": "C++, C, Python, TypeScript, JavaScript."},
+    {"label": "Equipment & integration", "text": "Device-control software, serial communication, camera configuration, WebSocket, REST, ROS 1/2."},
+    {"label": "Applications & tools", "text": "React, Node.js, Fastify, SQLite; Git, Docker, Linux."},
+    {"label": "Spoken languages", "text": "Korean (native); English (IELTS Academic 7.5, Mar 2025)."}
+  ],
+  "projects": [
+    {
+      "name": "Ariadne",
+      "descriptor": "Local-document workspace",
+      "metadata": "2026 · Personal project",
+      "link": {"text": "github.com/KKWANH/ai-assistant", "href": "https://github.com/KKWANH/ai-assistant"},
+      "bullets": [
+        "Built a workspace for using language models with local documents, including source references and a review step for proposed file changes.",
+        "Developed the application in TypeScript and Python with Fastify, React and SQLite."
+      ]
+    },
+    {
+      "name": "Color Saves Life",
+      "descriptor": "Bosch ConnectedExperience",
+      "metadata": "Feb 2024 · Berlin, Germany",
+      "bullets": [
+        "Led and presented a hackathon team; integrated eye-tracking with a simulation pipeline and built a plugin-based Python client."
+      ]
+    },
+    {
+      "name": "Autonomous Lane-Keeping Assist",
+      "descriptor": "SEA:ME",
+      "metadata": "Aug–Dec 2023 · Wolfsburg, Germany",
+      "bullets": [
+        "Implemented CNN-based lane detection in CARLA and a client to collect and evaluate simulation data."
+      ]
+    }
+  ],
+  "education": {
+    "note": "Subjects and dates as supplied; degree status to confirm.",
+    "entries": [
+      {"subject": "Mechatronics", "institution": "Korea National Open University", "dates": "Feb 2026–Present"},
+      {"subject": "Artificial Intelligence", "institution": "Korea National Open University", "dates": "Mar 2023–Feb 2025"},
+      {"subject": "Business Administration", "institution": "Academic Credit Bank System", "dates": "Apr 2019–Aug 2022"},
+      {"subject": "Computer Engineering", "institution": "Academic Credit Bank System", "dates": "Apr 2019–Aug 2020"}
+    ]
+  },
+  "training": [
+    {"name": "SEA:ME", "description": "Automotive & Mobility program", "metadata": "Jul 2023–Jun 2024 · Wolfsburg, Germany"},
+    {"name": "42", "description": "Software engineering program", "metadata": "Started Sep 2020 · Seoul / Wolfsburg"}
+  ],
+  "credential": {
+    "name": "Engineer Information Processing",
+    "metadata": "Nov 2020 · Human Resources Development Service of Korea (HRD Korea)"
+  },
+  "leadership": {
+    "name": "Rush03",
+    "role": "Keyboardist & leader",
+    "metadata": "Aug 2022–Jul 2023 · 42 student club · Seoul, South Korea",
+    "bullet": "Led a 50-member community and delivered three events for 200–300 attendees."
+  }
+}

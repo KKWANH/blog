@@ -1,0 +1,305 @@
+{
+  "checks": {
+    "busy_port_no_fallback": true,
+    "single_origin_studio": true,
+    "five_originals_five_references": true,
+    "research_assets_loaded": true,
+    "studio_host_guard": true,
+    "studio_hidden_files_denied": true,
+    "studio_executable_not_served": true,
+    "one_name_heading": true,
+    "three_supplied_portraits": true,
+    "camera_portrait_leads": true,
+    "equal_portrait_weight": true,
+    "open_career_preserved": true,
+    "brand_assets_loaded": true,
+    "brand_connection_focus": true,
+    "complete_icon_list": true,
+    "map_connections_valid": true,
+    "tool_links_are_project_context": true,
+    "figma_scope_visible": true,
+    "c_has_real_project_context": true,
+    "project_skill_not_assigned_to_employer": true,
+    "selection_survives_view_change": true,
+    "whole_timeline_row_works": true,
+    "unrelated_skill_focus_cleared": true,
+    "portrait_keyboard_navigation": true,
+    "portrait_focus_return": true,
+    "no_empty_reverse": true,
+    "native_contact_links": true,
+    "paper_reacts_to_pointer": true,
+    "paper_pause_resets": true,
+    "normal_landscape_ratio": true,
+    "all_type_fits": true,
+    "meaningful_name_email_breaks": true,
+    "large_buttons_usable": true,
+    "printed_contact_targets": true,
+    "intro_focus_not_occluded": true,
+    "no_video_before_play": true,
+    "real_demo_plays": true,
+    "player_receives_focus": true,
+    "manual_pause_stops_video": true,
+    "offscreen_video_pauses": true,
+    "changing_view_unloads_video": true,
+    "video_range_supported": true,
+    "reduced_motion_static": true,
+    "card_preserves_vertical_touch_scroll": true,
+    "mobile_portraits_stay_large": true,
+    "portrait_strip_swipes": true,
+    "explicit_video_allowed_with_reduced_motion": true,
+    "mobile_card_tilt_is_visible": true,
+    "active_tilt_keeps_native_scroll": true,
+    "mobile_home_photo_tilt_is_visible": true,
+    "no_test_atlas_mutations": true
+  },
+  "geometry": [
+    {
+      "width": 660,
+      "height": 427.046875,
+      "ratio": 1.5454977863963997,
+      "inside": true,
+      "firstNameLines": 1,
+      "domainLines": 1,
+      "viewport": 1440,
+      "enlarged": false,
+      "pageWidth": 1440,
+      "buttons": [
+        {
+          "height": 47.75,
+          "width": 146.484375
+        },
+        {
+          "height": 47.75,
+          "width": 155.140625
+        }
+      ]
+    },
+    {
+      "width": 660,
+      "height": 427.046875,
+      "ratio": 1.5454977863963997,
+      "inside": true,
+      "firstNameLines": 1,
+      "domainLines": 1,
+      "viewport": 1440,
+      "enlarged": true,
+      "pageWidth": 1440,
+      "buttons": [
+        {
+          "height": 93.5,
+          "width": 273.984375
+        },
+        {
+          "height": 93.5,
+          "width": 291.3125
+        }
+      ]
+    },
+    {
+      "width": 660,
+      "height": 427.046875,
+      "ratio": 1.5454977863963997,
+      "inside": true,
+      "firstNameLines": 1,
+      "domainLines": 1,
+      "viewport": 768,
+      "enlarged": false,
+      "pageWidth": 768,
+      "buttons": [
+        {
+          "height": 47.75,
+          "width": 146.484375
+        },
+        {
+          "height": 47.75,
+          "width": 155.140625
+        }
+      ]
+    },
+    {
+      "width": 660,
+      "height": 427.046875,
+      "ratio": 1.5454977863963997,
+      "inside": true,
+      "firstNameLines": 1,
+      "domainLines": 1,
+      "viewport": 768,
+      "enlarged": true,
+      "pageWidth": 768,
+      "buttons": [
+        {
+          "height": 93.5,
+          "width": 273.984375
+        },
+        {
+          "height": 93.5,
+          "width": 291.3125
+        }
+      ]
+    },
+    {
+      "width": 350,
+      "height": 226.46875,
+      "ratio": 1.5454670898302747,
+      "inside": true,
+      "firstNameLines": 1,
+      "domainLines": 1,
+      "viewport": 390,
+      "enlarged": false,
+      "pageWidth": 390,
+      "buttons": [
+        {
+          "height": 46.625,
+          "width": 169.40625
+        },
+        {
+          "height": 46.625,
+          "width": 169.40625
+        }
+      ]
+    },
+    {
+      "width": 310,
+      "height": 435.859375,
+      "ratio": 0.7112385732210074,
+      "inside": true,
+      "firstNameLines": 1,
+      "domainLines": 1,
+      "viewport": 390,
+      "enlarged": true,
+      "pageWidth": 390,
+      "buttons": [
+        {
+          "height": 91.265625,
+          "width": 310
+        },
+        {
+          "height": 91.265625,
+          "width": 310
+        }
+      ]
+    },
+    {
+      "width": 280,
+      "height": 181.171875,
+      "ratio": 1.5454937473048729,
+      "inside": true,
+      "firstNameLines": 1,
+      "domainLines": 1,
+      "viewport": 320,
+      "enlarged": false,
+      "pageWidth": 320,
+      "buttons": [
+        {
+          "height": 65.65625,
+          "width": 134.40625
+        },
+        {
+          "height": 65.65625,
+          "width": 134.40625
+        }
+      ]
+    },
+    {
+      "width": 240,
+      "height": 492.640625,
+      "ratio": 0.4871705414063243,
+      "inside": true,
+      "firstNameLines": 1,
+      "domainLines": 1,
+      "viewport": 320,
+      "enlarged": true,
+      "pageWidth": 320,
+      "buttons": [
+        {
+          "height": 91.265625,
+          "width": 240
+        },
+        {
+          "height": 129.34375,
+          "width": 240
+        }
+      ]
+    }
+  ],
+  "audits": [
+    {
+      "page": "paper-mobile",
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    {
+      "page": "portrait-viewer",
+      "violations": [],
+      "incomplete": [
+        "aria-hidden-focus",
+        "color-contrast"
+      ]
+    },
+    {
+      "page": "playing-silent-demo",
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast",
+        "video-caption"
+      ]
+    }
+  ],
+  "errors": [],
+  "focus": [
+    {
+      "text": "Email contact@kwanho.dev",
+      "hit": true
+    },
+    {
+      "text": "Kwanho website home",
+      "hit": true
+    },
+    {
+      "text": "QR Code to kwanho.dev",
+      "hit": true
+    },
+    {
+      "text": "Read the CV",
+      "hit": true
+    },
+    {
+      "text": "Email Kwanho",
+      "hit": true
+    },
+    {
+      "text": "Save contact",
+      "hit": true
+    },
+    {
+      "text": "Standalone card & QR",
+      "hit": true
+    },
+    {
+      "text": "LinkedIn",
+      "hit": true
+    },
+    {
+      "text": "Current work at KLA",
+      "hit": true
+    },
+    {
+      "text": "Copy profile summary",
+      "hit": true
+    },
+    {
+      "text": "Open the camera portrait",
+      "hit": true
+    }
+  ],
+  "data_observation": {
+    "unchanged_during_run": true,
+    "test_mutation_requests": [],
+    "note": "The owner may edit the atlas concurrently. The harness sends no atlas mutations; observed user data is preserved."
+  },
+  "passed": true
+}
