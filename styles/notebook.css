@@ -303,17 +303,20 @@
 }
 
 @media print {
-  .notebook-header, .notebook-footer, .content-back, .reading-toc, .skip-link, .html-cv-toolbar { display: none !important; }
+  /* Named page so only the CV loses the browser margin; notes keep their default print margins. */
+  @page cv { size: A4; margin: 0; }
+  .notebook-header, .notebook-footer, .content-back, .reading-toc, .skip-link, .html-cv-toolbar, .site-atmosphere { display: none !important; }
   .site-width { width: 100%; }
   body { background: white !important; color: #202725 !important; }
   .cv-route-page { padding: 0 !important; background: transparent !important; min-height: auto !important; }
   .html-cv-container { max-width: none !important; padding: 0 !important; width: 100% !important; margin: 0 !important; }
   .html-cv-scroll { overflow: visible !important; padding: 0 !important; }
-  .html-cv-paper { box-shadow: none !important; margin: 0 !important; width: 100% !important; min-height: auto !important; padding: 12mm 15mm 12mm !important; }
+  /* The paper is the page: exact A4 with the screen padding, so print matches the preview. */
+  .html-cv-paper { box-shadow: none !important; margin: 0 !important; width: 210mm !important; height: 297mm; min-height: 0 !important; overflow: hidden; page: cv; }
   .content-hero, .content-body { padding-block: 1rem; }
   .markdown-body { max-width: none; }
   h2, h3 { break-after: avoid; }
-  figure, li, .cv-job, .award-project, .education-grid { break-inside: avoid; }
+  figure, li, .award-project { break-inside: avoid; }
 }
 
 @media (max-width: 480px) {
@@ -332,75 +335,85 @@
 .cv-toolbar-actions { display: flex; gap: .6rem; flex-wrap: wrap; }
 .html-cv-scroll { overflow-x: auto; padding: 4px; }
 .html-cv-paper {
-  --ink: #1C2922;
+  /* One ink, one accent, one muted grey, one rule — every other green maps to these. */
+  --ink: #14281C;
   --accent: #1B4D3A;
   --muted: #59655E;
-  --rule: #B4C3B4;
+  --rule: #9AAE9B;
+  --hair: .75pt;
+  /* Type: 30 name / 12.5 headings / 11 body / 9.5 small; 400 and 600 only.
+     Baseline: 15.5pt for 11pt and up, 12.4pt for 9.5pt. */
   width: 210mm;
   min-height: 297mm;
   padding: 15mm 18mm 16mm;
   margin: auto;
   background: #ffffff;
   color: var(--ink);
-  font: 400 11pt/15.5pt Inter, system-ui, sans-serif;
+  font: 400 11pt/15.5pt 'Inter CV', system-ui, sans-serif;
+  font-optical-sizing: auto;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
   display: flex;
   flex-direction: column;
+  /* Printed paper: never recoloured by browser force-dark or dark-mode extensions. */
+  color-scheme: only light;
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
 }
 .html-cv-paper h1, .html-cv-paper h2, .html-cv-paper h3, .html-cv-paper h4, .html-cv-paper p { margin: 0; }
-.html-cv-paper a { color: inherit; text-decoration: underline; text-decoration-color: #8da58f; text-decoration-thickness: .5pt; text-underline-offset: 1.4pt; }
+.html-cv-paper a { color: inherit; text-decoration: underline; text-decoration-color: #5f7d62; text-decoration-thickness: var(--hair); text-underline-offset: 1.6pt; }
 .html-cv-paper strong { font-weight: 600; }
-.html-cv-paper .cv-header { padding-bottom: 3mm; border-bottom: .6pt solid var(--rule); }
-.html-cv-paper .identity-row { display: flex; justify-content: space-between; align-items: start; gap: 12mm; }
+.html-cv-paper .cv-header { padding-bottom: 7.75pt; border-bottom: var(--hair) solid var(--rule); }
+.html-cv-paper .identity-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 12mm; }
+/* Inter (OFL, self-hosted) with its optical-size axis: text sizes get Inter Text,
+   the 30pt name automatically gets the tighter Inter Display cut. Loaded here so
+   the CV renders the same on every machine and in the printed PDF. */
 @font-face {
-  font-family: 'Syne';
-  src: url('/font/Syne.woff2') format('woff2');
-  font-weight: 700 800;
-  font-display: swap;
+  font-family: 'Inter CV';
+  src: url('/font/Inter.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: block;
 }
-@font-face {
-  font-family: 'Playfair Display';
-  src: url('/font/PlayfairDisplay.woff2') format('woff2');
-  font-weight: 700;
-  font-display: swap;
-}
-.html-cv-paper .cv-name { font-family: 'Syne', 'Playfair Display', Georgia, sans-serif; font-size: 30pt; font-weight: 800; line-height: 1.05; letter-spacing: -.025em; color: var(--ink); }
-.html-cv-paper .cv-role { font-size: 13.5pt; font-weight: 500; line-height: 18pt; color: #416E50; margin-top: 2mm !important; }
-.html-cv-paper .identity-context { display: flex; align-items: center; gap: 4mm; font-size: 9pt; line-height: 12pt; color: var(--muted); text-align: right; }
+.html-cv-paper .cv-name { font-size: 30pt; font-weight: 600; line-height: 31pt; letter-spacing: -.022em; color: var(--ink); }
+.html-cv-paper .cv-role { font-size: 12.5pt; font-weight: 400; line-height: 15.5pt; color: var(--accent); margin-top: 3.875pt !important; }
+.html-cv-paper .identity-context { display: flex; align-items: stretch; gap: 4mm; padding-top: 3pt; font-size: 9.5pt; line-height: 12.4pt; color: var(--muted); text-align: right; }
 .html-cv-paper .identity-context span { display: block; }
-.html-cv-paper .identity-rule { width: 1pt; height: 36pt; background: #416E50; flex-shrink: 0; }
-.html-cv-paper .cv-contact { display: flex; justify-content: space-between; align-items: center; gap: 2.5mm; margin-top: 4mm; font-size: 9.5pt; line-height: 13pt; color: #415748; }
-.html-cv-paper .cv-section { margin-top: 13pt; }
-.html-cv-paper .section-title { font: 600 10pt/13pt Inter, system-ui, sans-serif; color: var(--accent); letter-spacing: .075em; text-transform: uppercase; margin-bottom: 5pt !important; }
-.html-cv-paper .cv-job + .cv-job { margin-top: 12pt; }
+.html-cv-paper .identity-rule { width: 0; border-left: var(--hair) solid var(--accent); flex-shrink: 0; }
+.html-cv-paper .cv-contact { margin-top: 7.75pt; white-space: nowrap; font-size: 9.5pt; line-height: 12.4pt; color: var(--muted); }
+.html-cv-paper .cv-contact .cv-sep { color: var(--rule); word-spacing: -.12em; }
+.html-cv-paper .cv-contact a { color: var(--ink); }
+.html-cv-paper .cv-section { margin-top: 17pt; }
+.html-cv-paper .section-title { font: 600 9.5pt/12.4pt 'Inter CV', system-ui, sans-serif; color: var(--accent); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 3.875pt !important; }
+.html-cv-paper .cv-job + .cv-job { margin-top: 7.75pt; }
 .html-cv-paper .job-linear-heading { display: flex; gap: 3mm; align-items: baseline; }
-.html-cv-paper .job-linear-heading h3 { font-size: 12.5pt; line-height: 16pt; font-weight: 600; color: var(--ink); }
-.html-cv-paper .job-linear-heading > strong { font-size: 11pt; font-weight: 500; color: var(--ink); }
-.html-cv-paper .job-linear-heading time { margin-left: auto; font-size: 9.5pt; color: var(--muted); }
-.html-cv-paper .job-body ul { padding: 0 0 0 3.6mm; margin: 0; }
-.html-cv-paper .job-body li { padding-left: .2mm; margin: 2pt 0 0; }
-.html-cv-paper .job-body li::marker { color: #567b59; font-size: .75em; }
-.html-cv-paper .job-progress { margin-top: 4pt !important; font-size: 11pt; line-height: 15.5pt; color: #536759; }
-.html-cv-paper .job-progress > span { font-weight: 600; color: #315d40; margin-right: 1.5mm; }
-.html-cv-paper .award-project { display: grid; grid-template-columns: 20mm minmax(0, 1fr); gap: 4mm; align-items: start; }
-.html-cv-paper .award-result { background: var(--accent); color: #f7f8ed; min-height: 17mm; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.5mm; border-radius: 2px; }
-.html-cv-paper .award-result > span { font-size: 7.5pt; line-height: 9.5pt; text-transform: uppercase; letter-spacing: .12em; }
-.html-cv-paper .award-result > strong { font: 700 18pt/20pt Manrope, sans-serif; }
+.html-cv-paper .job-linear-heading h3 { font-size: 12.5pt; line-height: 15.5pt; font-weight: 600; color: var(--ink); }
+.html-cv-paper .job-linear-heading > strong { font-size: 11pt; font-weight: 400; color: var(--accent); }
+.html-cv-paper .job-linear-heading time { margin-left: auto; font-size: 9.5pt; color: var(--muted); white-space: nowrap; }
+/* One hanging indent: dash markers in the gutter, text on a single left edge. */
+.html-cv-paper .job-body ul { list-style: none; padding: 0 0 0 3.6mm; margin: 0; }
+.html-cv-paper .job-body li { position: relative; margin: 2pt 0 0; }
+.html-cv-paper .job-body li::before { content: '–'; position: absolute; left: -3.6mm; color: var(--accent); }
+.html-cv-paper .job-progress > span { font-weight: 600; color: var(--accent); }
+.html-cv-paper .award-project { display: grid; grid-template-columns: 17mm minmax(0, 1fr); gap: 4mm; align-items: start; }
+.html-cv-paper .award-result { border: var(--hair) solid var(--accent); color: var(--accent); min-height: 14mm; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.5mm; border-radius: 1px; }
+.html-cv-paper .award-result > span { font-size: 7pt; line-height: 9pt; text-transform: uppercase; letter-spacing: .14em; }
+.html-cv-paper .award-result > strong { font-size: 15pt; line-height: 17pt; font-weight: 600; letter-spacing: -.02em; }
 .html-cv-paper .award-heading { display: flex; justify-content: space-between; gap: 3mm; align-items: baseline; }
-.html-cv-paper .award-heading h3 { font-size: 11.5pt; line-height: 15pt; font-weight: 600; }
+.html-cv-paper .award-heading h3 { font-size: 12.5pt; line-height: 15.5pt; font-weight: 600; }
 .html-cv-paper .award-heading > span { font-size: 9.5pt; color: var(--muted); }
-.html-cv-paper .award-scope { font-size: 10pt; line-height: 14pt; color: #31573b; margin-top: 1pt !important; }
-.html-cv-paper .award-contribution { margin-top: 3pt !important; }
-.html-cv-paper .skills-band { display: grid; grid-template-columns: 1.05fr 1.05fr 1fr; gap: 4mm; padding-block: 2.3mm; border-block: .5pt solid var(--rule); }
-.html-cv-paper .skills-band h3 { font-size: 9.5pt; line-height: 13pt; font-weight: 600; color: #365b40; margin-bottom: 2pt !important; }
-.html-cv-paper .skills-band p { font-size: 10pt; line-height: 13.5pt; }
+.html-cv-paper .award-scope { font-size: 9.5pt; line-height: 12.4pt; color: var(--accent); }
+.html-cv-paper .award-contribution { margin-top: 3.875pt !important; }
+/* Shared three-column grid: skills use all three, education spans two, training the third. */
+.html-cv-paper .skills-band { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4mm; }
+.html-cv-paper .skills-band h3 { font-size: 9.5pt; line-height: 12.4pt; font-weight: 600; color: var(--accent); margin-bottom: 2pt !important; }
+.html-cv-paper .skills-band p { font-size: 9.5pt; line-height: 12.4pt; }
 .html-cv-paper .skill-line, .html-cv-paper .edu-line { display: block; }
-.html-cv-paper .education-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 8mm; padding-bottom: 4pt; }
-.html-cv-paper .education-item + .education-item, .html-cv-paper .training-item + .training-item { margin-top: 5pt; }
+.html-cv-paper .education-grid { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 4mm; }
+.html-cv-paper .education-item + .education-item, .html-cv-paper .training-item + .training-item { margin-top: 3.875pt; }
 .html-cv-paper .education-heading { display: flex; justify-content: space-between; gap: 3mm; align-items: baseline; }
-.html-cv-paper .education-heading h3, .html-cv-paper .training-item h3 { font-size: 10pt; line-height: 13pt; font-weight: 600; }
-.html-cv-paper .education-heading > span { font-size: 9pt; line-height: 12pt; color: var(--muted); white-space: nowrap; }
-.html-cv-paper .education-item p, .html-cv-paper .training-item p { font-size: 9.5pt; line-height: 12.5pt; color: var(--muted); }
+.html-cv-paper .education-heading h3, .html-cv-paper .training-item h3 { font-size: 9.5pt; line-height: 12.4pt; font-weight: 600; }
+.html-cv-paper .education-heading > span { font-size: 9.5pt; line-height: 12.4pt; color: var(--muted); white-space: nowrap; }
+.html-cv-paper .education-item p, .html-cv-paper .training-item p { font-size: 9.5pt; line-height: 12.4pt; color: var(--muted); }
 .html-cv-paper .training-item h3 { display: flex; justify-content: space-between; gap: 2mm; }
-.html-cv-paper .training-item h3 > span { font-size: 9pt; color: #59745a; font-weight: 400; }
-.html-cv-paper .cv-footer { margin-top: auto; padding-top: 5pt; border-top: .5pt solid var(--rule); font-size: 9.5pt; line-height: 12pt; color: var(--muted); }
+.html-cv-paper .training-item h3 > span { font-size: 9.5pt; color: var(--muted); font-weight: 400; }
+.html-cv-paper .cv-footer { margin-top: auto; padding-top: 4pt; border-top: var(--hair) solid var(--rule); font-size: 9.5pt; line-height: 12.4pt; color: var(--muted); }

@@ -57,19 +57,23 @@ export function HtmlCv() {
               <div className="identity-context">
                 <p>
                   {content.domains.map((domain) => (
-                    <span key={domain}>{domain}</span>
+                    <span key={domain}>{domain} </span>
                   ))}
                 </p>
                 <span className="identity-rule" aria-hidden="true" />
               </div>
             </div>
-            <div className="cv-contact">
+            <p className="cv-contact">
               <span>{content.location}</span>
+              <span className="cv-sep" aria-hidden="true">{" \u00b7 "}</span>
               <a href={`mailto:${content.email}`}>{content.email}</a>
+              <span className="cv-sep" aria-hidden="true">{" \u00b7 "}</span>
               <a href={content.website}>kwanho.dev</a>
+              <span className="cv-sep" aria-hidden="true">{" \u00b7 "}</span>
               <a href={content.linkedin} target="_blank" rel="noopener noreferrer">linkedin.com/in/kwanhokim</a>
+              <span className="cv-sep" aria-hidden="true">{" \u00b7 "}</span>
               <a href={content.github} target="_blank" rel="noopener noreferrer">github.com/KKWANH</a>
-            </div>
+            </p>
           </header>
 
           <section className="cv-section">
@@ -77,8 +81,8 @@ export function HtmlCv() {
             {content.experience.map((job) => (
               <article key={job.company} className="cv-job">
                 <div className="job-linear-heading">
-                  <h3>{job.company}</h3>
-                  <strong>{job.role}</strong>
+                  <h3>{job.company}</h3>{' '}
+                  <strong>{job.role}</strong>{' '}
                   <time>
                     {job.dates}
                     <span> · {job.location}</span>
@@ -86,18 +90,17 @@ export function HtmlCv() {
                 </div>
                 <div className="job-body">
                   <ul>
+                    {(job as { currentFocus?: string }).currentFocus ? (
+                      <li className="job-progress">
+                        <span>In progress</span> {(job as { currentFocus?: string }).currentFocus}
+                      </li>
+                    ) : null}
                     {job.bullets.map((bullet) => (
                       <li key={bullet}>
                         {renderEmphasized(bullet, (job as { emphasis?: string[] }).emphasis || [])}
                       </li>
                     ))}
                   </ul>
-                  {(job as { currentFocus?: string }).currentFocus ? (
-                    <p className="job-progress">
-                      <span>In progress</span>
-                      {(job as { currentFocus?: string }).currentFocus}
-                    </p>
-                  ) : null}
                 </div>
               </article>
             ))}
@@ -111,7 +114,7 @@ export function HtmlCv() {
                 <article key={project.name} className="award-project">
                   {award ? (
                     <div className="award-result">
-                      <span>Winner</span>
+                      <span>Winner</span>{' '}
                       <strong>{award.rank}</strong>
                     </div>
                   ) : null}
@@ -145,7 +148,7 @@ export function HtmlCv() {
                   <p>
                     {((skill as { lines?: string[] }).lines || [skill.text]).map((line, idx) => (
                       <span key={idx} className="skill-line">
-                        {line}
+                        {line}{' '}
                       </span>
                     ))}
                   </p>
@@ -178,7 +181,7 @@ export function HtmlCv() {
               {content.training.map((prog) => (
                 <article key={prog.id} className="training-item">
                   <h3>
-                    {prog.name}
+                    {prog.name}{' '}
                     <span>{prog.status}</span>
                   </h3>
                   <p>{prog.program}</p>
