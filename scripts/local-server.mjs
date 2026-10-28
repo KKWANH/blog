@@ -38,6 +38,8 @@ export async function startLocalServer({ editor = false, production = false } = 
   ensurePublicRoutes()
   const { ensureBuildMeta } = await import('./build-meta.mjs')
   ensureBuildMeta()
+  const { ensureTravelGalleries } = await import('./build-travel-galleries.mjs')
+  await ensureTravelGalleries().catch((error) => console.warn(`travel galleries: ${error.message}`))
   const env = { ...process.env, NODE_ENV: production ? 'production' : 'development', TRAVEL_EDITOR_ENABLED: editor && !production ? '1' : '0' }
   const internalStudio = path.resolve(root, 'career-refresh-2026-10/design')
   const defaultStudio = existsSync(internalStudio) ? internalStudio : '../career-refresh-2026-10/design'

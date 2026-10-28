@@ -1,0 +1,11 @@
+{
+  "place": "leuven-belgium",
+  "title": "Leuven",
+  "date": "2025-04",
+  "summary": "Optional one-line note shown above the photographs.",
+  "cover": "02-old-market.jpg",
+  "photos": {
+    "01-library-tower.jpg": { "alt": "Describe what the photograph shows", "title": "Optional frame title" },
+    "02-old-market.jpg": { "alt": "Describe what the photograph shows" }
+  }
+}

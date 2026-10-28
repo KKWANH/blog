@@ -77,7 +77,6 @@
 .brief-actions .copy-email { flex-basis: 100%; }
 
 /* An atlas and its index share state. Editing is an explicitly local mode. */
-.atlas-page { padding-top: 1.5rem; }
 .atlas-topline { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; }
 .atlas-counts { font-size: .9rem; color: var(--muted-foreground); }
 .atlas-counts strong { color: var(--foreground); font-weight: 600; }

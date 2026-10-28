@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "galleries": [
+    {
+      "id": "leuven-belgium",
+      "place": "leuven-belgium",
+      "title": "Leuven (interface test)",
+      "date": "2025-04",
+      "summary": "Temporary verification sample.",
+      "cover": "leuven-belgium-01-window",
+      "photos": [
+        {
+          "id": "leuven-belgium-01-window",
+          "src": "/photography/travel/leuven-belgium/01-window.webp",
+          "thumbnail": "/photography/travel/leuven-belgium/01-window-thumb.webp",
+          "width": 1024,
+          "height": 576,
+          "title": "Leuven (interface test), frame 1",
+          "alt": "Test frame by a window",
+          "collection": "Leuven (interface test)",
+          "date": "2025-04",
+          "location": "Leuven, Belgium"
+        },
+        {
+          "id": "leuven-belgium-02-study",
+          "src": "/photography/travel/leuven-belgium/02-study.webp",
+          "thumbnail": "/photography/travel/leuven-belgium/02-study-thumb.webp",
+          "width": 819,
+          "height": 1024,
+          "title": "Leuven (interface test), frame 2",
+          "alt": "Photograph from Leuven, Belgium",
+          "collection": "Leuven (interface test)",
+          "date": "2025-04",
+          "location": "Leuven, Belgium"
+        },
+        {
+          "id": "leuven-belgium-03-camera",
+          "src": "/photography/travel/leuven-belgium/03-camera.webp",
+          "thumbnail": "/photography/travel/leuven-belgium/03-camera-thumb.webp",
+          "width": 1024,
+          "height": 682,
+          "title": "Leuven (interface test), frame 3",
+          "alt": "Photograph from Leuven, Belgium",
+          "collection": "Leuven (interface test)",
+          "date": "2025-04",
+          "location": "Leuven, Belgium"
+        }
+      ]
+    }
+  ]
+}

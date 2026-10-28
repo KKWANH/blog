@@ -2,6 +2,7 @@ import { CodeXml, ScanLine, RotateCcw, Network, RadioTower, Check, ArrowUpRight,
 import { experience, type CareerSkill } from '@/lib/profile'
 import { CareerIcon } from '@/components/career-icons'
 import { CompanyMark } from '@/components/company-mark'
+import { JobPeriod } from '@/components/tenure'
 
 type WorkDiagram = { title: string; nodes: Array<{ icon: LucideIcon; label: string; skill?: CareerSkill }>; caption: string }
 const diagrams: Record<string, WorkDiagram> = {
@@ -35,7 +36,7 @@ export function CareerEvidence({ selected, skill }: { selected: string; skill: C
   } : diagrams[job.id]
   return (
     <aside className="career-evidence" id="career-evidence" aria-labelledby="evidence-title" tabIndex={-1}>
-      <div className="career-evidence-heading"><CompanyMark company={job.id} /><span>{job.company}<small>{job.period}</small></span></div>
+      <div className="career-evidence-heading"><CompanyMark company={job.id} /><span>{job.company}<small><JobPeriod job={job} /></small></span></div>
       <h3 id="evidence-title">{diagram.title}</h3>
       <div className="work-scope-diagram" aria-label={diagram.title}>
         {diagram.nodes.map(({ icon: NodeIcon, label, skill: nodeSkill }, index) => <div className="scope-node" key={label}>

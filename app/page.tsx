@@ -3,6 +3,7 @@ import { ArrowUpRight, BrainCircuit, Cpu, ScanLine } from 'lucide-react'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import { Hero } from '@/components/hero'
+import { JobPeriod } from '@/components/tenure'
 import { ProjectCard } from '@/components/project-card'
 import { projects } from '@/lib/projects'
 import { experience } from '@/lib/profile'
@@ -33,7 +34,7 @@ export default function HomePage() {
               <li key={job.company}>
                 <p className="work-period">
                   {index === 0 ? <span className="current-dot" aria-hidden="true" /> : null}
-                  {job.period}
+                  <JobPeriod job={job} />
                 </p>
                 <h3><Link className="home-company-link" href={`/about#experience-${job.id}`}><CompanyMark company={job.id} /><span>{job.company}</span><ArrowUpRight aria-hidden="true" /></Link></h3>
                 <p className="work-field">{job.field}</p>

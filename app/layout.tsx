@@ -14,6 +14,7 @@ import '../styles/mind-map.css'
 import '../styles/skill-editor.css'
 import '../styles/stationery.css'
 import '../styles/admin.css'
+import '../styles/atlas.css'
 import '../styles/light.css'
 
 const figtree = localFont({

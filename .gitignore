@@ -71,3 +71,18 @@ career-refresh-2026-10/screenshots/
 career-refresh-2026-10/source/asset-archive-*/
 career-refresh-2026-10/**/__pycache__/
 career-refresh-2026-10/**/*.pyc
+
+# travel photo originals (may carry GPS); publish only the WebP derivatives
+contents/photography/travel/**/*.jpg
+contents/photography/travel/**/*.jpeg
+contents/photography/travel/**/*.JPG
+contents/photography/travel/**/*.JPEG
+contents/photography/travel/**/*.png
+contents/photography/travel/**/*.PNG
+contents/photography/travel/**/*.heic
+contents/photography/travel/**/*.HEIC
+contents/photography/travel/**/*.heif
+contents/photography/travel/**/*.webp
+contents/photography/travel/**/*.avif
+contents/photography/travel/**/*.tif
+contents/photography/travel/**/*.tiff

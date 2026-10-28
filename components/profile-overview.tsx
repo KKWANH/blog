@@ -8,6 +8,7 @@ import { CareerIcon } from '@/components/career-icons'
 import { SkillExplorer } from '@/components/skill-explorer'
 import { CompanyMark } from '@/components/company-mark'
 import { CareerTimeline } from '@/components/career-timeline'
+import { JobPeriod, TenureBadges } from '@/components/tenure'
 import { CareerEvidence } from '@/components/career-evidence'
 import { ProjectEvidence } from '@/components/project-evidence'
 import { RepositoryEvidence } from '@/components/repository-evidence'
@@ -97,8 +98,7 @@ function ProfileContent() {
         <div className="profile-section-heading">
           <h2 id="experience-title"><BriefcaseBusiness aria-hidden="true" />Experience</h2>
           <div className="experience-tenure-banner" role="status" aria-label="Career experience summary">
-            <span className="tenure-summary-badge">Industry: 2+ yrs (KLA · Pickit · Bosch)</span>
-            <span className="tenure-summary-badge">Software practice: 6+ yrs (since 2020)</span>
+            <TenureBadges />
           </div>
           <p>Select a role to inspect its work scope and evidence.</p>
         </div>
@@ -110,7 +110,7 @@ function ProfileContent() {
                 <div className="experience-record-heading">
                   <div className="experience-primary-row">
                     <h3 className="experience-role">{job.role}</h3>
-                    <span className="experience-period">{job.period}</span>
+                    <span className="experience-period"><JobPeriod job={job} /></span>
                   </div>
                   <div className="experience-secondary-row">
                     <button className="company-select" type="button" aria-pressed={selected === job.id} aria-controls="career-evidence" onClick={() => selectRole(job.id)}>
@@ -146,7 +146,7 @@ function ProfileContent() {
         <div className="education-records">
           {education.map((item) => <article key={item.id} id={item.id} className="education-record" data-ongoing={!item.end}>
             <GraduationCap className="education-symbol" aria-hidden="true" />
-            <div><h3>{item.subject}</h3><p>{item.institution}</p></div>
+            <div><h3>{item.subject}</h3><p>{item.institution}{item.gpa ? <> · GPA {item.gpa}</> : null}</p></div>
             <div className="education-state"><span>{item.period}</span><strong>{item.end ? <><Check aria-hidden="true" />Bachelor&apos;s awarded</> : 'Bachelor’s in progress'}</strong></div>
           </article>)}
         </div>

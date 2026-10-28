@@ -2,15 +2,26 @@
   "name": "Kwanho Kim",
   "role": "Software Engineer · C++ device software & integration",
   "summary": "C++ engineer on semiconductor inspection equipment at KLA since 2026; previously robotics integration at Pickit 3D and V2X prototyping at Bosch. Works on serial device control, communication failures and logging for field diagnosis.",
-  "domains": ["Semiconductor inspection", "Robotics", "Mobility"],
+  "domains": [
+    "Semiconductor inspection",
+    "Robotics",
+    "Mobility"
+  ],
   "focusLine": "Systems & interfaces · Integration · C++",
-  "focusLines": ["Systems & interfaces", "Integration · C++"],
+  "focusLines": [
+    "Systems & interfaces",
+    "Integration · C++"
+  ],
   "location": "Leuven, Belgium",
-  "email": "kwanho0096@gmail.com",
+  "email": "contact@kwanho.dev",
   "website": "https://www.kwanho.dev",
   "linkedin": "https://www.linkedin.com/in/kwanhokim",
   "github": "https://github.com/KKWANH",
-  "focus": ["C++ systems", "Interfaces", "Error recovery"],
+  "focus": [
+    "C++ systems",
+    "Interfaces",
+    "Error recovery"
+  ],
   "experience": [
     {
       "company": "KLA",
@@ -20,11 +31,14 @@
       "location": "Leuven, Belgium",
       "domain": "Semiconductor inspection",
       "current": true,
-      "emphasis": ["white-balance settings", "serial control and logging"],
+      "emphasis": [
+        "white-balance settings",
+        "serial device control and logging"
+      ],
       "currentFocus": "Designing fault-recovery logic for the equipment’s lift mechanism and implementing it in C++, with team review",
       "bullets": [
-        "Made the camera’s reported white-balance settings visible in the UI.",
-        "Refactored serial control and logging into reusable components."
+        "Made the camera’s white-balance settings readable in the UI by reading them back from the device.",
+        "Refactored serial device control and logging into a shared equipment layer."
       ]
     },
     {
@@ -35,11 +49,15 @@
       "location": "Leuven, Belgium",
       "domain": "Robotics & 3D vision",
       "current": false,
-      "emphasis": ["field communication failure", "log download and conversion workflow", "Python client"],
+      "emphasis": [
+        "field communication failure",
+        "log download and conversion workflow",
+        "Python WebSocket client"
+      ],
       "bullets": [
-        "Resolved a field communication failure caused by a port conflict.",
-        "Built a timezone-aware log download and conversion workflow with a multilingual UI for incident investigation.",
-        "Built a reusable Python client for integrating internal tools, with reconnection and message checks; contributed to interface design."
+        "Traced a field communication failure to a port conflict, shipped the fix and documented checks against recurrence.",
+        "Built a timezone-aware log download and conversion workflow with a multilingual UI, reducing manual log handling in incident triage.",
+        "Built a reusable Python WebSocket client with reconnect, backoff and message validation, shared across internal tools."
       ]
     },
     {
@@ -50,19 +68,37 @@
       "location": "Hildesheim, Germany",
       "domain": "Mobility prototypes",
       "current": false,
-      "emphasis": ["V2X demonstrator", "operator interface"],
+      "emphasis": [
+        "V2X demonstrator",
+        "operator interface"
+      ],
       "bullets": [
-        "Built a V2X demonstrator for safety scenarios; tested end-to-end messaging.",
+        "Built a V2X demonstrator for safety-critical scenarios; defined message interfaces and validated end-to-end behaviour in test runs.",
         "Built the operator interface for an eBike safety prototype in React."
       ]
     }
   ],
   "skills": [
-    {"label": "Languages", "text": "C++ (primary), C, Python; TypeScript / JavaScript, Bash"},
-    {"label": "Device software", "text": "Serial device control, logging and diagnostics; fault-recovery design; CAN (basic)"},
-    {"label": "Integration", "text": "REST, WebSocket, D-Bus, ROS 1/2; Docker; CARLA simulation"},
-    {"label": "Operator UIs", "text": "Qt/QML, React"},
-    {"label": "Tooling & AI", "text": "Git, Make; AI coding agents (Claude Code, Devin) for refactoring and tests"}
+    {
+      "label": "Languages",
+      "text": "C++17 (primary; studying C++23/26), C, Python; TypeScript / JavaScript, Bash"
+    },
+    {
+      "label": "Device software",
+      "text": "Serial device control, logging and diagnostics; fault-recovery design; CAN (basic)"
+    },
+    {
+      "label": "Integration",
+      "text": "REST, WebSocket, D-Bus, ROS 1/2; Docker; CARLA simulation"
+    },
+    {
+      "label": "Operator UIs",
+      "text": "Qt/QML, React"
+    },
+    {
+      "label": "Tooling & AI",
+      "text": "Git, Make; AI coding agents (Claude Code, Devin) for refactoring and tests"
+    }
   ],
   "projects": [
     {
@@ -70,7 +106,9 @@
       "includeInCV": false,
       "link": "https://github.com/KKWANH/ft_containers",
       "dates": "42 project · 2022",
-      "emphasis": ["AVL-tree-backed map"],
+      "emphasis": [
+        "AVL-tree-backed map"
+      ],
       "description": "Implemented vector, stack and an AVL-tree-backed map with custom iterators."
     },
     {
@@ -78,20 +116,56 @@
       "includeInCV": true,
       "link": "https://github.com/KKWANH/ColorSavesLife",
       "dates": "Feb 2024",
-      "award": {"rank": "1st", "credit": "Winner", "scope": "digital.auto & mobility challenge", "event": "BCX 2024"},
+      "award": {
+        "rank": "1st",
+        "credit": "Winner",
+        "scope": "digital.auto & mobility challenge",
+        "event": "BCX 2024"
+      },
       "emphasis": [],
       "description": "Built the Python client for a driver visual-assistance prototype, integrated eye tracking with simulation and presented the team’s demo."
     }
   ],
   "education": [
-    {"name": "Mechatronics", "detail": "Bachelor’s in progress · KNOU Prime College", "date": "2026 – Present"},
-    {"name": "Artificial Intelligence", "detail": "Bachelor’s degree awarded · Korea National Open University", "date": "2025"},
-    {"name": "Business Administration", "detail": "Bachelor’s degree awarded · Academic Credit Bank System", "date": "2022"},
-    {"name": "Computer Engineering", "detail": "Bachelor’s degree awarded · Academic Credit Bank System", "date": "2020"}
+    {
+      "name": "Mechatronics",
+      "detail": "Bachelor’s in progress · KNOU Prime College",
+      "date": "Feb 2026 – Present"
+    },
+    {
+      "name": "Artificial Intelligence",
+      "detail": "Bachelor’s, GPA 3.44/4.5 · Korea National Open University",
+      "date": "Mar 2023 – Feb 2025"
+    },
+    {
+      "name": "Business Administration",
+      "detail": "Bachelor’s, GPA 3.77/4.5 · Academic Credit Bank System",
+      "date": "Apr 2019 – Aug 2022"
+    },
+    {
+      "name": "Computer Engineering",
+      "detail": "Bachelor’s, GPA 4.24/4.5 · Academic Credit Bank System",
+      "date": "Apr 2019 – Aug 2020"
+    }
   ],
   "training": [
-    {"id": "42", "name": "42", "program": "Software engineering", "location": "Seoul / Wolfsburg", "period": null, "status": "Completed"},
-    {"id": "sea-me", "name": "SEA:ME", "program": "Automotive & Mobility", "location": "Wolfsburg", "period": "Jul 2023 – Jun 2024", "status": "Completed"}
+    {
+      "id": "42",
+      "name": "42",
+      "program": "Software engineering",
+      "location": "Seoul / Wolfsburg",
+      "period": null,
+      "status": "Completed"
+    },
+    {
+      "id": "sea-me",
+      "name": "SEA:ME",
+      "program": "Automotive & Mobility",
+      "location": "Wolfsburg",
+      "period": "Jul 2023 – Jun 2024",
+      "status": "Completed"
+    }
   ],
-  "languages": "Korean: Native · English: Fluent (IELTS 7.5, 2025) · Japanese: Learner"
+  "languages": "Korean: Native · English: Fluent (IELTS 7.5, 2025) · Japanese: Learner",
+  "phone": "+32 472 01 00 79"
 }

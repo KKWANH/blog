@@ -22,11 +22,11 @@ export const experience = [
     location: 'Leuven, Belgium',
     field: 'ICOS Division · Zeta team',
     description:
-      'Lifter error recovery, camera settings and device-control software. Current lifter work is in analysis, design and early implementation with team review.',
+      'C++ device software for semiconductor inspection equipment: lifter fault recovery, camera settings and serial device control.',
     details: [
-      'Analyse lifter fault recovery and design changes across application and controller software; early implementation is in progress with team review.',
-      'Work on camera white-balance settings and device readback.',
-      'Refactor serial device-control integration and logging in a shared equipment layer.',
+      'Designing fault-recovery logic for the equipment’s lifter and implementing it in C++, with team review (in progress).',
+      'Made the camera’s white-balance settings readable in the UI by reading them back from the device.',
+      'Refactored serial device control and logging into a shared equipment layer.',
     ],
   },
   {
@@ -35,17 +35,17 @@ export const experience = [
     end: '2026-03',
     skills: ['python', 'interfaces', 'recovery', 'websocket', 'react'],
     company: 'Pickit 3D',
-    period: 'Aug 2025–Mar 2026 · 8 mos',
+    period: 'Aug 2025–Mar 2026',
     role: 'Research & Software Engineer',
     location: 'Leuven, Belgium',
     field: 'System design & integration',
     description:
-      'System design and integration for robotic-vision software, focused on communication interfaces and failure handling.',
+      'Integration software for an industrial robot-vision system: communication interfaces, failure handling and field diagnosis.',
     details: [
-      'Worked on system design and integration around communication interfaces, reconnect behaviour and message validation.',
-      'Traced a field connection failure to a port conflict and implemented the fix.',
-      'Designed a Python WebSocket client with reconnect, backoff and message validation for internal integrations.',
-      'Developed system and network configuration screens with input validation.',
+      'Traced a field communication failure to a port conflict, shipped the fix and documented checks against recurrence.',
+      'Built a reusable Python WebSocket client with reconnect, backoff and message validation, shared across internal tools.',
+      'Built a timezone-aware log download and conversion workflow with a multilingual UI for incident triage.',
+      'Developed system and network configuration screens with input validation and safe defaults.',
     ],
   },
   {
@@ -54,24 +54,25 @@ export const experience = [
     end: '2024-11',
     skills: ['interfaces', 'react'],
     company: 'Bosch',
-    period: 'Jun–Nov 2024 · 6 mos',
+    period: 'Jun–Nov 2024',
     role: 'V2X Communication Intern',
     location: 'Hildesheim, Germany',
     field: 'Vehicle communication',
     description:
       'A V2X communication demonstrator and an operator interface for an eBike safety prototype.',
     details: [
-      'Built a vehicle-to-everything demonstrator, defined message interfaces and checked end-to-end behaviour in test runs.',
-      'Integrated communication modules and developed a React interface for an eBike safety prototype.',
+      'Built a V2X demonstrator for safety-critical scenarios; defined message interfaces and validated end-to-end behaviour in test runs.',
+      'Integrated communication modules behind defined data contracts between components.',
+      'Built the operator interface for an eBike safety prototype in React.',
     ],
   },
 ] as const
 
 export const education = [
-  { id: 'mechatronics', start: '2026-02', end: null, subject: 'Mechatronics', institution: 'Korea National Open University, Prime College', period: '2026–Present', status: "Bachelor's degree in progress" },
-  { id: 'ai-degree', start: '2023-03', end: '2025-02', subject: 'Artificial Intelligence', institution: 'Korea National Open University', period: '2023–2025', status: "Bachelor's degree awarded" },
-  { id: 'computer-degree', start: '2019-04', end: '2020-08', subject: 'Computer Engineering', institution: 'Academic Credit Bank System', period: '2019–2020', status: "Bachelor's degree awarded" },
-  { id: 'business-degree', start: '2019-04', end: '2022-08', subject: 'Business Administration', institution: 'Academic Credit Bank System', period: '2019–2022', status: "Bachelor's degree awarded" },
+  { id: 'mechatronics', start: '2026-02', end: null, subject: 'Mechatronics', gpa: null, institution: 'Korea National Open University, Prime College', period: 'Feb 2026–Present', status: "Bachelor's degree in progress" },
+  { id: 'ai-degree', start: '2023-03', end: '2025-02', subject: 'Artificial Intelligence', gpa: '3.44/4.5', institution: 'Korea National Open University', period: '2023–2025', status: "Bachelor's degree awarded" },
+  { id: 'computer-degree', start: '2019-04', end: '2020-08', subject: 'Computer Engineering', gpa: '4.24/4.5', institution: 'Academic Credit Bank System', period: '2019–2020', status: "Bachelor's degree awarded" },
+  { id: 'business-degree', start: '2019-04', end: '2022-08', subject: 'Business Administration', gpa: '3.77/4.5', institution: 'Academic Credit Bank System', period: '2019–2022', status: "Bachelor's degree awarded" },
 ] as const
 
 export type CareerSkill = string
@@ -85,7 +86,7 @@ export const recruiterBrief = [
   '',
   'Focus: C++ systems development, error recovery and software integration.',
   'KLA, ICOS Division / Zeta team — C++ Engineer, Aug 2026–Present.',
-  'Current lifter work: problem analysis, design and early implementation with team review.',
+  'Current work: designing and implementing lifter fault recovery in C++, with team review.',
   'Pickit 3D — Research & Software Engineer, Aug 2025–Mar 2026.',
   'Bosch — V2X Communication Intern, Jun–Nov 2024.',
   '',

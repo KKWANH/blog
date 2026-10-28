@@ -81,6 +81,18 @@ export default async function ContentPage({
   const html =
     page.kind === 'markdown' ? rewriteRelativeMedia(page.html ?? '', decodedSlug) : ''
 
+  // The travel atlas is a full-bleed globe under the header, not a reading page.
+  if (page.bodyClassName === 'atlas-page' && Component) {
+    return (
+      <div className="atlas-shell">
+        <SiteHeader />
+        <main id="main-content" className="atlas-page">
+          <Component />
+        </main>
+      </div>
+    )
+  }
+
   return (
     <div>
       <SiteHeader />
@@ -100,7 +112,7 @@ export default async function ContentPage({
             <div>{rewriteRelativeMediaInReactNode(<Component />, decodedSlug)}</div>
           ) : null}
 
-          {!['profile-page', 'atlas-page'].includes(page.bodyClassName ?? '') ? <ContentFooterMeta page={page} /> : null}
+          {page.bodyClassName !== 'profile-page' ? <ContentFooterMeta page={page} /> : null}
         </article>
       </main>
 

@@ -11,7 +11,6 @@ import TravelPage, {
   description as travelDescription,
   excerpt as travelExcerpt,
   showToc as travelShowToc,
-  subtitle as travelSubtitle,
   title as travelTitle,
 } from '@/contents/travel/index'
 import KlaPage, {
@@ -83,7 +82,6 @@ const bundledContentModules: Record<string, BundledContentModule> = {
   travel: {
     default: TravelPage,
     title: travelTitle,
-    subtitle: travelSubtitle,
     description: travelDescription,
     excerpt: travelExcerpt,
     showToc: travelShowToc,

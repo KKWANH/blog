@@ -1,4 +1,5 @@
 import manifest from '@/contents/photography/photos.json'
+import { travelGalleries } from '@/lib/travel-galleries'
 
 export type Photograph = {
   id: string
@@ -15,7 +16,8 @@ export type Photograph = {
 }
 
 export const photographs = manifest.items as Photograph[]
-export const photographyPublished = manifest.published && photographs.length > 0
+export const portraitsPublished = manifest.published && photographs.length > 0
+export const photographyPublished = portraitsPublished || travelGalleries.length > 0
 
 // A development-only interface sample; never represented as the owner's photography.
 export const photographPreview: Photograph[] = [

@@ -5,8 +5,11 @@
   grid-template-columns: minmax(0, 1.75fr) minmax(12rem, .7fr);
   align-items: center;
   gap: 4.5rem;
-  padding-block: 2.2rem 3.6rem;
+  padding-block: 2.2rem 1.6rem;
 }
+/* The copy confirmation sits under its button instead of reserving a blank line before Experience. */
+.paper-introduction .copy-email { position: relative; }
+.paper-introduction .copy-email [role="status"] { position: absolute; inset-inline-start: 0; top: 100%; min-height: 0; }
 .paper-introduction-main { min-width: 0; }
 .business-card-holder { inline-size: 100%; max-inline-size: 660px; container-type: inline-size; }
 .business-card-tilt { padding: 0; }
@@ -135,13 +138,13 @@ html[data-motion="off"] .portrait-contact-sheet a { transform: none; transition:
   .portrait-companion { max-width: 260px; }
 }
 @media (max-width: 47.99rem) {
-  .paper-introduction { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; padding-block: .8rem 2.5rem; }
+  .paper-introduction { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; padding-block: 1.5rem 1.6rem; }
   .business-card-holder { max-inline-size: none; }
   .paper-card-actions { margin-top: 1.4rem; }
   .paper-card-actions .action-button { flex: 1 1 8rem; font-size: .85rem; padding-inline: .7rem; }
   .paper-card-links { gap: .2rem 1rem; }
   .paper-card-links a { font-size: .76rem; }
-  .portrait-companion { max-width: 100%; min-width: 0; overflow: visible; justify-self: stretch; margin-top: 1.5rem; }
+  .portrait-companion { max-width: 100%; min-width: 0; overflow: visible; justify-self: stretch; }
 }
 @media (prefers-reduced-motion: reduce) {
   .portrait-contact-sheet a { transform: none; transition: none; margin-top: 1rem; }

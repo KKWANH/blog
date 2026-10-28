@@ -14,7 +14,8 @@ export function ensurePublicRoutes() {
   routes.delete('/projects')
   routes.add('/cv')
   const photos = JSON.parse(fs.readFileSync(path.join(content, 'photography/photos.json'), 'utf8'))
-  if (photos.published && photos.items.length) routes.add('/photography')
+  const travel = JSON.parse(fs.readFileSync(path.join(content, 'photography/travel-galleries.json'), 'utf8'))
+  if ((photos.published && photos.items.length) || travel.galleries.length) routes.add('/photography')
   else routes.delete('/photography')
   const file = path.join(root, 'contents/public-routes.generated.json'), output = JSON.stringify({ version: 1, paths: [...routes].sort() }, null, 2) + '\n'
   if (fs.existsSync(file) && fs.readFileSync(file, 'utf8') === output) return false

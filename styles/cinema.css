@@ -325,6 +325,10 @@ html[data-motion="off"] .scene-scroll span { transform: none; transition: none; 
   .header-controls { gap: .25rem; }
   .wordmark-name { font-size: 1rem; }
   .header-cv { padding-inline: .5rem; font-size: .8rem; }
+  /* One control language on phones: four borderless 44px targets, no divider that crowds the Menu label. */
+  .header-controls .menu-button { padding-inline: .6rem; border-color: transparent; }
+  .header-controls .theme-toggle { border-color: transparent; }
+  .header-cv { border-left: 0; }
   .cinema-intro { grid-template-columns: minmax(0, 1fr); gap: 2rem; padding-block: 2.5rem 3rem; }
   .cinema-intro h1 { font-size: clamp(2.2rem, 18vw, 5.5rem); margin-block: 1.25rem; }
   .cinema-intro h1 br { display: none; }

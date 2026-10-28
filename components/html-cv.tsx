@@ -60,6 +60,8 @@ export function HtmlCv() {
               <span className="cv-sep" aria-hidden="true">{"\u00b7"}</span>
               <a href={`mailto:${content.email}`}>{content.email}</a>
               <span className="cv-sep" aria-hidden="true">{"\u00b7"}</span>
+              <a href={`tel:${content.phone.replace(/\s/g, '')}`}>{content.phone}</a>
+              <span className="cv-sep" aria-hidden="true">{"\u00b7"}</span>
               <a href={content.website}>kwanho.dev</a>
               <span className="cv-sep" aria-hidden="true">{"\u00b7"}</span>
               <a href={content.linkedin} target="_blank" rel="noopener noreferrer">linkedin.com/in/kwanhokim</a>
