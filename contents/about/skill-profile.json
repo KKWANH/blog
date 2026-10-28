@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-27T15:02:14.756Z",
+  "updatedAt": "2026-10-27T15:24:09.716Z",
   "entries": {
     "asm": {
       "level": null,
@@ -21,6 +21,10 @@
     "compose": {
       "level": "comfortable",
       "visibility": "profile"
+    },
+    "containers": {
+      "level": null,
+      "visibility": "repository"
     },
     "cpp": {
       "level": "strong",

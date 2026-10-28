@@ -1,5 +1,6 @@
 import { createHash } from 'node:crypto'
-import { skillPatchSchema, skillProfileSchema, type SkillPatch, type SkillProfile } from '@/lib/skill-preferences'
+import { skillPatchSchema, skillProfileSchema } from '@/lib/skill-validation'
+import type { SkillPatch, SkillProfile } from '@/lib/skill-preferences'
 
 export class SkillStoreError extends Error {
   constructor(message: string, public status: number) { super(message) }

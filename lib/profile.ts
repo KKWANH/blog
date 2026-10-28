@@ -1,12 +1,10 @@
-import definitions from '@/contents/about/skill-definitions.json'
-import { skillDefinitionsSchema } from '@/lib/skill-preferences'
-
 export const profile = {
   name: 'Kwanho Kim',
-  role: 'C++ Software Engineer',
+  role: 'Software Engineer',
+  focus: 'C++ device software & integration',
   location: 'Leuven, Belgium',
   introduction:
-    'C++ engineer at KLA, working on device software and lifter error recovery.',
+    'Software engineer at KLA, working on C++ device software, machine interfaces and failure recovery.',
   contact: 'contact@kwanho.dev',
   linkedin: 'https://www.linkedin.com/in/kwanhokim',
   github: 'https://github.com/KKWANH',
@@ -37,7 +35,7 @@ export const experience = [
     end: '2026-03',
     skills: ['python', 'interfaces', 'recovery', 'websocket', 'react'],
     company: 'Pickit 3D',
-    period: 'Aug 2025–Mar 2026',
+    period: 'Aug 2025–Mar 2026 · 8 mos',
     role: 'Research & Software Engineer',
     location: 'Leuven, Belgium',
     field: 'System design & integration',
@@ -56,7 +54,7 @@ export const experience = [
     end: '2024-11',
     skills: ['interfaces', 'react'],
     company: 'Bosch',
-    period: 'Jun–Nov 2024',
+    period: 'Jun–Nov 2024 · 6 mos',
     role: 'V2X Communication Intern',
     location: 'Hildesheim, Germany',
     field: 'Vehicle communication',
@@ -76,18 +74,13 @@ export const education = [
   { id: 'business-degree', start: '2019-04', end: '2022-08', subject: 'Business Administration', institution: 'Academic Credit Bank System', period: '2019–2022', status: "Bachelor's degree awarded" },
 ] as const
 
-const parsedDefinitions = skillDefinitionsSchema.parse(definitions)
-export const careerSkills = parsedDefinitions.skills
-
-export type CareerSkill = typeof careerSkills[number]['id']
-export type CareerSkillGroup = typeof careerSkills[number]['group']
-
-export const careerSkillGroups = parsedDefinitions.groups
+export type CareerSkill = string
+export type CareerSkillGroup = string
 
 export const projectSkillIds: readonly CareerSkill[] = ['python', 'interfaces', 'ros', 'git', 'docker', 'linux']
 
 export const recruiterBrief = [
-  'Kwanho Kim — C++ Software Engineer',
+  'Kwanho Kim - Software Engineer',
   'Leuven, Belgium | contact@kwanho.dev | https://kwanho.dev',
   '',
   'Focus: C++ systems development, error recovery and software integration.',

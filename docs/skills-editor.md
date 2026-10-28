@@ -1,6 +1,31 @@
 # Skill familiarity, visibility and repository sync
 
-Open **http://localhost:3100/about/manage** after `npm run dev:edit`. The profile's **Edit skill levels** link goes to the same screen. Familiarity is self-assessed; the implementation does not infer ratings from dependencies, repository counts or employers.
+The catalogue distinguishes languages, frameworks, libraries, tools, platforms,
+communication interfaces and engineering practice. `containers` remains the
+stable ID, but its label is **Data structures** and its C++ implementation is
+project evidence. `processes`, `threads`, `http`, `interfaces` and `recovery` are
+also practice. Familiarity and visibility remain attached to the same IDs in
+`skill-profile.json`; regrouping does not reset the owner's choices.
+Each curated definition must include a `kind`; `related` lists other stable
+skill IDs without transferring their familiarity ratings.
+
+The flat icon list separates tools/languages from practice and displays the
+same levels used by the map. `repositories.generated.json` retains the complete
+reviewed sources; the derived `repositories.index.json` contains the small
+public index. Detailed evidence loads from `/api/repositories/[name]` on demand.
+Run `npm run skills:index` after manually changing the reviewed catalogue.
+Dev startup, build and successful sync also refresh the index.
+
+Local **Save** writes JSON on this computer; public readers see it after
+publication. Configured GitHub saves update the fixed repository file and
+return a publication reference. Visitors have no save authority. The statistics
+password is a separate login and cannot authorize repository writes; see
+`admin-statistics.md`.
+
+Public map dragging, zooming, searching and branch collapse change that
+visitor's view. They do not save familiarity, visibility or repository data.
+
+Open **http://localhost:3100/about/manage** after `npm run dev:edit`. The profile's **Owner skill settings** link goes to the same screen. Familiarity is self-assessed; the implementation does not infer ratings from dependencies, repository counts or employers.
 
 ## Files and ownership
 
@@ -50,7 +75,10 @@ The CV is a separately reviewed selection; changing a website familiarity value 
 
 Local editing uses the existing opt-in development session (`TRAVEL_EDITOR_ENABLED` set by `dev:edit`), loopback checks, an exact request origin and a CSRF header. Production never enables local-file writes.
 
-The public owner login uses the same GitHub App and owner-ID policy as Travel. The skill CSRF purpose/header is distinct. The token remains in the encrypted server session, and GitHub saves target only `contents/about/skill-profile.json` on `KKWANH/blog`, `main`.
+The public owner login uses the same GitHub App and owner-ID policy as Travel.
+The skill CSRF purpose/header is distinct. The GitHub token stays encrypted in
+authoritative private storage; the browser JWT contains only its session ID.
+Saves target only `contents/about/skill-profile.json` on `KKWANH/blog`, `main`.
 
 If the app is not configured, the deployed editor explains that it is read-only. Follow [Travel owner setup](travel-owner.md) for the shared App/environment setup. A repository save becomes public after deployment.
 

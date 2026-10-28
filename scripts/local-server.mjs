@@ -32,6 +32,12 @@ export async function startLocalServer({ editor = false, production = false } = 
     throw error
   }
   await import('./prepare-map-worker.mjs')
+  const { ensureRepositoryIndex } = await import('./build-repository-index.mjs')
+  ensureRepositoryIndex()
+  const { ensurePublicRoutes } = await import('./build-public-routes.mjs')
+  ensurePublicRoutes()
+  const { ensureBuildMeta } = await import('./build-meta.mjs')
+  ensureBuildMeta()
   const env = { ...process.env, NODE_ENV: production ? 'production' : 'development', TRAVEL_EDITOR_ENABLED: editor && !production ? '1' : '0' }
   const studio = path.resolve(root, process.env.DEV_STUDIO_DIR ?? '../career-refresh-2026-10/design')
   if (!production && existsSync(studio)) env.DEV_STUDIO_DIR = realpathSync(studio)

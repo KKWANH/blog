@@ -1,7 +1,7 @@
-import { randomUUID } from 'node:crypto'
 import type { NextAuthOptions } from 'next-auth'
 import GitHubProvider from 'next-auth/providers/github'
 import { siteUrl } from '@/lib/site'
+import { issueOwnerSession, ownerSessionStorageConfigured, revokeOwnerSession } from '@/lib/owner-session'
 
 export const OWNER_GITHUB_ID = '35485904'
 export const OWNER_GITHUB_LOGIN = 'KKWANH'
@@ -15,7 +15,7 @@ export function ownerAuthConfigured(env: NodeJS.ProcessEnv = process.env) {
   return Boolean(
     env.GITHUB_ID?.trim() && env.GITHUB_SECRET?.trim() && env.NEXTAUTH_URL?.trim() &&
     env.NEXTAUTH_SECRET && env.NEXTAUTH_SECRET.trim().length >= 32 &&
-    origin && (env.NODE_ENV !== 'production' || origin.startsWith('https://')),
+    origin && (env.NODE_ENV !== 'production' || origin.startsWith('https://')) && ownerSessionStorageConfigured(env),
   )
 }
 
@@ -46,6 +46,7 @@ export const ownerAuthOptions: NextAuthOptions = {
       },
     }),
   ],
+  events: { async signOut(message) { if ('token' in message) await revokeOwnerSession(message.token ?? null) } },
   callbacks: {
     async signIn({ account, profile }) {
       return account?.provider === 'github' && String((profile as { id?: number } | undefined)?.id) === OWNER_GITHUB_ID
@@ -55,10 +56,10 @@ export const ownerAuthOptions: NextAuthOptions = {
         if (String((profile as { id?: number } | undefined)?.id) !== OWNER_GITHUB_ID || !account.access_token) {
           throw new Error('Owner access is required.')
         }
+        const session = await issueOwnerSession(account.access_token, account.expires_at ? account.expires_at * 1000 : Date.now() + 60 * 60 * 1000)
         token.ownerId = OWNER_GITHUB_ID
-        token.githubAccessToken = account.access_token
-        token.accessTokenExpires = account.expires_at ? account.expires_at * 1000 : Date.now() + 60 * 60 * 1000
-        token.travelCsrfKey = randomUUID()
+        token.ownerSessionId = session.id
+        delete token.githubAccessToken; delete token.accessTokenExpires; delete token.travelCsrfKey
       }
       return token
     },

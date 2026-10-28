@@ -9,7 +9,6 @@ import { photographyPublished } from '@/lib/photographs'
 
 const navigation = [
   { href: '/#work', label: 'Work' },
-  { href: '/projects', label: 'Projects' },
   { href: '/notes', label: 'Notes' },
   { href: '/about', label: 'About' },
   { href: '/travel', label: 'Travel' },
@@ -47,6 +46,7 @@ export function SiteHeader() {
     <header ref={header} className="notebook-header">
       <div className="site-width header-inner">
         <Link href="/" className="wordmark" aria-label="Kwanho Kim, home" onClick={() => setOpen(false)}>
+          <span className="site-mark" aria-hidden="true" />
           <span className="wordmark-name">kwanho<span className="wordmark-domain">.dev</span></span>
         </Link>
         <div className="header-controls">
@@ -65,7 +65,7 @@ export function SiteHeader() {
             {navigation.map(({ href, label }) => {
               const active = pathname === href || pathname.startsWith(`${href}/`)
               return (
-                <Link key={href} href={href} aria-current={active ? pathname === href ? 'page' : 'location' : undefined} onClick={() => setOpen(false)}>
+                <Link prefetch={false} key={href} href={href} aria-current={active ? pathname === href ? 'page' : 'location' : undefined} onClick={() => setOpen(false)}>
                   {label}
                 </Link>
               )

@@ -2,6 +2,8 @@ import { CopyEmail } from '@/components/copy-email'
 import { profile } from '@/lib/profile'
 import { externalLinks } from '@/lib/projects'
 import { MotionControl } from '@/components/motion-provider'
+import { StatisticsPreference } from '@/components/visit-statistics'
+import buildMeta from '@/contents/build-meta.json'
 
 export function SiteFooter() {
   return (
@@ -21,8 +23,10 @@ export function SiteFooter() {
           </nav>
         </div>
         <div className="footer-bottom">
-          <p>© {new Date().getFullYear()} {profile.name}</p>
+          <p>© {new Date().getFullYear()} {profile.name} · <span className="footer-last-updated">Last updated {buildMeta.lastUpdated}</span></p>
           <MotionControl />
+          <StatisticsPreference />
+          <a href="/admin">Owner tools</a>
         </div>
       </div>
     </footer>

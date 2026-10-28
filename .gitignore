@@ -39,6 +39,8 @@ yarn-error.log*
 
 # local tooling (Claude Code launch config, etc.)
 .claude/
+.local/
+.private/
 
 # typescript
 *.tsbuildinfo

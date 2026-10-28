@@ -1,13 +1,12 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import { createRequire } from 'node:module'
 import React from 'react'
-import ts from 'typescript'
 import type { Metadata } from 'next'
 import { getBundledContentModule } from '@/lib/content-component-registry'
 import { CONTENT_ROOT } from '@/lib/content-paths'
 import { markdownToHtml } from '@/lib/markdown'
 import type { TocItem } from '@/lib/toc'
+import { pathWithin, safeContentSegments } from '@/lib/content-safety'
 
 export type ContentKind = 'markdown' | 'tsx'
 export type TocVariant = 'inline' | 'rail'
@@ -67,15 +66,8 @@ type TsxContentModule = {
   bodyClassName?: string
 }
 
-function rewriteRelativeAssetLiteralsInTsx(source: string, slug: string[]) {
-  return source.replace(
-    /\b(src|href|poster)=("|\')(\.\.?\/[^"']+)\2/g,
-    (_match, attribute, quote, value) => `${attribute}=${quote}${resolveContentAsset(slug, value)}${quote}`,
-  )
-}
-
 function isIgnoredDir(name: string) {
-  return name.startsWith('_')
+  return name.startsWith('_') || name.startsWith('.')
 }
 
 function getHref(slug: string[]) {
@@ -215,41 +207,9 @@ function buildMarkdownPage(slug: string[], filePath: string): ContentPage {
   }
 }
 
-function transpileTsx(source: string, filePath: string) {
-  return ts.transpileModule(source, {
-    compilerOptions: {
-      esModuleInterop: true,
-      jsx: ts.JsxEmit.ReactJSX,
-      module: ts.ModuleKind.CommonJS,
-      moduleResolution: ts.ModuleResolutionKind.NodeJs,
-      target: ts.ScriptTarget.ES2020,
-    },
-    fileName: filePath,
-  })
-}
-
-function loadTsxModule(filePath: string, slug: string[]): TsxContentModule {
-  const rawSource = fs.readFileSync(filePath, 'utf8')
-  const source = rewriteRelativeAssetLiteralsInTsx(rawSource, slug)
-  const transpiled = transpileTsx(source, filePath)
-  const projectRequire = createRequire(filePath)
-  const module = { exports: {} as TsxContentModule }
-
-  const evaluator = new Function(
-    'exports',
-    'require',
-    'module',
-    '__filename',
-    '__dirname',
-    transpiled.outputText,
-  )
-
-  evaluator(module.exports, projectRequire, module, filePath, path.dirname(filePath))
-  return module.exports
-}
-
-function buildTsxPage(slug: string[], filePath: string): ContentPage {
-  const module = getBundledContentModule(slug) ?? loadTsxModule(filePath, slug)
+function buildTsxPage(slug: string[]): ContentPage {
+  const module = getBundledContentModule(slug) as TsxContentModule | null
+  if (!module?.default) throw new Error(`Register the TSX content page "${slug.join('/')}" in lib/content-component-registry.ts before building.`)
   const title = module.title ?? formatTitleFromSlug(slug.at(-1) ?? 'untitled')
   const excerpt = module.excerpt ?? module.summary ?? module.description ?? ''
 
@@ -323,19 +283,24 @@ export function rewriteRelativeMediaInReactNode(node: React.ReactNode, slug: str
 
 export function getContentPage(slug: string[]): ContentPage | null {
   const normalizedSlug = normalizeRouteSlug(slug)
+  if (!safeContentSegments(normalizedSlug) || normalizedSlug.some(isIgnoredDir)) return null
   const dir = path.join(CONTENT_ROOT, ...normalizedSlug)
   if (!fs.existsSync(dir) || !fs.statSync(dir).isDirectory()) {
     return null
   }
+  const realRoot = fs.realpathSync(CONTENT_ROOT), realDirectory = fs.realpathSync(dir)
+  if (!pathWithin(realRoot, realDirectory)) return null
 
   const pageFile = getPageFiles(dir)
   if (!pageFile) {
     return null
   }
+  const scopedFile = path.join(CONTENT_ROOT, ...normalizedSlug, pageFile.kind === 'markdown' ? 'index.md' : 'index.tsx')
+  if (!pathWithin(realRoot, fs.realpathSync(scopedFile))) return null
 
   return pageFile.kind === 'markdown'
     ? buildMarkdownPage(normalizedSlug, pageFile.filePath)
-    : buildTsxPage(normalizedSlug, pageFile.filePath)
+    : buildTsxPage(normalizedSlug)
 }
 
 function collectPages(dir: string, slug: string[] = []): ContentPage[] {

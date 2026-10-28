@@ -1,9 +1,8 @@
 import type { Metadata, Viewport } from 'next'
 import localFont from 'next/font/local'
-import { Analytics } from '@vercel/analytics/next'
-import { SpeedInsights } from '@vercel/speed-insights/next'
 import { MotionProvider } from '@/components/motion-provider'
 import { Atmosphere } from '@/components/atmosphere'
+import { VisitStatisticsProvider } from '@/components/visit-statistics'
 import { siteUrl } from '@/lib/site'
 import './globals.css'
 import '../styles/notebook.css'
@@ -13,6 +12,7 @@ import '../styles/profile.css'
 import '../styles/mind-map.css'
 import '../styles/skill-editor.css'
 import '../styles/stationery.css'
+import '../styles/admin.css'
 
 const figtree = localFont({
   src: '../public/font/Figtree.woff2',
@@ -29,8 +29,15 @@ const caveat = localFont({
   display: 'swap',
 })
 
+const dancingScript = localFont({
+  src: '../public/font/DancingScript-Medium.woff2',
+  variable: '--font-signature',
+  weight: '500 700',
+  display: 'swap',
+})
+
 const description =
-  'Kwanho Kim, C++ Software Engineer at KLA in Leuven. Experience, education, projects and technical notes.'
+  'Kwanho Kim, Software Engineer at KLA in Leuven. C++ device software, machine interfaces, projects and technical notes.'
 
 export const metadata: Metadata = {
   title: {
@@ -59,7 +66,7 @@ export const metadata: Metadata = {
   verification: {
     google: process.env.GOOGLE_SITE_VERIFICATION,
   },
-  // Photo-crop favicon/apple-touch variants use Next.js file conventions.
+  // The original green-window favicon uses Next.js file conventions.
 }
 
 export const viewport: Viewport = {
@@ -73,14 +80,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark" data-motion="off">
-      <body className={`${figtree.variable} ${caveat.variable} font-sans antialiased`}>
+      <body className={`${figtree.variable} ${caveat.variable} ${dancingScript.variable} font-sans antialiased`}>
         <a className="skip-link" href="#main-content">Skip to content</a>
         <MotionProvider>
+          <VisitStatisticsProvider possible={process.env.NODE_ENV !== 'production' || process.env.ANALYTICS_ENABLED === '1'}>
           <Atmosphere />
           {children}
+          </VisitStatisticsProvider>
         </MotionProvider>
-        <Analytics />
-        <SpeedInsights />
       </body>
     </html>
   )

@@ -2,7 +2,8 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { randomUUID } from 'node:crypto'
 import seed from '@/contents/about/skill-profile.json'
-import { skillProfileSchema, type SkillPatch, type SkillProfile } from '@/lib/skill-preferences'
+import { skillProfileSchema } from '@/lib/skill-validation'
+import type { SkillPatch, SkillProfile } from '@/lib/skill-preferences'
 import { applySkillPatch, skillSnapshot, SkillStoreError } from '@/lib/skill-data'
 
 const globalStore = globalThis as typeof globalThis & { __kwanhoSkillWrites?: Map<string, Promise<void>> }

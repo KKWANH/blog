@@ -13,7 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
-  const contentRoutes: MetadataRoute.Sitemap = getAllContentPages().map((page) => ({
+  const contentRoutes: MetadataRoute.Sitemap = getAllContentPages().filter((page) => page.href !== '/projects').map((page) => ({
     url: absoluteUrl(page.href),
     lastModified: page.date ? new Date(page.date) : new Date(),
     changeFrequency: 'monthly',

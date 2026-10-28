@@ -26,10 +26,12 @@ export function PaperIntroduction() {
     <header className="paper-introduction" aria-labelledby="profile-name">
       <div className="paper-introduction-main">
         <div className="business-card-holder">
-          <TiltSurface className="business-card-tilt" pitch={3} yaw={4} lift={3} scale={1.004}>
+          <TiltSurface className="business-card-tilt" pitch={7} yaw={9} lift={6} scale={1.012}>
             <div className="paper-business-card">
-              <div className="paper-card-topline"><p className="paper-card-role">{profile.role}</p><span className="paper-cpp-impression" aria-hidden="true" /></div>
+              <span className="paper-light" aria-hidden="true" />
+              <div className="paper-card-topline"><p className="paper-card-role">{profile.role}</p><span className="paper-signature-mark" aria-hidden="true" /></div>
               <h1 id="profile-name">{profile.name}</h1>
+              <p className="paper-card-focus">{profile.focus}</p>
               <p className="paper-card-location">{profile.location}</p>
               <div className="paper-card-footer">
                 <a className="paper-contact-link" href={`mailto:${profile.contact}`} aria-label={`Email ${profile.contact}`}><span>{mailbox}@<wbr />{domain}</span></a>
@@ -38,6 +40,7 @@ export function PaperIntroduction() {
             </div>
           </TiltSurface>
         </div>
+        <p className="paper-mobile-focus">{profile.focus}</p>
         <div className="paper-card-actions">
           <a className="action-button action-primary" href="/CV.pdf"><ArrowDownToLine aria-hidden="true" />Read the CV</a>
           <a className="action-button" href={`mailto:${profile.contact}`}><Mail aria-hidden="true" />Email Kwanho</a>

@@ -27,3 +27,12 @@ export type RepositoryCatalogue = {
   inspectedFiles: number
   repositories: ReviewedRepository[]
 }
+export type RepositorySummary = Omit<ReviewedRepository, 'sources' | 'limitations' | 'technologies'> & {
+  sourceCount: number
+  technologies: Array<Omit<RepositoryTechnology, 'evidence'>>
+}
+export type RepositoryIndex = Omit<RepositoryCatalogue, 'repositories'> & {
+  version: 1
+  revision: string
+  repositories: RepositorySummary[]
+}

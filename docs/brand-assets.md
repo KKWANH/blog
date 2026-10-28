@@ -1,5 +1,17 @@
 # Brand artwork
 
+The green-window mark is original artwork for this portfolio:
+`public/brands/green-window-mark.svg`. It is a closed, two-pane symbol without
+letters or an external-link arrow. The card uses its outline; the favicon and
+site mark use a plain rounded forest-green gradient tile. `app/icon.png`,
+`app/apple-icon.png` and `app/favicon.ico` replace the former photo crop.
+
+Only the used Korean `SpoqaHanSansNeo-Regular.woff2` and its license remain in
+the public font directory. Unused source OTFs and alternate subset formats were
+copied and hash-checked into the private career asset archive before removal
+from deployment assets. This reduces deployed storage, not the bytes those
+unused files had already contributed to initial page loads.
+
 Downloaded and inspected on 27 October 2026. Assets are served locally; visitors do not request logos from third-party services.
 
 | Asset | Source | Treatment |

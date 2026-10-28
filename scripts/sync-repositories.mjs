@@ -3,6 +3,7 @@ import path from 'node:path'
 import { createHash, randomUUID } from 'node:crypto'
 import { fileURLToPath } from 'node:url'
 import { z } from 'zod'
+import { ensureRepositoryIndex } from './build-repository-index.mjs'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const owner = 'KKWANH'
@@ -259,7 +260,10 @@ async function main() {
   const { catalogue, report } = await synchronizeRepositories({ previous, overrides, token: process.env.GITHUB_READ_TOKEN, force: args.has('--force') })
   for (const [file, digest] of preserved) if (hash(fs.readFileSync(file)) !== digest) throw new Error('Owner/curated files changed during sync. Review the concurrent edit before publishing.')
   const changed = report.added.length + report.changed.length + report.removed.length + report.annotationChanges.length
-  if (!dry) await writeCatalogueAtomically(generatedFile, JSON.stringify(catalogue, null, 2) + '\n', hash(original))
+  if (!dry) {
+    await writeCatalogueAtomically(generatedFile, JSON.stringify(catalogue, null, 2) + '\n', hash(original))
+    ensureRepositoryIndex()
+  }
   console.log(JSON.stringify({ ...report, repositoryCount: catalogue.count, changeCount: changed, written: !dry, preferencesPreserved: true }, null, 2))
   if (check && changed) process.exitCode = 1
 }

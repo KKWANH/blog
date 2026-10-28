@@ -1,5 +1,11 @@
 # A fixed local address
 
+The same owner-facing origin now includes `/admin` and `/admin/setup`. Setup is
+available only in the opted-in editor and writes private configuration outside
+the repository. See `admin-statistics.md`. Internal browser fixtures can use a
+separate development cache with `PORTFOLIO_DEV_DIST=.next/admin-qa`; do not change
+the established owner preview address or real data paths for a test.
+
 Use **http://localhost:3100** for this project. No DNS/hosts-file change is needed: `localhost` already resolves to the local machine.
 
 ```sh

@@ -1,5 +1,6 @@
 import { applySkillPatch, skillSnapshot, SkillStoreError } from '@/lib/skill-data'
-import { skillProfileSchema, type SkillPatch } from '@/lib/skill-preferences'
+import { skillProfileSchema } from '@/lib/skill-validation'
+import type { SkillPatch } from '@/lib/skill-preferences'
 
 const endpoint = 'https://api.github.com/repos/KKWANH/blog/contents/contents/about/skill-profile.json'
 const branch = 'main'

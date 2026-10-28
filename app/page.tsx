@@ -25,8 +25,8 @@ export default function HomePage() {
 
         <section id="work" className="home-section" aria-labelledby="work-title">
           <div className="section-heading">
-            <h2 id="work-title">Work, so far.</h2>
-            <span className="section-note">C++, integration and error handling</span>
+            <h2 id="work-title">Experience.</h2>
+            <span className="section-note">C++ device software, machine interfaces and failure recovery</span>
           </div>
           <ol className="work-list">
             {experience.map((job, index) => (
@@ -46,8 +46,8 @@ export default function HomePage() {
 
         <section id="projects" className="home-section" aria-labelledby="projects-title">
           <div className="section-heading">
-            <h2 id="projects-title">Selected work.</h2>
-            <Link className="text-link" href="/projects">Projects &amp; experiments <ArrowUpRight aria-hidden="true" /></Link>
+            <h2 id="projects-title">Featured projects.</h2>
+            <Link prefetch={false} className="text-link" href="/about#selected-work">View selected work <ArrowUpRight aria-hidden="true" /></Link>
           </div>
           <div className="project-list">
             <ProjectEvidence />

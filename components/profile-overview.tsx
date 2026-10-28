@@ -13,10 +13,12 @@ import { ProjectEvidence } from '@/components/project-evidence'
 import { RepositoryEvidence } from '@/components/repository-evidence'
 import { RepositoryInspector } from '@/components/repository-inspector'
 import { SkillProfileProvider, useSkillPreferences } from '@/components/skill-profile-provider'
+import { SelectedWork } from '@/components/selected-work'
 import { skillProjects } from '@/lib/skill-projects'
 import { repositoriesForTechnology, reviewedRepositories, mapTechnologies } from '@/lib/repository-catalogue'
 import { useMotion } from '@/components/motion-provider'
-import { careerSkillGroups, careerSkills, education, experience, projectSkillIds, type CareerSkill } from '@/lib/profile'
+import { education, experience, projectSkillIds, type CareerSkill } from '@/lib/profile'
+import { careerSkillGroups, careerSkills } from '@/lib/skill-definitions'
 
 export function ProfileOverview() {
   return <SkillProfileProvider><ProfileContent /></SkillProfileProvider>
@@ -91,44 +93,29 @@ function ProfileContent() {
     <div className="profile-overview">
       <PaperIntroduction />
 
-      <section className="skill-connections" id="skills" aria-labelledby="skill-connections-title">
-        <div className="profile-section-heading">
-          <h2 id="skill-connections-title">Skills</h2>
-          <p>Explore the skills, move their connections, or inspect every repository.</p>
-        </div>
-        <SkillExplorer selected={skill} onSelect={chooseSkill} onViewEvidence={viewScope} />
-        <div className="skill-selection-status">
-          <span role="status">{skill ? `${currentSkill?.label}: ${[...related.map((job) => job.company), ...(catalogued.length ? [`${catalogued.length} public repository connections`] : []), ...(projectLinked ? ['Color Saves Life'] : []), ...(designSkill ? ['Design practice'] : []), ...(cvOnly ? ['CV technical skills'] : [])].join(' · ')}.` : 'All experience is visible below.'}</span>
-          {skill ? <button type="button" onClick={() => chooseSkill(null)}><X aria-hidden="true" />Clear focus</button> : null}
-        </div>
-        {skill ? <div className="linked-work" aria-label="Work connected to the selected skill">
-          <span className="linked-work-origin"><CareerIcon skill={skill} /><ArrowRight aria-hidden="true" /></span>
-          {related.map((job) => <button type="button" key={job.id} onClick={() => chooseEntry(job.id)}><CompanyMark company={job.id} compact /><span>{job.company}</span><ArrowUpRight aria-hidden="true" /></button>)}
-          {repositories.map((project) => <button type="button" key={project.id} onClick={() => { setSelected(`repo:${project.id}`); requestAnimationFrame(viewScope) }}><span>{project.title}</span><ArrowUpRight aria-hidden="true" /></button>)}
-          {additionalRepositories.slice(0, 2).map((repo) => <button type="button" key={repo.name} onClick={() => { setSelected(`catalog:${repo.name}`); requestAnimationFrame(viewScope) }}><span>{repo.name}</span><ArrowUpRight aria-hidden="true" /></button>)}
-          {projectLinked ? <button type="button" onClick={() => { setSelected('bcx'); requestAnimationFrame(viewScope) }}><span>Color Saves Life</span><ArrowUpRight aria-hidden="true" /></button> : null}
-          {cvOnly ? <a className="text-link" href="/CV.pdf">CV technical skills <ArrowUpRight aria-hidden="true" /></a> : null}
-          <button type="button" className="scope-jump" onClick={viewScope}>View matching {selected === 'bcx' || currentRepository || currentReviewedRepository ? 'project' : selected === 'design' ? 'design practice' : selected === 'cv' ? 'CV entry' : 'work scope'} ↓</button>
-        </div> : null}
-      </section>
-
-      <CareerTimeline skill={skill} selected={selected} onSelect={chooseEntry} />
-
       <section className="open-experience" id="work" aria-labelledby="experience-title">
-        <div className="profile-section-heading"><h2 id="experience-title"><BriefcaseBusiness aria-hidden="true" />Experience</h2><p>Select a role to inspect its work scope.</p></div>
+        <div className="profile-section-heading"><h2 id="experience-title"><BriefcaseBusiness aria-hidden="true" />Experience</h2><p>Select a role to inspect its work scope and evidence.</p></div>
         <div className="experience-layout">
           <ol className="experience-records">
             {experience.map((job) => {
               const linked = !skill || (job.skills as readonly string[]).includes(skill)
               return <li id={`experience-${job.id}`} key={job.id} data-selected={selected === job.id} data-linked={linked}>
                 <div className="experience-record-heading">
-                  <h3><button className="company-select" type="button" aria-pressed={selected === job.id} aria-controls="career-evidence" onClick={() => selectRole(job.id)}><CompanyMark company={job.id} /><span>{job.company}</span><ArrowUpRight aria-hidden="true" /></button></h3>
-                  <span className="experience-period">{job.period}</span>
-                  <p className="experience-role">{job.role}</p>
+                  <div className="experience-primary-row">
+                    <h3 className="experience-role">{job.role}</h3>
+                    <span className="experience-period">{job.period}</span>
+                  </div>
+                  <div className="experience-secondary-row">
+                    <button className="company-select" type="button" aria-pressed={selected === job.id} aria-controls="career-evidence" onClick={() => selectRole(job.id)}>
+                      <CompanyMark company={job.id} compact />
+                      <span className="company-name">{job.company}</span>
+                      <ArrowUpRight aria-hidden="true" />
+                    </button>
+                    <span className="experience-place">{job.field} · {job.location}</span>
+                  </div>
                 </div>
-                <p className="experience-place">{job.field} · {job.location}</p>
                 <ul className="contribution-list">{job.details.map((detail) => <li key={detail}>{detail}</li>)}</ul>
-                <div className="record-skill-links">{job.skills.filter((item) => preference(item).visibility !== 'hidden').map((item) => <button type="button" key={item} aria-pressed={skill === item} onClick={() => chooseSkill(skill === item ? null : item as CareerSkill)}><CareerIcon skill={item as CareerSkill} />{careerSkills.find((value) => value.id === item)?.label}</button>)}</div>
+                <div className="record-skill-links">{job.skills.filter((item) => preference(item).visibility !== 'hidden').map((item) => <button type="button" key={item} aria-pressed={skill === item} onClick={() => chooseSkill(skill === item ? null : item as CareerSkill)}><CareerIcon skill={item as CareerSkill} size={18} />{careerSkills.find((value) => value.id === item)?.label}</button>)}</div>
                 <button type="button" className="scope-jump" onClick={() => { selectRole(job.id); requestAnimationFrame(viewScope) }}>View this work scope ↓</button>
               </li>
             })}
@@ -145,7 +132,9 @@ function ProfileContent() {
         <p className="sr-only" role="status">Showing {currentRepository?.title ?? currentReviewedRepository?.name ?? (selected === 'design' ? 'Figma and UI design practice' : selected === 'bcx' ? 'Color Saves Life project material' : selected === 'cv' ? `${currentSkill?.label} CV entry` : `${experience.find((job) => job.id === selected)?.company ?? 'KLA'} work scope`)}. All career entries remain visible.</p>
       </section>
 
-      <section className="open-education" aria-labelledby="education-title">
+      <CareerTimeline skill={skill} selected={selected} onSelect={chooseEntry} />
+
+      <section className="open-education" id="education" aria-labelledby="education-title">
         <div className="profile-section-heading"><h2 id="education-title"><GraduationCap aria-hidden="true" />Education &amp; training</h2></div>
         <div className="education-records">
           {education.map((item) => <article key={item.id} id={item.id} className="education-record" data-ongoing={!item.end}>
@@ -160,9 +149,30 @@ function ProfileContent() {
         </div>
       </section>
 
-      <div id="selected-project" className="profile-project" data-linked={projectLinked}><ProjectEvidence /></div>
+      <SelectedWork />
+
+      <section className="skill-connections" id="skills" aria-labelledby="skill-connections-title">
+        <div className="profile-section-heading">
+          <h2 id="skill-connections-title">Skills &amp; practice</h2>
+          <p>Languages and tools, then engineering practice. Follow an item to its work or project context.</p>
+        </div>
+        <SkillExplorer selected={skill} onSelect={chooseSkill} onViewEvidence={viewScope} />
+        <div className="skill-selection-status">
+          <span role="status">{skill ? `${currentSkill?.label}: ${[...related.map((job) => job.company), ...(catalogued.length ? [`${catalogued.length} public repository connections`] : []), ...(projectLinked ? ['Color Saves Life'] : []), ...(designSkill ? ['Design practice'] : []), ...(cvOnly ? ['CV technical skills'] : [])].join(' · ')}.` : 'Explore languages, tools and practice below.'}</span>
+          {skill ? <button type="button" onClick={() => chooseSkill(null)}><X aria-hidden="true" />Clear focus</button> : null}
+        </div>
+        {skill ? <div className="linked-work" aria-label="Work connected to the selected skill">
+          <span className="linked-work-origin"><CareerIcon skill={skill} /><ArrowRight aria-hidden="true" /></span>
+          {related.map((job) => <button type="button" key={job.id} onClick={() => chooseEntry(job.id)}><CompanyMark company={job.id} compact /><span>{job.company}</span><ArrowUpRight aria-hidden="true" /></button>)}
+          {repositories.map((project) => <button type="button" key={project.id} onClick={() => { setSelected(`repo:${project.id}`); requestAnimationFrame(viewScope) }}><span>{project.title}</span><ArrowUpRight aria-hidden="true" /></button>)}
+          {additionalRepositories.slice(0, 2).map((repo) => <button type="button" key={repo.name} onClick={() => { setSelected(`catalog:${repo.name}`); requestAnimationFrame(viewScope) }}><span>{repo.name}</span><ArrowUpRight aria-hidden="true" /></button>)}
+          {projectLinked ? <button type="button" onClick={() => { setSelected('bcx'); requestAnimationFrame(viewScope) }}><span>Color Saves Life</span><ArrowUpRight aria-hidden="true" /></button> : null}
+          {cvOnly ? <a className="text-link" href="/CV.pdf">CV technical skills <ArrowUpRight aria-hidden="true" /></a> : null}
+          <button type="button" className="scope-jump" onClick={viewScope}>View matching {selected === 'bcx' || currentRepository || currentReviewedRepository ? 'project' : selected === 'design' ? 'design practice' : selected === 'cv' ? 'CV entry' : 'work scope'} ↑</button>
+        </div> : null}
+      </section>
+
       <nav className="profile-exits" aria-label="Explore more">
-        <Link href="/projects">Projects &amp; experiments <ArrowUpRight aria-hidden="true" /></Link>
         <Link href="/travel">Travel atlas <ArrowUpRight aria-hidden="true" /></Link>
         <Link href="/notes">Study notes <ArrowUpRight aria-hidden="true" /></Link>
       </nav>

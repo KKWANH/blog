@@ -1,6 +1,8 @@
 'use client'
 
-import { signIn, signOut } from 'next-auth/react'
+import { signIn } from 'next-auth/react'
+import { useState } from 'react'
+import { ownerSignOut } from '@/lib/owner-signout'
 import { Github, LockKeyhole, LogOut, ShieldCheck } from 'lucide-react'
 import type { TravelEditorAccess } from './travel-types'
 
@@ -10,16 +12,18 @@ export function TravelOwnerPanel({ access, configured, loading, error }: {
   loading: boolean
   error?: string | null
 }) {
+  const [logoutError, setLogoutError] = useState('')
   if (loading) return <div className="owner-panel" role="status">Checking owner access…</div>
   if (access) {
     return <section className="owner-panel owner-connected" aria-label="Owner access">
       <ShieldCheck aria-hidden="true" />
       <div>
         <strong>{access.mode === 'github' ? 'Signed in as the site owner' : 'Local editing session'}</strong>
-        <p>{access.mode === 'github' ? 'Save writes to the blog repository. The public atlas updates after deployment.' : 'Changes are saved on this computer and included in your next publish.'}</p>
+        <p>{access.mode === 'github' ? 'Save writes to the blog repository. The public atlas updates after deployment.' : 'Save updates records on this computer. Publish those files to update the public atlas.'}</p>
         {error ? <p className="owner-warning">Editing stays unavailable until the saved atlas can be loaded.</p> : null}
       </div>
-      {access.mode === 'github' ? <button type="button" className="action-button" onClick={() => void signOut({ callbackUrl: '/travel' })}><LogOut aria-hidden="true" />Sign out</button> : null}
+      {access.mode === 'github' ? <button type="button" className="action-button" onClick={() => void ownerSignOut(access.token, 'travel', '/travel').catch((cause) => setLogoutError(cause instanceof Error ? cause.message : 'Sign-out failed.'))}><LogOut aria-hidden="true" />Sign out</button> : null}
+      {logoutError ? <p role="alert">{logoutError}</p> : null}
     </section>
   }
   return <section className="owner-panel" aria-labelledby="owner-access-title">

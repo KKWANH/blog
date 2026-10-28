@@ -1,13 +1,14 @@
 'use client'
 
 import { useCallback, useEffect, useMemo, useState } from 'react'
-import { signIn, signOut } from 'next-auth/react'
+import { signIn } from 'next-auth/react'
+import { ownerSignOut } from '@/lib/owner-signout'
 import { Check, Download, Github, LockKeyhole, RotateCcw, Save, Search, ShieldCheck } from 'lucide-react'
 import { CareerIcon } from '@/components/career-icons'
 import { SkillLevelBadge } from '@/components/skill-level-badge'
 import { announceSkillProfileUpdate } from '@/lib/skill-events'
 import { mapGroups, mapTechnologies } from '@/lib/repository-catalogue'
-import { familiarityLevels, preferenceFor, skillProfileSchema, visibilityOptions, type SkillPatch, type SkillPreference, type SkillProfile, type FamiliarityLevel, type SkillVisibility } from '@/lib/skill-preferences'
+import { familiarityLevels, preferenceFor, parseSkillProfile, visibilityOptions, type SkillPatch, type SkillPreference, type SkillProfile, type FamiliarityLevel, type SkillVisibility } from '@/lib/skill-preferences'
 
 type EditorSnapshot = {
   profile: SkillProfile
@@ -34,7 +35,7 @@ export function SkillEditor() {
       const response = await fetch('/api/skills', { cache: 'no-store' })
       const data = await response.json()
       if (!response.ok) throw new Error(data.error ?? 'Skill settings could not be loaded.')
-      const profile = skillProfileSchema.parse(data.profile)
+      const profile = parseSkillProfile(data.profile)
       setSnapshot({ ...data, profile })
       setChanges({}); setConflict(false)
     } catch (cause) { setError(cause instanceof Error ? cause.message : 'Skill settings could not be loaded.') }
@@ -93,10 +94,10 @@ export function SkillEditor() {
         if (response.status === 409) setConflict(true)
         throw new Error(data.error ?? 'The save could not be confirmed.')
       }
-      const profile = skillProfileSchema.parse(data.profile)
+      const profile = parseSkillProfile(data.profile)
       setSnapshot({ ...snapshot, profile, revision: data.revision })
       setChanges({}); setConflict(false)
-      setMessage(snapshot.editor.mode === 'local' ? 'Saved. The icon list and map now use these preferences.' : 'Saved to the repository. The public profile updates after deployment.')
+      setMessage(snapshot.editor.mode === 'local' ? 'Saved. The icon list and map on this computer now use these preferences. Publish the file to update the public site.' : 'Saved to the repository. The public profile updates after deployment.')
       announceSkillProfileUpdate()
     } catch (cause) { setError(cause instanceof Error ? cause.message : 'The save could not be confirmed. Reload before retrying.') }
     finally { setSaving(false) }
@@ -111,7 +112,7 @@ export function SkillEditor() {
   if (loading && !snapshot) return <p role="status">Loading skill settings…</p>
   if (!snapshot) return <div className="skill-editor-error" role="alert"><p>{error}</p><button type="button" className="action-button" onClick={() => void load()}>Try loading again</button></div>
   if (!snapshot.editor) return <section className="owner-panel">
-    <LockKeyhole aria-hidden="true" /><div><h2>Owner access</h2><p>Only the site owner can change familiarity levels and visibility.</p>
+    <LockKeyhole aria-hidden="true" /><div><h2>Owner access</h2><p>Visitors can browse the profile. Saving familiarity levels and visibility requires owner access.</p>
       {snapshot.ownerSignInAvailable ? <button type="button" className="action-button action-primary" onClick={() => void signIn('github', { callbackUrl: '/about/manage' })}><Github aria-hidden="true" />Sign in with GitHub</button> : <p className="owner-warning">Owner sign-in is not configured on this deployment. The local editor and JSON files can be used now; the public page is read-only.</p>}
       <a className="text-link" href="https://github.com/KKWANH/blog/blob/main/docs/skills-editor.md" target="_blank" rel="noopener noreferrer">Owner setup and file format</a>
     </div>
@@ -123,7 +124,7 @@ export function SkillEditor() {
     return (!needle || `${tech.label} ${tech.id} ${tech.detail}`.toLowerCase().includes(needle)) && (visibility === 'all' || value.visibility === visibility)
   })
   return <div className="skill-editor">
-    <section className="owner-panel owner-connected"><ShieldCheck aria-hidden="true" /><div><strong>{snapshot.editor.mode === 'local' ? 'Local editing session' : 'Signed in as the site owner'}</strong><p>{snapshot.editor.mode === 'local' ? 'Saved to contents/about/skill-profile.json. Other agents can edit the same file.' : 'Saves update the skill profile file in the repository.'}</p></div>{snapshot.editor.mode === 'github' ? <button type="button" className="action-button" onClick={() => void signOut({ callbackUrl: '/about' })}>Sign out</button> : null}</section>
+    <section className="owner-panel owner-connected"><ShieldCheck aria-hidden="true" /><div><strong>{snapshot.editor.mode === 'local' ? 'Local editing session' : 'Signed in as the site owner'}</strong><p>{snapshot.editor.mode === 'local' ? 'Save updates the skill profile on this computer. Publish the file to update the public site.' : 'Save commits the skill profile to the blog repository. The public site updates after deployment.'}</p><p className="owner-file-note">Source: contents/about/skill-profile.json</p></div>{snapshot.editor.mode === 'github' ? <button type="button" className="action-button" onClick={() => void ownerSignOut(snapshot.editor!.token, 'skills', '/about').catch((cause) => setError(cause instanceof Error ? cause.message : 'Sign-out failed.'))}>Sign out</button> : null}</section>
     <div className="skill-editor-savebar"><span>{dirtyCount ? `${dirtyCount} unsaved skill ${dirtyCount === 1 ? 'change' : 'changes'}` : 'Saved settings'}{snapshot.profile.updatedAt ? <small>Updated {new Date(snapshot.profile.updatedAt).toLocaleString()}</small> : null}</span><button type="button" className="action-button action-primary" disabled={!dirtyCount || saving || conflict || loading} onClick={() => void save()}><Save aria-hidden="true" />{saving ? 'Saving…' : 'Save changes'}</button><button type="button" className="action-button" onClick={download}><Download aria-hidden="true" />Saved JSON</button></div>
     {message ? <p className="skill-editor-success" role="status"><Check aria-hidden="true" />{message}</p> : null}
     {error ? <div className="skill-editor-error" role="alert"><p>{error}</p>{conflict ? <><p>Your unsaved choices are still shown. Reload the latest file before making a new save.</p><button type="button" className="action-button" onClick={() => void load()}>Reload latest and discard unsaved edits</button></> : null}</div> : null}

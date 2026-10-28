@@ -14,6 +14,8 @@ export function Atmosphere() {
       element.style.setProperty('--room-x', '0px')
       element.style.setProperty('--room-y', '0px')
       element.style.setProperty('--light-x', '0px')
+      element.style.setProperty('--pointer-x', '50vw')
+      element.style.setProperty('--pointer-y', '40vh')
       element.style.setProperty('--room-opacity', '.2')
       return
     }
@@ -31,6 +33,8 @@ export function Atmosphere() {
       element!.style.setProperty('--light-x', `${(current.x * 48).toFixed(2)}px`)
       element!.style.setProperty('--light-y', `${(current.y * 24).toFixed(2)}px`)
       element!.style.setProperty('--room-opacity', (0.28 - current.scroll * 0.18).toFixed(3))
+      element!.style.setProperty('--pointer-x', `${((.5 + current.x * .5) * innerWidth).toFixed(1)}px`)
+      element!.style.setProperty('--pointer-y', `${((.5 + current.y * .5) * innerHeight).toFixed(1)}px`)
       const remaining = Math.abs(target.x - current.x) + Math.abs(target.y - current.y) + Math.abs(target.scroll - current.scroll)
       frame = remaining > .002 ? requestAnimationFrame(draw) : 0
     }
@@ -57,6 +61,7 @@ export function Atmosphere() {
       <div className="atmosphere-photo" />
       <div className="atmosphere-window" />
       <div className="atmosphere-warmth" />
+      <div className="atmosphere-pointer" />
       <div className="atmosphere-grain" />
       <div className="atmosphere-shade" />
     </div>

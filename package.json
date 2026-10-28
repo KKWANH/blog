@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "postinstall": "node scripts/prepare-map-worker.mjs",
-    "prebuild": "node scripts/prepare-map-worker.mjs",
+    "prebuild": "node scripts/prepare-map-worker.mjs && node scripts/build-repository-index.mjs && node scripts/build-public-routes.mjs && node scripts/build-meta.mjs",
     "dev": "node scripts/dev-server.mjs",
     "dev:edit": "node scripts/dev-editor.mjs",
     "preview": "node scripts/dev-server.mjs --production",
@@ -12,9 +12,11 @@
     "skills:sync": "node --use-system-ca scripts/sync-repositories.mjs",
     "skills:sync:check": "node --use-system-ca scripts/sync-repositories.mjs --check",
     "skills:validate": "node scripts/check-content.mjs",
+    "skills:index": "node scripts/build-repository-index.mjs",
     "build": "next build",
     "typecheck": "tsc --noEmit",
     "test:content": "node scripts/check-content.mjs",
+    "test:security": "node scripts/check-security.mjs",
     "start": "next start",
     "lint": "eslint ."
   },

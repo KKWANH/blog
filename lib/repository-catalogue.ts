@@ -1,10 +1,10 @@
-import rawCatalogue from '@/contents/about/repositories.generated.json'
-import { careerSkills, careerSkillGroups } from '@/lib/profile'
+import rawCatalogue from '@/contents/about/repositories.index.json'
+import { careerSkills, careerSkillGroups } from '@/lib/skill-definitions'
 import { skillProjects } from '@/lib/skill-projects'
-import type { RepositoryCatalogue, ReviewedRepository } from '@/lib/repository-types'
-import { preferenceFor, type SkillProfile } from '@/lib/skill-preferences'
+import type { RepositoryIndex, RepositorySummary } from '@/lib/repository-types'
+import { preferenceFor, type SkillKind, type SkillProfile } from '@/lib/skill-preferences'
 
-export const repositoryCatalogue = rawCatalogue as RepositoryCatalogue
+export const repositoryCatalogue = rawCatalogue as RepositoryIndex
 export const reviewedRepositories = repositoryCatalogue.repositories
 export const repositoryTechnologyCount = new Set(reviewedRepositories.flatMap((repo) => repo.technologies.map((tech) => tech.id))).size
 export const reviewedRepositoryCount = reviewedRepositories.filter((repo) => repo.status !== 'needs-review').length
@@ -30,18 +30,25 @@ const preferred: Record<string, string[]> = {
   raycasting: ['cub3d_kkim'], minilibx: ['cub3d_kkim'], carla: ['KKWANH'],
 }
 
-export function repositoriesForTechnology(id: string, includeReferences = false): ReviewedRepository[] {
+const technologyRepositories = new Map<string, RepositorySummary[]>()
+for (const repo of reviewedRepositories) {
+  const ids = new Set(repo.technologies.map((tech) => tech.id))
+  for (const project of skillProjects) if (project.href.endsWith(`/${repo.name}`)) project.skills.forEach((id) => ids.add(id))
+  for (const id of ids) technologyRepositories.set(id, [...(technologyRepositories.get(id) ?? []), repo])
+}
+
+export function repositoriesForTechnology(id: string, includeReferences = false): RepositorySummary[] {
   const curatedNames = skillProjects.filter((project) => project.skills.some((skill) => skill === id)).map((project) => project.href.split('/').at(-1))
-  return reviewedRepositories.filter((repo) => (
+  return (technologyRepositories.get(id) ?? []).filter((repo) => (
     includeReferences || !['reference', 'ai-directed'].includes(repo.scope)
   ) && (repo.technologies.some((tech) => tech.id === id) || curatedNames.includes(repo.name))).sort((a, b) => {
     const priorities = preferred[id] ?? []
-    const score = (repo: ReviewedRepository) => priorities.includes(repo.name) ? priorities.indexOf(repo.name) : repo.scope === 'learning' ? 30 : repo.scope === 'project' ? 40 : 60
+    const score = (repo: RepositorySummary) => priorities.includes(repo.name) ? priorities.indexOf(repo.name) : repo.scope === 'learning' ? 30 : repo.scope === 'project' ? 40 : 60
     return score(a) - score(b) || a.name.localeCompare(b.name)
   })
 }
 
-export type MapTechnology = { id: string; label: string; group: string; detail: string; personal: boolean }
+export type MapTechnology = { id: string; label: string; group: string; detail: string; personal: boolean; kind?: SkillKind; related?: string[] }
 
 const technologies = new Map<string, MapTechnology>(
   careerSkills.map((skill) => [skill.id, { ...skill, personal: true }]),

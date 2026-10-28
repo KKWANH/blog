@@ -2,10 +2,10 @@
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import seed from '@/contents/about/skill-profile.json'
-import { skillProfileSchema, preferenceFor, type SkillProfile } from '@/lib/skill-preferences'
+import { parseSkillProfile, preferenceFor, type SkillProfile } from '@/lib/skill-preferences'
 import { mapTechnologies } from '@/lib/repository-catalogue'
 
-const initial = skillProfileSchema.parse(seed)
+const initial = parseSkillProfile(seed)
 const ProfileContext = createContext<{ profile: SkillProfile; refresh: () => Promise<void> }>({ profile: initial, refresh: async () => {} })
 
 export function SkillProfileProvider({ children }: { children: ReactNode }) {
@@ -19,8 +19,8 @@ export function SkillProfileProvider({ children }: { children: ReactNode }) {
       const response = await fetch('/api/skills', { cache: 'no-store', signal: controller.signal })
       if (!response.ok) return
       const data = await response.json()
-      const parsed = skillProfileSchema.safeParse(data.profile)
-      if (parsed.success && !controller.signal.aborted) setProfile(parsed.data)
+      const parsed = parseSkillProfile(data.profile)
+      if (!controller.signal.aborted) setProfile(parsed)
     } catch { /* Keep the known published snapshot when a refresh is unavailable. */ }
     finally { if (pending.current === controller) pending.current = null }
   }, [])

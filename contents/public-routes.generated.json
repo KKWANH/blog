@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "paths": [
+    "/",
+    "/about",
+    "/notes",
+    "/notes/ai",
+    "/notes/device-readback",
+    "/notes/kla",
+    "/notes/semiconductor",
+    "/projects/ariadne",
+    "/projects/color-saves-life",
+    "/projects/earprint",
+    "/travel"
+  ]
+}

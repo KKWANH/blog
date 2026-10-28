@@ -6,7 +6,9 @@ export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
 const handler = NextAuth(ownerAuthOptions)
 
-function configured(request: NextRequest, context: { params: Promise<{ nextauth: string[] }> }) {
+async function configured(request: NextRequest, context: { params: Promise<{ nextauth: string[] }> }) {
+  const { nextauth } = await context.params
+  if (nextauth[0] === 'signout') return Response.json({ error: 'Use the owner tools to revoke this session before signing out.' }, { status: 405, headers: { 'Cache-Control': 'no-store' } })
   if (!ownerAuthConfigured()) {
     return Response.json({ error: 'Owner sign-in is not configured on this deployment.' }, { status: 503, headers: { 'Cache-Control': 'no-store' } })
   }

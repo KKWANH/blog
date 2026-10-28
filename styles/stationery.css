@@ -13,6 +13,7 @@
 .paper-business-card {
   position: relative;
   isolation: isolate;
+  overflow: hidden;
   inline-size: 100%;
   min-block-size: calc(100cqi * 55 / 85);
   display: flex;
@@ -21,30 +22,35 @@
   padding-inline: max(16px, 6.2cqi);
   border: 1px solid #dedbcb;
   border-radius: 1px;
-  background: linear-gradient(112deg, #faf7eb, #eeeada);
+  background: linear-gradient(112deg, #f7f3e6, #eae4d3);
   color: #1b392a;
   box-shadow: 0 1px 0 #fffdf0, 0 3px 0 #bdc2a8, 0 5px 0 #294630,
     calc(var(--px, 0) * -4px) 13px 20px -10px #0009,
     calc(var(--px, 0) * -7px) 32px 60px -20px #0009;
 }
 .paper-business-card::before, .paper-business-card::after { content: ''; position: absolute; inset: 0; z-index: 0; pointer-events: none; }
-.paper-business-card::before { background: url('/paper-fibres.webp') 0 0 / 360px 360px, url('/paper-grain.webp') 0 0 / 160px 160px; opacity: .44; mix-blend-mode: multiply; }
-.paper-business-card::after { inset: 6px; border: 1px solid #45644714; box-shadow: inset 0 1px 0 #fffdf555; background: radial-gradient(ellipse at var(--mx, 45%) var(--my, 30%), #ffffffad, transparent 70%); opacity: calc(.55 + var(--shine, 0) * .12); }
+.paper-business-card::before { background: url('/paper-fibres.webp') 0 0 / 260px 260px, url('/paper-grain.webp') 0 0 / 120px 120px; opacity: .62; filter: contrast(1.25); mix-blend-mode: multiply; }
+.paper-business-card::after { inset: 6px; border: 1px solid #45644724; box-shadow: inset 0 1px 0 #fffdf588; opacity: .7; }
 .paper-business-card > * { position: relative; z-index: 1; flex-shrink: 0; min-inline-size: 0; }
 .paper-business-card * { overflow-wrap: anywhere; }
 .paper-card-topline { display: flex; align-items: center; justify-content: space-between; gap: .8rem; }
 .paper-card-role { font-size: max(.8rem, 3.35cqi); line-height: 1.3; font-weight: 400; }
-.paper-cpp-impression { display: block; flex: 0 0 max(22px, 7.5cqi); width: max(22px, 7.5cqi); height: max(22px, 7.5cqi); filter: drop-shadow(calc(var(--px, 0) * -.4px) -1px .6px #8e97827d) drop-shadow(0 1px .6px #fffdf4); }
-.paper-cpp-impression::before { content: ''; display: block; width: 100%; height: 100%; background: #e4dfd0; mask: url('/brands/cplusplus.svg') center / contain no-repeat; }
+.paper-signature-mark { display: block; flex: 0 0 max(24px, 7.5cqi); width: max(24px, 7.5cqi); height: max(24px, 7.5cqi); filter: drop-shadow(0 1px 0.6px #fffdf4) drop-shadow(0 -0.8px 0.5px rgba(18, 42, 28, 0.45)); }
+.paper-signature-mark::before { content: ''; display: block; width: 100%; height: 100%; background: #395741; mask: url('/brands/cplusplus.svg') center / contain no-repeat; opacity: .75; }
+.paper-business-card > .paper-light { position: absolute; inset: -25%; z-index: 0; pointer-events: none; background: radial-gradient(ellipse at 35% 30%,#fffef5ad,transparent 60%); transform: translate3d(calc(var(--px,0)*18px),calc(var(--py,0)*12px),0); opacity: calc(.4 + var(--shine,0)*.25); }
+.paper-card-focus { font-size: max(.72rem,2.8cqi); line-height: 1.45; margin-top: max(4px,1.2cqi); color: #3d5d47; }
+.paper-mobile-focus { display: none; color: var(--muted-foreground); font-size: .76rem; line-height: 1.6; margin-top: .8rem; }
 .paper-business-card h1 {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: max(1.8rem, 10.3cqi);
-  font-weight: 400;
-  letter-spacing: -.045em;
-  line-height: 1.1;
-  margin-block: max(.75rem, 4.2cqi) 0;
-  text-shadow: 0 .6px .35px #fffdf3;
+  font-family: var(--font-signature), 'Dancing Script', var(--font-hand), Georgia, serif;
+  font-size: max(2.1rem, 11.5cqi);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
+  margin-block: max(.45rem, 2.5cqi) 0;
+  color: #173726;
+  text-shadow: 0 1px 0.5px #fffdf4, 0 -0.8px 0.6px rgba(18, 42, 28, 0.45);
   overflow-wrap: normal;
+  user-select: text;
 }
 .paper-card-footer {
   display: flex;
@@ -59,7 +65,7 @@
   font-size: max(.75rem, 2.6cqi);
   line-height: 1.4;
 }
-.paper-card-location { font-size: max(.75rem, 2.8cqi); line-height: 1.4; margin-top: max(4px, 1cqi); margin-bottom: max(.45rem, 2cqi); }
+.paper-card-location { font-size: max(.75rem, 2.8cqi); line-height: 1.4; margin-top: max(4px, 1cqi); margin-bottom: max(.35rem, 1.6cqi); }
 .paper-contact-link { display: inline-flex; align-items: center; gap: .3rem; min-height: 44px; color: #1b392a; text-decoration: none; }
 .paper-contact-link:hover { text-decoration: underline; text-underline-offset: .22em; }
 .paper-contact-link:focus-visible { outline-color: #25563e; outline-offset: 3px; }
@@ -70,26 +76,25 @@
 .paper-card-links svg { width: 15px; height: 15px; }
 .paper-card-links a:hover { color: var(--warm-accent); }
 .paper-card-links a:hover svg { transform: translate(1px, -1px); }
-.portrait-companion { min-width: 0; width: 100%; max-width: 270px; justify-self: end; }
-.portrait-contact-sheet { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; width: 100%; }
-.portrait-contact-sheet a { display: block; position: relative; padding: 7px 7px 15px; background: #efede0; border: 1px solid #d9dcc8; box-shadow: 0 10px 22px -10px #000b; transition: transform 200ms ease; min-width: 0; }
-.portrait-contact-sheet a:first-child { transform: rotate(-1.5deg); }
-.portrait-contact-sheet a:nth-child(2) { transform: rotate(1.2deg); }
-.portrait-contact-sheet a:nth-child(3) { transform: rotate(-.8deg); }
+.portrait-companion { min-width: 0; width: 100%; max-width: 300px; justify-self: end; }
+.portrait-contact-sheet { display: flex; flex-direction: column; gap: 0; width: 100%; max-width: 100%; position: relative; padding-top: 6px; }
+.portrait-contact-sheet a { display: block; position: relative; padding: 8px 8px 16px; background: #f1efe4; border: 1px solid #d8dbc6; box-shadow: 0 10px 24px -10px rgba(0, 0, 0, 0.65), 0 2px 6px rgba(0, 0, 0, 0.2); transition: transform 260ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 260ms ease, z-index 0s; min-width: 0; }
+.portrait-contact-sheet a:first-child { transform: rotate(-3.2deg) translateX(-10px); z-index: 1; }
+.portrait-contact-sheet a:nth-child(2) { transform: rotate(2.6deg) translateX(12px); margin-top: -36px; z-index: 2; }
+.portrait-contact-sheet a:nth-child(3) { transform: rotate(-1.8deg) translateX(-4px); margin-top: -30px; z-index: 3; }
 .portrait-contact-sheet img { display: block; width: 100%; height: auto; aspect-ratio: 8/5; object-fit: cover; }
 .portrait-contact-sheet a[data-portrait="professional"] img { object-position: center 25%; }
-.portrait-contact-sheet a:hover { transform: translateY(-3px) rotate(0deg); }
+.portrait-contact-sheet a:hover, .portrait-contact-sheet a:focus-visible { transform: translateY(-6px) rotate(0deg) scale(1.02); box-shadow: 0 18px 32px -10px rgba(0, 0, 0, 0.75); z-index: 10; }
 .portrait-contact-sheet a:focus-visible { outline-color: #e6bf7d; outline-offset: 6px; }
 .portrait-open { position: absolute; right: 8px; bottom: 8px; display: flex; align-items: center; gap: .35rem; min-height: 24px; padding: .25rem .4rem; border-radius: 2px; background: #0a281cee; color: #f0f2e5; font-size: .65rem; opacity: 0; transition: opacity 180ms; }
 .portrait-open svg { width: 12px; height: 12px; }
 .portrait-contact-sheet a:hover .portrait-open, .portrait-contact-sheet a:focus-visible .portrait-open { opacity: 1; }
 .portrait-contact-sheet a:not(:first-child) .portrait-open span { display: none; }
 .portrait-strip-hint { display: none; }
-html[data-motion="off"] .portrait-contact-sheet a { transform: none; transition: none; }
+html[data-motion="off"] .portrait-contact-sheet a { transform: none; transition: none; margin-top: 1rem; }
 @media (max-width: 63.99rem) {
   .paper-introduction { gap: 2rem; grid-template-columns: minmax(0, 1.75fr) minmax(10rem, .7fr); }
-  .portrait-contact-sheet { gap: .8rem; }
-  .portrait-contact-sheet a { padding: 5px 5px 11px; }
+  .portrait-companion { max-width: 260px; }
 }
 @media (max-width: 47.99rem) {
   .paper-introduction { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; padding-block: .8rem 2.5rem; }
@@ -98,22 +103,25 @@ html[data-motion="off"] .portrait-contact-sheet a { transform: none; transition:
   .paper-card-actions .action-button { flex: 1 1 8rem; font-size: .85rem; padding-inline: .7rem; }
   .paper-card-links { gap: .2rem 1rem; }
   .paper-card-links a { font-size: .76rem; }
-  .portrait-companion { max-width: none; justify-self: stretch; }
+  .portrait-companion { max-width: 100%; min-width: 0; overflow: hidden; justify-self: stretch; margin-top: 1.5rem; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .portrait-contact-sheet a { transform: none; transition: none; }
+  .portrait-contact-sheet a { transform: none; transition: none; margin-top: 1rem; }
+}
+@container (max-width:310px) {
+  .paper-card-focus { display: none; }
+  .paper-mobile-focus { display: block; }
 }
 /* Container-relative rem thresholds also respond to enlarged text. Keep this
    after viewport rules so the readable stacked arrangement remains authoritative. */
 @container (max-width: 45rem) {
   .paper-introduction { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
-  .portrait-companion { max-width: 660px; justify-self: stretch; }
-  .portrait-contact-sheet { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .portrait-companion { max-width: 100%; min-width: 0; overflow: hidden; justify-self: stretch; }
 }
 @media (max-width: 47.99rem) {
-  .portrait-contact-sheet { display: flex; gap: .8rem; overflow-x: auto; padding: 7px 5px 14px; scroll-snap-type: x proximity; scroll-padding-inline: 5px; }
-  .portrait-contact-sheet a { flex: 0 0 min(76vw, 260px); scroll-snap-align: start; }
+  .portrait-contact-sheet { display: flex; flex-direction: row; gap: .8rem; overflow-x: auto; padding: 7px 5px 14px; scroll-snap-type: x proximity; scroll-padding-inline: 5px; }
+  .portrait-contact-sheet a { flex: 0 0 min(76vw, 260px); scroll-snap-align: start; margin-top: 0 !important; transform: none !important; }
   .portrait-contact-sheet a:focus-visible { outline-offset: 3px; }
   .portrait-contact-sheet a .portrait-open span { display: inline; }
-  .portrait-strip-hint { display: block; color: var(--muted-foreground); font-size: .72rem; margin-top: .35rem; }
+  .portrait-strip-hint { display: block; color: var(--muted-foreground); font-size: .72rem; margin-top: .45rem; }
 }

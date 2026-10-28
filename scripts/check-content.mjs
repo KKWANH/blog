@@ -5,40 +5,15 @@ import path from 'node:path'
 import { createRequire } from 'node:module'
 import { createHash } from 'node:crypto'
 import { fileURLToPath } from 'node:url'
-import ts from 'typescript'
+import { createSourceLoader } from './source-loader.mjs'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const require = createRequire(path.join(root, 'package.json'))
 const fixtures = fs.mkdtempSync(path.join(os.tmpdir(), 'kwanho-content-'))
-const modules = new Map()
-
-// Exercise the actual Markdown loader outside Next's client-component registry.
-function loadSource(file) {
-  if (modules.has(file)) return modules.get(file).exports
-  const module = { exports: {} }
-  modules.set(file, module)
-  const { outputText } = ts.transpileModule(fs.readFileSync(file, 'utf8'), {
-    compilerOptions: {
-      module: ts.ModuleKind.CommonJS,
-      target: ts.ScriptTarget.ES2022,
-      jsx: ts.JsxEmit.ReactJSX,
-      esModuleInterop: true,
-    },
-    fileName: file,
-  })
-  function resolve(name) {
-    if (name === '@/lib/content-paths') return { CONTENT_ROOT: fixtures }
-    if (name === '@/lib/content-component-registry') return { getBundledContentModule: () => null }
-    if (!name.startsWith('@/')) return require(name)
-    const base = path.join(root, name.slice(2))
-    if (base.endsWith('.json')) return require(base)
-    return loadSource(['.ts', '.tsx'].map((extension) => base + extension).find(fs.existsSync))
-  }
-  new Function('require', 'module', 'exports', '__filename', '__dirname', outputText)(
-    resolve, module, module.exports, file, path.dirname(file),
-  )
-  return module.exports
-}
+const loadSource = createSourceLoader(root, {
+  '@/lib/content-paths': { CONTENT_ROOT: fixtures },
+  '@/lib/content-component-registry': { getBundledContentModule: () => null },
+})
 
 try {
   const source = [
@@ -68,6 +43,10 @@ try {
     assert.doesNotMatch(page.html, /title:|bodyClassName:/)
     console.log(`${name}: metadata and rendered body passed`)
   }
+  fs.mkdirSync(path.join(fixtures, 'unregistered'))
+  fs.writeFileSync(path.join(fixtures, 'unregistered/index.tsx'), 'globalThis.__contentCanary = true; export default function Page() { return null }')
+  assert.throws(() => getContentPage(['unregistered']), /Register the TSX content page/)
+  assert.equal(globalThis.__contentCanary, undefined, 'runtime content loading never evaluates arbitrary TSX files')
 
   const { createTravelStore } = loadSource(path.join(root, 'lib/travel-store.ts'))
   const { localTravelEditor, travelEditorToken, travelWriteAllowed } = loadSource(path.join(root, 'lib/travel-editor-access.ts'))
@@ -109,7 +88,7 @@ try {
   const token = travelEditorToken()
   const request = (overrides = {}) => new Request('http://127.0.0.1:3100/api/travel', {
     method: 'POST',
-    headers: { host: '127.0.0.1:3100', origin: 'http://127.0.0.1:3100', 'x-travel-editor-token': token, ...overrides },
+    headers: { host: '127.0.0.1:3100', origin: 'http://127.0.0.1:3100', 'content-type': 'application/json', 'x-travel-editor-token': token, ...overrides },
   })
   assert.equal(localTravelEditor(request(), env), true)
   assert.equal(travelWriteAllowed(request(), env), true)
@@ -148,16 +127,22 @@ try {
   assert.equal(localDevelopmentRequest(new Request('http://elsewhere.example/studio', { headers: { host: 'elsewhere.example' } }), { NODE_ENV: 'development' }), false)
   console.log('local studio: localhost-only development access, file types, traversal and real-path containment passed')
 
-  const { travelOwner } = loadSource(path.join(root, 'lib/travel-owner.ts'))
+  const { travelOwner: resolveTravelOwner } = loadSource(path.join(root, 'lib/travel-owner.ts'))
   const { ownerAuthOptions, OWNER_GITHUB_ID } = loadSource(path.join(root, 'lib/owner-auth.ts'))
   const { ownerCsrfToken } = loadSource(path.join(root, 'lib/travel-owner-policy.ts'))
   const { createGitHubTravelStore } = loadSource(path.join(root, 'lib/travel-github-store.ts'))
   const { travelSnapshot } = loadSource(path.join(root, 'lib/travel-data.ts'))
   const { encode } = require('next-auth/jwt')
   const testSecret = 'fixture-only-secret-not-for-deployment-0123456789'
-  const authEnv = { NODE_ENV: 'production', NEXTAUTH_URL: 'https://www.kwanho.dev', NEXTAUTH_SECRET: testSecret, GITHUB_ID: 'fixture-client', GITHUB_SECRET: 'fixture-client-secret' }
-  const claims = { ownerId: OWNER_GITHUB_ID, githubAccessToken: 'fixture-token-not-a-credential', accessTokenExpires: Date.now() + 60_000, travelCsrfKey: 'fixture-session-csrf-key-0123456789' }
-  const encoded = await encode({ token: claims, secret: testSecret, maxAge: 60 })
+  const authEnv = { NODE_ENV: 'production', NEXTAUTH_URL: 'https://www.kwanho.dev', NEXTAUTH_SECRET: testSecret, GITHUB_ID: 'fixture-client', GITHUB_SECRET: 'fixture-client-secret', ANALYTICS_REDIS_REST_URL: 'https://fixture.upstash.io', ANALYTICS_REDIS_REST_TOKEN: 'fixture' }
+  const { createLocalPrivateStore } = loadSource(path.join(root, 'lib/private-store.ts'))
+  const { issueOwnerSession, ownerSessionKey } = loadSource(path.join(root, 'lib/owner-session.ts'))
+  const ownerSessions = createLocalPrivateStore(path.join(fixtures, 'owner-sessions.json'))
+  const issuedOwner = await issueOwnerSession('fixture-token-not-a-credential', Date.now() + 60_000, authEnv, ownerSessions)
+  const claims = issuedOwner.claims, identity = { ownerId: OWNER_GITHUB_ID, ownerSessionId: issuedOwner.id }
+  const encoded = await encode({ token: identity, secret: testSecret, maxAge: 60 })
+  const travelOwner = (request, env) => resolveTravelOwner(request, env, ownerSessions)
+  assert.ok(!fs.readFileSync(path.join(fixtures, 'owner-sessions.json'), 'utf8').includes(claims.githubAccessToken))
   const ownerRequest = (changes = {}) => new Request('https://www.kwanho.dev/api/travel', {
     method: 'POST',
     headers: {
@@ -175,16 +160,19 @@ try {
   assert.equal((await travelOwner(ownerRequest({ 'x-travel-editor-token': 'invalid' }), authEnv))?.canWrite, false)
   assert.equal((await travelOwner(ownerRequest({ 'content-type': 'text/plain' }), authEnv))?.canWrite, false)
   assert.equal(await travelOwner(ownerRequest({ cookie: '', authorization: `Bearer ${encoded}` }), authEnv), null)
-  const stranger = await encode({ token: { ...claims, ownerId: '42' }, secret: testSecret, maxAge: 60 })
+  const stranger = await encode({ token: { ...identity, ownerId: '42' }, secret: testSecret, maxAge: 60 })
   assert.equal(await travelOwner(ownerRequest({ cookie: `__Secure-next-auth.session-token=${stranger}` }), authEnv), null)
-  const expired = await encode({ token: { ...claims, accessTokenExpires: 1 }, secret: testSecret, maxAge: 60 })
+  const oldOwner = await issueOwnerSession('fixture-token-not-a-credential', Date.now() + 60_000, authEnv, ownerSessions)
+  const oldKey = ownerSessionKey(oldOwner.id)
+  await ownerSessions.set(oldKey, { ...await ownerSessions.get(oldKey), accessTokenExpires: 1 }, 60)
+  const expired = await encode({ token: { ownerId: OWNER_GITHUB_ID, ownerSessionId: oldOwner.id }, secret: testSecret, maxAge: 60 })
   assert.equal(await travelOwner(ownerRequest({ cookie: `__Secure-next-auth.session-token=${expired}` }), authEnv), null)
-  const expiredSession = await encode({ token: claims, secret: testSecret, maxAge: -60 })
+  const expiredSession = await encode({ token: identity, secret: testSecret, maxAge: -60 })
   assert.equal(await travelOwner(ownerRequest({ cookie: `__Secure-next-auth.session-token=${expiredSession}` }), authEnv), null)
-  const wrongKey = await encode({ token: claims, secret: 'other-fixture-secret-not-for-deployment-0123456789', maxAge: 60 })
+  const wrongKey = await encode({ token: identity, secret: 'other-fixture-secret-not-for-deployment-0123456789', maxAge: 60 })
   assert.equal(await travelOwner(ownerRequest({ cookie: `__Secure-next-auth.session-token=${wrongKey}` }), authEnv), null)
   assert.equal(await travelOwner(ownerRequest(), { ...authEnv, NEXTAUTH_URL: '' }), null)
-  const publicSession = await ownerAuthOptions.callbacks.session({ session: { user: {}, expires: 'fixture' }, token: claims })
+  const publicSession = await ownerAuthOptions.callbacks.session({ session: { user: {}, expires: 'fixture' }, token: identity })
   assert.ok(!JSON.stringify(publicSession).includes(claims.githubAccessToken))
   assert.ok(!JSON.stringify(publicSession).includes(claims.travelCsrfKey))
   assert.equal(await ownerAuthOptions.callbacks.signIn({ account: { provider: 'github' }, profile: { id: Number(OWNER_GITHUB_ID) } }), true)
@@ -223,9 +211,22 @@ try {
   await assert.rejects(corruptRemote.read())
   console.log('repository storage: durable payload, fixed target, revision/remote conflicts and failure handling passed (mock HTTP only)')
 
-  const { skillProfileSchema, skillDefinitionsSchema, preferenceFor } = loadSource(path.join(root, 'lib/skill-preferences.ts'))
+  const { skillProfileSchema, skillDefinitionsSchema } = loadSource(path.join(root, 'lib/skill-validation.ts'))
+  const { preferenceFor, parseSkillProfile } = loadSource(path.join(root, 'lib/skill-preferences.ts'))
   const definitions = skillDefinitionsSchema.parse(JSON.parse(fs.readFileSync(path.join(root, 'contents/about/skill-definitions.json'), 'utf8')))
   skillProfileSchema.parse(JSON.parse(fs.readFileSync(path.join(root, 'contents/about/skill-profile.json'), 'utf8')))
+  const savedSkillProfile = JSON.parse(fs.readFileSync(path.join(root, 'contents/about/skill-profile.json'), 'utf8'))
+  assert.deepEqual(parseSkillProfile(savedSkillProfile), skillProfileSchema.parse(savedSkillProfile))
+  for (const invalidProfile of [
+    { version: 2, updatedAt: null, entries: {} },
+    { version: 1, updatedAt: 'yesterday', entries: {} },
+    { version: 1, updatedAt: null, entries: { cpp: { level: 'expert', visibility: 'profile' } } },
+    { version: 1, updatedAt: null, entries: { cpp: { level: null, visibility: 'profile', admin: true } } },
+    { version: 1, updatedAt: null, entries: JSON.parse('{"__proto__":{"level":null,"visibility":"profile"}}') },
+  ]) {
+    assert.throws(() => parseSkillProfile(invalidProfile))
+    assert.throws(() => skillProfileSchema.parse(invalidProfile))
+  }
   assert.equal(new Set(definitions.skills.map((skill) => skill.id)).size, definitions.skills.length)
   const { createSkillStore } = loadSource(path.join(root, 'lib/skill-store.ts'))
   const skillSeed = { version: 1, updatedAt: null, entries: {} }
@@ -262,7 +263,8 @@ try {
   assert.throws(() => skills.read())
   assert.equal(fs.readFileSync(skillFile, 'utf8'), '{broken', 'corrupt skill settings are not replaced by defaults')
   assert.equal(fs.readdirSync(fixtures).filter((name) => name.endsWith('.tmp')).length, 0)
-  const { skillOwner } = loadSource(path.join(root, 'lib/skill-owner.ts'))
+  const { skillOwner: resolveSkillOwner } = loadSource(path.join(root, 'lib/skill-owner.ts'))
+  const skillOwner = (request, env) => resolveSkillOwner(request, env, ownerSessions)
   const skillsOwnerRequest = (headers = {}) => new Request('https://www.kwanho.dev/api/skills', {
     method: 'POST', headers: { cookie: `__Secure-next-auth.session-token=${encoded}`, origin: 'https://www.kwanho.dev', 'content-type': 'application/json', 'x-skills-editor-token': ownerCsrfToken(claims, testSecret, 'skills'), ...headers },
   })

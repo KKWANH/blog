@@ -16,6 +16,7 @@ export type MindMapNode = MapPoint & {
   expanded?: boolean
   personal?: boolean
   level?: FamiliarityLevel | null
+  skillKind?: string
 }
 export type MindMapEdge = { id: string; from: string; to: string }
 export type MapBounds = { x: number; y: number; width: number; height: number }
@@ -52,7 +53,7 @@ export function createMindMap({
       edges.push({ id: `root-${groupId}`, from: 'root', to: groupId })
       if (expanded.has(group.id)) children.forEach((tech, index) => {
         const id = `skill:${tech.id}`
-        nodes.push({ id, kind: 'skill', label: tech.label, detail: tech.personal ? 'Experience / project practice' : 'Repository technology', techId: tech.id, group: group.id, personal: tech.personal, level: tech.level, x: side < 0 ? -740 : 550, y: top + index * 78 + 6, width: 190, height: 64 })
+        nodes.push({ id, kind: 'skill', label: tech.label, detail: tech.kind === 'practice' ? 'Engineering practice' : tech.personal ? 'Experience / project practice' : 'Repository technology', techId: tech.id, group: group.id, personal: tech.personal, level: tech.level, skillKind: tech.kind, x: side < 0 ? -740 : 550, y: top + index * 78 + 6, width: 190, height: 64 })
         edges.push({ id: `${groupId}-${id}`, from: groupId, to: id })
       })
       top += height + 48

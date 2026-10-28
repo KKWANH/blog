@@ -1,4 +1,5 @@
 import { createHmac, timingSafeEqual } from 'node:crypto'
+import { sameOriginJson } from '@/lib/http-input'
 
 export type OwnerClaims = {
   ownerId: string
@@ -19,9 +20,10 @@ export function ownerCsrfToken(claims: OwnerClaims, secret: string, purpose = 't
 }
 
 export function ownerWriteAllowed(request: Request, expectedOrigin: string, expectedToken: string, headerName = 'x-travel-editor-token') {
-  if (request.headers.get('origin') !== expectedOrigin) return false
-  if (!request.headers.get('content-type')?.toLowerCase().startsWith('application/json')) return false
-  const supplied = Buffer.from(request.headers.get(headerName) ?? '')
+  if (!sameOriginJson(request, expectedOrigin)) return false
+  const value = request.headers.get(headerName) ?? ''
+  if (value.length !== expectedToken.length) return false
+  const supplied = Buffer.from(value)
   const expected = Buffer.from(expectedToken)
   return supplied.length === expected.length && timingSafeEqual(supplied, expected)
 }

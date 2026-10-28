@@ -1,10 +1,16 @@
-.skill-level-badge { display: inline-flex; align-items: center; width: fit-content; border: 1px solid #809b6e; border-radius: 3px; padding: .1rem .35rem; margin-top: .3rem; font-size: .64rem; line-height: 1.4; font-weight: 500; color: #e3ebd2; background: #29462e; white-space: nowrap; }
-.skill-level-badge[data-level="learning"] { color: #c2d4b7; border-color: #637f5b; background: #1b3525; }
-.skill-level-badge[data-level="used"] { color: #e3d3ad; border-color: #98835f; background: #3a3826; }
-.skill-level-badge[data-level="comfortable"] { color: #d7e8b7; border-color: #94b573; background: #284730; }
-.skill-level-badge[data-level="strong"] { color: #102f1d; border-color: #d7e8b4; background: #d7e8b4; }
-.skill-level-compact { font-size: 10px; padding: 2px 5px; margin-top: 4px; }
-.skill-lenses .skill-level-badge { display: flex; margin-top: .25rem; }
+.owner-file-note { font-size: .75rem; overflow-wrap: anywhere; }
+.skill-level-badge { display: inline-flex; align-items: center; width: fit-content; border-radius: 9999px; padding: .15rem .55rem; font-size: .78rem; line-height: 1.3; font-weight: 600; letter-spacing: .01em; white-space: nowrap; }
+.skill-level-badge::before { font-size: .68rem; line-height: 1; margin-right: .3rem; }
+.skill-level-badge[data-level="strong"] { color: #fae498; border: 1px solid #c8a846; background: #2b3318; box-shadow: 0 1px 3px rgba(0,0,0,0.3); }
+.skill-level-badge[data-level="strong"]::before { content: '◆'; }
+.skill-level-badge[data-level="comfortable"] { color: #9df0b7; border: 1px solid #439b66; background: #113524; box-shadow: 0 1px 3px rgba(0,0,0,0.3); }
+.skill-level-badge[data-level="comfortable"]::before { content: '▲'; }
+.skill-level-badge[data-level="used"] { color: #c8ded1; border: 1px solid #5d7e6c; background: #192722; }
+.skill-level-badge[data-level="used"]::before { content: '◈'; }
+.skill-level-badge[data-level="learning"] { color: #8fe5ee; border: 1px solid #33767e; background: #11292d; }
+.skill-level-badge[data-level="learning"]::before { content: '○'; }
+.skill-level-compact { font-size: .7rem; padding: .1rem .4rem; }
+.skill-lenses .skill-level-badge { margin: 0; }
 .mind-map-node[data-kind="root"] .map-node-face > svg { color: #31573f; }
 .skill-manage-link { display: inline-flex; align-items: center; gap: .4rem; min-height: 44px; font-size: .75rem; color: var(--muted-foreground); margin-left: auto; }
 .skill-manage-link svg { width: 15px; height: 15px; }

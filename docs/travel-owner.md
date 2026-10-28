@@ -1,5 +1,15 @@
 # Owner editing on the published site
 
+GitHub publication sessions are revocable. Production requires the durable
+private storage described in `admin-statistics.md`; the access token is
+encrypted in that store and is not embedded in the browser JWT. Owner sign-out
+revokes the record before clearing the cookie. If storage cannot confirm
+revocation, the cookie remains available for a retry and the UI reports failure.
+
+The password at `/admin` protects statistics. It does not replace GitHub owner
+authorization for Travel or Skills. Local saves stay local until publication;
+configured GitHub saves update the repository and then the hosted deployment.
+
 The public atlas now has an **Edit atlas** entrance at `/travel/manage`. Visibility is not the security boundary. Every mutation is authorized on the server.
 
 Two modes are supported:
@@ -27,7 +37,11 @@ Keep values in deployment secrets or an ignored `.env.local`, not in source, scr
 
 The maintained NextAuth GitHub provider handles the authorization-code flow with state and PKCE. Sign-in accepts only the configured owner ID, not merely a matching display name or email.
 
-The session lasts one hour. GitHub access-token expiry is also checked. The access token and a random session CSRF key are held in the library's encrypted HttpOnly cookie. Production cookies are Secure; the public session response omits both values.
+The session lasts at most one hour, and GitHub access-token expiry is also
+checked. The encrypted HttpOnly JWT carries an opaque session ID. Private
+storage holds the encrypted GitHub token and session CSRF key; every authorized
+request verifies that the session record still exists. Production cookies are
+Secure, and the public session response omits token/CSRF values.
 
 The save API additionally requires:
 

@@ -3,8 +3,9 @@ import { z } from 'zod'
 import { skillOwner } from '@/lib/skill-owner'
 import { skillStore } from '@/lib/skill-store'
 import { SkillStoreError } from '@/lib/skill-data'
-import { skillPatchSchema } from '@/lib/skill-preferences'
+import { skillPatchSchema } from '@/lib/skill-validation'
 import { ownerAuthConfigured } from '@/lib/owner-auth'
+import { HttpInputError, readJsonBody } from '@/lib/http-input'
 
 export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
@@ -29,15 +30,13 @@ export async function POST(request: Request) {
   const owner = await skillOwner(request)
   if (!owner?.canWrite) return json({ error: 'Owner access is required. Sign in again if your session expired.' }, 403)
   try {
-    const raw = await request.text()
-    if (raw.length > 65_536) return json({ error: 'This request is too large.' }, 413)
-    let body: unknown
-    try { body = JSON.parse(raw) } catch { return json({ error: 'Send valid JSON skill settings.' }, 400) }
+    const body = await readJsonBody(request, 65_536)
     const input = saveSchema.parse(body)
     const saved = await owner.store.save(input.revision, input.changes)
     try { revalidatePath('/about') } catch { /* The saved snapshot is authoritative even if revalidation is unavailable. */ }
     return json(saved)
   } catch (error) {
+    if (error instanceof HttpInputError) return json({ error: error.message }, error.status)
     if (error instanceof z.ZodError) return json({ error: 'Check the skill IDs, familiarity levels and visibility values.' }, 422)
     if (error instanceof SkillStoreError) return json({ error: error.message }, error.status)
     return json({ error: 'The save could not be confirmed. Reload before trying again.' }, 500)

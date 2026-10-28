@@ -226,7 +226,7 @@ export default function SkillMindMap({ selectedSkill, onSelectSkill, onViewEvide
     setPinnedRepository(name)
     setSelectedId(`repo:${name}`)
     onSelectSkill(null)
-    setAnnouncement(`${name} selected. ${repo.sources.length} files inspected.`)
+    setAnnouncement(`${name} selected. ${repo.sourceCount} source files.`)
     if (focus) requestFit(`repo:${name}`)
   }
 
@@ -424,6 +424,8 @@ export default function SkillMindMap({ selectedSkill, onSelectSkill, onViewEvide
           <p className="map-inspector-eyebrow">{selectedTechnology.personal ? 'Experience / project practice' : 'Repository technology'}</p>
           <div className="map-inspector-title"><CareerIcon skill={selectedTechnology.id} /><h3>{selectedTechnology.label}</h3></div>
           {selectedTechnology.personal ? <SkillLevelBadge level={selectedTechnology.level} /> : null}
+          {selectedTechnology.kind === 'practice' ? <p className="map-practice-note">Engineering practice · {selectedTechnology.detail}</p> : null}
+          {selectedTechnology.related?.length ? <div className="map-family-links" aria-label="Related languages and tools">{selectedTechnology.related.map((id) => mapTechnologies.find((tech) => tech.id === id)).filter((tech) => Boolean(tech)).map((tech) => <button type="button" key={tech!.id} onClick={() => selectTechnology(tech!.id)}><CareerIcon skill={tech!.id} />{tech!.label}</button>)}</div> : null}
           <p>{selectedTechnology.detail}</p>
           {selectedTechnology.personal ? <button type="button" className="map-context-action" onClick={openEvidence}>View experience context <ArrowUpRight aria-hidden="true" /></button> : <p className="repository-review-note">A technology found in repository material. The repository context describes the contribution.</p>}
           <h4>{related.length} linked repositories</h4>

@@ -31,6 +31,7 @@ export function TiltSurface({
       return
     }
     let frame = 0, last = 0, active = false
+    let bounds: DOMRect | null = null
     let gesture: { x: number; y: number; horizontal: boolean } | null = null
     const current = { x: 0, y: 0, amount: 0 }
     const target = { x: 0, y: 0, amount: 0 }
@@ -69,25 +70,38 @@ export function TiltSurface({
       element.dataset.active = 'false'
       request()
     }
+    const locate = (event: PointerEvent, limit: number) => {
+      const box = bounds ??= element.getBoundingClientRect()
+      target.x = Math.max(-limit, Math.min(limit, ((event.clientX - box.left) / box.width - .5) * 2))
+      target.y = Math.max(-limit, Math.min(limit, ((event.clientY - box.top) / box.height - .5) * 2))
+      target.amount = 1
+      active = true; element.dataset.active = 'true'; request()
+    }
     const down = (event: PointerEvent) => {
-      if (event.pointerType === 'touch' || event.pointerType === 'pen') gesture = { x: event.clientX, y: event.clientY, horizontal: false }
+      bounds = element.getBoundingClientRect()
+      if ((event.pointerType === 'touch' || event.pointerType === 'pen') && !(event.target as HTMLElement).closest('a,button,input,select,textarea')) {
+        gesture = { x: event.clientX, y: event.clientY, horizontal: false }
+        locate(event, .9)
+        if (Math.abs(target.x) + Math.abs(target.y) < .12) { target.x = .14; target.y = -.12 }
+      }
     }
     const move = (event: PointerEvent) => {
       if (event.pointerType !== 'mouse') {
         if (!gesture) return
         const dx = Math.abs(event.clientX - gesture.x), dy = Math.abs(event.clientY - gesture.y)
-        if (!gesture.horizontal && dx > 10 && dx > dy * 1.5) gesture.horizontal = true
-        if (!gesture.horizontal) return
+        if (dy > 9 && dy > dx * 1.2) { reset(); return }
+        if (!gesture.horizontal && dx > 7 && dx > dy * 1.3) gesture.horizontal = true
+        if (!gesture.horizontal && Math.max(dx, dy) > 9) return
       }
       if (element.matches(':focus-within')) return
-      const box = element.getBoundingClientRect()
-      const limit = event.pointerType === 'mouse' ? 1 : .65
-      target.x = Math.max(-limit, Math.min(limit, ((event.clientX - box.left) / box.width - .5) * 2))
-      target.y = Math.max(-limit, Math.min(limit, ((event.clientY - box.top) / box.height - .5) * 2))
-      target.amount = 1
-      active = true
-      element.dataset.active = 'true'
-      request()
+      locate(event, event.pointerType === 'mouse' ? 1 : .9)
+    }
+    const invalidate = () => { bounds = null }
+    const visibility = () => {
+      if (document.visibilityState !== 'hidden') return
+      cancelAnimationFrame(frame); frame = 0; active = false; gesture = null
+      target.x = target.y = target.amount = current.x = current.y = current.amount = 0
+      write(); element.dataset.active = 'false'
     }
     element.addEventListener('pointerdown', down, { passive: true })
     element.addEventListener('pointermove', move, { passive: true })
@@ -95,6 +109,9 @@ export function TiltSurface({
     element.addEventListener('pointerup', reset)
     element.addEventListener('pointercancel', reset)
     element.addEventListener('focusin', reset)
+    window.addEventListener('scroll', invalidate, { passive: true })
+    window.addEventListener('resize', invalidate)
+    document.addEventListener('visibilitychange', visibility)
     const observer = new IntersectionObserver(([entry]) => {
       element.dataset.inView = String(entry.isIntersecting)
       if (!entry.isIntersecting) reset()
@@ -109,6 +126,9 @@ export function TiltSurface({
       element.removeEventListener('pointerup', reset)
       element.removeEventListener('pointercancel', reset)
       element.removeEventListener('focusin', reset)
+      window.removeEventListener('scroll', invalidate)
+      window.removeEventListener('resize', invalidate)
+      document.removeEventListener('visibilitychange', visibility)
     }
   }, [enabled, disabled, pitch, yaw, lift, scale, resetKey])
 

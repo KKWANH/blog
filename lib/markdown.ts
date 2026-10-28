@@ -64,15 +64,25 @@ function tokenizeCodeBlocks(source: string) {
 function renderInline(markdown: string) {
   let value = markdown
   value = value.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (_match, alt, url) => {
+    if (!safeMarkdownUrl(url)) return escapeHtml(alt)
     return `<img alt="${escapeHtml(alt)}" src="${escapeHtml(url)}" />`
   })
   value = value.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_match, text, url) => {
+    if (!safeMarkdownUrl(url)) return escapeHtml(text)
     return `<a href="${escapeHtml(url)}">${escapeHtml(text)}</a>`
   })
   value = value.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
   value = value.replace(/\*(?!\s)([^*]+)\*/g, '<em>$1</em>')
   value = value.replace(/`([^`]+)`/g, (_match, code) => `<code>${escapeHtml(code)}</code>`)
   return value
+}
+
+function safeMarkdownUrl(value: string) {
+  if (/[\u0000-\u0020\u007f\\]/.test(value) || value.startsWith('//')) return false
+  try {
+    const url = new URL(value, 'https://www.kwanho.dev')
+    return ['http:', 'https:', 'mailto:'].includes(url.protocol) && !url.username && !url.password
+  } catch { return false }
 }
 
 export function markdownToHtml(markdown: string) {

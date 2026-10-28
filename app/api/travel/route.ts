@@ -3,6 +3,7 @@ import { z } from 'zod'
 import { countryOptions, placeIdSchema, placeInputSchema, storedPlaceSchema, travelStore, TravelStoreError } from '@/lib/travel-store'
 import { travelOwner } from '@/lib/travel-owner'
 import { ownerAuthConfigured } from '@/lib/owner-auth'
+import { HttpInputError, readJsonBody } from '@/lib/http-input'
 
 export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
@@ -47,10 +48,7 @@ async function mutate(request: Request, method: 'POST' | 'PATCH' | 'DELETE') {
   const owner = await travelOwner(request)
   if (!owner?.canWrite) return json({ error: 'Owner access is required. Sign in again if your session expired.' }, 403)
   try {
-    const raw = await request.text()
-    if (raw.length > 16_384) return json({ error: 'This request is too large.' }, 413)
-    let body: unknown
-    try { body = JSON.parse(raw) } catch { return json({ error: 'Send valid JSON place details.' }, 400) }
+    const body = await readJsonBody(request, 16_384)
     const store = owner.store
     let result
     if (method === 'POST') {
@@ -68,9 +66,10 @@ async function mutate(request: Request, method: 'POST' | 'PATCH' | 'DELETE') {
     }
     return json(result, method === 'POST' ? 201 : 200)
   } catch (error) {
+    if (error instanceof HttpInputError) return json({ error: error.message }, error.status)
     if (error instanceof z.ZodError) return json({ error: 'Check the place details.', fields: error.flatten().fieldErrors }, 422)
     if (error instanceof TravelStoreError) return json({ error: error.message }, error.status)
-    console.error('Travel atlas save failed', error)
+    console.error('Travel atlas save failed')
     return json({ error: 'The save could not be confirmed. Reload the atlas before trying again.' }, 500)
   }
 }
