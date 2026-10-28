@@ -80,7 +80,14 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="dark" data-motion="off">
+    <html lang="en" className="dark" data-theme="dark" data-motion="off" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('kwanho-theme')||'dark';document.documentElement.dataset.theme=t;if(t==='light'){document.documentElement.classList.remove('dark');document.documentElement.classList.add('light')}else{document.documentElement.classList.add('dark');document.documentElement.classList.remove('light')}}catch(e){}})()`,
+          }}
+        />
+      </head>
       <body className={`${figtree.variable} ${caveat.variable} ${bastliga.variable} font-sans antialiased`}>
         <a className="skip-link" href="#main-content">Skip to content</a>
         <ThemeProvider>

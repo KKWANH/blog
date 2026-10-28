@@ -29,10 +29,10 @@ export function PaperIntroduction() {
       <div className="paper-introduction-main">
         <div className="business-card-holder">
           <TiltSurface className="business-card-tilt" pitch={7} yaw={9} lift={6} scale={1.012}>
-            <div className="paper-business-card paper-card-hybrid" id="business-card-face">
+            <div className="paper-business-card paper-card-exact" id="business-card-face">
               <span className="paper-light" aria-hidden="true" />
-              <div className="paper-card-topline"><p className="paper-card-role">{profile.role}</p></div>
-              <div className="paper-card-core">
+              <div className="paper-card-main-stack">
+                <p className="paper-card-role">{profile.role}</p>
                 <h1 id="profile-name">{profile.name}</h1>
                 <p className="paper-card-focus">{profile.focus}</p>
                 <p className="paper-card-location">{profile.location}</p>

@@ -1,4 +1,21 @@
-.admin-page { min-height: 100vh; background: #071b13 !important; color: #edf2e5 !important; padding-block: 2.5rem 5rem; }
+.admin-viewport {
+  min-height: 100vh;
+  width: 100%;
+  background: #071b13 !important;
+  color: #edf2e5 !important;
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+}
+.admin-viewport .admin-site-header {
+  border-bottom: 1px solid #91a77c40;
+  background: transparent;
+}
+.admin-viewport .admin-site-header a {
+  color: #dbe5c9 !important;
+}
+.admin-page { min-height: auto; flex: 1; background: transparent !important; color: #edf2e5 !important; padding-block: 2.5rem 5rem; }
 .admin-site-header { display: flex; justify-content: space-between; align-items: center; padding-block: 1rem; border-bottom: 1px solid #91a77c40; }
 .admin-site-header a { display: inline-flex; align-items: center; min-height: 44px; font-size: .85rem; color: #dbe5c9; }
 .admin-login { max-width: 38rem; margin: 2.5rem auto; padding: 2rem; border: 1px solid #82997466; border-radius: 8px; background: #0e2a1eee; }

@@ -543,3 +543,38 @@ html[data-theme="light"] .privacy-link {
 html[data-theme="light"] .cv-route-page {
   background: #f4f5ee;
 }
+html[data-theme="light"] .skill-family > h3 {
+  color: #122c1b !important;
+}
+html[data-theme="light"] .skill-lenses button small {
+  color: #4a6652 !important;
+}
+html[data-theme="light"] .skill-item-copy > small {
+  color: #415e49 !important;
+}
+html[data-theme="light"] .timeline-label {
+  color: #112619 !important;
+}
+html[data-theme="light"] .timeline-axis > span {
+  color: #415e49 !important;
+}
+html[data-theme="light"] .timeline-group-label {
+  color: #163622 !important;
+}
+html[data-theme="light"] .education-state span,
+html[data-theme="light"] .education-state small,
+html[data-theme="light"] .education-record strong {
+  color: #11261a !important;
+}
+html[data-theme="light"] .education-topic,
+html[data-theme="light"] .education-meta {
+  color: #415e49 !important;
+}
+html[data-theme="light"] .evidence-summary {
+  color: #3b5744 !important;
+}
+html[data-theme="light"] .track-badge {
+  background: #e2ede0 !important;
+  border-color: #9cbda0 !important;
+  color: #112619 !important;
+}

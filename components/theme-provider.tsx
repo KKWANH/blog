@@ -13,11 +13,15 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     try {
       const saved = localStorage.getItem('kwanho-theme') as Theme | null
-      if (saved === 'light' || saved === 'dark') {
-        setTheme(saved)
-        document.documentElement.dataset.theme = saved
+      const initialTheme = (saved === 'light' || saved === 'dark') ? saved : 'dark'
+      setTheme(initialTheme)
+      document.documentElement.dataset.theme = initialTheme
+      if (initialTheme === 'light') {
+        document.documentElement.classList.remove('dark')
+        document.documentElement.classList.add('light')
       } else {
-        document.documentElement.dataset.theme = 'dark'
+        document.documentElement.classList.remove('light')
+        document.documentElement.classList.add('dark')
       }
     } catch {}
   }, [])
@@ -26,6 +30,13 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     const next = theme === 'dark' ? 'light' : 'dark'
     setTheme(next)
     document.documentElement.dataset.theme = next
+    if (next === 'light') {
+      document.documentElement.classList.remove('dark')
+      document.documentElement.classList.add('light')
+    } else {
+      document.documentElement.classList.remove('light')
+      document.documentElement.classList.add('dark')
+    }
     try { localStorage.setItem('kwanho-theme', next) } catch {}
   }
 

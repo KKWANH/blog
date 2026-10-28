@@ -1,4 +1,42 @@
-html { scroll-padding-bottom: 100px; }
+html {
+  scroll-padding-bottom: 100px;
+  scrollbar-width: thin !important;
+  scrollbar-color: #2b5c3e rgba(7, 27, 19, 0.5) !important;
+}
+html[data-theme="light"] {
+  scrollbar-width: thin !important;
+  scrollbar-color: #92ae95 rgba(215, 226, 212, 0.7) !important;
+}
+
+*::-webkit-scrollbar {
+  width: 10px !important;
+  height: 10px !important;
+}
+*::-webkit-scrollbar-track {
+  background: rgba(7, 27, 19, 0.5) !important;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #2b5c3e !important;
+  border-radius: 9999px !important;
+  border: 2px solid transparent !important;
+  background-clip: padding-box !important;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #3e8157 !important;
+}
+
+html[data-theme="light"] *::-webkit-scrollbar-track {
+  background: rgba(215, 226, 212, 0.7) !important;
+}
+html[data-theme="light"] *::-webkit-scrollbar-thumb {
+  background-color: #92ae95 !important;
+  border-radius: 9999px !important;
+  border: 2px solid transparent !important;
+  background-clip: padding-box !important;
+}
+html[data-theme="light"] *::-webkit-scrollbar-thumb:hover {
+  background-color: #739477 !important;
+}
 .evidence-summary { color: var(--muted-foreground); font-size: .88rem; line-height: 1.7; max-width: 72ch; margin-block: .8rem 1.1rem; }
 /* One room, one colour treatment. Light moves; the reading surfaces hold still. */
 :root, .dark {
@@ -33,11 +71,9 @@ html[data-theme="light"], .light {
   --sketch-surface: #e5ece0;
   --ink-accent: #23543b;
   --warm-accent: #9a6f20;
-  --muted-foreground: #5a7562;
-  --border: #c8d9c5;
-}
-html[data-theme="light"] .site-atmosphere {
-  background: radial-gradient(ellipse at 6% 20%,#b5d6b444,transparent 58%),radial-gradient(ellipse at 92% 76%,#cad9a933,transparent 64%),linear-gradient(145deg,#f7f6f0,#edece4 55%,#f2f5ec);
+  --muted-foreground: #4a6652;
+  --border: #cad9c6;
+  --border-strong: #8fae92;
 }
 body { isolation: isolate; }
 html { scroll-padding-top: calc(var(--site-header-height, 5.25rem) + 1rem); }
@@ -80,6 +116,25 @@ html[data-motion="on"] .atmosphere-window::before { animation: reflected-drift 1
 html[data-motion="on"] .atmosphere-window { animation: window-light 14s ease-in-out infinite alternate; }
 @keyframes window-light { from { opacity: .34; } to { opacity: .56; } }
 .notebook-header { background: #071b13cc; backdrop-filter: blur(18px); border-color: #c9dfb521; }
+html[data-theme="light"] .site-atmosphere {
+  background: #f7f6f0 !important;
+}
+html[data-theme="light"] .atmosphere-photo,
+html[data-theme="light"] .atmosphere-window,
+html[data-theme="light"] .atmosphere-warmth,
+html[data-theme="light"] .atmosphere-shade {
+  display: none !important;
+}
+html[data-theme="light"] .atmosphere-pointer {
+  background: radial-gradient(circle at center, rgba(145, 195, 155, 0.22) 0%, rgba(120, 175, 135, 0.08) 40%, transparent 70%) !important;
+  mix-blend-mode: multiply !important;
+  opacity: 0.8 !important;
+}
+html[data-theme="light"] .notebook-header {
+  background: rgba(247, 246, 240, 0.88) !important;
+  backdrop-filter: blur(18px) !important;
+  border-color: #cad9c6 !important;
+}
 .header-inner { min-height: 5.25rem; }
 .wordmark-name { font-size: 1.1rem; letter-spacing: -.04em; font-weight: 600; }
 .wordmark-domain { color: #c9dfb5; font-weight: 400; }
@@ -89,6 +144,25 @@ html[data-motion="on"] .atmosphere-window { animation: window-light 14s ease-in-
 .action-button { border-color: #88a18c; border-radius: 5px; padding: .8rem 1.15rem; font-weight: 500; transition: transform 170ms ease, background-color 170ms ease, border-color 170ms ease; }
 .action-primary { background: #e8edda; border-color: #e8edda; color: #10291c; }
 .action-primary:hover { background: #fff8df; color: #10291c; border-color: #fff8df; }
+html[data-theme="light"] .action-primary {
+  background: #173825 !important;
+  border-color: #173825 !important;
+  color: #ffffff !important;
+}
+html[data-theme="light"] .action-primary:hover {
+  background: #255438 !important;
+  border-color: #255438 !important;
+  color: #ffffff !important;
+}
+html[data-theme="light"] .action-button:not(.action-primary) {
+  border-color: #cad9c6 !important;
+  background: #ffffff !important;
+  color: #14281c !important;
+}
+html[data-theme="light"] .action-button:not(.action-primary):hover {
+  background: #eef4ec !important;
+  border-color: #8fae92 !important;
+}
 .action-button:hover { transform: translateY(-2px); }
 .action-button:active { transform: translateY(0); transition-duration: 80ms; }
 .text-link svg, .header-cv svg, .contact-secondary a svg { transition: transform 220ms ease; }
