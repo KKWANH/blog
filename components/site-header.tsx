@@ -9,7 +9,6 @@ import { ThemeToggle } from '@/components/theme-provider'
 import { photographyPublished } from '@/lib/photographs'
 
 const navigation = [
-  { href: '/#work', label: 'Work' },
   { href: '/notes', label: 'Notes' },
   { href: '/about', label: 'About' },
   { href: '/travel', label: 'Travel' },
