@@ -64,13 +64,26 @@
   text-underline-offset: .4rem;
 }
 .main-nav a:hover, .main-nav a[aria-current] { color: var(--foreground); text-decoration: underline; }
-.theme-button, .menu-button {
+.theme-button, .menu-button, .theme-toggle {
   display: inline-flex;
   min-width: 44px;
   min-height: 44px;
   align-items: center;
   justify-content: center;
-  border: 1px solid transparent;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--muted-foreground);
+  cursor: pointer;
+  transition: all 160ms ease;
+}
+.theme-toggle:hover {
+  color: var(--foreground);
+  border-color: var(--warm-accent);
+}
+.theme-toggle svg {
+  width: 17px;
+  height: 17px;
 }
 .theme-button:hover { border-color: var(--border); border-radius: 50%; }
 .theme-button svg { width: 18px; height: 18px; }

@@ -1,4 +1,4 @@
-.admin-page { padding-block: 2.5rem 5rem; }
+.admin-page { min-height: 100vh; background: #071b13 !important; color: #edf2e5 !important; padding-block: 2.5rem 5rem; }
 .admin-site-header { display: flex; justify-content: space-between; align-items: center; padding-block: 1rem; border-bottom: 1px solid #91a77c40; }
 .admin-site-header a { display: inline-flex; align-items: center; min-height: 44px; font-size: .85rem; color: #dbe5c9; }
 .admin-login { max-width: 38rem; margin: 2.5rem auto; padding: 2rem; border: 1px solid #82997466; border-radius: 8px; background: #0e2a1eee; }
@@ -55,3 +55,149 @@
 .cookie-consent-actions { display: flex; gap: .5rem; align-items: center; }
 .cookie-consent-actions .action-button { min-height: 38px; padding: .35rem .85rem; font-size: .8rem; }
 @media(max-width:50rem) { .admin-totals { grid-template-columns: repeat(2,minmax(0,1fr)); }.admin-data-grid { grid-template-columns: 1fr; gap: 0; }.admin-login { padding: 1.3rem; } }
+
+/* Visual Data Tables with Proportion Bars */
+.admin-card-panel {
+  background: #0d281cee;
+  border: 1px solid #2f543c;
+  border-radius: 8px;
+  padding: 1.3rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+.admin-stat-list {
+  display: flex;
+  flex-direction: column;
+  gap: .65rem;
+  margin-top: .6rem;
+}
+.admin-stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+}
+.admin-stat-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: .8rem;
+  color: #d8e5d0;
+}
+.admin-stat-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 65%;
+}
+.admin-stat-val {
+  display: flex;
+  align-items: center;
+  gap: .35rem;
+  font-variant-numeric: tabular-nums;
+}
+.admin-stat-val strong {
+  color: #9df0b7;
+  font-weight: 600;
+}
+.admin-stat-val small {
+  color: #7b9983;
+}
+.admin-stat-bar-track {
+  width: 100%;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.admin-stat-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #439b66, #e6bf7d);
+  border-radius: 3px;
+  transition: width 300ms ease;
+}
+
+/* Hourly 24-Column Chart */
+.hourly-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 120px;
+  padding-top: 10px;
+  padding-bottom: 18px;
+}
+.hourly-col {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+}
+.hourly-bar {
+  width: 100%;
+  background: linear-gradient(0deg, #245738, #9df0b7);
+  border-radius: 2px 2px 0 0;
+  min-height: 4px;
+}
+.hourly-col small {
+  position: absolute;
+  bottom: -18px;
+  font-size: .55rem;
+  color: #7b9983;
+}
+.hourly-col:nth-child(2n) small {
+  display: none;
+}
+
+/* Engagement Funnel */
+.funnel-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  margin-block: 1rem;
+}
+.funnel-step {
+  background: #092015;
+  border: 1px solid #234c32;
+  border-radius: 6px;
+  padding: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.funnel-badge {
+  font-size: .65rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: #e6bf7d;
+  margin-bottom: .4rem;
+}
+.funnel-step strong {
+  font-size: 1.8rem;
+  color: #f0f5ec;
+  font-weight: 500;
+  line-height: 1.1;
+}
+.funnel-step p {
+  font-size: .8rem;
+  color: #9cb5a0;
+  margin: .4rem 0 0;
+}
+.funnel-conversions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+  margin-top: .8rem;
+}
+.funnel-conv-chip {
+  font-size: .75rem;
+  padding: .3rem .6rem;
+  background: #113522;
+  border: 1px solid #366c48;
+  border-radius: 4px;
+  color: #d6e8cb;
+}
+.funnel-conv-chip strong {
+  color: #9df0b7;
+  margin-left: 2px;
+}

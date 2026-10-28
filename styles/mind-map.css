@@ -171,3 +171,133 @@ html[data-motion="off"] .map-node-face { transition: none; }
   .catalogue-detail { max-height: 580px; padding: .9rem; }
   .repository-catalogue { padding: .8rem; }
 }
+
+/* =====================================================================
+ * Complete Light Mode Overrides for Mind Map and Repository Catalogue
+ * =====================================================================*/
+html[data-theme="light"] .interactive-mind-map {
+  background: #f2f5ec;
+  border-color: #cad9c6;
+  box-shadow: 0 16px 40px -30px rgba(0, 0, 0, 0.15);
+}
+html[data-theme="light"] .mind-map-scene {
+  color: #14281c;
+}
+html[data-theme="light"] .map-search {
+  background: #ffffff;
+  border-color: #cad9c6;
+}
+html[data-theme="light"] .map-search input {
+  color: #14281c;
+}
+html[data-theme="light"] .map-search input::placeholder {
+  color: #6d8a76;
+}
+html[data-theme="light"] .map-toolbar-actions button {
+  background: #ffffff;
+  border-color: #cad9c6;
+  color: #1c3c26;
+}
+html[data-theme="light"] .mind-map-viewport {
+  background: radial-gradient(circle, rgba(60, 100, 70, 0.15) .9px, transparent 1px) 0 0/24px 24px, #f7f9f4;
+}
+html[data-theme="light"] .map-node-face {
+  background: #ffffff;
+  border-color: #9ab49d;
+  color: #14281c;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+html[data-theme="light"] .map-node-face small {
+  color: #4a6652;
+}
+html[data-theme="light"] .mind-map-node[data-kind="root"] .map-node-face {
+  background: #173825;
+  color: #ffffff;
+  border-color: #235438;
+}
+html[data-theme="light"] .mind-map-node[data-kind="root"] small {
+  color: #b5d9be;
+}
+html[data-theme="light"] .mind-map-node[data-kind="group"] .map-node-face {
+  background: #edf5eb;
+  border-color: #9ab49d;
+}
+html[data-theme="light"] .mind-map-node[data-kind="group"] strong {
+  color: #132e1d;
+}
+html[data-theme="light"] .mind-map-node[data-kind="repo"] .map-node-face {
+  background: #ffffff;
+  border-color: #8dae93;
+}
+html[data-theme="light"] .map-camera-controls {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: #cad9c6;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+html[data-theme="light"] .map-camera-controls button {
+  background: #ffffff;
+  color: #183d26;
+}
+html[data-theme="light"] .map-camera-controls output {
+  color: #183d26;
+}
+html[data-theme="light"] .map-inspector {
+  background: #ffffff;
+  border-left-color: #cad9c6;
+  color: #14281c;
+}
+html[data-theme="light"] .map-inspector h3 {
+  color: #11261a;
+}
+html[data-theme="light"] .map-inspector h4 {
+  color: #235438;
+}
+html[data-theme="light"] .map-inspector > p {
+  color: #4a6652;
+}
+html[data-theme="light"] .map-summary dt {
+  color: #55755e;
+}
+html[data-theme="light"] .map-summary dd {
+  color: #183d27;
+}
+html[data-theme="light"] .repository-catalogue {
+  background: #f4f6ee;
+  border-color: #cad9c6;
+}
+html[data-theme="light"] .catalogue-list > button {
+  background: #ffffff;
+  border-color: #cad9c6;
+}
+html[data-theme="light"] .catalogue-list strong {
+  color: #14281c;
+}
+html[data-theme="light"] .catalogue-list small {
+  color: #4a6652;
+}
+html[data-theme="light"] .catalogue-list em {
+  color: #55755e;
+}
+html[data-theme="light"] .catalogue-detail {
+  background: #ffffff;
+  border-color: #cad9c6;
+}
+html[data-theme="light"] .repository-inspector h3 {
+  color: #11261a;
+}
+html[data-theme="light"] .repository-inspector > p {
+  color: #4a6652;
+}
+html[data-theme="light"] .repository-inspector h4 {
+  color: #235438;
+}
+html[data-theme="light"] .skill-list-controls > label {
+  background: #ffffff;
+  border-color: #cad9c6;
+}
+html[data-theme="light"] .skill-list-controls > button,
+html[data-theme="light"] .catalogue-filters select {
+  background: #ffffff;
+  border-color: #cad9c6;
+  color: #183d27;
+}

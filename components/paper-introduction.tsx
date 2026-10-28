@@ -37,12 +37,14 @@ export function PaperIntroduction() {
                 <p className="paper-card-focus">{profile.focus}</p>
                 <p className="paper-card-location">{profile.location}</p>
               </div>
-              <div className="paper-card-footer">
+              <div className="paper-card-footer paper-card-footer-ginza">
                 <a className="paper-contact-link" href={`mailto:${profile.contact}`} aria-label={`Email ${profile.contact}`}><span>{mailbox}@<wbr />{domain}</span></a>
-                <span className="paper-card-qr-wrap" aria-hidden="true">
-                  <img src="/kwanho-qr.svg" alt="" className="paper-card-qr" />
-                </span>
-                <a className="paper-contact-link paper-site-link" href="/" aria-label="Kwanho website home">kwanho.dev<ArrowUpRight aria-hidden="true" /></a>
+                <div className="paper-footer-right">
+                  <a className="paper-contact-link paper-site-link" href="/" aria-label="Kwanho website home">kwanho.dev<ArrowUpRight aria-hidden="true" /></a>
+                  <a className="paper-card-qr-link" href="https://kwanho.dev" target="_blank" rel="noopener" aria-label="QR Code to kwanho.dev">
+                    <img src="/kwanho-qr.svg" alt="" className="paper-card-qr" />
+                  </a>
+                </div>
               </div>
             </div>
           </TiltSurface>

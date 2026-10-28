@@ -97,26 +97,114 @@ export function AdminDashboard() {
       </div>
       <section className="admin-section"><h2>Daily traffic</h2><div className="traffic-chart" aria-label="Daily page views">{report.days.map((day) => <div key={day.date} title={`${day.date}: ${day.views} views, ${day.visitors} opted-in visitors`}><span className="traffic-bar" style={{ height: `${Math.max(2, day.views / maximum * 100)}%` }} /><small>{day.date.slice(5)}</small><span className="sr-only">{day.views} views, {day.visitors} visitors</span></div>)}</div></section>
       <div className="admin-data-grid admin-three-grid">
-        <DataTable title="Entry referrals" rows={report.referrals} empty="No entry referrals recorded." />
-        <DataTable title="Pages viewed" rows={report.pages} empty="No page views recorded." />
-        <DataTable title="Visitor countries" rows={report.countries || []} empty="No country records yet (active in Vercel deployment)." />
+        <VisualDataTable title="Entry referrals" rows={report.referrals} empty="No entry referrals recorded." />
+        <VisualDataTable title="Pages viewed" rows={report.pages} empty="No page views recorded." />
+        <VisualDataTable title="Visitor countries" rows={report.countries || []} empty="No country records yet (active in Vercel deployment)." />
       </div>
       <div className="admin-data-grid admin-three-grid" style={{ marginTop: '1.5rem' }}>
-        <DataTable title="Device types" rows={report.devices || []} empty="No device telemetry yet." />
-        <DataTable title="Browser family" rows={report.browsers || []} empty="No browser telemetry yet." />
-        <DataTable title="Activity by hour (UTC)" rows={report.hours || []} empty="No hourly data yet." />
+        <VisualDataTable title="Device types" rows={report.devices || []} empty="No device telemetry yet." />
+        <VisualDataTable title="Browser family" rows={report.browsers || []} empty="No browser telemetry yet." />
+        <HourlyChart hours={report.hours || []} />
       </div>
-      {(report.conversions && report.conversions.length > 0) ? (
-        <section className="admin-section">
-          <h2>CTA conversions &amp; interactions</h2>
-          <table><thead><tr><th>Action</th><th>Clicks / Interactions</th></tr></thead><tbody>{report.conversions.map((conv) => <tr key={conv.name}><td>{conv.name}</td><td>{conv.count}</td></tr>)}</tbody></table>
-        </section>
-      ) : null}
+      <FunnelOverview totals={report.totals} conversions={report.conversions || []} />
       <section className="admin-section"><h2>Page flows</h2>{report.flows.length ? <table><thead><tr><th>From</th><th>To</th><th>Transitions</th></tr></thead><tbody>{report.flows.map((flow) => <tr key={`${flow.from}:${flow.to}`}><td>{flow.from}</td><td>{flow.to}</td><td>{flow.count}</td></tr>)}</tbody></table> : <p>No page-to-page transitions recorded.</p>}</section>
       <p className="admin-muted">Views, entrances and flows are client-reported aggregate counts. Visitor/session figures cover optional cookies only; visitors are deduplicated per UTC day, not identified people. The sum across days is not a count of distinct people. Admin visits and browser privacy signals are excluded. Statistics retain up to 90 days.</p>
     </>}
   </div>
 }
-function DataTable({ title, rows, empty }: { title: string; rows: Array<{ name: string; count: number }>; empty: string }) {
-  return <section className="admin-section"><h2>{title}</h2>{rows.length ? <table><thead><tr><th>Name</th><th>Count</th></tr></thead><tbody>{rows.map((row) => <tr key={row.name}><td>{row.name}</td><td>{row.count}</td></tr>)}</tbody></table> : <p>{empty}</p>}</section>
+function VisualDataTable({ title, rows, empty }: { title: string; rows: Array<{ name: string; count: number }>; empty: string }) {
+  const max = Math.max(1, ...rows.map((r) => r.count))
+  const sum = Math.max(1, rows.reduce((acc, r) => acc + r.count, 0))
+  return (
+    <section className="admin-section admin-card-panel">
+      <h2>{title}</h2>
+      {rows.length ? (
+        <div className="admin-stat-list">
+          {rows.slice(0, 8).map((row) => {
+            const pct = Math.round((row.count / sum) * 100)
+            const widthPct = Math.max(4, Math.round((row.count / max) * 100))
+            return (
+              <div key={row.name} className="admin-stat-item">
+                <div className="admin-stat-label-row">
+                  <span className="admin-stat-name">{row.name}</span>
+                  <span className="admin-stat-val">
+                    <strong>{row.count.toLocaleString()}</strong>
+                    <small>({pct}%)</small>
+                  </span>
+                </div>
+                <div className="admin-stat-bar-track">
+                  <div className="admin-stat-bar-fill" style={{ width: `${widthPct}%` }} />
+                </div>
+              </div>
+            )
+          })}
+        </div>
+      ) : (
+        <p className="admin-empty">{empty}</p>
+      )}
+    </section>
+  )
+}
+
+function HourlyChart({ hours }: { hours: Array<{ name: string; count: number }> }) {
+  const hourMap = new Map(hours.map((h) => [h.name.slice(0, 2), h.count]))
+  const allHours = Array.from({ length: 24 }, (_, i) => {
+    const key = i.toString().padStart(2, '0')
+    return { hour: key, count: hourMap.get(key) || 0 }
+  })
+  const max = Math.max(1, ...allHours.map((h) => h.count))
+  return (
+    <section className="admin-section admin-card-panel">
+      <h2>Activity by hour (UTC)</h2>
+      <div className="hourly-chart" aria-label="Hourly traffic distribution">
+        {allHours.map((h) => (
+          <div key={h.hour} className="hourly-col" title={`${h.hour}:00 UTC - ${h.count} views`}>
+            <span
+              className="hourly-bar"
+              style={{ height: `${Math.max(4, (h.count / max) * 100)}%` }}
+            />
+            <small>{h.hour}</small>
+          </div>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+function FunnelOverview({ totals, conversions }: { totals: { views: number; entries: number; sessions: number }; conversions: Array<{ name: string; count: number }> }) {
+  const totalCta = conversions.reduce((sum, c) => sum + c.count, 0)
+  const views = Math.max(1, totals.views)
+  const ctaRate = ((totalCta / views) * 100).toFixed(1)
+
+  return (
+    <section className="admin-section admin-card-panel">
+      <h2>Recruiter &amp; visitor engagement funnel</h2>
+      <div className="funnel-grid">
+        <div className="funnel-step">
+          <span className="funnel-badge">Step 1</span>
+          <strong>{totals.views.toLocaleString()}</strong>
+          <p>Total page views</p>
+        </div>
+        <div className="funnel-step">
+          <span className="funnel-badge">Step 2</span>
+          <strong>{totals.sessions.toLocaleString()}</strong>
+          <p>Active visitor sessions</p>
+        </div>
+        <div className="funnel-step">
+          <span className="funnel-badge">Step 3 · High Intent</span>
+          <strong>{totalCta.toLocaleString()}</strong>
+          <p>CTA interactions ({ctaRate}% conversion)</p>
+        </div>
+      </div>
+      {conversions.length > 0 ? (
+        <div className="funnel-conversions">
+          {conversions.map((conv) => (
+            <span key={conv.name} className="funnel-conv-chip">
+              {conv.name}: <strong>{conv.count}</strong>
+            </span>
+          ))}
+        </div>
+      ) : null}
+    </section>
+  )
 }
