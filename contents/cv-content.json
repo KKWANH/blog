@@ -82,12 +82,13 @@
   ],
   "education": [
     {"name": "Mechatronics", "detail": "Bachelor’s in progress · KNOU Prime College", "date": "2026–Present"},
-    {"name": "Artificial Intelligence", "detail": "Bachelor’s awarded · Korea National Open University", "date": "2025"},
-    {"name": "Computer Engineering (2020) / Business Administration (2022)", "detail": "Bachelor's degrees awarded · Academic Credit Bank System", "detailLines": ["Bachelor's degrees awarded", "Academic Credit Bank System"], "date": ""}
+    {"name": "Artificial Intelligence", "detail": "Bachelor’s degree awarded · Korea National Open University", "date": "2025"},
+    {"name": "Business Administration", "detail": "Bachelor's degree awarded · Academic Credit Bank System", "date": "2022"},
+    {"name": "Computer Engineering", "detail": "Bachelor's degree awarded · Academic Credit Bank System", "date": "2020"}
   ],
   "training": [
     {"id": "42", "name": "42", "program": "Software engineering", "location": "Seoul / Wolfsburg", "period": null, "status": "Completed"},
     {"id": "sea-me", "name": "SEA:ME", "program": "Automotive & Mobility", "location": "Wolfsburg", "period": "Jul 2023–Jun 2024", "status": "Completed"}
   ],
-  "languages": "Korean native · English: IELTS Academic 7.5 (2025) · Japanese: Conversational, basic reading (Learning, self-taught)"
+  "languages": "Korean (Native) · English: IELTS 7.5 (2025) · Japanese: Conversational (Learning)"
 }

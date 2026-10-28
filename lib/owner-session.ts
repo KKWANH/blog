@@ -11,17 +11,24 @@ type OwnerRecord = { ownerId: string; encryptedToken: string; accessTokenExpires
 export const ownerSessionKey = (id: string) => 'owner-session:' + createHash('sha256').update(id).digest('hex')
 const encryptionSecret = (secret: string) => createHash('sha256').update(secret).digest('base64url')
 export const ownerSessionFilePath = (env: NodeJS.ProcessEnv = process.env) => privateStoragePath(env.OWNER_SESSION_STATE_PATH ?? path.join(os.homedir(), '.kwanho-portfolio/owner-sessions.json'), env)
+function redisConfig(env: NodeJS.ProcessEnv = process.env) {
+  const url = env.ANALYTICS_REDIS_REST_URL || env.KV_REST_API_URL || env.UPSTASH_REDIS_REST_URL
+  const token = env.ANALYTICS_REDIS_REST_TOKEN || env.KV_REST_API_TOKEN || env.UPSTASH_REDIS_REST_TOKEN
+  return { url, token }
+}
 export function ownerSessionStorageConfigured(env: NodeJS.ProcessEnv = process.env) {
   if (env.NODE_ENV !== 'production' && !env.VERCEL) return true
   try {
-    const url = new URL(env.ANALYTICS_REDIS_REST_URL ?? '')
-    return url.protocol === 'https:' && url.hostname.endsWith('.upstash.io') && url.pathname === '/' && !url.username && !url.password && !url.search && !url.hash && Boolean(env.ANALYTICS_REDIS_REST_TOKEN?.trim())
+    const { url, token } = redisConfig(env)
+    const target = new URL(url ?? '')
+    return target.protocol === 'https:' && target.hostname.endsWith('.upstash.io') && target.pathname === '/' && !target.username && !target.password && !target.search && !target.hash && Boolean(token?.trim())
   } catch { return false }
 }
 export function ownerSessionStore(env: NodeJS.ProcessEnv = process.env): PrivateStore {
   if (env.NODE_ENV === 'production' || env.VERCEL) {
     if (!ownerSessionStorageConfigured(env)) throw new PrivateStoreError('Owner session storage is unavailable.')
-    return createRedisPrivateStore(env.ANALYTICS_REDIS_REST_URL!, env.ANALYTICS_REDIS_REST_TOKEN!)
+    const { url, token } = redisConfig(env)
+    return createRedisPrivateStore(url!, token!)
   }
   return createLocalPrivateStore(ownerSessionFilePath(env))
 }

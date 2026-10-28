@@ -11,6 +11,15 @@ export async function GET(request: Request) {
   try {
     const config = adminConfiguration(), store = config ? adminStore(config) : null
     const control = config && store ? await visitPreference(request, config, store) : null
-    return Response.json({ enabled: Boolean(config?.analyticsEnabled && store), prepared: Boolean(control), preferenceToken: control?.token, consented: Boolean(config && store && !blocked && await consentedVisitor(request, config, store)), privacySignal: blocked, revocationPending: Boolean(config ? pendingVisitorRevocation(request, config) || blocked && (visitorCookie(request, config) || control?.state.allowed) : pending) }, { headers })
-  } catch { return Response.json({ enabled: false, consented: false, privacySignal: blocked, revocationPending: pending }, { headers }) }
+    const hasChoice = Boolean(control || pending || requestCookie(request, privateCookieName('visitor-choice', secure)))
+    return Response.json({
+      enabled: Boolean(config?.analyticsEnabled && store),
+      prepared: Boolean(control),
+      preferenceToken: control?.token,
+      consented: Boolean(config && store && !blocked && await consentedVisitor(request, config, store)),
+      privacySignal: blocked,
+      hasChoice,
+      revocationPending: Boolean(config ? pendingVisitorRevocation(request, config) || blocked && (visitorCookie(request, config) || control?.state.allowed) : pending),
+    }, { headers })
+  } catch { return Response.json({ enabled: false, consented: false, privacySignal: blocked, hasChoice: true, revocationPending: pending }, { headers }) }
 }

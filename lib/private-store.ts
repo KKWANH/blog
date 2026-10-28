@@ -25,7 +25,7 @@ const shared = globalThis as typeof globalThis & { __portfolioPrivateWrites?: Ma
 const writes = shared.__portfolioPrivateWrites ??= new Map()
 const DAY = 86_400_000
 const digest = (text: string) => createHash('sha256').update(text).digest('hex')
-const emptyDay = (date: string): AnalyticsDay => ({ date, views: 0, entries: 0, visitors: 0, sessions: 0, pages: {}, referrals: {}, flows: {} })
+const emptyDay = (date: string): AnalyticsDay => ({ date, views: 0, entries: 0, visitors: 0, sessions: 0, pages: {}, referrals: {}, flows: {}, countries: {} })
 function publicDay(day: LocalDay): AnalyticsDay {
   const { seenVisitors: _visitors, seenSessions: _sessions, ...result } = day
   return result
@@ -160,6 +160,9 @@ export function createLocalPrivateStore(filePath: string, clock = () => Date.now
             if (Object.hasOwn(day.flows, flow) || Object.keys(day.flows).length < 1000) day.flows[flow] = (day.flows[flow] ?? 0) + 1
           }
         }
+        if (event.country && /^[A-Z]{2}$/.test(event.country)) {
+          day.countries[event.country] = (day.countries[event.country] ?? 0) + 1
+        }
         if (event.visitor && !day.seenVisitors.includes(event.visitor) && day.seenVisitors.length < 50_000) { day.seenVisitors.push(event.visitor); day.visitors++ }
         if (event.session && !day.seenSessions.includes(event.session) && day.seenSessions.length < 50_000) { day.seenSessions.push(event.session); day.sessions++ }
       })
@@ -258,6 +261,7 @@ export function createRedisPrivateStore(url: string, token: string, request: typ
           else if (key.startsWith('p|')) day.pages[key.slice(2)] = count
           else if (key.startsWith('r|')) day.referrals[key.slice(2)] = count
           else if (key.startsWith('f|')) day.flows[key.slice(2)] = count
+          else if (key.startsWith('c|')) day.countries[key.slice(2)] = count
         }
         return day
       })

@@ -28,7 +28,32 @@ and replacement. A crashed process can leave a `.lock` file. It is deliberately
 not removed merely because time passed. Stop the associated local workers and
 inspect its PID before explicitly removing that lock; preserve the JSON data.
 
-## Production configuration
+## Production configuration (Multi-Device: Phone & Multiple PCs)
+
+To access `/admin` securely from your smartphone and multiple computers:
+
+1. **Enable Free Cloud Storage on Vercel:**
+   In your Vercel project dashboard, go to **Storage** → **Create Database** → **KV / Upstash** (free tier).
+   Vercel will automatically connect `KV_REST_API_URL` and `KV_REST_API_TOKEN` to your project. The application natively supports these standard Vercel variables as well as `ANALYTICS_REDIS_REST_URL`.
+
+2. **Generate your secure environment variables:**
+   Run the local helper script on your machine:
+   ```bash
+   node scripts/setup-admin-env.mjs "YourSecretPassphraseHere"
+   ```
+   This outputs the exact values ready to copy.
+
+3. **Add Environment Variables in Vercel:**
+   In Vercel **Settings** → **Environment Variables**, paste:
+   - `ADMIN_PASSWORD_HASH`: (the generated scrypt hash)
+   - `ADMIN_SESSION_SECRET`: (the generated 32-byte secret)
+   - `ADMIN_ORIGIN`: `https://www.kwanho.dev`
+   - `ANALYTICS_ENABLED`: `1`
+
+4. **Access Anywhere:**
+   Deploy the project. Now you can visit `https://www.kwanho.dev/admin` from your smartphone, work PC, or home laptop, enter your passphrase, and view your live analytics in real time!
+
+---
 
 Configure the variable names in `.env.example` in the hosting secret manager.
 There is no production local-file or in-memory fallback.

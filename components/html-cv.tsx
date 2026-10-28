@@ -67,8 +67,8 @@ export function HtmlCv() {
               <span>{content.location}</span>
               <a href={`mailto:${content.email}`}>{content.email}</a>
               <a href={content.website}>kwanho.dev</a>
-              <a href={content.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
-              <a href={content.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href={content.linkedin} target="_blank" rel="noopener noreferrer">linkedin.com/in/kwanhokim</a>
+              <a href={content.github} target="_blank" rel="noopener noreferrer">github.com/KKWANH</a>
             </div>
           </header>
 

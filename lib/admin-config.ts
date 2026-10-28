@@ -70,8 +70,10 @@ export function adminConfiguration(env: NodeJS.ProcessEnv = process.env): AdminC
 }
 export function adminStore(config: AdminConfiguration, env: NodeJS.ProcessEnv = process.env): PrivateStore {
   if (env.NODE_ENV === 'production' || env.VERCEL) {
-    if (!env.ANALYTICS_REDIS_REST_URL || !env.ANALYTICS_REDIS_REST_TOKEN) throw new PrivateStoreError('Private storage is not configured.')
-    return createRedisPrivateStore(env.ANALYTICS_REDIS_REST_URL, env.ANALYTICS_REDIS_REST_TOKEN)
+    const url = env.ANALYTICS_REDIS_REST_URL || env.KV_REST_API_URL || env.UPSTASH_REDIS_REST_URL
+    const token = env.ANALYTICS_REDIS_REST_TOKEN || env.KV_REST_API_TOKEN || env.UPSTASH_REDIS_REST_TOKEN
+    if (!url || !token) throw new PrivateStoreError('Private storage is not configured.')
+    return createRedisPrivateStore(url, token)
   }
   return createLocalPrivateStore(privateStoragePath(env.PORTFOLIO_PRIVATE_STATE ?? path.join(path.dirname(adminConfigPath(env)), 'private-state.json'), env))
 }

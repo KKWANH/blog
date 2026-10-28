@@ -30,7 +30,7 @@ export function PaperIntroduction() {
           <TiltSurface className="business-card-tilt" pitch={7} yaw={9} lift={6} scale={1.012}>
             <div className="paper-business-card">
               <span className="paper-light" aria-hidden="true" />
-              <div className="paper-card-topline"><p className="paper-card-role">{profile.role}</p><span className="paper-signature-mark" aria-hidden="true" /></div>
+              <div className="paper-card-topline"><p className="paper-card-role">{profile.role}</p></div>
               <h1 id="profile-name">{profile.name}</h1>
               <p className="paper-card-focus">{profile.focus}</p>
               <p className="paper-card-location">{profile.location}</p>

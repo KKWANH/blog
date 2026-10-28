@@ -27,7 +27,9 @@ export async function POST(request: Request) {
     if (!path || (body.previous !== null && !previous)) throw new HttpInputError('Unknown public path.', 422)
     if (await readAdminSession(request, process.env, config, store)) return new Response(null, { status: 204, headers })
     const visitor = await consentedVisitor(request, config, store, true)
-    const collected = analyticsEvent(path, previous, referralHost(body.referral, adminOrigin(request)!), visitor, config)
+    const rawCountry = (request.headers.get('x-vercel-ip-country') || 'ZZ').toUpperCase()
+    const country = /^[A-Z]{2}$/.test(rawCountry) ? rawCountry : 'ZZ'
+    const collected = analyticsEvent(path, previous, referralHost(body.referral, adminOrigin(request)!), visitor, config, Date.now(), country)
     await store.record(collected.event, visitor ? { key: visitorConsentKey(visitor.cookie.visitor, config), generation: visitor.record.generation } : undefined)
     // Routine events never renew identity cookies, so an in-flight view cannot
     // restore a tracking cookie after a later withdrawal response.

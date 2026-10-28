@@ -21,6 +21,6 @@ export async function POST(request: Request) {
       control = created
       responseHeaders.append('Set-Cookie', created.header)
     }
-    return Response.json({ enabled: config.analyticsEnabled, prepared: Boolean(control), preferenceToken: control?.token, consented: !privacySignal && Boolean(await consentedVisitor(request, config, store)), privacySignal, revocationPending: Boolean(pendingVisitorRevocation(request, config) || privacySignal && control?.state.allowed) }, { headers: responseHeaders })
+    return Response.json({ enabled: config.analyticsEnabled, prepared: Boolean(control), preferenceToken: control?.token, consented: !privacySignal && Boolean(await consentedVisitor(request, config, store)), privacySignal, hasChoice: true, revocationPending: Boolean(pendingVisitorRevocation(request, config) || privacySignal && control?.state.allowed) }, { headers: responseHeaders })
   } catch (error) { return Response.json({ error: error instanceof HttpInputError ? error.message : 'Preferences are temporarily unavailable.' }, { status: error instanceof HttpInputError ? error.status : 503, headers }) }
 }

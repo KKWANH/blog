@@ -1,3 +1,4 @@
+html { scroll-padding-bottom: 100px; }
 .evidence-summary { color: var(--muted-foreground); font-size: .88rem; line-height: 1.7; max-width: 72ch; margin-block: .8rem 1.1rem; }
 /* One room, one colour treatment. Light moves; the reading surfaces hold still. */
 :root, .dark {
@@ -26,6 +27,9 @@ html { scroll-padding-top: calc(var(--site-header-height, 5.25rem) + 1rem); }
 .site-atmosphere {
   position: fixed; inset: 0; z-index: -1; pointer-events: none; overflow: hidden;
   --room-x: 0px; --room-y: 0px; --light-x: 0px; --light-y: 0px; --room-opacity: .2;
+  transform: translate3d(var(--drag-warp-x, 0px), var(--drag-warp-y, 0px), 0) rotate(var(--drag-rot, 0deg));
+  transform-origin: center center;
+  will-change: transform;
   background: radial-gradient(ellipse at 6% 20%,#1c4d2d66,transparent 58%),radial-gradient(ellipse at 92% 76%,#52663522,transparent 64%),linear-gradient(145deg,#071b13,#0a271b 55%,#102719);
 }
 .atmosphere-photo {

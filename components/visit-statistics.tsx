@@ -5,8 +5,8 @@ import { usePathname } from 'next/navigation'
 import routes from '@/contents/public-routes.generated.json'
 import { coarseReferral } from '@/lib/analytics-model'
 
-type StatisticsStatus = { enabled: boolean; prepared: boolean; consented: boolean; privacySignal: boolean; revocationPending: boolean }
-const initial: StatisticsStatus = { enabled: false, prepared: false, consented: false, privacySignal: false, revocationPending: false }
+type StatisticsStatus = { enabled: boolean; prepared: boolean; consented: boolean; privacySignal: boolean; hasChoice: boolean; revocationPending: boolean }
+const initial: StatisticsStatus = { enabled: false, prepared: false, consented: false, privacySignal: false, hasChoice: true, revocationPending: false }
 const StatisticsContext = createContext({ status: initial, refresh: async () => {}, prepare: async () => {}, save: async (_enabled: boolean) => {}, saving: false, error: '' })
 const publicPaths = new Set(routes.paths)
 
@@ -25,7 +25,7 @@ export function VisitStatisticsProvider({ children, possible = true }: { childre
       const data = await response.json()
       if (response.ok && sequence === requestSequence.current) {
         preferenceProof.current = data.preferenceToken ?? ''
-        setStatus({ enabled: data.enabled === true, prepared: data.prepared === true, consented: data.consented === true, privacySignal: data.privacySignal === true, revocationPending: data.revocationPending === true })
+        setStatus({ enabled: data.enabled === true, prepared: data.prepared === true, consented: data.consented === true, privacySignal: data.privacySignal === true, hasChoice: data.hasChoice === true, revocationPending: data.revocationPending === true })
       }
     } catch { /* No collector runs unless configuration was positively read. */ }
   }, [])
@@ -75,7 +75,7 @@ export function VisitStatisticsProvider({ children, possible = true }: { childre
       const response = await fetch('/api/analytics/preference', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: '{}', credentials: 'same-origin' }), data = await response.json()
       if (!response.ok) throw new Error(data.error ?? 'Preferences could not be opened.')
       preferenceProof.current = data.preferenceToken ?? ''
-      setStatus({ enabled: data.enabled === true, prepared: data.prepared === true, consented: data.consented === true, privacySignal: data.privacySignal === true, revocationPending: data.revocationPending === true })
+      setStatus({ enabled: data.enabled === true, prepared: data.prepared === true, consented: data.consented === true, privacySignal: data.privacySignal === true, hasChoice: data.hasChoice === true, revocationPending: data.revocationPending === true })
     } catch (cause) { setError(cause instanceof Error ? cause.message : 'Preferences could not be opened.') }
     finally { inFlight.current = false; setSaving(false) }
   }, [])
@@ -84,7 +84,52 @@ export function VisitStatisticsProvider({ children, possible = true }: { childre
     lastWithdrawalRetry.current = Date.now()
     void save(false)
   }, [status, save])
-  return <StatisticsContext.Provider value={{ status, refresh, prepare, save, saving, error }}>{children}</StatisticsContext.Provider>
+  return (
+    <StatisticsContext.Provider value={{ status, refresh, prepare, save, saving, error }}>
+      {children}
+      <CookieConsentBanner />
+    </StatisticsContext.Provider>
+  )
+}
+
+export function CookieConsentBanner() {
+  const { status, prepare, save, saving } = useContext(StatisticsContext)
+  const [dismissed, setDismissed] = useState(false)
+  if (!status.enabled || status.privacySignal || status.hasChoice || dismissed) return null
+  return (
+    <aside className="cookie-consent-banner" role="region" aria-label="Privacy and cookies">
+      <div className="cookie-consent-inner site-width">
+        <p>
+          <strong>Visit statistics</strong> · This site counts visits and country stats anonymously. Allow optional returning visitor cookies?
+        </p>
+        <div className="cookie-consent-actions">
+          <button
+            type="button"
+            className="action-button action-primary"
+            disabled={saving}
+            onClick={async () => {
+              await prepare()
+              await save(true)
+              setDismissed(true)
+            }}
+          >
+            Allow
+          </button>
+          <button
+            type="button"
+            className="action-button"
+            disabled={saving}
+            onClick={async () => {
+              await save(false)
+              setDismissed(true)
+            }}
+          >
+            Decline
+          </button>
+        </div>
+      </div>
+    </aside>
+  )
 }
 
 export function StatisticsPreference() {
