@@ -25,7 +25,9 @@ This repository powers Kwanho Kim's personal engineering portfolio and career pl
   - Dark Mode: Warm ivory unbleached cotton paper (`linear-gradient(112deg, #f7f3e6, #eae4d3)`) with paper fibres and grain overlay.
   - Light Mode: Flips to Studio 02 Forest Edge deep emerald stock (`linear-gradient(135deg, #133c27, #0a2416)`) with light ivory debossed lettering.
   - Geometry is 100% identical; only color and contrast flip.
-- **Standalone Card:** `public/business-card.html` mirrors the About card markup exactly and includes print and theme toggle features.
+- **Standalone Card:** `/card` (`app/card/page.tsx`) renders the same `components/business-card.tsx` face as About, so the two cannot drift; it adds theme toggle and an 85×55 mm print layout. `/business-card.html` permanently redirects there.
+- **Dark-mode generators:** `<meta name="darkreader-lock">` in `app/layout.tsx`, and `.paper-business-card` declares `color-scheme: only light`, `forced-color-adjust: none` and `print-color-adjust: exact`, so extensions, browser force-dark and printing cannot repaint the card stock.
+- **Light theme:** consolidated in `styles/light.css` (loaded last). Rule: light mirrors dark's structure — no control gets a filled box that dark does not have.
 
 ### 2. Light Mode & Atmosphere Harmony
 - Excluded nocturnal window photo and murky green background overlays in light mode.
@@ -91,3 +93,13 @@ $env:Path = "$taskNode;" + $env:Path
 
 ## Git Publication Rule
 Per owner instructions, **do not run `git push` autonomously**. All changes must be verified and cleanly committed locally using `KKWANH <kwanho0096@gmail.com>`. The user pushes manually from their terminal.
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+## This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->

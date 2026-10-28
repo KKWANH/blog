@@ -22,6 +22,7 @@ import MapView, {
 import styles from '@/components/travel/travel-explorer.module.css'
 import { StayLevel, levelConfig, type MapUnit, type TravelCity } from '@/components/travel/travel-types'
 import { useMotion } from '@/components/motion-provider'
+import { useTheme } from '@/components/theme-provider'
 
 countries.registerLocale(countryNames)
 maplibregl.setWorkerUrl('/maplibre-worker.mjs')
@@ -65,7 +66,7 @@ export function TravelMap({
   mapUnit: MapUnit
   onSelectCity: (cityId: string | null) => void
 }) {
-  const isDark = true
+  const isDark = useTheme().theme !== 'light'
   const { enabled: motionEnabled } = useMotion()
   const mapRef = useRef<MapRef | null>(null)
   const [ready, setReady] = useState(false)

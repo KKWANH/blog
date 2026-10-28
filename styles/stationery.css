@@ -28,6 +28,16 @@
     calc(var(--px, 0) * -4px) 13px 20px -10px #0009,
     calc(var(--px, 0) * -7px) 32px 60px -20px #0009;
 }
+/* The card's stock is printed, not themed by the browser: opt it out of
+   automatic darkening (Chrome/Edge/Samsung "force dark"), Windows forced
+   colours and print colour stripping. Dark Reader is locked site-wide in
+   app/layout.tsx; the site theme toggle remains the only thing that recolours it. */
+.paper-business-card {
+  color-scheme: only light;
+  forced-color-adjust: none;
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+}
 .paper-business-card::before, .paper-business-card::after { content: ''; position: absolute; inset: 0; z-index: 0; pointer-events: none; }
 .paper-business-card::before { background: url('/paper-fibres.webp') 0 0 / 260px 260px, url('/paper-grain.webp') 0 0 / 120px 120px; opacity: .62; filter: contrast(1.25); mix-blend-mode: multiply; }
 .paper-business-card::after { inset: 6px; border: 1px solid #45644724; box-shadow: inset 0 1px 0 #fffdf588; opacity: .7; }
@@ -320,4 +330,31 @@ html[data-theme="light"] .paper-business-card .paper-site-link {
 }
 html[data-theme="light"] .paper-business-card .paper-card-qr {
   filter: invert(1) hue-rotate(95deg) brightness(1.2) drop-shadow(0 0.5px 0.3px #05140b) !important;
+}
+html[data-theme="light"] .paper-business-card > .paper-light {
+  background: radial-gradient(ellipse at 35% 30%, #a9d7b326, transparent 62%);
+}
+
+/* Standalone /card: the same card face, centred and printable. */
+.card-page {
+  min-block-size: 100svh;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 2rem;
+  padding: 2rem 1rem;
+}
+.card-page-holder { inline-size: min(560px, calc(100vw - 2rem)); }
+.card-page-holder .paper-business-card { aspect-ratio: 85 / 55; }
+.card-page-toolbar { display: flex; flex-wrap: wrap; justify-content: center; gap: .7rem; }
+.card-page-toolbar .action-button { display: inline-flex; align-items: center; gap: .5rem; min-height: 44px; font-size: .85rem; color: var(--foreground); }
+.card-page-toolbar svg { width: 16px; height: 16px; }
+.card-page .card-page-toolbar .theme-toggle { gap: .5rem; padding: .8rem 1.15rem; border-radius: 5px; border-color: var(--border-strong); color: var(--foreground); font-size: .85rem; font-weight: 500; }
+@media print {
+  @page { size: 85mm 55mm; margin: 0; }
+  html, body { background: none !important; }
+  .site-atmosphere, .card-page-toolbar, .skip-link { display: none !important; }
+  .card-page { min-block-size: 0; display: block; padding: 0; }
+  .card-page-holder { inline-size: 85mm; }
+  .card-page-holder .paper-business-card { inline-size: 85mm; block-size: 55mm; min-block-size: 0; aspect-ratio: auto; border: 0; box-shadow: none !important; }
 }

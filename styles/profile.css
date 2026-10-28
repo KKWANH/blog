@@ -437,20 +437,6 @@ html[data-theme="light"] .career-evidence {
   border-color: #cad9c6;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
 }
-html[data-theme="light"] .skill-lenses button {
-  background: #ffffff;
-  border-color: #cad9c6;
-  color: #153823;
-}
-html[data-theme="light"] .skill-lenses button:hover {
-  background: #f0f5ee;
-  border-color: #9cbda0;
-}
-html[data-theme="light"] .skill-lenses button[aria-pressed="true"] {
-  background: #e2ede0;
-  border-color: #23543b;
-  color: #112919;
-}
 html[data-theme="light"] .skill-lenses button > .career-icon {
   background: rgba(35, 84, 59, 0.06);
   border-color: rgba(35, 84, 59, 0.12);
@@ -504,24 +490,9 @@ html[data-theme="light"] .main-nav a[aria-current="page"] {
 html[data-theme="light"] .header-cv {
   border-color: #cad9c6;
   color: #1a422a;
-  background: #f0f3ea;
 }
-html[data-theme="light"] .header-cv:hover {
-  background: #e2ede0;
-  border-color: #8fae92;
-}
-html[data-theme="light"] .motion-control,
-html[data-theme="light"] .theme-toggle {
-  border-color: #cad9c6;
-  color: #3b5a45;
-  background: #f0f3ea;
-}
-html[data-theme="light"] .motion-control:hover,
-html[data-theme="light"] .theme-toggle:hover {
-  color: #0c2017;
-  border-color: #8fae92;
-  background: #e2ede0;
-}
+html[data-theme="light"] .motion-control { color: #3b5a45; }
+html[data-theme="light"] .motion-control:hover { color: #0c2017; }
 html[data-theme="light"] .notebook-footer {
   border-top-color: #cad9c6;
   background: #f2f1e9;

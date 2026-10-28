@@ -1,0 +1,170 @@
+/* Light theme, consolidated. Loaded last.
+ *
+ * Rule of thumb: light mirrors the dark theme's structure. Where dark draws a
+ * transparent, outlined or underlined control, light does the same in pine ink
+ * on linen — no control gets a lone filled box the dark theme does not have.
+ * Surfaces: linen page (#f6f5ef) → warm paper panel (--card) → sage tint (--muted).
+ */
+
+html[data-theme="light"], .light {
+  --card: #fcfbf6;
+  --popover: #fcfbf6;
+  --paper: #eef2e7;
+  --muted: #e8eee2;
+  --secondary: #e8eee2;
+  --secondary-foreground: #14281c;
+  --accent: #dfe9da;
+  --accent-foreground: #14281c;
+  --warm-accent: #7d5a17;
+  --note-red: #b42318;
+  --light-tint: rgba(35, 84, 59, 0.06);
+}
+
+/* ── Header: wordmark and controls stay unboxed, as in dark ── */
+html[data-theme="light"] .wordmark-domain { color: var(--ink-accent); }
+html[data-theme="light"] .header-cv,
+html[data-theme="light"] .motion-control { background: transparent; }
+html[data-theme="light"] .header-cv:hover,
+html[data-theme="light"] .motion-control:hover { background: var(--light-tint); }
+html[data-theme="light"] .theme-toggle { background: transparent; border-color: var(--border); color: #3b5a45; }
+html[data-theme="light"] .theme-toggle:hover { background: var(--light-tint); border-color: var(--border-strong); color: #0c2017; }
+
+/* ── Buttons: secondary is an outline, like dark ── */
+html[data-theme="light"] .action-button:not(.action-primary) {
+  background: transparent !important;
+  border-color: var(--border-strong) !important;
+  color: var(--foreground) !important;
+}
+html[data-theme="light"] .action-button:not(.action-primary):hover {
+  background: var(--light-tint) !important;
+  border-color: #5f8466 !important;
+}
+
+/* ── About: skills read as rows, not white tiles ── */
+html[data-theme="light"] .skill-lenses button {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--border);
+  border-radius: 3px;
+  color: var(--foreground);
+}
+html[data-theme="light"] .skill-lenses button:hover,
+html[data-theme="light"] .skill-lenses button[aria-pressed="true"] {
+  background: linear-gradient(90deg, rgba(35, 84, 59, 0.08), transparent);
+  border-color: var(--border-strong);
+}
+html[data-theme="light"] .skill-family > h3,
+html[data-theme="light"] .skill-practice-section > h3 { color: #122c1b !important; }
+html[data-theme="light"] .skill-practice-section { border-top-color: var(--border); }
+html[data-theme="light"] .skill-practice-section > p { color: var(--muted-foreground); }
+html[data-theme="light"] .career-evidence { background: var(--card); }
+
+/* Familiarity badges: same hue family per level, printed on light stock */
+html[data-theme="light"] .skill-level-badge { box-shadow: none; }
+html[data-theme="light"] .skill-level-badge[data-level="strong"] { color: #6a4f06; border-color: #c8a846; background: #f6edcd; }
+html[data-theme="light"] .skill-level-badge[data-level="comfortable"] { color: #1b5e37; border-color: #74b38c; background: #e2f1e6; }
+html[data-theme="light"] .skill-level-badge[data-level="used"] { color: #3c5649; border-color: #9fb5a8; background: #edf2ee; }
+html[data-theme="light"] .skill-level-badge[data-level="learning"] { color: #1a5e67; border-color: #74b2ba; background: #e0f0f2; }
+html[data-theme="light"] .filter-pill { color: #3b5a45; background: transparent; }
+html[data-theme="light"] .filter-pill:hover,
+html[data-theme="light"] .filter-pill[aria-pressed="true"] { color: #0c2017; background: var(--light-tint); border-color: var(--border-strong); }
+html[data-theme="light"] .filter-pill.filter-strong[aria-pressed="true"] { color: #6a4f06; border-color: #c8a846; background: #f6edcd; }
+html[data-theme="light"] .filter-pill.filter-comfortable[aria-pressed="true"] { color: #1b5e37; border-color: #74b38c; background: #e2f1e6; }
+html[data-theme="light"] .filter-pill.filter-used[aria-pressed="true"] { color: #3c5649; border-color: #9fb5a8; background: #edf2ee; }
+
+/* Selected work records */
+html[data-theme="light"] .selected-work-record { border-bottom-color: var(--border); }
+html[data-theme="light"] .project-record-icon { color: #2f6a47; }
+html[data-theme="light"] .project-record-titles strong { color: #11261a; }
+html[data-theme="light"] .project-record-titles small,
+html[data-theme="light"] .selected-work-topic { color: var(--muted-foreground); }
+html[data-theme="light"] .selected-work-chevron { color: #4a6b54; }
+
+/* ── Home: project panels and atlas preview ── */
+html[data-theme="light"] .project-material .project-entry {
+  background: var(--card);
+  border-color: var(--border);
+  box-shadow: 0 1px 2px rgba(20, 40, 28, 0.04);
+}
+html[data-theme="light"] .project-material .project-entry::before { background: radial-gradient(ellipse at var(--mx) var(--my), rgba(35, 84, 59, 0.08), transparent 65%); }
+html[data-theme="light"] .project-material[data-active="true"] .project-entry { border-color: var(--border-strong); }
+html[data-theme="light"] .project-art { background: var(--sketch-surface); }
+html[data-theme="light"] .preview-land { fill: #dde6d6; stroke: #a3b9a5; }
+html[data-theme="light"] .preview-visit { fill: #2f6a47; opacity: .85; }
+html[data-theme="light"] .preview-home { fill: #b07a24; stroke: #f6f5ef; }
+
+/* ── CV route toolbar ── */
+html[data-theme="light"] .cv-toolbar-back { color: #23543b; }
+
+/* Skill explorer controls: the search field is a quiet paper inset, the
+   toggle button is an outline, and the pressed view mirrors dark's inverted chip. */
+html[data-theme="light"] .skill-list-controls > label,
+html[data-theme="light"] .catalogue-filters > label:first-child { background: var(--card); }
+html[data-theme="light"] .skill-list-controls > button,
+html[data-theme="light"] .repository-catalogue-heading > button { background: transparent; }
+html[data-theme="light"] .skill-list-controls > button:hover,
+html[data-theme="light"] .repository-catalogue-heading > button:hover { background: var(--light-tint); }
+html[data-theme="light"] .skill-view-controls button { color: #3b5a45; }
+html[data-theme="light"] .skill-view-controls button[aria-pressed="true"] { background: #173825; border-color: #173825; color: #ffffff; }
+html[data-theme="light"] .skill-view-controls button[aria-pressed="true"] > span { background: #ffffff26; }
+
+/* Mind map: chrome follows the light page; nodes keep their existing light faces. */
+html[data-theme="light"] .map-toolbar-actions button { background: transparent; border-color: var(--border-strong); color: var(--foreground); }
+html[data-theme="light"] .map-toolbar-actions button:hover { background: var(--light-tint); }
+html[data-theme="light"] .map-toolbar-actions button[aria-pressed="true"] { background: #173825; border-color: #173825; color: #ffffff; }
+html[data-theme="light"] .map-gesture-hint { background: #fcfbf6eb; color: #3b5a45; border: 1px solid var(--border); }
+html[data-theme="light"] .map-overview { background: #eef2e7; border-color: var(--border-strong); }
+html[data-theme="light"] .map-overview rect { fill: #9fbf9a; }
+html[data-theme="light"] .map-overview rect[data-kind="root"] { fill: #173825; }
+html[data-theme="light"] .map-overview rect[data-kind="repo"] { fill: #8fb6aa; }
+html[data-theme="light"] .map-overview rect[data-selected="true"] { fill: #b07a24; }
+html[data-theme="light"] .map-overview .overview-viewport { fill: #23543b10; stroke: #23543b; }
+html[data-theme="light"] .map-context-action { background: #173825; border-color: #173825; color: #ffffff; }
+html[data-theme="light"] .map-collapse-action { color: #23543b; }
+
+/* Repository catalogue: raised items on the sage panel, as dark raises them on pine. */
+html[data-theme="light"] .catalogue-list > button,
+html[data-theme="light"] .catalogue-detail { background: var(--card); }
+html[data-theme="light"] .catalogue-list > button[aria-pressed="true"] { background: #e7efe1; border-color: #b08a3c; }
+html[data-theme="light"] .catalogue-list > button > svg { color: #8a6a2a; }
+html[data-theme="light"] .catalogue-filters select { background: var(--card); color: var(--foreground); }
+html[data-theme="light"] .catalogue-technologies > button,
+html[data-theme="light"] .catalogue-technologies > span { background: #eef3ea; border-color: #b8ccb6; color: var(--foreground); }
+html[data-theme="light"] .catalogue-technologies > button:hover { background: #e2ecdd; border-color: var(--border-strong); }
+html[data-theme="light"] .skill-lenses button[data-repository-stack="true"] { background: #f1f4ee; }
+html[data-theme="light"] .repository-inspector .repository-context { color: #7d5a17; }
+html[data-theme="light"] .repository-source-files li + li { border-top-color: var(--border); }
+html[data-theme="light"] .repository-source-files a { color: #1d3b29; }
+html[data-theme="light"] .repository-source-files a:hover { color: #7d5a17; }
+html[data-theme="light"] .repository-source-files svg { color: #4f7a58; }
+html[data-theme="light"] .repository-more-files { color: #7d5a17; }
+html[data-theme="light"] .repository-inspector .repository-review-note,
+html[data-theme="light"] .repository-review-note { color: #4a6652; border-left-color: #b8a46a; }
+html[data-theme="light"] .catalogue-list em { color: #4a6652; }
+
+/* Photo viewers are a dark viewing room in both themes; re-scope the dark ink inside them. */
+html[data-theme="light"] .photo-dialog {
+  --foreground: #f0f2e5;
+  --muted-foreground: #b4c7b8;
+  --border: #355344;
+  --border-strong: #789682;
+  --warm-accent: #e6bf7d;
+  color: var(--foreground);
+}
+
+/* Expanded skill map and the privacy/statistics dialog follow the light page. */
+html[data-theme="light"] .skill-map-dialog[data-slot="dialog-content"] { background: var(--background); border-color: var(--border-strong); color: var(--foreground); }
+html[data-theme="light"] .map-dialog-heading p { color: var(--muted-foreground); }
+html[data-theme="light"] .privacy-dialog { background: var(--card); border-color: var(--border-strong); color: var(--foreground); }
+html[data-theme="light"] .privacy-dialog::backdrop { background: #14281c66; }
+html[data-theme="light"] .privacy-dialog p { color: var(--muted-foreground); }
+html[data-theme="light"] .privacy-status { color: #7d5a17 !important; }
+html[data-theme="light"] .privacy-choice input { accent-color: #23543b; }
+html[data-theme="light"] .cookie-consent-banner { background: #fcfbf6f2; border-color: var(--border-strong); box-shadow: 0 16px 36px -14px rgba(20, 40, 28, 0.28); }
+html[data-theme="light"] .cookie-consent-inner p { color: #2e4a38; }
+html[data-theme="light"] .cookie-consent-inner strong { color: #11261a; }
+
+/* Opt the light theme out of browser auto-darkening (Chrome/Edge force-dark,
+   Samsung Internet). Kept here, not in globals' @layer base, because Lightning CSS
+   drops the "only" keyword from the root rule when it polyfills light-dark(). */
+html[data-theme="light"] { color-scheme: only light; }

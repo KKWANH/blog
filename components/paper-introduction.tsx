@@ -4,6 +4,7 @@ import { useRef, useState } from 'react'
 import Link from 'next/link'
 import { ArrowDown, ArrowDownToLine, ArrowUpRight, ContactRound, Mail, ArrowLeft, ArrowRight, Expand, QrCode } from 'lucide-react'
 import { TiltSurface } from '@/components/tilt-surface'
+import { BusinessCardFace } from '@/components/business-card'
 import { CopyText } from '@/components/copy-email'
 import { trackAction } from '@/components/visit-statistics'
 import { profile, recruiterBrief } from '@/lib/profile'
@@ -29,28 +30,7 @@ export function PaperIntroduction() {
       <div className="paper-introduction-main">
         <div className="business-card-holder">
           <TiltSurface className="business-card-tilt" pitch={7} yaw={9} lift={6} scale={1.012}>
-            <div className="paper-business-card card-centered" id="business-card-face">
-              <span className="paper-light" aria-hidden="true" />
-              <p className="paper-card-role debossed">{profile.role}</p>
-              <div className="paper-card-center-stack">
-                <h1 id="profile-name" className="debossed">{profile.name}</h1>
-                <p className="paper-card-focus debossed">{profile.focus}</p>
-                <p className="paper-card-location">{profile.location}</p>
-              </div>
-              <div className="paper-card-footer">
-                <a className="paper-contact-link" href="mailto:contact@kwanho.dev" aria-label="Email contact@kwanho.dev">
-                  <span>contact@<wbr />kwanho.dev</span>
-                </a>
-                <div className="paper-footer-right">
-                  <a className="paper-contact-link paper-site-link" href="/" aria-label="Kwanho website home">
-                    kwanho.dev<ArrowUpRight aria-hidden="true" />
-                  </a>
-                  <a className="paper-card-qr-link" href="https://kwanho.dev" target="_blank" rel="noopener" aria-label="QR Code to kwanho.dev">
-                    <img src="/kwanho-qr.svg" alt="" className="paper-card-qr" />
-                  </a>
-                </div>
-              </div>
-            </div>
+            <BusinessCardFace />
           </TiltSurface>
         </div>
         <p className="paper-mobile-focus">{profile.focus}</p>
@@ -60,7 +40,7 @@ export function PaperIntroduction() {
         </div>
         <div className="paper-card-links">
           <a href="/contact.vcf" download="Kwanho_Kim.vcf" onClick={() => trackAction('cta_save_vcf')}><ContactRound aria-hidden="true" />Save contact</a>
-          <a href="/business-card.html" target="_blank" onClick={() => trackAction('cta_standalone_card')}><QrCode aria-hidden="true" />Standalone card &amp; QR</a>
+          <a href="/card" target="_blank" onClick={() => trackAction('cta_standalone_card')}><QrCode aria-hidden="true" />Standalone card &amp; QR</a>
           <a href={profile.linkedin} onClick={() => trackAction('outbound_linkedin')}>LinkedIn <ArrowUpRight aria-hidden="true" /></a>
           <a href="#experience-kla">Current work at KLA <ArrowDown aria-hidden="true" /></a>
         </div>

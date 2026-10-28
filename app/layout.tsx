@@ -14,6 +14,7 @@ import '../styles/mind-map.css'
 import '../styles/skill-editor.css'
 import '../styles/stationery.css'
 import '../styles/admin.css'
+import '../styles/light.css'
 
 const figtree = localFont({
   src: '../public/font/Figtree.woff2',
@@ -82,6 +83,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark" data-theme="dark" data-motion="off" suppressHydrationWarning>
       <head>
+        {/* The site ships its own dark and light themes; stop extension dark-mode generators
+            (Dark Reader) from re-tinting them and the printed business card. */}
+        <meta name="darkreader-lock" />
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(){try{var t=localStorage.getItem('kwanho-theme')||'dark';document.documentElement.dataset.theme=t;if(t==='light'){document.documentElement.classList.remove('dark');document.documentElement.classList.add('light')}else{document.documentElement.classList.add('dark');document.documentElement.classList.remove('light')}}catch(e){}})()`,

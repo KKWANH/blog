@@ -7,6 +7,17 @@ type Theme = 'dark' | 'light'
 type ThemeContextValue = { theme: Theme; toggle: () => void }
 const ThemeContext = createContext<ThemeContextValue>({ theme: 'dark', toggle: () => {} })
 
+/** Browser chrome colour per theme (mobile status bar, tab strip). */
+const themeColor: Record<Theme, string> = { dark: '#071b13', light: '#f6f5ef' }
+
+function applyTheme(theme: Theme) {
+  const root = document.documentElement
+  root.dataset.theme = theme
+  root.classList.toggle('light', theme === 'light')
+  root.classList.toggle('dark', theme === 'dark')
+  document.querySelector('meta[name="theme-color"]')?.setAttribute('content', themeColor[theme])
+}
+
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setTheme] = useState<Theme>('dark')
 
@@ -15,28 +26,14 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
       const saved = localStorage.getItem('kwanho-theme') as Theme | null
       const initialTheme = (saved === 'light' || saved === 'dark') ? saved : 'dark'
       setTheme(initialTheme)
-      document.documentElement.dataset.theme = initialTheme
-      if (initialTheme === 'light') {
-        document.documentElement.classList.remove('dark')
-        document.documentElement.classList.add('light')
-      } else {
-        document.documentElement.classList.remove('light')
-        document.documentElement.classList.add('dark')
-      }
+      applyTheme(initialTheme)
     } catch {}
   }, [])
 
   const toggle = () => {
     const next = theme === 'dark' ? 'light' : 'dark'
     setTheme(next)
-    document.documentElement.dataset.theme = next
-    if (next === 'light') {
-      document.documentElement.classList.remove('dark')
-      document.documentElement.classList.add('light')
-    } else {
-      document.documentElement.classList.remove('light')
-      document.documentElement.classList.add('dark')
-    }
+    applyTheme(next)
     try { localStorage.setItem('kwanho-theme', next) } catch {}
   }
 

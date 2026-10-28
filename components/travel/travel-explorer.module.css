@@ -263,11 +263,11 @@
 }
 
 .mapThemeLight :global(.maplibregl-map) {
-  background: #dbe4ee;
+  background: #e8eddf;
 }
 
 .mapThemeDark :global(.maplibregl-map) {
-  background: #0b1220;
+  background: #111d17;
 }
 
 .mapThemeLight :global(.maplibregl-ctrl-group),
