@@ -20,10 +20,32 @@ const worldTopology = countriesAtlas as unknown as Topology<{ countries: Geometr
 // Antarctica wraps the pole and leaves a clipped seam on the globe; nobody has visited it here.
 const world = (() => {
   const all = feature(worldTopology, worldTopology.objects.countries)
-  return { ...all, features: all.features.filter((country) => country.id !== '010') }
+  return { ...all, features: all.features.filter((country) => country.id !== '010').map((country) => ({ ...country, geometry: unwrapGeometry(country.geometry) })) }
 })()
 // Only shared land borders: polygon outlines would also stroke the antimeridian and polar cuts.
-const borders = mesh(worldTopology, worldTopology.objects.countries, (a, b) => a !== b)
+const borders = (() => {
+  const lines = mesh(worldTopology, worldTopology.objects.countries, (a, b) => a !== b)
+  return { ...lines, coordinates: lines.coordinates.map(unwrapLine) }
+})()
+
+/* Rings that cross the antimeridian (Russia, Fiji) jump from 180° to -180°; on the globe
+   that edge is drawn the long way round as a band along a parallel. Shifting each point
+   by whole turns keeps every edge shorter than half the world. */
+function unwrapLine(line: number[][]) {
+  let previous: number | null = null
+  return line.map(([lon, lat]) => {
+    let next = lon
+    if (previous !== null) while (next - previous > 180) next -= 360
+    if (previous !== null) while (previous - next > 180) next += 360
+    previous = next
+    return [next, lat]
+  })
+}
+function unwrapGeometry<G extends GeoJSON.Geometry | null>(geometry: G): G {
+  if (geometry?.type === 'Polygon') return { ...geometry, coordinates: geometry.coordinates.map(unwrapLine) }
+  if (geometry?.type === 'MultiPolygon') return { ...geometry, coordinates: geometry.coordinates.map((polygon) => polygon.map(unwrapLine)) }
+  return geometry
+}
 const glowRadius: Record<StayLevel, number> = {
   [StayLevel.ShortVisit]: 9,
   [StayLevel.TwoPlusDays]: 12,
@@ -31,9 +53,11 @@ const glowRadius: Record<StayLevel, number> = {
   [StayLevel.LivedThere]: 20,
 }
 
+/* Night-garden surface in the site's greens: unvisited land stays quiet so the warm
+   stay ramp (travel-types.ts globePalette) is the only colour that reads as "visited". */
 const surface = {
-  dark: { ocean: '#0c2340', land: '#2d5a42', border: '#5b9675', ring: '#60a5fa', sky: '#030a14', horizon: '#2563eb' },
-  light: { ocean: '#9acde0', land: '#fcfbf7', border: '#8cb5c8', ring: '#154a78', sky: '#f4f6f8', horizon: '#68b5e8' },
+  dark: { ocean: '#0e2a21', land: '#3b5446', border: '#6f8c79', ring: '#fff6dc', sky: '#06120d', horizon: '#3f8f6a' },
+  light: { ocean: '#c9dccf', land: '#f8f6ee', border: '#a9bcab', ring: '#14281c', sky: '#f7f6f0', horizon: '#b9d4c1' },
 }
 
 function skyFor(theme: 'dark' | 'light'): SkySpecification {

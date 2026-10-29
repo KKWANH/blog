@@ -66,18 +66,18 @@ export const levelConfig: Record<
   },
 }
 
-/** Glow colours for the public globe, tuned for the night (dark) and linen (light) stock. */
+/** Glow colours for the public globe: one warm ordinal ramp, the longer the stay the hotter the colour. */
 export const globePalette: Record<'dark' | 'light', Record<StayLevel, string>> = {
   dark: {
-    [StayLevel.ShortVisit]: '#f8e6a0',
-    [StayLevel.TwoPlusDays]: '#85e8a2',
-    [StayLevel.FivePlusDays]: '#6ee7f5',
-    [StayLevel.LivedThere]: '#fca65b',
+    [StayLevel.ShortVisit]: '#efe0b0',
+    [StayLevel.TwoPlusDays]: '#e9bb55',
+    [StayLevel.FivePlusDays]: '#ec8f45',
+    [StayLevel.LivedThere]: '#e2603f',
   },
   light: {
-    [StayLevel.ShortVisit]: '#8a6a12',
-    [StayLevel.TwoPlusDays]: '#227840',
-    [StayLevel.FivePlusDays]: '#19708c',
-    [StayLevel.LivedThere]: '#b8511a',
+    [StayLevel.ShortVisit]: '#b59a52',
+    [StayLevel.TwoPlusDays]: '#c38719',
+    [StayLevel.FivePlusDays]: '#c0611f',
+    [StayLevel.LivedThere]: '#a43c25',
   },
 }
