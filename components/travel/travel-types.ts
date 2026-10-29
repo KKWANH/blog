@@ -69,15 +69,15 @@ export const levelConfig: Record<
 /** Glow colours for the public globe, tuned for the night (dark) and linen (light) stock. */
 export const globePalette: Record<'dark' | 'light', Record<StayLevel, string>> = {
   dark: {
-    [StayLevel.ShortVisit]: '#e9d8a6',
-    [StayLevel.TwoPlusDays]: '#9fdcae',
-    [StayLevel.FivePlusDays]: '#74c7d0',
-    [StayLevel.LivedThere]: '#f4a861',
+    [StayLevel.ShortVisit]: '#f8e6a0',
+    [StayLevel.TwoPlusDays]: '#85e8a2',
+    [StayLevel.FivePlusDays]: '#6ee7f5',
+    [StayLevel.LivedThere]: '#fca65b',
   },
   light: {
     [StayLevel.ShortVisit]: '#8a6a12',
-    [StayLevel.TwoPlusDays]: '#2c7a47',
-    [StayLevel.FivePlusDays]: '#1d6b82',
-    [StayLevel.LivedThere]: '#b4501c',
+    [StayLevel.TwoPlusDays]: '#227840',
+    [StayLevel.FivePlusDays]: '#19708c',
+    [StayLevel.LivedThere]: '#b8511a',
   },
 }

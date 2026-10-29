@@ -180,6 +180,8 @@ html[data-theme="light"] .atlas-dot { box-shadow: none; }
 html[data-theme="light"] .atlas-dot-ring { border-color: #122c1b; }
 html[data-theme="light"] .globe-canvas .maplibregl-ctrl-attrib-button { filter: opacity(.7); }
 @media (max-width: 760px) { html[data-theme="light"] .atlas-drawer { box-shadow: 0 -18px 50px -20px #14281c40; } }
+html[data-theme="light"] .atlas-stats-content { background: #ffffffea; border-color: #cad9c6; color: #14281c; }
+html[data-theme="light"] .atlas-stat-country-btn:hover { background: #eef4ec; color: #173b26; }
 
 /* Opt the light theme out of browser auto-darkening (Chrome/Edge force-dark,
    Samsung Internet). Kept here, not in globals' @layer base, because Lightning CSS

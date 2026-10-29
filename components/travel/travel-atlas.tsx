@@ -43,6 +43,7 @@ export function TravelAtlas({ places, galleries }: { places: TravelCity[]; galle
   const { enabled: motion } = useMotion()
   const [selection, setSelection] = useState<Selection>(null)
   const [mapUnit, setMapUnit] = useState<MapUnit>('country')
+  const [showStats, setShowStats] = useState(false)
   const [query, setQuery] = useState('')
   const [finderOpen, setFinderOpen] = useState(false)
   const [cursor, setCursor] = useState(0)
@@ -58,6 +59,14 @@ export function TravelAtlas({ places, galleries }: { places: TravelCity[]; galle
   const photoPlaceIds = useMemo(() => new Set(Object.keys(galleries).filter((id) => galleries[id]?.length)), [galleries])
   const countryCount = useMemo(() => new Set(places.map((place) => place.countryCode)).size, [places])
   const lived = places.filter((place) => place.level === StayLevel.LivedThere).length
+  const countryStats = useMemo(() => {
+    const counts: Record<string, { name: string; count: number }> = {}
+    for (const p of places) {
+      if (!counts[p.countryCode]) counts[p.countryCode] = { name: p.country, count: 0 }
+      counts[p.countryCode].count++
+    }
+    return Object.entries(counts).sort((a, b) => b[1].count - a[1].count)
+  }, [places])
   const matches = useMemo(() => {
     const term = normalize(query)
     const pool = term ? sorted.filter((place) => normalize(`${place.city} ${place.country}`).includes(term)) : sorted.filter((place) => photoPlaceIds.has(place.id))
@@ -164,6 +173,41 @@ export function TravelAtlas({ places, galleries }: { places: TravelCity[]; galle
         <h1>Places I&apos;ve been</h1>
         <p><strong>{places.length}</strong> places <span aria-hidden="true">·</span> <strong>{countryCount}</strong> countries <span aria-hidden="true">·</span> <strong>{lived}</strong> lived in</p>
       </header>
+
+      <div className="atlas-stats-widget">
+        <button
+          type="button"
+          className="atlas-stats-toggle"
+          onClick={() => setShowStats(!showStats)}
+          aria-expanded={showStats}
+        >
+          <span>Travel summary</span>
+          <strong>{countryCount} countries · {places.length} places</strong>
+        </button>
+        {showStats ? (
+          <div className="atlas-stats-content">
+            <div className="atlas-stats-kpis">
+              <div><strong>{countryCount}</strong><span>Countries</span></div>
+              <div><strong>{places.length}</strong><span>Places</span></div>
+              <div><strong>{lived}</strong><span>Lived</span></div>
+            </div>
+            <h4>Visited countries</h4>
+            <div className="atlas-stats-countries">
+              {countryStats.map(([code, stat]) => (
+                <button
+                  key={code}
+                  type="button"
+                  className="atlas-stat-country-btn"
+                  onClick={() => choose({ kind: 'country', code })}
+                >
+                  <span className="atlas-stat-name">{stat.name}</span>
+                  <span className="atlas-stat-count">{stat.count} {stat.count === 1 ? 'place' : 'places'}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+        ) : null}
+      </div>
 
       <div className="atlas-finder" role="search">
         <label htmlFor={`${listId}-input`} className="sr-only">Find a place</label>

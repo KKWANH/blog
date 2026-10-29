@@ -32,8 +32,8 @@ const glowRadius: Record<StayLevel, number> = {
 }
 
 const surface = {
-  dark: { ocean: '#1a4734', land: '#4a7a5b', border: '#80a98a', ring: '#f4efdf', sky: '#04100a', horizon: '#3f8a60' },
-  light: { ocean: '#a8cbbd', land: '#fbfaf4', border: '#9db497', ring: '#122c1b', sky: '#f7f6f0', horizon: '#c9dbc0' },
+  dark: { ocean: '#225d45', land: '#5d9972', border: '#a8d5b2', ring: '#fff9e8', sky: '#071810', horizon: '#5ac78d' },
+  light: { ocean: '#b2ded0', land: '#ffffff', border: '#8cb594', ring: '#122c1b', sky: '#f7f6f0', horizon: '#a5d9be' },
 }
 
 function skyFor(theme: 'dark' | 'light'): SkySpecification {

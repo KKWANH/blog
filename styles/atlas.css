@@ -37,7 +37,97 @@
 }
 
 /* Floating chrome */
-.atlas-title, .atlas-finder, .atlas-key, .atlas-controls { position: absolute; z-index: 4; }
+.atlas-title, .atlas-finder, .atlas-key, .atlas-controls, .atlas-stats-widget { position: absolute; z-index: 4; }
+.atlas-stats-widget {
+  top: calc(var(--atlas-gutter) + 4.8rem);
+  left: var(--atlas-gutter);
+  width: min(18rem, calc(100% - 2 * var(--atlas-gutter)));
+}
+.atlas-stats-toggle {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  padding: .5rem .85rem;
+  border-radius: 6px;
+  background: var(--atlas-glass);
+  border: 1px solid var(--atlas-line);
+  backdrop-filter: blur(14px);
+  color: var(--foreground);
+  font-size: .75rem;
+  cursor: pointer;
+  text-align: left;
+}
+.atlas-stats-toggle strong {
+  font-size: .88rem;
+  color: var(--warm-accent);
+  font-weight: 600;
+}
+.atlas-stats-content {
+  margin-top: .4rem;
+  padding: .8rem;
+  border-radius: 6px;
+  background: #071b13f2;
+  border: 1px solid var(--atlas-line);
+  backdrop-filter: blur(16px);
+  max-height: min(22rem, 50dvh);
+  overflow-y: auto;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+}
+.atlas-stats-kpis {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: .5rem;
+  text-align: center;
+  padding-bottom: .6rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.atlas-stats-kpis strong {
+  font-size: 1.15rem;
+  color: var(--foreground);
+  display: block;
+}
+.atlas-stats-kpis span {
+  font-size: .68rem;
+  color: var(--muted-foreground);
+}
+.atlas-stats-content h4 {
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: #a3baa8;
+  margin: .8rem 0 .4rem;
+}
+.atlas-stats-countries {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.atlas-stat-country-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .35rem .5rem;
+  border-radius: 4px;
+  border: none;
+  background: transparent;
+  color: var(--foreground);
+  font-size: .82rem;
+  cursor: pointer;
+  text-align: left;
+}
+.atlas-stat-country-btn:hover {
+  background: rgba(201, 223, 181, 0.12);
+  color: var(--warm-accent);
+}
+.atlas-stat-count {
+  font-size: .72rem;
+  color: var(--muted-foreground);
+}
+@media (max-width: 760px) {
+  .atlas-stats-widget { display: none; }
+}
 .atlas-title { top: var(--atlas-gutter); left: var(--atlas-gutter); pointer-events: none; text-shadow: 0 1px 12px #04100a; }
 .atlas-title h1 { font-size: clamp(1.7rem, 3.4vw, 2.9rem); font-weight: 500; letter-spacing: -.045em; line-height: 1.05; }
 .atlas-title p { margin-top: .45rem; font-size: .82rem; color: var(--muted-foreground); }
