@@ -72,13 +72,7 @@ export function AdminDashboard() {
     } catch (cause) { setError(cause instanceof Error ? cause.message : 'Sign-out could not be confirmed.') }
     finally { setBusy(false) }
   }
-  if (!session) return <p role="status">Checking admin access…</p>
-  if (!session.authenticated) return <section className="admin-login" aria-labelledby="admin-login-title"><LockKeyhole aria-hidden="true" /><h2 id="admin-login-title">Administrator sign-in</h2>
-    {session.configured ? <form onSubmit={signIn}><label htmlFor="admin-password">Password</label><input id="admin-password" type="password" autoComplete="current-password" maxLength={256} value={password} onChange={(event) => setPassword(event.target.value)} required disabled={busy} /><button type="submit" className="action-button action-primary" disabled={busy}>{busy ? 'Checking…' : 'Sign in'}</button></form> : <p>Admin access needs a password and private storage configuration.</p>}
-    {session.setupAvailable ? <a href="/admin/setup" className="action-button">Set up on this computer <ArrowUpRight aria-hidden="true" /></a> : null}
-    {error ? <p role="alert" className="admin-error">{error}</p> : null}
-    <p className="admin-muted">Public visitors can read the site. Editing and private statistics require owner access.</p>
-  </section>
+  // Hooks stay above the early returns: signing in must not change the hook count (React error #310).
   useEffect(() => {
     if (session?.authenticated && typeof document !== 'undefined') {
       document.cookie = 'kwanho-admin-device=1; path=/; max-age=31536000; SameSite=Lax;'
@@ -87,6 +81,13 @@ export function AdminDashboard() {
   }, [session?.authenticated])
 
   const [selectedDate, setSelectedDate] = useState<string | null>(null)
+  if (!session) return <p role="status">Checking admin access…</p>
+  if (!session.authenticated) return <section className="admin-login" aria-labelledby="admin-login-title"><LockKeyhole aria-hidden="true" /><h2 id="admin-login-title">Administrator sign-in</h2>
+    {session.configured ? <form onSubmit={signIn}><label htmlFor="admin-password">Password</label><input id="admin-password" type="password" autoComplete="current-password" maxLength={256} value={password} onChange={(event) => setPassword(event.target.value)} required disabled={busy} /><button type="submit" className="action-button action-primary" disabled={busy}>{busy ? 'Checking…' : 'Sign in'}</button></form> : <p>Admin access needs a password and private storage configuration.</p>}
+    {session.setupAvailable ? <a href="/admin/setup" className="action-button">Set up on this computer <ArrowUpRight aria-hidden="true" /></a> : null}
+    {error ? <p role="alert" className="admin-error">{error}</p> : null}
+    <p className="admin-muted">Public visitors can read the site. Editing and private statistics require owner access.</p>
+  </section>
   const latest = report?.days.at(-1)
   const maximum = Math.max(1, ...(report?.days.map((day) => day.views) ?? []))
   const inspectedDay = selectedDate ? report?.days.find((d) => d.date === selectedDate) : latest
