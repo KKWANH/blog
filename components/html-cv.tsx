@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { ArrowLeft, Download, Printer, Copy, Check } from 'lucide-react'
 import content from '@/contents/cv-content.json'
@@ -21,6 +21,21 @@ export function HtmlCv({ gpa }: { gpa?: Record<string, string> } = {}) {
       }
     }
   }
+
+  // Phones see the whole A4 sheet scaled to fit instead of a sideways-scrolling crop; print resets it (styles/notebook.css).
+  useEffect(() => {
+    const paper = paperRef.current, scroller = paper?.parentElement
+    if (!paper || !scroller) return
+    const fit = () => {
+      paper.style.zoom = ''
+      const available = scroller.clientWidth - 8
+      paper.style.zoom = available < paper.offsetWidth ? String(available / paper.offsetWidth) : ''
+    }
+    fit()
+    const observer = new ResizeObserver(fit)
+    observer.observe(scroller)
+    return () => observer.disconnect()
+  }, [])
 
   const selectedProjects = content.projects.filter((p) => (p as { includeInCV?: boolean }).includeInCV !== false)
 

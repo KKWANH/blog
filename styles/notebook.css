@@ -312,7 +312,7 @@
   .html-cv-container { max-width: none !important; padding: 0 !important; width: 100% !important; margin: 0 !important; }
   .html-cv-scroll { overflow: visible !important; padding: 0 !important; }
   /* The paper is the page: exact A4 with the screen padding, so print matches the preview. */
-  .html-cv-paper { box-shadow: none !important; margin: 0 !important; width: 210mm !important; height: 297mm; min-height: 0 !important; overflow: hidden; page: cv; }
+  .html-cv-paper { zoom: 1 !important; box-shadow: none !important; margin: 0 !important; width: 210mm !important; height: 297mm; min-height: 0 !important; overflow: hidden; page: cv; }
   .content-hero, .content-body { padding-block: 1rem; }
   .markdown-body { max-width: none; }
   h2, h3 { break-after: avoid; }
