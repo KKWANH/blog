@@ -217,6 +217,14 @@ elseif ARGV[2] ~= ARGV[1] then
   if redis.call('HEXISTS', metrics, field) == 1 or redis.call('HLEN', metrics) < 1500 then redis.call('HINCRBY', metrics, field, 1) end
 end
 end
+-- Dimensions: country, device, browser, hour and action (ARGV[10..14]), already validated by the event route.
+local dims = { {'c|', ARGV[10]}, {'d|', ARGV[11]}, {'b|', ARGV[12]}, {'h|', ARGV[13]}, {'a|', ARGV[14]} }
+for _, dim in ipairs(dims) do
+  if dim[2] ~= nil and dim[2] ~= '' then
+    local field = dim[1] .. dim[2]
+    if redis.call('HEXISTS', metrics, field) == 1 or redis.call('HLEN', metrics) < 1500 then redis.call('HINCRBY', metrics, field, 1) end
+  end
+end
 if visitor ~= '' and redis.call('SCARD', visitors) < 50000 and redis.call('SADD', visitors, visitor) == 1 then redis.call('HINCRBY', metrics, 'visitors', 1) end
 if session ~= '' and redis.call('SCARD', sessions) < 50000 and redis.call('SADD', sessions, session) == 1 then redis.call('HINCRBY', metrics, 'sessions', 1) end
 redis.call('EXPIRE', metrics, tonumber(ARGV[8]))
@@ -259,7 +267,7 @@ export function createRedisPrivateStore(url: string, token: string, request: typ
       const key = prefix + 'day:' + event.date
       const now = Date.now(), start = Date.parse(event.date)
       const retention = Math.max(1, Math.ceil((start + 90 * DAY - now) / 1000)), dedupe = Math.max(1, Math.ceil((start + 2 * DAY - now) / 1000))
-      await command(['EVAL', recordScript, 5, key, key + ':visitors', key + ':sessions', key + ':sources', prefix + (consent?.key ?? 'no-consent'), event.path, event.previous ?? '', coarseReferral(event.referral), event.visitor ?? '', event.session ?? '', consent ? String(consent.generation) : '', now, retention, dedupe])
+      await command(['EVAL', recordScript, 5, key, key + ':visitors', key + ':sessions', key + ':sources', prefix + (consent?.key ?? 'no-consent'), event.path, event.previous ?? '', coarseReferral(event.referral), event.visitor ?? '', event.session ?? '', consent ? String(consent.generation) : '', now, retention, dedupe, event.country ?? '', event.device ?? '', event.browser ?? '', event.hour ?? '', event.action ?? ''])
     },
     async days(dates) {
       const response = await request(target.origin + '/pipeline', { method: 'POST', headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' }, body: JSON.stringify(dates.map((date) => ['HGETALL', prefix + 'day:' + date])), cache: 'no-store', redirect: 'error', signal: AbortSignal.timeout(5000) })

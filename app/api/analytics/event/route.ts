@@ -47,7 +47,11 @@ export async function POST(request: Request) {
 
     const hour = new Date().getUTCHours().toString().padStart(2, '0')
     const action = typeof body.action === 'string' && /^[a-z0-9_-]{1,32}$/i.test(body.action) ? body.action : null
-    const collected = analyticsEvent(path, previous, referralHost(body.referral, adminOrigin(request)!), visitor, config, Date.now(), country, device, browser, hour, action)
+    // A click is recorded as a click only: no extra view, entrance or arrival, and the
+    // view's own country/device/browser/hour already counted that page.
+    const collected = action
+      ? analyticsEvent('', null, '', visitor, config, Date.now(), '', '', '', '', action)
+      : analyticsEvent(path, previous, referralHost(body.referral, adminOrigin(request)!), visitor, config, Date.now(), country, device, browser, hour, null)
     await store.record(collected.event, visitor ? { key: visitorConsentKey(visitor.cookie.visitor, config), generation: visitor.record.generation } : undefined)
     // Routine events never renew identity cookies, so an in-flight view cannot
     // restore a tracking cookie after a later withdrawal response.

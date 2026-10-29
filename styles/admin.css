@@ -218,3 +218,71 @@
   color: #9df0b7;
   margin-left: 2px;
 }
+
+/* ── Insights (components/admin-insights.tsx). Admin stays a dark cockpit in both site themes. ── */
+.ai { --ai-surface: #10291e; --ai-line: #ffffff17; --ai-ink: #eef1e6; --ai-muted: #a7b9a8; display: grid; gap: 1.25rem; color: var(--ai-ink); }
+.ai h2 { margin: 0; font-size: 1.02rem; font-weight: 600; }
+.ai-head { display: flex; justify-content: space-between; align-items: flex-start; gap: .8rem; flex-wrap: wrap; margin-bottom: 1rem; }
+.ai-head p { margin: .2rem 0 0; font-size: .78rem; color: var(--ai-muted); }
+.ai-panel { min-width: 0; padding: 1.15rem 1.25rem 1.25rem; background: var(--ai-surface); border: 1px solid var(--ai-line); border-radius: 10px; }
+.ai-empty { margin: 0; font-size: .82rem; color: var(--ai-muted); }
+.ai-kpis { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: .75rem; }
+.ai-kpi { display: grid; gap: .3rem; padding: 1rem 1.1rem; background: var(--ai-surface); border: 1px solid var(--ai-line); border-radius: 10px; }
+.ai-kpi span { font-size: .74rem; color: var(--ai-muted); }
+.ai-kpi strong { font-size: 2rem; font-weight: 500; line-height: 1.05; letter-spacing: -.02em; }
+.ai-kpi small { font-size: .7rem; color: var(--ai-muted); }
+.ai-spark { width: 100%; height: 28px; }
+.ai-spark polyline { fill: none; stroke: #b8862a; stroke-width: 2; vector-effect: non-scaling-stroke; stroke-linejoin: round; }
+.ai-legend, .ai-toggle { display: flex; gap: .4rem; flex-wrap: wrap; }
+.ai-legend button, .ai-toggle button { display: inline-flex; align-items: center; gap: .45rem; min-height: 32px; padding: .25rem .7rem; border: 1px solid var(--ai-line); border-radius: 999px; background: transparent; color: var(--ai-ink); font-size: .75rem; cursor: pointer; }
+.ai-legend button[aria-pressed="false"] { opacity: .45; }
+.ai-toggle button[aria-pressed="true"] { background: #ffffff14; border-color: #ffffff33; }
+.ai-toggle svg { width: 14px; height: 14px; }
+.ai-legend i, .ai-tip i, .ai-share-legend i { width: 10px; height: 10px; border-radius: 3px; flex: none; }
+.ai-chart { position: relative; }
+.ai-chart svg { display: block; width: 100%; height: auto; overflow: visible; touch-action: pan-y; }
+.ai-line { fill: none; stroke-width: 2; vector-effect: non-scaling-stroke; stroke-linejoin: round; stroke-linecap: round; }
+.ai-grid-line { stroke: #ffffff12; stroke-width: 1; vector-effect: non-scaling-stroke; }
+.ai-axis { fill: #8fa592; font-size: 11px; }
+.ai-cross { stroke: #ffffff40; stroke-width: 1; stroke-dasharray: 3 3; vector-effect: non-scaling-stroke; }
+.ai-dot { stroke: var(--ai-surface); stroke-width: 2; }
+.ai-tip { position: absolute; top: 0; transform: translateX(-50%); display: grid; gap: .2rem; min-width: 168px; padding: .55rem .7rem; background: #071b13f2; border: 1px solid #ffffff2a; border-radius: 8px; font-size: .74rem; pointer-events: none; box-shadow: 0 10px 30px #0008; }
+.ai-tip span { display: flex; align-items: center; gap: .45rem; color: var(--ai-muted); }
+.ai-tip b { margin-left: auto; color: var(--ai-ink); font-weight: 600; }
+.ai-scope { display: flex; align-items: center; gap: .8rem; flex-wrap: wrap; font-size: .82rem; color: var(--ai-muted); }
+.ai-scope strong { color: var(--ai-ink); }
+.ai-scope.is-day strong { color: #e2c27a; }
+.ai-scope button { min-height: 30px; padding: .2rem .7rem; border: 1px solid var(--ai-line); border-radius: 999px; background: transparent; color: var(--ai-ink); font-size: .75rem; cursor: pointer; }
+.ai-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.ai-grid-2 { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); }
+.ai-bars { list-style: none; margin: 0; padding: 0; display: grid; gap: .8rem; }
+.ai-bars div { display: flex; justify-content: space-between; gap: .6rem; font-size: .82rem; }
+.ai-bars span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ai-bars b { font-weight: 600; white-space: nowrap; }
+.ai-bars small { margin-left: .2rem; font-weight: 400; color: var(--ai-muted); }
+.ai-bars i { display: block; height: 6px; margin-top: .35rem; border-radius: 4px; background: #ffffff0d; }
+.ai-bars em { display: block; height: 100%; border-radius: 4px; background: #b8862a; }
+.ai-bars p { margin: .35rem 0 0; font-size: .7rem; line-height: 1.45; color: var(--ai-muted); }
+.ai-share { display: flex; gap: 2px; height: 14px; border-radius: 4px; overflow: hidden; }
+.ai-share span { min-width: 3px; }
+.ai-share-legend { list-style: none; margin: .9rem 0 0; padding: 0; display: grid; gap: .45rem; font-size: .8rem; }
+.ai-share-legend li { display: flex; align-items: center; gap: .5rem; }
+.ai-share-legend b { margin-left: auto; font-weight: 600; }
+.ai-share-legend small { width: 2.5rem; text-align: right; color: var(--ai-muted); }
+.ai-columns { display: grid; grid-template-columns: repeat(7, 1fr); gap: .5rem; height: 170px; align-items: end; }
+.ai-columns > div { display: grid; grid-template-rows: auto 1fr auto; height: 100%; gap: .3rem; text-align: center; font-size: .72rem; }
+.ai-columns b { font-weight: 600; min-height: 1em; }
+.ai-columns i { display: flex; align-items: flex-end; }
+.ai-columns em { display: block; width: 100%; border-radius: 4px 4px 0 0; background: #3f9fcf; }
+.ai-columns span { color: var(--ai-muted); }
+.ai-flows { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: .5rem; }
+.ai-flows li { display: flex; align-items: center; gap: .5rem; padding: .55rem .7rem; border: 1px solid var(--ai-line); border-radius: 8px; font-size: .8rem; }
+.ai-flows span { color: var(--ai-muted); }
+.ai-flows strong { margin-left: auto; }
+.ai code { font-size: .78rem; color: #cfe3c4; }
+.ai-table-wrap { overflow-x: auto; }
+.ai-table { width: 100%; border-collapse: collapse; font-size: .8rem; font-variant-numeric: tabular-nums; }
+.ai-table th, .ai-table td { padding: .5rem .6rem; text-align: left; border-bottom: 1px solid var(--ai-line); white-space: nowrap; }
+.ai-table th { font-weight: 600; color: var(--ai-muted); font-size: .72rem; }
+@media (max-width: 62rem) { .ai-kpis { grid-template-columns: repeat(3, minmax(0, 1fr)); } .ai-grid, .ai-grid-2 { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 40rem) { .ai-kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
