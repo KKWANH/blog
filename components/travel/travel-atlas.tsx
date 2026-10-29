@@ -42,7 +42,7 @@ export function TravelAtlas({ places, galleries }: { places: TravelCity[]; galle
   const theme = useTheme().theme === 'light' ? 'light' : 'dark'
   const { enabled: motion } = useMotion()
   const [selection, setSelection] = useState<Selection>(null)
-  const [mapUnit, setMapUnit] = useState<MapUnit>('city')
+  const [mapUnit, setMapUnit] = useState<MapUnit>('country')
   const [query, setQuery] = useState('')
   const [finderOpen, setFinderOpen] = useState(false)
   const [cursor, setCursor] = useState(0)

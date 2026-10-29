@@ -69,9 +69,10 @@ export function SkillExplorer({ selected, onSelect, onViewEvidence }: { selected
   return (
     <div className="skill-explorer" data-view={view}>
       <div className="skill-view-controls" aria-label="Skills presentation">
-        <button type="button" aria-pressed={view === 'list'} onClick={() => setView('list')}><List aria-hidden="true" />Icon list <span aria-hidden="true">{profileCount}</span></button>
-        <button type="button" aria-pressed={view === 'map'} onClick={() => { setMapOpened(true); setView('map') }}><Network aria-hidden="true" />Mind map</button>
-        <button type="button" aria-pressed={view === 'repositories'} onClick={() => setView('repositories')}><FolderGit2 aria-hidden="true" />Repositories <span aria-hidden="true">{repositoryCatalogue.count}</span></button>
+        {/* Three described tabs rather than small pills: the map and repository views were easy to miss. */}
+        <button type="button" aria-pressed={view === 'list'} onClick={() => setView('list')}><List aria-hidden="true" /><span className="view-copy"><strong>Icon list</strong><small>{profileCount} skills by group and level</small></span></button>
+        <button type="button" aria-pressed={view === 'map'} onClick={() => { setMapOpened(true); setView('map') }}><Network aria-hidden="true" /><span className="view-copy"><strong>Mind map</strong><small>How skills connect to work and projects</small></span></button>
+        <button type="button" aria-pressed={view === 'repositories'} onClick={() => setView('repositories')}><FolderGit2 aria-hidden="true" /><span className="view-copy"><strong>Repositories</strong><small>{repositoryCatalogue.count} public repos, reviewed one by one</small></span></button>
         <Link prefetch={false} className="skill-manage-link" href="/about/manage"><Pencil aria-hidden="true" />Owner skill settings</Link>
       </div>
       {view === 'list' ? <>

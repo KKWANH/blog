@@ -146,7 +146,7 @@ function ProfileContent() {
         <div className="education-records">
           {education.map((item) => <article key={item.id} id={item.id} className="education-record" data-ongoing={!item.end}>
             <GraduationCap className="education-symbol" aria-hidden="true" />
-            <div><h3>{item.subject}</h3><p>{item.institution}{item.gpa ? <> · GPA {item.gpa}</> : null}</p></div>
+            <div><h3>{item.subject}</h3><p>{item.institution}</p></div>
             <div className="education-state"><span>{item.period}</span><strong>{item.end ? <><Check aria-hidden="true" />Bachelor&apos;s awarded</> : 'Bachelor’s in progress'}</strong></div>
           </article>)}
         </div>

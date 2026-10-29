@@ -1,4 +1,4 @@
-.skill-view-controls button > span { display: inline-grid; place-items: center; min-width: 1.5rem; padding: .05rem .3rem; border-radius: 3px; background: #183b2533; font-size: .7rem; }
+.skill-view-controls button > span:not(.view-copy) { display: inline-grid; place-items: center; min-width: 1.5rem; padding: .05rem .3rem; border-radius: 3px; background: #183b2533; font-size: .7rem; }
 .skill-list-controls, .catalogue-filters { display: flex; flex-wrap: wrap; align-items: center; gap: .7rem; margin-bottom: 1rem; }
 .skill-list-controls > label, .catalogue-filters > label:first-child { display: flex; align-items: center; gap: .6rem; min-width: 0; flex: 1 1 16rem; border: 1px solid var(--border-strong); border-radius: 4px; padding-inline: .8rem; background: #0a2118; }
 .skill-list-controls input, .catalogue-filters input { min-width: 0; width: 100%; min-height: 44px; background: transparent; color: var(--foreground); font-size: .85rem; outline-offset: 2px; }
@@ -144,8 +144,8 @@ html[data-motion="off"] .map-node-face { transition: none; }
   .map-camera-controls { bottom: 10px; }
 }
 @media (max-width: 47.99rem) {
-  .skill-view-controls { gap: .4rem; }
-  .skill-view-controls button { flex: 1 1 7rem; padding-inline: .6rem; font-size: .78rem; }
+  .skill-view-controls { grid-template-columns: minmax(0, 1fr); gap: .4rem; }
+  .skill-view-controls button { min-height: 56px; padding-inline: .8rem; }
   .skill-list-controls > label { flex-basis: 100%; }
   .skill-list-controls > button { width: 100%; }
   .mind-map-toolbar { padding: .65rem; }

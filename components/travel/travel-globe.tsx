@@ -6,7 +6,7 @@ import countryNames from 'i18n-iso-countries/langs/en.json'
 import * as maplibregl from 'maplibre-gl'
 import 'maplibre-gl/dist/maplibre-gl.css'
 import countriesAtlas from 'world-atlas/countries-110m.json'
-import { feature } from 'topojson-client'
+import { feature, mesh } from 'topojson-client'
 import type { GeometryCollection, Topology } from 'topojson-specification'
 import type { FeatureCollection, Point } from 'geojson'
 import type { SkySpecification, StyleSpecification } from 'maplibre-gl'
@@ -17,7 +17,13 @@ countries.registerLocale(countryNames)
 maplibregl.setWorkerUrl('/maplibre-worker.mjs')
 
 const worldTopology = countriesAtlas as unknown as Topology<{ countries: GeometryCollection<{ name: string }> }>
-const world = feature(worldTopology, worldTopology.objects.countries)
+// Antarctica wraps the pole and leaves a clipped seam on the globe; nobody has visited it here.
+const world = (() => {
+  const all = feature(worldTopology, worldTopology.objects.countries)
+  return { ...all, features: all.features.filter((country) => country.id !== '010') }
+})()
+// Only shared land borders: polygon outlines would also stroke the antimeridian and polar cuts.
+const borders = mesh(worldTopology, worldTopology.objects.countries, (a, b) => a !== b)
 const glowRadius: Record<StayLevel, number> = {
   [StayLevel.ShortVisit]: 9,
   [StayLevel.TwoPlusDays]: 12,
@@ -26,8 +32,8 @@ const glowRadius: Record<StayLevel, number> = {
 }
 
 const surface = {
-  dark: { ocean: '#0a2117', land: '#183526', border: '#355841', visited: '#e6bf7d', ring: '#f4efdf', sky: '#04100a', horizon: '#2f6b49' },
-  light: { ocean: '#d9e4d1', land: '#fbfaf4', border: '#adbfa6', visited: '#7d5a17', ring: '#122c1b', sky: '#f7f6f0', horizon: '#c9dbc0' },
+  dark: { ocean: '#1a4734', land: '#4a7a5b', border: '#80a98a', ring: '#f4efdf', sky: '#04100a', horizon: '#3f8a60' },
+  light: { ocean: '#a8cbbd', land: '#fbfaf4', border: '#9db497', ring: '#122c1b', sky: '#f7f6f0', horizon: '#c9dbc0' },
 }
 
 function skyFor(theme: 'dark' | 'light'): SkySpecification {
@@ -90,16 +96,13 @@ export function TravelGlobe({
     // Light from the viewer's side keeps the atmosphere an even halo instead of a lopsided rim.
     light: { anchor: 'viewport', position: [1.5, 0, 0] },
     sources: {
-      world: {
-        type: 'geojson',
-        data: world,
-        attribution: '<a href="https://www.naturalearthdata.com/" target="_blank" rel="noopener noreferrer">Natural Earth</a>',
-      },
+      world: { type: 'geojson', data: world },
+      borders: { type: 'geojson', data: borders },
     },
     layers: [
       { id: 'ocean', type: 'background', paint: { 'background-color': colors.ocean } },
       { id: 'land', type: 'fill', source: 'world', paint: { 'fill-color': colors.land } },
-      { id: 'borders', type: 'line', source: 'world', paint: { 'line-color': colors.border, 'line-width': 0.6 } },
+      { id: 'borders', type: 'line', source: 'borders', paint: { 'line-color': colors.border, 'line-width': 0.6, 'line-opacity': 0.7 } },
     ],
   }))
 
@@ -219,7 +222,7 @@ export function TravelGlobe({
         dragRotate={false}
         touchPitch={false}
         renderWorldCopies={false}
-        attributionControl={{ compact: true }}
+        attributionControl={false}
         interactiveLayerIds={showCities ? ['place-core'] : ['country-fill']}
         mapStyle={mapStyle}
         cursor={hover ? 'pointer' : 'grab'}
@@ -239,7 +242,7 @@ export function TravelGlobe({
         <Source id="visited-countries" type="geojson" data={countryData}>
           <Layer id="country-fill" type="fill" paint={{
             'fill-color': ['get', 'color'],
-            'fill-opacity': showCities ? 0.1 : 0.5,
+            'fill-opacity': showCities ? 0.14 : theme === 'dark' ? 0.78 : 0.62,
           }} />
           <Layer id="country-active" type="line" filter={['==', ['get', 'countryCode'], activeCountry ?? '']} paint={{
             'line-color': colors.ring,

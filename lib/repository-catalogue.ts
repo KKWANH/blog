@@ -27,7 +27,7 @@ const preferred: Record<string, string[]> = {
   numpy: ['ft_linear_regression', 'dslr'], pandas: ['dslr', 'ft_linear_regression'],
   matplotlib: ['ft_linear_regression'], sklearn: ['total-perspective-vortex', 'ft_linear_regression'],
   mne: ['total-perspective-vortex'], raspberrypi: ['DES01-PiRacer-Assembly', 'DES_Instrument-Cluster'],
-  raycasting: ['cub3d_kkim'], minilibx: ['cub3d_kkim'], carla: ['KKWANH'],
+  raycasting: ['cub3d_kkim'], minilibx: ['cub3d_kkim'],
 }
 
 const technologyRepositories = new Map<string, RepositorySummary[]>()

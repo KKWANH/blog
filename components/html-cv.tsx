@@ -5,7 +5,8 @@ import Link from 'next/link'
 import { ArrowLeft, Download, Printer, Copy, Check } from 'lucide-react'
 import content from '@/contents/cv-content.json'
 
-export function HtmlCv() {
+/* `gpa` is only passed by the local submission route (app/cv/submission), never by the public /cv. */
+export function HtmlCv({ gpa }: { gpa?: Record<string, string> } = {}) {
   const [copied, setCopied] = useState(false)
   const paperRef = useRef<HTMLDivElement>(null)
 
@@ -49,25 +50,16 @@ export function HtmlCv() {
       <div className="html-cv-scroll">
         <article ref={paperRef} className="html-cv-paper" aria-label="Kwanho Kim CV">
           <header className="cv-header">
-            <div className="identity-row">
-              <div>
-                <h1 className="cv-name">{content.name}</h1>
-                <p className="cv-role">{content.role}</p>
-              </div>
+            <div>
+              <h1 className="cv-name">{content.name}</h1>
+              <p className="cv-role">{content.role.split(' · ').map((part) => <span key={part}>{part}</span>)}</p>
             </div>
-            <p className="cv-contact">
-              <span>{content.location}</span>
-              <span className="cv-sep" aria-hidden="true">{"\u00b7"}</span>
-              <a href={`mailto:${content.email}`}>{content.email}</a>
-              <span className="cv-sep" aria-hidden="true">{"\u00b7"}</span>
-              <a href={`tel:${content.phone.replace(/\s/g, '')}`}>{content.phone}</a>
-              <span className="cv-sep" aria-hidden="true">{"\u00b7"}</span>
-              <a href={content.website}>kwanho.dev</a>
-              <span className="cv-sep" aria-hidden="true">{"\u00b7"}</span>
-              <a href={content.linkedin} target="_blank" rel="noopener noreferrer">linkedin.com/in/kwanhokim</a>
-              <span className="cv-sep" aria-hidden="true">{"\u00b7"}</span>
-              <a href={content.github} target="_blank" rel="noopener noreferrer">github.com/KKWANH</a>
-            </p>
+            {/* Three right-aligned lines beside the name: both header edges are used and the page keeps its line budget. */}
+            <div className="cv-contact">
+              <p>{content.location}<span className="cv-sep" aria-hidden="true">{" \u00b7 "}</span><a href={`tel:${content.phone.replace(/\s/g, '')}`}>{content.phone}</a></p>
+              <p><a href={`mailto:${content.email}`}>{content.email}</a><span className="cv-sep" aria-hidden="true">{" \u00b7 "}</span><a href={content.website}>kwanho.dev</a></p>
+              <p><a href={content.linkedin} target="_blank" rel="noopener noreferrer">linkedin.com/in/kwanhokim</a><span className="cv-sep" aria-hidden="true">{" \u00b7 "}</span><a href={content.github} target="_blank" rel="noopener noreferrer">github.com/KKWANH</a></p>
+            </div>
           </header>
 
           <p className="cv-summary">{(content as { summary?: string }).summary}</p>
@@ -152,7 +144,7 @@ export function HtmlCv() {
             <h2 className="section-title">Education</h2>
             {content.education.map((edu) => (
               <p key={edu.name} className="cv-row">
-                <span><strong>{edu.name}</strong> · {((edu as { detailLines?: string[] }).detailLines || [edu.detail]).join(' · ')}</span>{' '}
+                <span><strong>{edu.name}</strong> · {((edu as { detailLines?: string[] }).detailLines || [edu.detail]).join(' · ')}{gpa?.[edu.name] ? ` · GPA ${gpa[edu.name]}` : null}</span>{' '}
                 <span className="cv-row-date">{edu.date}</span>
               </p>
             ))}

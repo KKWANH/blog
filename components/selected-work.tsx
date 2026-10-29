@@ -12,7 +12,8 @@ const projects = [
     id: 'color-saves-life',
     name: 'Color Saves Life',
     context: 'Feb 2024 · BCX Hackathon Team Project',
-    summary: 'Driver visual assistance prototype · 1st Place, digital.auto & mobility challenge',
+    summary: 'Driver visual-assistance prototype: eye tracking, image processing and simulation',
+    award: { rank: '1st', scope: 'digital.auto & mobility challenge' },
     icon: Trophy,
   },
   {
@@ -21,11 +22,12 @@ const projects = [
     context: 'SEA:ME Automotive Project · Embedded Systems',
     summary: 'Real-time digital speedometer cluster with CAN bus, D-Bus IPC & Qt/QML on Raspberry Pi',
     icon: Gauge,
+    award: null,
   },
 ]
 
 export function SelectedWork() {
-  const [open, setOpen] = useState<string | null>('color-saves-life')
+  const [open, setOpen] = useState<string | null>(null)
 
   useEffect(() => {
     const follow = () => {
@@ -66,6 +68,8 @@ export function SelectedWork() {
                     <small>{project.context}</small>
                   </span>
                   <span className="selected-work-topic">{project.summary}</span>
+                  {/* Collapsed rows carry the result too; the open detail repeats it in its own header. */}
+                  {project.award ? <span className="track-award selected-work-award"><strong>{project.award.rank}</strong><span>{project.award.scope}</span></span> : null}
                   <ChevronDown className="selected-work-chevron" aria-hidden="true" />
                 </button>
               </h3>

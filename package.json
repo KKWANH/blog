@@ -19,7 +19,8 @@
     "test:content": "node scripts/check-content.mjs",
     "test:security": "node scripts/check-security.mjs",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "cv:submission": "node scripts/print-submission-cv.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",

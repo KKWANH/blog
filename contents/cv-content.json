@@ -1,7 +1,7 @@
 {
   "name": "Kwanho Kim",
   "role": "Software Engineer · C++ device software & integration",
-  "summary": "C++ engineer on semiconductor inspection equipment at KLA since 2026; previously robotics integration at Pickit 3D and V2X prototyping at Bosch. Works on serial device control, communication failures and logging for field diagnosis.",
+  "summary": "C++ engineer building device software for semiconductor inspection equipment at KLA, after robot-vision integration at Pickit 3D and V2X prototyping at Bosch. Focus: serial device control, fault recovery, and logging that makes field failures diagnosable.",
   "domains": [
     "Semiconductor inspection",
     "Robotics",
@@ -35,9 +35,9 @@
         "white-balance settings",
         "serial device control and logging"
       ],
-      "currentFocus": "Designing fault-recovery logic for the equipment’s lift mechanism and implementing it in C++, with team review",
+      "currentFocus": "Designing and implementing fault recovery for the equipment’s lift mechanism in C++",
       "bullets": [
-        "Made the camera’s white-balance settings readable in the UI by reading them back from the device.",
+        "Exposed the camera’s device-reported white-balance settings in the operator UI.",
         "Refactored serial device control and logging into a shared equipment layer."
       ]
     },
@@ -52,12 +52,14 @@
       "emphasis": [
         "field communication failure",
         "log download and conversion workflow",
-        "Python WebSocket client"
+        "Python WebSocket client",
+        "configuration screens"
       ],
       "bullets": [
-        "Traced a field communication failure to a port conflict, shipped the fix and documented checks against recurrence.",
-        "Built a timezone-aware log download and conversion workflow with a multilingual UI, reducing manual log handling in incident triage.",
-        "Built a reusable Python WebSocket client with reconnect, backoff and message validation, shared across internal tools."
+        "Traced a field communication failure to a port conflict, fixed it and documented recurrence checks.",
+        "Built a timezone-aware log download and conversion workflow with a multilingual UI for triage.",
+        "Built a reusable Python WebSocket client with reconnect, backoff and message validation.",
+        "Developed system and network configuration screens with input validation and safe defaults."
       ]
     },
     {
@@ -70,10 +72,12 @@
       "current": false,
       "emphasis": [
         "V2X demonstrator",
+        "data contracts",
         "operator interface"
       ],
       "bullets": [
-        "Built a V2X demonstrator for safety-critical scenarios; defined message interfaces and validated end-to-end behaviour in test runs.",
+        "Built a V2X demonstrator for safety-critical scenarios; validated end-to-end messaging in test runs.",
+        "Integrated communication modules behind explicit data contracts between components.",
         "Built the operator interface for an eBike safety prototype in React."
       ]
     }
@@ -134,17 +138,17 @@
     },
     {
       "name": "Artificial Intelligence",
-      "detail": "Bachelor’s, GPA 3.44/4.5 · Korea National Open University",
+      "detail": "Bachelor’s · Korea National Open University",
       "date": "Mar 2023 – Feb 2025"
     },
     {
       "name": "Business Administration",
-      "detail": "Bachelor’s, GPA 3.77/4.5 · Academic Credit Bank System",
+      "detail": "Bachelor’s · Academic Credit Bank System",
       "date": "Apr 2019 – Aug 2022"
     },
     {
       "name": "Computer Engineering",
-      "detail": "Bachelor’s, GPA 4.24/4.5 · Academic Credit Bank System",
+      "detail": "Bachelor’s · Academic Credit Bank System",
       "date": "Apr 2019 – Aug 2020"
     }
   ],

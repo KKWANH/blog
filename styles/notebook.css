@@ -372,8 +372,9 @@
 .html-cv-paper .cv-name { font-size: 30pt; font-weight: 700; line-height: 31pt; letter-spacing: -.015em; color: var(--ink); }
 /* The card's tracked-caps role line, carried over to tie CV and card together. */
 .html-cv-paper .cv-role { font-size: 9.5pt; font-weight: 600; line-height: 14pt; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-top: 3.5pt !important; }
-/* Contact spans the full measure; plain text, no underline row. */
-.html-cv-paper .cv-contact { display: flex; justify-content: space-between; align-items: baseline; margin-top: 7pt; white-space: nowrap; font-size: 9.5pt; line-height: 14pt; color: var(--muted); }
+.html-cv-paper .cv-role span { display: block; }
+.html-cv-paper .cv-header { display: flex; justify-content: space-between; align-items: flex-end; gap: 6mm; }
+.html-cv-paper .cv-contact { text-align: right; white-space: nowrap; font-size: 9.5pt; line-height: 14pt; color: var(--muted); }
 .html-cv-paper .cv-contact a { color: var(--ink); text-decoration: none; }
 .html-cv-paper .cv-contact .cv-sep { color: var(--rule); }
 .html-cv-paper .cv-summary { margin-top: 7pt; }

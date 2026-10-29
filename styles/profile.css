@@ -12,8 +12,11 @@
 .track-badge { padding: .4rem .8rem; border-radius: 4px; background: #133924; border: 1px solid #3c774f; text-align: right; }
 .track-badge strong { display: block; font-size: 1.25rem; color: #d6f2bd; line-height: 1.1; }
 .track-badge span { display: block; font-size: .68rem; color: #9eb89a; margin-top: .15rem; }
+.selected-work-award { flex-shrink: 0; }
+.selected-work-award span { max-width: 13ch; }
+.selected-work-record[data-open="true"] .selected-work-award { display: none; }
 .legacy-project-anchor { display: block; scroll-margin-top: calc(var(--site-header-height,5rem) + 1rem); }
-@media(max-width:45rem) { .selected-work-record h3 > button { flex-wrap: wrap; column-gap: .7rem; }.selected-work-topic { order: 4; flex-basis: 100%; margin-left: 2.2rem; max-width: none; }.selected-work-chevron { margin-left: auto; } }
+@media(max-width:45rem) { .selected-work-record h3 > button { flex-wrap: wrap; column-gap: .7rem; }.selected-work-topic { order: 4; flex-basis: 100%; margin-left: 2.2rem; max-width: none; }.selected-work-chevron { margin-left: auto; }.selected-work-award { order: 5; margin-left: 2.2rem; } }
 .skill-explorer { border: 0; background: transparent; box-shadow: none; padding: 0; }
 .skill-explorer-canvas { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1.8rem 2.5rem; padding-block: 1.4rem; }
 .skill-family { border: 0; border-radius: 0; background: transparent; box-shadow: none; padding: 0; min-width: 0; }
@@ -71,10 +74,16 @@
 .home-company-link > svg { width: 16px; height: 16px; color: var(--muted-foreground); }
 .home-company-link:hover { color: var(--warm-accent); }
 .skill-explorer { margin-top: 1rem; }
-.skill-view-controls { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1.1rem; }
-.skill-view-controls button { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; min-height: 44px; padding: .5rem 1rem; border: 1px solid var(--border-strong); border-radius: 4px; color: var(--muted-foreground); font-size: .85rem; }
-.skill-view-controls svg { width: 17px; height: 17px; }
+.skill-view-controls { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)) auto; align-items: stretch; gap: .6rem; margin-bottom: 1.1rem; }
+.skill-view-controls button { display: flex; align-items: center; justify-content: flex-start; gap: .8rem; min-height: 64px; padding: .7rem 1rem; border: 1px solid var(--border-strong); border-radius: 6px; color: var(--muted-foreground); font-size: .85rem; text-align: left; }
+.skill-view-controls button:hover { border-color: var(--warm-accent); color: var(--foreground); }
+.skill-view-controls svg { flex: none; width: 20px; height: 20px; }
+.skill-view-controls .view-copy { display: grid; gap: .1rem; min-width: 0; }
+.skill-view-controls .view-copy strong { font-size: .95rem; font-weight: 600; color: var(--foreground); }
+.skill-view-controls .view-copy small { font-size: .75rem; line-height: 1.35; }
+.skill-view-controls .skill-manage-link { align-self: center; }
 .skill-view-controls button[aria-pressed="true"] { background: #dfe8ce; border-color: #dfe8ce; color: #122d20; }
+.skill-view-controls button[aria-pressed="true"] .view-copy strong { color: #122d20; }
 .project-tool-context { display: flex; align-items: flex-start; gap: .7rem; padding-bottom: 1rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border); }
 .project-tool-context > .career-icon { width: 30px; height: 30px; flex-basis: 30px; padding: 4px; }
 .project-tool-context strong, .project-tool-context p span { display: block; font-size: .75rem; line-height: 1.65; }

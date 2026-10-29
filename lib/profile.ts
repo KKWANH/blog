@@ -24,8 +24,8 @@ export const experience = [
     description:
       'C++ device software for semiconductor inspection equipment: lifter fault recovery, camera settings and serial device control.',
     details: [
-      'Designing fault-recovery logic for the equipment’s lifter and implementing it in C++, with team review (in progress).',
-      'Made the camera’s white-balance settings readable in the UI by reading them back from the device.',
+      'Designing and implementing fault recovery for the equipment’s lift mechanism in C++, with team review (in progress).',
+      'Exposed the camera’s device-reported white-balance settings in the operator UI.',
       'Refactored serial device control and logging into a shared equipment layer.',
     ],
   },
@@ -62,17 +62,17 @@ export const experience = [
       'A V2X communication demonstrator and an operator interface for an eBike safety prototype.',
     details: [
       'Built a V2X demonstrator for safety-critical scenarios; defined message interfaces and validated end-to-end behaviour in test runs.',
-      'Integrated communication modules behind defined data contracts between components.',
+      'Integrated communication modules behind explicit data contracts between components.',
       'Built the operator interface for an eBike safety prototype in React.',
     ],
   },
 ] as const
 
 export const education = [
-  { id: 'mechatronics', start: '2026-02', end: null, subject: 'Mechatronics', gpa: null, institution: 'Korea National Open University, Prime College', period: 'Feb 2026–Present', status: "Bachelor's degree in progress" },
-  { id: 'ai-degree', start: '2023-03', end: '2025-02', subject: 'Artificial Intelligence', gpa: '3.44/4.5', institution: 'Korea National Open University', period: '2023–2025', status: "Bachelor's degree awarded" },
-  { id: 'computer-degree', start: '2019-04', end: '2020-08', subject: 'Computer Engineering', gpa: '4.24/4.5', institution: 'Academic Credit Bank System', period: '2019–2020', status: "Bachelor's degree awarded" },
-  { id: 'business-degree', start: '2019-04', end: '2022-08', subject: 'Business Administration', gpa: '3.77/4.5', institution: 'Academic Credit Bank System', period: '2019–2022', status: "Bachelor's degree awarded" },
+  { id: 'mechatronics', start: '2026-02', end: null, subject: 'Mechatronics', institution: 'Korea National Open University, Prime College', period: 'Feb 2026–Present', status: "Bachelor's degree in progress" },
+  { id: 'ai-degree', start: '2023-03', end: '2025-02', subject: 'Artificial Intelligence', institution: 'Korea National Open University', period: '2023–2025', status: "Bachelor's degree awarded" },
+  { id: 'computer-degree', start: '2019-04', end: '2020-08', subject: 'Computer Engineering', institution: 'Academic Credit Bank System', period: '2019–2020', status: "Bachelor's degree awarded" },
+  { id: 'business-degree', start: '2019-04', end: '2022-08', subject: 'Business Administration', institution: 'Academic Credit Bank System', period: '2019–2022', status: "Bachelor's degree awarded" },
 ] as const
 
 export type CareerSkill = string

@@ -4,15 +4,17 @@ import { createHash, randomUUID } from 'node:crypto'
 import { fileURLToPath } from 'node:url'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
-export function repositoryIndex(catalogue) {
+/* contents/about/repository-hidden.json names repositories kept out of the public catalogue. */
+export function repositoryIndex(catalogue, hidden = {}) {
+  const shown = catalogue.repositories.filter(({ name }) => !Object.hasOwn(hidden, name))
   return {
     version: 1,
     revision: createHash('sha256').update(JSON.stringify(catalogue)).digest('hex'),
     reviewedAt: catalogue.reviewedAt,
     syncedAt: catalogue.syncedAt,
-    count: catalogue.count,
-    inspectedFiles: catalogue.inspectedFiles,
-    repositories: catalogue.repositories.map(({ name, url, description, scope, scopeNote, status, commit, updatedAt, sources, technologies }) => ({
+    count: shown.length,
+    inspectedFiles: shown.reduce((total, repo) => total + repo.sources.length, 0),
+    repositories: shown.map(({ name, url, description, scope, scopeNote, status, commit, updatedAt, sources, technologies }) => ({
       name, url, description, scope, scopeNote, status, commit, updatedAt,
       sourceCount: sources.length,
       technologies: technologies.map(({ id, label, group }) => ({ id, label, group })),
@@ -21,7 +23,8 @@ export function repositoryIndex(catalogue) {
 }
 export function ensureRepositoryIndex() {
   const catalogue = JSON.parse(fs.readFileSync(path.join(root, 'contents/about/repositories.generated.json'), 'utf8'))
-  const contents = JSON.stringify(repositoryIndex(catalogue), null, 2) + '\n'
+  const hidden = JSON.parse(fs.readFileSync(path.join(root, 'contents/about/repository-hidden.json'), 'utf8')).repositories
+  const contents = JSON.stringify(repositoryIndex(catalogue, hidden), null, 2) + '\n'
   const file = path.join(root, 'contents/about/repositories.index.json')
   if (fs.existsSync(file) && fs.readFileSync(file, 'utf8') === contents) return false
   const temporary = `${file}.${randomUUID()}.tmp`

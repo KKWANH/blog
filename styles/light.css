@@ -106,7 +106,7 @@ html[data-theme="light"] .skill-list-controls > button:hover,
 html[data-theme="light"] .repository-catalogue-heading > button:hover { background: var(--light-tint); }
 html[data-theme="light"] .skill-view-controls button { color: #3b5a45; }
 html[data-theme="light"] .skill-view-controls button[aria-pressed="true"] { background: #173825; border-color: #173825; color: #ffffff; }
-html[data-theme="light"] .skill-view-controls button[aria-pressed="true"] > span { background: #ffffff26; }
+html[data-theme="light"] .skill-view-controls button[aria-pressed="true"] .view-copy strong { color: #ffffff; }
 
 /* Mind map: chrome follows the light page; nodes keep their existing light faces. */
 html[data-theme="light"] .map-toolbar-actions button { background: transparent; border-color: var(--border-strong); color: var(--foreground); }
