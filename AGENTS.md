@@ -71,6 +71,19 @@ This repository powers Kwanho Kim's personal engineering portfolio and career pl
 - Full URLs for LinkedIn (`linkedin.com/in/kwanhokim`) and GitHub (`github.com/KKWANH`).
 - Degrees clearly split into discrete rows.
 
+### 6. Travel Globe (`/travel`) & Travel Photo Folders
+- **Public `/travel`:** full-bleed MapLibre globe (`components/travel/travel-atlas.tsx` + `travel-globe.tsx`, `styles/atlas.css`; light rules in `styles/light.css`). No hero, reading column or footer: `app/[...slug]/page.tsx` renders `bodyClassName: 'atlas-page'` full-bleed. Floating chrome: title/counts, keyboard place finder (combobox), Cities/Countries key, zoom/reset/owner-edit controls. Clicking a place opens a drawer (bottom sheet ≤760px) with its photos; `?place=<id>` deep-links. Slow auto-spin only when motion is enabled (`useMotion`), never under reduced motion.
+- **Owner editing:** `/travel/manage` keeps the list-and-map `TravelExplorer`; unchanged.
+- **Folder convention (one folder per place/trip):**
+  ```
+  contents/photography/travel/<place-id>/      # originals, git-ignored (may carry GPS)
+    01-whatever.jpg  02-another.heic …         # sorted by name
+    gallery.json                               # optional, committed
+  ```
+  `<place-id>` is the `id` in `contents/travel/places.json` (e.g. `leuven-belgium`); for a second trip to the same place use any slug folder and set `"place"` in `gallery.json`. See `contents/photography/travel/_example/gallery.json` for every field (`place`, `title`, `date` YYYY[-MM[-DD]], `summary`, `cover`, per-file `alt`/`title`). Folders starting with `_` or `.` are skipped.
+- **Publish:** run `npm run photos:travel` (also runs when the local dev launcher starts). It writes metadata-free WebP derivatives (2400px + 900px thumb) to `public/photography/travel/<folder>/` and the manifest `contents/photography/travel-galleries.json`; commit those plus `gallery.json`. A clone without the originals keeps already-published galleries. To remove a gallery, delete both its `contents/…` and `public/…` folders and rerun.
+- A place with no folder has no gallery. Any gallery publishes `/photography` (portraits from `photos.json` still optional).
+
 ## Verification Suites
 Run all tests before committing:
 ```powershell

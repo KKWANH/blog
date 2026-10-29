@@ -146,3 +146,14 @@ html[data-motion="off"] :is(.atlas-drawer, .atlas-controls) { transition: none; 
   .atlas-drawer-head h2 { font-size: 1.7rem; }
   .atlas-drawer-body { padding: 1rem; }
 }
+
+/* Travel folders on /photography */
+.travel-galleries { margin-top: 4rem; }
+.travel-galleries > h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 500; letter-spacing: -.04em; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+.travel-gallery { margin-top: 2.5rem; }
+.travel-gallery > header { display: flex; flex-wrap: wrap; align-items: baseline; gap: .4rem 1rem; margin-bottom: 1.2rem; }
+.travel-gallery h3 { font-size: 1.15rem; font-weight: 600; }
+.travel-gallery > header p { font-size: .8rem; color: var(--muted-foreground); }
+.travel-gallery > header .text-link { display: inline-flex; align-items: center; gap: .35rem; min-height: 44px; margin-left: auto; font-size: .85rem; }
+.travel-gallery > header .text-link svg { width: 15px; height: 15px; }
+.travel-gallery-summary { margin: -.4rem 0 1.4rem; max-width: 60ch; line-height: 1.7; color: var(--muted-foreground); }

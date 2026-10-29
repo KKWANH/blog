@@ -103,8 +103,6 @@ export function TravelGlobe({
     ],
   }))
 
-  useEffect(() => { const id = setInterval(() => { const m = mapRef.current?.getMap(); if (m) { (window as unknown as { __globe: unknown }).__globe = m; clearInterval(id) } }, 200); return () => clearInterval(id) }, [])
-
   // Recolour in place so a theme switch keeps the camera and sources.
   useEffect(() => {
     const map = mapRef.current?.getMap()
@@ -231,8 +229,6 @@ export function TravelGlobe({
           map.getCanvas().setAttribute('aria-label', 'Globe of visited places. Drag or use arrow keys to turn it; use the place finder to open a place.')
           setReady(true)
         }}
-        onError={(event) => console.error('globe', event.error)}
-        onStyleData={() => { (window as unknown as { __globe: unknown }).__globe = mapRef.current?.getMap() }}
         onDragStart={() => setTouched(true)}
         onZoomStart={(event) => { if (event.originalEvent) setTouched(true) }}
         onClick={select}
