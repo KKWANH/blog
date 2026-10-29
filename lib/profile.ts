@@ -70,9 +70,9 @@ export const experience = [
 
 export const education = [
   { id: 'mechatronics', start: '2026-02', end: null, subject: 'Mechatronics', institution: 'Korea National Open University, Prime College', period: 'Feb 2026–Present', status: "Bachelor's degree in progress" },
-  { id: 'ai-degree', start: '2023-03', end: '2025-02', subject: 'Artificial Intelligence', institution: 'Korea National Open University', period: '2023–2025', status: "Bachelor's degree awarded" },
-  { id: 'computer-degree', start: '2019-04', end: '2020-08', subject: 'Computer Engineering', institution: 'Academic Credit Bank System', period: '2019–2020', status: "Bachelor's degree awarded" },
-  { id: 'business-degree', start: '2019-04', end: '2022-08', subject: 'Business Administration', institution: 'Academic Credit Bank System', period: '2019–2022', status: "Bachelor's degree awarded" },
+  { id: 'ai-degree', end: '2025-02', subject: 'Artificial Intelligence', institution: 'Korea National Open University', period: 'Graduated Feb 2025', status: "Bachelor's degree awarded" },
+  { id: 'computer-degree', end: '2020-08', subject: 'Computer Engineering', institution: 'Academic Credit Bank System', period: 'Graduated Aug 2020', status: "Bachelor's degree awarded" },
+  { id: 'business-degree', end: '2022-08', subject: 'Business Administration', institution: 'Academic Credit Bank System', period: 'Graduated Aug 2022', status: "Bachelor's degree awarded" },
 ] as const
 
 export type CareerSkill = string

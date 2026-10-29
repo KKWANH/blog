@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react'
 import { ArrowLeftRight, BriefcaseBusiness, GraduationCap } from 'lucide-react'
 import { education, experience, type CareerSkill } from '@/lib/profile'
 
-const firstYear = 2019
+const firstYear = 2020
 const lastYear = 2027
 const years = Array.from({ length: lastYear - firstYear }, (_, index) => firstYear + index)
 function position(value: string) {
@@ -25,7 +25,7 @@ export function CareerTimeline({ skill, selected, onSelect }: { skill: CareerSki
   }, [])
   return (
     <section className="career-timeline" aria-labelledby="timeline-title">
-      <div className="timeline-heading"><h2 id="timeline-title">Work &amp; education</h2><span>2019 → Present</span></div>
+      <div className="timeline-heading"><h2 id="timeline-title">Work &amp; education</h2><span>2020 → Present</span></div>
       <p className="timeline-mobile-cue"><ArrowLeftRight aria-hidden="true" />Recent work is shown first. Scroll sideways for earlier study.</p>
       <div ref={scroll} className="timeline-scroll" tabIndex={0} aria-label="Career timeline. Use left and right arrow keys to scroll. A complete text record follows below.">
         <div className="timeline-chart">
@@ -42,12 +42,14 @@ export function CareerTimeline({ skill, selected, onSelect }: { skill: CareerSki
             </button>
           })}
           <div className="timeline-group-label"><GraduationCap aria-hidden="true" />Education</div>
-          {[...education].sort((a, b) => a.start.localeCompare(b.start)).map((item) => {
-            const start = position(item.start), finish = item.end ? position(item.end) : 100
+          {/* Awarded degrees are dated by graduation only: a marker, not a study-length band. */}
+          {[...education].sort((a, b) => (a.end ?? a.start).localeCompare(b.end ?? b.start)).map((item) => {
             return <a className="timeline-row education-row" key={item.id} href={`#${item.id}`}>
               <span className="timeline-label">{item.subject}<span>{item.period}</span></span>
               <span className="timeline-track" aria-hidden="true">
-                <span className="timeline-band study-band" data-ongoing={!item.end} style={{ left: `${start}%`, width: `${Math.max(finish - start, 2)}%` }} />
+                {item.end
+                  ? <span className="timeline-band study-mark" style={{ left: `${position(item.end)}%` }} />
+                  : <span className="timeline-band study-band" data-ongoing="true" style={{ left: `${position(item.start)}%`, width: `${Math.max(100 - position(item.start), 2)}%` }} />}
               </span>
             </a>
           })}

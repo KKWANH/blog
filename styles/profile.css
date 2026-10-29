@@ -136,13 +136,14 @@
 .timeline-band { display: block; position: absolute; top: 50%; height: 10px; transform: translateY(-50%); min-width: 8px; border-radius: 2px; }
 .work-band { background: #d3b477; box-shadow: 0 0 15px #d3b47718; }
 .study-band { background: #69916a; border: 1px solid #aac8a0; }
+.study-mark { width: 12px; height: 12px; min-width: 0; margin-left: -6px; border-radius: 50%; background: #69916a; border: 2px solid #aac8a0; }
 .timeline-band[data-ongoing="true"] { background: repeating-linear-gradient(90deg, #b2ce9d 0 5px, transparent 5px 8px); border: 1px solid #b2ce9d; }
 .timeline-row[data-linked="false"] .work-band { background: #576f5a; box-shadow: none; }
 .timeline-row[data-linked="true"] .timeline-label { color: #f0dfb9; }
 .timeline-legend { display: flex; flex-wrap: wrap; gap: .5rem 1.4rem; margin-top: .9rem; color: var(--muted-foreground); font-size: .7rem; }
 .timeline-legend span { display: inline-flex; align-items: center; gap: .4rem; }
 .timeline-legend i { display: inline-block; width: 16px; height: 7px; border-radius: 1px; }
-.work-key { background: #d3b477; }.study-key { background: #69916a; border: 1px solid #aac8a0; }.ongoing-key { border: 1px dashed #b2ce9d; }
+.work-key { background: #d3b477; }.study-key { background: #69916a; border: 1px solid #aac8a0; border-radius: 50%; }.ongoing-key { border: 1px dashed #b2ce9d; }
 .open-experience, .open-education { margin-bottom: 3rem; }
 .experience-tenure-banner { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .4rem; margin-bottom: .4rem; }
 .tenure-summary-badge { display: inline-flex; align-items: center; font-size: .78rem; font-weight: 500; padding: .2rem .6rem; border-radius: 4px; background: rgba(230, 191, 125, 0.12); border: 1px solid rgba(230, 191, 125, 0.28); color: #eeddb2; }
