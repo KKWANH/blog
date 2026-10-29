@@ -77,7 +77,7 @@
       "dates": "Feb 2024",
       "award": {"rank": "1st", "credit": "Winner", "scope": "digital.auto & mobility challenge", "event": "Bosch ConnectedExperience (BCX) 2024 · Hackathon"},
       "emphasis": [],
-      "description": "Built the Python client for a driver visual-assistance prototype, integrated eye tracking with simulation and presented the team’s demo."
+      "description": "Built the driver-assistance Python client, integrated eye tracking with simulation and delivered the demo."
     }
   ],
   "education": [

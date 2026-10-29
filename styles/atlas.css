@@ -14,13 +14,13 @@
   overflow: clip;
   isolation: isolate;
   background:
-    radial-gradient(circle at 50% 52%, #1c4a3255 0, transparent 46%),
+    radial-gradient(circle at 50% 52%, #112d4e55 0, transparent 46%),
     radial-gradient(1px 1px at 12% 22%, #e6eedc66, transparent 60%),
     radial-gradient(1px 1px at 78% 14%, #e6eedc55, transparent 60%),
     radial-gradient(1px 1px at 88% 68%, #e6eedc44, transparent 60%),
     radial-gradient(1px 1px at 22% 82%, #e6eedc44, transparent 60%),
     radial-gradient(1.5px 1.5px at 64% 88%, #f4a86155, transparent 60%),
-    radial-gradient(ellipse at 50% 50%, #0b2318 0, #04100a 70%);
+    radial-gradient(ellipse at 50% 50%, #071729 0, #020810 70%);
 }
 .globe-canvas { position: absolute; inset: 0; }
 .globe-canvas .maplibregl-canvas:focus-visible { outline: 2px solid var(--ink-blue); outline-offset: -4px; }

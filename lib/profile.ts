@@ -1,10 +1,10 @@
 export const profile = {
   name: 'Kwanho Kim',
   role: 'Software Engineer',
-  focus: 'C++ device software & integration',
+  focus: 'Device software & machine interfaces',
   location: 'Leuven, Belgium',
   introduction:
-    'Software engineer at KLA, working on C++ device software, machine interfaces and failure recovery.',
+    'Software engineer at KLA, working on device software, machine interfaces and failure recovery.',
   contact: 'contact@kwanho.dev',
   linkedin: 'https://www.linkedin.com/in/kwanhokim',
   github: 'https://github.com/KKWANH',
