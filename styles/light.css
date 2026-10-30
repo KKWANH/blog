@@ -193,3 +193,38 @@ html[data-theme="light"] { color-scheme: only light; }
   html[data-theme="light"] .header-controls .theme-toggle,
   html[data-theme="light"] .header-controls .menu-button { border-color: transparent; }
 }
+
+html[data-theme="light"] .atlas-drawer-grabber span { background: #14281c33; }
+
+/* ── Response, materials and user preferences (both themes) ──
+   Feedback lands on press, not on release; glass gives way to solid surfaces when the
+   reader asks for less transparency or more contrast. */
+:is(button, [role="button"], .action-button, .header-cv, .atlas-controls > a, .atlas-drawer-places button, .atlas-drawer-steps button):active:not(:disabled) {
+  transform: scale(.97); transition: transform 80ms ease-out;
+}
+.action-button:active:not(:disabled) { transform: scale(.97); }
+html[data-motion="off"] :is(button, [role="button"], .action-button, .header-cv, .atlas-controls > a):active { transform: none; }
+/* Controls that are positioned by transform keep their geometry; they answer with tone instead. */
+:is(.map-branch-toggle, .atlas-drawer-close, [data-slot="dialog-close"]):active { transform: none; opacity: .7; }
+
+@media (prefers-reduced-transparency: reduce) {
+  .notebook-header, .cookie-consent-banner, .atlas-drawer, .atlas-finder ul { backdrop-filter: none !important; }
+  .notebook-header { background: #071b13 !important; }
+  .cookie-consent-banner { background: #0d271b !important; }
+  .atlas-stage { --atlas-glass: #071b13; }
+  .atlas-stage :is(.atlas-title, .atlas-finder input, .atlas-key, .atlas-controls, .atlas-unit) { backdrop-filter: none; }
+  .atlas-drawer { background: #071b13; }
+  html[data-theme="light"] .notebook-header { background: #f7f6f0 !important; }
+  html[data-theme="light"] .cookie-consent-banner { background: #fcfbf6 !important; }
+  html[data-theme="light"] .atlas-stage { --atlas-glass: #f7f6f0; }
+  html[data-theme="light"] .atlas-drawer { background: #f7f6f0; }
+}
+
+@media (prefers-contrast: more) {
+  .notebook-header { background: #071b13 !important; border-color: #c9dfb5 !important; }
+  .atlas-stage { --atlas-glass: #071b13; --atlas-line: #c9dfb5; }
+  .atlas-drawer { background: #071b13; }
+  html[data-theme="light"] .notebook-header { background: #ffffff !important; border-color: #14281c !important; }
+  html[data-theme="light"] .atlas-stage { --atlas-glass: #ffffff; --atlas-line: #14281c; }
+  html[data-theme="light"] .atlas-drawer { background: #ffffff; }
+}

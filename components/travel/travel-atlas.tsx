@@ -7,6 +7,7 @@ import { ArrowLeft, ArrowRight, Camera, LockKeyhole, Minus, Plus, RotateCcw, Sea
 import { MapBoundary } from './map-boundary'
 import { globePalette, levelConfig, StayLevel, type MapUnit, type TravelCity } from './travel-types'
 import type { GlobeHandle, GlobeInset } from './travel-globe'
+import { useSheet } from './use-sheet'
 import { PhotoGallery } from '@/components/photo-gallery'
 import { useMotion } from '@/components/motion-provider'
 import { useTheme } from '@/components/theme-provider'
@@ -49,6 +50,7 @@ export function TravelAtlas({ places, galleries }: { places: TravelCity[]; galle
   const [cursor, setCursor] = useState(0)
   const globe = useRef<GlobeHandle>(null)
   const drawerHeading = useRef<HTMLHeadingElement>(null)
+  const drawer = useRef<HTMLElement>(null)
   const finderInput = useRef<HTMLInputElement>(null)
   const returnFocus = useRef<HTMLElement | null>(null)
   const listId = useId()
@@ -115,7 +117,10 @@ export function TravelAtlas({ places, galleries }: { places: TravelCity[]; galle
     if (focusDrawer) requestAnimationFrame(() => drawerHeading.current?.focus({ preventScroll: true }))
   }
 
-  function close() {
+  const sheet = useSheet(drawer, { open, motion, onDismiss: finishClose })
+  function close() { sheet.dismiss() }
+
+  function finishClose() {
     setSelection(null)
     const target = returnFocus.current
     returnFocus.current = null
@@ -268,9 +273,10 @@ export function TravelAtlas({ places, galleries }: { places: TravelCity[]; galle
         <Link href="/travel/manage" aria-label="Edit atlas (owner)" title="Edit atlas"><LockKeyhole aria-hidden="true" /></Link>
       </div>
 
-      <aside className="atlas-drawer" aria-label={place ? `${place.city}, ${place.country}` : 'Selected country'} hidden={!open}>
+      <aside ref={drawer} className="atlas-drawer" aria-label={place ? `${place.city}, ${place.country}` : 'Selected country'} hidden={!open}>
+        <div className="atlas-drawer-grabber" aria-hidden="true" onPointerDown={sheet.onPointerDown}><span /></div>
         {place ? <>
-          <div className="atlas-drawer-head">
+          <div className="atlas-drawer-head" onPointerDown={sheet.onPointerDown}>
             <p className="atlas-drawer-kicker"><span className="atlas-dot" style={{ background: palette[place.level] }} aria-hidden="true" />{levelConfig[place.level].label}</p>
             <h2 ref={drawerHeading} tabIndex={-1}>{place.city}</h2>
             <button type="button" className="atlas-drawer-country" onClick={() => choose({ kind: 'country', code: place.countryCode }, true)}>{place.country}</button>
@@ -293,7 +299,7 @@ export function TravelAtlas({ places, galleries }: { places: TravelCity[]; galle
             <button type="button" onClick={() => step(1)}>East<ArrowRight aria-hidden="true" /></button>
           </nav>
         </> : countryPlaces.length ? <>
-          <div className="atlas-drawer-head">
+          <div className="atlas-drawer-head" onPointerDown={sheet.onPointerDown}>
             <p className="atlas-drawer-kicker">{countryPlaces.length} place{countryPlaces.length === 1 ? '' : 's'}</p>
             <h2 ref={drawerHeading} tabIndex={-1}>{countryPlaces[0].country}</h2>
             <button type="button" className="atlas-drawer-close" aria-label="Close" onClick={close}><X aria-hidden="true" /></button>

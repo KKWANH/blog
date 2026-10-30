@@ -164,7 +164,7 @@ html[data-theme="light"] .action-button:not(.action-primary):hover {
   border-color: #8fae92 !important;
 }
 .action-button:hover { transform: translateY(-2px); }
-.action-button:active { transform: translateY(0); transition-duration: 80ms; }
+.action-button:active { transform: translateY(0) scale(.97); transition-duration: 80ms; }
 .text-link svg, .header-cv svg, .contact-secondary a svg { transition: transform 220ms ease; }
 .text-link:hover svg, .header-cv:hover svg, .contact-secondary a:hover svg { transform: translate(2px, -2px); }
 .scene-eyebrow { color: var(--ink-accent); font-size: .76rem; letter-spacing: .15em; text-transform: uppercase; line-height: 1.7; }
