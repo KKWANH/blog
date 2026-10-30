@@ -31,6 +31,18 @@ export function SiteHeader() {
     return () => observer.disconnect()
   }, [])
 
+  // The header's edge fade only shows while content is actually beneath it.
+  useEffect(() => {
+    const element = header.current
+    if (!element) return
+    let frame = 0
+    const update = () => { frame = 0; element.dataset.scrolled = String(scrollY > 2) }
+    const onScroll = () => { if (!frame) frame = requestAnimationFrame(update) }
+    update()
+    addEventListener('scroll', onScroll, { passive: true })
+    return () => { cancelAnimationFrame(frame); removeEventListener('scroll', onScroll) }
+  }, [])
+
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
       if (event.key === 'Escape' && open) {

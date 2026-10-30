@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from 'react'
 import { ArrowLeft, ArrowRight, Expand, ExternalLink } from 'lucide-react'
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from '@/components/ui/dialog'
 import { TiltSurface } from '@/components/tilt-surface'
+import { useMotion } from '@/components/motion-provider'
+import { usePhotoSwipe } from '@/components/use-photo-swipe'
 import type { Photograph } from '@/lib/photographs'
 
 export function PhotoGallery({ photographs }: { photographs: Photograph[] }) {
@@ -19,10 +21,16 @@ export function PhotoGallery({ photographs }: { photographs: Photograph[] }) {
     if (activeId && !visible.some((photo) => photo.id === activeId)) setActiveId(null)
   }, [activeId, visible])
 
-  function step(direction: number) {
+  function page(direction: number) {
     if (visible.length < 2) return
     const next = (activeIndex + direction + visible.length) % visible.length
     setActiveId(visible[next].id)
+  }
+  const swipe = usePhotoSwipe({ motion: useMotion().enabled, canPage: visible.length > 1, onStep: page, onDismiss: () => setActiveId(null) })
+  function step(direction: number) {
+    if (visible.length < 2) return
+    page(direction)
+    swipe.enter(direction)
   }
 
   return (
@@ -62,8 +70,8 @@ export function PhotoGallery({ photographs }: { photographs: Photograph[] }) {
               {[active.location, active.date, active.credit ? `Photograph by ${active.credit}` : null].filter(Boolean).join(' · ') || active.collection}
             </DialogDescription>
           </div>
-          <div className="photo-viewer">
-            <img src={active.src} alt={active.alt} width={active.width} height={active.height} />
+          <div className="photo-viewer" onPointerDown={swipe.onPointerDown}>
+            <img ref={swipe.image} src={active.src} alt={active.alt} width={active.width} height={active.height} />
           </div>
           <div className="photo-viewer-controls">
             <a href={active.src} target="_blank" rel="noopener noreferrer"><ExternalLink aria-hidden="true" />Open image</a>

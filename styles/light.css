@@ -209,6 +209,7 @@ html[data-motion="off"] :is(button, [role="button"], .action-button, .header-cv,
 
 @media (prefers-reduced-transparency: reduce) {
   .notebook-header, .cookie-consent-banner, .atlas-drawer, .atlas-finder ul { backdrop-filter: none !important; }
+  .notebook-header::after { backdrop-filter: none; }
   .notebook-header { background: #071b13 !important; }
   .cookie-consent-banner { background: #0d271b !important; }
   .atlas-stage { --atlas-glass: #071b13; }
@@ -221,10 +222,11 @@ html[data-motion="off"] :is(button, [role="button"], .action-button, .header-cv,
 }
 
 @media (prefers-contrast: more) {
-  .notebook-header { background: #071b13 !important; border-color: #c9dfb5 !important; }
+  .notebook-header { background: #071b13 !important; border-bottom-color: #c9dfb5 !important; }
+  .notebook-header::after { display: none; }
   .atlas-stage { --atlas-glass: #071b13; --atlas-line: #c9dfb5; }
   .atlas-drawer { background: #071b13; }
-  html[data-theme="light"] .notebook-header { background: #ffffff !important; border-color: #14281c !important; }
+  html[data-theme="light"] .notebook-header { background: #ffffff !important; border-bottom-color: #14281c !important; }
   html[data-theme="light"] .atlas-stage { --atlas-glass: #ffffff; --atlas-line: #14281c; }
   html[data-theme="light"] .atlas-drawer { background: #ffffff; }
 }

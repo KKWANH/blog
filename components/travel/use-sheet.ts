@@ -2,21 +2,10 @@
 
 import { useCallback, useEffect, useRef, type PointerEvent as ReactPointerEvent, type RefObject } from 'react'
 
-// Apple-style sheet physics: 1:1 drag, momentum projection, velocity hand-off into a spring,
+import { project, releaseVelocity, rubberband, SETTLE, springTo, THROWN, type Sample, type Spring } from '@/lib/physics'
+
+// Apple-style sheet: 1:1 drag, momentum projection, velocity hand-off into a spring,
 // and every motion starts from the on-screen (presentation) value so it can be grabbed mid-flight.
-
-type Spring = { damping: number; response: number }
-const SETTLE: Spring = { damping: 1, response: 0.35 }
-const THROWN: Spring = { damping: 0.8, response: 0.3 }
-
-/** Where a flick comes to rest, using the scroll-deceleration curve (UIScrollView normal rate). */
-function project(velocity: number, rate = 0.998) {
-  return (velocity / 1000) * rate / (1 - rate)
-}
-
-function rubberband(overshoot: number, dimension: number, constant = 0.55) {
-  return (overshoot * dimension * constant) / (dimension + constant * Math.abs(overshoot))
-}
 
 /** Reads the live translate on the drag axis, mid-transition included. */
 function presentation(element: HTMLElement, axis: 'x' | 'y') {
@@ -25,7 +14,7 @@ function presentation(element: HTMLElement, axis: 'x' | 'y') {
 }
 
 export function useSheet(ref: RefObject<HTMLElement | null>, { open, motion, onDismiss }: { open: boolean; motion: boolean; onDismiss: () => void }) {
-  const frame = useRef(0)
+  const cancel = useRef<(() => void) | null>(null)
   const offset = useRef(0)
   const dismissRef = useRef(onDismiss)
   useEffect(() => { dismissRef.current = onDismiss })
@@ -35,9 +24,8 @@ export function useSheet(ref: RefObject<HTMLElement | null>, { open, motion, onD
     offset.current = value
     element.style.transform = along === 'x' ? `translateX(${value}px)` : `translateY(${value}px)`
   }
-  const stop = () => { cancelAnimationFrame(frame.current); frame.current = 0 }
+  const stop = () => { cancel.current?.(); cancel.current = null }
 
-  // Damped harmonic oscillator in Apple's terms (damping ratio + response), unit mass.
   const animate = useCallback((target: number, velocity: number, spring: Spring, done?: () => void) => {
     const element = ref.current
     if (!element) return
@@ -45,28 +33,8 @@ export function useSheet(ref: RefObject<HTMLElement | null>, { open, motion, onD
     const along = axis()
     // Reduced motion: no spring travel, the sheet simply lands.
     if (!motion) { write(element, target, along); done?.(); return }
-    const stiffness = (2 * Math.PI / spring.response) ** 2
-    const friction = 4 * Math.PI * spring.damping / spring.response
-    let value = offset.current, speed = velocity, last = 0
     element.dataset.dragging = 'true'
-    const tick = (time: number) => {
-      const elapsed = Math.min((time - (last || time - 16)) / 1000, 0.064)
-      last = time
-      for (let step = 0; step < 4; step++) {
-        const dt = elapsed / 4
-        speed += (-stiffness * (value - target) - friction * speed) * dt
-        value += speed * dt
-      }
-      if (Math.abs(value - target) < 0.5 && Math.abs(speed) < 5) {
-        write(element, target, along)
-        frame.current = 0
-        done?.()
-        return
-      }
-      write(element, value, along)
-      frame.current = requestAnimationFrame(tick)
-    }
-    frame.current = requestAnimationFrame(tick)
+    cancel.current = springTo(offset.current, target, velocity, spring, (value) => write(element, value, along), () => { cancel.current = null; done?.() })
   }, [ref, motion])
 
   const release = useCallback(() => {
@@ -90,7 +58,7 @@ export function useSheet(ref: RefObject<HTMLElement | null>, { open, motion, onD
       return
     }
     const along = axis()
-    if (!frame.current && !element.dataset.dragging) offset.current = presentation(element, along)
+    if (!cancel.current && !element.dataset.dragging) offset.current = presentation(element, along)
     const distance = along === 'x' ? element.offsetWidth : element.offsetHeight
     animate(distance, velocity, velocity > 0 ? THROWN : SETTLE, () => dismissRef.current())
   }, [ref, motion, animate])
@@ -108,7 +76,7 @@ export function useSheet(ref: RefObject<HTMLElement | null>, { open, motion, onD
     const start = along === 'x' ? event.clientX : event.clientY
     const cross = along === 'x' ? event.clientY : event.clientX
     let tracking = false, origin = 0
-    const history: { position: number; time: number }[] = []
+    const history: Sample[] = []
     const size = along === 'x' ? element.offsetWidth : element.offsetHeight
 
     const move = (next: PointerEvent) => {
@@ -120,7 +88,7 @@ export function useSheet(ref: RefObject<HTMLElement | null>, { open, motion, onD
         if (across > Math.abs(delta)) { end(); return }
         tracking = true
         // Grab from where it is now, even mid-animation.
-        origin = (frame.current || element.dataset.dragging ? offset.current : presentation(element, along)) - delta
+        origin = (cancel.current || element.dataset.dragging ? offset.current : presentation(element, along)) - delta
         stop()
         try { handle.setPointerCapture(next.pointerId) } catch {}
         element.dataset.dragging = 'true'
@@ -133,9 +101,7 @@ export function useSheet(ref: RefObject<HTMLElement | null>, { open, motion, onD
     const up = (last: PointerEvent) => {
       end()
       if (!tracking) return
-      const first = history[0], final = history[history.length - 1]
-      const span = first && final ? final.time - first.time : 0
-      const velocity = span > 0 && last.timeStamp - final.time < 80 ? ((final.position - first.position) / span) * 1000 : 0
+      const velocity = releaseVelocity(history, last.timeStamp)
       const resting = offset.current + project(velocity)
       // Decide by where the throw lands, not where the finger let go.
       if (resting > size * 0.5) dismiss(velocity)
