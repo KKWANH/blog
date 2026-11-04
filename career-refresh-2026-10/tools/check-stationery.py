@@ -68,12 +68,12 @@ def main():
         page.locator('.skill-explorer [data-skill-id="c"]').click()
         expect(page.locator('#repository-title')).to_have_text('Minishell')
         report['checks']['c_has_real_project_context']=True
-        page.locator('.skill-explorer [data-skill-id="typescript"]').click()
+        page.locator('.skill-explorer [data-skill-id="shell"]').click()
         expect(page.locator('#career-evidence .repository-inspector')).to_be_visible()
         report['checks']['project_skill_not_assigned_to_employer']=page.locator('.company-select[aria-pressed=true]').count()==0
         page.get_by_role('button',name='Mind map',exact=True).click()
         page.get_by_role('button',name='Icon list',exact=True).click()
-        report['checks']['selection_survives_view_change']=page.locator('.skill-explorer [data-skill-id="typescript"]').get_attribute('aria-pressed')=='true'
+        report['checks']['selection_survives_view_change']=page.locator('.skill-explorer [data-skill-id="shell"]').get_attribute('aria-pressed')=='true'
         page.locator('.career-timeline button.timeline-row').filter(has_text='KLA').click()
         report['checks']['whole_timeline_row_works']=page.locator('#experience-kla .company-select').evaluate('(e)=>e===document.activeElement')
         report['checks']['unrelated_skill_focus_cleared']=page.locator('.skill-lenses button[aria-pressed=true]').count()==0
