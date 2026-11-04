@@ -37,7 +37,7 @@ html[data-theme="light"] *::-webkit-scrollbar-thumb {
 html[data-theme="light"] *::-webkit-scrollbar-thumb:hover {
   background-color: #739477 !important;
 }
-.evidence-summary { color: var(--muted-foreground); font-size: .88rem; line-height: 1.7; max-width: 72ch; margin-block: .8rem 1.1rem; }
+.evidence-summary { color: var(--muted-foreground); font-size: .88rem; line-height: 1.7; max-width: 58ch; margin-block: .8rem 1.1rem; }
 /* One room, one colour treatment. Light moves; the reading surfaces hold still. */
 :root, .dark {
   --background: #071b13;
@@ -103,7 +103,7 @@ html[data-motion="on"] .atmosphere-window::before { animation: reflected-drift 1
 }
 .atmosphere-pointer {
   position: absolute; left: 0; top: 0; width: min(880px,98vw); aspect-ratio: 1; border-radius: 50%;
-  background: radial-gradient(circle at center, rgba(205, 240, 160, 0.28) 0%, rgba(135, 195, 125, 0.14) 35%, transparent 70%);
+  background: radial-gradient(circle at center, rgba(201, 223, 181, 0.12) 0%, rgba(135, 195, 125, 0.05) 35%, transparent 70%);
   transform: translate3d(calc(var(--pointer-x,50vw) - 50%),calc(var(--pointer-y,40vh) - 50%),0) scale(var(--pointer-scale, 1));
   mix-blend-mode: screen; opacity: var(--pointer-opacity, 1); will-change: transform, opacity;
 }

@@ -208,7 +208,7 @@
 .markdown-body code { padding: .12rem .3rem; font-size: .9em; background: var(--muted); border-radius: 3px; }
 .markdown-body pre { padding: 1rem; overflow: auto; background: var(--muted); margin-block: 1.5rem; font-size: .9rem; }
 .markdown-body pre code { padding: 0; background: none; }
-.markdown-body blockquote { border-left: 2px solid var(--ink-blue); margin-block: 1.5rem; padding-left: 1.3rem; color: var(--muted-foreground); }
+.markdown-body blockquote { border-left: 1px solid var(--ink-blue); margin-block: 1.5rem; padding-left: 1.3rem; color: var(--muted-foreground); }
 .markdown-body img { max-width: 100%; height: auto; }
 .profile-photo { max-width: 34rem; margin-bottom: 2.5rem; }
 .profile-photo img { border-radius: 3px; }

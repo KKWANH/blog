@@ -758,7 +758,7 @@ html, body, * {
   bottom: 108px;
   height: 24px;
   border-radius: 6px;
-  background: linear-gradient(90deg, #3b82f6, var(--brand-cyan));
+  background: var(--brand-cyan);
   display: grid;
   place-items: center;
   color: var(--background);
@@ -933,7 +933,7 @@ html, body, * {
 }
 .note-doc .nt-loop-node b {
   display: block;
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 500;
   color: var(--muted-foreground);
 }
@@ -1136,7 +1136,6 @@ html, body, * {
   margin: 0 auto;
   border-radius: 8px;
   overflow: hidden;
-  border: 1px solid var(--border);
   font-size: 12px;
 }
 .note-doc .nt-pn-p {

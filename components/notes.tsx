@@ -232,7 +232,7 @@ export function Flow({ steps, loop }: { steps: FlowStep[]; loop?: ReactNode }) {
         <span className="nt-flow-spark" aria-hidden />
         {steps.map((s, i) => (
           <div key={i} className="contents">
-            <div className="flex-1 min-w-[7rem] rounded-xl border border-border/60 bg-card/50 p-3 text-center">
+            <div className="flex-1 min-w-[7rem] p-3 text-center">
               {s.icon ? (
                 <div className="text-2xl mb-1" aria-hidden>
                   {s.icon}
@@ -267,12 +267,7 @@ export function StatGrid({ stats }: { stats: Array<{ v: ReactNode; l: ReactNode 
         <div key={i} className="nt-box rounded-xl border border-border/60 bg-card/40 p-4 text-center">
           <div
             className="text-2xl font-extrabold leading-tight"
-            style={{
-              background: 'linear-gradient(90deg, var(--nt-accent), var(--brand-violet))',
-              WebkitBackgroundClip: 'text',
-              backgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-            }}
+            style={{ color: 'var(--nt-accent)' }}
           >
             {s.v}
           </div>

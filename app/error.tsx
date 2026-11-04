@@ -21,9 +21,6 @@ export default function GlobalError({
 
       <main id="main-content" className="site-width notebook-error">
         <div>
-          <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-muted-foreground">
-            Error
-          </p>
           <h1 className="font-display text-5xl md:text-6xl tracking-tight leading-none">
             Something broke.
           </h1>

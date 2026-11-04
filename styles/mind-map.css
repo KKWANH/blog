@@ -45,7 +45,7 @@
 .map-node-face > .career-icon { width: 29px; height: 29px; flex: 0 0 29px; padding: 4px; }
 .map-node-face > svg { width: 24px; height: 24px; flex: 0 0 24px; color: #c7cca0; }
 .map-node-face img, .map-node-face svg { pointer-events: none; -webkit-user-drag: none; }
-.mind-map-node[data-kind="root"] .map-node-face { background: #eee9d8; color: #1b3727; border: 1px solid #f8f4e5; border-bottom: 4px solid #7d8f69; }
+.mind-map-node[data-kind="root"] .map-node-face { background: #eee9d8; color: #1b3727; border: 1px solid #f8f4e5; }
 .mind-map-node[data-kind="root"] strong { font-family: Georgia,serif; font-size: 20px; font-weight: 400; }
 .mind-map-node[data-kind="root"] small { color: #405642; font-size: 12px; }
 .mind-map-node[data-kind="group"] .map-node-face { background: #1e3c28; border-color: #bca978; padding-right: 50px; }
@@ -191,7 +191,7 @@ html[data-theme="light"] .map-search input {
   color: #14281c;
 }
 html[data-theme="light"] .map-search input::placeholder {
-  color: #6d8a76;
+  color: #4a6652;
 }
 html[data-theme="light"] .map-toolbar-actions button {
   background: #ffffff;

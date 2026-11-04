@@ -247,3 +247,14 @@ input, textarea { caret-color: var(--warm-accent); }
 
 /* Long-form notes read at a set measure; diagrams and tables keep the full column. */
 .note-doc .nt-section > p { max-width: 46rem; }
+
+/* Figtree's wide "0" makes 65ch run past 90 characters; prose sets its own measure. */
+.markdown-body > :is(p, ul, ol, blockquote) { max-width: 55ch; }
+@media (max-width: 47.99rem) { .timeline-label { padding-left: .6rem; } }
+
+/* Owner pages stay in the dark cockpit whatever the site theme is. */
+.admin-viewport .management-heading > p { color: #b4c7b8; }
+/* Text on tinted diagram nodes takes full ink so it clears 4.5:1 in both themes. */
+.note-doc :is(.nt-cnn-map, .nt-loop-node, .nt-loop-node b) { color: var(--foreground); }
+
+:where(input, textarea)::placeholder { color: var(--muted-foreground); opacity: 1; }
