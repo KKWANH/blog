@@ -186,7 +186,7 @@
   transition: transform 420ms cubic-bezier(.2, .8, .2, 1);
 }
 @starting-style { .atlas-drawer:not([hidden]) { transform: translateX(100%); } }
-.atlas-drawer[data-dragging] { transition: none; will-change: transform; }
+.atlas-drawer[data-dragging] { transition: none !important; will-change: transform; user-select: none; touch-action: none; }
 .atlas-drawer-grabber { display: none; }
 .atlas-drawer-head { position: relative; padding: 1.4rem 4rem 1rem 1.4rem; border-bottom: 1px solid var(--atlas-line); }
 .atlas-drawer-kicker { display: flex; align-items: center; gap: .5rem; font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted-foreground); }

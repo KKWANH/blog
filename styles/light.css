@@ -172,7 +172,10 @@ html[data-theme="light"] .atlas-stage {
     radial-gradient(circle at 50% 52%, #ffffffaa 0, transparent 46%),
     radial-gradient(ellipse at 50% 50%, #eef2e7 0, #dfe7d6 75%);
 }
-html[data-theme="light"] .atlas-title { text-shadow: 0 1px 10px #f7f6f0; }
+html[data-theme="light"] .atlas-title { text-shadow: 0 1px 8px #f7f6f0, 0 2px 16px rgba(247, 246, 240, 0.9); }
+html[data-theme="light"] .atlas-title h1 { color: #10291c; }
+html[data-theme="light"] .atlas-title p { color: #3b5745; }
+html[data-theme="light"] .atlas-title strong { color: #7d5a17; }
 html[data-theme="light"] .atlas-finder ul { background: #fcfbf6f5; box-shadow: 0 18px 40px -12px #14281c40; }
 html[data-theme="light"] :is(.atlas-finder li[aria-selected="true"], .atlas-unit button[aria-pressed="true"], .atlas-controls > :is(button, a):hover, .atlas-drawer-close:hover, .atlas-drawer-places button:hover) { background: var(--light-tint); }
 html[data-theme="light"] .atlas-drawer { background: #f7f6f0f2; box-shadow: -24px 0 60px -20px #14281c40; }

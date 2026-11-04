@@ -231,7 +231,7 @@ export function TravelAtlas({ places, galleries }: { places: TravelCity[]; galle
           value={query}
           onChange={(event) => { setQuery(event.target.value); setFinderOpen(true) }}
           onFocus={() => setFinderOpen(true)}
-          onBlur={() => setFinderOpen(false)}
+          onBlur={() => { setTimeout(() => setFinderOpen(false), 200) }}
           onKeyDown={finderKeys}
         />
         <ul id={`${listId}-list`} role="listbox" aria-label={query ? 'Matching places' : 'Places with photographs'} hidden={!showFinder}>
