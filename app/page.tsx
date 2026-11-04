@@ -52,7 +52,7 @@ export default function HomePage() {
           </div>
           <div className="project-list">
             <ProjectEvidence />
-            {selectedProjects.filter((project) => project.id !== 'color-saves-life').map((project, index) => <ProjectCard key={project.id} project={project} index={index + 1} />)}
+            {selectedProjects.filter((project) => project.id !== 'color-saves-life').map((project) => <ProjectCard key={project.id} project={project} />)}
           </div>
         </section>
 

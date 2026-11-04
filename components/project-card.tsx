@@ -1,19 +1,13 @@
 import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
-import { ProjectSketch } from '@/components/project-sketch'
 import type { Project } from '@/lib/projects'
-import { TiltSurface } from '@/components/tilt-surface'
 
-export function ProjectCard({ project, index = 0 }: { project: Project; index?: number }) {
+export function ProjectCard({ project }: { project: Project }) {
   return (
-    <TiltSurface className="project-material" pitch={0} yaw={0} lift={4} scale={1}>
-      <article className="project-entry" aria-labelledby={`project-${project.id}`}>
-      <Link className="project-art" href={project.href} aria-label={`Read about ${project.name}`}>
-        <ProjectSketch kind={project.visual} />
-      </Link>
-      <div>
+    <article className="project-entry" aria-labelledby={`project-${project.id}`}>
+      <div className="project-entry-body">
         <div className="project-meta">
-          <span>{String(index + 1).padStart(2, '0')} / {project.category}</span>
+          <span>{project.category}</span>
           {project.year ? <span>{project.year}</span> : null}
           {project.status ? <span className="project-status">{project.status}</span> : null}
         </div>
@@ -29,7 +23,6 @@ export function ProjectCard({ project, index = 0 }: { project: Project; index?: 
           <p className="project-stack">{project.stack.join(' · ')}</p>
         </details>
       </div>
-      </article>
-    </TiltSurface>
+    </article>
   )
 }

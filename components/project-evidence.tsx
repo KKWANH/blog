@@ -18,7 +18,7 @@ export function ProjectEvidence({ compact = false }: { compact?: boolean }) {
   return (
     <section className={`project-evidence ${compact ? 'compact-evidence' : ''}`} aria-label="Color Saves Life project evidence">
       <div className="evidence-heading">
-        <div><span className="evidence-kicker">BCX 2024 · Team project</span><h2>Color Saves Life</h2></div>
+        <div><h2>Color Saves Life</h2><span className="evidence-meta">BCX 2024 · Team project</span></div>
         <div className="track-award"><strong>1st</strong><span>digital.auto &amp;<br />mobility challenge</span></div>
       </div>
       <p className="evidence-summary">A team prototype exploring visual assistance for drivers through eye-tracking, image processing and simulation.</p>

@@ -421,8 +421,8 @@ export default function SkillMindMap({ selectedSkill, onSelectSkill, onViewEvide
           </svg>
         </button>
         {selectedRepository ? <RepositoryInspector key={selectedRepository.name} repository={selectedRepository} onTechnology={(id) => selectTechnology(id)} /> : selectedTechnology ? <>
-          <p className="map-inspector-eyebrow">{selectedTechnology.personal ? 'Experience / project practice' : 'Repository technology'}</p>
           <div className="map-inspector-title"><CareerIcon skill={selectedTechnology.id} /><h3>{selectedTechnology.label}</h3></div>
+          <p className="map-inspector-source">{selectedTechnology.personal ? 'Experience / project practice' : 'Repository technology'}</p>
           {selectedTechnology.personal ? <SkillLevelBadge level={selectedTechnology.level} /> : null}
           {selectedTechnology.kind === 'practice' ? <p className="map-practice-note">Engineering practice · {selectedTechnology.detail}</p> : null}
           {selectedTechnology.related?.length ? <div className="map-family-links" aria-label="Related languages and tools">{selectedTechnology.related.map((id) => mapTechnologies.find((tech) => tech.id === id)).filter((tech) => Boolean(tech)).map((tech) => <button type="button" key={tech!.id} onClick={() => selectTechnology(tech!.id)}><CareerIcon skill={tech!.id} />{tech!.label}</button>)}</div> : null}
@@ -431,11 +431,11 @@ export default function SkillMindMap({ selectedSkill, onSelectSkill, onViewEvide
           <h4>{related.length} linked repositories</h4>
           <div className="map-related-repositories">{related.map((repo) => <button type="button" key={repo.name} onClick={() => selectRepository(repo.name)}><span>{repo.name}<small>{repo.scope === 'reference' ? 'Fork / reference' : repo.scope === 'ai-directed' ? 'AI-directed' : repo.scope === 'learning' ? 'Project practice' : 'Repository'}</small></span><ChevronRight aria-hidden="true" /></button>)}</div>
         </> : selectedNode?.kind === 'group' ? <>
-          <p className="map-inspector-eyebrow">Skill family</p><h3>{selectedNode.label}</h3><p>{selectedNode.count} technologies. Select a node to inspect its work and repository connections.</p>
+          <h3>{selectedNode.label}</h3><p>{selectedNode.count} technologies. Select a node to inspect its work and repository connections.</p>
           <button type="button" className="map-context-action" onClick={() => toggleGroup(selectedNode.group!)}>{selectedNode.expanded ? 'Collapse branch' : 'Expand branch'}<ChevronDown aria-hidden="true" /></button>
           <div className="map-family-links">{mapTechnologies.filter((tech) => tech.group === selectedNode.group && (allTechnologies || tech.personal)).map((tech) => <button type="button" key={tech.id} onClick={() => selectTechnology(tech.id)}><CareerIcon skill={tech.id} />{tech.label}</button>)}</div>
         </> : <>
-          <p className="map-inspector-eyebrow">Explore the connections</p><h3>Skills &amp; repositories</h3><p>Open a branch, move its nodes, or search for a specific technology or project.</p>
+          <h3>Skills &amp; repositories</h3><p>Open a branch, move its nodes, or search for a specific technology or project.</p>
           <dl className="map-summary"><div><dt>Profile skills</dt><dd>{mapTechnologies.filter((tech) => tech.personal).length}</dd></div><div><dt>Repositories</dt><dd>{repositoryCatalogue.count}</dd></div><div><dt>Repository technologies</dt><dd>{repositoryTechnologyCount}</dd></div><div><dt>Source files</dt><dd>{repositoryCatalogue.inspectedFiles}</dd></div></dl>
           <button type="button" className="map-context-action" onClick={() => { setExpanded(new Set(mapGroups.map((group) => group.id))); requestFit('all') }}>Expand every branch <Plus aria-hidden="true" /></button>
         </>}

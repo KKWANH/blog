@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ArrowLeft } from 'lucide-react'
+import { ArrowLeft, ArrowUp } from 'lucide-react'
 import { formatContentDate, type ContentPage } from '@/lib/content'
 
 const labels: Record<string, string> = {
@@ -55,7 +55,7 @@ export function ContentFooterMeta({ page }: { page: ContentPage }) {
   return (
     <footer className="content-end" lang="en">
       <Link href={isNote ? '/notes' : isProject ? '/projects' : '/'}>{isNote ? 'All notes' : isProject ? 'All projects' : 'Back to home'}</Link>
-      <a href="#main-content">Back to top ↑</a>
+      <a href="#main-content">Back to top <ArrowUp aria-hidden="true" /></a>
     </footer>
   )
 }

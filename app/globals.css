@@ -39,8 +39,8 @@
 
   /* Brand accents (constant across themes) */
   --brand-emerald: #356d56;
-  --brand-cyan: #2b4fb0;
-  --brand-violet: #74509b;
+  --brand-cyan: #2b5f86;
+  --brand-violet: #94405f;
   --brand-amber: #875f19;
   --note-red: #b42318;
   --note-pink: #a12067;
@@ -90,8 +90,8 @@
   --sidebar-border: oklch(0.27 0.014 250);
   --sidebar-ring: oklch(0.55 0.04 230);
   --brand-emerald: #8dcbb0;
-  --brand-cyan: #a7bfff;
-  --brand-violet: #c7aff0;
+  --brand-cyan: #8fb8d8;
+  --brand-violet: #d9a3b4;
   --brand-amber: #dfbd78;
   --note-red: #fda29b;
   --note-pink: #f9a8d4;
@@ -153,7 +153,7 @@
     -webkit-font-smoothing: antialiased;
   }
   ::selection {
-    background-color: color-mix(in oklab, var(--brand-cyan) 35%, transparent);
+    background-color: color-mix(in oklab, var(--warm-accent, #d3b477) 38%, transparent);
     color: var(--foreground);
   }
 }
@@ -414,27 +414,10 @@ html, body, * {
   }
 }
 
-/* Numbered kicker badge — gentle accent glow */
+/* Chapter number */
 .note-doc .nt-num {
   background: var(--nt-accent);
   color: var(--background);
-  box-shadow: 0 0 0 0 color-mix(in oklab, var(--nt-accent) 60%, transparent);
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .note-doc .nt-num {
-    animation: nt-badge-pulse 3.4s ease-in-out infinite;
-  }
-}
-
-@keyframes nt-badge-pulse {
-  0%,
-  100% {
-    box-shadow: 0 0 0 0 color-mix(in oklab, var(--nt-accent) 45%, transparent);
-  }
-  50% {
-    box-shadow: 0 0 0 6px color-mix(in oklab, var(--nt-accent) 0%, transparent);
-  }
 }
 
 /* Cards lift slightly on hover */
@@ -678,7 +661,6 @@ html, body, * {
   margin: -6.5px;
   border-radius: 50%;
   background: var(--brand-cyan);
-  box-shadow: 0 0 8px color-mix(in oklab, var(--brand-cyan) 65%, transparent);
 }
 .note-doc .nt-orbit--inner .nt-e {
   transform: rotate(var(--a, 0deg)) translateX(62px);
@@ -688,7 +670,6 @@ html, body, * {
 }
 .note-doc .nt-e--v {
   background: var(--brand-emerald);
-  box-shadow: 0 0 11px color-mix(in oklab, var(--brand-emerald) 75%, transparent);
   width: 15px;
   height: 15px;
   margin: -7.5px;
@@ -798,7 +779,6 @@ html, body, * {
   height: 9px;
   border-radius: 50%;
   background: var(--brand-cyan);
-  box-shadow: 0 0 7px color-mix(in oklab, var(--brand-cyan) 65%, transparent);
 }
 @media (prefers-reduced-motion: no-preference) {
   .note-doc .nt-mos-gate {
@@ -856,7 +836,6 @@ html, body, * {
   margin: -9px;
   border-radius: 50%;
   background: var(--brand-emerald);
-  box-shadow: 0 0 13px color-mix(in oklab, var(--brand-emerald) 75%, transparent);
   left: 50%;
   top: 76%;
 }
@@ -989,7 +968,6 @@ html, body, * {
   margin: -8px;
   border-radius: 50%;
   background: var(--brand-amber);
-  box-shadow: 0 0 14px var(--brand-amber);
   transform: translateY(-88px);
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -1020,7 +998,6 @@ html, body, * {
   margin-top: -5px;
   border-radius: 50%;
   background: var(--nt-accent);
-  box-shadow: 0 0 12px var(--nt-accent);
   opacity: 0;
   pointer-events: none;
   z-index: 2;
@@ -1082,7 +1059,6 @@ html, body, * {
   height: 60px;
   border: 2px solid var(--brand-violet);
   background: color-mix(in oklab, var(--brand-violet) 14%, transparent);
-  box-shadow: 0 0 10px color-mix(in oklab, var(--brand-violet) 50%, transparent);
 }
 .note-doc .nt-cnn-map {
   width: 92px;
@@ -1193,11 +1169,9 @@ html, body, * {
 }
 .note-doc .nt-pn-hole {
   border: 2px solid var(--brand-violet);
-  box-shadow: 0 0 6px color-mix(in oklab, var(--brand-violet) 50%, transparent);
 }
 .note-doc .nt-pn-elec {
   background: var(--brand-cyan);
-  box-shadow: 0 0 7px color-mix(in oklab, var(--brand-cyan) 60%, transparent);
 }
 @media (prefers-reduced-motion: no-preference) {
   .note-doc .nt-pn-hole {

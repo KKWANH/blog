@@ -25,7 +25,7 @@ export function TravelPreview() {
   const homes = visitedCities.filter((city) => city.level === 'lived-there').length
   return (
     <Link className="travel-preview" href="/travel" aria-label={`Open the travel atlas: ${countryCount} countries and ${homes} places lived`}>
-      <div className="travel-preview-copy"><span className="evidence-kicker">Away from work</span><h2>Places I&apos;ve been.</h2><p><strong>{countryCount}</strong> countries <span>·</span> <strong>{homes}</strong> places lived</p><span className="text-link">Explore the atlas <ArrowUpRight aria-hidden="true" /></span></div>
+      <div className="travel-preview-copy"><h2>Places I&apos;ve been.</h2><p><strong>{countryCount}</strong> countries <span>·</span> <strong>{homes}</strong> places lived</p><span className="text-link">Explore the atlas <ArrowUpRight aria-hidden="true" /></span></div>
       <svg viewBox="0 0 720 360" className="travel-preview-map" aria-hidden="true" focusable="false">
         <g className="preview-land">
           {land.features.map((country, index) => {

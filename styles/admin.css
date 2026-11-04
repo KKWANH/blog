@@ -27,7 +27,7 @@
 .admin-login input[type="password"] { width: 100%; min-height: 46px; border: 1px solid #8da37a; border-radius: 4px; padding: .65rem .8rem; background: #071e14; color: #f0f2e5; font-size: 1rem; }
 .admin-login .action-button { justify-content: center; margin-top: .5rem; }
 .admin-login button:disabled { opacity: .55; cursor: wait; }
-.admin-error { padding: .8rem; border-left: 2px solid #d5b476; color: #edcfb4 !important; background: #513d2426; }
+.admin-error { padding: .8rem; border-radius: 6px; color: #edcfb4 !important; background: #513d2440; }
 .admin-muted { color: #a6b99f; font-size: .76rem; line-height: 1.8; margin-block: 1rem; max-width: 90ch; }
 .admin-toolbar,.admin-tools { display: flex; flex-wrap: wrap; align-items: center; gap: .7rem; margin-block: 1.5rem; }
 .admin-toolbar > span { display: inline-flex; align-items: center; gap: .5rem; margin-right: auto; font-size: .83rem; color: #d5e4bc; }
@@ -52,10 +52,10 @@
 .traffic-chart { display: flex; gap: 4px; align-items: stretch; height: 150px; padding-bottom: 20px; }
 .traffic-chart > div { flex: 1; display: flex; align-items: center; justify-content: end; flex-direction: column; position: relative; min-width: 4px; }
 .traffic-bar { width: 100%; min-height: 2px; background: linear-gradient(#c4d5a6,#557d50); border-radius: 2px 2px 0 0; }
-.traffic-chart small { position: absolute; bottom: -20px; font-size: .6rem; color: #9eb192; }
+.traffic-chart small { position: absolute; bottom: -20px; font-size: .6875rem; color: #9eb192; }
 .traffic-chart > div:nth-child(n+10) small { display: none; }
 .admin-notice { font-size: .85rem; color: #dec396; }
-.privacy-link { font-size: .72rem; min-height: 44px; color: #aebe9f; text-decoration: underline; text-underline-offset: 4px; }
+.privacy-link { font-size: .75rem; min-height: 44px; color: #aebe9f; text-decoration: underline; text-underline-offset: 4px; }
 .privacy-dialog { max-width: min(36rem,calc(100vw - 32px)); max-height: calc(100dvh - 32px); margin: auto; padding: 0; border: 1px solid #91aa7c; border-radius: 8px; color: #edf0df; background: #0d281b; }
 .privacy-dialog::backdrop { background: #03110bcc; backdrop-filter: blur(5px); }
 .privacy-dialog > div { padding: clamp(1.2rem,4vw,2rem); }
@@ -159,7 +159,7 @@
 .hourly-col small {
   position: absolute;
   bottom: -18px;
-  font-size: .55rem;
+  font-size: .6875rem;
   color: #7b9983;
 }
 .hourly-col:nth-child(2n) small {
@@ -183,7 +183,7 @@
   position: relative;
 }
 .funnel-badge {
-  font-size: .65rem;
+  font-size: .6875rem;
   text-transform: uppercase;
   letter-spacing: .1em;
   color: #e6bf7d;

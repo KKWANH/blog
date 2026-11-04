@@ -1,4 +1,5 @@
 import type { ReactNode, CSSProperties } from 'react'
+import { Info, Lightbulb } from 'lucide-react'
 
 /**
  * Shared component library for the long-form study notes under /notes.
@@ -39,9 +40,7 @@ export function NoteRoot({
 export function AiNotice() {
   return (
     <aside lang="en" className="flex items-start gap-3 rounded border border-border px-5 py-4 text-sm leading-6 text-muted-foreground">
-      <span aria-hidden className="mt-0.5 text-sm leading-none">
-        ⓘ
-      </span>
+      <Info aria-hidden className="mt-1 size-4 shrink-0" />
       <span>
         This study guide was originally written and organised with AI assistance
         in June 2026. It is kept here as reference material in its original language.
@@ -60,7 +59,7 @@ export function Section({ id, children }: { id: string; children: ReactNode }) {
 
 export function PartTag({ children }: { children: ReactNode }) {
   return (
-    <p className="font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">
+    <p className="border-t border-border pt-6 text-lg font-medium text-foreground">
       {children}
     </p>
   )
@@ -72,7 +71,7 @@ export function Kicker({ num, children }: { num: ReactNode; children: ReactNode 
       <span className="nt-num w-7 h-7 rounded-lg flex items-center justify-center font-mono text-[13px] font-bold shrink-0">
         {num}
       </span>
-      <p className="font-mono text-xs uppercase tracking-[0.2em]" style={{ color: 'var(--nt-accent)' }}>
+      <p className="text-sm font-medium" style={{ color: 'var(--nt-accent)' }}>
         {children}
       </p>
     </div>
@@ -190,20 +189,17 @@ export function Deep({ title = '한 걸음 더', children }: { title?: ReactNode
   )
 }
 
-/** Cyan gradient strip with a big emoji — the "비유 / analogy" block. */
-export function Analogy({ emoji, children }: { emoji: ReactNode; children: ReactNode }) {
+/** Tinted strip for the "비유 / analogy" block. */
+export function Analogy({ children }: { emoji?: ReactNode; children: ReactNode }) {
   return (
     <div
       className="flex gap-4 items-center rounded-xl border p-4 md:p-5 text-sm leading-7"
       style={{
         borderColor: 'color-mix(in oklab, var(--brand-cyan) 28%, transparent)',
-        background:
-          'linear-gradient(135deg, color-mix(in oklab, var(--brand-cyan) 9%, transparent), color-mix(in oklab, var(--card) 60%, transparent))',
+        background: 'color-mix(in oklab, var(--brand-cyan) 7%, transparent)',
       }}
     >
-      <span className="text-3xl leading-none shrink-0" aria-hidden>
-        {emoji}
-      </span>
+      <Lightbulb aria-hidden className="size-5 shrink-0" style={{ color: 'var(--brand-cyan)' }} />
       <span className="text-foreground/85">{children}</span>
     </div>
   )

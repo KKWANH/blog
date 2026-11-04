@@ -11,8 +11,6 @@ export type Project = {
   href: string
   source?: string
   stack: string[]
-  /** Identity visual rendered as the card's hero block. */
-  visual: 'earprint' | 'ariadne' | 'color-saves-life'
 }
 
 export const projects: Project[] = [
@@ -29,7 +27,6 @@ export const projects: Project[] = [
     href: '/projects/ariadne',
     source: 'https://github.com/KKWANH/ai-assistant',
     stack: ['AI-directed build', 'Configuration'],
-    visual: 'ariadne',
   },
   {
     id: 'earprint',
@@ -42,7 +39,6 @@ export const projects: Project[] = [
     status: 'On hold',
     href: '/projects/earprint',
     stack: ['TypeScript', 'Next.js', 'PostgreSQL', 'Chrome extension'],
-    visual: 'earprint',
   },
   {
     id: 'color-saves-life',
@@ -57,7 +53,6 @@ export const projects: Project[] = [
     href: '/projects/color-saves-life',
     source: 'https://github.com/KKWANH/ColorSavesLife',
     stack: ['Python', 'ROS 2', 'Gazebo'],
-    visual: 'color-saves-life',
   },
 ]
 

@@ -81,14 +81,6 @@ html[data-theme="light"] .selected-work-topic { color: var(--muted-foreground); 
 html[data-theme="light"] .selected-work-chevron { color: #4a6b54; }
 
 /* ── Home: project panels and atlas preview ── */
-html[data-theme="light"] .project-material .project-entry {
-  background: var(--card);
-  border-color: var(--border);
-  box-shadow: 0 1px 2px rgba(20, 40, 28, 0.04);
-}
-html[data-theme="light"] .project-material .project-entry::before { background: radial-gradient(ellipse at var(--mx) var(--my), rgba(35, 84, 59, 0.08), transparent 65%); }
-html[data-theme="light"] .project-material[data-active="true"] .project-entry { border-color: var(--border-strong); }
-html[data-theme="light"] .project-art { background: var(--sketch-surface); }
 html[data-theme="light"] .preview-land { fill: #dde6d6; stroke: #a3b9a5; }
 html[data-theme="light"] .preview-visit { fill: #2f6a47; opacity: .85; }
 html[data-theme="light"] .preview-home { fill: #b07a24; stroke: #f6f5ef; }
@@ -233,3 +225,25 @@ html[data-motion="off"] :is(button, [role="button"], .action-button, .header-cv,
   html[data-theme="light"] .atlas-stage { --atlas-glass: #ffffff; --atlas-line: #14281c; }
   html[data-theme="light"] .atlas-drawer { background: #ffffff; }
 }
+
+/* ── Type and browser surfaces ── */
+h1, h2, h3, h4 { text-wrap: balance; }
+p, li, figcaption, blockquote { text-wrap: pretty; }
+input, textarea { caret-color: var(--warm-accent); }
+:is(.project-meta, .timeline-label span, .experience-period, .education-state span, .cv-date) { font-variant-numeric: tabular-nums; }
+.content-end a svg { display: inline; width: 1em; height: 1em; vertical-align: -.125em; }
+
+/* Project rows: name and summary on the left, ways in on the right. One rule between rows, none after the last. */
+.project-entry-body { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); column-gap: clamp(2rem, 6vw, 5rem); align-items: start; }
+.project-entry-body > :is(.project-meta, h3, .project-description) { grid-column: 1; }
+.project-entry-body > :is(.project-actions, .project-details) { grid-column: 2; }
+.project-entry-body > .project-actions { grid-row: 2; margin-top: .5rem; }
+.project-entry-body > .project-details { grid-row: 3; }
+.project-entry:last-child { border-bottom: 0; }
+@media (max-width: 47.99rem) {
+  .project-entry-body { grid-template-columns: minmax(0, 1fr); }
+  .project-entry-body > :is(.project-actions, .project-details) { grid-column: 1; grid-row: auto; }
+}
+
+/* Long-form notes read at a set measure; diagrams and tables keep the full column. */
+.note-doc .nt-section > p { max-width: 46rem; }

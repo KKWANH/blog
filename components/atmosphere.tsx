@@ -78,7 +78,6 @@ export function Atmosphere() {
       <div className="atmosphere-window" />
       <div className="atmosphere-warmth" />
       <div className="atmosphere-pointer" />
-      <div className="atmosphere-grain" />
       <div className="atmosphere-shade" />
     </div>
   )

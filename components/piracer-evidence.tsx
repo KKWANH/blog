@@ -16,8 +16,8 @@ export function PiRacerEvidence({ compact = false }: { compact?: boolean }) {
     <section className={`project-evidence piracer-evidence ${compact ? 'compact-evidence' : ''}`} aria-label="PiRacer instrument cluster project evidence">
       <div className="evidence-heading">
         <div>
-          <span className="evidence-kicker">SEA:ME · Automotive mobility project</span>
           <h2>PiRacer Instrument Cluster</h2>
+          <span className="evidence-meta">SEA:ME · Automotive mobility project</span>
         </div>
         <div className="track-badge">
           <strong>Qt/QML</strong>

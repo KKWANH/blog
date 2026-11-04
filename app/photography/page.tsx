@@ -27,7 +27,6 @@ export default function PhotographyPage() {
       <SiteHeader />
       <main id="main-content" className="site-width photography-page">
         <header className="photography-intro">
-          <p className="scene-eyebrow">Off screen</p>
           <h1>Frames to keep.</h1>
           <p>Photographs, collected along the way.</p>
         </header>

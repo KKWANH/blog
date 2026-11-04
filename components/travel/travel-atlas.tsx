@@ -277,9 +277,9 @@ export function TravelAtlas({ places, galleries }: { places: TravelCity[]; galle
         <div className="atlas-drawer-grabber" aria-hidden="true" onPointerDown={sheet.onPointerDown}><span /></div>
         {place ? <>
           <div className="atlas-drawer-head" onPointerDown={sheet.onPointerDown}>
-            <p className="atlas-drawer-kicker"><span className="atlas-dot" style={{ background: palette[place.level] }} aria-hidden="true" />{levelConfig[place.level].label}</p>
             <h2 ref={drawerHeading} tabIndex={-1}>{place.city}</h2>
             <button type="button" className="atlas-drawer-country" onClick={() => choose({ kind: 'country', code: place.countryCode }, true)}>{place.country}</button>
+            <p className="atlas-drawer-meta"><span className="atlas-dot" style={{ background: palette[place.level] }} aria-hidden="true" />{levelConfig[place.level].label}</p>
             <button type="button" className="atlas-drawer-close" aria-label="Close" onClick={close}><X aria-hidden="true" /></button>
           </div>
           <div className="atlas-drawer-body">
@@ -300,8 +300,8 @@ export function TravelAtlas({ places, galleries }: { places: TravelCity[]; galle
           </nav>
         </> : countryPlaces.length ? <>
           <div className="atlas-drawer-head" onPointerDown={sheet.onPointerDown}>
-            <p className="atlas-drawer-kicker">{countryPlaces.length} place{countryPlaces.length === 1 ? '' : 's'}</p>
             <h2 ref={drawerHeading} tabIndex={-1}>{countryPlaces[0].country}</h2>
+            <p className="atlas-drawer-meta">{countryPlaces.length} place{countryPlaces.length === 1 ? '' : 's'}</p>
             <button type="button" className="atlas-drawer-close" aria-label="Close" onClick={close}><X aria-hidden="true" /></button>
           </div>
           <ul className="atlas-drawer-places">

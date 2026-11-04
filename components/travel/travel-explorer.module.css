@@ -27,7 +27,7 @@
 
 .eyebrow {
   color: var(--muted-foreground);
-  font-size: 0.72rem;
+  font-size: .75rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
@@ -57,7 +57,7 @@
 
 .statLabel {
   color: var(--muted-foreground);
-  font-size: 0.72rem;
+  font-size: .75rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
