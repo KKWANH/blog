@@ -56,8 +56,8 @@ const glowRadius: Record<StayLevel, number> = {
 /* Night-garden surface in the site's greens: unvisited land stays quiet so the warm
    stay ramp (travel-types.ts globePalette) is the only colour that reads as "visited". */
 const surface = {
-  dark: { ocean: '#0e2a21', land: '#3b5446', border: '#6f8c79', ring: '#fff6dc', sky: '#06120d', horizon: '#3f8f6a' },
-  light: { ocean: '#c9dccf', land: '#f8f6ee', border: '#a9bcab', ring: '#14281c', sky: '#f7f6f0', horizon: '#b9d4c1' },
+  dark: { ocean: '#0c2238', land: '#2a4b37', border: '#4e785b', ring: '#ffffff', sky: '#030811', horizon: '#2563eb' },
+  light: { ocean: '#8ec5e0', land: '#f4f2ea', border: '#a2bca8', ring: '#10291c', sky: '#f7f6f0', horizon: '#60a5fa' },
 }
 
 function skyFor(theme: 'dark' | 'light'): SkySpecification {
