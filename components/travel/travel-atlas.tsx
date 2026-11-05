@@ -2,8 +2,7 @@
 
 import { useEffect, useId, useMemo, useRef, useState, type KeyboardEvent } from 'react'
 import dynamic from 'next/dynamic'
-import Link from 'next/link'
-import { ArrowLeft, ArrowRight, Camera, LockKeyhole, Minus, Plus, RotateCcw, Search, X } from 'lucide-react'
+import { ArrowLeft, ArrowRight, Camera, Minus, Plus, RotateCcw, Search, X } from 'lucide-react'
 import { MapBoundary } from './map-boundary'
 import { globePalette, levelConfig, StayLevel, type MapUnit, type TravelCity } from './travel-types'
 import type { GlobeHandle, GlobeInset } from './travel-globe'
@@ -270,7 +269,6 @@ export function TravelAtlas({ places, galleries }: { places: TravelCity[]; galle
         <button type="button" aria-label="Zoom in" onClick={() => globe.current?.zoomIn()}><Plus aria-hidden="true" /></button>
         <button type="button" aria-label="Zoom out" onClick={() => globe.current?.zoomOut()}><Minus aria-hidden="true" /></button>
         <button type="button" aria-label="Show the whole globe" onClick={() => { if (open) close(); globe.current?.reset() }}><RotateCcw aria-hidden="true" /></button>
-        <Link href="/travel/manage" aria-label="Edit atlas (owner)" title="Edit atlas"><LockKeyhole aria-hidden="true" /></Link>
       </div>
 
       <aside ref={drawer} className="atlas-drawer" aria-label={place ? `${place.city}, ${place.country}` : 'Selected country'} hidden={!open}>

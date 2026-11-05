@@ -173,7 +173,6 @@
 .atlas-controls > :is(button, a) { display: grid; place-items: center; width: 44px; height: 44px; color: var(--foreground); }
 .atlas-controls > :is(button, a) + :is(button, a) { border-top: 1px solid var(--atlas-line); }
 .atlas-controls > :is(button, a):hover { background: #c9dfb514; }
-.atlas-controls > a { color: var(--muted-foreground); }
 .atlas-controls svg { width: 17px; height: 17px; }
 .atlas-stage[data-drawer="open"] .atlas-controls { transform: translateX(calc(-1 * var(--atlas-drawer))); }
 

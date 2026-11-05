@@ -45,7 +45,7 @@ The owner is making the next CV design in Google Docs. The existing corrected PD
 
 ## Design and assets
 
-See `docs/design.md` for the type, colour, interaction and responsive decisions.
+See `DESIGN.md` for the type, colour, interaction and responsive decisions.
 
 The site uses one forest/ivory treatment, a plain name wordmark and the owner's photographs. There is no light/dark toggle or separate K monogram. Motion can be paused in the header/footer and follows the system's reduced-motion preference.
 

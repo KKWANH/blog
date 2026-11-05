@@ -2,8 +2,7 @@
 
 import { useEffect, useMemo, useState } from 'react'
 import dynamic from 'next/dynamic'
-import Link from 'next/link'
-import { List, Network, FolderGit2, Search, Pencil } from 'lucide-react'
+import { List, Network, FolderGit2, Search } from 'lucide-react'
 import { CareerIcon } from '@/components/career-icons'
 import { SkillLevelBadge } from '@/components/skill-level-badge'
 import { useSkillPreferences } from '@/components/skill-profile-provider'
@@ -73,7 +72,6 @@ export function SkillExplorer({ selected, onSelect, onViewEvidence }: { selected
         <button type="button" aria-label="Icon list" aria-pressed={view === 'list'} onClick={() => setView('list')}><List aria-hidden="true" /><span className="view-copy" aria-hidden="true"><strong>Icon list</strong><small>{profileCount} skills by group and level</small></span></button>
         <button type="button" aria-label="Mind map" aria-pressed={view === 'map'} onClick={() => { setMapOpened(true); setView('map') }}><Network aria-hidden="true" /><span className="view-copy" aria-hidden="true"><strong>Mind map</strong><small>How skills connect to work and projects</small></span></button>
         <button type="button" aria-label="Repositories" aria-pressed={view === 'repositories'} onClick={() => setView('repositories')}><FolderGit2 aria-hidden="true" /><span className="view-copy" aria-hidden="true"><strong>Repositories</strong><small>{repositoryCatalogue.count} public repos, reviewed one by one</small></span></button>
-        <Link prefetch={false} className="skill-manage-link" href="/about/manage"><Pencil aria-hidden="true" />Owner skill settings</Link>
       </div>
       {view === 'list' ? <>
         <div className="skill-list-controls">

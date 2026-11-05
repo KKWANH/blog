@@ -12,8 +12,6 @@
 .skill-level-compact { font-size: .75rem; padding: .1rem .4rem; }
 .skill-lenses .skill-level-badge { margin: 0; }
 .mind-map-node[data-kind="root"] .map-node-face > svg { color: #31573f; }
-.skill-manage-link { display: inline-flex; align-items: center; gap: .4rem; min-height: 44px; font-size: .75rem; color: var(--muted-foreground); margin-left: auto; }
-.skill-manage-link svg { width: 15px; height: 15px; }
 .skill-management-page { padding-block: 2rem 5rem; }
 .skill-editor { margin-top: 2rem; }
 .skill-editor-savebar { display: flex; flex-wrap: wrap; gap: .7rem; align-items: center; position: sticky; top: calc(var(--site-header-height,5rem) + .4rem); z-index: 10; padding: .8rem; border: 1px solid #6d8c60; border-radius: 5px; background: #102b1ef5; margin-block: 1rem; box-shadow: 0 8px 22px #0005; }
